@@ -6,3 +6,4 @@ node_modules/
 # bitmiş videolar media/ altında depoya girer; geçici çıktılar girmez
 *.mp4
 !media/**/*.mp4
+!wip/**/parca-*.mp4
