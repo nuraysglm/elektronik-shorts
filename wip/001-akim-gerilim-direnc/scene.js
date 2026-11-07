@@ -237,10 +237,10 @@ export function build(S) {
     top('o1', Z.o1[0], Z.o2[0], `${hl('Ohm')} yasası`, 'üçü arasındaki ilişki', { s1: 8.4 }),
     top('o2', Z.o2[0], Z.o3[0], `${hl('V')} = ${rd('I')} × ${bl('R')}`, 'gerilim = akım × direnç', { s1: 10, s2: 5 }),
     top('o3', Z.o3[0], Z.o4[0], `${rd('I')} = ${hl('V')} / ${bl('R')}`, 'akım = gerilim ÷ direnç', { s1: 10, s2: 5 }),
-    top('o4', Z.o4[0], T_B2_IN, `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
-    top('o5', T_B2_IN, T_B2_OUT, `${rd('I')} = ${hl('18 V')} / ${bl('450 Ω')}`, `= 0,04 A = ${rd('40 mA')} (2 kat)`, { s1: 8, s2: 6.2 }),
-    top('o6a', T_B2_OUT, T_R2_IN, `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
-    top('o6', T_R2_IN, Z.o7[0], `${rd('I')} = ${hl('9 V')} / ${bl('900 Ω')}`, `= 0,01 A = ${rd('10 mA')} (yarısı)`, { s1: 8, s2: 6.2 }),
+    top('o4', Z.o4[0], T_B2_IN + 0.2, `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
+    top('o5', T_B2_IN + 0.2, T_B2_OUT + 0.25, `${rd('I')} = ${hl('18 V')} / ${bl('450 Ω')}`, `= 0,04 A = ${rd('40 mA')} (2 kat)`, { s1: 8, s2: 6.2 }),
+    top('o6a', T_B2_OUT + 0.25, T_R2_IN + 0.2, `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
+    top('o6', T_R2_IN + 0.2, Z.o7[0], `${rd('I')} = ${hl('9 V')} / ${bl('900 Ω')}`, `= 0,01 A = ${rd('10 mA')} (yarısı)`, { s1: 8, s2: 6.2 }),
     top('o7', Z.o7[0], Z.s1[0], `${hl('V')} artarsa ${rd('I')} artar`, `${bl('R')} artarsa ${rd('I')} azalır`, { s1: 7, s2: 7 }),
     top('s1', Z.s1[0], Z.s2[0], `${hl('Gerilim')} iter,`, `${bl('direnç')} engeller, ${rd('akım')} akar`, { s1: 8, s2: 5.4 }),
     top('s2', Z.s2[0], DUR + 1, `${hl('V')} = ${rd('I')} × ${bl('R')}`, 'Ohm yasası', { s1: 10.5, s2: 5.4 }),
@@ -256,8 +256,8 @@ export function build(S) {
 
     // pil 2 ve direnç 2 (takılma animasyonu)
     const p2 = b2(t), q2 = r2(t);
-    bat2.visible = p2 > 0.004; bat2.position.y = (1 - p2) * 0.9; // yukarıdan iner, çıkarken yukarı kalkar
-    res2.visible = q2 > 0.004; res2.position.y = Y + (1 - q2) * 0.9; res2.scale.setScalar(1);
+    bat2.visible = p2 > 0.004; bat2.position.y = (1 - p2) * 0.25; bat2.scale.setScalar(Math.max(0.001, p2)); // yerinde büyüyerek takılır, küçülerek çıkar (yazı bandına girmez)
+    res2.visible = q2 > 0.004; res2.position.y = Y + (1 - q2) * 0.25; res2.scale.setScalar(Math.max(0.001, q2));
 
     // yükler
     const tt = t;
@@ -302,11 +302,13 @@ export function build(S) {
     const rShow = t >= Z.d3[0] + 2.0;
     const iShow = t >= Z.a4[0];
     const ohm = t >= Z.o1[0];
-    const v = Vt(t), r = Rt(t);
+    // etiketler yalnızca gerçek devre değerlerini gösterir (geçişte ara değer yok): pil/direnç yerine oturunca değişir
+    const v = V0 * (b2(t) > 0.5 ? 2 : 1), r = R0 * (r2(t) > 0.5 ? 2 : 1);
     const num = (x) => (Math.round(x) + '');
     label('lv', `<span class="hl">${ohm ? 'V = ' + num(v) + ' V' : 'V = ' + num(v) + ' V'}</span>`, 0.0, 0.45, ZH - 0.6, { opacity: vShow ? easeOut(seg(t, Z.g3[0] + 2.0, Z.g3[0] + 2.4)) : 0, size: 5.4 });
     label('lr', `<span class="bl">R = ${num(r)} Ω</span>`, -0.3, 0.45, lerp(RES1_Z + 0.12, (RES1_Z + RES2_Z) / 2, q2), { opacity: rShow ? easeOut(seg(t, Z.d3[0] + 2.0, Z.d3[0] + 2.4)) : 0, size: 5.4 });
-    const iTxt = ohm ? `I = ${num(mA(t))} mA` : 'I';
+    const iTxt = ohm ? `I = ${num((v / r) * 1000)} mA` : 'I';
+    console.assert([10, 20, 40].includes(Math.round((v / r) * 1000)), 'etiket akımı 10/20/40 mA olmalı');
     label('li', `<span class="rd">${iTxt}</span>`, X - 0.5, 0.5, RING_Z + 0.2, { opacity: iShow ? easeOut(seg(t, Z.a4[0], Z.a4[0] + 0.4)) : 0, size: ohm ? 5.4 : 6.4 });
   };
 }
