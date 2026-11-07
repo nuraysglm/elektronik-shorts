@@ -96,7 +96,8 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 ## 8. Konular
 
 - Konuları **kanal sahibi** verir; `konular.md` onun listesidir. Ajan listeye konu eklemez, çıkarmaz, sırasını değiştirmez.
-- Durumu `bekliyor` olan **ilk** konu işlenir. Video kimliği: `NNN-kisa-ad` (ör. `001-akim-gerilim-direnc`).
+- Durumu `bekliyor` olan **ilk** konu işlenir. `bekliyor` konu yoksa hiçbir şey üretme; panele "konu listesi bitti" yaz, kanal sahibine "Yeni konu listesi bekleniyor" diye kısa bildirim gönder ve dur.
+- Durumu `yarım kaldı` olan bir konu varsa önce onu `wip/`'teki notlardan devam ettirerek bitir. Video kimliği: `NNN-kisa-ad` (ör. `001-akim-gerilim-direnc`).
 - Konunun başlığında birden fazla soru varsa (ör. "Nedir ve aralarında nasıl bir ilişki vardır?") hepsi videoda cevaplanır.
 
 ## 9. Yayın modu
