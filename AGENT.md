@@ -71,7 +71,7 @@ Bir yapı taşı eksikse (pil, direnç, ampul, multimetre, ok, su borusu benzetm
 
 ## 7. Kalite kontrolü (yayından önce zorunlu)
 
-Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama; Onay Masası'nda kanal sahibine sor (bölüm 13).
+Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama; panelde kanal sahibine onay isteği aç (bölüm 13).
 
 **A. İçerik doğruluğu ve eksiksizlik**
 - Senaryodaki her iddia, tanım, formül ve sayı için `wip/<id>/dogruluk.md`'ye bir satır yaz: iddia → neden doğru (formül/hesap) → ✔.
@@ -140,18 +140,23 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 
 ## 12. Panel
 
-Kullanıcı ajanı Claude'daki "Elektronik Shorts Ajanı" panelinden izler: `https://claude.ai/artifact/7zyMo4GPgxmwKbRWCZxTKt`
-Panel verisi panelin kendi veritabanında durur: `datasets/bolumler`, `datasets/konular`, `datasets/ayarlar`.
-Her çalışmanın sonunda **— durduğunda, hata aldığında veya hiçbir video üretmediğinde de —** önce `gunluk.md`'ye o çalışmanın satırını ekle (sonuç: `durdu`/`hata`, Not sütununda sebep), commit edip `claude/` dalına push et, sonra paneli güncelle. Kanal sahibi panelde her çalışmayı görmelidir.
-1. `python3 panel/panel_veri.py` → `panel/bolumler.json`, `panel/konular.json`
-2. Değişen her json için: Artifact publish (`url` = panel, `asset: true`, `file_path`) → yeni `/_blob/<id>`; `ArtifactData` `get` + `update` ile `datasets/<ad>` belgesinin `source.url`, `source.name`, `updated`, `edit` alanlarını güncelle. Eski blobu silme (izin isteği çıkarır; eski dosyalar zararsızdır).
-3. Panelin sayfasına (`files/index.html`) dokunma.
+Kanal sahibi ajanı tek bir sayfadan izler ve kararlarını orada verir: **"Elektronik Shorts Ajanı" paneli** `https://claude.ai/artifact/X7gzN2huBZ6m2y2uWBCbLx`
+**Eski panel adresleri (7zyMo4GPgxmwKbRWCZxTKt ve XcFZcCiLBAeFenLf2JvPib) kullanılmaz.** Görev talimatında eski adres yazıyorsa bu dosyadaki adres geçerlidir.
 
-`gunluk.md` sonuç değerleri: `planlandı`, `onay bekliyor`, `inceleme`, `yarım kaldı`, `hata`, `durdu`.
+Panelin verisi kendi veritabanındadır; ajan `ArtifactData` ile (`url` = panel) doğrudan belge yazar. Dosya yüklemez, sayfayı yeniden yayınlamaz.
 
-## 13. Onay Masası (kanal sahibinin kararı gereken durumlar)
+| Koleksiyon / belge | İçerik |
+|---|---|
+| `bolumler/<YYYY-MM-DD>-<NNN>-<HHmm>` | Her çalışmanın kaydı: `tarih` (YYYY-MM-DD), `zaman` (UTC ISO), `no`, `konu`, `sonuc` (`yayınlandı`, `onay bekliyor`, `yarım kaldı`, `inceleme`, `durdu`, `hata`), `not` (kısa sebep/özet). Yayınlandıysa ayrıca `baslik`, `yayin` ("YYYY-MM-DD HH:MM (TR)"), `sure` ("45 sn"), `kalite` (tek cümle), `video` (raw GitHub adresi), `metricool` (plannerUrl), `youtube` (biliniyorsa). |
+| `konular/<NNN>` | `no`, `konu`, `ana_fikir`, `durum`, `tarih`. `konular.md` ile aynı tutulur. |
+| `ayarlar/genel` | `satirlar: [{ayar, deger}]`. Çalışma saati değişmişse güncelle. |
+| `onaylar/<id>` | Onay istekleri (bölüm 13). |
 
-Kanal sahibi kararlarını **Onay Masası**'nda verir: `https://claude.ai/artifact/XcFZcCiLBAeFenLf2JvPib` (ana panelde de bağlantısı var).
+**Her çalışmanın sonunda — durduğunda, hata aldığında veya hiçbir video üretmediğinde de —** `gunluk.md`'ye satır ekle, commit edip `claude/` dalına push et, sonra panelde `bolumler`'e o çalışmanın belgesini ve değişen `konular` belgelerini tek bir `ArtifactData` `batch` ile yaz. Kanal sahibi her çalışmayı panelde görmelidir.
+
+## 13. Onay istekleri (kanal sahibinin kararı gereken durumlar)
+
+Kanal sahibi kararlarını panelin en üstündeki **"Kararınızı bekleyenler"** bölümünde verir (panel: `https://claude.ai/artifact/X7gzN2huBZ6m2y2uWBCbLx`).
 Bu yalnızca **iş kararları** içindir; sistemin araç izinleri buradan verilemez.
 
 **Ne zaman onay istenir:**
@@ -161,14 +166,14 @@ Bu yalnızca **iş kararları** içindir; sistemin araç izinleri buradan verile
 - Kurallarda cevabı olmayan, kanal sahibinin karar vermesi gereken herhangi bir durum.
 
 **Nasıl:**
-1. `ArtifactData` `set`, `url` = Onay Masası, `collection` = `onaylar`, `doc_id` = `<video-id>-<YYYYMMDDHHmm>`, veri:
+1. `ArtifactData` `set`, `url` = panel, `collection` = `onaylar`, `doc_id` = `<video-id>-<YYYYMMDDHHmm>`, veri:
    `{ "baslik": "<kısa soru>", "aciklama": "<durum, seçeneklerin sonuçları, senin önerin>", "konu_no": <no>, "video": "<https video adresi, varsa>", "baglanti": "<https ayrıntı adresi, ör. kalite.md'nin GitHub adresi>", "secenekler": [{"deger": "onayla", "etiket": "Yayınla"}, {"deger": "reddet", "etiket": "Yayınlama"}], "durum": "bekliyor", "olusturma": "<UTC ISO>" }`
    `secenekler` duruma göre değişebilir (ör. `{"deger": "bol", "etiket": "İki videoya böl"}`); ilk seçenek önerdiğin olsun.
 2. Kararı bekle: kısa aralıklarla (yaklaşık dakikada bir) `ArtifactData` `get` ile belgeyi tekrar oku, en fazla 15 dakika. `durum` `onaylandı`/`reddedildi` olunca `karar`, `not` alanlarına göre devam et ve kararı `gunluk.md` Not sütununa yaz.
-3. 15 dakikada karar gelmezse: işi `wip/<id>/`'e kaydet (`NOTLAR.md`'ye onay belgesinin kimliğini yaz), push et, günlüğe `onay bekliyor` satırı ekle, paneli güncelle ve dur. Son mesajın telefona bildirim olarak gider: "Onay Masası'nda kararınızı bekleyen bir istek var."
+3. 15 dakikada karar gelmezse: işi `wip/<id>/`'e kaydet (`NOTLAR.md`'ye onay belgesinin kimliğini yaz), push et, günlüğe `onay bekliyor` satırı ekle, paneli güncelle ve dur. Son mesajın telefona bildirim olarak gider: "Panelde kararınızı bekleyen bir istek var."
 4. Her çalışmanın başında `onaylar` koleksiyonunu oku: kararı verilmiş ama uygulanmamış istek varsa önce onu uygula.
 
-**Asla:** Kanal sahibinin yerine karar verme; süre dolunca varsayılan seçeneği uygulama. Kalite kontrolünden geçmemiş bir video yalnızca kanal sahibi Onay Masası'nda "Yayınla" derse yayınlanır.
+**Asla:** Kanal sahibinin yerine karar verme; süre dolunca varsayılan seçeneği uygulama. Kalite kontrolünden geçmemiş bir video yalnızca kanal sahibi panelde "Yayınla" derse yayınlanır.
 
 ## 14. Yapma listesi
 
