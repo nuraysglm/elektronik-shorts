@@ -71,7 +71,7 @@ Bir yapı taşı eksikse (pil, direnç, ampul, multimetre, ok, su borusu benzetm
 
 ## 7. Kalite kontrolü (yayından önce zorunlu)
 
-Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama, panele nedenini yaz.
+Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama; Onay Masası'nda kanal sahibine sor (bölüm 13).
 
 **A. İçerik doğruluğu ve eksiksizlik**
 - Senaryodaki her iddia, tanım, formül ve sayı için `wip/<id>/dogruluk.md`'ye bir satır yaz: iddia → neden doğru (formül/hesap) → ✔.
@@ -149,7 +149,28 @@ Her çalışmanın sonunda **— durduğunda, hata aldığında veya hiçbir vid
 
 `gunluk.md` sonuç değerleri: `planlandı`, `onay bekliyor`, `inceleme`, `yarım kaldı`, `hata`, `durdu`.
 
-## 13. Yapma listesi
+## 13. Onay Masası (kanal sahibinin kararı gereken durumlar)
+
+Kanal sahibi kararlarını **Onay Masası**'nda verir: `https://claude.ai/artifact/XcFZcCiLBAeFenLf2JvPib` (ana panelde de bağlantısı var).
+Bu yalnızca **iş kararları** içindir; sistemin araç izinleri buradan verilemez.
+
+**Ne zaman onay istenir:**
+- Kalite kontrolü (bölüm 7) 3 turda geçmedi: "Yayınlansın mı?" diye sor, videoyu ve kalite raporunu bağla.
+- İçeriğin doğruluğundan veya konunun nasıl yorumlanacağından emin değilsin.
+- Konu listesindeki bir konu belirsiz ya da birden fazla videoya bölünmesi gerekiyor gibi görünüyor.
+- Kurallarda cevabı olmayan, kanal sahibinin karar vermesi gereken herhangi bir durum.
+
+**Nasıl:**
+1. `ArtifactData` `set`, `url` = Onay Masası, `collection` = `onaylar`, `doc_id` = `<video-id>-<YYYYMMDDHHmm>`, veri:
+   `{ "baslik": "<kısa soru>", "aciklama": "<durum, seçeneklerin sonuçları, senin önerin>", "konu_no": <no>, "video": "<https video adresi, varsa>", "baglanti": "<https ayrıntı adresi, ör. kalite.md'nin GitHub adresi>", "secenekler": [{"deger": "onayla", "etiket": "Yayınla"}, {"deger": "reddet", "etiket": "Yayınlama"}], "durum": "bekliyor", "olusturma": "<UTC ISO>" }`
+   `secenekler` duruma göre değişebilir (ör. `{"deger": "bol", "etiket": "İki videoya böl"}`); ilk seçenek önerdiğin olsun.
+2. Kararı bekle: kısa aralıklarla (yaklaşık dakikada bir) `ArtifactData` `get` ile belgeyi tekrar oku, en fazla 15 dakika. `durum` `onaylandı`/`reddedildi` olunca `karar`, `not` alanlarına göre devam et ve kararı `gunluk.md` Not sütununa yaz.
+3. 15 dakikada karar gelmezse: işi `wip/<id>/`'e kaydet (`NOTLAR.md`'ye onay belgesinin kimliğini yaz), push et, günlüğe `onay bekliyor` satırı ekle, paneli güncelle ve dur. Son mesajın telefona bildirim olarak gider: "Onay Masası'nda kararınızı bekleyen bir istek var."
+4. Her çalışmanın başında `onaylar` koleksiyonunu oku: kararı verilmiş ama uygulanmamış istek varsa önce onu uygula.
+
+**Asla:** Kanal sahibinin yerine karar verme; süre dolunca varsayılan seçeneği uygulama. Kalite kontrolünden geçmemiş bir video yalnızca kanal sahibi Onay Masası'nda "Yayınla" derse yayınlanır.
+
+## 14. Yapma listesi
 
 - Kullanıcının bilgisayarını kullanma; her şey bu bulut çalışma ortamında olur.
 - Higgsfield veya başka bir yapay zekâ görsel/video üretim aracı kullanma. Görüntü ve ses kodla üretilir.
