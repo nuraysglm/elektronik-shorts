@@ -27,14 +27,14 @@ export const meta = {
     { t: Z.a4[0] + 0.1, kind: 'pop', gain: 0.35 },
     { t: Z.g3[0] + 2.2, kind: 'pop', gain: 0.35 },
     { t: Z.d3[0] + 2.2, kind: 'pop', gain: 0.35 },
-    { t: Z.o5[0] + 0.15, kind: 'thud', gain: 0.45 },
-    { t: Z.o6[0] + 3.1, kind: 'thud', gain: 0.45 },
+    { t: Z.o5[0] + 1.5 + 0.55, kind: 'thud', gain: 0.45 },
+    { t: Z.o6[0] + 2.4 + 0.55, kind: 'thud', gain: 0.45 },
   ],
 };
 
 // ---------------------------------------------------------------- akım zamanı (mA) ve görsel hız
-const T_B2_IN = Z.o5[0] + 0.1, T_B2_OUT = Z.o6[0] + 0.2;      // 2. pil takılı: [T_B2_IN, T_B2_OUT]
-const T_R2_IN = Z.o6[0] + 3.0;                                 // 2. direnç takılı: sonrası
+const T_B2_IN = Z.o5[0] + 1.5, T_B2_OUT = Z.o6[0] + 0.7;      // 2. pil takılı: [T_B2_IN, T_B2_OUT]
+const T_R2_IN = Z.o6[0] + 2.4;                                 // 2. direnç takılı: sonrası
 const DROP = 0.9;
 const b2 = (t) => easeOut(seg(t, T_B2_IN, T_B2_IN + DROP)) * (1 - easeInOut(seg(t, T_B2_OUT, T_B2_OUT + 0.5)));
 const r2 = (t) => easeOut(seg(t, T_R2_IN, T_R2_IN + DROP));
@@ -224,11 +224,11 @@ export function build(S) {
   const hl = (s) => `<span class="hl">${s}</span>`, rd = (s) => `<span class="rd">${s}</span>`, bl = (s) => `<span class="bl">${s}</span>`;
   const topDefs = [
     top('h', 0, Z.a1[0], `${rd('Akım')}, ${hl('gerilim')},`, `${bl('direnç')} nedir? Aralarında ne ilişki var?`, { s1: 8.4, s2: 4.6 }),
-    top('a1', Z.a1[0], Z.a2[0], rd('Akım'), 'telde akan elektrik yükleri', { s1: 9 }),
+    top('a1', Z.a1[0], Z.a2[0], rd('Akım'), 'kapalı devrede dolaşan yükler', { s1: 9 }),
     top('a2', Z.a2[0], Z.a3[0], 'Saniyede geçen yük', `çoksa ${rd('akım büyüktür')}`),
     top('a3', Z.a3[0], Z.a4[0], `${rd('I')} = Q / t`, '1 kulon ÷ 1 saniye = 1 amper', { s1: 9, s2: 4.6 }),
     top('a4', Z.a4[0], Z.g1[0], `${rd('I')} = akım`, 'birimi: amper (A)'),
-    top('g1', Z.g1[0], Z.g2[0], hl('Gerilim'), 'yükleri iten güç', { s1: 9 }),
+    top('g1', Z.g1[0], Z.g2[0], hl('Gerilim'), 'yükleri iten etki', { s1: 9 }),
     top('g2', Z.g2[0], Z.g3[0], `Büyük ${hl('gerilim')}`, 'daha güçlü itme'),
     top('g3', Z.g3[0], Z.d1[0], `${hl('V')} = gerilim`, 'birimi: volt (V)'),
     top('d1', Z.d1[0], Z.d2[0], bl('Direnç'), 'yükün yolundaki engel', { s1: 9 }),
@@ -237,11 +237,12 @@ export function build(S) {
     top('o1', Z.o1[0], Z.o2[0], `${hl('Ohm')} yasası`, 'üçü arasındaki ilişki', { s1: 8.4 }),
     top('o2', Z.o2[0], Z.o3[0], `${hl('V')} = ${rd('I')} × ${bl('R')}`, 'gerilim = akım × direnç', { s1: 10, s2: 5 }),
     top('o3', Z.o3[0], Z.o4[0], `${rd('I')} = ${hl('V')} / ${bl('R')}`, 'akım = gerilim ÷ direnç', { s1: 10, s2: 5 }),
-    top('o4', Z.o4[0], Z.o5[0], `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
-    top('o5', Z.o5[0], Z.o6[0], `${rd('I')} = ${hl('18 V')} / ${bl('450 Ω')}`, `= 0,04 A = ${rd('40 mA')} (2 kat)`, { s1: 8, s2: 6.2 }),
-    top('o6', Z.o6[0], Z.o7[0], `${rd('I')} = ${hl('9 V')} / ${bl('900 Ω')}`, `= 0,01 A = ${rd('10 mA')} (yarısı)`, { s1: 8, s2: 6.2 }),
+    top('o4', Z.o4[0], T_B2_IN, `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
+    top('o5', T_B2_IN, T_B2_OUT, `${rd('I')} = ${hl('18 V')} / ${bl('450 Ω')}`, `= 0,04 A = ${rd('40 mA')} (2 kat)`, { s1: 8, s2: 6.2 }),
+    top('o6a', T_B2_OUT, T_R2_IN, `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
+    top('o6', T_R2_IN, Z.o7[0], `${rd('I')} = ${hl('9 V')} / ${bl('900 Ω')}`, `= 0,01 A = ${rd('10 mA')} (yarısı)`, { s1: 8, s2: 6.2 }),
     top('o7', Z.o7[0], Z.s1[0], `${hl('V')} artarsa ${rd('I')} artar`, `${bl('R')} artarsa ${rd('I')} azalır`, { s1: 7, s2: 7 }),
-    top('s1', Z.s1[0], Z.s2[0], `${hl('Gerilim')} iter,`, `${bl('direnç')} zorlar, ${rd('akım')} akar`, { s1: 8, s2: 5.4 }),
+    top('s1', Z.s1[0], Z.s2[0], `${hl('Gerilim')} iter,`, `${bl('direnç')} engeller, ${rd('akım')} akar`, { s1: 8, s2: 5.4 }),
     top('s2', Z.s2[0], DUR + 1, `${hl('V')} = ${rd('I')} × ${bl('R')}`, 'Ohm yasası', { s1: 10.5, s2: 5.4 }),
   ];
 
@@ -304,8 +305,8 @@ export function build(S) {
     const v = Vt(t), r = Rt(t);
     const num = (x) => (Math.round(x) + '');
     label('lv', `<span class="hl">${ohm ? 'V = ' + num(v) + ' V' : 'V = ' + num(v) + ' V'}</span>`, 0.0, 0.45, ZH - 0.6, { opacity: vShow ? easeOut(seg(t, Z.g3[0] + 2.0, Z.g3[0] + 2.4)) : 0, size: 5.4 });
-    label('lr', `<span class="bl">R = ${num(r)} Ω</span>`, -0.3, 0.45, lerp(RES1_Z, (RES1_Z + RES2_Z) / 2, q2), { opacity: rShow ? easeOut(seg(t, Z.d3[0] + 2.0, Z.d3[0] + 2.4)) : 0, size: 5.4 });
+    label('lr', `<span class="bl">R = ${num(r)} Ω</span>`, -0.3, 0.45, lerp(RES1_Z + 0.12, (RES1_Z + RES2_Z) / 2, q2), { opacity: rShow ? easeOut(seg(t, Z.d3[0] + 2.0, Z.d3[0] + 2.4)) : 0, size: 5.4 });
     const iTxt = ohm ? `I = ${num(mA(t))} mA` : 'I';
-    label('li', `<span class="rd">${iTxt}</span>`, X - 0.62, 0.5, RING_Z, { opacity: iShow ? easeOut(seg(t, Z.a4[0], Z.a4[0] + 0.4)) : 0, size: ohm ? 5.4 : 6.4 });
+    label('li', `<span class="rd">${iTxt}</span>`, X - 0.5, 0.5, RING_Z + 0.2, { opacity: iShow ? easeOut(seg(t, Z.a4[0], Z.a4[0] + 0.4)) : 0, size: ohm ? 5.4 : 6.4 });
   };
 }
