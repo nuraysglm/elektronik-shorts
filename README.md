@@ -2,9 +2,9 @@
 
 @NuraySaglamBedir kanalı için her gün bir elektronik kavramını anlatan animasyonlu YouTube Shorts üreten ajan.
 
-- **Ajanın talimatı:** [AJAN.md](AJAN.md). Ajana yeni bir şey öğretmek için bu dosyayı düzenleyin.
+- **Ajanın talimatı:** [AGENT.md](AGENT.md). Ajana yeni bir şey öğretmek için bu dosyayı düzenleyin.
 - **Konu sırası:** [konular.md](konular.md)
 - **Ne yayınlandı:** [gunluk.md](gunluk.md)
-- **Animasyon motoru:** `motor/shortsmotor.py` (Python, matplotlib, ffmpeg)
+- **Animasyon motoru:** `tools/` (three.js sahneleri, Playwright ile kare kare render, numpy ile ses)
 
-Her sabah zamanlanmış görev çalışır: sıradaki konuyu seçer, animasyonu kodla çizer, kareleri kontrol eder, videoyu render eder, `videolar` dalına koyar ve Metricool üzerinden YouTube Shorts olarak 12:30'a (Türkiye) planlar.
+Zamanlanmış görev çalışınca sıradaki konuyu seçer, gerçekçi 3D sahneyi three.js ile kodla kurar, kareleri kontrol eder, videoyu render eder, `media/` altına koyar ve Metricool üzerinden YouTube Shorts olarak planlar.

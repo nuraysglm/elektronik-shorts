@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<style>
+  @font-face { font-family: "InterDisplay"; src: url("vendor/fonts/InterDisplay-Black.otf"); font-weight: 900; }
+  @font-face { font-family: "InterDisplay"; src: url("vendor/fonts/InterDisplay-Bold.otf"); font-weight: 700; }
+  @font-face { font-family: "Inter"; src: url("vendor/fonts/Inter-SemiBold.otf"); font-weight: 600; }
+  @font-face { font-family: "Inter"; src: url("vendor/fonts/Inter-Medium.otf"); font-weight: 500; }
+  html, body { margin: 0; padding: 0; background: #000; overflow: hidden; }
+  #wrap { position: relative; }
+  canvas { display: block; }
+  #overlay { position: absolute; inset: 0; pointer-events: none;
+             background: linear-gradient(to bottom, rgba(8,9,12,0.55) 0%, rgba(8,9,12,0.25) 16%, rgba(8,9,12,0) 26%); }
+  .ovl { position: absolute; line-height: 1.08; letter-spacing: -0.01em; white-space: normal;
+         -webkit-text-stroke: 0.06em rgba(0,0,0,0.55); paint-order: stroke fill;
+         text-shadow: 0 0.04em 0.25em rgba(0,0,0,0.55); }
+  .ovl .hl { color: #ffd23f; }
+  .ovl .cu { color: #ff8a5c; }
+  .ovl .bl { color: #6fb2ff; }
+  .ovl .rd { color: #ff5a4f; }
+  .ovl .gr { color: #5fe08a; }
+  .ovl .sm { font-size: 0.62em; font-weight: 600; font-family: "Inter", sans-serif; }
+</style>
+</head>
+<body>
+<div id="wrap"><canvas id="c"></canvas><div id="overlay"></div></div>
+<script type="module">
+  import { createStage } from './lib/stage.js';
+  const q = new URLSearchParams(location.search);
+  const W = +q.get('w') || 1080, H = +q.get('h') || 1920;
+  const wrap = document.getElementById('wrap');
+  wrap.style.width = W + 'px'; wrap.style.height = H + 'px';
+  document.documentElement.style.fontSize = (W / 100) + 'px';
+  // vw birimleri pencereye göre ölçeklenir; pencere boyutu = video boyutu
+  await document.fonts.load('900 40px "InterDisplay"');
+  await document.fonts.load('700 40px "InterDisplay"');
+  await document.fonts.load('600 40px "Inter"');
+  const mod = await import('/' + q.get('scene'));
+  const S = createStage({ canvas: document.getElementById('c'), overlay: document.getElementById('overlay'), width: W, height: H, antialias: q.get('aa') !== '0' });
+  const frame = await mod.build(S);
+  window.__meta = mod.meta;
+  window.__S = S;
+  window.__render = async (t) => { frame(t); S.render(); await new Promise((r) => requestAnimationFrame(() => r())); return true; };
+  window.__ready = true;
+</script>
+</body>
+</html>

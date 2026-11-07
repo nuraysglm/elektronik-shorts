@@ -1,4 +1,8 @@
 __pycache__/
+node_modules/
 *.png
-*.mp4
 *.wav
+!media/**/kapak.jpg
+# bitmiş videolar media/ altında depoya girer; geçici çıktılar girmez
+*.mp4
+!media/**/*.mp4

@@ -1,0 +1,41 @@
+name: claude dallarını main'e birleştir
+
+# Zamanlanmış ajan yalnızca claude/ ile başlayan dallara push edebilir.
+# Bu iş, her push'ta o dalı main'e birleştirir ve dalı siler; böylece
+# media/<video-id>/ altındaki videolar raw.githubusercontent.com/.../main/... adresinden açılır.
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: main-birlestirme
+  cancel-in-progress: false
+
+jobs:
+  birlestir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Dalı main'e birleştir
+        env:
+          DAL: ${{ github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$DAL"
+          git merge --no-edit "origin/$DAL" -m "Otomatik birleştirme: $DAL"
+          git push origin main
+
+      - name: Birleşen dalı sil
+        env:
+          DAL: ${{ github.ref_name }}
+        run: git push origin --delete "$DAL" || true
