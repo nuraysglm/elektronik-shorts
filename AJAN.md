@@ -28,9 +28,18 @@ Ajana yeni bir şey öğretmek için bu dosyayı düzenleyin. Bir sonraki çalı
 | `motor/shortsmotor.py` | Animasyon motoru (numpy + matplotlib + ffmpeg) |
 | `ornekler/kondansator_rc.py` | Tarz örneği: kalite çıtası bu videodur |
 | `bolumler/NNN-konu.py` | Ajanın her bölüm için yazdığı animasyon kodu |
+| `panel/` | Panelin verisi (`bolumler.json`, `konular.json`, `ayarlar.json`) ve bunları üreten `panel_veri.py` |
 | `videolar` dalı | Son 14 günün mp4 dosyaları (Metricool buradan çeker) |
 
+## Panel
+
+Kullanıcı ajanı Claude'daki **"Elektronik Shorts Ajanı" panelinden** izler:
+`https://claude.ai/artifact/7zyMo4GPgxmwKbRWCZxTKt`
+Panel üç veri dosyasıyla beslenir (`datasets/bolumler`, `datasets/konular`, `datasets/ayarlar`). Paneli güncellemek her çalışmanın **zorunlu son adımıdır**, ajan bir kontrolde dursa bile (12. adım).
+
 ## Her çalışmada adımlar
+
+Bir adım **"dur"** dediğinde: hiçbir şey yayınlama, doğrudan 11, 12 ve 13. adımları yap (günlük satırı, panel, kapanış).
 
 ### 1. Hazırlık
 1. Depoyu oturuma ekle (`add_repo`: owner `nuraysglm`, repo `elektronik-shorts`, access `push`) ve klonla.
@@ -85,7 +94,7 @@ Görsel şablonları sırayla değiştir ki kanal tekrara düşmesin (son 3 böl
 ### 9. Depoya gönderme
 1. **Video → `videolar` dalı.** Ayrı bir klasörde `videolar` dalını klonla (yoksa `--orphan` ile oluştur). Yeni mp4'ü ekle, adındaki tarihe göre 14 günden eski mp4'leri sil. Geçmişi küçük tutmak için tek commit'lik yeni bir orphan dal oluşturup `git push -f origin <dal>:videolar` ile gönder. Zorla gönderme reddedilirse normal commit + push yap ve günlüğe not düş.
 2. Video adresi: `https://raw.githubusercontent.com/nuraysglm/elektronik-shorts/videolar/<dosya>.mp4`
-3. **Kod ve kayıtlar → `main`.** `bolumler/` dosyasını ekle, `konular.md`'de satırı `yayında` + tarih yap, `gunluk.md`'ye satır ekle, commit + push.
+3. **Kod → `main`.** `bolumler/` dosyasını commit + push et. `konular.md` ve `gunluk.md`'yi Metricool sonucu belli olduktan sonra güncelle (10–12. adımlar).
 
 ### 10. Metricool'a planlama
 `createScheduledPost` ile, `blogId` 2. adımda bulunan marka:
@@ -99,9 +108,26 @@ Görsel şablonları sırayla değiştir ki kanal tekrara düşmesin (son 3 böl
   - `tags`: 5–8 Türkçe etiket
   - `isAiGeneratedContent`: `false`. Videolar kodla çizilmiş şematik animasyonlardır; gerçekçi sentetik insan, yer veya olay içermez.
 - `autoPublish`: `true`, `draft`: `false`
-- Yanıttaki `plannerUrl`'yi günlüğe yaz. Hata dönerse metni değiştirmeden günlüğe yaz, konuyu `bekliyor` durumuna geri al ve dur.
+- Başarılıysa: `konular.md`'de satırı `yayında` + bugünün tarihi yap, `plannerUrl`'yi sakla (11. adım).
+- Hata dönerse: hata metnini değiştirmeden not al, konu `bekliyor` kalsın, sonuç `hata` ile dur.
 
-### 11. Kapanış
+### 11. Günlük satırı
+`gunluk.md` tablosuna **her çalışmada** (başarılı ya da değil) tam bir satır ekle. Sütunlar: Tarih | # | Konu | Başlık | Şablon | Sonuç | Yayın | Metricool | Video | Not.
+- Sonuç: `planlandı`, `inceleme`, `hata` veya `durdu`.
+- Yayın: `YYYY-MM-DD HH:MM (TR)`. Metricool: `plannerUrl`. Video: raw GitHub adresi. Boş hücre: `—`.
+- Hücre içinde `|` karakteri kullanma.
+
+### 12. Paneli güncelle (her çalışmada, dursan bile)
+1. Depo kökünde `python3 panel/panel_veri.py` çalıştır. `panel/bolumler.json` ve `panel/konular.json` yeniden üretilir.
+2. Ayarlar: zamanlanmış görev listesinde (`list_triggers`) "Elektronik Shorts Ajanı" görevini bul. Çalışma saati veya açık/kapalı durumu `panel/ayarlar.json`'daki "Ajanın çalışma saati" değerinden farklıysa değeri düzelt (ör. "Her gün 07:36 (Londra)", duraklatılmışsa "Duraklatıldı").
+3. Değişen her dosya için:
+   1. `Artifact` publish, `url` = panel adresi, `asset: true`, `file_path` = json dosyası. Dönen `/_blob/<id>` yeni adrestir.
+   2. `ArtifactData` `get` → `datasets/<bolumler|konular|ayarlar>`. Okunan `version` ile `update`: `source.url` = yeni adres, `source.name` = dosya adı, `updated: {at: <UTC ISO>, by: "Shorts Ajanı"}`, `edit: {via: "claude", at: <UTC ISO>}`. `source`'un `kind` ve `format` alanlarını koru.
+   3. Eski adresteki dosyayı sil (`Artifact` delete, `url` = panel, `path` = eski blob kimliği).
+4. `panel/` değişikliklerini `main` dalına commit + push et.
+5. Panelin sayfa dosyasına (`files/index.html`) dokunma; yalnızca veri güncellenir.
+
+### 13. Kapanış
 Son mesaj, telefona bildirim olarak gidecek kısa bir özettir: konu, başlık, yayın saati ve Metricool bağlantısı. Sorun olduysa ne olduğu ve sizden ne gerektiği.
 
 ## Yapma listesi
