@@ -46,6 +46,19 @@ export function build(S) { /* nesneleri kur */ return (t) => { /* t anındaki du
 Zaman deterministiktir: `Date`, `Math.random`, `requestAnimationFrame` kullanılmaz; rastgelelik için `S.rng(seed)`.
 Bir yapı taşı eksikse (pil, direnç, ampul, multimetre, ok, su borusu benzetmesi...) önce sahne dosyasında yaz; iki videoda tekrar ederse `tools/lib/stage.js`'e taşı.
 
+## 3a. Zaman bütçesi ve parça parça render (zorunlu)
+
+Bir çalışma yaklaşık 30–40 dakikada kesilebilir. Uzun bir video tek çalışmaya sığmaz; iş birden çok çalışmaya yayılır ve **hiçbir iş kaybolmaz**:
+
+1. **Ara kayıt:** Çalışma başladıktan sonra en geç her 20 dakikada bir: `wip/<id>/`'deki her şeyi commit edip `claude/<id>` dalına push et, `NOTLAR.md`'ye "nerede kaldım, sıradaki adım" yaz, panelde `bolumler`'e (aynı çalışmanın belgesini güncelleyerek) `sonuc: "yarım kaldı"` ve kısa not yaz.
+2. **Parça parça render:** Son render'ı tek seferde alma. Sahneyi 15–20 saniyelik parçalara böl:
+   `node tools/render.mjs <sahne> --from <bas> --to <bit> --no-audio --out wip/<id>/parca-NN.mp4`
+   Her parça bitince hemen commit + push et ve `NOTLAR.md`'de işaretle (`parca-03: tamam`). Parçalar küçük, sessiz MP4'lerdir; depoya konabilir.
+3. **Devam:** Her çalışmanın başında `wip/` ve `NOTLAR.md`'yi oku; yarım işi kaldığı yerden sürdür (yeni konuya geçme).
+4. **Birleştirme:** Tüm parçalar hazır olunca ffmpeg concat ile birleştir, sesi (`tools/audio.py` + seslendirme) ekle, `loudnorm` uygula → `media/<id>/<id>.mp4`. Sonra kalite kontrolü (bölüm 7) ve yayın.
+5. Parçalar ve kalite kontrolü bitip video yayınlanınca `wip/<id>/parca-*.mp4` dosyalarını sil (kontrol belgeleri kalır).
+6. Kesilmeden önce yetişemezsen bile son ara kayıt zaten yapılmış olmalı; kanal sahibi panelde işin nerede olduğunu görür.
+
 ## 4. Ekran düzeni (9:16)
 
 - Yazılar üstte, `y` %4–24 bandında; en fazla 2 satır, kalın; ana başlık 6–8 vw, açıklama 5–6 vw, etiket en az 4 vw. Vurgu renkleri: `hl` sarı, `rd` kırmızı, `gr` yeşil, `bl` mavi, `cu` bakır. Aynı kavram her yerde aynı renkte (ör. gerilim hep sarı, akım hep kırmızı, direnç hep mavi).
