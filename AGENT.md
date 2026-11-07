@@ -65,7 +65,7 @@ Bir yapı taşı eksikse (pil, direnç, ampul, multimetre, ok, su borusu benzetm
 ## 6. Ses
 
 - Açıklama gerekiyorsa **Türkçe seslendirme** kullan. Metin sade, doğal, öğretmen tonunda; cümleler kısa.
-- Piper kurulumu: `pip install piper-tts`, ses modeli `tr_TR-dfki-medium` (Hugging Face `rhasspy/piper-voices`). Komut kullanımını `python3 -m piper --help` ile kontrol et. Ses dosyasını `wip/<id>/ses.wav` olarak kaydet, sahnede `meta.voice` ile bağla.
+- Piper kurulumu: `pip install piper-tts`, ses modeli `tr_TR-dfki-medium` (Hugging Face `rhasspy/piper-voices`). **Çalışmanın en başında** (senaryodan önce) modeli indirip kısa bir deneme cümlesi seslendir; olmazsa vakit kaybetmeden dur. İndirme reddedilirse hata mesajındaki ve yönlendirmelerdeki tam adresleri (`curl -sIL` ile) kanal sahibine bildir. Komut kullanımını `python3 -m piper --help` ile kontrol et. Ses dosyasını `wip/<id>/ses.wav` olarak kaydet, sahnede `meta.voice` ile bağla.
 - Piper kurulamazsa (ağ izni yoksa): seslendirmesiz devam etme. İşi `wip/`'e kaydet, panele "seslendirme kurulamadı: <hata>" yaz ve dur. Kullanıcıya hangi adreslerin ağ izin listesine eklenmesi gerektiğini bildir (pypi.org, files.pythonhosted.org, huggingface.co ve indirme sırasında yönlendirilen adresler).
 - **Ses kuralları:** Efektlerde 4 kHz üstü keskin tonlar yok (ding, bip, sparkle, zap, tick kullanma; gerekiyorsa alçak geçiren filtreyle yumuşat). Efekt seviyesi konuşmanın en az 10 dB altında. Müzik konuşma varken konuşmanın altında kalır. Son ses: -16 LUFS, tepe -1,5 dBTP (render aracı `loudnorm` uygular).
 
@@ -142,7 +142,7 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 
 Kullanıcı ajanı Claude'daki "Elektronik Shorts Ajanı" panelinden izler: `https://claude.ai/artifact/7zyMo4GPgxmwKbRWCZxTKt`
 Panel verisi panelin kendi veritabanında durur: `datasets/bolumler`, `datasets/konular`, `datasets/ayarlar`.
-Her çalışmanın sonunda (durulsa bile):
+Her çalışmanın sonunda **— durduğunda, hata aldığında veya hiçbir video üretmediğinde de —** önce `gunluk.md`'ye o çalışmanın satırını ekle (sonuç: `durdu`/`hata`, Not sütununda sebep), commit edip `claude/` dalına push et, sonra paneli güncelle. Kanal sahibi panelde her çalışmayı görmelidir.
 1. `python3 panel/panel_veri.py` → `panel/bolumler.json`, `panel/konular.json`
 2. Değişen her json için: Artifact publish (`url` = panel, `asset: true`, `file_path`) → yeni `/_blob/<id>`; `ArtifactData` `get` + `update` ile `datasets/<ad>` belgesinin `source.url`, `source.name`, `updated`, `edit` alanlarını güncelle; eski blobu sil.
 3. Panelin sayfasına (`files/index.html`) dokunma.
