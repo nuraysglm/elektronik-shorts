@@ -4,20 +4,16 @@
   "deger": "@NuraySaglamBedir"
  },
  {
-  "ayar": "Sıklık",
-  "deger": "Her gün 1 Short"
+  "ayar": "Konular",
+  "deger": "Kanal sahibinin verdiği listeye göre, sırayla"
  },
  {
-  "ayar": "Ajanın çalışma saati",
-  "deger": "Her gün 07:36 (Londra)"
- },
- {
-  "ayar": "Yayın saati",
-  "deger": "12:30 (Türkiye)"
+  "ayar": "Çalışma",
+  "deger": "Genel müdür başlatır (otomatik zamanlama kapalı)"
  },
  {
   "ayar": "Yayın modu",
-  "deger": "Tam otomatik"
+  "deger": "Onaylı: video kanal sahibinin onayından sonra yayınlanır"
  },
  {
   "ayar": "Yayın yolu",

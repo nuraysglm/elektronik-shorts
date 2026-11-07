@@ -81,7 +81,12 @@ const fps = +opt('fps', preview ? 15 : (meta.fps || 30));
 const t0 = +opt('from', 0), t1 = +opt('to', meta.duration);
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'kareler-'));
-const shot = (file) => page.screenshot({ path: file, type: 'png', clip: { x: 0, y: 0, width: W, height: H } });
+const cdp = await page.context().newCDPSession(page);
+// Hızlı PNG yakalama (page.screenshot'tan ~10 kat hızlı)
+const shot = async (file) => {
+  const r = await cdp.send('Page.captureScreenshot', { format: 'png', optimizeForSpeed: true, clip: { x: 0, y: 0, width: W, height: H, scale: 1 } });
+  fs.writeFileSync(file, Buffer.from(r.data, 'base64'));
+};
 
 try {
   if (stills) {
