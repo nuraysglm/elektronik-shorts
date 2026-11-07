@@ -18,9 +18,10 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 2. **Konu ve çözümler doğru olmalı.** Tanımlar, formüller, sayılar ve gösterilen davranışlar hatasız olmalı.
 3. **Görsel bozukluk olmamalı.** Titreme, nesnelerin iç içe geçmesi, kesilen yazı veya nesne, yanlış yerde duran parça, ani zıplama, okunmayan yazı olmamalı.
 4. **Rahatsız edici tiz sesler ve yüksek sesler olmamalı.** Keskin "bip", "ding", çınlama, cızırtı, ani yüksek efekt kullanılmaz. Efektler yumuşak ve düşük seviyede, müzik konuşmanın altında kalır.
-5. **Kurgu doğru olmalı.** Sahneler mantıklı sırayla ilerler; her yazı ve seslendirme, ekrandaki görüntüyle aynı anda aynı şeyi anlatır. Bir kavram gösterilmeden ondan bahsedilmez.
+5. **Kurgu doğru olmalı.** Sahneler mantıklı sırayla ilerler; her yazı ekrandaki görüntüyle aynı anda aynı şeyi anlatır. Bir kavram gösterilmeden ondan bahsedilmez.
 6. **Yazıların boyutu, rengi ve konumu doğru olmalı.** Telefonda rahat okunur, nesnelerin üstüne binmez, bir anda ekranda en fazla 2 satır.
 7. **Konu anlaşılır anlatılmalı.** Konuyu hiç bilmeyen bir lise öğrencisi videoyu izleyince anlamalı.
+8. **Türkçe seslendirme yeterince doğal değildi.** Kanal sahibinin kararı: videolarda **insan sesi / seslendirme kullanılmaz.** Anlatımı ekranda akan yazılar yapar (bölüm 6).
 
 ## 3. Teknik hat (değiştirme)
 
@@ -30,7 +31,7 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 | Ortak yapı taşları | `tools/lib/stage.js`: stüdyo, masa, malzemeler, `coil`, `wire`, `charges`, `magnet`, `led`, `pcb`, `orbit`, `text` |
 | Kare kare çalıştırma | `tools/render.mjs`: başsız Chromium (Playwright), her kare PNG, ffmpeg ile 1080×1920 H.264 |
 | Müzik ve efekt | `tools/audio.py`: numpy ile sentez; efektler sahnenin `meta.cues` zamanlarına yerleşir |
-| Seslendirme | Yerel, ücretsiz TTS: **Piper**, Türkçe ses `tr_TR-dfki-medium` (bkz. 6) |
+| Seslendirme | **Yok.** Kanal sahibinin kararı; Piper ve başka TTS kullanılmaz (bkz. 6) |
 
 Ekran kartı yok; WebGL işlemcide çalışır. **Denemeler düşük çözünürlükte, son render bir kez:**
 - Kare kontrolü: `node tools/render.mjs <sahne> --scale 0.4 --stills 1,4,8,... --out /tmp/k.png`, sonra görseli Read ile incele.
@@ -40,7 +41,7 @@ Ekran kartı yok; WebGL işlemcide çalışır. **Denemeler düşük çözünür
 
 Sahne dosyası şu şekli dışa aktarır:
 ```js
-export const meta = { title, duration, fps: 30, music: { bpm, key, gain }, cues: [{ t, kind, gain }], voice: 'wip/<id>/ses.wav', voice_at: 0 };
+export const meta = { title, duration, fps: 30, music: { off: true }, cues: [{ t, kind, gain }] };
 export function build(S) { /* nesneleri kur */ return (t) => { /* t anındaki durum */ }; }
 ```
 Zaman deterministiktir: `Date`, `Math.random`, `requestAnimationFrame` kullanılmaz; rastgelelik için `S.rng(seed)`.
@@ -55,7 +56,7 @@ Bir çalışma yaklaşık 30–40 dakikada kesilebilir. Uzun bir video tek çal�
    `node tools/render.mjs <sahne> --from <bas> --to <bit> --no-audio --out wip/<id>/parca-NN.mp4`
    Her parça bitince hemen commit + push et ve `NOTLAR.md`'de işaretle (`parca-03: tamam`). Parçalar küçük, sessiz MP4'lerdir; depoya konabilir.
 3. **Devam:** Her çalışmanın başında `wip/` ve `NOTLAR.md`'yi oku; yarım işi kaldığı yerden sürdür (yeni konuya geçme).
-4. **Birleştirme:** Tüm parçalar hazır olunca ffmpeg concat ile birleştir, sesi (`tools/audio.py` + seslendirme) ekle, `loudnorm` uygula → `media/<id>/<id>.mp4`. Sonra kalite kontrolü (bölüm 7) ve yayın.
+4. **Birleştirme:** Tüm parçalar hazır olunca ffmpeg concat ile birleştir, animasyon seslerini (`tools/audio.py`) ekle, `loudnorm` uygula → `media/<id>/<id>.mp4`. Sonra kalite kontrolü (bölüm 7) ve yayın.
 5. Parçalar ve kalite kontrolü bitip video yayınlanınca `wip/<id>/parca-*.mp4` dosyalarını sil (kontrol belgeleri kalır).
 6. Kesilmeden önce yetişemezsen bile son ara kayıt zaten yapılmış olmalı; kanal sahibi panelde işin nerede olduğunu görür.
 
@@ -69,18 +70,26 @@ Bir çalışma yaklaşık 30–40 dakikada kesilebilir. Uzun bir video tek çal�
 
 ## 5. Senaryo ve kurgu
 
-1. **Senaryoyu önce yaz:** `wip/<id>/senaryo.md`. Her sahne için: süre, ekranda ne görünüyor, ekrandaki yazı, seslendirme metni, efekt.
+1. **Senaryoyu önce yaz:** `wip/<id>/senaryo.md`. Her sahne için: süre, ekranda ne görünüyor, ekrandaki yazı (anlatım), efekt.
 2. Yapı: **Kanca** (0–3 sn, ilk karede görünür soru/iddia) → **Kavramlar** (her biri tek tek, görselle) → **İlişki/kural** (formül + gerçek değerlerle örnek) → **Özet** (tek cümle).
 3. Her yeni kavram önce görselle tanıtılır, sonra adı söylenir. Bir sahnede tek fikir.
-4. Seslendirme varsa yazılar seslendirmenin kısa özetidir, aynısı değildir. Seslendirme ile görüntü senkron olmalı.
+4. Seslendirme yok: senaryodaki her sahnenin "ekran yazısı" sütunu anlatımın kendisidir; izleyici sesi kapalı izlese de konuyu tam anlamalı.
 5. Konunun "gerekli bilgi" listesini senaryonun başına yaz ve videoda her maddenin geçtiğini işaretle.
 
-## 6. Ses
+## 6. Ses ve ekran yazıları (anlatım)
 
-- Açıklama gerekiyorsa **Türkçe seslendirme** kullan. Metin sade, doğal, öğretmen tonunda; cümleler kısa.
-- Piper kurulumu: `pip install piper-tts`, ses modeli `tr_TR-dfki-medium` (Hugging Face `rhasspy/piper-voices`). **Çalışmanın en başında** (senaryodan önce) modeli indirip kısa bir deneme cümlesi seslendir; olmazsa vakit kaybetmeden dur. İndirme reddedilirse hata mesajındaki ve yönlendirmelerdeki tam adresleri (`curl -sIL` ile) kanal sahibine bildir. Komut kullanımını `python3 -m piper --help` ile kontrol et. Ses dosyasını `wip/<id>/ses.wav` olarak kaydet, sahnede `meta.voice` ile bağla.
-- Piper kurulamazsa (ağ izni yoksa): seslendirmesiz devam etme. İşi `wip/`'e kaydet, panele "seslendirme kurulamadı: <hata>" yaz ve dur. Kullanıcıya hangi adreslerin ağ izin listesine eklenmesi gerektiğini bildir (pypi.org, files.pythonhosted.org, huggingface.co ve indirme sırasında yönlendirilen adresler).
-- **Ses kuralları:** Efektlerde 4 kHz üstü keskin tonlar yok (ding, bip, sparkle, zap, tick kullanma; gerekiyorsa alçak geçiren filtreyle yumuşat). Efekt seviyesi konuşmanın en az 10 dB altında. Müzik konuşma varken konuşmanın altında kalır. Son ses: -16 LUFS, tepe -1,5 dBTP (render aracı `loudnorm` uygular).
+**Ses:** Kanal sahibinin kararı: **yalnızca animasyon sesleri.** Seslendirme (insan sesi, TTS) ve arka plan müziği yok.
+- Efektler ekrandaki olaylara bağlıdır (anahtar kapanır → yumuşak tık, yük akmaya başlar → hafif uğultu, değer değişir → yumuşak pop, nesne yerine oturur → alçak "thud"). Olay yoksa ses yok; boş yerlere efekt serpiştirme.
+- Efektlerde 4 kHz üstü keskin tonlar yok (ding, bip, sparkle, zap, tick kullanma; gerekiyorsa alçak geçiren filtreyle yumuşat). Ani yüksek ses yok. Son ses: -16 LUFS civarı, tepe -1,5 dBTP altında (render aracı `loudnorm` uygular; sessiz anların yükseltilmemesine dikkat et).
+- Sahne `meta`: `music: { off: true }`, `voice` alanı yok.
+
+**Anlatım = ekranda akan yazılar.** Seslendirmenin yaptığı işi yazılar yapar:
+- Önemli her bilgi, sırası gelince ekranda yazı olarak belirir: kısa cümleler, bir anda tek fikir. Önceki satır yukarı kayarak/solarak yer açar; yeni satır aşağıdan akarak gelir (yumuşak geçiş, 0,3–0,4 sn).
+- **Okuma süresi:** Her yazı ekranda en az `1,2 sn + 0,35 sn × kelime sayısı` kalır. Senaryonun süresini yazıların okunma süresi belirler; acele ettirme.
+- Bir anda ekranda en fazla 2 satır anlatım yazısı + gerekirse 1 formül satırı.
+- Yazı, anlattığı olayla **aynı anda** görünür (ör. "Akım: telde akan yük" yazısı yükler akarken).
+- Anahtar kelimeler renkli: gerilim sarı (`hl`), akım kırmızı (`rd`), direnç mavi (`bl`). Sayılar ve birimler her zaman yazıyla da verilir (9 V, 450 Ω, 20 mA).
+- Yazılar bölüm 4'teki boyut, konum ve güvenli alan kurallarına uyar.
 
 ## 7. Kalite kontrolü (yayından önce zorunlu)
 
@@ -90,7 +99,7 @@ Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama;
 - Senaryodaki her iddia, tanım, formül ve sayı için `wip/<id>/dogruluk.md`'ye bir satır yaz: iddia → neden doğru (formül/hesap) → ✔.
 - Ekrandaki her sayı sahne kodunda hesaplanır ve `console.assert` ile bağımsız olarak doğrulanır.
 - "Gerekli bilgi" listesindeki her madde videoda var mı? Eksik varsa video eksiktir.
-- Mümkünse ayrı bir alt ajana (Agent aracı) yalnızca senaryoyu, seslendirme metnini ve kareleri ver; konunun doğru ve eksiksiz anlatılıp anlatılmadığını bağımsız değerlendirsin. Bulduklarını düzelt.
+- Mümkünse ayrı bir alt ajana (Agent aracı) yalnızca senaryoyu, ekran yazılarını ve kareleri ver; konunun doğru ve eksiksiz anlatılıp anlatılmadığını bağımsız değerlendirsin. Bulduklarını düzelt.
 
 **B. Görüntü**
 - Son render'dan her 1–2 saniyede bir kare çıkar (ffmpeg `fps=1`, karelerden kontak sayfaları) ve hepsini Read ile incele. Bölüm 2 ve 4'teki her kuralı kare kare kontrol et.
@@ -99,7 +108,8 @@ Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama;
 **C. Ses**
 - `ffmpeg -af ebur128` ile ölç: entegre ses yaklaşık -16 LUFS, tepe -1,5 dBTP altında.
 - `astats` ile ani tepe ara; 4 kHz üstü bant enerjisini kontrol et (`highpass=f=4000,volumedetect`); keskin tepe varsa efekti düzelt.
-- Seslendirme anlaşılır mı, kesik veya üst üste binen cümle var mı?
+- Videoda seslendirme veya müzik yok; yalnızca olaylara bağlı efektler var mı?
+- Her ekran yazısı okuma süresi kuralına uyuyor mu (karelerden zamanla kontrol et)?
 
 **D. Teknik**
 - `ffprobe`: 1080×1920, 30 fps, H.264 + AAC, süre senaryodakiyle aynı.
@@ -110,7 +120,8 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 
 - Konuları **kanal sahibi** verir; `konular.md` onun listesidir. Ajan listeye konu eklemez, çıkarmaz, sırasını değiştirmez.
 - Durumu `bekliyor` olan **ilk** konu işlenir. `bekliyor` konu yoksa hiçbir şey üretme; panele "konu listesi bitti" yaz, kanal sahibine "Yeni konu listesi bekleniyor" diye kısa bildirim gönder ve dur.
-- Durumu `yarım kaldı` olan bir konu varsa önce onu `wip/`'teki notlardan devam ettirerek bitir. Video kimliği: `NNN-kisa-ad` (ör. `001-akim-gerilim-direnc`).
+- Durumu `yarım kaldı` olan bir konu varsa önce onu `wip/`'teki notlardan devam ettirerek bitir.
+- Durumu `yeniden düzenle` olan bir konu varsa **her şeyden önce** onu ele al: mevcut sahneyi (`scenes/` veya `wip/`) ve kontrol belgelerini temel alarak kanal sahibinin yeni kurallarına göre düzenle, yeniden render et, kalite kontrolünden geçir. Metricool'da o konunun taslak gönderisi varsa (`konular.md` Notu'nda uuid yazar) yeni gönderi açma; `updateScheduledPost` ile o gönderinin videosunu yeni dosyayla değiştir, `draft: false`, `autoPublish: true` yap ve bölüm 9'daki sıradaki boş 16:00'a planla. Video kimliği: `NNN-kisa-ad` (ör. `001-akim-gerilim-direnc`).
 - Konunun başlığında birden fazla soru varsa (ör. "Nedir ve aralarında nasıl bir ilişki vardır?") hepsi videoda cevaplanır.
 
 ## 9. Yayın takvimi ve stok kuralı
@@ -157,7 +168,7 @@ Kalite kontrolünden (bölüm 7) geçmeyen video **asla** planlanmaz; kanal sahi
 2. **Güvenlik:** Metricool `getBrandSettings` ile `youtubeData == "UCAvE1cKeoIbIXCyIks-U81w"` olan markayı bul (`blogId`). Yoksa dur.
 2a. **Stok:** Bölüm 9'a göre planlanmış video sayısını say ve eski kayıtları güncelle. Stok 2 veya fazlaysa panelde `bolumler`'e `sonuc: "stok dolu"` kısa kaydını yaz ve dur.
 3. Konuyu seç, `claude/<video-id>` dalını aç.
-4. Senaryo → seslendirme → sahne kodu → kare kontrolü → hareket kontrolü → son render.
+4. Senaryo → sahne kodu (ekran yazıları dahil) → kare kontrolü → hareket kontrolü → son render.
 5. Kalite kontrolü (bölüm 7). Geçmezse düzelt.
 6. Sahneyi `scenes/`'e, videoyu ve kapağı `media/<id>/`'e koy; kontrol belgelerini `wip/<id>/`'de bırak; commit + push; main'de göründüğünü doğrula.
 7. Yayın takvimi (bölüm 9): sıradaki boş 16:00'a (Europe/London) planla — YouTube `short`, `privacy: public`, `madeForKids: false`, `category: EDUCATION`, başlık ≤ 60 karakter, açıklamada 2–3 cümle + `#elektronik #shorts` + 2–3 konu etiketi, `isAiGeneratedContent: false`.

@@ -2,11 +2,11 @@
 
 Konuları kanal sahibi verir. Ajan durumu `bekliyor` olan **ilk** satırı işler; listeye konu eklemez, çıkarmaz, sırasını değiştirmez.
 
-Durumlar: `bekliyor` · `yarım kaldı` · `onay bekliyor` (kanal sahibinin kararını bekliyor) · `planlandı` (yayın sırasında) · `yayında` · `inceleme` (ajan emin olamadı) · `atla`
+Durumlar: `bekliyor` · `yeniden düzenle` (kanal sahibi değişiklik istedi; öncelikli) · `yarım kaldı` · `onay bekliyor` (kanal sahibinin kararını bekliyor) · `planlandı` (yayın sırasında) · `yayında` · `inceleme` (ajan emin olamadı) · `atla`
 
 | # | Konu | Ana fikir (videonun öğrettiği) | Durum | Tarih |
 |---|------|--------------------------------|-------|-------|
-| 1 | Akım, gerilim, direnç nedir ve bunlar arasında nasıl bir ilişki vardır? | Akım, gerilim ve direncin tanımları ve birimleri; aralarındaki ilişki (Ohm yasası, V = I × R) | bekliyor | |
+| 1 | Akım, gerilim, direnç nedir ve bunlar arasında nasıl bir ilişki vardır? | Akım, gerilim ve direncin tanımları ve birimleri; aralarındaki ilişki (Ohm yasası, V = I × R). YENİDEN DÜZENLE: seslendirmeyi kaldır, anlatımı ekranda akan yazılarla yap, yalnızca animasyon sesleri. Metricool taslak uuid: -6337869256101248003 | yeniden düzenle | |
 | 2 | Elektrik yükü, akım ve gerilim | Temel Devre Teorisi I, ders 1: başlıktaki konular; 1 numaralı videoyu tekrar etme, elektrik yüküne ağırlık ver | bekliyor | |
 | 3 | Gerilim kaynağı ve akım kaynağı | Temel Devre Teorisi I, ders 2: başlıktaki konular | bekliyor | |
 | 4 | Bağımlı kaynaklar, Ohm yasası ve akım-gerilim (I–V) karakteristikleri | Temel Devre Teorisi I, ders 3: başlıktaki konular | bekliyor | |
