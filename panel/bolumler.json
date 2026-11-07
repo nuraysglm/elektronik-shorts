@@ -10,5 +10,17 @@
   "metricool": null,
   "video": null,
   "not": "seslendirme kurulamadı: huggingface.co ağ izin listesinde değil (CONNECT 403); piper-tts pip ile kuruldu, tr_TR-dfki-medium modeli inemedi. İzin gereken: huggingface.co (+ indirme yönlendirmeleri, örn. cdn-lfs*.huggingface.co, cas-bridge.xethub.hf.co)"
+ },
+ {
+  "tarih": "2026-11-08",
+  "no": 1,
+  "konu": "Akım, gerilim, direnç",
+  "baslik": "Akım, Gerilim, Direnç ve Ohm Yasası",
+  "sablon": null,
+  "sonuc": "planlandı",
+  "yayin": "2026-11-08 01:32 (TR)",
+  "metricool": "https://app.metricool.com/planner/calendar?blogId=7697516&openWithPostUuid=-6337869256101248003",
+  "video": "https://raw.githubusercontent.com/nuraysglm/elektronik-shorts/main/media/001-akim-gerilim-direnc/001-akim-gerilim-direnc.mp4",
+  "not": "104 sn; kalite kontrolü 2. turda geçti (geçişteki ara etiket değerleri ve üst yazıya binen pil düzeltildi)"
  }
 ]

@@ -6,4 +6,4 @@ Durumlar: `bekliyor` · `onay bekliyor` (video hazır, kanal sahibinin onayını
 
 | # | Konu | Ana fikir (videonun öğrettiği) | Durum | Tarih |
 |---|------|--------------------------------|-------|-------|
-| 1 | Akım, gerilim, direnç nedir ve bunlar arasında nasıl bir ilişki vardır? | Akım, gerilim ve direncin tanımları ve birimleri; aralarındaki ilişki (Ohm yasası, V = I × R) | bekliyor | |
+| 1 | Akım, gerilim, direnç nedir ve bunlar arasında nasıl bir ilişki vardır? | Akım, gerilim ve direncin tanımları ve birimleri; aralarındaki ilişki (Ohm yasası, V = I × R) | yayında | 2026-11-08 |
