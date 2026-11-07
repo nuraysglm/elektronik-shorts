@@ -1,0 +1,28 @@
+[
+ {"id":"h1","gap":0.3,"text":"Elektrik devresinde üç temel kavram vardır: akım, gerilim ve direnç."},
+ {"id":"h2","gap":0.5,"text":"Aralarındaki ilişki ise çok basittir."},
+
+ {"id":"a1","gap":0.4,"text":"Önce akım. Şu küreler, telin içinde akan elektrik yükleridir."},
+ {"id":"a2","gap":0.4,"text":"Telin bir noktasından her saniye ne kadar yük geçerse, akım o kadar büyüktür."},
+ {"id":"a3","gap":0.4,"text":"Yük miktarı kulonla ölçülür. Saniyede bir kulon yük geçerse, akım bir amperdir."},
+ {"id":"a4","gap":0.7,"text":"Akımın harfi I, birimi amperdir."},
+
+ {"id":"g1","gap":0.4,"text":"Şimdi gerilim. Yükleri harekete geçiren, pilin itme gücüdür."},
+ {"id":"g2","gap":0.4,"text":"Gerilim ne kadar büyükse, yükler o kadar güçlü itilir."},
+ {"id":"g3","gap":0.7,"text":"Gerilimin harfi V, birimi volttur. Bu pil dokuz volttur."},
+
+ {"id":"d1","gap":0.4,"text":"Son olarak direnç. Direnç, yüklerin yoluna çıkan engeldir."},
+ {"id":"d2","gap":0.4,"text":"Yükler buradan geçerken engellere çarpar ve zorlanır."},
+ {"id":"d3","gap":0.7,"text":"Direncin harfi R, birimi ohmdur. Bu direnç dört yüz elli ohmdur."},
+
+ {"id":"o1","gap":0.4,"text":"Peki üçü arasında nasıl bir ilişki var? Buna Ohm yasası denir."},
+ {"id":"o2","gap":0.4,"text":"Gerilim, akım çarpı dirence eşittir."},
+ {"id":"o3","gap":0.4,"text":"Akımı bulmak için, gerilimi dirence böleriz."},
+ {"id":"o4","gap":0.6,"text":"Dokuz volt bölü dört yüz elli ohm, yirmi miliamper eder. Yirmi miliamper, amperin binde yirmisi demektir."},
+ {"id":"o5","gap":0.6,"text":"Gerilimi iki katına çıkaralım: on sekiz volt. Akım da iki katına çıkıp kırk miliamper olur."},
+ {"id":"o6","gap":0.6,"text":"Şimdi gerilimi dokuz volta geri alıp, direnci iki katına çıkaralım: dokuz yüz ohm. Bu sefer akım yarıya inip on miliamper olur."},
+ {"id":"o7","gap":0.7,"text":"Yani gerilim arttıkça akım artar, direnç arttıkça akım azalır."},
+
+ {"id":"s1","gap":0.4,"text":"Özetle: gerilim iter, direnç zorlar, akım akar."},
+ {"id":"s2","gap":0.0,"text":"Üçü de V eşittir I çarpı R ile bağlanır."}
+]

@@ -34,7 +34,7 @@ const stills = opt('stills', null);
 
 // ---------------------------------------------------------------- Playwright bul
 async function loadPlaywright() {
-  const tries = ['playwright', '/opt/npm-tools/node_modules/playwright/index.mjs', path.join(ROOT, 'node_modules/playwright/index.mjs')];
+  const tries = ['playwright', '/opt/node22/lib/node_modules/playwright/index.mjs', '/opt/node-tools/node_modules/playwright/index.mjs', '/opt/npm-tools/node_modules/playwright/index.mjs', path.join(ROOT, 'node_modules/playwright/index.mjs')];
   for (const t of tries) { try { return await import(t); } catch {} }
   throw new Error('Playwright bulunamadı. `npm i playwright` veya sistemdeki kurulumu kullan.');
 }
