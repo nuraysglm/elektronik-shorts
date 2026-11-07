@@ -144,7 +144,7 @@ def music(duration, bpm=92, key="A", gain=0.8, seed=0):
 
 
 # ------------------------------------------------------------------ efektler
-def sfx(kind, seed=1):
+def sfx(kind, seed=1, d=None):
     rng = np.random.default_rng(seed)
     if kind == "click":
         n = int(0.06 * SR)
@@ -185,7 +185,13 @@ def sfx(kind, seed=1):
             tone = 0.12 * np.sin(2 * np.pi * f * t) * env(len(t), 0.002, 0.18)
             out[s:s + len(tone)] += tone[: len(out) - s]
         return out
-    if kind == "hum":  # elektrik vızıltısı (50 Hz ve harmonikleri), 1 sn
+    if kind == "hum":  # elektrik vızıltısı (50 Hz ve harmonikleri); d verilirse o süre kadar, yumuşak girip çıkar
+        if d:
+            t = t_axis(d)
+            x = sum(np.sin(2 * np.pi * 50 * h * t) / h for h in (1, 2, 3, 5))
+            fi, fo = int(min(0.4, d / 2) * SR), int(min(0.4, d / 2) * SR)
+            e = np.ones(len(t)); e[:fi] = np.linspace(0, 1, fi) ** 2; e[-fo:] *= np.linspace(1, 0, fo) ** 2
+            return 0.12 * x * e
         t = t_axis(1.0)
         x = sum(np.sin(2 * np.pi * 50 * h * t) / h for h in (1, 2, 3, 5))
         return 0.12 * x * env(len(t), 0.08, 2, 1, 0.2)
@@ -222,7 +228,7 @@ def main(cues_path, out_path):
         t = float(q["t"]) - off
         if t < 0 or t >= dur:
             continue
-        s = sfx(q["kind"], seed=i + 1) * float(q.get("gain", 1.0))
+        s = sfx(q["kind"], seed=i + 1, d=q.get("d")) * float(q.get("gain", 1.0))
         a = int(t * SR)
         e = min(n, a + len(s))
         mix[a:e] += s[: e - a]

@@ -1,9 +1,49 @@
 // 001 — Akım, gerilim, direnç nedir ve aralarındaki ilişki (Ohm yasası)
 // Tek devre: pil → bakır tel → direnç → pil. Akım kırmızı küreler, gerilim sarı, direnç mavi.
-// Zamanlar seslendirmeden gelir (zaman.js, tools/sesle.py çıktısı).
+// Seslendirme yok: anlatımı ekranda akan yazılar yapar; zamanlar yazıların okuma süresinden gelir (AGENT.md bölüm 6).
 
 import { clamp, seg, easeInOut, easeOut, fade, lerp, RoundedBoxGeometry } from '../tools/lib/stage.js';
-import { Z, DUR } from './001-akim-gerilim-direnc-zaman.js';
+
+// ---------------------------------------------------------------- anlatım yazıları (sıra = zaman)
+// Her yazı: en az 1,2 sn + 0,35 sn × kelime kalır. Süre aynı kalır (DUR); fazla zaman yazılara orantılı dağıtılır.
+const DUR = 104.089;
+const hl = (x) => `<span class="hl">${x}</span>`, rd = (x) => `<span class="rd">${x}</span>`, bl = (x) => `<span class="bl">${x}</span>`;
+const BEATS = [
+  { id: 'h1', l1: `${rd('Akım')}, ${hl('gerilim')}, ${bl('direnç')}`, l2: 'nedir? İlişkileri nasıl?', s1: 6.6, s2: 5.2 },
+  { id: 'h2', l1: 'Üç kavram, tek ilişki', l2: 'ilişki çok basit', s1: 6.6, s2: 5.4 },
+  { id: 'a1', l1: rd('Akım'), l2: 'kapalı devrede dolaşan yük', s1: 9 },
+  { id: 'a2', l1: 'Saniyede geçen yük', l2: `çoksa ${rd('akım büyüktür')}`, s1: 7 },
+  { id: 'a3', l1: `Q = yük miktarı`, l2: 'birimi: kulon (C)', s1: 7.4 },
+  { id: 'a3b', l1: `${rd('I')} = Q / t`, l2: 'kulon ÷ saniye = amper', s1: 9.5 },
+  { id: 'a4', l1: `${rd('I')} = akım`, l2: 'birimi: amper (A)', s1: 9 },
+  { id: 'g1', l1: hl('Gerilim'), l2: 'pilin yükleri iten etkisi', s1: 9 },
+  { id: 'g2', l1: `Büyük ${hl('gerilim')}`, l2: 'daha güçlü itme', s1: 8 },
+  { id: 'g3', l1: `${hl('V')} = gerilim`, l2: 'birimi: volt (V)', s1: 8.6 },
+  { id: 'd1', l1: bl('Direnç'), l2: 'yükün yolundaki engel', s1: 9 },
+  { id: 'd2', l1: 'Yükler engele çarpar', l2: `ve ${bl('zorlanır')}`, s1: 7 },
+  { id: 'd3', l1: `${bl('R')} = direnç`, l2: 'birimi: ohm (Ω)', s1: 8.6 },
+  { id: 'o1', l1: `${hl('Ohm')} yasası`, l2: 'üçü arasındaki ilişki', s1: 8.4 },
+  { id: 'o2', l1: `${hl('V')} = ${rd('I')} × ${bl('R')}`, l2: 'gerilim = akım × direnç', s1: 10, s2: 5.2 },
+  { id: 'o3', l1: `${rd('I')} = ${hl('V')} / ${bl('R')}`, l2: 'akım = gerilim ÷ direnç', s1: 10, s2: 5.2 },
+  { id: 'o4', l1: `1 ${rd('mA')} = 0,001 ${rd('A')}`, l2: 'amperin binde biri', s1: 8.4 },
+  { id: 'o4b', l1: `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, l2: `= 0,02 A = ${rd('20 mA')}`, s1: 8, s2: 6 },
+  { id: 'o5', l1: 'Seri ikinci pil', l2: `${hl('9 V')} + ${hl('9 V')} = ${hl('18 V')}`, s1: 7.6, s2: 6 },
+  { id: 'o5b', l1: `${rd('I')} = ${hl('18 V')} / ${bl('450 Ω')}`, l2: `= ${rd('40 mA')}, akım 2 kat`, s1: 8, s2: 5.8 },
+  { id: 'o6', l1: 'Pil çıkar, seri direnç', l2: `${bl('450 Ω')} + ${bl('450 Ω')} = ${bl('900 Ω')}`, s1: 6.6, s2: 5.6 },
+  { id: 'o6b', l1: `${rd('I')} = ${hl('9 V')} / ${bl('900 Ω')}`, l2: `= ${rd('10 mA')}, akım yarıya iner`, s1: 8, s2: 5.4 },
+  { id: 'o7', l1: `${hl('V')} artarsa ${rd('I')} artar`, l2: `(${bl('R')} sabitken)`, s1: 8, s2: 6 },
+  { id: 'o7b', l1: `${bl('R')} artarsa ${rd('I')} azalır`, l2: `(${hl('V')} sabitken)`, s1: 8, s2: 6 },
+  { id: 's1', l1: `${hl('Gerilim')} iter,`, l2: `${bl('direnç')} engeller, ${rd('akım')} akar`, s1: 8.4, s2: 5.4 },
+  { id: 's2', l1: `${hl('V')} = ${rd('I')} × ${bl('R')}`, l2: 'Ohm yasası', s1: 10.5, s2: 5.6 },
+];
+const wordsOf = (b) => (b.l1 + ' ' + b.l2).replace(/<[^>]+>/g, '').split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
+const minSec = (b) => 1.2 + 0.35 * wordsOf(b);
+const SUM_MIN = BEATS.reduce((a, b) => a + minSec(b), 0);
+console.assert(SUM_MIN <= DUR, `yazıların okuma süresi toplamı ${SUM_MIN.toFixed(1)} sn > video süresi`);
+const Z = {};
+{ const k = DUR / SUM_MIN; let t = 0;
+  for (const b of BEATS) { const d = minSec(b) * k; Z[b.id] = [t, t + d]; t += d;
+    console.assert(d >= minSec(b) - 1e-9, `${b.id}: okuma süresi yetersiz`); } }
 
 // ---------------------------------------------------------------- fizik ve bağımsız doğrulama
 const V0 = 9, R0 = 450;               // pil 9 V, direnç 450 Ω (sarı-yeşil-kahverengi: 4,5,×10)
@@ -19,22 +59,30 @@ export const meta = {
   title: 'Akım, gerilim, direnç nedir? (Ohm yasası)',
   duration: DUR,
   fps: 30,
-  music: { bpm: 84, key: 'A', gain: 0.5 },
-  voice: 'wip/001-akim-gerilim-direnc/ses.wav',
-  voice_at: 0,
+  music: { off: true },
+  // yalnızca olaylara bağlı efektler: akış uğultusu (akıma göre seviye), yumuşak pop (yeni kavram/değer), alçak thud (parça yerine oturur)
   cues: [
-    { t: 0.1, kind: 'hum', gain: 0.35 },
-    { t: Z.a4[0] + 0.1, kind: 'pop', gain: 0.3 },
-    { t: Z.g3[0] + 2.2, kind: 'pop', gain: 0.3 },
-    { t: Z.d3[0] + 2.2, kind: 'pop', gain: 0.3 },
-    { t: Z.o5[0] + 1.5 + 0.55, kind: 'thud', gain: 0.25 },
-    { t: Z.o6[0] + 2.4 + 0.55, kind: 'thud', gain: 0.25 },
+    { t: 0.1, kind: 'hum', d: Z.o5[0] + 0.3 - 0.1 + 0.4, gain: 0.5 },                                   // 20 mA akış
+    { t: Z.o5[0] + 0.3, kind: 'hum', d: Z.o6[0] + 0.1 - Z.o5[0] - 0.3 + 0.4, gain: 0.8 },               // 2. pil: 40 mA
+    { t: Z.o6[0] + 0.1, kind: 'hum', d: Z.o6[0] + 0.9 + 0.9 - Z.o6[0] - 0.1 + 0.4, gain: 0.5 },        // 2. pil çıktı: 20 mA
+    { t: Z.o6[0] + 1.8, kind: 'hum', d: DUR - Z.o6[0] - 1.8 - 0.4, gain: 0.3 },                         // 900 Ω: 10 mA
+    { t: Z.a2[0], kind: 'pop', gain: 0.3 },                                                             // kesit halkası
+    { t: Z.a4[0], kind: 'pop', gain: 0.3 },                                                             // I etiketi
+    { t: Z.g1[0], kind: 'pop', gain: 0.3 },                                                             // pil parlar
+    { t: Z.g3[0] + 0.8, kind: 'pop', gain: 0.3 },                                                       // V = 9 V
+    { t: Z.d1[0], kind: 'pop', gain: 0.3 },                                                             // direnç parlar
+    { t: Z.d3[0] + 0.8, kind: 'pop', gain: 0.3 },                                                       // R = 450 Ω
+    { t: Z.o4b[0], kind: 'pop', gain: 0.3 },                                                            // I = 20 mA
+    { t: Z.o5[0] + 0.3 + 0.55, kind: 'thud', gain: 0.25 },                                              // 2. pil oturur
+    { t: Z.o5[0] + 0.3 + 1.0, kind: 'pop', gain: 0.3 },                                                 // 18 V, 40 mA
+    { t: Z.o6[0] + 0.9 + 0.55, kind: 'thud', gain: 0.25 },                                              // 2. direnç oturur
+    { t: Z.o6[0] + 0.9 + 1.0, kind: 'pop', gain: 0.3 },                                                 // 900 Ω, 10 mA
   ],
 };
 
 // ---------------------------------------------------------------- akım zamanı (mA) ve görsel hız
-const T_B2_IN = Z.o5[0] + 1.5, T_B2_OUT = Z.o6[0] + 0.7;      // 2. pil takılı: [T_B2_IN, T_B2_OUT]
-const T_R2_IN = Z.o6[0] + 2.4;                                 // 2. direnç takılı: sonrası
+const T_B2_IN = Z.o5[0] + 0.3, T_B2_OUT = Z.o6[0] + 0.1;      // 2. pil takılı: [T_B2_IN, T_B2_OUT]
+const T_R2_IN = Z.o6[0] + 0.9;                                 // 2. direnç takılı: sonrası
 const DROP = 0.9;
 const b2 = (t) => easeOut(seg(t, T_B2_IN, T_B2_IN + DROP)) * (1 - easeInOut(seg(t, T_B2_OUT, T_B2_OUT + 0.5)));
 const r2 = (t) => easeOut(seg(t, T_R2_IN, T_R2_IN + DROP));
@@ -215,39 +263,19 @@ export function build(S) {
     S.camera.updateMatrixWorld();
   }
 
-  // ------------------------------------------------ üst yazılar
-  const top = (id, t0, t1, l1, l2, { s1 = 7.4, s2 = 5.4, d = 0.2 } = {}) => (t) => {
-    const o = fade(t, t0, t1, d);
-    S.text(id + 'a', l1, { y: 9, size: s1, opacity: o, maxWidth: 94, nowrap: true });
-    S.text(id + 'b', l2 || '', { y: 17.5, size: s2, weight: 700, opacity: l2 ? o : 0, maxWidth: 94, nowrap: true });
-  };
-  const hl = (s) => `<span class="hl">${s}</span>`, rd = (s) => `<span class="rd">${s}</span>`, bl = (s) => `<span class="bl">${s}</span>`;
-  const topDefs = [
-    top('h', 0, Z.a1[0], `${rd('Akım')}, ${hl('gerilim')},`, `${bl('direnç')} nedir? Aralarında ne ilişki var?`, { s1: 8.4, s2: 4.6 }),
-    top('a1', Z.a1[0], Z.a2[0], rd('Akım'), 'kapalı devrede dolaşan yükler', { s1: 9 }),
-    top('a2', Z.a2[0], Z.a3[0], 'Saniyede geçen yük', `çoksa ${rd('akım büyüktür')}`),
-    top('a3', Z.a3[0], Z.a4[0], `${rd('I')} = Q / t`, '1 kulon ÷ 1 saniye = 1 amper', { s1: 9, s2: 4.6 }),
-    top('a4', Z.a4[0], Z.g1[0], `${rd('I')} = akım`, 'birimi: amper (A)'),
-    top('g1', Z.g1[0], Z.g2[0], hl('Gerilim'), 'yükleri iten etki', { s1: 9 }),
-    top('g2', Z.g2[0], Z.g3[0], `Büyük ${hl('gerilim')}`, 'daha güçlü itme'),
-    top('g3', Z.g3[0], Z.d1[0], `${hl('V')} = gerilim`, 'birimi: volt (V)'),
-    top('d1', Z.d1[0], Z.d2[0], bl('Direnç'), 'yükün yolundaki engel', { s1: 9 }),
-    top('d2', Z.d2[0], Z.d3[0], 'Yükler engellere çarpar', `ve ${bl('zorlanır')}`, { s1: 6.6 }),
-    top('d3', Z.d3[0], Z.o1[0], `${bl('R')} = direnç`, 'birimi: ohm (Ω)'),
-    top('o1', Z.o1[0], Z.o2[0], `${hl('Ohm')} yasası`, 'üçü arasındaki ilişki', { s1: 8.4 }),
-    top('o2', Z.o2[0], Z.o3[0], `${hl('V')} = ${rd('I')} × ${bl('R')}`, 'gerilim = akım × direnç', { s1: 10, s2: 5 }),
-    top('o3', Z.o3[0], Z.o4[0], `${rd('I')} = ${hl('V')} / ${bl('R')}`, 'akım = gerilim ÷ direnç', { s1: 10, s2: 5 }),
-    top('o4', Z.o4[0], T_B2_IN + 0.2, `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
-    top('o5', T_B2_IN + 0.2, T_B2_OUT + 0.25, `${rd('I')} = ${hl('18 V')} / ${bl('450 Ω')}`, `= 0,04 A = ${rd('40 mA')} (2 kat)`, { s1: 8, s2: 6.2 }),
-    top('o6a', T_B2_OUT + 0.25, T_R2_IN + 0.2, `${rd('I')} = ${hl('9 V')} / ${bl('450 Ω')}`, `= 0,02 A = ${rd('20 mA')}`, { s1: 8, s2: 6.2 }),
-    top('o6', T_R2_IN + 0.2, Z.o7[0], `${rd('I')} = ${hl('9 V')} / ${bl('900 Ω')}`, `= 0,01 A = ${rd('10 mA')} (yarısı)`, { s1: 8, s2: 6.2 }),
-    top('o7', Z.o7[0], Z.s1[0], `${hl('V')} artarsa ${rd('I')} artar`, `${bl('R')} artarsa ${rd('I')} azalır`, { s1: 7, s2: 7 }),
-    top('s1', Z.s1[0], Z.s2[0], `${hl('Gerilim')} iter,`, `${bl('direnç')} engeller, ${rd('akım')} akar`, { s1: 8, s2: 5.4 }),
-    top('s2', Z.s2[0], DUR + 1, `${hl('V')} = ${rd('I')} × ${bl('R')}`, 'Ohm yasası', { s1: 10.5, s2: 5.4 }),
-  ];
-
-  // bir yazı, bir sonrakinin başladığı ana kadar kalır (boş ekran kalmaz)
-  const tops = topDefs;
+  // ------------------------------------------------ üst yazılar (akan anlatım)
+  // Önceki yazı yukarı kayarak solar (0,3 sn), yenisi aşağıdan akarak gelir (0,35 sn); aynı anda iki yazı yok.
+  const tops = BEATS.map((bt, i) => {
+    const [t0, t1] = Z[bt.id], last = i === BEATS.length - 1;
+    return (t) => {
+      const inn = i === 0 ? 1 : easeOut(seg(t, t0, t0 + 0.35));
+      const out = last ? 0 : easeInOut(seg(t, t1 - 0.3, t1));
+      const o = t >= t0 && t < t1 + 0.001 ? clamp(inn * (1 - out)) : 0;
+      const dy = (1 - inn) * 3.2 - out * 3.2;
+      S.text(bt.id + 'a', bt.l1, { y: 9 + dy, size: bt.s1 || 7.4, opacity: o, maxWidth: 94, nowrap: true });
+      S.text(bt.id + 'b', bt.l2, { y: 17.5 + dy, size: bt.s2 || 5.4, weight: 700, opacity: o, maxWidth: 94, nowrap: true });
+    };
+  });
   // ------------------------------------------------ kare fonksiyonu
   return (t) => {
     cam(t);
@@ -283,7 +311,7 @@ export function build(S) {
     charges.instanceMatrix.needsUpdate = true;
 
     // halka: akımı anlatırken görünür
-    const ringOp = fade(t, Z.a2[0] - 0.1, Z.a4[1] + 0.2, 0.4);
+    const ringOp = fade(t, Z.a2[0] - 0.1, Z['a4'][1] + 0.2, 0.4);
     ringMat.opacity = ringOp * (0.35 + 0.65 * pulse);
 
     // vurgular
@@ -298,17 +326,17 @@ export function build(S) {
     for (const f of tops) f(t);
 
     // nesne etiketleri
-    const vShow = t >= Z.g3[0] + 2.0;
-    const rShow = t >= Z.d3[0] + 2.0;
+    const vShow = t >= Z.g3[0] + 0.8;
+    const rShow = t >= Z.d3[0] + 0.8;
     const iShow = t >= Z.a4[0];
     const ohm = t >= Z.o1[0];
     // etiketler yalnızca gerçek devre değerlerini gösterir (geçişte ara değer yok): pil/direnç yerine oturunca değişir
     const v = V0 * (b2(t) > 0.5 ? 2 : 1), r = R0 * (r2(t) > 0.5 ? 2 : 1);
     const num = (x) => (Math.round(x) + '');
-    label('lv', `<span class="hl">${ohm ? 'V = ' + num(v) + ' V' : 'V = ' + num(v) + ' V'}</span>`, 0.0, 0.45, ZH - 0.6, { opacity: vShow ? easeOut(seg(t, Z.g3[0] + 2.0, Z.g3[0] + 2.4)) : 0, size: 5.4 });
-    label('lr', `<span class="bl">R = ${num(r)} Ω</span>`, -0.3, 0.45, lerp(RES1_Z + 0.12, (RES1_Z + RES2_Z) / 2, q2), { opacity: rShow ? easeOut(seg(t, Z.d3[0] + 2.0, Z.d3[0] + 2.4)) : 0, size: 5.4 });
-    const iTxt = ohm ? `I = ${num((v / r) * 1000)} mA` : 'I';
+    label('lv', `<span class="hl">${ohm ? 'V = ' + num(v) + ' V' : 'V = ' + num(v) + ' V'}</span>`, 0.0, 0.45, ZH - 0.6, { opacity: vShow ? easeOut(seg(t, Z.g3[0] + 0.8, Z.g3[0] + 1.2)) : 0, size: 5.4 });
+    label('lr', `<span class="bl">R = ${num(r)} Ω</span>`, -0.3, 0.45, lerp(RES1_Z + 0.12, (RES1_Z + RES2_Z) / 2, q2), { opacity: rShow ? easeOut(seg(t, Z.d3[0] + 0.8, Z.d3[0] + 1.2)) : 0, size: 5.4 });
+    const iTxt = t >= Z.o4b[0] ? `I = ${num((v / r) * 1000)} mA` : 'I';
     console.assert([10, 20, 40].includes(Math.round((v / r) * 1000)), 'etiket akımı 10/20/40 mA olmalı');
-    label('li', `<span class="rd">${iTxt}</span>`, X - 0.5, 0.5, RING_Z + 0.2, { opacity: iShow ? easeOut(seg(t, Z.a4[0], Z.a4[0] + 0.4)) : 0, size: ohm ? 5.4 : 6.4 });
+    label('li', `<span class="rd">${iTxt}</span>`, X - 0.5, 0.5, RING_Z + 0.2, { opacity: iShow ? easeOut(seg(t, Z.a4[0], Z.a4[0] + 0.4)) : 0, size: t >= Z.o4b[0] ? 5.4 : 6.4 });
   };
 }
