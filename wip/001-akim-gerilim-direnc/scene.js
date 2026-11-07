@@ -24,11 +24,11 @@ export const meta = {
   voice_at: 0,
   cues: [
     { t: 0.1, kind: 'hum', gain: 0.35 },
-    { t: Z.a4[0] + 0.1, kind: 'pop', gain: 0.35 },
-    { t: Z.g3[0] + 2.2, kind: 'pop', gain: 0.35 },
-    { t: Z.d3[0] + 2.2, kind: 'pop', gain: 0.35 },
-    { t: Z.o5[0] + 1.5 + 0.55, kind: 'thud', gain: 0.45 },
-    { t: Z.o6[0] + 2.4 + 0.55, kind: 'thud', gain: 0.45 },
+    { t: Z.a4[0] + 0.1, kind: 'pop', gain: 0.3 },
+    { t: Z.g3[0] + 2.2, kind: 'pop', gain: 0.3 },
+    { t: Z.d3[0] + 2.2, kind: 'pop', gain: 0.3 },
+    { t: Z.o5[0] + 1.5 + 0.55, kind: 'thud', gain: 0.25 },
+    { t: Z.o6[0] + 2.4 + 0.55, kind: 'thud', gain: 0.25 },
   ],
 };
 

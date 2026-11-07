@@ -57,6 +57,10 @@ function serve() {
   });
 }
 
+// numpy kurulu Python'u bul (sistemde birden çok python3 olabilir)
+const PY = process.env.PYTHON || ['python3', 'python3.13', 'python3.12', 'python3.11']
+  .find((p) => spawnSync(p, ['-c', 'import numpy'], { stdio: 'ignore' }).status === 0) || 'python3';
+
 function run(cmd, args) {
   const r = spawnSync(cmd, args, { stdio: ['ignore', 'inherit', 'inherit'] });
   if (r.status !== 0) throw new Error(`${cmd} başarısız (${r.status})`);
@@ -117,10 +121,12 @@ try {
     if (flag('no-audio') || preview) {
       fs.copyFileSync(silent, out);
     } else {
+      // ses adımı başarısız olursa saatlerce süren render kaybolmasın: sessiz videoyu önce sakla
+      fs.copyFileSync(silent, out.replace(/\.mp4$/, '') + '.sessiz.mp4');
       const cues = path.join(tmp, 'cues.json');
       fs.writeFileSync(cues, JSON.stringify({ duration: t1 - t0, offset: t0, ...meta }));
       const wav = path.join(tmp, 'ses.wav');
-      run('python3', [path.join(ROOT, 'tools/audio.py'), cues, wav]);
+      run(PY, [path.join(ROOT, 'tools/audio.py'), cues, wav]);
       run('ffmpeg', ['-y', '-loglevel', 'error', '-i', silent, '-i', wav, '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
         '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart', out]);
     }
