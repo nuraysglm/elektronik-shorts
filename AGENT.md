@@ -144,7 +144,7 @@ Kullanıcı ajanı Claude'daki "Elektronik Shorts Ajanı" panelinden izler: `htt
 Panel verisi panelin kendi veritabanında durur: `datasets/bolumler`, `datasets/konular`, `datasets/ayarlar`.
 Her çalışmanın sonunda **— durduğunda, hata aldığında veya hiçbir video üretmediğinde de —** önce `gunluk.md`'ye o çalışmanın satırını ekle (sonuç: `durdu`/`hata`, Not sütununda sebep), commit edip `claude/` dalına push et, sonra paneli güncelle. Kanal sahibi panelde her çalışmayı görmelidir.
 1. `python3 panel/panel_veri.py` → `panel/bolumler.json`, `panel/konular.json`
-2. Değişen her json için: Artifact publish (`url` = panel, `asset: true`, `file_path`) → yeni `/_blob/<id>`; `ArtifactData` `get` + `update` ile `datasets/<ad>` belgesinin `source.url`, `source.name`, `updated`, `edit` alanlarını güncelle; eski blobu sil.
+2. Değişen her json için: Artifact publish (`url` = panel, `asset: true`, `file_path`) → yeni `/_blob/<id>`; `ArtifactData` `get` + `update` ile `datasets/<ad>` belgesinin `source.url`, `source.name`, `updated`, `edit` alanlarını güncelle. Eski blobu silme (izin isteği çıkarır; eski dosyalar zararsızdır).
 3. Panelin sayfasına (`files/index.html`) dokunma.
 
 `gunluk.md` sonuç değerleri: `planlandı`, `onay bekliyor`, `inceleme`, `yarım kaldı`, `hata`, `durdu`.
