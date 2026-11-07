@@ -11,7 +11,13 @@
 - [x] Gerilim 2 katı → akım 2 katı (o5); direnç 2 katı → akım yarısı (o6); genel kural (o7)
 - [x] Özet (s1, s2)
 
-## Sahneler (süreler seslendirmeden: zaman.json)
+## Alt ajan değerlendirmesi sonrası düzeltmeler
+- "itme gücü" → "itme etkisi" (güç = watt ile karışmasın); "direnç zorlar" → "direnç engeller"
+- o5/o6: ikinci pil ve ikinci direncin seri eklendiği seslendirmede söyleniyor; miliamper önce tanımlanıyor; o7'de "diğeri sabitken" koşulu
+- a1: "kapalı devrede dolaşan" (devrenin kapalı olduğu)
+- Harf okunuşları Piper fonem çıktısıyla kontrol edildi: I → ı, V → ve, R → re
+
+## Sahneler (süreler seslendirmeden: zaman.json; aşağıdaki saniyeler ilk taslaktan, güncel zamanlar zaman.json'da)
 Tek devre: 9 V pil → bakır tel → 450 Ω direnç (kesitli, içinde engeller) → pil. Akım kırmızı küreler, gerilim sarı, direnç mavi. Efektler: hafif uğultu, alçak "pop" ve "thud".
 
 | Satır | Süre (sn) | Ekranda görünen | Üst yazı | Seslendirme |
