@@ -1,27 +1,17 @@
-# Kalite kontrolü — 001-akim-gerilim-direnc
+# Kalite kontrolü — 001-akim-gerilim-direnc (yeniden düzenleme: sessiz anlatım)
 
-Sonuç: **GEÇTİ** (2. turda; 1. turdaki iki görüntü hatası düzeltildi)
+Sonuç: **GEÇTİ** (1. turda)
 
 ## A. İçerik
-- `dogruluk.md`: tüm iddia, formül ve sayılar ✔; ekrandaki sayılar sahne kodunda hesaplanıyor ve `console.assert` ile doğrulanıyor (render konsolunda hata/uyarı yok).
-- Gerekli bilgi listesi (senaryo.md) tam: tanımlar, birimler (A, C, V, Ω, mA), I = Q/t, V = I × R, I = V/R, örnek 9 V / 450 Ω = 20 mA, 2 kat gerilim → 2 kat akım, 2 kat direnç → yarı akım, özet.
-- Bağımsız alt ajan değerlendirmesi: sayısal hata yok. Önerileri uygulandı: "itme gücü" yerine "itme etkisi", "direnç zorlar" yerine "direnç engeller", 2. pilin ve 2. direncin seri eklendiği seslendirmede söyleniyor, miliamper önce tanımlanıyor, o7'de "diğeri sabitken" koşulu, kapalı devre vurgusu.
-- Harf okunuşları Piper fonem çıktısıyla kontrol edildi (I → ı, V → ve, R → re).
+- Sayılar/formüller değişmedi (`dogruluk.md` geçerli); sahne kodundaki `console.assert`'ler (20 mA, 40 mA, 10 mA, renk kodu, V = I × R) render konsolunda hata vermedi.
+- Seslendirmede söylenip ekranda yazılı olmayan bilgiler yazıya eklendi: "üç kavram, tek ilişki", kapalı devre, Q = yük miktarı, kulon, I = Q / t, pilin itme etkisi, miliamper = amperin binde biri, seri ikinci pil 9 V + 9 V = 18 V, seri direnç 450 Ω + 450 Ω = 900 Ω, "akım 2 kat / yarıya iner", "diğeri sabitken" koşulu.
+- Bağımsız alt ajan değerlendirmesi bu çalışmada yapılmadı (içerik değişmedi, yalnızca anlatım biçimi); önceki turdaki değerlendirme geçerli.
 
 ## B. Görüntü
-- Son render'dan her 1 sn'de bir kare (104 kare, 6 kontak sayfası) ve 71–87 sn aralığında 0,5 sn'de bir kare incelendi.
-- 1. turda bulunan hatalar:
-  1. Pil/direnç geçişinde etiketler 0,5 sn boyunca ara değer gösteriyordu (32 mA, 14 V, 864 Ω). Etiketler artık yalnızca gerçek değerlere atlıyor.
-  2. 2. pil yukarı kalkarken üst yazı bandına giriyordu. Artık yerinde büyüyerek takılıp küçülerek çıkıyor.
-  Düzeltilen 72–86 sn aralığı yeniden render edildi ve videoya kare kare yerleştirildi (3123 kare).
-- Yazılar üst bantta (%4–24), en fazla 2 satır; etiketler nesnelere binmiyor; alt %20 boş; sağ kenar boşluğu korunuyor; titreme ve iç içe geçme yok.
-- Render konsolunda sayfa hatası yok.
-
+- Son videodan her 1 sn'de bir kare (104 kare, 6 kontak sayfası) incelendi: yazılar üst bantta, en fazla 2 satır, alt %20 boş, nesnelere binme/titreme/kesilme yok; yazı geçişlerinde (0,3 sn) aynı anda iki yazı yok. Renkler tutarlı (V sarı, I kırmızı, R mavi). Sayfa hatası yok.
 ## C. Ses
-- Entegre ses −16,0 LUFS; tepe −1,5 dBFS.
-- 4 kHz üstü: en yüksek −7,4 dB, kaynağı yalnızca seslendirmedeki ıslıklı sesler; efektlerde 4 kHz üstü enerji yok (≤ −53 dB).
-- Efekt tepeleri konuşmanın en az 14 dB altında (thud −14, pop −16,5); müzik ortalaması konuşmanın ~16 dB altında ve konuşma sırasında kısılıyor.
-- Seslendirme: 21 cümle ayrı ayrı üretildi, aralarında boşluk var; üst üste binen cümle yok.
-
+- İnsan sesi ve müzik yok; yalnızca olaylara bağlı efektler (akış uğultusu akıma göre seviye değiştirir, yumuşak pop, alçak thud).
+- Entegre −15,7 LUFS, örnek tepe −1,8 dBFS. 4 kHz üstü bant tepe −25 dB (genel tepeden ~24 dB aşağıda), keskin ton yok.
+- Yazı okuma süresi (1,2 sn + 0,35 sn × kelime): sahne kodunda her yazı için `console.assert` ile doğrulanır; süre payı ≥ 1,0 katı (ölçek ≈ 1,10).
 ## D. Teknik
-- ffprobe: 1080×1920, 30 fps, H.264 + AAC, 104,1 sn (seslendirme zamanlaması: 104,09 sn) ✔
+- ffprobe: 1080×1920, 30 fps, H.264 + AAC, 104,1 sn, 3123 kare ✔
