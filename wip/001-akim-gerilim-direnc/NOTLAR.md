@@ -6,4 +6,4 @@
 ## Yeniden düzenleme (iş emri) — 2026-11-07
 - Sahne kodu yeniden düzenlendi (seslendirme yok, anlatım akan yazılarla, yeni efekt zamanları, `tools/audio.py` hum süreli). Kare kontrolü yapıldı, iyi.
 - Sıradaki: parça parça sessiz render (`--from/--to --no-audio --out wip/001-akim-gerilim-direnc/parca-NN.mp4`, 15 sn'lik: 00=0–15 … 06=90–104,089), sonra birleştir + ses + loudnorm + kalite kontrolü.
-- Parça durumu: parca-00: tamam; parca-01: tamam; parca-02: tamam
+- Parça durumu: parca-00: tamam; parca-01: tamam; parca-02: tamam; parca-03: tamam
