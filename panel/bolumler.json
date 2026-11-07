@@ -1,1 +1,14 @@
-[]
+[
+ {
+  "tarih": "2026-11-07",
+  "no": 1,
+  "konu": "Akım, gerilim, direnç",
+  "baslik": null,
+  "sablon": null,
+  "sonuc": "durdu",
+  "yayin": null,
+  "metricool": null,
+  "video": null,
+  "not": "seslendirme kurulamadı: huggingface.co ağ izin listesinde değil (CONNECT 403); piper-tts pip ile kuruldu, tr_TR-dfki-medium modeli inemedi. İzin gereken: huggingface.co (+ indirme yönlendirmeleri, örn. cdn-lfs*.huggingface.co, cas-bridge.xethub.hf.co)"
+ }
+]
