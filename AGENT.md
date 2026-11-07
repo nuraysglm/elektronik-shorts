@@ -101,8 +101,9 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 
 ## 9. Yayın modu
 
-- **Şu an: onaylı mod.** Ajan videoyu bitirir, kalite kontrolünden geçirir, depoya koyar, panele "onay bekliyor" yazar ve Metricool'da **taslak** oluşturur (`draft: true`, `autoPublish: false`). Kanal sahibi onaylamadan yayına planlanmaz.
-- Kanal sahibi tam otomatiğe geçilmesini söylerse genel müdür bu bölümü değiştirir.
+- **Şu an: hemen yayın.** Video kalite kontrolünden (bölüm 7) geçtiği anda YouTube'da yayınlanır. Kanal sahibi videoyu yayından sonra YouTube'da kontrol eder.
+- Metricool `createScheduledPost`: `draft: false`, `autoPublish: true`, tarih = şu an + 10 dakika (`Europe/Istanbul`; Metricool videoyu kopyalamak için bu süreye ihtiyaç duyar). Gece veya sabah olması fark etmez; beklenmez.
+- Kalite kontrolünden geçmeyen video **asla** yayınlanmaz; düzeltilir ya da `inceleme` olarak işaretlenir.
 
 ## 10. Dosyalar ve depolama
 
@@ -130,9 +131,9 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 4. Senaryo → seslendirme → sahne kodu → kare kontrolü → hareket kontrolü → son render.
 5. Kalite kontrolü (bölüm 7). Geçmezse düzelt.
 6. Sahneyi `scenes/`'e, videoyu ve kapağı `media/<id>/`'e koy; kontrol belgelerini `wip/<id>/`'de bırak; commit + push; main'de göründüğünü doğrula.
-7. Yayın modu (bölüm 9): şu an Metricool'da taslak oluştur — YouTube `short`, `privacy: public`, `madeForKids: false`, `category: EDUCATION`, başlık ≤ 60 karakter, açıklamada 2–3 cümle + `#elektronik #shorts` + 2–3 konu etiketi, `isAiGeneratedContent: false`.
-8. `konular.md` (`onay bekliyor`) ve `gunluk.md`'yi güncelle, paneli yenile (bölüm 12), commit + push.
-9. Son mesaj: konu, süre, video adresi, kalite kontrol özeti, Metricool taslak bağlantısı; sorun varsa ne olduğu.
+7. Yayın modu (bölüm 9): Metricool ile hemen yayınla (şu an + 10 dk) — YouTube `short`, `privacy: public`, `madeForKids: false`, `category: EDUCATION`, başlık ≤ 60 karakter, açıklamada 2–3 cümle + `#elektronik #shorts` + 2–3 konu etiketi, `isAiGeneratedContent: false`.
+8. `konular.md` (`yayında` + tarih) ve `gunluk.md`'yi (`planlandı` + yayın saati + Metricool bağlantısı) güncelle, paneli yenile (bölüm 12), commit + push.
+9. Son mesaj: konu, süre, video adresi, kalite kontrol özeti, yayın saati ve Metricool bağlantısı; sorun varsa ne olduğu.
 
 **Zaman yetmezse:** İşi `wip/<id>/` altına kaydet (`NOTLAR.md`'de nerede kaldığını yaz), push et, panele "yarım kaldı" yaz. Bir sonraki çalışma oradan devam eder.
 
@@ -152,4 +153,4 @@ Her çalışmanın sonunda (durulsa bile):
 - Kullanıcının bilgisayarını kullanma; her şey bu bulut çalışma ortamında olur.
 - Higgsfield veya başka bir yapay zekâ görsel/video üretim aracı kullanma. Görüntü ve ses kodla üretilir.
 - Telifli müzik, logo, karakter, başka kanalın görseli kullanma.
-- Başka bir Metricool markasına veya ağına gönderi yapma; kanal sahibinin onayı olmadan yayına planlama.
+- Başka bir Metricool markasına veya ağına gönderi yapma; kalite kontrolünden geçmemiş videoyu yayınlama.
