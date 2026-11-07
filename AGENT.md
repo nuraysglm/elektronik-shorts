@@ -113,11 +113,25 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 - Durumu `yarım kaldı` olan bir konu varsa önce onu `wip/`'teki notlardan devam ettirerek bitir. Video kimliği: `NNN-kisa-ad` (ör. `001-akim-gerilim-direnc`).
 - Konunun başlığında birden fazla soru varsa (ör. "Nedir ve aralarında nasıl bir ilişki vardır?") hepsi videoda cevaplanır.
 
-## 9. Yayın modu
+## 9. Yayın takvimi ve stok kuralı
 
-- **Şu an: hemen yayın.** Video kalite kontrolünden (bölüm 7) geçtiği anda YouTube'da yayınlanır. Kanal sahibi videoyu yayından sonra YouTube'da kontrol eder.
-- Metricool `createScheduledPost`: `draft: false`, `autoPublish: true`, tarih = şu an + 10 dakika (`Europe/Istanbul`; Metricool videoyu kopyalamak için bu süreye ihtiyaç duyar). Gece veya sabah olması fark etmez; beklenmez.
-- Kalite kontrolünden geçmeyen video **asla** yayınlanmaz; düzeltilir ya da `inceleme` olarak işaretlenir.
+Kanal sahibinin kararı:
+- **Günde 1 video, saat 16:00'da (Europe/London)** yayınlanır.
+- Ajan **günde iki kez** çalışır: **08:00** ve **12:00** (Londra).
+- **Stok kuralı:** Planlanmış ve henüz yayınlanmamış YouTube Short sayısı
+  - **2 veya daha fazla** ise: yeni video üretme. Yalnızca kayıtları güncelle (bkz. aşağı) ve dur.
+  - **1 veya 0** ise: **bir** yeni video üret ve planla (stok 2'ye doğru tamamlanır; bir çalışmada en fazla bir video).
+- Yarım kalmış bir video varsa (`wip/` ve `NOTLAR.md`), yeni konuya geçmeden önce onu bitir; o da stok için üretilen video sayılır.
+
+**Stoku sayma (her çalışmanın başında):** Metricool `getScheduledPosts` ile (marka: bölüm 11'deki `blogId`, `timezone: Europe/London`, bugünden 14 gün sonrasına kadar) YouTube gönderilerini al. `draft: true` olanları ve başka ağların gönderilerini sayma; yalnızca bu kanalın yayın bekleyen YouTube Short'larını say.
+
+**Planlama saati:** Bugünden başlayarak 16:00'da (Europe/London) bu kanalın YouTube gönderisi olmayan **ilk gün**. Bugünün 16:00'ı geçtiyse ya da 30 dakikadan az kaldıysa bir sonraki günden başla. Aynı güne iki video planlama.
+
+**Metricool `createScheduledPost`:** `draft: false`, `autoPublish: true`, `publicationDate: {dateTime: "<YYYY-MM-DD>T16:00:00", timezone: "Europe/London"}`. YouTube ayarları bölüm 11'deki gibi.
+
+**Kayıtları güncelleme (her çalışmada):** Daha önce `planlandı` olarak kaydedilmiş ve yayın saati geçmiş videoları Metricool'da kontrol et; yayınlandıysa `konular.md` ve paneldeki `konular` belgesini `yayında`, `bolumler` belgesini `yayınlandı` yap.
+
+Kalite kontrolünden (bölüm 7) geçmeyen video **asla** planlanmaz; kanal sahibi panelde onay verirse planlanır (bölüm 13).
 
 ## 10. Dosyalar ve depolama
 
@@ -141,12 +155,13 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 
 1. Depoyu oku: bu dosya, `konular.md`, `gunluk.md`, `wip/` (yarım iş varsa önce onu bitir).
 2. **Güvenlik:** Metricool `getBrandSettings` ile `youtubeData == "UCAvE1cKeoIbIXCyIks-U81w"` olan markayı bul (`blogId`). Yoksa dur.
+2a. **Stok:** Bölüm 9'a göre planlanmış video sayısını say ve eski kayıtları güncelle. Stok 2 veya fazlaysa panelde `bolumler`'e `sonuc: "stok dolu"` kısa kaydını yaz ve dur.
 3. Konuyu seç, `claude/<video-id>` dalını aç.
 4. Senaryo → seslendirme → sahne kodu → kare kontrolü → hareket kontrolü → son render.
 5. Kalite kontrolü (bölüm 7). Geçmezse düzelt.
 6. Sahneyi `scenes/`'e, videoyu ve kapağı `media/<id>/`'e koy; kontrol belgelerini `wip/<id>/`'de bırak; commit + push; main'de göründüğünü doğrula.
-7. Yayın modu (bölüm 9): Metricool ile hemen yayınla (şu an + 10 dk) — YouTube `short`, `privacy: public`, `madeForKids: false`, `category: EDUCATION`, başlık ≤ 60 karakter, açıklamada 2–3 cümle + `#elektronik #shorts` + 2–3 konu etiketi, `isAiGeneratedContent: false`.
-8. `konular.md` (`yayında` + tarih) ve `gunluk.md`'yi (`planlandı` + yayın saati + Metricool bağlantısı) güncelle, paneli yenile (bölüm 12), commit + push.
+7. Yayın takvimi (bölüm 9): sıradaki boş 16:00'a (Europe/London) planla — YouTube `short`, `privacy: public`, `madeForKids: false`, `category: EDUCATION`, başlık ≤ 60 karakter, açıklamada 2–3 cümle + `#elektronik #shorts` + 2–3 konu etiketi, `isAiGeneratedContent: false`.
+8. `konular.md` (`planlandı` + yayın tarihi) ve `gunluk.md`'yi (`planlandı` + yayın saati + Metricool bağlantısı) güncelle, paneli yenile (bölüm 12), commit + push.
 9. Son mesaj: konu, süre, video adresi, kalite kontrol özeti, yayın saati ve Metricool bağlantısı; sorun varsa ne olduğu.
 
 **Zaman yetmezse:** İşi `wip/<id>/` altına kaydet (`NOTLAR.md`'de nerede kaldığını yaz), push et, panele "yarım kaldı" yaz. Bir sonraki çalışma oradan devam eder.
@@ -160,7 +175,7 @@ Panelin verisi kendi veritabanındadır; ajan `ArtifactData` ile (`url` = panel)
 
 | Koleksiyon / belge | İçerik |
 |---|---|
-| `bolumler/<YYYY-MM-DD>-<NNN>-<HHmm>` | Her çalışmanın kaydı: `tarih` (YYYY-MM-DD), `zaman` (UTC ISO), `no`, `konu`, `sonuc` (`yayınlandı`, `onay bekliyor`, `yarım kaldı`, `inceleme`, `durdu`, `hata`), `not` (kısa sebep/özet). Yayınlandıysa ayrıca `baslik`, `yayin` ("YYYY-MM-DD HH:MM (TR)"), `sure` ("45 sn"), `kalite` (tek cümle), `video` (raw GitHub adresi), `metricool` (plannerUrl), `youtube` (biliniyorsa). |
+| `bolumler/<YYYY-MM-DD>-<NNN>-<HHmm>` | Her çalışmanın kaydı: `tarih` (YYYY-MM-DD), `zaman` (UTC ISO), `no`, `konu`, `sonuc` (`planlandı`, `yayınlandı`, `stok dolu`, `onay bekliyor`, `yarım kaldı`, `inceleme`, `durdu`, `hata`), `not` (kısa sebep/özet). Yayınlandıysa ayrıca `baslik`, `yayin` ("YYYY-MM-DD HH:MM (TR)"), `sure` ("45 sn"), `kalite` (tek cümle), `video` (raw GitHub adresi), `metricool` (plannerUrl), `youtube` (biliniyorsa). |
 | `konular/<NNN>` | `no`, `konu`, `ana_fikir`, `durum`, `tarih`. `konular.md` ile aynı tutulur. |
 | `ayarlar/genel` | `satirlar: [{ayar, deger}]`. Çalışma saati değişmişse güncelle. |
 | `onaylar/<id>` | Onay istekleri (bölüm 13). |

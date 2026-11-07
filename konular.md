@@ -2,7 +2,7 @@
 
 Konuları kanal sahibi verir. Ajan durumu `bekliyor` olan **ilk** satırı işler; listeye konu eklemez, çıkarmaz, sırasını değiştirmez.
 
-Durumlar: `bekliyor` · `onay bekliyor` (video hazır, kanal sahibinin onayını bekliyor) · `yayında` · `inceleme` (ajan emin olamadı) · `atla`
+Durumlar: `bekliyor` · `yarım kaldı` · `onay bekliyor` (kanal sahibinin kararını bekliyor) · `planlandı` (yayın sırasında) · `yayında` · `inceleme` (ajan emin olamadı) · `atla`
 
 | # | Konu | Ana fikir (videonun öğrettiği) | Durum | Tarih |
 |---|------|--------------------------------|-------|-------|
