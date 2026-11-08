@@ -20,6 +20,7 @@ const BEATS = [
   { id: 'k1', pre: 0.4, l1: `${bl('Direnç')} (${bl('R')}): akışa engel`, l2: `birimi: ohm (${bl('Ω')})`, s1: 6.6, s2: 6, extra: 1.6 },
 ];
 const { Z, A, DUR } = timeline(BEATS, { k: 1.03 });
+export const _T = { Z, A };
 
 // ---------------------------------------------------------------- devre değerleri ve doğrulama
 const VB = 9, RB = 30;                               // pil 9 V; ampul filamanı ~30 Ω (gösterilmez)
@@ -45,7 +46,7 @@ const CODES = { 100: ['kahve', 'siyah', 'kahve'], 300: ['turuncu', 'siyah', 'kah
 for (const [v, c] of Object.entries(CODES)) check((DIGIT[c[0]] * 10 + DIGIT[c[1]]) * MULT[c[2]] === +v, `renk kodu ${v} Ω`);
 // görsel: akış hızı ve ampul parlaklığı akımla artar (tekdüze)
 const speedOf = (I) => 2.6 * Math.sqrt(I);           // m/s
-const glowOf = (I) => clamp(Math.pow(I / 0.12, 0.85));
+const glowOf = (I) => clamp(Math.pow(I / 0.3, 0.6));
 let _s = 0, _t = 0;                                   // yol: sırayla ilerleyen kareler için artımlı integral
 const dist = (t) => {
   if (t < _t) { _s = 0; _t = 0; }
@@ -78,9 +79,9 @@ export const meta = {
 };
 
 // ---------------------------------------------------------------- yerleşim
-const X = 1.0, ZH = 1.15, Y = 0.2;                   // devre dikdörtgeni (üstten bakış: x sağ, z izleyiciye)
-const RES_Z = 0.15, RES_LEN = 0.62;                  // direnç: sol kenar
-const SW_Z = 0.0, SW_GAP = 0.5;                       // anahtar: sağ kenar
+const X = 0.8, ZH = 1.2, Y = 0.2;                   // devre dikdörtgeni (üstten bakış: x sağ, z izleyiciye)
+const RES_Z = 0.1, RES_LEN = 0.7;                  // direnç: sol kenar
+const SW_Z = -0.1, SW_GAP = 0.55;                       // anahtar: sağ kenar
 const PX = 7.2;                                       // borular ve mini modeller: sağdaki ikinci alan
 
 function makeBulb(S, { scale = 1 } = {}) {
@@ -90,7 +91,7 @@ function makeBulb(S, { scale = 1 } = {}) {
   const screw = new THREE.Mesh(new THREE.CylinderGeometry(0.105, 0.105, 0.2, 32), S.M.steel);
   screw.position.y = 0.22; g.add(screw);
   for (let k = 0; k < 4; k++) { const r = new THREE.Mesh(new THREE.TorusGeometry(0.106, 0.012, 8, 32), S.M.steel); r.rotation.x = Math.PI / 2; r.position.y = 0.15 + k * 0.045; g.add(r); }
-  const glassMat = new THREE.MeshPhysicalMaterial({ color: 0xf2efe6, roughness: 0.05, transparent: true, opacity: 0.3, clearcoat: 1, emissive: 0xffb347, emissiveIntensity: 0, depthWrite: false });
+  const glassMat = new THREE.MeshPhysicalMaterial({ color: 0xf2efe6, roughness: 0.05, transparent: true, opacity: 0.3, clearcoat: 1, emissive: 0xffb02e, emissiveIntensity: 0, depthWrite: false });
   const glass = new THREE.Mesh(new THREE.SphereGeometry(0.26, 40, 28), glassMat);
   glass.position.y = 0.52; glass.renderOrder = 3; g.add(glass);
   const filMat = new THREE.MeshPhysicalMaterial({ color: 0x553322, emissive: 0xffa53a, emissiveIntensity: 0, roughness: 0.4 });
@@ -100,17 +101,17 @@ function makeBulb(S, { scale = 1 } = {}) {
   const light = new THREE.PointLight(0xffb85c, 0, 4, 2); light.position.y = 0.55; g.add(light);
   g.scale.setScalar(scale);
   S.scene.add(g);
-  return { group: g, set(on) { filMat.emissiveIntensity = 0.05 + 7 * on; glassMat.emissiveIntensity = 0.9 * on; glassMat.opacity = 0.3 + 0.4 * on; light.intensity = 5 * on * scale; } };
+  return { group: g, set(on) { filMat.emissiveIntensity = 0.05 + 9 * on; glassMat.emissiveIntensity = 2.2 * on * on; glassMat.opacity = 0.3 + 0.5 * on; light.intensity = 9 * on * scale; } };
 }
 
 function makeSwitch(S) {
   // bıçaklı anahtar, z ekseninde: menteşe z=+GAP/2, kontak z=−GAP/2
   const g = new THREE.Group();
-  const plate = new THREE.Mesh(new RoundedBoxGeometry(0.34, 0.05, SW_GAP + 0.24, 3, 0.02), new THREE.MeshPhysicalMaterial({ color: 0x3a3f47, roughness: 0.45, clearcoat: 0.3 }));
+  const plate = new THREE.Mesh(new RoundedBoxGeometry(0.36, 0.05, SW_GAP + 0.26, 3, 0.02), new THREE.MeshPhysicalMaterial({ color: 0x1d2025, roughness: 0.45, clearcoat: 0.3 }));
   plate.position.y = 0.025; plate.receiveShadow = plate.castShadow = true; g.add(plate);
   for (const z of [SW_GAP / 2, -SW_GAP / 2]) { const post = new THREE.Mesh(new RoundedBoxGeometry(0.12, 0.2, 0.08, 2, 0.015), S.M.copper); post.position.set(0, 0.13, z); post.castShadow = true; g.add(post); }
   const pivot = new THREE.Group(); pivot.position.set(0, Y + 0.02, SW_GAP / 2); g.add(pivot);
-  const blade = new THREE.Mesh(new RoundedBoxGeometry(0.05, 0.03, SW_GAP + 0.04, 2, 0.01), S.M.copper);
+  const blade = new THREE.Mesh(new RoundedBoxGeometry(0.07, 0.04, SW_GAP + 0.04, 2, 0.012), S.M.gold);
   blade.position.z = -SW_GAP / 2; blade.castShadow = true; pivot.add(blade);
   const knob = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.14, 16), new THREE.MeshPhysicalMaterial({ color: 0xb3261e, roughness: 0.4, clearcoat: 0.5 }));
   knob.position.set(0, 0.07, -SW_GAP - 0.01); pivot.add(knob);
@@ -121,14 +122,14 @@ function makeSwitch(S) {
 function pipes(S) {
   // aynı itmeyle: geniş boruda yoğun akış, dar boruda seyrek akış
   const g = new THREE.Group();
-  const glass = (r) => new THREE.Mesh(new THREE.CylinderGeometry(r, r, 2.8, 40, 1, true), new THREE.MeshPhysicalMaterial({ color: 0xcfe3ee, roughness: 0.05, transparent: true, opacity: 0.22, clearcoat: 1, side: THREE.DoubleSide, depthWrite: false, emissive: 0x2f6fff, emissiveIntensity: 0 }));
+  const glass = (r) => new THREE.Mesh(new THREE.CylinderGeometry(r, r, 2.2, 40, 1, true), new THREE.MeshPhysicalMaterial({ color: 0xcfe3ee, roughness: 0.05, transparent: true, opacity: 0.22, clearcoat: 1, side: THREE.DoubleSide, depthWrite: false, emissive: 0x2f6fff, emissiveIntensity: 0 }));
   const wide = glass(0.24), narrow = glass(0.075);
-  for (const [m, z] of [[wide, -0.55], [narrow, 0.55]]) { m.rotation.z = Math.PI / 2; m.position.set(0, 0.32, z); m.renderOrder = 2; g.add(m); }
-  for (const z of [-0.55, 0.55]) for (const x of [-1.4, 1.4]) { const r = new THREE.Mesh(new THREE.TorusGeometry(z < 0 ? 0.245 : 0.08, 0.018, 10, 40), S.M.steel); r.rotation.y = Math.PI / 2; r.position.set(x, 0.32, z); g.add(r); }
+  for (const [m, x] of [[wide, -0.45], [narrow, 0.45]]) { m.rotation.x = Math.PI / 2; m.position.set(x, 0.32, 0); m.renderOrder = 2; g.add(m); }
+  for (const x of [-0.45, 0.45]) for (const z of [-1.1, 1.1]) { const r = new THREE.Mesh(new THREE.TorusGeometry(x < 0 ? 0.245 : 0.08, 0.018, 10, 40), S.M.steel); r.position.set(x, 0.32, z); g.add(r); }
   const mat = new THREE.MeshPhysicalMaterial({ color: 0x5fe08a, emissive: 0x5fe08a, emissiveIntensity: 0.9, roughness: 0.3, transparent: true });
   const R = S.rng(21);
   const mk = (n, rad, z) => { const pts = Array.from({ length: n }, () => { const a = R() * 6.283, rr = Math.sqrt(R()) * rad; return [R(), rr * Math.cos(a), rr * Math.sin(a)]; }); const im = new THREE.InstancedMesh(new THREE.SphereGeometry(0.04, 12, 8), mat, n); g.add(im); return { im, pts, z }; };
-  const sets = [mk(70, 0.17, -0.55), mk(6, 0.02, 0.55)];
+  const sets = [mk(70, 0.17, -0.45), mk(6, 0.02, 0.45)];
   const m4 = new THREE.Matrix4();
   g.position.set(PX, 0, 0);
   S.scene.add(g);
@@ -137,7 +138,7 @@ function pipes(S) {
     update(t, op) {
       g.visible = op > 0.01; mat.opacity = op; for (const m of [wide, narrow]) m.material.opacity = 0.22 * op;
       for (const s of sets) {
-        s.pts.forEach(([u, y, z], k) => { const x = -1.4 + 2.8 * ((u + t * 0.32) % 1); m4.makeTranslation(x, 0.32 + y, s.z + z); s.im.setMatrixAt(k, m4); });
+        s.pts.forEach(([u, y, x], k) => { const z = 1.1 - 2.2 * ((u + t * 0.32) % 1); m4.makeTranslation(s.z + x, 0.32 + y, z); s.im.setMatrixAt(k, m4); });
         s.im.instanceMatrix.needsUpdate = true;
       }
     },
@@ -203,14 +204,14 @@ export function build(S) {
   const part = (u0, u1) => { const pts = []; for (let i = 0; i <= 300; i++) { let u = u0 + (((u1 - u0 + 1) % 1) * i) / 300; pts.push(W.curve.getPointAt(u % 1)); } const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 600, 0.03, 10), S.M.copper); m.castShadow = true; scene.add(m); };
   part(uSwB, uSwA); // anahtarın kontak ucundan dolanıp menteşe ucuna (anahtar bölgesi boş kalır)
   const bat = battery(S, { y: Y }); bat.group.position.set(0, 0, ZH);       // + ucu sağda: akım + → sağ kenar → üst → sol → alt
-  const bulb = makeBulb(S); bulb.group.position.set(0, Y - 0.2, -ZH);
+  const bulb = makeBulb(S, { scale: 1.25 }); bulb.group.position.set(0, 0, -ZH); bulb.group.children.forEach((c) => {});
   const swt = makeSwitch(S); swt.group.position.set(X, 0, SW_Z);
   const res = resistor(S, { len: RES_LEN, obstacles: 24 }); res.group.position.set(-X, Y, RES_Z);
   const obst = res.group.children.filter((c) => c.geometry && c.geometry.type === 'SphereGeometry');
 
   // ------------------------------------------------ elektronlar (yeşil): eğrinin ters yönünde (− → +)
   const N = 46;
-  const eMat = new THREE.MeshPhysicalMaterial({ color: 0x5fe08a, emissive: 0x3fd070, emissiveIntensity: 0.8, roughness: 0.25, clearcoat: 1 });
+  const eMat = new THREE.MeshPhysicalMaterial({ color: 0x3fe07a, emissive: 0x2fd060, emissiveIntensity: 1.1, roughness: 0.25, clearcoat: 1 });
   const el = new THREE.InstancedMesh(new THREE.SphereGeometry(0.045, 16, 12), eMat, N); el.castShadow = true; scene.add(el);
   const m4 = new THREE.Matrix4(), qq = new THREE.Quaternion(), sv = new THREE.Vector3(), pv = new THREE.Vector3();
   const R = S.rng(9), ph = Array.from({ length: N }, () => [R() * 6.28, R() * 6.28, 0.8 + R() * 0.6]);
@@ -220,22 +221,22 @@ export function build(S) {
   const arrow = new THREE.Group();
   const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.028, 0.028, 0.9, 16), arrowMat); shaft.rotation.z = Math.PI / 2; arrow.add(shaft);
   const head = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.2, 20), arrowMat); head.rotation.z = -Math.PI / 2; head.position.x = 0.55; arrow.add(head);
-  arrow.position.set(1.55, 0.25, 0.25); arrow.rotation.y = Math.PI / 2; scene.add(arrow); // sağ kenar boyunca, −z yönüne (+ ucundan çıkıp yukarı)
+  arrow.position.set(X - 0.38, 0.25, -0.5); arrow.rotation.y = Math.PI / 2; scene.add(arrow); // sağ kenar boyunca, −z yönüne (+ ucundan çıkıp yukarı)
 
   // ------------------------------------------------ ikinci alan: borular, platformlar, mini modeller
   const P = pipes(S);
-  const PLZ = [[-1.35, -0.05], [-0.45, -0.05], [0.45, -0.05], [1.35, -0.05]];
+  const PLZ = [[-0.5, -0.75], [0.5, -0.75], [-0.5, 0.65], [0.5, 0.65]];
   const plats = PLZ.map(([x, z]) => platform(S, PX + x, z));
   const H = heater(S), B2 = makeBulb(S, { scale: 0.85 }), IR = iron(S), PH = phone(S);
   const models = [H.group, B2.group, IR.group, PH.group];
   const names = ['ısıtıcı teli', 'ampul', 'ütü', 'şarj'];
 
   // ------------------------------------------------ kamera: [t, açı, mesafe, yükselme, hedefX, hedefZ]
-  const C0 = [0, 9.0, 56, 0, 0.05], C1 = [0, 8.6, 50, PX, 0.0];
+  const C0 = [0, 9.0, 62, 0, -0.32], C1 = [0, 8.8, 60, PX, -0.25];
   const cam = camRig(S, [
     [0, ...C0], [A.m1 + 0.2, ...C0], [A.m1 + 1.8, ...C1], [A.c1, ...C1], [A.c1 + 1.3, ...C0],
-    [A.r2, -0.08, 8.9, 56, -0.05, 0.05], [A.g1 + 0.1, 0.05, 9.0, 56, 0, 0.05], [A.g1 + 1.6, ...C1],
-    [A.g2 + 0.3, ...C1], [A.g2 + 2.0, ...C0], [DUR, 0.06, 9.2, 56, 0, 0.05],
+    [A.r2, -0.06, 8.9, 62, -0.03, -0.32], [A.g1 + 0.1, 0.04, 9.0, 62, 0, -0.32], [A.g1 + 1.6, ...C1],
+    [A.g2 + 0.3, ...C1], [A.g2 + 2.0, ...C0], [DUR, 0.05, 9.2, 62, 0, -0.32],
   ]);
   const yaz = narration(S, BEATS, Z);
 
@@ -310,16 +311,16 @@ export function build(S) {
 
     // nesne etiketleri
     const rl = easeOut(seg(t, Z.m2[1], Z.m2[1] + 0.4)) * (t < A.g1 + 0.3 ? 1 : 0) + easeOut(seg(t, T_LAND + 0.2, T_LAND + 0.6));
-    label('lr', bl(`R = ${rv} Ω`), -X - 0.05, 0.5, RES_Z + 0.75, { opacity: clamp(rl) * (t > A.c1 + 1.2 ? 1 : 0), size: 5.4 });
+    label('lr', bl(`R = ${rv} Ω`), -X + 0.62, 0.3, RES_Z, { opacity: clamp(rl) * (t > A.c1 + 1.2 ? 1 : 0), size: 5.4 });
     label('lv', hl('9 V'), 0, 0.5, ZH + 0.55, { opacity: 0, size: 5 });
-    label('le', gr('elektronlar'), -0.15, 0.5, ZH - 0.15 + 0.55, { opacity: fade(t, Z.c1[0], A.r1 + 0.6, 0.3), size: 4.6 });
-    label('la', rd('akım yönü'), X + 0.55, 0.6, -0.25, { opacity: fade(t, Z.c2[0], A.r1 + 0.6, 0.3), size: 4.6 });
+    label('le', gr('elektronlar'), -0.1, 0.3, ZH - 0.45, { opacity: fade(t, Z.c1[0], A.r1 + 0.6, 0.3), size: 4.6 });
+    label('la', rd('akım yönü'), 0.0, 0.3, -0.75, { opacity: fade(t, Z.c2[0], A.r1 + 0.6, 0.3), size: 4.6 });
     const po = fade(t, A.m1 + 1.8, A.c1 + 0.6, 0.4);
-    label('pw', 'geniş', PX - 1.75, 0.5, -0.55, { opacity: po, size: 4.4 });
-    label('pn', 'dar', PX - 1.75, 0.5, 0.55, { opacity: po, size: 4.4 });
+    label('pw', 'geniş', PX - 1.0, 0.3, 0, { opacity: po, size: 4.4 });
+    label('pn', 'dar', PX + 0.85, 0.3, 0, { opacity: po, size: 4.4 });
     names.forEach((n, i) => {
       const o = easeOut(seg(t, A.g1 + 1.1 + i * 0.7, A.g1 + 1.5 + i * 0.7)) * (1 - easeOut(seg(t, i === 0 ? T_FLY : Z.g2[1], (i === 0 ? T_FLY : Z.g2[1]) + 0.3)));
-      label('n' + i, n, PX + PLZ[i][0], 0.0, PLZ[i][1] + 0.62, { opacity: o, size: 4.0 });
+      label('n' + i, n, PX + PLZ[i][0], 0.0, PLZ[i][1] + 0.58, { opacity: o, size: 4.0 });
     });
   };
 }
