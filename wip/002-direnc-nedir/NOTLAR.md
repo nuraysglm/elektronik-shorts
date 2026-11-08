@@ -6,3 +6,4 @@
 - Sıradaki: 2. kare kontrolü → hareket önizlemesi → parça render (render_parts.sh, 6 parça).
 - parca-01: tamam (16:19 UTC)
 - parca-00: tamam (16:19 UTC)
+- parca-02: tamam (16:21 UTC)
