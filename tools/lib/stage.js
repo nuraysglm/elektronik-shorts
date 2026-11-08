@@ -306,7 +306,7 @@ export function createStage({ canvas, overlay, width, height, background = 0x151
         el.dataset.html = key;
       }
       if (pen) {
-        const r = Math.max(0, Math.min(1, reveal)), p = r * 104 - 2; // yumuşak kenar: harf harf beliren iz
+        const r = Math.max(0, Math.min(1, reveal)), p = r * 108 - 5; // yumuşak kenar: harf harf beliren iz
         const m = `linear-gradient(90deg,#000 0,#000 ${p}%,transparent ${p + 3}%)`;
         const c = el.firstChild.firstChild; c.style.webkitMaskImage = m; c.style.maskImage = m;
         const tip = el.firstChild.lastChild; tip.style.left = `${Math.min(100, Math.max(0, p + 1))}%`;

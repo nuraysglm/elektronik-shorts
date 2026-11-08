@@ -265,18 +265,18 @@ export function build(S) {
   const KB = 0.032;                                   // m / Ω
   const barMat = new THREE.MeshPhysicalMaterial({ color: 0x4f8cff, emissive: 0x2f6fff, emissiveIntensity: 0.5, roughness: 0.3, clearcoat: 0.6 });
   const VALS = [RL, RR, RW], BX = [-0.75, 0, 0.75];
-  const bars = VALS.map((v, i) => { const b = new THREE.Mesh(new RoundedBoxGeometry(0.42, 1, 0.42, 3, 0.03), barMat); b.position.set(BX[i], 0, BZ); b.castShadow = true; scene.add(b); return b; });
+  const bars = VALS.map((v, i) => { const b = new THREE.Mesh(i === 2 ? new THREE.BoxGeometry(0.42, 1, 0.06) : new RoundedBoxGeometry(0.42, 1, 0.42, 3, 0.03), barMat); b.position.set(BX[i], 0, BZ); b.castShadow = true; scene.add(b); return b; });
   check(Math.abs(RR * KB / (RL * KB) - 2) < 1e-9, 'sütun oranı 60/30');
   const lens = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.025, 10, 60), new THREE.MeshPhysicalMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.8, transparent: true, opacity: 0 }));
   lens.rotation.x = -0.35; lens.position.set(BX[2], 0.3, BZ + 0.1); scene.add(lens);
 
   // ------------------------------------------------ kamera: [t, açı, mesafe, yükselme°, hedefX, hedefZ, hedefY]
-  const C0 = [0, 9.6, 62, 0, -0.32, 0.1], CP = [0, 9.2, 60, PX, -0.2, 0.1], CM = [0, 9.4, 60, PM, 0.15, 0.1], CB = [0, 7.2, 48, 0, BZ + 0.3, 0.8];
+  const C0 = [0, 9.6, 62, 0, -0.32, 0.1], CP = [0, 9.2, 60, PX, -0.2, 0.1], CM = [0, 9.4, 60, PM, 0.15, 0.1], CB = [0, 7.8, 48, 0, BZ + 0.3, 0.75];
   const cam = camRig(S, [
-    [0, 0.0, 9.4, 62, 0, -0.32, 0.1], [A.c1, 0.05, 9.6, 62, 0, -0.32, 0.1], [A.k1, -0.05, 9.4, 63, 0, -0.32, 0.1], [A.k4, 0.05, 9.5, 62, 0, -0.32, 0.1],
+    [0, 0.0, 11.4, 62, 0, -0.5, 0.1], [Z.h1[1] - 0.6, 0.03, 11.2, 62, 0, -0.48, 0.1], [A.c1 + 1.6, 0.05, 9.6, 62, 0, -0.32, 0.1], [A.k1, -0.05, 9.4, 63, 0, -0.32, 0.1], [A.k4, 0.05, 9.5, 62, 0, -0.32, 0.1],
     [A.p1 + 0.3, ...C0], [A.p1 + 2.0, ...CP], [A.p3 + 2.0, 0.06, 9.2, 60, PX, -0.2, 0.1], [A.g1 + 0.3, -0.04, 9.2, 60, PX, -0.2, 0.1],
     [A.g1 + 2.0, ...CM], [A.w1 + 0.1, 0.06, 9.4, 60, PM, 0.15, 0.1], [A.w1 + 1.8, ...C0], [A.w2 + 0.2, 0.04, 9.6, 62, 0, -0.32, 0.1],
-    [A.w2 + 1.6, ...CB], [A.f1 + 0.2, 0.05, 7.2, 48, 0, BZ + 0.3, 0.8], [A.f1 + 1.6, ...C0], [DUR, 0.06, 9.8, 62, 0, -0.32, 0.1],
+    [A.w2 + 1.6, ...CB], [A.f1 + 0.2, 0.05, 7.8, 48, 0, BZ + 0.3, 0.75], [A.f1 + 1.6, ...C0], [DUR, 0.06, 9.8, 62, 0, -0.32, 0.1],
   ]);
   const yaz = narrationPen(S, BEATS, Z, WR);
 
@@ -345,7 +345,7 @@ export function build(S) {
     yaz(t);
 
     // kanca alt satırı (bilmece)
-    S.text('sub', `9 V pil + ampul + ${bl('60 Ω')}`, { y: 28.5, size: 4.6, weight: 600, opacity: 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1])), nowrap: true });
+    S.text('sub', `9 V pil + ampul + ${bl('60 Ω')}`, { y: 28, size: 4.4, weight: 600, opacity: 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1])), nowrap: true });
 
     // nesne etiketleri
     const onC = (a, b) => fade(t, a, b, 0.3);
@@ -364,7 +364,7 @@ export function build(S) {
     label('pc', 'çark', PX + 0.55, 0.45, -PL.ZP, { opacity: pOn * onC(A.p3 + 0.5, A.g1 + 0.6), size: 4.2 });
     names.forEach((n, i) => label('n' + i, n, PM + PLZ[i][0], 0.0, PLZ[i][1] + 0.55, { opacity: easeOut(seg(t, A.g1 + 2.5 + i * 0.45, A.g1 + 2.9 + i * 0.45)) * (1 - easeOut(seg(t, A.w1 + 0.2, A.w1 + 0.6))), size: 3.9 }));
     const bOn = (i) => easeOut(seg(t, A.w2 + 2.1 + i * 0.4, A.w2 + 2.5 + i * 0.4)) * (1 - easeOut(seg(t, A.f1 + 0.3, A.f1 + 0.8)));
-    ['ampul ≈ 30 Ω', 'direnç 60 Ω', 'tel ≈ 0,03 Ω'].forEach((n, i) => label('b' + i, bl(n), BX[i], VALS[i] * KB + 0.25, BZ + 0.3, { opacity: bOn(i), size: 4.0 }));
+    [`ampul<br>≈ ${bl('30 Ω')}`, `direnç<br>${bl('60 Ω')}`, `tel<br>≈ ${bl('0,03 Ω')}`].forEach((n, i) => label('b' + i, n, BX[i], 0.0, BZ + 0.75, { opacity: bOn(i), size: 4.0 }));
     label('ls', 'seri: tek yol, arka arkaya', 0, 0.3, 0.2, { opacity: onC(A.f2 + 0.3, Z.f2[0] + 2.0), size: 4.2 });
   };
 }

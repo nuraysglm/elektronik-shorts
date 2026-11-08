@@ -6,7 +6,7 @@
 - Sıradaki: 2. kare kontrolü → hareket önizlemesi → parça render (render_parts.sh, 6 parça).
 - parca-01: tamam (16:19 UTC)
 - parca-00: kanca düzeltmesi (alt satır ampule biniyordu, pil alt %20 sınırında) için yeniden render
-- parca-02: tamam (16:21 UTC)
-- parca-03: tamam (16:21 UTC)
-- parca-05: tamam (16:35 UTC)
-- parca-04: tamam (16:36 UTC)
+- parca-02: kalem maskesi + sütun düzeltmesi için yeniden render
+- parca-03: kalem maskesi + sütun düzeltmesi için yeniden render
+- parca-05: kalem maskesi + sütun düzeltmesi için yeniden render
+- parca-04: kalem maskesi + sütun düzeltmesi için yeniden render
