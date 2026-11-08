@@ -5,3 +5,4 @@
 - 16:0x UTC: bağımsız denetim tamam (düzeltmeler dogruluk.md'de). Kalemle yazı: stage.js `reveal`, anlatim.js `penTimeline`/`narrationPen`. makeSwitch/heater/iron/kettle → tools/lib/devre.js. scene.js yazıldı (105,6 sn), 1. kare kontrolü yapıldı ve düzeltildi.
 - Sıradaki: 2. kare kontrolü → hareket önizlemesi → parça render (render_parts.sh, 6 parça).
 - parca-01: tamam (16:19 UTC)
+- parca-00: tamam (16:19 UTC)
