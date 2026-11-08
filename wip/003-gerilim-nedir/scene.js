@@ -12,14 +12,14 @@ import { makeBulb, platform } from '../../tools/lib/devre.js';
 const BEATS = [
   { id: 'h1', pre: 1.8, l1: 'Ampul neden parladı?', s1: 7 },
   { id: 'c1', pre: 0.8, l1: `${gr('Elektronlar')}: − → +`, s1: 7 },
-  { id: 'c2', pre: 1.0, l1: `${rd('Akım yönü')}: + → −`, s1: 7 },
+  { id: 'c2', pre: 1.0, l1: `${rd('Akım yönü')}: + → − (kabul)`, s1: 6.8 },
   { id: 'p1', pre: 2.2, l1: `+ ${hl('yüksek')}, − ${cu('düşük')} potansiyel`, s1: 6.4 },
   { id: 'p2', pre: 0.5, l1: `Bu fark: ${hl('gerilim')}`, s1: 7.2 },
-  { id: 'p3', pre: 1.2, l1: `${hl('Gerilim')} yükleri iter`, s1: 7 },
+  { id: 'p3', pre: 1.2, l1: `${hl('Gerilim')}, yükleri iter`, s1: 7 },
   { id: 'g1', pre: 4.0, l1: `Her kaynağın ${hl('gerilimi')} var`, s1: 6.6 },
   { id: 'v1', pre: 3.4, l1: `${hl('Gerilim')} ↓ → ${rd('Akım')} ↓`, s1: 7.4, extra: 0.3 },
   { id: 'v2', pre: 1.8, l1: `${hl('Gerilim')} ↑ → ${rd('Akım')} ↑`, s1: 7.4, extra: 0.3 },
-  { id: 'k1', pre: 0.5, l1: `${hl('Gerilim')} (${hl('V')}): potansiyel farkı`, l2: `birimi: volt (${hl('V')})`, s1: 6.4, s2: 6, extra: 1.6 },
+  { id: 'k1', pre: 0.5, l1: `${hl('Gerilim')}: potansiyel farkı`, l2: `birimi: volt (${hl('V')})`, s1: 6.4, s2: 6, extra: 1.6 },
 ];
 const { Z, A, DUR } = timeline(BEATS, { k: 1.03 });
 export const _T = { Z, A };
@@ -83,7 +83,7 @@ export const meta = {
 const X = 0.8, ZH = 1.2, Y = 0.2;                    // devre dikdörtgeni (x sağ, z izleyiciye)
 const PX = 7.2;                                       // mini modeller: sağdaki ikinci alan
 const PLZ = [[-0.6, -0.75], [0.6, -0.75], [-0.6, 0.65], [0.6, 0.65]];
-const YEL = new THREE.Color(0xffd23f), ORG = new THREE.Color(0xa83c00), MID = YEL.clone().lerp(ORG, 0.5);
+const YEL = new THREE.Color(0xffd23f), ORG = new THREE.Color(0x8a2a00), MID = new THREE.Color(0x6e4a2e);
 
 const textTex = (txt, { w = 512, h = 200, color = '#ffffff', bg = null, size = 120 } = {}) => canvasTex(w, h, (c, W, H) => {
   if (bg) { c.fillStyle = bg; c.fillRect(0, 0, W, H); }
@@ -262,7 +262,7 @@ export function build(S) {
     label('py', hl('yüksek'), X - 0.42, 0.3, -0.8, { opacity: pl, size: 4.6 });
     label('pd', cu('düşük'), -X + 0.42, 0.3, -0.35, { opacity: pl, size: 4.6 });
     label('le', gr('elektronlar'), -0.1, 0.3, ZH - 0.45, { opacity: fade(t, Z.c1[0], A.p1 + 0.4, 0.3), size: 4.6 });
-    label('la', rd('akım yönü'), 0.0, 0.3, -0.45, { opacity: fade(t, Z.c2[0], A.p1 + 0.4, 0.3), size: 4.6 });
+    label('la', rd('akım yönü'), -0.2, 0.3, -0.45, { opacity: fade(t, Z.c2[0], A.p1 + 0.4, 0.3), size: 4.6 });
     SRC.forEach(([n, v], i) => {
       const o = easeOut(seg(t, A.g1 + 1.3 + i * 0.7, A.g1 + 1.7 + i * 0.7)) * (1 - easeOut(seg(t, A.v1 + 0.2, A.v1 + 0.5)));
       label('n' + i, n, PX + PLZ[i][0], 0.0, PLZ[i][1] + 0.62, { opacity: o, size: 4.0 });
