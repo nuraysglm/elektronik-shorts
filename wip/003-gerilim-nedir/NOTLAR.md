@@ -6,3 +6,4 @@
 - 18:05 UTC: 2. kare kontrolü yapıldı; dogruluk.md, render_parts.sh, birlestir.sh hazır. Bağımsız denetim bekleniyor.
 - 18:15 UTC: bağımsız denetim tamam; 7 öneri uygulandı (↔ benzetme, geleneksel, aynı ampul koşulu, iki nokta arası, birim g1'de, basınç etiketleri). Süre 95,8 sn. Parça render başladı.
 - parca-03: tamam (18:07 UTC)
+- parca-00: tamam (18:07 UTC)
