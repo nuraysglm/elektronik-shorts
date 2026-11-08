@@ -3,3 +3,4 @@
 - 17:40 UTC: Wikipedia Voltage açılamadı (ağ izni yok). aaCell/phoneCell/adapter/carBattery → tools/lib/kaynaklar.js, pipeLoop → tools/lib/boru.js (ikinci kullanım).
 - 17:55 UTC: senaryo.md + scene.js (90,8 sn) yazıldı, 1. kare kontrolü yapıldı (kaynak platformları aralandı).
 - Sıradaki: bağımsız metin denetimi → dogruluk.md → 2. kare kontrolü → parça render (render_parts.sh, 5 parça) → birleştir (birlestir.sh) → kalite → Metricool.
+- 18:05 UTC: 2. kare kontrolü yapıldı; dogruluk.md, render_parts.sh, birlestir.sh hazır. Bağımsız denetim bekleniyor.

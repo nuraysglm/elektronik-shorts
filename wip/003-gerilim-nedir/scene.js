@@ -96,7 +96,7 @@ export const meta = {
 // ---------------------------------------------------------------- yerleşim
 const X = 0.8, ZH = 1.2, Y = 0.2;                    // devre dikdörtgeni (x sağ, z izleyiciye)
 const PX = 7.2, PB = -7.2;                            // kaynaklar (sağ), boru benzetmesi (sol)
-const PLZ = [[-0.6, -0.9], [0.6, -0.9], [-0.6, 0.8], [0.6, 0.8]];
+const PLZ = [[-0.55, -0.9], [0.55, -0.9], [-0.55, 0.8], [0.55, 0.8]];
 const YEL = new THREE.Color(0xffd23f), ORG = new THREE.Color(0x8a2a00), MID = new THREE.Color(0x6e4a2e);
 
 export function build(S) {
