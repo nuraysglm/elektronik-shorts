@@ -3,6 +3,7 @@
 Bu dosya ajanın kurallarıdır. Ajan her çalışmanın başında bu dosyayı baştan sona okur ve eksiksiz uygular.
 
 > **ÖNCE HIZLI STOK KONTROLÜ (kredi tasarrufu — kanal sahibinin kararı).** Dosyanın geri kalanını okumadan önce yalnızca şunu yap:
+> 0. **Başka bir çalışma sürüyor mu?** `git fetch origin` yap; `git log origin/main --since='40 minutes ago' --format=%s` ve `git ls-remote --heads origin 'claude/*'` çıktısında `wip/` ilerlemesi (ör. "render parçası", "senaryo", "ara kayıt") varsa başka bir çalışma o videoyu üretiyor demektir. Aynı işe dokunma: panelde `bolumler`'e `sonuc: "atlandı"`, not "önceki çalışma sürüyor" yaz ve dur.
 > 1. `konular.md`'de durumu `yeniden düzenle` veya `yarım kaldı` olan satır, ya da `wip/` altında yarım iş var mı bak. Varsa bu kutuyu atla ve dosyanın tamamını oku.
 > 2. Yoksa Metricool `getBrandSettings` ile `youtubeData == "UCAvE1cKeoIbIXCyIks-U81w"` markasını bul, `getScheduledPosts` (`timezone: Europe/London`, bugünden 14 gün sonrasına) ile bu kanalın yayın bekleyen, taslak olmayan YouTube gönderilerini say.
 > 3. **2 veya fazlaysa:** yayın saati geçmiş `planlandı` kayıtlarını `yayında`/`yayınlandı` yap (bölüm 9), panelde `bolumler`'e tek satırlık `sonuc: "stok dolu"` kaydı yaz, `konular.md`/`gunluk.md` değiştiyse commit + push et ve **dur**. Uzun açıklama yazma; son mesaj tek satır: "Stok dolu (2 video), yeni video üretilmedi."
