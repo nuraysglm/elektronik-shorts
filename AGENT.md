@@ -13,7 +13,8 @@ Kuralları kanal sahibi (kullanıcı) belirler; genel müdür (Claude) bu dosyay
 
 - Kanal: **Öğr. Gör. Nuray SAĞLAM**, @NuraySaglamBedir. YouTube kanal kimliği: `UCAvE1cKeoIbIXCyIks-U81w`
 - Her Short, konu listesindeki **bir** konuyu, izleyicinin videodan anlayabileceği şekilde anlatır. Dil **Türkiye Türkçesi**; ondalık ayırıcı virgül (4,7 kΩ), birimler SI.
-- **Görsel hedef:** Tracing Science kanalındaki gibi gerçekçi 3D. Stüdyo ışığı altında ahşap masa üzerinde gerçek görünümlü bileşenler (bakır tel, pil, direnç, LED, ampul, multimetre, baskılı devre). Metal yansımaları, yumuşak gölgeler, kamera yavaş ve akıcı hareket eder. Akım, kablolar boyunca akan küreler olarak gösterilebilir.
+- **Görsel hedef:** Temiz, minimalist, yüksek kaliteli 3D eğitim animasyonu (Tracing Science seviyesi). Koyu, mat, nötr bir zemin üzerinde gerçek görünümlü bileşenler (bakır tel, pil, direnç, anahtar, ampul, LED, kondansatör). Metal yansımaları, yumuşak gölgeler, ışık efektleri (parlayan ampul, ışıklı yükler) koyu zeminde öne çıkar. Kamera yavaş ve akıcı hareket eder.
+- **Animasyon anlatır, yazı doğrular** (bölüm 2a). Video, sesi kapalı ve yazıları okumadan izlense bile konuyu animasyonla öğretmelidir.
 - Başka kanalların görünüşü, logosu, karakterleri veya müziği kopyalanmaz.
 
 ## 2. Kullanıcının ilk denemede bulduğu hatalar (asla tekrarlama)
@@ -28,6 +29,27 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 6. **Yazıların boyutu, rengi ve konumu doğru olmalı.** Telefonda rahat okunur, nesnelerin üstüne binmez, bir anda ekranda en fazla 2 satır.
 7. **Konu anlaşılır anlatılmalı.** Konuyu hiç bilmeyen bir lise öğrencisi videoyu izleyince anlamalı.
 8. **Türkçe seslendirme yeterince doğal değildi.** Kanal sahibinin kararı: videolarda **insan sesi / seslendirme kullanılmaz.** Anlatımı ekranda akan yazılar yapar (bölüm 6).
+
+9. **Yazılar çok yukarıdaydı;** telefonun üstteki sabit ikonlarının (geri, arama, menü) altına denk geldi. Üst %10'a hiçbir şey konmaz (bölüm 4).
+10. **Üst kısım okunsun diye karartılmıştı ama bu devrenin görünürlüğünü azalttı.** Karartma katmanı/gradyan kullanılmaz. Zemin rengi ve yazı stili, devre ve yazılar karartmasız da net görünecek şekilde seçilir (bölüm 4).
+11. **İzleyicinin odağı animasyondan çok yazılara kayıyordu;** bu öğreticiliği düşürdü. Anlatılanlar yazıyla değil animasyonla anlatılır (bölüm 2a).
+12. **Devre elemanlarının gerçek hayatta neyi temsil ettiği anlaşılmıyordu.** Her videoda kavramın gerçek hayattaki karşılıkları kodla çizilmiş 3D mini modellerle gösterilir (bölüm 2a).
+13. **Video çok uzundu, çok fazla bilgi vardı.** Her video tek kavram, az bilgi; hedef süre 30–60 sn. Bir konu fazla bilgi içeriyorsa kanal sahibine panelden bölmeyi öner (bölüm 13).
+
+## 2a. Görsel öğretim kuralları (kanal sahibinin kararı — her videoda zorunlu)
+
+1. **Animasyon anlatıcıdır.** Her fikir önce animasyonla gösterilir: değişen bir şey (gerilim, direnç) ve onun sonucu (akımın hızı/yoğunluğu, ampulün parlaklığı) aynı anda, gözle görülür biçimde. Örnek: gerilim artar → yükler hızlanır, ampul parlaklaşır; gerilim azalır → yükler yavaşlar, ampul söner gibi olur. Direnç artar → yol daralır/akış seyrekleşir, ampul kararır; direnç azalır → akış yoğunlaşır, ampul parlar.
+2. **Yazı yalnızca doğrulama içindir.** Animasyon bir şeyi gösterdikten **sonra**, 1–4 kelimelik kısa etiket olarak gelir (ör. "Gerilim ↑ → Akım ↑"). Yazı animasyonla aynı anda değil, ardından gelir. Uzun cümle yok. Bir anda en fazla 1 satır etiket + gerekirse nesne üstü değer etiketleri (9 V, 450 Ω).
+3. **Yasa ve formül en sonda.** Kural/yasa (ör. Ohm yasası, V = I × R) videonun sonunda, animasyon her şeyi gösterdikten sonra yazıyla verilir.
+4. **Gerçek hayat bağlantısı her videoda.** Kavramın gerçek hayattaki karşılıkları **kodla çizilmiş 3D mini modeller** olarak ekrana gelir (fotoğraf, telifli görsel, yapay zekâ görseli yok). Örnekler: gerilim kaynağı → AA pil, 9 V pil, telefon bataryası, araba aküsü, PSU (bilgisayar güç kaynağı), priz adaptörü; direnç → ısıtıcı teli, ampul, ütü, telefon şarj eden bir cihaz ("akım çeken her cihazın bir direnç eşdeğeri vardır"); akım → kablodan akan yükler, açılan bir lamba. Mini modeller sahnede küçük kartlar/platformlar üzerinde sırayla belirir ve sonra devredeki sembolle eşleşir (ör. bir pil modeli devredeki pile dönüşür).
+5. **Metafor kullanılabilir** (ör. direnç = dar boru / kalabalık koridor, gerilim = su basıncı / tepeden aşağı itme). Metafor animasyonla gösterilir ve hemen ardından gerçek devreyle eşleştirilir.
+6. **Örnek animasyondaki öğeler (kanal sahibinin referansı):**
+   - Pil, bakır teller, anahtar ve ampulden oluşan basit devre; koyu arka plan, ışık efektleri öne çıkar.
+   - Tellerin içinde küçük, ışıklı parçacıklar pürüzsüz ve sürekli bir döngüde akar.
+   - **Anahtar mekanizması:** anahtar fiziksel olarak kapanır; kapanınca parçacıklar akmaya başlar.
+   - **Geri bildirim:** devre tamamlanınca ampul karanlıktan sıcak sarı ışığa geçer; parlaklık akımla orantılıdır.
+   - **Potansiyel farkı:** gerilim gösterilirken tel içinde renk geçişi kullanılır (pilin + ucundan − ucuna doğru yüksek potansiyelden düşük potansiyele, ör. sarıdan koyu turuncuya).
+7. **Akım yönü (kanal sahibinin kararı):** Parçacıklar **elektron** olarak gösterilir ve gerçek elektron yönünde (pilin − ucundan + ucuna) akar. Ayrıca + → − yönünde ayrı renkte bir **geleneksel akım oku** gösterilir. İkisi ilk göründüğünde kısa etiketle ayrılır ("elektronlar", "akım yönü"). Bu kural "akımı küreler + → − akar" yazan eski kuralların yerine geçer.
 
 ## 3. Teknik hat (değiştirme)
 
@@ -73,7 +95,8 @@ Bir çalışma yaklaşık 30–40 dakikada kesilebilir. Uzun bir video tek çal�
 
 ## 4. Ekran düzeni (9:16)
 
-- Yazılar üstte, `y` %4–24 bandında; en fazla 2 satır, kalın; ana başlık 6–8 vw, açıklama 5–6 vw, etiket en az 4 vw. Vurgu renkleri: `hl` sarı, `rd` kırmızı, `gr` yeşil, `bl` mavi, `cu` bakır. Aynı kavram her yerde aynı renkte (ör. gerilim hep sarı, akım hep kırmızı, direnç hep mavi).
+- **Üst %10 boş kalır** (telefonun ve YouTube'un üst ikonları). Yazılar `y` %12–24 bandında; en fazla 2 satır, kalın; ana başlık 6–8 vw, açıklama 5–6 vw, etiket en az 4 vw. Vurgu renkleri: `hl` sarı, `rd` kırmızı, `gr` yeşil, `bl` mavi, `cu` bakır. Aynı kavram her yerde aynı renkte (ör. gerilim hep sarı, akım hep kırmızı, direnç hep mavi).
+- **Zemin ve renkler:** Koyu, mat, nötr bir zemin (koyu gri / koyu gri-kahve, hafif doku, gölgeler görünür). **Karartma katmanı veya gradyan yok** — `tools/player.html`'deki `#overlay` arka plan gradyanını kaldır ve `tools/lib/stage.js`'de zemini bu tarza göre ayarla (ahşap doku yerine mat koyu yüzey; masa rengi devreyle kontrast oluşturmalı). Yazılar karartmaya değil kendi kontur/gölgelerine güvenerek okunur. Renkler bu zemine göre: yükler/elektronlar parlak, teller bakır-altın, ampul ışığı sıcak sarı, vurgu renkleri koyu zeminde net.
 - Ana nesneler ekranın %25–75 yüksekliğinde. **Alt %20'ye önemli hiçbir şey konmaz** (YouTube başlık ve butonları). Sağ kenardan %12 içeride kal.
 - Yazı hiçbir zaman ana nesnenin üstüne binmez.
 - Formüller tek satır (`nowrap: true`).
@@ -82,9 +105,9 @@ Bir çalışma yaklaşık 30–40 dakikada kesilebilir. Uzun bir video tek çal�
 ## 5. Senaryo ve kurgu
 
 1. **Senaryoyu önce yaz:** `wip/<id>/senaryo.md`. Her sahne için: süre, ekranda ne görünüyor, ekrandaki yazı (anlatım), efekt.
-2. Yapı: **Kanca** (0–3 sn, ilk karede görünür soru/iddia) → **Kavramlar** (her biri tek tek, görselle) → **İlişki/kural** (formül + gerçek değerlerle örnek) → **Özet** (tek cümle).
+2. Yapı: **Kanca** (0–3 sn, ilk karede görünür bir soru veya şaşırtıcı görüntü) → **Gerçek hayat** (mini modeller) → **Animasyonla gösterim** (değiştir → sonucu göster → kısa etiket) → **Kural/yasa** (en sonda yazıyla) → **Kapanış** (döngüye uygun son kare). Hedef 30–60 sn.
 3. Her yeni kavram önce görselle tanıtılır, sonra adı söylenir. Bir sahnede tek fikir.
-4. Seslendirme yok: senaryodaki her sahnenin "ekran yazısı" sütunu anlatımın kendisidir; izleyici sesi kapalı izlese de konuyu tam anlamalı.
+4. Seslendirme yok ve anlatıyı yazı değil animasyon taşır: senaryoda her sahne için önce "animasyon ne gösteriyor" (değişen şey ve sonucu), sonra "doğrulama etiketi" yazılır. Yazılar kapatılsa da konu animasyondan anlaşılmalı.
 5. Konunun "gerekli bilgi" listesini senaryonun başına yaz ve videoda her maddenin geçtiğini işaretle.
 
 ## 6. Ses ve ekran yazıları (anlatım)
@@ -94,11 +117,11 @@ Bir çalışma yaklaşık 30–40 dakikada kesilebilir. Uzun bir video tek çal�
 - Efektlerde 4 kHz üstü keskin tonlar yok (ding, bip, sparkle, zap, tick kullanma; gerekiyorsa alçak geçiren filtreyle yumuşat). Ani yüksek ses yok. Son ses: -16 LUFS civarı, tepe -1,5 dBTP altında (render aracı `loudnorm` uygular; sessiz anların yükseltilmemesine dikkat et).
 - Sahne `meta`: `music: { off: true }`, `voice` alanı yok.
 
-**Anlatım = ekranda akan yazılar.** Seslendirmenin yaptığı işi yazılar yapar:
-- Önemli her bilgi, sırası gelince ekranda yazı olarak belirir: kısa cümleler, bir anda tek fikir. Önceki satır yukarı kayarak/solarak yer açar; yeni satır aşağıdan akarak gelir (yumuşak geçiş, 0,3–0,4 sn).
+**Ekran yazıları — yalnızca doğrulama (bölüm 2a).** Anlatıyı animasyon yapar; yazı, animasyonun gösterdiğini doğrulayan kısa etikettir:
+- Her etiket, ilgili animasyon olayı gösterildikten **sonra** belirir: 1–4 kelime, bir anda tek etiket. Önceki satır yukarı kayarak/solarak yer açar; yeni satır aşağıdan akarak gelir (yumuşak geçiş, 0,3–0,4 sn).
 - **Okuma süresi:** Her yazı ekranda en az `1,2 sn + 0,35 sn × kelime sayısı` kalır. Senaryonun süresini yazıların okunma süresi belirler; acele ettirme.
 - Bir anda ekranda en fazla 2 satır anlatım yazısı + gerekirse 1 formül satırı.
-- Yazı, anlattığı olayla **aynı anda** görünür (ör. "Akım: telde akan yük" yazısı yükler akarken).
+- Yazı, animasyonun gösterdiği olaydan hemen **sonra** gelir; izleyicinin gözü önce animasyonda olmalı.
 - Anahtar kelimeler renkli: gerilim sarı (`hl`), akım kırmızı (`rd`), direnç mavi (`bl`). Sayılar ve birimler her zaman yazıyla da verilir (9 V, 450 Ω, 20 mA).
 - Yazılar bölüm 4'teki boyut, konum ve güvenli alan kurallarına uyar.
 
@@ -112,6 +135,11 @@ Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama;
 - "Gerekli bilgi" listesindeki her madde videoda var mı? Eksik varsa video eksiktir.
 - Ayrı bir alt ajana (Agent aracı) **yalnızca metin** ver: senaryo, ekran yazılarının sıralı listesi ve `dogruluk.md`. Görsel, kare veya video verme. Konunun doğru ve eksiksiz anlatılıp anlatılmadığını bağımsız değerlendirsin; bulduklarını düzelt. Bu denetim senaryo aşamasında, render'dan **önce** yapılır; sonradan içerik değişmediyse tekrarlanmaz.
 
+**A2. Görsel öğretim (bölüm 2a)**
+- Yazılar kapalıyken (yalnızca sahne) kareler incelendiğinde konu anlaşılıyor mu? Her değişkenin değişimi ve sonucu animasyonda görünüyor mu?
+- Gerçek hayat mini modelleri var mı? Yasa/formül en sonda mı? Hiçbir etiket ilgili animasyondan önce gelmiyor mu?
+- Akım yönü kuralı (elektronlar − → +, ayrı renkte geleneksel akım oku) doğru mu?
+
 **B. Görüntü**
 - Son render'dan şu kareleri çıkar ve kontak sayfaları halinde (sayfa başına 8 kare, düşük çözünürlük: kare genişliği ~270 px) Read ile incele:
   - **her ekran yazısının ilk göründüğü an + 0,5 sn** (yazı zamanlarını sahne kodundan al): yazı boyutu, konumu, nesnelerle çakışma, kesilme;
@@ -119,6 +147,7 @@ Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama;
   - **her 3 saniyede bir** genel kare: görsel bozukluk, titreme, yanlış yerde nesne.
   Aynı yazının gösterildiği kareleri tekrar etme. Bölüm 2 ve 4'teki her kuralı bu karelerde kontrol et; şüpheli bir yer varsa yalnızca o aralıktan sık kare çıkar.
 - Render sırasında tarayıcı konsoluna hata düşmüş olmamalı.
+- Üst %10 boş mu, karartma/gradyan yok mu, devre net görünüyor mu?
 
 **C. Ses**
 - `ffmpeg -af ebur128` ile ölç: entegre ses yaklaşık -16 LUFS, tepe -1,5 dBTP altında.
@@ -156,6 +185,8 @@ Kanal sahibinin kararı:
 **Metricool `createScheduledPost`:** `draft: false`, `autoPublish: true`, `publicationDate: {dateTime: "<YYYY-MM-DD>T16:00:00", timezone: "Europe/London"}`. YouTube ayarları bölüm 11'deki gibi.
 
 **Kayıtları güncelleme (her çalışmada):** Daha önce `planlandı` olarak kaydedilmiş ve yayın saati geçmiş videoları Metricool'da kontrol et; yayınlandıysa `konular.md` ve paneldeki `konular` belgesini `yayında`, `bolumler` belgesini `yayınlandı` yap.
+
+**Planlanmış bir gönderinin tarihini asla değiştirme, yeniden oluşturma veya "hemen yayınla" yapma;** tek istisna kanal sahibinin açık emri veya bölüm 11'deki `yeniden düzenle` akışıdır. Bir gönderinin yayın saati beklenenden farklı görünürse değiştirme; panelde not düş.
 
 Kalite kontrolünden (bölüm 7) geçmeyen video **asla** planlanmaz; kanal sahibi panelde onay verirse planlanır (bölüm 13).
 
