@@ -147,8 +147,10 @@ def music(duration, bpm=92, key="A", gain=0.8, seed=0):
 def sfx(kind, seed=1, d=None):
     rng = np.random.default_rng(seed)
     if kind == "click":
-        n = int(0.06 * SR)
-        return 0.5 * rng.standard_normal(n) * env(n, 0.0005, 0.008) + 0.4 * np.sin(2 * np.pi * 2400 * t_axis(0.06)) * env(n, 0.0005, 0.015)
+        # yumuşak mekanik tık: 4 kHz üstü keskin enerji yok (AGENT.md 6) — düşük gövde tonu + alçak geçirilmiş gürültü
+        n = int(0.08 * SR)
+        x = 0.35 * rng.standard_normal(n) * env(n, 0.003, 0.012) + 0.5 * np.sin(2 * np.pi * 900 * t_axis(0.08)) * env(n, 0.003, 0.02)
+        return lowpass(lowpass(x, 1800), 1800)
     if kind == "tick":
         n = int(0.03 * SR)
         return 0.35 * np.sin(2 * np.pi * 3200 * t_axis(0.03)) * env(n, 0.0005, 0.006)

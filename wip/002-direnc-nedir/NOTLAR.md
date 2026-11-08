@@ -2,7 +2,7 @@
 - 1. sürümün belgeleri ve sahnesi `eski/` altında (scenes/002-direnc-nedir.js de 1. sürüm). Metricool taslak uuid 8827377021850894760 (yeni videoyla güncellenecek).
 - 15:50 UTC: Wikipedia Resistor açılamadı (ağ izni yok) → dogruluk.md'ye not, panele not. senaryo.md + dogruluk.md yazıldı.
 - Sıradaki: bağımsız metin denetimi → tools/lib/anlatim.js'e kalemle yazı (pen) → scene.js (yeni yapı, ~80 sn) → kare kontrolü → parça parça render → birleştir + ses → kalite → Metricool (taslağı güncelle, sıradaki boş 16:00).
-- 16:0x UTC: bağımsız denetim tamam (düzeltmeler dogruluk.md'de). Kalemle yazı: stage.js `reveal`, anlatim.js `penTimeline`/`narrationPen`. makeSwitch/heater/iron/kettle → tools/lib/devre.js. scene.js yazıldı (105,6 sn), 1. kare kontrolü yapıldı ve düzeltildi.
+- 15:45 UTC: bağımsız denetim tamam (düzeltmeler dogruluk.md'de). Kalemle yazı: stage.js `reveal`, anlatim.js `penTimeline`/`narrationPen`. makeSwitch/heater/iron/kettle → tools/lib/devre.js. scene.js yazıldı (105,6 sn), 1. kare kontrolü yapıldı ve düzeltildi.
 - Sıradaki: 2. kare kontrolü → hareket önizlemesi → parça render (render_parts.sh, 6 parça).
 - parca-01: tamam (16:19 UTC)
 - parca-00: kanca düzeltmesi (alt satır ampule biniyordu, pil alt %20 sınırında) için yeniden render
@@ -15,3 +15,5 @@
 - parca-02: tamam (17:14 UTC)
 - parca-03: tamam (17:14 UTC)
 - parca-05: tamam (17:21 UTC)
+- 17:25 UTC: tüm parçalar tamam, birleştirildi + ses (click efekti yumuşatıldı) → media/002-direnc-nedir/ (105,6 sn). Kalite kontrolü GEÇTİ (kalite.md). Sahne scenes/002-direnc-nedir.js'e kopyalandı (1. sürüm: eski/scene-v1.js).
+- Sıradaki: main'de doğrula → Metricool taslağını (uuid 8827377021850894760) yeni videoyla güncelle, 2026-11-09 16:00 Londra → konular/gunluk/panel.
