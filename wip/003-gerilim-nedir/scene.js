@@ -13,15 +13,15 @@ import { pipeLoop } from '../../tools/lib/boru.js';
 // ---------------------------------------------------------------- anlatım (pre: yazıdan önceki yazısız animasyon)
 const BEATS = [
   { id: 'h1', pen: false, pre: 0, l1: 'Aynı ampul,', l2: `<b style="font-weight:900">neden daha ${hl('parlak')}?</b>`, s1: 7.6, s2: 7.6, extra: 2.8 },
-  { id: 'c1', pre: 3.6, l1: `${gr('Elektronlar')}: − → +`, l2: `${rd('Akım yönü')}: + → − (kabul)`, s2: 5.6 },
+  { id: 'c1', pre: 3.6, l1: `${gr('Elektronlar')}: − → +`, l2: `${rd('Akım yönü')}: + → − (geleneksel)`, s2: 5.6 },
   { id: 'p1', pre: 2.4, l1: `+ ${hl('yüksek')}, − ${cu('düşük')} potansiyel`, s1: 6.2 },
-  { id: 'p2', pre: 0.9, l1: `Bu fark: ${hl('gerilim')}` },
-  { id: 'a1', pre: 5.2, l1: 'Pompa suyu iter', l2: `Pompa = pil, su akışı = ${rd('akım')}`, s2: 5.4 },
-  { id: 'a2', pre: 3.4, l1: 'Basınç farkı ↑ → akış ↑', l2: `Basınç farkı = ${hl('gerilim')}`, s1: 6.2, s2: 5.6 },
-  { id: 'g1', pre: 5.4, l1: `Her kaynağın bir ${hl('gerilimi')} var`, s1: 6.0 },
-  { id: 'v1', pre: 3.6, l1: `${hl('Gerilim')} ↓ → ${rd('Akım')} ↓` },
-  { id: 'v2', pre: 2.2, l1: `${hl('Gerilim')} ↑ → ${rd('Akım')} ↑` },
-  { id: 'k1', chain: true, pre: 1.4, l1: `Pilin uçları arasında ${hl('fark')} var` },
+  { id: 'p2', pre: 0.9, l1: `İki nokta arası fark: ${hl('gerilim')}`, s1: 6.2 },
+  { id: 'a1', pre: 5.2, l1: 'Pompa suyu iter', l2: `Pompa ↔ pil, akış ↔ ${rd('akım')}`, s2: 5.4 },
+  { id: 'a2', pre: 3.4, l1: 'Basınç farkı ↑ → akış ↑', l2: `Basınç farkı ↔ ${hl('gerilim')}`, s1: 6.2, s2: 5.6 },
+  { id: 'g1', pre: 5.4, l1: `Her kaynağın bir ${hl('gerilimi')} var`, l2: `birimi: volt (${hl('V')})`, s1: 6.0, s2: 5.6 },
+  { id: 'v1', pre: 3.6, l1: `Aynı ampul: ${hl('Gerilim')} ↓ → ${rd('Akım')} ↓`, s1: 6.2 },
+  { id: 'v2', pre: 2.2, l1: `Aynı ampul: ${hl('Gerilim')} ↑ → ${rd('Akım')} ↑`, s1: 6.2 },
+  { id: 'k1', chain: true, pre: 1.4, l1: `Uçlar arasında ${hl('potansiyel farkı')} var` },
   { id: 'k2', chain: true, pre: 1.2, l1: 'Bu fark yükleri iter' },
   { id: 'k3', chain: true, pre: 1.2, l1: `${hl('Fark')} büyürse itme artar` },
   { id: 'k4', chain: true, pre: 1.2, l1: `${rd('Akım')} artar, ampul parlar` },
@@ -247,8 +247,11 @@ export function build(S) {
     label('le', gr('elektronlar'), -0.1, 0.3, ZH - 0.45, { opacity: onC(A.c1 + 2.8, A.p1 + 0.2), size: 4.4 });
     label('la', rd('akım yönü'), -0.2, 0.3, -0.45, { opacity: onC(A.c1 + 3.4, A.p1 + 0.2), size: 4.4 });
     const pOn = onC(A.a1 + 2.4, A.g1 + 0.6);
-    label('pp', 'pompa', PB, 0.3, PL.ZP + 0.55, { opacity: pOn, size: 4.4 });
+    label('pp', 'pompa', PB, 0.3, PL.ZP + 0.75, { opacity: pOn, size: 4.4 });
     label('pc', 'çark', PB + 0.55, 0.45, -PL.ZP, { opacity: pOn * onC(A.a1 + 3.2, A.g1 + 0.6), size: 4.2 });
+    const bp = onC(T_P1 + 1.0, A.g1 + 0.6), bk = 0.8 + 0.2 * pump(t);
+    label('bh', hl('yüksek basınç'), PB + 0.72, 0.3, PL.ZP + 0.45, { opacity: bp, size: 3.6 * bk + 0.6 });
+    label('bd', cu('düşük basınç'), PB - 0.72, 0.3, PL.ZP + 0.45, { opacity: bp, size: 3.6 * bk + 0.6 });
     label('pq', 'akış', PB + PL.XP - 0.45, 0.75, -0.25, { opacity: onC(T_P2 + 1.2, A.g1 + 0.6), size: 4.0 });
     SRC.forEach(([n, v], i) => {
       const o = easeOut(seg(t, A.g1 + 2.5 + i * 0.7, A.g1 + 2.9 + i * 0.7)) * (1 - easeOut(seg(t, A.v1 + 0.2, A.v1 + 0.5)));

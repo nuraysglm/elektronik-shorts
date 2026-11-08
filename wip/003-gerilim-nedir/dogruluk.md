@@ -18,3 +18,12 @@
 | Şarj adaptörü 5 V | Standart USB çıkışı 5 V (hızlı şarjlı modeller daha yüksek verebilir) | ✔ |
 | Araba aküsü 12 V | Kurşun-asit otomobil aküsü anma 12 V | ✔ |
 | Devredeki 9 V pil | 9 V pil (PP3) | ✔ |
+
+## Bağımsız denetim (alt ajan, yalnızca metin) — uygulananlar
+- c1: "(kabul)" → "(geleneksel)".
+- p2: "Bu fark: gerilim" → "İki nokta arası fark: gerilim" (gerilim iki nokta arasındadır).
+- a1/a2: "=" → "↔" (benzetme eşitlik değil); boruya pompa çıkışında "yüksek basınç", girişinde "düşük basınç" etiketleri eklendi (basınç farkı gösterilmeden adı geçmesin).
+- g1: alt satır "birimi: volt (V)" (V harfi f1'den önce görünüyordu).
+- v1/v2: "Aynı ampul:" koşulu eklendi.
+- k1: "Uçlar arasında potansiyel farkı var".
+- Kontrol: su akış yönü pompa çıkışından (+x, sağ) sağ kenar boyunca arkaya — devredeki geleneksel akım okuyla aynı (+ ucu sağda) ✔.
