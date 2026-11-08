@@ -7,7 +7,7 @@ Durumlar: `bekliyor` · `yeniden düzenle` (kanal sahibi değişiklik istedi; ö
 | # | Konu | Ana fikir (videonun öğrettiği) | Durum | Tarih |
 |---|------|--------------------------------|-------|-------|
 | 1 | Akım, gerilim, direnç nedir ve bunlar arasında nasıl bir ilişki vardır? | Akım, gerilim ve direncin tanımları ve birimleri; aralarındaki ilişki (Ohm yasası, V = I × R). KANAL SAHİBİNİN İŞ EMRİ (yeniden düzenle): Mevcut video KALSIN, baştan yapılmayacak; görüntü, sahne akışı ve süre aynı kalır. (1) İnsan sesini (Piper seslendirmesi) tamamen kaldır. (2) Ses yalnızca efektlerden oluşsun; ekrandaki olaylara göre eksik efekt varsa ekle (bölüm 6 ses kuralları). (3) Seslendirmede söylenip ekranda yazıyla verilmeyen önemli bilgileri senaryo ve satirlar.json ile karşılaştırarak bul ve ekrana yazı olarak ekle (bölüm 6 yazı kuralları); bunun için sahnede yalnızca yazı katmanını değiştir. (4) Yeniden render, kalite kontrolü, Metricool taslağını güncelleyip sıradaki 16:00'a planla. Metricool taslak uuid: -6337869256101248003 | planlandı | 2026-11-08 |
-| 2 | Elektrik yükü, akım ve gerilim | Temel Devre Teorisi I, ders 1: başlıktaki konular; 1 numaralı videoyu tekrar etme, elektrik yüküne ağırlık ver | bekliyor | |
+| 2 | Elektrik yükü, akım ve gerilim | Temel Devre Teorisi I, ders 1: başlıktaki konular; 1 numaralı videoyu tekrar etme, elektrik yüküne ağırlık ver | planlandı | 2026-11-09 |
 | 3 | Gerilim kaynağı ve akım kaynağı | Temel Devre Teorisi I, ders 2: başlıktaki konular | bekliyor | |
 | 4 | Bağımlı kaynaklar, Ohm yasası ve akım-gerilim (I–V) karakteristikleri | Temel Devre Teorisi I, ders 3: başlıktaki konular | bekliyor | |
 | 5 | Kirchhoff yasaları (gerilim ve akım yasaları) | Temel Devre Teorisi I, ders 4: başlıktaki konular | bekliyor | |
