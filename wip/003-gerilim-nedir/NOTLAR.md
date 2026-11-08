@@ -14,3 +14,4 @@
 - parca-03: tamam (18:39 UTC)
 - parca-02: tamam (18:40 UTC)
 - parca-01: tamam (18:41 UTC)
+- 18:45 UTC: birleştirildi, kalite kontrolü GEÇTİ (kalite.md). Sahne scenes/003-gerilim-nedir.js'e kopyalandı (1. sürüm: eski/scene-v1.js). Parçalar silindi. Sıradaki: main'de doğrula → Metricool taslağı 4400534773572521687 → 2026-11-10 16:00.
