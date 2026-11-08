@@ -1,6 +1,12 @@
 # Elektronik Shorts Ajanı: kurallar
 
 Bu dosya ajanın kurallarıdır. Ajan her çalışmanın başında bu dosyayı baştan sona okur ve eksiksiz uygular.
+
+> **ÖNCE HIZLI STOK KONTROLÜ (kredi tasarrufu — kanal sahibinin kararı).** Dosyanın geri kalanını okumadan önce yalnızca şunu yap:
+> 1. `konular.md`'de durumu `yeniden düzenle` veya `yarım kaldı` olan satır, ya da `wip/` altında yarım iş var mı bak. Varsa bu kutuyu atla ve dosyanın tamamını oku.
+> 2. Yoksa Metricool `getBrandSettings` ile `youtubeData == "UCAvE1cKeoIbIXCyIks-U81w"` markasını bul, `getScheduledPosts` (`timezone: Europe/London`, bugünden 14 gün sonrasına) ile bu kanalın yayın bekleyen, taslak olmayan YouTube gönderilerini say.
+> 3. **2 veya fazlaysa:** yayın saati geçmiş `planlandı` kayıtlarını `yayında`/`yayınlandı` yap (bölüm 9), panelde `bolumler`'e tek satırlık `sonuc: "stok dolu"` kaydı yaz, `konular.md`/`gunluk.md` değiştiyse commit + push et ve **dur**. Uzun açıklama yazma; son mesaj tek satır: "Stok dolu (2 video), yeni video üretilmedi."
+> 4. 0 veya 1 ise dosyanın tamamını oku ve bölüm 11'deki akışa geç.
 Kuralları kanal sahibi (kullanıcı) belirler; genel müdür (Claude) bu dosyaya işler. Ajan bu kuralların dışına çıkmaz.
 
 ## 1. Kimlik ve hedef
@@ -34,10 +40,11 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 | Seslendirme | **Yok.** Kanal sahibinin kararı; Piper ve başka TTS kullanılmaz (bkz. 6) |
 
 Ekran kartı yok; WebGL işlemcide çalışır. **Denemeler düşük çözünürlükte, son render bir kez:**
-- Kare kontrolü: `node tools/render.mjs <sahne> --scale 0.4 --stills 1,4,8,... --out /tmp/k.png`, sonra görseli Read ile incele.
+- Kare kontrolü: `node tools/render.mjs <sahne> --scale 0.4 --stills 1,4,8,... --out /tmp/k.png`, sonra görseli Read ile incele. Görsellere bakmak pahalıdır: bir kontak sayfasında 6–8 an, render öncesi en fazla 2 sayfa.
 - Hareket kontrolü: `--preview` (540×960, 15 fps, sessiz) ile render alıp 1 saniye aralıklı kareleri kontrol et.
 - Son render: `node tools/render.mjs <sahne> --out media/<video-id>/<video-id>.mp4` (sesli).
-- **Performans:** `transmission` malzemesi kullanma; kare süresini 3 katına çıkarır. Tam çözünürlükte kare başına ~1,5–3 sn beklenir; render'ı arka planda çalıştır ve ilerlemesini izle.
+- **Performans:** `transmission` malzemesi kullanma; kare süresini 3 katına çıkarır. Tam çözünürlükte kare başına ~1,5–3 sn beklenir.
+- **Render beklerken kredi harcama (kanal sahibinin kararı):** Render'ı arka planda başlat, sonra render bitene kadar dönmeyen **tek bir** bekleme komutu çalıştır (ör. `until [ -f <çıktı> ]; do sleep 30; done`, zaman aşımı en fazla 10 dk). Ara ara "bitti mi" diye kontrol etme, ilerleme çıktısını tekrar tekrar okuma, beklerken mesaj yazma. 10 dakikayı aşan render'ı zaten parçalara bölüyorsun (bölüm 3a); her parça için bir bekleme komutu yeterli.
 
 Sahne dosyası şu şekli dışa aktarır:
 ```js
@@ -45,7 +52,11 @@ export const meta = { title, duration, fps: 30, music: { off: true }, cues: [{ t
 export function build(S) { /* nesneleri kur */ return (t) => { /* t anındaki durum */ }; }
 ```
 Zaman deterministiktir: `Date`, `Math.random`, `requestAnimationFrame` kullanılmaz; rastgelelik için `S.rng(seed)`.
-Bir yapı taşı eksikse (pil, direnç, ampul, multimetre, ok, su borusu benzetmesi...) önce sahne dosyasında yaz; iki videoda tekrar ederse `tools/lib/stage.js`'e taşı.
+**Ortak parçalar (kredi tasarrufu — kanal sahibinin kararı):** Her videoda sahneyi sıfırdan yazma.
+- Yeni sahneye başlamadan önce `tools/lib/` altındaki hazır parçaları oku ve kullan; yalnızca konuya özgü kısmı (hikâye, hesap, yeni bir bileşen) yaz.
+- Tekrar eden her şey `tools/lib/`'dedir veya oraya taşınır: pil, direnç (renk kodlu), tel ve devre yolu kurma, akan yük küreleri, LED/ampul, kondansatör, bobin, etiket, **akan ekran yazısı (anlatım) yöneticisi**, okuma süresi hesabı ve `console.assert` kontrolü, kamera hareketleri, efekt zamanlaması.
+- **Bu çalışmada** (stok kontrolü 0 veya 1 çıktıysa): 001 ve 002 sahnelerinde ortak olan parçaları `tools/lib/` altında modüllere taşı (ör. `tools/lib/parcalar.js`, `tools/lib/anlatim.js`), her fonksiyonun üstüne bir satır kullanım notu yaz. 001 ve 002'nin sahne dosyalarını değiştirme (bitmiş videolar). Taşıma bitince bu maddeyi kendin `tools/lib/README.md`'ye "nerede ne var" listesi olarak yaz.
+- Yeni bir yapı taşı gerekirse sahne dosyasında yaz; ikinci kez gerekirse `tools/lib/`'e taşı.
 
 ## 3a. Zaman bütçesi ve parça parça render (zorunlu)
 
@@ -99,10 +110,14 @@ Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama;
 - Senaryodaki her iddia, tanım, formül ve sayı için `wip/<id>/dogruluk.md`'ye bir satır yaz: iddia → neden doğru (formül/hesap) → ✔.
 - Ekrandaki her sayı sahne kodunda hesaplanır ve `console.assert` ile bağımsız olarak doğrulanır.
 - "Gerekli bilgi" listesindeki her madde videoda var mı? Eksik varsa video eksiktir.
-- Mümkünse ayrı bir alt ajana (Agent aracı) yalnızca senaryoyu, ekran yazılarını ve kareleri ver; konunun doğru ve eksiksiz anlatılıp anlatılmadığını bağımsız değerlendirsin. Bulduklarını düzelt.
+- Ayrı bir alt ajana (Agent aracı) **yalnızca metin** ver: senaryo, ekran yazılarının sıralı listesi ve `dogruluk.md`. Görsel, kare veya video verme. Konunun doğru ve eksiksiz anlatılıp anlatılmadığını bağımsız değerlendirsin; bulduklarını düzelt. Bu denetim senaryo aşamasında, render'dan **önce** yapılır; sonradan içerik değişmediyse tekrarlanmaz.
 
 **B. Görüntü**
-- Son render'dan her 1–2 saniyede bir kare çıkar (ffmpeg `fps=1`, karelerden kontak sayfaları) ve hepsini Read ile incele. Bölüm 2 ve 4'teki her kuralı kare kare kontrol et.
+- Son render'dan şu kareleri çıkar ve kontak sayfaları halinde (sayfa başına 8 kare, düşük çözünürlük: kare genişliği ~270 px) Read ile incele:
+  - **her ekran yazısının ilk göründüğü an + 0,5 sn** (yazı zamanlarını sahne kodundan al): yazı boyutu, konumu, nesnelerle çakışma, kesilme;
+  - **her yazı geçişinin ortası**: iki yazı üst üste biniyor mu;
+  - **her 3 saniyede bir** genel kare: görsel bozukluk, titreme, yanlış yerde nesne.
+  Aynı yazının gösterildiği kareleri tekrar etme. Bölüm 2 ve 4'teki her kuralı bu karelerde kontrol et; şüpheli bir yer varsa yalnızca o aralıktan sık kare çıkar.
 - Render sırasında tarayıcı konsoluna hata düşmüş olmamalı.
 
 **C. Ses**
