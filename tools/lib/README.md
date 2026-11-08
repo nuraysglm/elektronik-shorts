@@ -28,7 +28,14 @@ Bitmiş sahneler (`scenes/001-…`, `scenes/eski-002-…`) kendi kopyalarını k
 ## devre.js — ikinci kullanımda taşınanlar (002 → 003)
 - `makeBulb(S, {scale})` → `{group, set(parlaklık 0..1)}` — ampul
 - `platform(S, x, z, {r})` — mini model kaidesi
+- `makeSwitch(S, {gap, y})` → `{group, set(1 kapalı / 0 açık)}` — bıçaklı anahtar (z ekseninde)
+- `heater(S)` → `{group, hot}`, `iron(S)`, `kettle(S)` — ısıtıcı teli/soba, ütü, su ısıtıcısı mini modelleri
 
 ## Sahnede yazılıp henüz taşınmayanlar (ikinci kullanımda buraya taşı)
-- `wip/002-direnc-nedir/scene.js`: `makeSwitch` (bıçaklı anahtar), `pipes` (geniş/dar boru metaforu), mini modeller `heater`, `iron`, `kettle`
+- `wip/002-direnc-nedir/scene.js` (2. sürüm): `pipeLoop` (pompa + daralan kapalı boru + çark + debi göstergesi), `phone` (şarj olan telefon)
 - `wip/003-gerilim-nedir/scene.js`: `aaCell` (AA pil), `phoneCell` (telefon pili), `adapter` (şarj adaptörü), `carBattery` (araba aküsü), potansiyel renk katmanı (telde sarı → koyu turuncu, `paint(k)`)
+
+## Kalemle yazı (2a kural 8–10) — anlatim.js + stage.js
+- `S.text(id, html, {reveal})` — `reveal` 0..1: soldan sağa yumuşak kenarlı açılma + kalem ucu parıltısı
+- `penSec(html)` — yazma süresi (0,3 sn/kelime); `penTimeline(BEATS)` → `{Z, A, W, DUR}` (yazma + okuma süresi)
+- `narrationPen(S, BEATS, Z, W)` — kalemli üst yazı; `chain: true` adımlar alt satırda yazılır, öncekiler yukarı kayar (en fazla 2 satır)

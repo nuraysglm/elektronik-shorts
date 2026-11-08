@@ -61,3 +61,64 @@ export function narration(S, BEATS, Z, { y1 = 14, y2 = 21, s1 = 6.6, s2 = 5.2, g
   });
   return (t) => { for (const f of fns) f(t); };
 }
+
+// ---------------------------------------------------------------- kalemle yazı (AGENT.md 2a kural 8, 10)
+/** Kalemle yazma süresi: kelime başına 0,27 sn (kural 0,25–0,35; en az 0,5 sn). Yazı bitince okuma süresi başlar. */
+export const penSec = (html) => Math.max(0.5, 0.27 * wordsOf({ l1: html }));
+
+/**
+ * Kalemli zaman çizelgesi. BEATS = [{id, l1, l2?, pre?, extra?, pen?(varsayılan true), chain?}].
+ * Yazı süresi = yazma (penSec l1 + l2) + okuma (minSec × k). Dönen: { Z, A, W: {id: [l1Bitiş, l2Bitiş]}, DUR }.
+ */
+export function penTimeline(BEATS, { k = 1.03, tail = 0 } = {}) {
+  const Z = {}, A = {}, W = {};
+  let t = 0;
+  for (const b of BEATS) {
+    A[b.id] = t;
+    t += b.pre || 0;
+    const w1 = b.pen === false ? 0 : penSec(b.l1), w2 = b.pen === false || !b.l2 ? 0 : penSec(b.l2);
+    const d = w1 + w2 + minSec(b) * k;
+    Z[b.id] = [t, t + d];
+    W[b.id] = [t + 0.15 + w1, t + 0.15 + w1 + w2];
+    t += d;
+    check(d - w1 - w2 >= 1.2 + 0.35 * wordsOf(b) - 1e-9, `${b.id}: okuma süresi yetersiz`);
+  }
+  return { Z, A, W, DUR: Math.round((t + tail) * 30) / 30 };
+}
+
+/**
+ * Kalemli üst yazı yöneticisi: narrationPen(S, BEATS, Z, W) → yaz(t).
+ * Normal yazı: y1 (+ l2 y2) satırında kalemle yazılır, süresi bitince yukarı solar.
+ * chain: true olan ardışık yazılar (sebep-sonuç zinciri, kural 10): her adım alt satırda (y2) yazılır, önceki adım
+ * yukarı (y1) kayar, daha öncesi solar → ekranda en fazla 2 satır. Zincir, ardından gelen ilk zincir dışı yazıda solar.
+ */
+export function narrationPen(S, BEATS, Z, W, { y1 = 14, y2 = 21, s1 = 6.6, s2 = 5.2 } = {}) {
+  const ids = BEATS.map((b) => b.id);
+  const fns = BEATS.map((bt, i) => {
+    const [t0, t1] = Z[bt.id], last = i === BEATS.length - 1;
+    const rev = (t, a, b) => (bt.pen === false ? 1 : clamp((t - a) / Math.max(0.01, b - a)));
+    if (bt.chain) {
+      let j = i + 1; const later = [];
+      while (j < BEATS.length && BEATS[j].chain) later.push(Z[ids[j++]][0]);
+      const tEnd = Math.min(j < BEATS.length ? Z[ids[j]][0] : Infinity, Z[ids[j - 1]][1]); // zincir son adımın süresi bitince söner
+      return (t) => {
+        if (t < t0) { S.text(bt.id + 'a', bt.l1, { opacity: 0 }); return; }
+        const inn = easeOut(seg(t, t0, t0 + 0.35));
+        let pos = 0; for (const m of later) pos += easeInOut(seg(t, m - 0.45, m));
+        const out = easeInOut(seg(t, tEnd - 0.45, tEnd - 0.05));
+        const o = clamp(inn * (1 - clamp((pos - 1) * 2.5)) * (1 - out));
+        const y = y2 - pos * (y2 - y1) + (1 - inn) * 1.6;
+        S.text(bt.id + 'a', bt.l1, { y, size: bt.s1 || s2 + 0.4, opacity: o, maxWidth: 88, nowrap: true, reveal: rev(t, t0 + 0.15, W[bt.id][0]) });
+      };
+    }
+    return (t) => {
+      const inn = bt.pen === false && t0 === 0 ? 1 : easeOut(seg(t, t0, t0 + 0.35)); // kanca ilk karede hazır
+      const out = last ? 0 : easeInOut(seg(t, t1 - 0.35, t1));
+      const o = t >= t0 && t < t1 + 0.001 ? clamp(inn * (1 - out)) : 0;
+      const dy = (1 - inn) * 1.6 - out * 2.6;
+      S.text(bt.id + 'a', bt.l1, { y: y1 + dy, size: bt.s1 || s1, opacity: o, maxWidth: 88, nowrap: true, reveal: rev(t, t0 + 0.15, W[bt.id][0]) });
+      if (bt.l2) S.text(bt.id + 'b', bt.l2, { y: y2 + dy, size: bt.s2 || s2, weight: 700, opacity: o, maxWidth: 88, nowrap: true, reveal: rev(t, W[bt.id][0], W[bt.id][1]) });
+    };
+  });
+  return (t) => { for (const f of fns) f(t); };
+}

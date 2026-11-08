@@ -290,7 +290,8 @@ export function createStage({ canvas, overlay, width, height, background = 0x151
     },
 
     /** HTML yazı katmanı (Türkçe karakterler için). id ile tekrar çağrılır. */
-    text(id, html, { x = 50, y = 12, size = 6.2, color = '#ffffff', weight = 900, opacity = 1, align = 'center', maxWidth = 92, scale = 1, font = 'InterDisplay', nowrap = false } = {}) {
+    // reveal (0..1, isteğe bağlı): kalemle yazılıyormuş gibi soldan sağa açılma + kalem ucu parıltısı (anlatim.js penSec).
+    text(id, html, { x = 50, y = 12, size = 6.2, color = '#ffffff', weight = 900, opacity = 1, align = 'center', maxWidth = 92, scale = 1, font = 'InterDisplay', nowrap = false, reveal = null } = {}) {
       let el = overlay.querySelector(`[data-id="${id}"]`);
       if (!el) {
         el = document.createElement('div');
@@ -298,7 +299,19 @@ export function createStage({ canvas, overlay, width, height, background = 0x151
         el.className = 'ovl';
         overlay.appendChild(el);
       }
-      if (el.dataset.html !== html) { el.innerHTML = html; el.dataset.html = html; }
+      const pen = reveal !== null;
+      const key = (pen ? 'P|' : '') + html;
+      if (el.dataset.html !== key) {
+        el.innerHTML = pen ? `<span class="rvw" style="position:relative;display:inline-block"><span class="rvc">${html}</span><i class="pen" style="position:absolute;top:18%;width:.16em;height:.64em;border-radius:.08em;background:#fff6d0;box-shadow:0 0 .25em .08em rgba(255,226,140,.85)"></i></span>` : html;
+        el.dataset.html = key;
+      }
+      if (pen) {
+        const r = Math.max(0, Math.min(1, reveal)), p = r * 104 - 2; // yumuşak kenar: harf harf beliren iz
+        const m = `linear-gradient(90deg,#000 0,#000 ${p}%,transparent ${p + 3}%)`;
+        const c = el.firstChild.firstChild; c.style.webkitMaskImage = m; c.style.maskImage = m;
+        const tip = el.firstChild.lastChild; tip.style.left = `${Math.min(100, Math.max(0, p + 1))}%`;
+        tip.style.opacity = r > 0.001 && r < 0.999 ? String(0.9 * Math.min(1, (1 - r) * 12)) : '0';
+      }
       el.style.cssText = `left:${x}%;top:${y}%;font-size:${size}vw;color:${color};font-weight:${weight};` +
         `opacity:${opacity};width:${maxWidth}%;white-space:${nowrap ? 'nowrap' : 'normal'};text-align:${align};font-family:"${font}",sans-serif;` +
         `transform:translate(-50%,-50%) scale(${scale});display:${opacity > 0.003 ? 'block' : 'none'}`;
