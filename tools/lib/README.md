@@ -32,10 +32,17 @@ Bitmiş sahneler (`scenes/001-…`, `scenes/eski-002-…`) kendi kopyalarını k
 - `heater(S)` → `{group, hot}`, `iron(S)`, `kettle(S)` — ısıtıcı teli/soba, ütü, su ısıtıcısı mini modelleri
 
 ## Sahnede yazılıp henüz taşınmayanlar (ikinci kullanımda buraya taşı)
-- `wip/002-direnc-nedir/scene.js` (2. sürüm): `pipeLoop` (pompa + daralan kapalı boru + çark + debi göstergesi), `phone` (şarj olan telefon)
-- `wip/003-gerilim-nedir/scene.js`: `aaCell` (AA pil), `phoneCell` (telefon pili), `adapter` (şarj adaptörü), `carBattery` (araba aküsü), potansiyel renk katmanı (telde sarı → koyu turuncu, `paint(k)`)
+- `wip/002-direnc-nedir/scene.js` (2. sürüm): `phone` (şarj olan telefon)
+- `wip/003-gerilim-nedir/scene.js` (2. sürüm): potansiyel renk katmanı (telde sarı → koyu turuncu, `paint(k)`)
 
 ## Kalemle yazı (2a kural 8–10) — anlatim.js + stage.js
 - `S.text(id, html, {reveal})` — `reveal` 0..1: soldan sağa yumuşak kenarlı açılma + kalem ucu parıltısı
 - `penSec(html)` — yazma süresi (0,3 sn/kelime); `penTimeline(BEATS)` → `{Z, A, W, DUR}` (yazma + okuma süresi)
 - `narrationPen(S, BEATS, Z, W)` — kalemli üst yazı; `chain: true` adımlar alt satırda yazılır, öncekiler yukarı kayar (en fazla 2 satır)
+
+## kaynaklar.js — gerçek hayat gerilim kaynakları (003 → 003 2. sürüm)
+- `aaCell(S)` AA pil 1,5 V, `phoneCell(S)` telefon pili 3,7 V, `adapter(S)` şarj adaptörü 5 V, `carBattery(S)` araba aküsü 12 V → `{group}`
+- `textTex`, `topPlane` — yazı dokusu ve yere yatık yazı düzlemi
+
+## boru.js — hidrolik benzetme (002 2. sürüm → 003 2. sürüm)
+- `pipeLoop(S, {PX, Qt(t), pinch(t), v})` → `{group, wMat, ring, XP, ZP, update(t)}` — pompalı kapalı cam boru, çark, daralma, akış göstergesi
