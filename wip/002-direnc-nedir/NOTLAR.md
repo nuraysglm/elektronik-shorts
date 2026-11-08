@@ -12,3 +12,4 @@
 - parca-04: kalem maskesi + sütun düzeltmesi için yeniden render
 - parca-00: tamam (17:11 UTC)
 - parca-04: tamam (17:12 UTC)
+- parca-02: tamam (17:14 UTC)
