@@ -11,11 +11,11 @@
   html, body { margin: 0; padding: 0; background: #000; overflow: hidden; }
   #wrap { position: relative; }
   canvas { display: block; }
-  #overlay { position: absolute; inset: 0; pointer-events: none;
-             background: linear-gradient(to bottom, rgba(8,9,12,0.55) 0%, rgba(8,9,12,0.25) 16%, rgba(8,9,12,0) 26%); }
+  /* karartma katmanı / gradyan yok (AGENT.md bölüm 4): yazılar kendi kontur ve gölgeleriyle okunur */
+  #overlay { position: absolute; inset: 0; pointer-events: none; }
   .ovl { position: absolute; line-height: 1.08; letter-spacing: -0.01em; white-space: normal;
-         -webkit-text-stroke: 0.06em rgba(0,0,0,0.55); paint-order: stroke fill;
-         text-shadow: 0 0.04em 0.25em rgba(0,0,0,0.55); }
+         -webkit-text-stroke: 0.08em rgba(0,0,0,0.7); paint-order: stroke fill;
+         text-shadow: 0 0.04em 0.3em rgba(0,0,0,0.8); }
   .ovl .hl { color: #ffd23f; }
   .ovl .cu { color: #ff8a5c; }
   .ovl .bl { color: #6fb2ff; }
