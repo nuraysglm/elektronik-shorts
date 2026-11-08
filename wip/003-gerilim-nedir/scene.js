@@ -233,9 +233,11 @@ export function build(S) {
     const s = dist(t), big = 1 + 0.35 * fade(t, A.p3, Z.p3[1], 0.4);
     for (let k = 0; k < N; k++) {
       const u = ((((k / N) - s / W.L) % 1) + 1) % 1;
-      W.curve.getPointAt(u, pv);
+      W.curve.getPointAt(Math.min(u, 1 - 1e-6), pv);
+      const bad = !Number.isFinite(pv.x + pv.y + pv.z); // eğri sınırında NaN olursa gölge haritası bozulur: gizle
+      if (bad) pv.set(0, -1, 0);
       const inBat = Math.abs(pv.x) < 0.47 && pv.z > ZH - 0.1;
-      sv.setScalar(inBat ? 0.0001 : big);
+      sv.setScalar(inBat || bad ? 0.0001 : big);
       m4.compose(pv, qq, sv); el.setMatrixAt(k, m4);
     }
     el.instanceMatrix.needsUpdate = true;
@@ -249,7 +251,7 @@ export function build(S) {
       const a = easeOut(seg(t, A.g1 + 0.8 + i * 0.7, A.g1 + 1.3 + i * 0.7));
       const out = easeInOut(seg(t, A.v1 + 2.4, A.v1 + 3.0));
       plats[i].visible = a > 0.004 && out < 0.999; plats[i].scale.setScalar(Math.max(0.001, a * (1 - out)));
-      if (i === 0 && t >= A.v1) return;
+      if (i === 0 && t >= A.v1) { g.visible = false; return; } // AA artık uçan devre pili (aa); platform modeli gizli
       const sc0 = Math.max(0.001, a * (1 - out) * MSC[i]);
       g.visible = sc0 > 0.004; g.scale.setScalar(sc0);
       g.position.set(PX + PLZ[i][0], 0.08 + (1 - a) * 0.3, PLZ[i][1]);
