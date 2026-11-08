@@ -51,6 +51,15 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
    - **Geri bildirim:** devre tamamlanınca ampul karanlıktan sıcak sarı ışığa geçer; parlaklık akımla orantılıdır.
    - **Potansiyel farkı:** gerilim gösterilirken tel içinde renk geçişi kullanılır (pilin + ucundan − ucuna doğru yüksek potansiyelden düşük potansiyele, ör. sarıdan koyu turuncuya).
 7. **Akım yönü (kanal sahibinin kararı):** Parçacıklar **elektron** olarak gösterilir ve gerçek elektron yönünde (pilin − ucundan + ucuna) akar. Ayrıca + → − yönünde ayrı renkte bir **geleneksel akım oku** gösterilir. İkisi ilk göründüğünde kısa etiketle ayrılır ("elektronlar", "akım yönü"). Bu kural "akımı küreler + → − akar" yazan eski kuralların yerine geçer.
+8. **Yazı animasyonu — kalemle yazılıyor gibi (kanal sahibinin kararı).** Ekran yazıları bir anda belirmez; harf harf, kalemle yazılıyormuş gibi soldan sağa çizilerek gelir (her harf kısa bir çizgi/iz animasyonuyla). Hız: kelime başına yaklaşık 0,25–0,35 sn. Yazı tamamlandıktan sonra okuma süresi (bölüm 6) başlar. Bu efekti `tools/lib/anlatim.js`'e ortak fonksiyon olarak ekle ve tüm videolarda kullan.
+9. **Tempo — acele yok (kanal sahibinin kararı).** Videolar hızlı ilerliyordu, geçişler anlamayı zorlaştırıyordu:
+   - Sahne geçişleri en az 1,2 sn, yumuşak (ease-in-out); kamera hareketleri yavaş.
+   - Her önemli animasyon olayından (ör. direnç eklendi, ampul karardı) sonra izleyicinin sonucu görmesi için en az 1,5 sn bekle.
+   - Bir anda tek değişiklik; iki olay üst üste binmez.
+   - Hedef süre konuya göre 45–90 sn; anlaşılır olmak kısa olmaktan önemlidir.
+10. **Açıklayıcı yazı ne zaman uzun olabilir:** Animasyonun gösterdiği sebep-sonuç zincirini (ör. toplam direnç artar → akım azalır → ampul gerilimi azalır → ampul kararır) sahnenin sonunda adım adım, kalemle yazılarak ve her adım ayrı satırda gösterebilirsin. Her adım ilgili görsel vurguyla (ok, parlama) eşleşir. Bu bölüm dışında yazılar kısa etiket olarak kalır.
+11. **Kaynak:** Kanal sahibi bir konu için kaynak bağlantısı verirse, senaryodan önce o kaynağı oku (WebFetch) ve senaryoyu onunla tutarlı yaz; okunan kaynağı `dogruluk.md`'ye yaz. Kaynağa erişilemiyorsa panelde not düş ve kanal sahibine bildir (ağ izni gerekebilir: `en.wikipedia.org`).
+12. **Analoji fizik açısından doğru olmalı.** Bir benzetme (boru, su, koridor) yanlış bir fiziksel izlenim bırakmamalı; benzetmenin sınırı varsa animasyonu doğru davranışa göre kur (ör. seri devrede akım her yerde aynıdır).
 
 ## 3. Teknik hat (değiştirme)
 
