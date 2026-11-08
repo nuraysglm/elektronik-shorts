@@ -13,3 +13,4 @@
 - 18:25 UTC: birleştirildi; kalite kontrolünde v1/v2 yazısı ve 'yüksek basınç' etiketi sağ kenara çok yakın → küçültüldü, parca-01..03 yeniden render.
 - parca-03: tamam (18:39 UTC)
 - parca-02: tamam (18:40 UTC)
+- parca-01: tamam (18:41 UTC)
