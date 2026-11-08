@@ -1,26 +1,26 @@
-# Doğruluk — 002 Direnç nedir?
+# Doğruluk — 002 Direnç nedir? (2. sürüm)
 
-| İddia (ekranda / animasyonda) | Neden doğru | |
+## Kaynak
+- https://en.wikipedia.org/wiki/Resistor — **bu çalışmada açılamadı** (en.wikipedia.org ağ izin listesinde değil, `getaddrinfo ENOTFOUND`). Panelde not düşüldü, kanal sahibine bildirildi. Senaryo, sayfanın bilinen içeriğiyle (genel tanım, hidrolik benzetme, seri bağlama) tutarlı yazıldı; sayfa açıldığında yeniden karşılaştırılmalı:
+  - Direnç, elektrik direncini devre elemanı olarak uygulayan iki uçlu pasif elemandır; birimi ohm (Ω).
+  - Hidrolik benzetme: telden akan akım borudan akan suya, gerilim düşümü suyu iten basınç farkına benzer; direnç, dar bir boru ya da saçla tıkanmış bir boru gibidir (aynı basınçla daha az akış).
+  - Seri bağlı dirençlerin toplam direnci tek tek değerlerin toplamıdır.
+
+## İddialar
+| İddia | Neden doğru | |
 |---|---|---|
-| Devreye direnç eklenince ampul söner (kancada) | Seri devrede toplam direnç artar (30 Ω → 130 Ω), V sabitken I = V / R_toplam azalır; ampul gücü P = I²R_ampul düşer | ✔ |
-| Aynı itmede dar boruda daha az akış | Su borusu benzetmesi: aynı basınç farkında dar borunun akışa direnci büyüktür, debi küçüktür (elektrikteki direncin yaygın benzetmesi) | ✔ |
-| "Bu engel: direnç" — direnç akışa karşı koyan özelliktir | Direncin tanımı: bir malzemenin/elemanın elektrik akımına karşı koyma özelliği | ✔ |
-| Anahtar kapanınca akış başlar, açıkken akmaz | Açık devrede kapalı yol yoktur, akım 0 | ✔ |
-| Elektronlar pilin − ucundan + ucuna akar (dış devrede) | Elektronlar negatif yüklüdür; dış devrede − kutuptan + kutba hareket eder | ✔ |
-| Geleneksel akım yönü + → − | Akım yönü pozitif yük hareketi yönü olarak tanımlanır; dış devrede + kutuptan − kutba | ✔ |
-| Direnç ↑ → Akım ↓ (100 Ω → 300 Ω, ampul kararır) | 9 / (30+100) = 69 mA > 9 / (30+300) = 27 mA (sahne kodunda `check`) | ✔ |
-| Direnç ↓ → Akım ↑ (300 Ω → 50 Ω, ampul parlar) | 9 / (30+50) = 112,5 mA > 27 mA | ✔ |
-| Renk kodları: kahverengi-siyah-kahverengi = 100 Ω, turuncu-siyah-kahverengi = 300 Ω, yeşil-siyah-siyah = 50 Ω, 4. bant altın (±%5) | (1·10+0)×10 = 100; (3·10+0)×10 = 300; (5·10+0)×1 = 50 (sahne kodunda `check`) | ✔ |
-| Isıtıcı teli, ampul, ütü, su ısıtıcısı: her cihazın bir direnci (direnç eşdeğeri) var | Akım çeken her yük, uçlarındaki gerilim ve çektiği akımla R_eş = V / I olarak modellenebilir; ısıtıcı teli, ütü ve su ısıtıcısının rezistansı doğrudan dirençtir | ✔ |
-| Isıtıcı teli = direnç | Isıtıcı teli (ör. nikrom) elektrik enerjisini ısıya çeviren bir dirençtir | ✔ |
-| Direncin sembolü R, birimi ohm (Ω) | SI birimi ohm, sembolü Ω; büyüklük sembolü R | ✔ |
-| 9 V pil | Ekrandaki değer, görsel model | ✔ |
-
-Not: Ampul filaman direnci (30 Ω) yalnızca parlaklık/hız hesaplaması için kullanılır, ekranda gösterilmez. Akım değerleri ekranda yok (Ohm yasası serinin 4. videosu).
-
-## Bağımsız denetim (alt ajan, yalnızca metin) — sonuç ve yapılanlar
-- "Ampul neden söndü?" → animasyonda ampul kararıyor, sönmüyor: **"Ampul neden karardı?"** yapıldı.
-- Şarj olan telefon sabit bir direnç gibi davranmaz: model **su ısıtıcısı** ile değiştirildi (içinde direnç teli var).
-- Son etiket "akışa engel" → **"akıma engel"**.
-- Seri devrede akım her yerde aynı olmalı: sahne kodunda tüm döngüdeki elektronlar aynı hızla yavaşlar/hızlanır, sayıları değişmez ✔ (yalnızca direnç içinde hafif titreşim).
-- 50 Ω E24 değeri değil (renk kodu doğru); değiştirilmedi, ekrandaki renk kodu 50 Ω ile tutarlı.
+| Direnç akıma karşı koyan engeldir | R = V / I: aynı gerilimde R büyüdükçe I küçülür | ✔ |
+| Ampulün (filamanın) direnci var: 30 Ω | Küçük 9 V ampul, sıcak filaman ~30 Ω (9 V'ta 0,3 A, 2,7 W) — gerçekçi mertebe | ✔ |
+| Seri eklenen direnç ampulün direncine eklenir | Seri: R_T = R_ampul + R_direnç + R_tel = 30 + 60 + 0,034 = 90,03 Ω | ✔ |
+| Toplam direnç artınca akım azalır | I = 9/30 = 0,30 A → 9/90,03 ≈ 0,10 A (gösterilmez, yalnızca yön) | ✔ |
+| Akım devrenin her yerinde aynıdır, her yerde aynı ölçüde azalır | Seri devrede tek yol; yük korunumu (Kirchhoff akım yasası) → animasyonda tüm elektronlar aynı hızla yavaşlar | ✔ |
+| Pil gerilimi aynı kalır, ampule düşen gerilim azalır | İdeal pil 9 V; V_ampul = I·R_ampul = 9 V → 0,10 × 30 ≈ 3 V | ✔ |
+| Ampul kararır | P_ampul = I²R: 2,7 W → 0,30 W (1/9) | ✔ |
+| Elektronlar − → +, geleneksel akım + → − | Elektron yükü negatif; geleneksel akım pozitif yük yönünde tanımlı | ✔ |
+| Boruda daralma eklenince borunun tamamında akış (debi) azalır | Aynı pompa basıncında toplam hidrolik direnç artar → debi Q azalır; kapalı döngüde Q her kesitte aynıdır (süreklilik) | ✔ |
+| Daralmanın içinde su yerel olarak daha hızlı akar | v = Q / A: A küçükse v büyük (animasyonda daralma içinde hız = Q/A, geniş kısımlarda yavaş) | ✔ |
+| Çark yavaşlar ↔ ampul kararır; pompa ↔ pil | Benzetme eşlemesi: basınç farkı ↔ gerilim, debi ↔ akım, daralma ↔ direnç, çark (enerji alan yük) ↔ ampul | ✔ |
+| Ampul, ısıtıcı, ütü, su ısıtıcısı, şarj olan telefonun bir iç direnci (direnç eşdeğeri) vardır | Akım çeken her yükün R = V/I eşdeğeri vardır; ısıtıcılar direnç teliyle çalışır | ✔ |
+| Bakır telin direnci ≈ 0,03 Ω | R = ρL/A = 1,68·10⁻⁸ Ω·m × 1 m / 0,5·10⁻⁶ m² = 0,0336 Ω | ✔ |
+| Tel direnci diğerlerine göre çok küçük | 0,034 / 90,03 ≈ %0,04 | ✔ |
+| Sembol R, birim ohm (Ω) | SI türetilmiş birim, Ω = V/A | ✔ |

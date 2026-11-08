@@ -1,29 +1,41 @@
-# 002 — Direnç nedir? (4'lü serinin 1. videosu)
+# 002 — Direnç nedir? (2. sürüm, kanal sahibinin iş emri 08.11.2026)
 
-Hedef süre ~45 sn. Seslendirme ve müzik yok; anlatıyı animasyon taşır, yazı yalnızca ardından gelen kısa doğrulama etiketidir.
+Seslendirme ve müzik yok. Anlatıyı animasyon taşır; yazı kısa doğrulama etiketidir ve **kalemle yazılıyormuş gibi** soldan sağa çizilerek gelir (kelime başına ~0,3 sn), okuma süresi yazı bitince başlar. Her şey sürekli hareketli (elektronlar/su akar, kamera yavaşça kayar). Geçişler ≥ 1,2 sn, kamera uçuşu.
 Renkler: direnç mavi (bl), akım/akım oku kırmızı (rd), gerilim sarı (hl), elektronlar yeşil (gr).
+Kaynak: https://en.wikipedia.org/wiki/Resistor (bu çalışmada ağ izni olmadığı için açılamadı; bkz. dogruluk.md).
+
+Devre değerleri: pil 9 V; ampul (sıcak filaman) 30 Ω; eklenen direnç 60 Ω; bakır bağlantı teli (toplam ~1 m, 0,5 mm²) ≈ 0,03 Ω.
+Akım değerleri ekranda gösterilmez (Ohm yasası serinin son videosu); yalnızca direnç değerleri ve pil gerilimi.
 
 ## Gerekli bilgi (videoda geçtiği yer)
-- [x] Direnç, akışa karşı koyan engeldir → metafor (dar boru) + devre (sahne 2, 3, 9)
-- [x] Direnç artınca akım azalır, ampul kararır → sahne 6
-- [x] Direnç azalınca akım artar, ampul parlar → sahne 7
-- [x] Elektronlar − → + akar; geleneksel akım yönü + → − → sahne 4, 5
-- [x] Gerçek hayat: ısıtıcı teli, ampul, ütü, su ısıtıcısı — akım çeken her cihazın bir direnci vardır → sahne 8, 9
-- [x] Sembol R, birim ohm (Ω) → sahne 10 (en sonda)
+- [x] Direnç akıma karşı koyan engeldir → sahne 1 (devre) + sahne 2 (dar boru) + son
+- [x] Ampulün de bir direnci vardır; seri eklenen direnç ona eklenir, toplam direnç artar → sahne 1 zinciri
+- [x] Toplam direnç artınca devreden geçen akım azalır; akım devrenin her yerinde aynı ölçüde azalır (elektronlar her yerde yavaşlar) → sahne 1
+- [x] Pil gerilimi aynı kalır, ampule düşen gerilim azalır → ampul kararır → sahne 1 zinciri
+- [x] Elektronlar − → + akar; geleneksel akım yönü + → − → sahne 1
+- [x] Analoji: boruda daralma = direnç; daralma eklenince borunun tamamında akış azalır (daralmanın içinde su yerel olarak hızlı akar) → sahne 2
+- [x] Her elektrik elemanının bir iç direnci vardır: ampul, ısıtıcı, ütü, su ısıtıcısı, şarj olan telefon → sahne 3
+- [x] Bakır telin de çok küçük bir direnci vardır; toplam dirence katkısı ihmal edilecek kadar küçüktür → sahne 4
+- [x] Seri bağlı dirençler toplanır; sembol R, birim ohm (Ω) → son (yazıyla, en sonda)
 
-## Sahneler (pre = yazıdan önce yazısız animasyon)
-| # | Süre | Animasyon (ne gösteriyor) | Doğrulama etiketi (ardından) | Efekt |
-|---|------|---------------------------|------------------------------|-------|
-| 1 Kanca | ~3,7 sn | İlk karede parlak yanan ampullü devre, elektronlar akıyor. 0,6 sn'de devreye bir direnç oturur → elektronlar yavaşlar, ampul kararır | "Ampul neden karardı?" | thud (direnç oturur), uğultu (akım) |
-| 2 Metafor | ~5,7 sn | Kamera yandaki iki cam boruya kayar: aynı itmeyle geniş boruda yoğun akış, dar boruda seyrek akış | "Dar yol → az akış" | — |
-| 3 | ~2,8 sn | Dar boru mavi parlar | "Bu engel: direnç" | pop |
-| 4 | ~3,8 sn | Kamera devreye döner; anahtar açık, akış yok, ampul sönük. Anahtar fiziksel olarak kapanır → yeşil elektronlar − ucundan + ucuna akmaya başlar, ampul ısınır | "Elektronlar: − → +" | yumuşak tık, uğultu |
-| 5 | ~3,1 sn | Kırmızı geleneksel akım oku + → − yönünde belirir | "Akım yönü: + → −" | pop |
-| 6 | ~4,5 sn | Direnç 100 Ω → 300 Ω (renk bantları değişir, içindeki engeller çoğalır): elektronlar yavaşlar/seyrekleşir, ampul kararır | "Direnç ↑ → Akım ↓" | pop, uğultu azalır |
-| 7 | ~4,5 sn | Direnç 300 Ω → 50 Ω: engeller azalır, elektronlar hızlanır, ampul parlar | "Direnç ↓ → Akım ↑" | pop, uğultu artar |
-| 8 Gerçek hayat | ~6,6 sn | Kamera yana kayar; platformlarda sırayla 3D mini modeller: ısıtıcı teli (kızaran tel), ampul, ütü, su ısıtıcısı | "Her cihazın direnci var" | thud × 4 (yumuşak) |
-| 9 | ~4,5 sn | Isıtıcı teli küçülerek devredeki direncin yerine uçar, direnç mavi parlar | "Isıtıcı teli = direnç" | pop |
-| 10 Kural | ~5,9 sn | Devre akmaya devam eder, R = 50 Ω etiketi | "Direnç (R): akıma engel" / "birimi: ohm (Ω)" | — |
-| Kapanış | | Son kare: devre aktığı haliyle (kancanın ilk karesine benzer, döngüye uygun) | | |
-
-Akım değerleri ekranda gösterilmez (Ohm yasası serinin 4. videosu); yalnızca direnç değerleri (100 Ω, 300 Ω, 50 Ω) ve renk kodları gösterilir.
+## Sahneler (pre = yazıdan önceki yazısız animasyon)
+| # | Animasyon (ne gösteriyor) | Doğrulama yazısı (ardından, kalemle) | Efekt |
+|---|---------------------------|--------------------------------------|-------|
+| 0 Kanca | İlk kare: pil + kapalı anahtar + parlak ampul, elektronlar akıyor. Soru ilk karede hazır. ~2,6 sn'de 60 Ω direnç devreye iner → elektronlar **her yerde** yavaşlar, ampul kararır | (ilk karede) "Direnç ekleyince / ampul neden **kararır**?" + alt satır "9 V pil, ampul ve 60 Ω direnç" | thud (direnç oturur), uğultu akıma göre azalır |
+| 1a | Anahtar açılır → akış durur, ampul söner; anahtar fiziksel olarak kapanır → yeşil elektronlar − ucundan + ucuna akar | "Elektronlar: − → +" | yumuşak tık, uğultu |
+| 1b | Kırmızı geleneksel akım oku + → − yönünde belirir | "Akım yönü: + → −" | pop |
+| 1c zincir | Ampulün içi mavi parlar, yanında "30 Ω" | "Ampulün de direnci var" | pop |
+| 1d | Direnç ve ampul birlikte mavi parlar; "30 Ω + 60 Ω" etiketleri | "Toplam direnç artar" | — |
+| 1e | Akım oku incelir/solar; elektronlar boyunca bir yavaşlama dalgası tüm devreyi dolaşır | "Akım her yerde azalır" | uğultu alçalır |
+| 1f | Pilin + ucu sarı, "9 V" sabit; ampulün çevresindeki sarı halka küçülür | "Pil aynı, ampule gerilim ↓" | — |
+| 1g | Ampul kısık yanar (hafif titreşir) | "Bu yüzden ampul kararır" | — |
+| 2a analoji | Kamera yandaki kapalı su borusuna uçar: pompa suyu döndürür, borudaki çark hızla döner | — (önce yalnız animasyon) | hafif akış sesi |
+| 2b | Borunun bir noktası daralır → borunun **tamamında** su yavaşlar, çark yavaşlar; daralmanın içinde su yerel olarak hızlı geçer | "Daralma = direnç" | thud (daralma) |
+| 2c | Debi göstergesi azalır (saniyede geçen su) | "Toplam akış azalır" | pop |
+| 2d | Etiketler: pompa = pil, çark = ampul | "Pompa = pil, çark = ampul" | — |
+| 3 iç direnç | Kamera mini model alanına uçar; platformlarda sırayla: ampul, ısıtıcı, ütü, su ısıtıcısı, şarj olan telefon. Her biri yarı saydamlaşır, içinde mavi direnç sembolü parlar | "Her cihazın içinde direnç var" | thud × 5 (yumuşak) |
+| 4a bakır tel | Kamera devreye döner; bakır tel boyunca parlama gezer, "tel ≈ 0,03 Ω" | "Bakır telin de direnci var" | pop |
+| 4b | Yanda üç sütun yükselir: ampul 30 Ω, direnç 60 Ω, tel 0,03 Ω (neredeyse görünmez; büyüteç halkası) | "Ama çok küçük" | — |
+| 5 kural | Devre akmaya devam eder, R etiketleri | "Seri dirençler toplanır" / formül: R = 30 + 60 + 0,03 ≈ 90 Ω | — |
+| 5b | — | "Direnç (R): akıma engel" / "birimi: ohm (Ω)" | — |
+| Kapanış | Devre aktığı haliyle (kanca karesine benzer, döngüye uygun) | | |

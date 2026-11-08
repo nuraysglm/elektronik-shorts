@@ -1,6 +1,4 @@
-# NOTLAR — 002 (Direnç nedir?)
-- Dal: claude/002-direnc-nedir. Senaryo yazıldı. tools/lib/anlatim.js + parcalar.js + README eklendi; stage.js zemini mat, player.html gradyanı kaldırıldı.
-- Sıradaki: scene.js yaz → kare kontrolü → hareket kontrolü → parça parça render.
-- 11:0x UTC: scene.js tamam (47,2 sn), kare kontrolü yapıldı (3 kontak sayfası). Parça render başladı: `wip/002-direnc-nedir/render_parts.sh` (parca-00: 0–16, 01: 16–32, 02: 32–47,2; sessiz, aynı anda). Varsa atlar; yeniden çalıştırınca eksikleri tamamlar.
-- Sıradaki: parçalar → ffmpeg concat → tools/audio.py (meta.cues) + loudnorm → media/002-direnc-nedir/002-direnc-nedir.mp4 → kalite kontrolü → kapak → push → Metricool.
-- Parçalar render edildi, birleştirildi, ses + loudnorm, kalite kontrolü GEÇTİ (kalite.md). Parçalar silindi. Sahne scenes/002-direnc-nedir.js'e kopyalandı.
+# NOTLAR — 002 (Direnç nedir?) — 2. sürüm (yeniden düzenle, iş emri 08.11.2026)
+- 1. sürümün belgeleri ve sahnesi `eski/` altında (scenes/002-direnc-nedir.js de 1. sürüm). Metricool taslak uuid 8827377021850894760 (yeni videoyla güncellenecek).
+- 15:50 UTC: Wikipedia Resistor açılamadı (ağ izni yok) → dogruluk.md'ye not, panele not. senaryo.md + dogruluk.md yazıldı.
+- Sıradaki: bağımsız metin denetimi → tools/lib/anlatim.js'e kalemle yazı (pen) → scene.js (yeni yapı, ~80 sn) → kare kontrolü → parça parça render → birleştir + ses → kalite → Metricool (taslağı güncelle, sıradaki boş 16:00).
