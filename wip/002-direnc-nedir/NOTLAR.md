@@ -17,3 +17,4 @@
 - parca-05: tamam (17:21 UTC)
 - 17:25 UTC: tüm parçalar tamam, birleştirildi + ses (click efekti yumuşatıldı) → media/002-direnc-nedir/ (105,6 sn). Kalite kontrolü GEÇTİ (kalite.md). Sahne scenes/002-direnc-nedir.js'e kopyalandı (1. sürüm: eski/scene-v1.js).
 - Sıradaki: main'de doğrula → Metricool taslağını (uuid 8827377021850894760) yeni videoyla güncelle, 2026-11-09 16:00 Londra → konular/gunluk/panel.
+- Planlandı: 2026-11-09 16:00 Londra (Metricool uuid 8827377021850894760). Parçalar silindi.
