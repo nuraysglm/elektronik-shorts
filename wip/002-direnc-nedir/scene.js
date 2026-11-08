@@ -20,7 +20,6 @@ const BEATS = [
   { id: 'k1', pre: 0.4, l1: `${bl('Direnç')} (${bl('R')}): akıma engel`, l2: `birimi: ohm (${bl('Ω')})`, s1: 6.6, s2: 6, extra: 1.6 },
 ];
 const { Z, A, DUR } = timeline(BEATS, { k: 1.03 });
-export const _T = { Z, A };
 
 // ---------------------------------------------------------------- devre değerleri ve doğrulama
 const VB = 9, RB = 30;                               // pil 9 V; ampul filamanı ~30 Ω (gösterilmez)
@@ -231,11 +230,11 @@ export function build(S) {
   const names = ['ısıtıcı teli', 'ampul', 'ütü', 'su ısıtıcısı'];
 
   // ------------------------------------------------ kamera: [t, açı, mesafe, yükselme, hedefX, hedefZ]
-  const C0 = [0, 9.0, 62, 0, -0.32], C1 = [0, 8.8, 60, PX, -0.25];
+  const C0 = [0, 9.6, 62, 0, -0.32], C1 = [0, 8.8, 60, PX, -0.25];
   const cam = camRig(S, [
     [0, ...C0], [A.m1 + 0.2, ...C0], [A.m1 + 1.8, ...C1], [A.c1, ...C1], [A.c1 + 1.3, ...C0],
-    [A.r2, -0.06, 8.9, 62, -0.03, -0.32], [A.g1 + 0.1, 0.04, 9.0, 62, 0, -0.32], [A.g1 + 1.6, ...C1],
-    [A.g2 + 0.3, ...C1], [A.g2 + 2.0, ...C0], [DUR, 0.05, 9.2, 62, 0, -0.32],
+    [A.r2, -0.06, 9.5, 62, -0.03, -0.32], [A.g1 + 0.1, 0.04, 9.6, 62, 0, -0.32], [A.g1 + 1.6, ...C1],
+    [A.g2 + 0.3, ...C1], [A.g2 + 2.0, ...C0], [DUR, 0.05, 9.8, 62, 0, -0.32],
   ]);
   const yaz = narration(S, BEATS, Z);
 
