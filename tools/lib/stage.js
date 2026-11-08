@@ -86,6 +86,18 @@ function woodTexture(seed = 7, size = 1024) {
   return tex;
 }
 
+/** Mat yüzey için çok hafif, düşük kontrastlı gürültü dokusu (renk çarpanı ~0,9–1,0). */
+function matteTexture(seed = 7, size = 512) {
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  const g = c.getContext('2d'); const r = rng(seed);
+  const img = g.createImageData(size, size);
+  for (let i = 0; i < size * size; i++) { const k = 232 + r() * 23; img.data[i * 4] = img.data[i * 4 + 1] = img.data[i * 4 + 2] = k; img.data[i * 4 + 3] = 255; }
+  g.putImageData(img, 0, 0);
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+  tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(6, 6);
+  return tex;
+}
+
 // ------------------------------------------------------------------ sahne
 /**
  * createStage({canvas, overlay, width, height})
@@ -132,11 +144,14 @@ export function createStage({ canvas, overlay, width, height, background = 0x151
   const S = {
     THREE, scene, camera, renderer, M, lights: { key, fill, rim }, rng, width, height,
 
-    /** Ahşap masa yüzeyi + arka plana doğru kararan zemin. */
-    table({ size = 14, y = 0, seed = 7 } = {}) {
-      const tex = woodTexture(seed);
-      tex.repeat.set(1.4, 1.4);
-      const mat = new THREE.MeshPhysicalMaterial({ map: tex, roughness: 0.55, metalness: 0, clearcoat: 0.25, clearcoatRoughness: 0.4 });
+    /**
+     * Masa yüzeyi. Varsayılan: mat koyu gri-kahve, hafif doku (AGENT.md bölüm 4; karartma/gradyan yok).
+     * wood: true → eski ahşap doku. color: mat yüzey rengi.
+     */
+    table({ size = 14, y = 0, seed = 7, wood = false, color = 0x2a2724 } = {}) {
+      const mat = wood
+        ? new THREE.MeshPhysicalMaterial({ map: (() => { const t = woodTexture(seed); t.repeat.set(1.4, 1.4); return t; })(), roughness: 0.55, metalness: 0, clearcoat: 0.25, clearcoatRoughness: 0.4 })
+        : new THREE.MeshPhysicalMaterial({ color, map: matteTexture(seed), roughness: 0.85, metalness: 0 });
       const top = new THREE.Mesh(new THREE.PlaneGeometry(size, size), mat);
       top.rotation.x = -Math.PI / 2;
       top.position.y = y;
