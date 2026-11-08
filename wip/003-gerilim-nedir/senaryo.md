@@ -1,32 +1,30 @@
-# 003 — Gerilim nedir? (4'lü serinin 2. videosu)
+# 003 — Gerilim nedir? (2. sürüm, kanal sahibinin iş emri 08.11.2026)
+
+1. sürüm (42,6 sn, eski kurallar) `eski/` altında. Kaynak: https://en.wikipedia.org/wiki/Voltage — bu çalışmada açılamadı (en.wikipedia.org ağ izni yok); senaryo standart tanımla (iki nokta arasındaki elektrik potansiyeli farkı, birim volt = J/C, hidrolik benzetmede basınç farkı) yazıldı.
 
 ## Gerekli bilgi (videoda geçtiği yer)
-- [x] Gerilim, iki nokta arasındaki potansiyel farkıdır (p1, p2, k1)
-- [x] Pilin + ucu yüksek, − ucu düşük potansiyeldedir; telde renk geçişi sarı → koyu turuncu (p1)
-- [x] Gerilim yükleri devrede iten etkidir (p2)
-- [x] Gerilim artınca (aynı ampul) akım artar, ampul parlaklaşır; azalınca akım azalır, ampul kararır (v1, v2)
-- [x] Elektronlar − → +, geleneksel akım + → − (c1, c2)
-- [x] Gerçek hayat kaynakları ve gerilimleri: AA pil 1,5 V, telefon pili 3,7 V, şarj adaptörü 5 V, araba aküsü 12 V (g1); devredeki 9 V pil (üstünde "9 V" yazar, h1/v2)
-- [x] Birimi volt (V) (k1, en sonda)
+- [x] Gerilim iki nokta arasındaki potansiyel farkıdır (p1, p2, k1, f1)
+- [x] Pilin + ucu yüksek, − ucu düşük potansiyelde; telde renk geçişi sarı → koyu turuncu, düşüş ampulde (p1)
+- [x] Gerilim yükleri iter (a1, k2)
+- [x] Hidrolik benzetme: pompa = pil, basınç farkı = gerilim, su akışı = akım; basınç farkı artınca akış artar (a1, a2)
+- [x] Aynı ampulde gerilim azalınca akım azalır, ampul kararır; artınca parlar (h1, v1, v2, k3, k4)
+- [x] Elektronlar − → +, geleneksel akım + → − (c1)
+- [x] Gerçek hayat: AA 1,5 V, telefon pili 3,7 V, şarj adaptörü 5 V, araba aküsü 12 V (g1)
+- [x] Birimi volt (V) (f1, en sonda)
 
-## Sahneler (animasyon → doğrulama etiketi)
-| # | Süre | Animasyon (yazısız anlaşılmalı) | Etiket (animasyondan sonra) | Efekt |
+## Sahneler (animasyon → kalemle doğrulama etiketi), toplam 90,8 sn
+| # | Zaman | Animasyon (yazısız anlaşılmalı) | Etiket (sonra) | Efekt |
 |---|------|------|------|------|
-| h1 | ~5 sn | Pil, ampul, bakır tel. Devrede küçük AA pil var, ampul çok soluk, elektronlar yavaş. AA küçülerek kaybolur, yerine 9 V pil büyüyerek oturur; ampul parlar, elektronlar hızlanır | Ampul neden parladı? | thud (pil oturur), uğultu akıma göre |
-| c1 | ~3,5 sn | Yeşil elektronlar pilin − ucundan + ucuna akar | Elektronlar: − → + | — |
-| c2 | ~3 sn | Kırmızı geleneksel akım oku belirir (+ → −) | Akım yönü: + → − (kabul) | pop |
-| p1 | ~5,5 sn | Tel kendi ışığıyla renklenir: + ucundan ampule kadar sarı, ampulde geçiş, ampulden − ucuna koyu turuncu. "+" ve "−" uç etiketleri | + yüksek, − düşük potansiyel | pop |
-| p2 | ~4,5 sn | Renk farkı vurgulanır (parlar), elektronlar akmaya devam eder | Bu fark: gerilim → (p3) Gerilim, yükleri iter | — |
-| g1 | ~7 sn | Kamera yan alana kayar; platformlarda sırayla AA pil, telefon pili, şarj adaptörü, araba aküsü belirir, her birinin üstünde gerilimi | Her kaynağın gerilimi var | thud ×4 |
-| v1 | ~6 sn | AA pil havalanıp devreye uçar, 9 V pil çıkar; renk farkı azalır, elektronlar yavaşlar, ampul kararır. Pil etiketi 1,5 V | Gerilim ↓ → Akım ↓ | thud |
-| v2 | ~5,5 sn | 9 V pil geri gelir; renk farkı artar, elektronlar hızlanır, ampul parlar | Gerilim ↑ → Akım ↑ | thud |
-| k1 | ~7 sn | Devre parlak çalışır; kamera hafifçe yaklaşır (döngüye uygun son kare) | Gerilim: potansiyel farkı / birimi: volt (V) | — |
+| h1 | 0–5,8 | Devrede AA pil, ampul soluk, elektronlar yavaş; AA küçülüp kaybolur, 9 V pil oturur; ampul parlar, elektronlar hızlanır. Alt satır: "1,5 V pil yerine 9 V pil". Köşede "BÖLÜM 2" | Kanca: Aynı ampul, neden daha parlak? | uğultu, thud |
+| c1 | 5,8–13,3 | Kamera yaklaşır; yeşil elektronlar − → +; kırmızı akım oku + → − | Elektronlar: − → + / Akım yönü: + → − (kabul) | pop |
+| p1 | 13,3–18,7 | Tel renklenir: + tarafı sarı (yüksek), ampulde geçiş, − tarafı koyu turuncu (düşük) | + yüksek, − düşük potansiyel | pop |
+| p2 | 18,7–22,7 | Renk farkı parlar | Bu fark: gerilim | — |
+| a1 | 22,7–34,0 | Kamera sola, kapalı su borusuna uçar; pompa duruyor, su durgun; pompa çalışır, su ve çark dönmeye başlar; su parçacıkları kırmızıya döner (akım rengi) | Pompa suyu iter / Pompa = pil, su akışı = akım | uğultu |
+| a2 | 34,0–42,4 | Pompa güçlenir; akış hızlanır, çark hızlanır, akış göstergesi ibresi yükselir | Basınç farkı ↑ → akış ↑ / Basınç farkı = gerilim | pop |
+| g1 | 42,4–52,1 | Kamera sağa; platformlarda AA pil, telefon pili, şarj adaptörü, araba aküsü sırayla belirir, üstlerinde gerilimleri | Her kaynağın bir gerilimi var | thud ×4 |
+| v1 | 52,1–58,1 | AA pil devreye uçar, 9 V çıkar: renk farkı azalır, elektronlar yavaşlar, ampul kararır | Gerilim ↓ → Akım ↓ | thud |
+| v2 | 58,1–62,7 | 9 V pil geri gelir: renk farkı artar, elektronlar hızlanır, ampul parlar | Gerilim ↑ → Akım ↑ | thud |
+| k1–k4 | 62,7–83,1 | Adım adım (kalemle, alt alta): pil çevresinde sarı halka → elektronlar büyür (itilir) → tel rengi vurgulanır → ampul çevresinde halka | Pilin uçları arasında fark var → Bu fark yükleri iter → Fark büyürse itme artar → Akım artar, ampul parlar | pop |
+| f1 | 83,1–90,8 | Devre parlak çalışır, kamera yavaşça döner (döngüye uygun) | Gerilim: potansiyel farkı / birimi: volt (V) | — |
 
-Seslendirme ve müzik yok. Akım değeri (amper) gösterilmez (Ohm yasası 4. videoda); yalnızca gerilim değerleri.
-
-## Bağımsız denetim (alt ajan, yalnızca metin) — uygulananlar
-- c2: "(kabul)" eklendi (iki zıt ok çelişki sanılmasın).
-- p3: "Gerilim, yükleri iter" (virgül; tamlama gibi okunmasın).
-- k1: "Gerilim (V)" → "Gerilim" (büyüklük ile birim harfi karışmasın).
-- Sarı / koyu turuncu kontrastı artırıldı.
-- Şarj adaptörü 5 V: USB standart çıkışı; kısa video için yeterli kabul edildi.
+Seslendirme ve müzik yok. Akım değeri gösterilmez; yalnızca gerilim değerleri.
