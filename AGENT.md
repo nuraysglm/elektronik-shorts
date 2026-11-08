@@ -224,10 +224,12 @@ Kalite kontrolünden (bölüm 7) geçmeyen video **asla** planlanmaz; kanal sahi
 | `tools/` | Tekrar kullanılabilir görüntü ve ses kodu |
 | `scenes/<video-id>.js` | Bitmiş bölümün sahne kodu |
 | `wip/<video-id>/` | Yarım iş ve kontrol belgeleri: `senaryo.md`, `dogruluk.md`, `kalite.md`, `NOTLAR.md` (nerede kaldın), `scene.js`, `ses.wav` |
-| `media/<video-id>/` | Bitmiş MP4 ve kapak (`kapak.jpg`, kanca karesinden) |
+| `media/<video-id>/` | **Kalıcı arşiv.** Bitmiş MP4, kapak (`kapak.jpg`, kanca karesinden) ve `yayin.json` (aşağıda) |
 | `konular.md`, `gunluk.md` | Konu durumu ve çalışma günlüğü |
 
 - Ara dosyalar (PNG kareler, ham ses parçaları) yalnızca geçici klasörde kalır, depoya konmaz.
+- **`media/` kalıcı arşivdir (kanal sahibinin kararı, 08.11.2026):** videolar ileride Instagram'da da paylaşılacak. `media/` altındaki hiçbir MP4, kapak veya `yayin.json` silinmez, üzerine yazılmaz. Bir video yeniden yapılırsa eski sürüm `media/<video-id>/eski/<video-id>-v<N>.mp4` olarak taşınır, yeni sürüm aynı adla konur.
+- **`yayin.json`:** Her video planlandığında `media/<video-id>/yayin.json` yazılır ve yayından sonra güncellenir: `{"konu_no", "baslik", "aciklama", "etiketler", "hashtagler", "sure_sn", "youtube_tarih", "youtube_url", "metricool_uuid", "instagram": {"durum": "bekliyor", "aciklama": null}}`. `aciklama` Metricool'a gönderilen metnin aynısıdır. Instagram paylaşımı kanal sahibinin ayrı emriyle başlar; o zamana kadar `instagram.durum` "bekliyor" kalır.
 - **Push yalnızca `claude/<video-id>` dalına.** GitHub Action bu dalı otomatik olarak main'e birleştirir ve dalı siler. Uzun işlerde ara ara push et (çalışma yarıda kesilirse iş kaybolmasın).
 - Main'de dosyanın göründüğünü doğrula: `git fetch origin main && git cat-file -e origin/main:media/<id>/<id>.mp4`. 3 dakika içinde görünmezse panele "birleştirme bekliyor" yaz.
 - Video adresi: `https://raw.githubusercontent.com/nuraysglm/elektronik-shorts/main/media/<id>/<id>.mp4`
