@@ -30,14 +30,14 @@ const BEATS = [
   { id: 'i2', l1: `${rd('I')} = Q / t`, l2: 'akım = geçen yük ÷ süre', s1: 8.4, extra: 0.6 },
   { id: 'i3', l1: "3 C yük, 2 s'de geçerse", l2: `${rd('I')} = 3 C / 2 s = ${rd('1,5 A')}`, s1: 6.6, s2: 5.4, extra: 1.8 },
   { id: 'i3b', l1: `1 C / 1 s = ${rd('1 A')}`, l2: 'akımın birimi: amper (A)', s1: 7.2 },
-  { id: 'i4', l1: `Akım yönü: ${hl('+')}'dan −'ye`, l2: 'elektronlar ters yöne akar', s1: 6.8, s2: 5.4, extra: 1.0 },
+  { id: 'i4', l1: `Kabul: ${rd('akım')} +'dan −'ye`, l2: 'pilin uçlarında; elektron ters akar', s1: 7, s2: 5.2, extra: 1.0 },
   { id: 'v1', l1: 'Yükleri akıtan ne?', l2: `Pil: ${hl('gerilim')} kaynağı`, s1: 7.2 },
   { id: 'v2', l1: 'Pil yüke enerji verir', l2: 'pilden çıkan yük parlaktır', s1: 7, s2: 5.4, extra: 1.0 },
-  { id: 'v3', l1: `${hl('V')} = W / Q`, l2: 'gerilim = enerji ÷ yük', s1: 8.4 },
+  { id: 'v3', l1: `${hl('V')} = W / Q`, l2: 'gerilim = yük başına enerji', s1: 8.4, s2: 5.6 },
   { id: 'v4', l1: 'W: enerji, birimi joule (J)', l2: `${hl('1 V')} = 1 J / 1 C`, s1: 6.2, s2: 6 },
   { id: 'v5', l1: '2 C yük 18 J taşıyorsa', l2: `${hl('V')} = 18 J / 2 C = ${hl('9 V')}`, s1: 6.8, s2: 5.4 },
-  { id: 'v6', l1: `${bl('Direnç')} enerjiyi harcar`, l2: 'yük sönük çıkar, ısı oluşur', s1: 7, s2: 5.4, extra: 1.0 },
-  { id: 's1', l1: `${gr('Yük')} akarsa ${rd('akım')}`, l2: `${hl('gerilim')} yük başına enerjidir`, s1: 7.4, s2: 5.2 },
+  { id: 'v6', l1: `${bl('Direnç')}: akışa engel`, l2: 'enerjiyi ısıya çevirir, yük sönük çıkar', s1: 7, s2: 5, extra: 1.0 },
+  { id: 's1', l1: `${hl('Gerilim')} yükü akıtır`, l2: `${rd('akım')} = akan yük ÷ süre`, s1: 7.4, s2: 5.6 },
   { id: 's2', l1: `${rd('I')} = Q / t`, l2: `${hl('V')} = W / Q`, s1: 8.6, s2: 8.6, extra: 1.0 },
 ];
 const wordsOf = (b) => (b.l1 + ' ' + b.l2).replace(/<[^>]+>/g, ' ').split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
