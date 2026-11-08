@@ -6,3 +6,4 @@
 - 12:26 UTC: parçalar render ediliyor (4 işlem). tools/lib/README güncellendi.
 - parca-00..03: tamam (12:33 UTC)
 - 12:47 UTC: parca-03 AA hatası düzeltilip yeniden render edildi; 9,0 ve 35,6 sn'deki tekil render bozuklukları kare değiştirmeyle giderildi. Birleştirme + ses tamam: media/003-gerilim-nedir. Sıradaki: kalite.md, push, Metricool.
+- Kalite kontrolü GEÇTİ (kalite.md). Sahne scenes/003-gerilim-nedir.js'e kopyalandı, parçalar silindi. Sıradaki: Metricool 2026-11-10 16:00.
