@@ -8,7 +8,7 @@ import { roundedLoop, closedWire, battery, resistor, projLabel, camRig, canvasTe
 
 // ---------------------------------------------------------------- anlatım (pre: yazıdan önceki yazısız animasyon)
 const BEATS = [
-  { id: 'h1', pre: 1.5, l1: 'Ampul neden söndü?', s1: 7 },
+  { id: 'h1', pre: 1.5, l1: 'Ampul neden karardı?', s1: 7 },
   { id: 'm1', pre: 3.2, l1: `Dar yol → az akış`, s1: 7 },
   { id: 'm2', pre: 0.6, l1: `Bu engel: ${bl('direnç')}`, s1: 7.2 },
   { id: 'c1', pre: 2.4, l1: `${gr('Elektronlar')}: − → +`, s1: 7 },
@@ -17,7 +17,7 @@ const BEATS = [
   { id: 'r2', pre: 2.6, l1: `${bl('Direnç')} ↓ → ${rd('Akım')} ↑`, s1: 7.4, extra: 0.4 },
   { id: 'g1', pre: 4.2, l1: `Her cihazın ${bl('direnci')} var`, s1: 6.8 },
   { id: 'g2', pre: 2.4, l1: `Isıtıcı teli = ${bl('direnç')}`, s1: 6.8 },
-  { id: 'k1', pre: 0.4, l1: `${bl('Direnç')} (${bl('R')}): akışa engel`, l2: `birimi: ohm (${bl('Ω')})`, s1: 6.6, s2: 6, extra: 1.6 },
+  { id: 'k1', pre: 0.4, l1: `${bl('Direnç')} (${bl('R')}): akıma engel`, l2: `birimi: ohm (${bl('Ω')})`, s1: 6.6, s2: 6, extra: 1.6 },
 ];
 const { Z, A, DUR } = timeline(BEATS, { k: 1.03 });
 export const _T = { Z, A };
@@ -174,19 +174,18 @@ function iron(S) {
   S.scene.add(g); return { group: g };
 }
 
-function phone(S) {
+function kettle(S) {
+  // su ısıtıcısı (içinde direnç teli olan cihaz): taban, gövde, kulp, ağız, kapak
   const g = new THREE.Group();
-  const body = new THREE.Mesh(new RoundedBoxGeometry(0.3, 0.035, 0.56, 4, 0.03), new THREE.MeshPhysicalMaterial({ color: 0x15171a, roughness: 0.3, clearcoat: 0.8 }));
-  body.position.y = 0.02; body.castShadow = true; g.add(body);
-  const tex = canvasTex(256, 480, (c, W, H) => {
-    c.fillStyle = '#0b0d10'; c.fillRect(0, 0, W, H);
-    c.strokeStyle = '#5fe08a'; c.lineWidth = 12; c.strokeRect(68, 150, 120, 200); c.fillStyle = '#5fe08a'; c.fillRect(108, 128, 40, 22); c.fillRect(84, 250, 88, 84);
-    c.fillStyle = '#ffd23f'; c.beginPath(); c.moveTo(138, 170); c.lineTo(100, 255); c.lineTo(128, 255); c.lineTo(116, 320); c.lineTo(158, 228); c.lineTo(130, 228); c.closePath(); c.fill();
-  });
-  const scr = new THREE.Mesh(new THREE.PlaneGeometry(0.26, 0.5), new THREE.MeshBasicMaterial({ map: tex })); scr.rotation.x = -Math.PI / 2; scr.position.y = 0.039; g.add(scr);
-  const cable = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([[0, 0.02, 0.29], [0.02, 0.02, 0.38], [0.16, 0.02, 0.4], [0.24, 0.02, 0.3]].map((p) => new THREE.Vector3(...p))), 40, 0.012, 8), S.M.plasticWhite);
-  g.add(cable);
-  const plug = new THREE.Mesh(new RoundedBoxGeometry(0.14, 0.1, 0.14, 3, 0.02), S.M.plasticWhite); plug.position.set(0.27, 0.05, 0.24); plug.castShadow = true; g.add(plug);
+  const white = new THREE.MeshPhysicalMaterial({ color: 0xeeeeea, roughness: 0.35, clearcoat: 0.6 });
+  const dark = new THREE.MeshPhysicalMaterial({ color: 0x1d2025, roughness: 0.4 });
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.21, 0.05, 40), dark); base.position.y = 0.025; base.castShadow = true; g.add(base);
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.18, 0.36, 40), white); body.position.y = 0.23; body.castShadow = true; g.add(body);
+  const lid = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.14, 0.04, 40), white); lid.position.y = 0.43; g.add(lid);
+  const knob = new THREE.Mesh(new THREE.SphereGeometry(0.035, 16, 10), dark); knob.position.y = 0.46; g.add(knob);
+  const handle = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.03, 12, 28, Math.PI), dark); handle.rotation.z = -Math.PI / 2; handle.position.set(-0.16, 0.24, 0); g.add(handle);
+  const spout = new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.14, 16, 1, true), white); spout.rotation.z = -Math.PI / 2.6; spout.position.set(0.19, 0.36, 0); g.add(spout);
+  const led = new THREE.Mesh(new THREE.SphereGeometry(0.018, 12, 8), new THREE.MeshBasicMaterial({ color: 0xff8a3a })); led.position.set(0.1, 0.1, 0.12); g.add(led);
   S.scene.add(g); return { group: g };
 }
 
@@ -227,9 +226,9 @@ export function build(S) {
   const P = pipes(S);
   const PLZ = [[-0.5, -0.75], [0.5, -0.75], [-0.5, 0.65], [0.5, 0.65]];
   const plats = PLZ.map(([x, z]) => platform(S, PX + x, z));
-  const H = heater(S), B2 = makeBulb(S, { scale: 0.85 }), IR = iron(S), PH = phone(S);
+  const H = heater(S), B2 = makeBulb(S, { scale: 0.85 }), IR = iron(S), PH = kettle(S);
   const models = [H.group, B2.group, IR.group, PH.group];
-  const names = ['ısıtıcı teli', 'ampul', 'ütü', 'şarj'];
+  const names = ['ısıtıcı teli', 'ampul', 'ütü', 'su ısıtıcısı'];
 
   // ------------------------------------------------ kamera: [t, açı, mesafe, yükselme, hedefX, hedefZ]
   const C0 = [0, 9.0, 62, 0, -0.32], C1 = [0, 8.8, 60, PX, -0.25];

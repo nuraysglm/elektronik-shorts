@@ -26,4 +26,4 @@ Bitmiş sahneler (`scenes/001-…`, `scenes/eski-002-…`) kendi kopyalarını k
 - `camRig(S, keys)` → `cam(t)` — anahtar karelerle yumuşak kamera `[t, açı, mesafe, yükselme°, hedefX, hedefZ]`
 
 ## Sahnede yazılıp henüz taşınmayanlar (ikinci kullanımda buraya taşı)
-- `wip/002-direnc-nedir/scene.js`: `makeBulb` (ampul, parlaklık 0..1), `makeSwitch` (bıçaklı anahtar), `pipes` (geniş/dar boru metaforu), `platform`, mini modeller `heater`, `iron`, `phone`
+- `wip/002-direnc-nedir/scene.js`: `makeBulb` (ampul, parlaklık 0..1), `makeSwitch` (bıçaklı anahtar), `pipes` (geniş/dar boru metaforu), `platform`, mini modeller `heater`, `iron`, `kettle`
