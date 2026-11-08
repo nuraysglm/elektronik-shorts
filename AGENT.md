@@ -114,6 +114,17 @@ Bir çalışma yaklaşık 30–40 dakikada kesilebilir. Uzun bir video tek çal�
 - Formüller tek satır (`nowrap: true`).
 - Nesnelerin üzerindeki etiketler (ör. "R = 100 Ω") nesneye yakın, okunur ve kamera hareketinde titremez.
 
+## 4a. Referans stil (kanal sahibinin örnek gösterdiği sayfalar: Hardwired, Mr. Integral, 3DIoT Education)
+
+Bu sayfaların **tarzından** öğren; logolarını, karakterlerini, başlıklarını, görsellerini kopyalama. Ortak özellikler ve bizim uygulamamız:
+1. **Merak uyandıran soru kancası.** Başlık kısa bir soru veya bilmece: "Neden direnç?", "Yarısı mı, çeyreği mi?", "Hangisi yanlış?", "Büyük kondansatör, yine dalgalanma?". İlk 1–2 saniyede ekranda, 2–3 satır, çok kalın (InterDisplay Black), **tek anahtar kelime vurgu renginde** (sarı/pembe/camgöbeği). Bu kanca yazısı kural 2a'daki "önce animasyon" kuralının istisnasıdır: soruyu sorar, cevabı animasyon verir.
+2. **Bilmecenin alt satırı.** Görselin altında küçük, ince bir satır problemi somutlaştırır: "Teli iki kat uzat", "On iki tane 1 Ω direnç, ama sonuç 0,833 Ω". Somut sayılar ve sınav sorusu havası kullan.
+3. **Zemin:** Çok koyu (siyah / koyu yeşil-siyah / koyu lacivert) mat zemin; çok silik ızgara çizgileri veya silik PCB izleri olabilir (opaklık ≤ %8, dikkat dağıtmaz). Gradyan karartma yine yok.
+4. **İki görsel dil, birlikte:** (a) Gerçekçi 3D parçalar: renk bantlı direnç, TO-92 transistör, PCB üzerinde çip ve yanan LED, multimetre; (b) ince neon çizgili şema: camgöbeği/sarı devre çizgileri, değer etiketleri (12 V, 1 kΩ, 50 Hz), osiloskop eğrisi (eksen değerleriyle), ölçü aleti ekranında sayı. 3D sahneden şemaya (ve geri) hareketli dönüşüm güçlü bir geçiştir.
+5. **Ölçüm ve sayı:** Mümkünse multimetre/osiloskop ekranında gerçek değer göster; değer animasyonla değişir (ör. direnç artınca ampermetre 0,50 A → 0,25 A).
+6. **Seri etiketi:** 4'lü seride ve derslerde üst köşede küçük "BÖLÜM 2" / "DERS 1" etiketi; küçük kategori etiketi ("ELEKTRONİK") kullanılabilir. Üst %10'a girmez.
+7. **İlk kare kapak gibi çalışır:** Profil ızgarasında video bu kareyle görünür; ilk kare soru başlığı + net bir ana nesne (3D parça veya şema) içermeli, boş/karanlık olmamalı.
+
 ## 5. Senaryo ve kurgu
 
 1. **Senaryoyu önce yaz:** `wip/<id>/senaryo.md`. Her sahne için: süre, ekranda ne görünüyor, ekrandaki yazı (anlatım), efekt.
