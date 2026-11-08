@@ -25,5 +25,10 @@ Bitmiş sahneler (`scenes/001-…`, `scenes/eski-002-…`) kendi kopyalarını k
 - `projLabel(S)` → `label(id, html, x, y, z, {size, opacity})` — 3B noktaya bağlı etiket
 - `camRig(S, keys)` → `cam(t)` — anahtar karelerle yumuşak kamera `[t, açı, mesafe, yükselme°, hedefX, hedefZ]`
 
+## devre.js — ikinci kullanımda taşınanlar (002 → 003)
+- `makeBulb(S, {scale})` → `{group, set(parlaklık 0..1)}` — ampul
+- `platform(S, x, z, {r})` — mini model kaidesi
+
 ## Sahnede yazılıp henüz taşınmayanlar (ikinci kullanımda buraya taşı)
-- `wip/002-direnc-nedir/scene.js`: `makeBulb` (ampul, parlaklık 0..1), `makeSwitch` (bıçaklı anahtar), `pipes` (geniş/dar boru metaforu), `platform`, mini modeller `heater`, `iron`, `kettle`
+- `wip/002-direnc-nedir/scene.js`: `makeSwitch` (bıçaklı anahtar), `pipes` (geniş/dar boru metaforu), mini modeller `heater`, `iron`, `kettle`
+- `wip/003-gerilim-nedir/scene.js`: `aaCell` (AA pil), `phoneCell` (telefon pili), `adapter` (şarj adaptörü), `carBattery` (araba aküsü), potansiyel renk katmanı (telde sarı → koyu turuncu, `paint(k)`)
