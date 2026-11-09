@@ -9,3 +9,4 @@
 - parca-05: tamam (08:59 UTC)
 - parca-04: tamam (09:01 UTC)
 - 09:03 UTC: birleştirildi + ses → media/004-akim-nedir/ (99,5 sn). Kalite kontrolü 1. turda GEÇTİ (kalite.md). Sahne scenes/004-akim-nedir.js'e kopyalandı. Parçalar silindi. Sıradaki: main'de doğrula → Metricool 2026-11-10 16:00.
+- 09:04 UTC: main'de doğrulandı; Metricool'da planlandı: 2026-11-10 16:00 Londra (uuid 1192435512805314097). konular/gunluk/panel güncellendi.
