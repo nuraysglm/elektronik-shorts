@@ -1,5 +1,6 @@
 // devre.js — ikinci kez gereken parçalar (AGENT.md bölüm 3: ikinci kullanımda tools/lib'e taşı).
 import { THREE, RoundedBoxGeometry } from './stage.js';
+import { canvasTex } from './parcalar.js';
 
 /** Ampul: makeBulb(S, {scale}) → {group, set(parlaklık 0..1)}. Taban y=0, cam küre ~0,52·scale yükseklikte. */
 export function makeBulb(S, { scale = 1 } = {}) {
@@ -81,5 +82,23 @@ export function kettle(S) {
   const handle = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.03, 12, 28, Math.PI), dark); handle.rotation.z = -Math.PI / 2; handle.position.set(-0.16, 0.24, 0); g.add(handle);
   const spout = new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.14, 16, 1, true), white); spout.rotation.z = -Math.PI / 2.6; spout.position.set(0.19, 0.36, 0); g.add(spout);
   const led = new THREE.Mesh(new THREE.SphereGeometry(0.018, 12, 8), new THREE.MeshBasicMaterial({ color: 0xff8a3a })); led.position.set(0.1, 0.1, 0.12); g.add(led);
+  S.scene.add(g); return { group: g };
+}
+
+/** Şarj olan telefon mini modeli (kablo + adaptör): phone(S) → {group}. 002'den taşındı (004'te ikinci kullanım). */
+export function phone(S) {
+  // şarj olan telefon + kablo + adaptör
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new RoundedBoxGeometry(0.3, 0.035, 0.56, 4, 0.03), new THREE.MeshPhysicalMaterial({ color: 0x1b1d22, roughness: 0.3, clearcoat: 0.8 }));
+  body.position.y = 0.02; body.castShadow = true; g.add(body);
+  const tex = canvasTex(256, 480, (c, w, h) => {
+    c.fillStyle = '#0d1a2a'; c.fillRect(0, 0, w, h);
+    c.strokeStyle = '#7cf0a0'; c.lineWidth = 12; c.strokeRect(78, 150, 100, 190); c.fillStyle = '#7cf0a0'; c.fillRect(108, 128, 40, 22); c.fillRect(94, 250, 68, 76);
+    c.beginPath(); c.moveTo(136, 168); c.lineTo(108, 236); c.lineTo(132, 236); c.lineTo(120, 290); c.lineTo(152, 214); c.lineTo(128, 214); c.closePath(); c.fill();
+  });
+  const scr = new THREE.Mesh(new THREE.PlaneGeometry(0.26, 0.5), new THREE.MeshBasicMaterial({ map: tex })); scr.rotation.x = -Math.PI / 2; scr.position.y = 0.04; g.add(scr);
+  const cable = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(0, 0.02, 0.28), new THREE.Vector3(0.05, 0.02, 0.4), new THREE.Vector3(0.22, 0.02, 0.36), new THREE.Vector3(0.3, 0.05, 0.18)]), 40, 0.01, 6), new THREE.MeshPhysicalMaterial({ color: 0xeeeeea, roughness: 0.5 }));
+  g.add(cable);
+  const plug = new THREE.Mesh(new RoundedBoxGeometry(0.14, 0.14, 0.14, 3, 0.02), new THREE.MeshPhysicalMaterial({ color: 0xeeeeea, roughness: 0.45 })); plug.position.set(0.3, 0.07, 0.12); plug.castShadow = true; g.add(plug);
   S.scene.add(g); return { group: g };
 }

@@ -30,9 +30,10 @@ Bitmiş sahneler (`scenes/001-…`, `scenes/eski-002-…`) kendi kopyalarını k
 - `platform(S, x, z, {r})` — mini model kaidesi
 - `makeSwitch(S, {gap, y})` → `{group, set(1 kapalı / 0 açık)}` — bıçaklı anahtar (z ekseninde)
 - `heater(S)` → `{group, hot}`, `iron(S)`, `kettle(S)` — ısıtıcı teli/soba, ütü, su ısıtıcısı mini modelleri
+- `phone(S)` → `{group}` — şarj olan telefon + kablo + adaptör (002 → 004)
 
 ## Sahnede yazılıp henüz taşınmayanlar (ikinci kullanımda buraya taşı)
-- `wip/002-direnc-nedir/scene.js` (2. sürüm): `pipeLoop` (pompa + daralan kapalı boru + çark + debi göstergesi), `phone` (şarj olan telefon)
+- `wip/002-direnc-nedir/scene.js` (2. sürüm): `pipeLoop` (taşındı: boru.js), `phone` (taşındı: devre.js)
 - `wip/003-gerilim-nedir/scene.js`: `aaCell` (AA pil), `phoneCell` (telefon pili), `adapter` (şarj adaptörü), `carBattery` (araba aküsü), potansiyel renk katmanı (telde sarı → koyu turuncu, `paint(k)`)
 
 ## Kalemle yazı (2a kural 8–10) — anlatim.js + stage.js
