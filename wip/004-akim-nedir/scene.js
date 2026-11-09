@@ -12,19 +12,19 @@ import { makeBulb, platform, makeSwitch, heater, kettle, phone } from '../../too
 
 // ---------------------------------------------------------------- anlatım (pre: yazıdan önceki yazısız animasyon)
 const BEATS = [
-  { id: 'h1', pen: false, pre: 0, l1: 'Anahtar kapanınca', l2: `<b style="font-weight:900">telde ne ${rd('akar')}?</b>`, s1: 7.4, s2: 7.4, extra: 1.6 },
-  { id: 'r1', pre: 2.2, l1: `Telde serbest ${gr('elektronlar')} var`, l2: 'Rastgele titreşir: net akış yok', s2: 5.4 },
-  { id: 's1', pre: 3.4, l1: `Devre kapandı → ${gr('elektronlar')} akar`, s1: 6.0 },
-  { id: 's2', pre: 4.8, l1: 'Hepsi aynı anda harekete geçer', l2: 'Ampul hemen yanar', s1: 5.8 },
-  { id: 'c1', pre: 3.0, l1: `${gr('Elektronlar')}: − → +`, l2: `${rd('Akım yönü')}: + → − (geleneksel)`, s2: 5.4 },
-  { id: 'b1', pre: 3.0, l1: `Pil yok → itme yok → ${rd('akım')} yok`, s1: 5.8 },
-  { id: 'q1', pre: 4.2, l1: `${rd('Akım')}: saniyede geçen yük`, s1: 6.2 },
-  { id: 'g1', pre: 4.2, l1: `${rd('Akım')} akınca cihaz çalışır`, s1: 6.0 },
-  { id: 'k1', chain: true, pre: 3.0, l1: `Pil elektronları ${hl('iter')}` },
+  { id: 'h1', pen: false, pre: 0, l1: 'Anahtar kapanınca', l2: `<b style="font-weight:900">telde ne ${rd('akar')}?</b>`, s1: 6.6, s2: 7.0, extra: 1.6 },
+  { id: 'r1', pre: 1.8, l1: `Telde serbest ${gr('elektronlar')} var`, l2: 'Rastgele hareket eder: net akış yok', s1: 5.4, s2: 4.8 },
+  { id: 's1', pre: 2.8, l1: `Devre kapandı → ${gr('elektronlar')} akar`, s1: 4.9 },
+  { id: 's2', pre: 4.8, l1: 'Hepsi neredeyse aynı anda', l2: 'harekete geçer: ampul hemen yanar', s1: 5.4, s2: 4.8 },
+  { id: 'c1', pre: 3.0, l1: `${gr('Elektronlar')}: − → +`, l2: `${rd('Akım yönü')}: + → − (geleneksel kabul)`, s2: 4.4 },
+  { id: 'b1', pre: 3.0, l1: `Pil yok → itme yok → ${rd('akım')} yok`, l2: `(itme: ${hl('gerilim')})`, s1: 4.8, s2: 4.8 },
+  { id: 'q1', pre: 4.2, l1: `Her ${gr('elektron')} yük taşır`, l2: `${rd('Akım')}: kesitten 1 saniyede geçen yük`, s1: 5.6, s2: 4.4 },
+  { id: 'g1', pre: 4.2, l1: `${rd('Akım')} geçince cihaz çalışır`, s1: 5.2 },
+  { id: 'k1', chain: true, pre: 3.0, l1: `Pil, teldeki elektronları ${hl('iter')}`, s1: 5.0 },
   { id: 'k2', chain: true, pre: 1.0, l1: 'Devre kapalı olmalı' },
-  { id: 'k3', chain: true, pre: 1.0, l1: `Bu düzenli yük akışı: ${rd('akım')}` },
-  { id: 'f1', pre: 1.4, l1: `${rd('I')} = Q / t`, l2: 'Q: geçen yük (C), t: süre (s)', s1: 7.2, s2: 5.2 },
-  { id: 'f2', pre: 0.3, l1: `birimi: amper (${rd('A')})`, l2: '1 A = 1 C/s', s1: 6.4, s2: 5.6, extra: 0.6 },
+  { id: 'k3', chain: true, pre: 1.0, l1: `Yüklerin düzenli akışı: ${rd('akım')}`, s1: 5.0 },
+  { id: 'f1', pre: 1.4, l1: `${rd('I')} = Q / t`, l2: `${rd('I')}: akım, Q: yük (C), t: süre (s)`, s1: 7.2, s2: 4.6 },
+  { id: 'f2', pre: 0.2, l1: `Akımın birimi: amper (${rd('A')})`, l2: '1 A = 1 C/s', s1: 5.6, s2: 5.6, extra: 0.3 },
 ];
 const { Z, A, W: WR, DUR } = penTimeline(BEATS, { k: 1.0 });
 export const _T = { Z, A };
@@ -58,6 +58,8 @@ const dist = (t) => {
   const dt = 1 / 120; while (_t + dt <= t) { _s += V0 * flow(_t) * dt; _t += dt; }
   return _s + V0 * flow(_t) * (t - _t);
 };
+let _sG = null;                                       // kesit halkası belirdiği andaki yol (sayaç başlangıcı, kareden bağımsız)
+const sGate = () => { if (_sG === null) { let x = 0; const dt = 1 / 120; for (let u = 0; u + dt <= GATE[1]; u += dt) x += V0 * flow(u) * dt; _sG = x; } return _sG; };
 
 // ---------------------------------------------------------------- efektler
 export const meta = {
@@ -88,13 +90,13 @@ export const meta = {
 const X = 0.8, ZH = 1.2, Y = 0.2;                    // devre dikdörtgeni (x sağ, z izleyiciye)
 const SW_Z = -0.15, SW_GAP = 0.55;                    // anahtar sağ kenarda (+ uç ile ampul arası)
 const GZ = 0.25;                                      // kesit halkası sol kenarda
-const PLZ = [[-0.55, -0.75], [0.55, -0.75], [-0.55, 0.75], [0.55, 0.75]];
+const PLZ = [[-0.55, -1.0], [0.55, -1.0], [-0.55, 0.45], [0.55, 0.45]];
 const HI = [3, 17, 31];                               // s2'de vurgulanan üç elektron (devrenin farklı yerlerinde)
 
 export function build(S) {
   const { scene } = S;
   S.table({ size: 44, seed: 11 });
-  const sc = S.lights.key.shadow.camera; sc.left = -6; sc.right = 6; sc.top = 5; sc.bottom = -5; sc.updateProjectionMatrix();
+  const sc = S.lights.key.shadow.camera; sc.left = -10; sc.right = 10; sc.top = 6; sc.bottom = -6; sc.updateProjectionMatrix();
   const label = projLabel(S);
   const CG = new THREE.Group(); scene.add(CG);          // devre grubu: yerinde küçülüp büyür
 
@@ -142,11 +144,11 @@ export function build(S) {
   const models = [lamp.group, H.group, KT.group, PHN.group];
   models.forEach((g) => DG.add(g));
   const MSC = [1, 0.95, 1.05, 0.95];
-  const NAMES = ['lamba', 'ısıtıcı', 'su ısıtıcısı', 'telefon şarjı'];
+  const NAMES = ['lamba', 'elektrikli soba', 'su ısıtıcısı', 'telefon şarjı'];
   // her cihazın önünde kısa bir kablo, içinde akan elektronlar
   const cabMat = new THREE.MeshPhysicalMaterial({ color: 0x2b2e33, roughness: 0.5, transparent: true, opacity: 0.85 });
   const dots = new THREE.InstancedMesh(new THREE.SphereGeometry(0.028, 12, 8), eMat, 4 * 6); DG.add(dots);
-  PLZ.forEach(([x, z]) => { const c = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.7, 8), cabMat); c.rotation.z = Math.PI / 2; c.position.set(x, 0.1, z + 0.4); DG.add(c); });
+  const cables = PLZ.map(([x, z]) => { const c = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.7, 8), cabMat); c.rotation.z = Math.PI / 2; c.position.set(x, 0.1, z + 0.4); DG.add(c); return c; });
 
   // ------------------------------------------------ kamera: yerinde, yavaş (kadraj sahneden sahneye taşınmaz)
   const cam = camRig(S, [
@@ -156,7 +158,6 @@ export function build(S) {
   ]);
   const yaz = narrationPen(S, BEATS, Z, WR);
 
-  let count0 = null;
   return (t) => {
     cam(t);
     const F = flow(t), glow = F;
@@ -205,17 +206,17 @@ export function build(S) {
     const gOn = easeOut(seg(t, ...GATE)) * (1 - easeInOut(seg(t, COUT[0] - 0.4, COUT[0])));
     gMat.opacity = 0.95 * gOn; gate.visible = gOn > 0.01;
     const xg = N * (s / Wc.L + uG) ;                     // geçen elektron sayısı = floor(xg) − başlangıç
-    if (t < GATE[1]) count0 = null; else if (count0 === null) count0 = Math.floor(xg);
     const fr = xg - Math.floor(xg), flash = F * Math.max(0, 1 - Math.min(fr, 1 - fr) * 6);
     gDisk.material.opacity = 0.45 * gOn * flash; gDisk.visible = gOn > 0.01;
     gMat.emissiveIntensity = 0.8 + 1.4 * flash;
-    const n = count0 === null ? 0 : Math.floor(xg) - count0;
+    const n = t < GATE[1] ? 0 : Math.max(0, Math.floor(xg) - Math.floor(N * (sGate() / Wc.L + uG)));
 
     // gerçek hayat cihazları: aynı yerde sırayla belirir, sonra yerinde kaybolur
     let di = 0;
     models.forEach((g, i) => {
       const a = easeOut(seg(t, DEV[0] + i * 0.6, DEV[1] + i * 0.6)) * (1 - easeInOut(seg(t, ...DOUT)));
       plats[i].visible = a > 0.004; plats[i].scale.setScalar(Math.max(0.001, a));
+      cables[i].visible = a > 0.004; cables[i].scale.set(1, Math.max(0.001, a), 1);
       const sc0 = Math.max(0.001, a * MSC[i]);
       g.visible = sc0 > 0.004; g.scale.setScalar(i === 0 ? sc0 * 0.8 : sc0);
       g.position.set(PLZ[i][0], 0.08 + (1 - a) * 0.3, PLZ[i][1]); g.rotation.y = 0.12 * Math.sin(t * 0.5 + i);
@@ -234,7 +235,7 @@ export function build(S) {
     // kanca alt satırı ve seri etiketi
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
     S.text('sub', 'Pil, tel, ampul — anahtar açık', { y: 28, size: 4.4, weight: 600, opacity: subO, nowrap: true });
-    S.text('tag', 'BÖLÜM 3', { x: 15, y: 11.6, size: 3.0, weight: 800, color: '#9fb4c8', opacity: subO, nowrap: true, maxWidth: 30 });
+    S.text('tag', 'BÖLÜM 3', { x: 11, y: 11.6, size: 3.0, weight: 800, color: '#9fb4c8', opacity: subO, nowrap: true, maxWidth: 30 });
 
     // nesne etiketleri (devre tam boyuttayken)
     const onC = (a, b) => fade(t, a, b, 0.3) * (cS > 0.98 ? 1 : 0);
