@@ -32,6 +32,7 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 8. **Türkçe seslendirme yeterince doğal değildi.** Kanal sahibinin kararı: videolarda **insan sesi / seslendirme kullanılmaz.** Anlatımı ekranda akan yazılar yapar (bölüm 6).
 
 9. **Yazılar çok yukarıdaydı;** telefonun üstteki sabit ikonlarının (geri, arama, menü) altına denk geldi. Üst %10'a hiçbir şey konmaz (bölüm 4).
+9a. **Yazılar YouTube arayüzüyle çakıştı ve taştı (Gerilim, 09.11.2026):** alttaki etiketler kanal adı/başlık alanına düştü, uzun üst yazı ekran kenarından taştı. Bölüm 4'teki güvenli alan ve otomatik kontrol zorunlu.
 10. **Üst kısım okunsun diye karartılmıştı ama bu devrenin görünürlüğünü azalttı.** Karartma katmanı/gradyan kullanılmaz. Zemin rengi ve yazı stili, devre ve yazılar karartmasız da net görünecek şekilde seçilir (bölüm 4).
 11. **İzleyicinin odağı animasyondan çok yazılara kayıyordu;** bu öğreticiliği düşürdü. Anlatılanlar yazıyla değil animasyonla anlatılır (bölüm 2a).
 12. **Devre elemanlarının gerçek hayatta neyi temsil ettiği anlaşılmıyordu.** Her videoda kavramın gerçek hayattaki karşılıkları kodla çizilmiş 3D mini modellerle gösterilir (bölüm 2a).
@@ -63,7 +64,7 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 13. **Durağan an yok (kanal sahibinin emri).** Videoda her şey animasyonlu olmalı; hiçbir kare donuk görünmemeli. Bekleme ve okuma anlarında da sahne yaşar: elektronlar akmaya devam eder, kamera yavaşça kayar/döner (dolly, orbit), ampul hafifçe titreşir, sıvı akar, ışık ve gölge kıpırdar. Yazı yazılırken arkadaki animasyon durmaz. Sahne geçişleri kural 15'e göre hemen olur. Kalite kontrolünde (bölüm 7 B) ardışık iki kare arasında hareket olmayan 0,5 sn'den uzun bir aralık varsa hata say ve düzelt (ör. `ffmpeg -vf freezedetect=n=0.001:d=0.5`).
 14. **Analoji ilhamı:** Kanal sahibi bir kaynak verdiyse benzetmeler için de o kaynaktan ilham al (ör. Wikipedia "Resistor" sayfasındaki hidrolik benzetme ve direnç yapısı görselleri); kaynaktaki görselleri kopyalama, fikri kodla çizilmiş 3D animasyona çevir.
 15. **Sahne geçişi: aynı ekranda, hemen (kanal sahibinin emri, 08–09.11.2026).** Bir görüntüden diğerine (ör. devre → analoji → günlük hayat örnekleri) geçiş aynı ekranda, aynı kadrajda ve **hemen** olur: eski görüntü kaybolur, yenisi aynı yerde belirir; toplam geçiş en fazla 0,3 sn (doğrudan kesme veya çok kısa çapraz solma). Yasak olanlar: ekranı/kamerayı sağa-sola veya yukarı-aşağı kaydırmak, yeni sahnenin yandan/alttan kayarak gelmesi (Direnç 2. sürümündeki hata), eski görüntünün **uzaklaşarak/küçülerek yok olması**, yeni görüntünün **yakınlaşarak/büyüyerek gelmesi** (Akım videosundaki hata), kamera uçuşu, dönüşerek geçiş. Kamera yalnızca sahne içinde, yerinde çok yavaş yaşar (kural 13); kadraj sahneden sahneye taşınmaz. Kalite kontrolünde her sahne geçişinin ±0,5 sn çevresinden kare alıp kayma, uzaklaşma/yakınlaşma olmadığını ve geçişin ≤ 0,3 sn sürdüğünü kontrol et. Not: hemen geçiş "durağan an" sayılmaz; yeni sahne açılır açılmaz kendi animasyonu başlar.
-16. **Anlatımın bütünlüğü (kanal sahibinin emri, 08.11.2026).** Birbiriyle ilişkili bilgi yazıları mümkün olduğunca aynı ekranda birlikte kalır: yeni satır öncekinin altına eklenir, önceki satırlar kaybolmaz; bir düşünce (ör. sebep-sonuç zinciri, bir kuralın parçaları) bitene kadar yazılar ekranda birikir, sonra birlikte yerinde silinir. Yazılar animasyonun önüne geçmez: ana nesnenin üstüne binmez, onu kapatmaz; yer gerekiyorsa nesne yerinde hafifçe küçülür veya yazı bandı (y %12–24) genişler. Bir yazı gösterilip hemen silinip ilgili yazı başka bir anda tekrar gelmez; akışı bölen ara sahne/ara yazı yoktur.
+16. **Anlatımın bütünlüğü (kanal sahibinin emri, 08.11.2026).** Birbiriyle ilişkili bilgi yazıları mümkün olduğunca aynı ekranda birlikte kalır: yeni satır öncekinin altına eklenir, önceki satırlar kaybolmaz; bir düşünce (ör. sebep-sonuç zinciri, bir kuralın parçaları) bitene kadar yazılar ekranda birikir, sonra birlikte yerinde silinir. Yazılar animasyonun önüne geçmez: ana nesnenin üstüne binmez, onu kapatmaz; yer gerekiyorsa nesne yerinde hafifçe küçülür veya yazı bandı (y %12–26) en fazla y %34'e kadar genişler (bölüm 4 güvenli alan). Bir yazı gösterilip hemen silinip ilgili yazı başka bir anda tekrar gelmez; akışı bölen ara sahne/ara yazı yoktur.
 
 ## 3. Teknik hat (değiştirme)
 
@@ -107,14 +108,31 @@ Bir çalışma yaklaşık 30–40 dakikada kesilebilir. Uzun bir video tek çal�
 5. Parçalar ve kalite kontrolü bitip video yayınlanınca `wip/<id>/parca-*.mp4` dosyalarını sil (kontrol belgeleri kalır).
 6. Kesilmeden önce yetişemezsen bile son ara kayıt zaten yapılmış olmalı; kanal sahibi panelde işin nerede olduğunu görür.
 
-## 4. Ekran düzeni (9:16)
+## 4. Ekran düzeni (9:16) — GÜVENLİ ALAN (kanal sahibinin emri, 09.11.2026)
 
-- **Üst %10 boş kalır** (telefonun ve YouTube'un üst ikonları). Yazılar `y` %12–24 bandında; en fazla 2 satır, kalın; ana başlık 6–8 vw, açıklama 5–6 vw, etiket en az 4 vw. Vurgu renkleri: `hl` sarı, `rd` kırmızı, `gr` yeşil, `bl` mavi, `cu` bakır. Aynı kavram her yerde aynı renkte (ör. gerilim hep sarı, akım hep kırmızı, direnç hep mavi).
-- **Zemin ve renkler:** Koyu, mat, nötr bir zemin (koyu gri / koyu gri-kahve, hafif doku, gölgeler görünür). **Karartma katmanı veya gradyan yok** — `tools/player.html`'deki `#overlay` arka plan gradyanını kaldır ve `tools/lib/stage.js`'de zemini bu tarza göre ayarla (ahşap doku yerine mat koyu yüzey; masa rengi devreyle kontrast oluşturmalı). Yazılar karartmaya değil kendi kontur/gölgelerine güvenerek okunur. Renkler bu zemine göre: yükler/elektronlar parlak, teller bakır-altın, ampul ışığı sıcak sarı, vurgu renkleri koyu zeminde net.
-- Ana nesneler ekranın %25–75 yüksekliğinde. **Alt %20'ye önemli hiçbir şey konmaz** (YouTube başlık ve butonları). Sağ kenardan %12 içeride kal.
+Kanal sahibi yayındaki Gerilim videosunda iki hata buldu: (1) alttaki yazılar ("pompa", "düşük/yüksek basınç", "şarj adaptörü", "araba aküsü") YouTube'un kanal adı, video başlığı ve "Buy Super Thanks" alanıyla çakıştı; (2) üstteki uzun yazı ("Uçlar arasında potansiyel farkı var") ekrana sığmadı, kenardan taştı. Bundan sonra şu ölçüler zorunludur (yüzdeler 1080×1920 kareye göre):
+
+**Güvenli alan (her yazı ve her etiket bunun içinde kalır):**
+- **Üst:** y %0–11 boş (telefon ve YouTube üst ikonları).
+- **Alt:** y %68–100 boş: **hiçbir yazı, etiket veya sayı alt %32'ye girmez** (YouTube kanal adı, başlık, açıklama, Super Thanks, alt menü). Ana nesneler en fazla y %72'ye kadar inebilir; alttaki %28 yalnızca zemin ve önemsiz süs.
+- **Sağ:** x %86–100'e yazı ve etiket girmez (beğen/yorum/kaydet/paylaş düğmeleri, y %50'nin altında). Ana nesneler de y %50'nin altında x %86'yı geçmez.
+- **Sol:** x %0–6 boş.
+- Böylece yazı alanı: x %6–86 (genişlik %80), y %11–68. Ana sahne (devre, boru, örnek nesneler) y %20–68 arasına sığacak şekilde ölçeklenir; gerekirse sahne küçültülür veya etiketler nesnenin yanına/üstüne (alta değil) konur.
+
+**Üst yazılar:**
+- Bant: y %12–26. En fazla 2 satır (kanca başlığı en fazla 3 satır).
+- **Hiçbir satır yazı alanını (genişlik %80 = 864 px) aşmaz.** `tools/lib/anlatim.js` (ve diğer yazı yardımcıları) yazıyı yazmadan önce genişliğini ölçer; sığmıyorsa önce kelime sınırından 2 satıra böler, yine sığmıyorsa punto küçülür. Punto: ana yazı en fazla 6,5 vw, en az 4,5 vw; açıklama satırı 4–5 vw; etiket en az 3,5 vw. Yazı hiçbir zaman ekran kenarında kesilmez.
+- Yazıları kısa tut (ana satır ≤ 24 karakter hedef); uzun cümle yerine iki kısa satır.
+
+**Etiketler (nesne üzerindeki yazılar):** Nesnenin üstüne veya yanına konur, altına değil; alt %32'ye ve sağ %14'e düşüyorsa başka tarafa alınır. Kamera hareketinde titremez.
+
+**Otomatik kontrol (bölüm 7 B'ye eklenir, her videoda zorunlu):** Render betiği her 0,5 sn'de bir karede `#overlay` içindeki tüm görünür yazı öğelerinin `getBoundingClientRect()` kutularını ve 3D etiketlerin ekran izdüşümünü ölçüp `wip/<id>/guvenli_alan.json`'a yazar. Tek bir kutu güvenli alanın dışına taşarsa veya bir satır 864 px'i aşarsa video kalite kontrolünden **geçemez**; düzelt ve yeniden render et. Ayrıca kanca, her sahnenin ortası ve son kare için `tools/lib`'e eklenecek bir "YouTube arayüzü maskesi" (alt %32 ve sağ düğme sütunu yarı saydam kırmızı) üst üste konmuş kontrol kareleri üret ve gözle bak.
+
+**Diğer:**
+- Vurgu renkleri: `hl` sarı, `rd` kırmızı, `gr` yeşil, `bl` mavi, `cu` bakır. Aynı kavram her yerde aynı renkte (gerilim hep sarı, akım hep kırmızı, direnç hep mavi).
+- **Zemin:** Koyu, mat, nötr zemin; karartma katmanı veya gradyan yok. Yazılar kendi kontur/gölgeleriyle okunur.
 - Yazı hiçbir zaman ana nesnenin üstüne binmez.
-- Formüller tek satır (`nowrap: true`).
-- Nesnelerin üzerindeki etiketler (ör. "R = 100 Ω") nesneye yakın, okunur ve kamera hareketinde titremez.
+- Formüller tek satır (`nowrap: true`) ve yine 864 px'i aşmaz (aşarsa punto küçülür).
 
 ## 4a. Referans stil (kanal sahibinin örnek gösterdiği sayfalar: Hardwired, Mr. Integral, 3DIoT Education)
 
@@ -173,6 +191,7 @@ Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama;
   Aynı yazının gösterildiği kareleri tekrar etme. Bölüm 2 ve 4'teki her kuralı bu karelerde kontrol et; şüpheli bir yer varsa yalnızca o aralıktan sık kare çıkar.
 - Render sırasında tarayıcı konsoluna hata düşmüş olmamalı.
 - Üst %10 boş mu, karartma/gradyan yok mu, devre net görünüyor mu?
+- **Güvenli alan (bölüm 4):** `guvenli_alan.json`'da taşma yok mu? Alt %32'de ve sağ düğme sütununda yazı/etiket yok mu? Hiçbir üst yazı satırı ekran kenarında kesilmiyor mu? YouTube arayüzü maskeli kontrol karelerine bakıldı mı?
 
 **C. Ses**
 - `ffmpeg -af ebur128` ile ölç: entegre ses yaklaşık -16 LUFS, tepe -1,5 dBTP altında.
