@@ -11,18 +11,20 @@
 | İddia (ekran) | Neden doğru | ✔ |
 |---|---|---|
 | Telde serbest elektronlar var | Metallerde iletim elektronları serbesttir (kaynak: metal tellerde yük taşıyıcılar elektronlar) | ✔ |
-| Rastgele titreşir: net akış yok | Alan yokken ısıl rastgele hareket birbirini götürür, net akım sıfır (kaynak). Animasyonda her elektron yalnızca yerinde salınır (sinüs toplamı, ortalaması sıfır) | ✔ |
+| Rastgele hareket eder: net akış yok | Alan yokken ısıl rastgele hareket birbirini götürür, net akım sıfır (kaynak). Animasyonda her elektron yerinde rastgele kıpırdar (sinüs toplamı, ortalaması sıfır) | ✔ |
 | Devre kapandı → elektronlar akar | Kapalı devrede pilin alanı tel boyunca kurulur; elektronlar sürüklenir. `flow(t)` yalnızca anahtar kapalı ve pil yerindeyken 1 (`check`) | ✔ |
-| Hepsi aynı anda harekete geçer / Ampul hemen yanar | Alan tel boyunca neredeyse ışık hızında kurulur; elektronlar her yerde aynı anda sürüklenmeye başlar (kaynak: sinyal hızı vs. sürüklenme hızı). Animasyonda tek `s(t)` tüm elektronlara uygulanır | ✔ |
+| Hepsi neredeyse aynı anda harekete geçer: ampul hemen yanar | Alan tel boyunca neredeyse ışık hızında kurulur; elektronlar her yerde aynı anda sürüklenmeye başlar (kaynak: sinyal hızı vs. sürüklenme hızı). Animasyonda tek `s(t)` tüm elektronlara uygulanır | ✔ |
 | Elektronlar: − → + | Dış devrede elektronlar pilin − ucundan + ucuna gider (kaynak) | ✔ |
-| Akım yönü: + → − (geleneksel) | Geleneksel akım pozitif yük hareketi yönünde tanımlıdır (kaynak); ok sol kenarda +z'ye (− uca doğru) bakar (`check`) | ✔ |
-| Pil yok → itme yok → akım yok | Kaynak yoksa telde alan yok → net sürüklenme yok; `flow(Z.b1) === 0` (`check`) | ✔ |
-| Akım: saniyede geçen yük | I = Q/t: birim zamanda kesitten geçen net yük (kaynak). Sayaç halkadan geçen elektron sayısını tam sayıyla verir: floor(N·(s/L + u_g)) − başlangıç | ✔ |
-| Akım akınca cihaz çalışır (lamba, ısıtıcı, su ısıtıcısı, telefon şarjı) | Bu cihazlar içlerinden akım geçince ışık/ısı üretir veya pili doldurur (genel bilgi) | ✔ |
-| Pil elektronları iter | Pil telde elektrik alanı kurar; alan serbest elektronları + uca doğru iter (kaynak) | ✔ |
+| Akım yönü: + → − (geleneksel kabul) | Geleneksel akım pozitif yük hareketi yönünde tanımlıdır (kaynak); ok sol kenarda +z'ye (− uca doğru) bakar (`check`) | ✔ |
+| Pil yok → itme yok → akım yok (itme: gerilim) | Kaynak yoksa telde alan yok → net sürüklenme yok; `flow(Z.b1) === 0` (`check`) | ✔ |
+| Her elektron yük taşır / Akım: kesitten 1 saniyede geçen yük | Elektronun yükü −e = −1,602×10⁻¹⁹ C; I = Q/t: birim zamanda kesitten geçen net yük (kaynak). Sayaç halkadan geçen elektron sayısını tam sayıyla verir: floor(N·(s/L + u_g)) − başlangıç | ✔ |
+| Akım geçince cihaz çalışır (lamba, elektrikli soba, su ısıtıcısı, telefon şarjı) | Bu cihazlar içlerinden akım geçince ışık/ısı üretir veya pili doldurur (genel bilgi) | ✔ |
+| Pil, teldeki elektronları iter | Pil telde elektrik alanı kurar; alan serbest elektronları + uca doğru iter (kaynak) | ✔ |
 | Devre kapalı olmalı | Sürekli akım için kapalı yol gerekir; anahtar açılınca `flow = 0` | ✔ |
-| Bu düzenli yük akışı: akım | Akım = yüklü parçacıkların net akışı (kaynak) | ✔ |
-| I = Q / t; Q: geçen yük (C), t: süre (s) | Kaynaktaki sabit akım tanımı; Q coulomb, t saniye | ✔ |
-| birimi: amper (A), 1 A = 1 C/s | SI temel birimi; 1 coulomb/saniye (kaynak) | ✔ |
+| Yüklerin düzenli akışı: akım | Akım = yüklü parçacıkların net akışı (kaynak) | ✔ |
+| I = Q / t; I: akım, Q: yük (C), t: süre (s) | Kaynaktaki sabit akım tanımı; Q coulomb, t saniye | ✔ |
+| Akımın birimi: amper (A), 1 A = 1 C/s | SI temel birimi; 1 coulomb/saniye (kaynak) | ✔ |
 
 Görsel sürüklenme hızı (0,85 birim/sn) gösterim içindir; gerçekte mm/s mertebesindedir — ekranda sayı olarak verilmez, yanlış izlenim yaratacak hız iddiası yok.
+
+**Bağımsız metin denetimi (alt ajan, yalnızca metin):** fizik hatası yok; 11 öneri uygulandı (titreşir → rastgele hareket eder; 'neredeyse aynı anda'; 'kesitten 1 saniyede'; elektron–yük bağı eklendi; 'geleneksel kabul'; itme = gerilim; 'teldeki elektronlar'; I tanımı f1'e; 'Yüklerin düzenli akışı'; 'Akımın birimi'; ısıtıcı → elektrikli soba).
