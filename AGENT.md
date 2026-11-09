@@ -57,7 +57,7 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
    - Sahne **içindeki** animasyonlar (direnç eklenmesi, ampulün kararması, yazının yazılması) yavaş ve yumuşak (ease-in-out, en az 1,2 sn); kamera hareketleri yavaş. Sahneden sahneye geçiş ise hızlıdır (kural 15).
    - Her önemli animasyon olayından (ör. direnç eklendi, ampul karardı) sonra izleyicinin sonucu görmesi için en az 1,5 sn bekle.
    - Bir anda tek değişiklik; iki olay üst üste binmez.
-   - Hedef süre konuya göre 45–90 sn; anlaşılır olmak kısa olmaktan önemlidir.
+   - Süre konuya göre 45–90 sn. **90 saniye kesin üst sınırdır (kanal sahibinin emri, 09.11.2026):** 90,0 sn'yi aşan video kalite kontrolünden geçemez; senaryo aşamasında süreyi hesapla, gerekirse bir sahneyi sadeleştir veya konuyu iki videoya bölmeyi panelden kanal sahibine sor.
 10. **Açıklayıcı yazı ne zaman uzun olabilir:** Animasyonun gösterdiği sebep-sonuç zincirini (ör. toplam direnç artar → akım azalır → ampul gerilimi azalır → ampul kararır) sahnenin sonunda adım adım, kalemle yazılarak ve her adım ayrı satırda gösterebilirsin. Her adım ilgili görsel vurguyla (ok, parlama) eşleşir. Bu bölüm dışında yazılar kısa etiket olarak kalır.
 11. **Kaynak:** Her konuya başlamadan önce `kaynaklar.md`'ye bak. Kanal sahibi bir konu için kaynak bağlantısı verdiyse (orada veya konular.md'de), senaryodan önce o kaynağı oku (WebFetch) ve senaryoyu onunla tutarlı yaz; okunan kaynağı `dogruluk.md`'ye yaz. Kaynağa erişilemiyorsa panelde not düş ve kanal sahibine bildir (ağ izni gerekebilir: `en.wikipedia.org`).
 12. **Analoji fizik açısından doğru olmalı.** Bir benzetme (boru, su, koridor) yanlış bir fiziksel izlenim bırakmamalı; benzetmenin sınırı varsa animasyonu doğru davranışa göre kur (ör. seri devrede akım her yerde aynıdır).
@@ -231,6 +231,13 @@ Kanal sahibinin kararı:
 **Kayıtları güncelleme (her çalışmada):** Daha önce `planlandı` olarak kaydedilmiş ve yayın saati geçmiş videoları Metricool'da kontrol et; yayınlandıysa `konular.md` ve paneldeki `konular` belgesini `yayında`, `bolumler` belgesini `yayınlandı` yap.
 
 **Planlanmış bir gönderinin tarihini asla değiştirme, yeniden oluşturma veya "hemen yayınla" yapma;** tek istisna kanal sahibinin açık emri veya bölüm 11'deki `yeniden düzenle` akışıdır. Bir gönderinin yayın saati beklenenden farklı görünürse değiştirme; panelde not düş.
+
+### 9a. Erişim (daha çok kişiye ulaşma — kanal sahibinin emri, 09.11.2026)
+
+1. **İlk 1–3 saniye:** Video soru başlığıyla ve ilk karede hareketle açılır (bölüm 4a); sessiz/boş açılış yok, giriş uzatılmaz.
+2. **Başlık ve açıklamada aranan Türkçe kelimeler:** Başlığı yazmadan önce vidIQ bağlantısıyla (`vidiq_keyword_research`, gerekirse `vidiq_youtube_search`) konunun Türkçe arama kelimelerine bak (ör. "direnç nedir", "ohm kanunu", "akım nedir"). En çok aranan doğal ifadeyi başlığın başına koy (≤ 60 karakter, merak uyandıran soru biçimi korunur), açıklamanın ilk cümlesinde de geçir. Hashtag: `#elektronik` + 2–3 konu etiketi (`#shorts` isteğe bağlı). Bakılan kelimeleri ve hacimlerini `wip/<id>/erisim.md`'ye yaz. vidIQ çalışmazsa bunu not et ve konunun doğal Türkçe adını kullan; yayını bekletme.
+3. **İlk yorumda soru:** Metricool gönderisinde `firstCommentText` alanına videonun konusuyla ilgili, izleyicinin cevap yazabileceği kısa bir soru koy (ör. "9 V pil ve 30 Ω ampul: devreden kaç amper akar? Cevabını yaz 👇"). Soru videoda öğretilenle çözülebilir olmalı; cevabı `dogruluk.md`'de doğrula. Metricool YouTube için ilk yorumu reddederse yorumsuz planla ve panele not düş.
+4. **İlgili video önerisi:** YouTube Studio'daki "ilgili video" bağlantısını Metricool kuramaz; kanal sahibi elle ekler. Her planlamada `yayin.json`'a `"ilgili_video": "<önceki seri videosunun YouTube adresi>"` yaz ve panelin `bolumler` kaydının notuna "Studio'da ilgili video olarak şunu ekleyin: <adres>" yaz (serideki bir önceki video; serinin ilk videosuysa konu listesinde bir önceki yayındaki video).
 
 Kalite kontrolünden (bölüm 7) geçmeyen video **asla** planlanmaz; kanal sahibi panelde onay verirse planlanır (bölüm 13).
 
