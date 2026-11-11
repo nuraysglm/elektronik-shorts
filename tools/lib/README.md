@@ -36,6 +36,15 @@ Bitmiş sahneler (`scenes/001-…`, `scenes/eski-002-…`) kendi kopyalarını k
 - `wip/002-direnc-nedir/scene.js` (2. sürüm): `pipeLoop` (taşındı: boru.js), `phone` (taşındı: devre.js)
 - `wip/003-gerilim-nedir/scene.js`: `aaCell` (AA pil), `phoneCell` (telefon pili), `adapter` (şarj adaptörü), `carBattery` (araba aküsü), potansiyel renk katmanı (telde sarı → koyu turuncu, `paint(k)`)
 
+## Güvenli alan (bölüm 4) — stage.js, player.html, render.mjs, maske.js
+- `S.text(..., {fit: true, minSize})` — varsayılan: yazı x %6–86 aralığına sığmazsa punto otomatik küçülür (en az 3,5 vw veya %60)
+- `node tools/render.mjs <sahne> --safe wip/<id>/guvenli_alan.json --scale 0.3` — her 0,5 sn'de yazı kutuları; alan x %6–86, y %11–68, genişlik ≤ %80; ihlalleri listeler
+- `--mask` (stills ile): `tools/lib/maske.js` YouTube arayüzü maskesi (üst %11, alt %32, sağ sütun, sol kenar yarı saydam kırmızı)
+- Not: ↑ ↓ okları InterDisplay'de yok (yanlış glif çıkar); kelimeyle yaz (artar/azalır). → var.
+
+## Sahnede yazılıp henüz taşınmayanlar (005)
+- `wip/005-ohm-yasasi/scene.js`: `lcd(w,h,renk)` (değişen sayı göstergesi dokusu), `psu(S)` (ayarlı güç kaynağı, düğme + V ekranı), `ammeter(S)` (seri ampermetre, A ekranı)
+
 ## Kalemle yazı (2a kural 8–10) — anlatim.js + stage.js
 - `S.text(id, html, {reveal})` — `reveal` 0..1: soldan sağa yumuşak kenarlı açılma + kalem ucu parıltısı
 - `penSec(html)` — yazma süresi (0,3 sn/kelime); `penTimeline(BEATS)` → `{Z, A, W, DUR}` (yazma + okuma süresi)
