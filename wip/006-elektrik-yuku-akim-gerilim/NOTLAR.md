@@ -3,3 +3,4 @@
 - 21:24 UTC: senaryo, dogruluk, scene.js (86,2 sn) yazıldı; kare kontrolü 3 sayfa (atom sayı etiketleri güvenli alana alındı, LCD sığdırma, devre yukarı, tel kısaltıldı).
 - Sıradaki: bağımsız metin denetimi → güvenli alan + hareket kontrolü → parça render → birleştir → kalite → Metricool (ilk boş 16:00: 2026-11-13).
 - parca-00: tamam (21:47 UTC)
+- parca-01: tamam (21:48 UTC)
