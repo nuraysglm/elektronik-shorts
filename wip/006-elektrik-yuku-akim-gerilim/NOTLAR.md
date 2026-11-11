@@ -4,3 +4,4 @@
 - Sıradaki: bağımsız metin denetimi → güvenli alan + hareket kontrolü → parça render → birleştir → kalite → Metricool (ilk boş 16:00: 2026-11-13).
 - parca-00: tamam (21:47 UTC)
 - parca-01: tamam (21:48 UTC)
+- parca-03: tamam (21:50 UTC)
