@@ -215,7 +215,7 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 ## 9. Yayın takvimi ve stok kuralı
 
 Kanal sahibinin kararı:
-- **Günde 1 video, saat 16:00'da (Europe/London)** yayınlanır.
+- **Haftada 5 video (kanal sahibinin kararı, 11.11.2026): Pazartesi, Salı, Çarşamba, Perşembe ve Pazar, saat 16:00'da (Europe/London; Türkiye 19:00).** Cuma ve Cumartesi yayın yok (kanal verisinde en zayıf günler).
 - Ajan **günde iki kez** çalışır: **08:00** ve **12:00** (Londra).
 - **Stok kuralı:** Planlanmış ve henüz yayınlanmamış YouTube Short sayısı
   - **2 veya daha fazla** ise: yeni video üretme. Yalnızca kayıtları güncelle (bkz. aşağı) ve dur.
@@ -224,7 +224,7 @@ Kanal sahibinin kararı:
 
 **Stoku sayma (her çalışmanın başında):** Metricool `getScheduledPosts` ile (marka: bölüm 11'deki `blogId`, `timezone: Europe/London`, bugünden 14 gün sonrasına kadar) YouTube gönderilerini al. `draft: true` olanları ve başka ağların gönderilerini sayma; yalnızca bu kanalın yayın bekleyen YouTube Short'larını say.
 
-**Planlama saati:** Bugünden başlayarak 16:00'da (Europe/London) bu kanalın YouTube gönderisi olmayan **ilk gün**. Bugünün 16:00'ı geçtiyse ya da 30 dakikadan az kaldıysa bir sonraki günden başla. Aynı güne iki video planlama.
+**Planlama saati:** Bugünden başlayarak yayın günlerinden (Pzt, Sal, Çar, Per, Paz) 16:00'da (Europe/London) bu kanalın YouTube gönderisi olmayan **ilk gün**. Cuma ve Cumartesiye asla planlama. Bugünün 16:00'ı geçtiyse ya da 30 dakikadan az kaldıysa bir sonraki günden başla. Aynı güne iki video planlama.
 
 **Metricool `createScheduledPost`:** `draft: false`, `autoPublish: true`, `publicationDate: {dateTime: "<YYYY-MM-DD>T16:00:00", timezone: "Europe/London"}`. YouTube ayarları bölüm 11'deki gibi.
 
