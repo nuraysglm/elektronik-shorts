@@ -12,15 +12,15 @@ import { aaCell, carBattery } from '../../tools/lib/kaynaklar.js';
 
 // ---------------------------------------------------------------- anlatım (pre: yazıdan önceki yazısız animasyon)
 const BEATS = [
-  { id: 'h1', pen: false, pre: 0, l1: `${hl('Gerilim')} 2 katı olursa`, l2: `<b style="font-weight:900">${rd('akım')} ne olur?</b>`, s1: 6.6, s2: 7.0, extra: 1.6 },
+  { id: 'h1', pen: false, pre: 0, l1: `${hl('Gerilim')} 2 katına çıkarsa`, l2: `<b style="font-weight:900">${rd('akım')} ne olur?</b>`, s1: 6.6, s2: 7.0, extra: 1.6 },
   { id: 'm1', pre: 1.2, l1: `Ampermetre ${rd('akımı')} ölçer`, s1: 6.2 },
-  { id: 'v1', pre: 3.9, l1: `${hl('Gerilim')} 2 katı → ${rd('akım')} 2 katı`, l2: 'Ampul daha parlak', s1: 5.8, s2: 5.2 },
-  { id: 'v2', pre: 3.7, l1: `${hl('Gerilim')} azalır → ${rd('akım')} azalır`, s1: 6.0 },
-  { id: 'r1', pre: 5.8, l1: `${bl('Direnç')} 2 katı → ${rd('akım')} yarıya`, l2: 'Ampul kararır', s1: 5.8, s2: 5.2 },
+  { id: 'v1', pre: 3.9, l1: `${hl('Gerilim')} 2 katı → ${rd('akım')} 2 katı`, l2: `${bl('Direnç')} aynı · ampul parlar`, s1: 5.8, s2: 5.2 },
+  { id: 'v2', pre: 3.7, l1: `${hl('Gerilim')} yarıya → ${rd('akım')} yarıya`, s1: 6.0 },
+  { id: 'r1', pre: 5.8, l1: `${bl('Direnç')} 2 katı → ${rd('akım')} yarıya`, l2: `${hl('Gerilim')} aynı · ampul kararır`, s1: 5.8, s2: 5.2 },
   { id: 'r2', pre: 3.7, l1: `${bl('Direnç')} azalır → ${rd('akım')} artar`, s1: 6.0 },
   { id: 'g1', pre: 4.3, l1: 'Aynı ampul, farklı kaynak', l2: `${hl('Gerilim')} büyük → ${rd('akım')} büyük`, s1: 6.0, s2: 5.2 },
-  { id: 'f1', pre: 1.8, l1: `${hl('V')} = ${rd('I')} × ${bl('R')}`, l2: 'Ohm yasası', s1: 7.2, s2: 5.6 },
-  { id: 'f2', pre: 0.2, l1: `${rd('I')} = ${hl('9 V')} ÷ ${bl('30 Ω')} = ${rd('0,30 A')}`, l2: `${hl('V')}: gerilim · ${rd('I')}: akım · ${bl('R')}: direnç`, s1: 6.0, s2: 4.6, extra: 0.4 },
+  { id: 'f1', pre: 1.8, l1: `Ohm yasası: ${hl('V')} = ${rd('I')} × ${bl('R')}`, l2: `${hl('V')}: gerilim · ${rd('I')}: akım · ${bl('R')}: direnç`, s1: 6.4, s2: 4.6 },
+  { id: 'f2', pre: 0.2, l1: `yani ${rd('I')} = ${hl('V')} ÷ ${bl('R')}`, l2: `${hl('9 V')} ÷ ${bl('30 Ω')} = ${rd('0,30 A')}`, s1: 6.6, s2: 5.8, extra: 0.4 },
 ];
 const { Z, A, W: WR, DUR } = penTimeline(BEATS, { k: 1.0 });
 export const _T = { Z, A };
@@ -84,7 +84,7 @@ export const meta = {
 const X = 0.8, ZH = 1.2, Y = 0.2;                    // devre dikdörtgeni (x sağ, z izleyiciye)
 const MZ = -0.15;                                     // ampermetre sağ kenarda
 const RZ = 0.35, RL = 0.6;                            // eklenen direnç sol kenarda
-const LX = [-0.95, 0, 0.95];
+const LX = [-0.8, 0, 0.8];
 const CZ = -0.05;                                       // kamera hedefi: devre ekranın y %32–66 bandında                            // gerçek hayat platformları
 
 // LCD gösterge dokusu: lcd(w,h,renk) → {tex, set(yazı)}; yazı değişince yeniden çizilir
@@ -184,10 +184,11 @@ export function build(S) {
 
   // ------------------------------------------------ gerçek hayat: aynı yerde üç kaynak, her birine aynı ampul bağlı
   const LG = new THREE.Group(); scene.add(LG); LG.visible = false;
+  const SRC = [];
   const lifeBulbs = LIFE.map((L, i) => {
-    LG.add(platform(S, LX[i], 0.0, { r: 0.46 }));
+    LG.add(platform(S, LX[i], 0.0, { r: 0.38 }));
     const src = i === 0 ? aaCell(S, { len: 0.62, r: 0.11 }) : i === 1 ? battery(S, { len: 0.62, h: 0.24, w: 0.26, y: 0.12 }) : carBattery(S);
-    src.group.position.set(LX[i], 0.08, 0.16); if (i === 2) src.group.scale.setScalar(0.85); LG.add(src.group);
+    src.group.position.set(LX[i], 0.08, 0.16); src.group.scale.setScalar(i === 2 ? 0.72 : 0.85); LG.add(src.group); SRC.push(src.group);
     const b = makeBulb(S, { scale: 0.62 }); b.group.position.set(LX[i], 0.08, -0.22); LG.add(b.group);
     for (const s of [-1, 1]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.34, 8), S.M.copper); w.rotation.x = Math.PI / 2; w.position.set(LX[i] + s * 0.1, 0.12, -0.04); LG.add(w); }
     return b;
@@ -195,9 +196,9 @@ export function build(S) {
 
   // ------------------------------------------------ kamera: yerinde, çok yavaş (kadraj sahneden sahneye taşınmaz)
   const cam = camRig(S, [
-    [0, 0.0, 12.2, 62, 0, CZ], [A.m1, 0.04, 12.0, 62, 0, CZ], [A.v1, -0.03, 11.8, 63, 0, CZ], [A.v2, 0.03, 11.9, 62, 0, CZ],
-    [A.r1, -0.04, 11.8, 62, 0, CZ], [A.r2, 0.03, 11.9, 63, 0, CZ], [A.g1, -0.02, 11.9, 62, 0, CZ], [A.f1, 0.03, 11.8, 62, 0, CZ],
-    [DUR, -0.03, 11.6, 63, 0, CZ],
+    [0, 0.0, 12.2, 62, 0, CZ], [A.m1, 0.06, 12.0, 62, 0, CZ], [A.v1, -0.05, 11.8, 63, 0, CZ], [A.v2, 0.05, 11.9, 62, 0, CZ],
+    [A.r1, -0.06, 11.8, 62, 0, CZ], [A.r2, 0.05, 11.9, 63, 0, CZ], [A.g1, -0.05, 11.7, 62, 0, CZ], [A.f1, 0.06, 11.9, 62, 0, CZ],
+    [DUR, -0.05, 11.6, 63, 0, CZ],
   ]);
   const yaz = narrationPen(S, BEATS, Z, WR, { y1: 16, y2: 23 });
 
@@ -242,6 +243,7 @@ export function build(S) {
     arrowMat.opacity = aOp; arrow.visible = aOp > 0.01; arrowMat.emissiveIntensity = 0.3 + 1.2 * i / 0.3;
 
     // gerçek hayat ampulleri sırayla yanar (I = V / 30 Ω)
+    SRC.forEach((g, k) => { g.rotation.y = 0.18 * Math.sin(t * 0.7 + k * 2); });
     lifeBulbs.forEach((b, k) => b.set(glowOf(LIFE[k].i) * easeOut(seg(t, GB[k], GB[k] + 0.6)) * (1 + 0.02 * Math.sin(t * 11 + k))));
 
     yaz(t);
@@ -250,6 +252,9 @@ export function build(S) {
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
     S.text('sub', 'Güç kaynağı, ampul, ampermetre', { y: 27.6, size: 4.4, weight: 600, opacity: subO, nowrap: true });
     S.text('tag', 'BÖLÜM 4', { x: 14, y: 12.4, size: 3.0, weight: 800, color: '#9fb4c8', opacity: subO, nowrap: true, maxWidth: 30 });
+
+    // g1 dipnotu: idealleştirme (bağımsız denetim)
+    S.text('ideal', '(ampulün direnci sabit kabul edildi)', { y: 28.4, size: 3.6, weight: 600, color: '#c9d3dc', opacity: life ? easeOut(seg(t, Z.g1[0], Z.g1[0] + 0.4)) : 0, nowrap: true });
 
     // nesne etiketleri (yalnızca devre görünürken)
     const onC = (a, b) => (life ? 0 : fade(t, a, b, 0.3));
