@@ -4,3 +4,4 @@
 - 19:49 UTC: bağımsız denetim tamam (fizik hatası yok; 6 ifade düzeltmesi), donukluk için kamera/model hareketi artırıldı, gerçek hayat sahnesi sağ sütundan içeri alındı. Süre 76,4 sn. Güvenli alan 0 ihlal. Parça render başladı (render_parts.sh, 4 parça).
 - parca-00: tamam (20:19 UTC)
 - parca-01: tamam (20:19 UTC)
+- parca-03: tamam (20:20 UTC)
