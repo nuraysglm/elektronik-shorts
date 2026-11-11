@@ -13,12 +13,12 @@ const BEATS = [
   { id: 'h1', pen: false, pre: 0, l1: `${gr('Elektrik yükü')} nedir?`, l2: 'Atomun içine bakalım', s1: 7.0, s2: 5.4, extra: 1.0 },
   { id: 'a1', pre: 2.6, l1: `${cu('Proton +')} · ${gr('Elektron −')}`, l2: 'Nötron yüksüz', s1: 6.4 },
   { id: 'a2', pre: 2.8, l1: `3 ${cu('+')} ve 3 ${gr('−')} → toplam 0`, s1: 6.4 },
-  { id: 'b1', pre: 4.6, l1: 'Sürtünce elektron geçer', l2: `Balon ${gr('−')} · kumaş ${cu('+')}`, s1: 6.2 },
+  { id: 'b1', pre: 4.8, l1: 'Sürtününce elektron geçer', l2: `Balon ${gr('−')} · kumaş ${cu('+')}`, s1: 6.2 },
   { id: 'b2', pre: 3.2, l1: `Zıt ${gr('yükler')} birbirini çeker`, s1: 6.0 },
-  { id: 'q1', pre: 3.8, l1: `1 kulon (C) ≈ 6,24 × 10${sup('18')} ${gr('elektron')}`, s1: 5.6 },
-  { id: 'i1', pre: 4.0, l1: `Saniyede 1 C → ${rd('akım')} 1 A`, l2: `${rd('Akım')}: ${gr('yükün')} akışı`, s1: 6.2 },
-  { id: 'v1', pre: 4.8, l1: `${hl('Gerilim')}: yüke verilen enerji`, l2: `${hl('9 V')}: her 1 C'ye 9 J`, s1: 6.0 },
-  { id: 'f1', pre: 0.8, l1: `${rd('I')} = ${gr('Q')} ÷ t  ·  ${hl('V')} = W ÷ ${gr('Q')}`, l2: `${gr('Q')}: yük (C) · W: enerji (J)`, s1: 6.2, s2: 5.0 },
+  { id: 'q1', pre: 3.8, l1: `1 kulon (C) ≈ 6,24 × 10${sup('18')} ${gr('elektron')} yükü`, s1: 5.6 },
+  { id: 'i1', pre: 4.0, l1: `${rd('Akım')}: ${gr('yükün')} akışı`, l2: `Saniyede 1 C → ${rd('1 A')}`, s1: 6.2 },
+  { id: 'v1', pre: 4.8, l1: `${hl('Gerilim')}: kulon başına enerji`, l2: `${hl('9 V')}: her kulona 9 J`, s1: 6.0 },
+  { id: 'f1', pre: 0.8, l1: `${rd('I')} = ${gr('Q')} ÷ t  ·  ${hl('V')} = W ÷ ${gr('Q')}`, l2: `${gr('Q')}: yük · t: süre · W: enerji`, s1: 6.2, s2: 5.0 },
   { id: 'f2', pre: 0.2, l1: `${gr('6 C')}, 3 s → ${rd('I')} = 2 A`, l2: `${gr('2 C')}, 18 J → ${hl('V')} = 9 V`, s1: 6.2, s2: 5.4, extra: 0.3 },
 ];
 const { Z, A, W: WR, DUR } = penTimeline(BEATS, { k: 1.0 });
@@ -38,9 +38,9 @@ const NB = 6;                                    // balona geçen elektron = kum
 const CUTB = A.b1 + 0.2, CUTW = A.q1 + 0.2, CUTC = A.v1 + 0.2;           // aynı kadrajda kesmeler
 const P_GLOW = [A.a1 + 0.3, A.a1 + 1.1], E_GLOW = [A.a1 + 1.3, A.a1 + 2.1];
 const CNT = [A.a2 + 0.3, A.a2 + 1.3];                                   // +3 / −3 etiketleri, sonra "toplam 0"
-const RUB = [A.b1 + 0.6, A.b1 + 3.4];                                   // kumaş balona sürtülür
+const RUB = [A.b1 + 1.0, A.b1 + 3.6];                                   // kumaş balona sürtülür
 const HOP = Array.from({ length: NB }, (_, k) => RUB[0] + 0.25 + k * ((RUB[1] - RUB[0] - 0.6) / (NB - 1)));
-const AWAY = [A.b1 + 3.5, A.b1 + 4.6];                                  // kumaş yerine (sola) çekilir
+const AWAY = [A.b1 + 3.7, A.b1 + 4.6];                                  // kumaş yerine (sola) çekilir
 const PULL = [A.b2 + 0.3, A.b2 + 1.8];                                  // balon kumaşa doğru eğilir (çekim)
 const COUNT = [A.q1 + 0.5, A.q1 + 3.4];                                 // sayaç: 0 → 6,24 × 10^18 elektron
 const TIMER = [A.i1 + 0.4, A.i1 + 3.4];                                 // 3 s'de 3 C
@@ -173,12 +173,12 @@ export function build(S) {
     const a = (k - (NB - 1) / 2) * 0.32, b = ((k % 2) - 0.5) * 0.5;
     const local = new THREE.Vector3(-Math.cos(a) * Math.cos(b), Math.sin(a) * 1.18, Math.cos(a) * Math.sin(b)).multiplyScalar(BR + 0.035);
     const m = new THREE.Mesh(new THREE.SphereGeometry(0.05, 18, 12), hopMat); m.visible = false; BG.add(m);
-    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: minusT, transparent: true, depthTest: false })); sp.scale.setScalar(0.075); sp.renderOrder = 6; BG.add(sp); sp.visible = false;
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: minusT, transparent: true, depthTest: false })); sp.scale.setScalar(0.09); sp.renderOrder = 6; BG.add(sp); sp.visible = false;
     return { local, m, sp };
   });
   const cPlus = Array.from({ length: NB }, (_, k) => {
     const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: cuPlusT, transparent: true, depthTest: false, opacity: 0 }));
-    sp.scale.setScalar(0.12); sp.renderOrder = 6; sp.position.set(0.07, -0.25 + (k % 3) * 0.25, k < 3 ? -0.12 : 0.12); cloth.add(sp); return sp;
+    sp.scale.setScalar(0.14); sp.renderOrder = 6; sp.position.set(k < 3 ? -0.07 : 0.07, -0.22 + (k % 3) * 0.22, 0.33); cloth.add(sp); return sp;
   });
   const pullMat = new THREE.MeshBasicMaterial({ color: 0xffe28a, transparent: true, opacity: 0, depthWrite: false });
   const pullLines = [-0.18, 0, 0.18].map((dy) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 1, 6), pullMat); m.userData.dy = dy; BG.add(m); return m; });
@@ -187,7 +187,7 @@ export function build(S) {
     return new THREE.Vector3(ANC.x - SL * Math.sin(phi), ANC.y + SL * Math.cos(phi), ANC.z);
   };
   const clothAt = (t, bc) => {                                   // sürterken balonun sol yüzüne değer; sonra sola, platforma çekilir
-    const rub = seg(t, RUB[0] - 0.3, RUB[0]) * (1 - seg(t, ...AWAY));
+    const rub = seg(t, RUB[0] - 0.75, RUB[0]) * (1 - seg(t, ...AWAY));
     const contactX = bc.x - BR - 0.06, homeX = -0.85;
     const x = lerp(homeX, contactX, easeInOut(rub));
     const wig = (t > RUB[0] && t < RUB[1]) ? 0.16 * Math.sin((t - RUB[0]) * 2 * Math.PI * 1.25) : 0;
@@ -299,19 +299,19 @@ export function build(S) {
       bEl.forEach((e, k) => {
         const hop = seg(t, HOP[k], HOP[k] + 0.45);
         const dst = e.local.clone().applyEuler(balloon.rotation).add(bc);
-        const src = cloth.position.clone().add(new THREE.Vector3(0.06, e.local.y * 0.6, e.local.z));
+        const src = cloth.position.clone().add(new THREE.Vector3((k < 3 ? -0.07 : 0.07) + 0.035, -0.14 + (k % 3) * 0.22, 0.37));
         const p = src.lerp(dst, easeInOut(hop)); p.y += Math.sin(hop * Math.PI) * 0.12;
-        e.m.visible = t >= HOP[k]; e.m.position.copy(p);
+        e.m.visible = true; e.m.position.copy(p);                // önce kumaşta (kumaş nötr: 6 + ve 6 −), sonra balona atlar
         e.sp.visible = e.m.visible; e.sp.position.copy(p).addScaledVector(camDir, 0.055);
-        cPlus[k].material.opacity = easeOut(seg(t, HOP[k] + 0.2, HOP[k] + 0.5));
+        cPlus[k].material.opacity = 1;                          // + yükler yerinde kalır, yalnızca elektronlar hareket eder
       });
-      pullMat.opacity = 0.55 * fade(t, PULL[0], Z.b2[1], 0.4) * (0.75 + 0.25 * Math.sin(t * 6));
+      pullMat.opacity = 0.4 * fade(t, PULL[0], Z.b2[1], 0.4) * (0.75 + 0.25 * Math.sin(t * 6));
       for (const m of pullLines) {
         const a = cloth.position.clone().add(new THREE.Vector3(0.07, m.userData.dy, 0)), b = bc.clone().add(new THREE.Vector3(-BR - 0.02, m.userData.dy * 1.2, 0));
         m.position.copy(a).add(b).multiplyScalar(0.5); m.scale.y = Math.max(0.01, a.distanceTo(b) - 0.04); m.lookAt(b); m.rotateX(Math.PI / 2);
       }
-      label('lb', 'balon', bc.x + 0.1, bc.y + BR * 1.18 + 0.2, bc.z, { opacity: fade(t, CUTB + 0.3, Z.b1[1], 0.3), size: 4.4 });
-      label('lk', 'yün kumaş', cc.x - 0.05, cc.y + 0.55, cc.z, { opacity: fade(t, CUTB + 0.5, Z.b1[1], 0.3), size: 4.4 });
+      label('lb', 'balon', bc.x, bc.y + BR * 1.18 + 0.32, bc.z, { opacity: fade(t, CUTB + 0.3, Z.b1[1], 0.3), size: 4.4 });
+      label('lk', 'yün kumaş', cc.x, cc.y + 0.62, cc.z, { opacity: fade(t, CUTB + 0.2, RUB[0] - 0.6, 0.3) + fade(t, AWAY[1], Z.b1[1], 0.3), size: 4.4 });
     } else { for (const id of ['lb', 'lk']) S.text(id, '', { opacity: 0 }); }
 
     // ---------------- tel içi: kulon sayacı ve akım

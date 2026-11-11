@@ -21,10 +21,13 @@ Dört görüntü aynı kadrajda kesmeyle değişir (kural 15); kamera yerinde ç
 | h1 | 0–4,3 | Lityum atomu: çekirdek döner, 3 yeşil elektron yörüngede. Alt satır "Proton, elektron, kulon", köşede "DERS 1" | Elektrik yükü nedir? / Atomun içine bakalım | — |
 | a1 | 6,9–10,6 | Protonlar parlar, üstlerinde +; elektronlar parlar, üstlerinde −; nötronlarda 0; etiketler proton / elektron / nötron | Proton + · Elektron − / Nötron yüksüz | pop ×2 |
 | a2 | 13,4–17,7 | "+3 proton", "−3 elektron", sonra "toplam yük: 0" | 3 + ve 3 − → toplam 0 | pop |
-| b1 | 22,3–26,6 | Kesme: ipe bağlı balon ve yün kumaş; kumaş balona sürtülür, 6 elektron tek tek kumaştan balona atlar, kumaşta 6 adet + kalır; kumaş geri çekilir | Sürtünce elektron geçer / Balon − · kumaş + | pop ×6 (yumuşak) |
+| b1 | 22,3–26,6 | Kesme: ipe bağlı balon ve yün kumaş; kumaş balona sürtülür, kumaşta başta 6 + ve 6 − (nötr); yalnızca 6 elektron tek tek balona atlar, + yükler yerinde kalır; kumaş geri çekilir | Sürtününce elektron geçer / Balon − · kumaş + | pop ×6 (yumuşak) |
 | b2 | 29,8–33,5 | Balon kumaşa doğru eğilir, aralarında soluk çekim çizgileri | Zıt yükler birbirini çeker | thud |
-| q1 | 37,3–42,8 | Kesme: bakır tel içi (iyonlar, serbest elektronlar akıyor), yeşil sayaç halkası; LCD: elektron sayısı 0 → 6,24 × 10¹⁸, Q = 1,00 C | 1 kulon (C) ≈ 6,24 × 10¹⁸ elektron | uğultu, pop |
-| i1 | 46,8–53,6 | Aynı tel; LCD t = 0 → 3,0 s, Q = 0 → 3,0 C; kırmızı akım oku elektronların tersine ("elektronlar", "akım yönü") | Saniyede 1 C → akım 1 A / Akım: yükün akışı | pop |
-| v1 | 58,4–66,4 | Kesme: 9 V pil + ampul; elektronlar (− → +) pilden enerjili (parlak sarı) çıkar, ampulde enerjisini bırakır (sönük yeşil), ampul yanar; kırmızı akım oku + → − | Gerilim: yüke verilen enerji / 9 V: her 1 C'ye 9 J | uğultu |
-| f1 | 67,2–75,8 | Aynı devre, kamera çok yavaş yaklaşır | I = Q ÷ t · V = W ÷ Q / Q: yük (C) · W: enerji (J) | thud |
+| q1 | 37,3–42,8 | Kesme: bakır tel içi (iyonlar, serbest elektronlar akıyor), yeşil sayaç halkası; LCD: elektron sayısı 0 → 6,24 × 10¹⁸, Q = 1,00 C | 1 kulon (C) ≈ 6,24 × 10¹⁸ elektron yükü | uğultu, pop |
+| i1 | 46,8–53,6 | Aynı tel; LCD t = 0 → 3,0 s, Q = 0 → 3,0 C; kırmızı akım oku elektronların tersine ("elektronlar", "akım yönü") | Akım: yükün akışı / Saniyede 1 C → 1 A | pop |
+| v1 | 58,4–66,4 | Kesme: 9 V pil + ampul; aynı elektronlar döngüde dolaşır (− → +); pilden enerjili (parlak sarı) çıkar, ampulde enerjisini bırakır (sönük yeşil), ampul yanar; kırmızı akım oku + → − | Gerilim: kulon başına enerji / 9 V: her kulona 9 J | uğultu |
+| f1 | 67,2–75,8 | Aynı devre, kamera çok yavaş yaklaşır | I = Q ÷ t · V = W ÷ Q / Q: yük · t: süre · W: enerji | thud |
 | f2 | 76,0–86,2 | Aynı devre (döngüye uygun son kare) | 6 C, 3 s → I = 2 A / 2 C, 18 J → V = 9 V | — |
+
+## Bağımsız metin denetimi (render öncesi)
+Kritik fizik/sayı hatası yok. Uygulanan 7 düzeltme: kumaş başta nötr gösterildi (+ yerinde, yalnızca elektron hareket eder); "elektron yükü"; akımda önce tanım sonra örnek; gerilim "kulon başına enerji", "her kulona 9 J"; f1'de t tanımı; "Sürtününce". Lityum-7 nötron sayısı (4) kodda check ile doğrulandı.
