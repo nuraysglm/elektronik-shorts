@@ -5,3 +5,4 @@
 - parca-00: tamam (20:19 UTC)
 - parca-01: tamam (20:19 UTC)
 - parca-03: tamam (20:20 UTC)
+- parca-02: tamam (20:20 UTC)
