@@ -6,3 +6,4 @@
 - parca-01: tamam (20:19 UTC)
 - parca-03: tamam (20:20 UTC)
 - parca-02: tamam (20:20 UTC)
+- 20:22 UTC: parçalar birleştirildi + ses → media/005-ohm-yasasi/ (76,4 sn). Kalite kontrolü 1. turda GEÇTİ. scenes/005-ohm-yasasi.js. Parçalar silindi. Sıradaki: main'de doğrula → Metricool 2026-11-12 16:00.
