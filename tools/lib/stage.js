@@ -291,7 +291,8 @@ export function createStage({ canvas, overlay, width, height, background = 0x151
 
     /** HTML yazı katmanı (Türkçe karakterler için). id ile tekrar çağrılır. */
     // reveal (0..1, isteğe bağlı): kalemle yazılıyormuş gibi soldan sağa açılma + kalem ucu parıltısı (anlatim.js penSec).
-    text(id, html, { x = 50, y = 12, size = 6.2, color = '#ffffff', weight = 900, opacity = 1, align = 'center', maxWidth = 92, scale = 1, font = 'InterDisplay', nowrap = false, reveal = null } = {}) {
+    // fit (varsayılan açık, AGENT.md bölüm 4): yazı güvenli alanın yatay sınırına (x %6–86) sığmıyorsa punto küçülür (en az minSize vw)
+    text(id, html, { x = 50, y = 12, size = 6.2, color = '#ffffff', weight = 900, opacity = 1, align = 'center', maxWidth = 92, scale = 1, font = 'InterDisplay', nowrap = false, reveal = null, fit = true, minSize = null } = {}) {
       let el = overlay.querySelector(`[data-id="${id}"]`);
       if (!el) {
         el = document.createElement('div');
@@ -302,7 +303,7 @@ export function createStage({ canvas, overlay, width, height, background = 0x151
       const pen = reveal !== null;
       const key = (pen ? 'P|' : '') + html;
       if (el.dataset.html !== key) {
-        el.innerHTML = pen ? `<span class="rvw" style="position:relative;display:inline-block"><span class="rvc">${html}</span><i class="pen" style="position:absolute;top:18%;width:.16em;height:.64em;border-radius:.08em;background:#fff6d0;box-shadow:0 0 .25em .08em rgba(255,226,140,.85)"></i></span>` : html;
+        el.innerHTML = pen ? `<span class="rvw" style="position:relative;display:inline-block"><span class="rvc">${html}</span><i class="pen" style="position:absolute;top:18%;width:.16em;height:.64em;border-radius:.08em;background:#fff6d0;box-shadow:0 0 .25em .08em rgba(255,226,140,.85)"></i></span>` : `<span class="fitw" style="display:inline-block">${html}</span>`;
         el.dataset.html = key;
       }
       if (pen) {
@@ -315,6 +316,11 @@ export function createStage({ canvas, overlay, width, height, background = 0x151
       el.style.cssText = `left:${x}%;top:${y}%;font-size:${size}vw;color:${color};font-weight:${weight};` +
         `opacity:${opacity};width:${maxWidth}%;white-space:${nowrap ? 'nowrap' : 'normal'};text-align:${align};font-family:"${font}",sans-serif;` +
         `transform:translate(-50%,-50%) scale(${scale});display:${opacity > 0.003 ? 'block' : 'none'}`;
+      if (fit && opacity > 0.003 && align === 'center') {
+        const avail = 2 * Math.max(1, Math.min(x - 6, 86 - x)) / 100 * overlay.clientWidth;
+        const w = el.firstChild.offsetWidth * scale;
+        if (w > avail) el.style.fontSize = `${Math.max(minSize ?? Math.max(3.5, size * 0.6), size * avail / w * 0.98)}vw`;
+      }
       return el;
     },
 

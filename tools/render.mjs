@@ -6,6 +6,8 @@
 //   node tools/render.mjs <sahne.js> --out media/<id>/<id>.mp4            # son render (1080x1920, 30 fps)
 //   node tools/render.mjs <sahne.js> --preview --out /tmp/onizleme.mp4   # deneme: 540x960, 15 fps, sessiz
 //   node tools/render.mjs <sahne.js> --stills 1,4,8 --out /tmp/k.png     # seçili anlar tek görselde
+//   node tools/render.mjs <sahne.js> --safe wip/<id>/guvenli_alan.json --scale 0.3  # yazı güvenli alan kontrolü (her 0,5 sn)
+//   --mask: kareler YouTube arayüzü maskesiyle (alt %32, sağ düğme sütunu, üst %11 yarı saydam kırmızı)
 // Seçenekler: --scale 0.5  --fps 30  --from 0 --to 10  --no-audio  --keep-frames
 //
 // Ekran kartı yok: WebGL işlemcide (SwiftShader) çalışır. Denemeleri --preview ile yap,
@@ -78,7 +80,7 @@ const page = await browser.newPage({ viewport: { width: W, height: H }, deviceSc
 page.on('pageerror', (e) => console.error('SAYFA HATASI:', e.message));
 page.on('console', (m) => { if (m.type() === 'error') console.error('konsol:', m.text()); });
 const rel = path.relative(ROOT, path.resolve(scenePath)).split(path.sep).join('/');
-await page.goto(`http://127.0.0.1:${port}/tools/player.html?scene=${encodeURIComponent(rel)}&w=${W}&h=${H}`);
+await page.goto(`http://127.0.0.1:${port}/tools/player.html?scene=${encodeURIComponent(rel)}&w=${W}&h=${H}${flag('mask') ? '&mask=1' : ''}`);
 await page.waitForFunction('window.__ready === true', null, { timeout: 120000 });
 const meta = await page.evaluate('window.__meta');
 const fps = +opt('fps', preview ? 15 : (meta.fps || 30));
@@ -93,7 +95,24 @@ const shot = async (file) => {
 };
 
 try {
-  if (stills) {
+  if (opt('safe', null)) {
+    // güvenli alan kontrolü (AGENT.md bölüm 4): her 0,5 sn'de yazı kutuları; alan x %6–86, y %11–68, satır ≤ %80 (864 px)
+    const rows = [], bad = [];
+    for (let t = t0; t <= t1 + 1e-6; t += 0.5) {
+      await page.evaluate((x) => window.__render(x), Math.min(t, t1 - 1e-3));
+      const bx = await page.evaluate('window.__boxes()');
+      for (const b of bx) {
+        const why = [b.x0 < 6 && 'sol', b.x1 > 86 && 'sağ', b.y0 < 11 && 'üst', b.y1 > 68 && 'alt', b.x1 - b.x0 > 80 && 'genişlik'].filter(Boolean);
+        const r = { t: +t.toFixed(2), ...b, x0: +b.x0.toFixed(1), x1: +b.x1.toFixed(1), y0: +b.y0.toFixed(1), y1: +b.y1.toFixed(1) };
+        rows.push(r); if (why.length) bad.push({ ...r, ihlal: why.join(',') });
+      }
+    }
+    const sOut = path.resolve(opt('safe'));
+    fs.mkdirSync(path.dirname(sOut), { recursive: true });
+    fs.writeFileSync(sOut, JSON.stringify({ alan: { x: [6, 86], y: [11, 68], genislik: 80 }, ornek: rows.length, ihlal_sayisi: bad.length, ihlaller: bad, kutular: rows }, null, 1));
+    console.log(`güvenli alan: ${rows.length} kutu, ${bad.length} ihlal → ${sOut}`);
+    for (const b of bad.slice(0, 30)) console.log(`  ${b.t} sn ${b.id} [${b.ihlal}] x ${b.x0}–${b.x1} y ${b.y0}–${b.y1} "${b.text}"`);
+  } else if (stills) {
     const times = stills.split(',').map(Number);
     const files = [];
     for (const [i, t] of times.entries()) { await page.evaluate((x) => window.__render(x), t); const f = path.join(tmp, `s${i}.png`); await shot(f); files.push(f); }

@@ -43,6 +43,10 @@
   window.__meta = mod.meta;
   window.__S = S;
   window.__render = async (t) => { frame(t); S.render(); await new Promise((r) => requestAnimationFrame(() => r())); return true; };
+  // güvenli alan ölçümü (AGENT.md bölüm 4): görünen her yazının içerik kutusu, kare yüzdesi olarak
+  window.__boxes = () => [...document.querySelectorAll('#overlay .ovl')].filter((e) => e.style.display !== 'none' && +getComputedStyle(e).opacity > 0.05 && e.firstChild)
+    .map((e) => { const r = e.firstChild.getBoundingClientRect(); return { id: e.dataset.id, x0: r.left / W * 100, x1: r.right / W * 100, y0: r.top / H * 100, y1: r.bottom / H * 100, text: e.textContent.slice(0, 40) }; });
+  if (q.get('mask') === '1') (await import('./lib/maske.js')).mask(wrap);
   window.__ready = true;
 </script>
 </body>
