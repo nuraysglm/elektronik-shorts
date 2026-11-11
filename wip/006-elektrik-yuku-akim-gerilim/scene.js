@@ -233,10 +233,10 @@ export function build(S) {
   const bulb = makeBulb(S, { scale: 1.2 }); scene.remove(bulb.group); bulb.group.position.set(0, 0, -ZH); CG.add(bulb.group);
   const batLight = new THREE.PointLight(0xffd23f, 0, 2.4, 2); batLight.position.set(0, 0.8, ZH); CG.add(batLight);
   const N = 40;
-  const ceMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.35, roughness: 0.25, clearcoat: 1 });
+  const ceMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, emissive: 0x2fd060, emissiveIntensity: 0.45, roughness: 0.35, clearcoat: 0.6 });
   const ce = new THREE.InstancedMesh(new THREE.SphereGeometry(0.048, 16, 12), ceMat, N);
   ce.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(N * 3), 3); CG.add(ce);
-  const cLow = new THREE.Color(0x2fbf63), cHigh = new THREE.Color(0xfff07a), col = new THREE.Color();
+  const cLow = new THREE.Color(0x1f9a4a), cHigh = new THREE.Color(0xd8ff5a), col = new THREE.Color();
   // enerji düzeyi (elektron dış devrede − → +): pilin içinde + → − giderken 0 → 1; ampulde 1 → 0
   const energy = (x, z) => {
     if (z > ZH - 0.05) { if (x > 0.45) return 0; if (x < -0.45) return 1; return (0.45 - x) / 0.9; }
