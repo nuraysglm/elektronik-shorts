@@ -31,3 +31,4 @@
 - 09:40 UTC: (1) tel döngüsünün başlangıcı arka kenara alındı (eski başlangıç direncin içindeydi → arka tel parçası hiç çizilmiyordu); tel kesintisiz, elektronlar telin üstünde. (2) "DERS 1" etiketi kaldırıldı. (3) Gerçek hayat: priz (230 V AC) → açık bıçaklı anahtar → lamba, kapalı bakır tel döngüsü; "≈ 230 V (AC)", "anahtar açık", "i = 0" etiketleri anahtara göre. Güvenli alan 0 ihlal.
 - Sıradaki: 4 parça render → birleştir → kalite → v2'yi eski/'ye taşı → Metricool (670534653296070172) güncelle → 15.11 16:00, draft:false.
 - parca-01: tamam (10:03 UTC)
+- parca-00: tamam (10:04 UTC)
