@@ -26,3 +26,7 @@
 - parca-03: tamam (09:06 UTC)
 - 09:10 UTC: birleştirildi, kalite 2. turda geçti (87,2 sn, −16,6 LUFS, güvenli alan 0 ihlal). Sıradaki: main doğrula → Metricool taslağı güncelle → 15.11 16:00.
 - 09:09 UTC: Metricool taslağı güncellendi → 2026-11-15 16:00 Londra (planlandı, draft:false). Parçalar yayından sonra silinecek.
+
+## 3. sürüm (kanal sahibinin 2. iş emri, 12.11.2026) — v2 üzerinde düzeltme
+- 09:40 UTC: (1) tel döngüsünün başlangıcı arka kenara alındı (eski başlangıç direncin içindeydi → arka tel parçası hiç çizilmiyordu); tel kesintisiz, elektronlar telin üstünde. (2) "DERS 1" etiketi kaldırıldı. (3) Gerçek hayat: priz (230 V AC) → açık bıçaklı anahtar → lamba, kapalı bakır tel döngüsü; "≈ 230 V (AC)", "anahtar açık", "i = 0" etiketleri anahtara göre. Güvenli alan 0 ihlal.
+- Sıradaki: 4 parça render → birleştir → kalite → v2'yi eski/'ye taşı → Metricool (670534653296070172) güncelle → 15.11 16:00, draft:false.
