@@ -1,15 +1,17 @@
-# 006 — Erişim (bölüm 9a)
+# 006 (2. sürüm) — erişim (bölüm 9a)
 
-vidIQ `vidiq_keyword_research`, ülke TR, 11.11.2026:
-| Kelime | Aylık arama (tahmini) | Rekabet | Genel puan |
+vidIQ `vidiq_keyword_research` (12.11.2026, ülke TR), tohum: "açık devre kısa devre"
+| Kelime | Hacim puanı | Tahmini aylık arama | Rekabet |
 |---|---|---|---|
-| elektrik yükü nedir | <750 | 34 | 27 |
-| elektrik yükü (matching_terms) | yalnızca "fizika elektrik yükü toplu" (<750) | 14 | 34 |
-| fizik (ilgili) | 45 065 (TR 37 554) | 72 | 53 |
-| konu anlatımı (ilgili) | 4 706 | 51 | 52 |
+| kısa devre | 55 | 5040 | 59 |
+| devre analizi | 55 | 5215 | 34 |
+| elektrik | 61 | 12837 | 45 |
+| elektronik | 59 | 8680 | 39 |
+| kısa devre nedir | 0 | <750 | 23 |
+| açık devre | 0 | <750 | 21 |
+| açık devre ve kısa devre nedir | 0 | <750 | — |
 
-Seçim: başlığın başında "Elektrik Yükü Nedir?" (konunun en doğal arama ifadesi), ardından merak sorusu.
-Başlık: "Elektrik Yükü Nedir? 1 Kulon Kaç Elektron?" (42 karakter)
-Hashtag: #elektronik #shorts #elektrikyükü #kulon #fizik
-İlk yorum: "Bir telden 4 saniyede 8 C yük geçiyor. Akım kaç amper? Cevabını yaz 👇" (cevap 2 A, dogruluk.md)
-İlgili video: Ohm Kanunu (005, 12.11.2026 16:00'da yayınlanacak; adres yayından sonra belli olur). O zamana kadar: Akım Nedir? → https://www.youtube.com/shorts/puiob5muSPo
+Seçim: en çok aranan doğal ifade "kısa devre" başlığın başında; soru biçimi korunur.
+Başlık: **Kısa Devre ve Açık Devre: Gerilim Sıfır mı?** (44 karakter)
+Hashtag: #elektronik #shorts #kısadevre #açıkdevre #devreanalizi
+İlk yorum: "9 V'luk pile 3 kΩ direnç ve açık bir anahtar seri bağlı. Açık anahtarın uçları arasındaki gerilim kaç volt? Cevabını yaz 👇" (cevap 9 V, dogruluk.md)
