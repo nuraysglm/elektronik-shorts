@@ -25,3 +25,4 @@
 - parca-02: tamam (09:05 UTC)
 - parca-03: tamam (09:06 UTC)
 - 09:10 UTC: birleştirildi, kalite 2. turda geçti (87,2 sn, −16,6 LUFS, güvenli alan 0 ihlal). Sıradaki: main doğrula → Metricool taslağı güncelle → 15.11 16:00.
+- 09:09 UTC: Metricool taslağı güncellendi → 2026-11-15 16:00 Londra (planlandı, draft:false). Parçalar yayından sonra silinecek.
