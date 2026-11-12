@@ -268,7 +268,7 @@ export function build(S) {
     [A.o1, -0.05, 10.4, 58, 0, CZ], [A.o2, 0.04, 10.5, 59, 0, CZ], [A.g1, -0.04, 10.4, 58, 0, CZ], [A.f1, 0.05, 10.5, 58, 0, CZ],
     [DUR, -0.04, 10.3, 59, 0, CZ],
   ]);
-  const yaz = narrationPen(S, BEATS, Z, WR, { y1: 14, y2: 20.5 });
+  const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15, y2: 21.5 });
 
   return (t) => {
     cam(t);
