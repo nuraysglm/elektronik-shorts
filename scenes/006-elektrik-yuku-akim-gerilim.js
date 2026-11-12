@@ -1,364 +1,341 @@
-// 006 — Elektrik yükü, akım ve gerilim (Temel Devre Teorisi I, ders 1). Ağırlık: elektrik yükü (proton, elektron, kulon).
-// Animasyon anlatır, yazı kalemle yazılarak doğrular (AGENT.md 2a). Proton bakır (+), elektron yeşil (−), akım kırmızı, gerilim sarı.
-// Dört görüntü aynı kadrajda kesmeyle değişir (kural 15): atom → balon ve yün kumaş → bakır tel içi (kulon, akım) → pil + ampul devresi (gerilim).
-// Ekrandaki tüm sayılar kodda hesaplanır ve check() ile doğrulanır.
+// 006 (2. sürüm) — Elektrik yükü, akım ve gerilim. Temel Devre Teorisi I, ders 1 (Razavi, Basic Circuits Lec 1).
+// Bölüm 2b: üniversite 1. sınıf düzeyi. Vurgulanan nokta: açık devre yalnızca i = 0'ı, kısa devre yalnızca V = 0'ı garanti eder;
+// ayrıca yük = i(t) eğrisinin altındaki alan (q = ∫ i dt), i = dq/dt; gerilim iki nokta arasında, işaretli, birim yük başına enerji.
+// Devre: 9 V ideal pil (ön kenar, + ucu +x) + bıçaklı anahtar (sol kenar) + 3 kΩ direnç (sağ kenar). Arkada canlı i(t) grafiği.
+// Elektronlar yeşil, dış devrede − → +; geleneksel akım oku kırmızı, + → −. Ekrandaki tüm sayılar hesaplanır ve check() ile doğrulanır.
+// Sahne geçişleri aynı kadrajda, kesme ile (kural 15): devre → gerçek hayat (duvar anahtarı) → devre.
 
 import { THREE, RoundedBoxGeometry, clamp, seg, easeInOut, easeOut, fade, lerp } from '../tools/lib/stage.js';
-import { hl, rd, gr, cu, sup, fmt, check, penTimeline, narrationPen } from '../tools/lib/anlatim.js';
-import { roundedLoop, closedWire, battery, projLabel, camRig, canvasTex } from '../tools/lib/parcalar.js';
-import { makeBulb, platform } from '../tools/lib/devre.js';
+import { hl, rd, gr, fmt, check, penTimeline, narrationPen } from '../tools/lib/anlatim.js';
+import { canvasTex, roundedLoop, closedWire, battery, resistor, projLabel, camRig } from '../tools/lib/parcalar.js';
+import { makeBulb, makeSwitch, platform } from '../tools/lib/devre.js';
 
-// ---------------------------------------------------------------- anlatım (pre: yazıdan önceki yazısız animasyon)
-const BEATS = [
-  { id: 'h1', pen: false, pre: 0, l1: `${gr('Elektrik yükü')} nedir?`, l2: 'Atomun içine bakalım', s1: 7.0, s2: 5.4, extra: 1.0 },
-  { id: 'a1', pre: 2.6, l1: `${cu('Proton +')} · ${gr('Elektron −')}`, l2: 'Nötron yüksüz', s1: 6.4 },
-  { id: 'a2', pre: 2.8, l1: `3 ${cu('+')} ve 3 ${gr('−')} → toplam 0`, s1: 6.4 },
-  { id: 'b1', pre: 4.8, l1: 'Sürtününce elektron geçer', l2: `Balon ${gr('−')} · kumaş ${cu('+')}`, s1: 6.2 },
-  { id: 'b2', pre: 3.2, l1: `Zıt ${gr('yükler')} birbirini çeker`, s1: 6.0 },
-  { id: 'q1', pre: 3.8, l1: `1 kulon (C) ≈ 6,24 × 10${sup('18')} ${gr('elektron')} yükü`, s1: 5.6 },
-  { id: 'i1', pre: 4.0, l1: `${rd('Akım')}: ${gr('yükün')} akışı`, l2: `Saniyede 1 C → ${rd('1 A')}`, s1: 6.2 },
-  { id: 'v1', pre: 4.8, l1: `${hl('Gerilim')}: kulon başına enerji`, l2: `${hl('9 V')}: her kulona 9 J`, s1: 6.0 },
-  { id: 'f1', pre: 0.8, l1: `${rd('I')} = ${gr('Q')} ÷ t  ·  ${hl('V')} = W ÷ ${gr('Q')}`, l2: `${gr('Q')}: yük · t: süre · W: enerji`, s1: 6.2, s2: 5.0 },
-  { id: 'f2', pre: 0.2, l1: `${gr('6 C')}, 3 s → ${rd('I')} = 2 A`, l2: `${gr('2 C')}, 18 J → ${hl('V')} = 9 V`, s1: 6.2, s2: 5.4, extra: 0.3 },
+// ---------------------------------------------------------------- değerler
+const VB = 9, RK = 3;                       // V, kΩ
+const IMA = VB / RK;                        // mA
+check(Math.abs(IMA - 3) < 1e-12, 'Ohm: 9 V ÷ 3 kΩ = 3 mA');
+
+// ---------------------------------------------------------------- anlatım
+const mkBeats = (c2pre, dq = 0) => [
+  { id: 'h1', pen: false, pre: 0, l1: 'Açık devrede', l2: `<b style="font-weight:900">${hl('gerilim')} sıfır mı?</b>`, s1: 7.4, s2: 7.4, extra: 1.0 },
+  { id: 'c1', pre: 3.7, l1: `Akımın ${rd('değeri')} + ${rd('yönü')}`, l2: `9 V ÷ 3 kΩ = ${rd('3 mA')}`, s1: 6.0, s2: 5.4 },
+  { id: 'c2', pre: c2pre, l1: `${gr('Yük')} = ${rd('i(t)')} altındaki alan`, l2: `${rd('3 mA')} × ${dq} s = ${gr(dq * 3 + ' mC')}`, s1: 5.8, s2: 5.4 },
+  { id: 'v1', pre: 4.5, l1: `${hl('Gerilim')}: iki nokta arası`, l2: `${hl('V<sub>ab</sub>')} = 9 J ÷ 1 C = ${hl('9 V')}`, s1: 5.8, s2: 5.4 },
+  { id: 'o1', pre: 3.6, l1: `Açık devre: ${rd('i = 0')}`, l2: `ama anahtar uçlarında ${hl('9 V')}!`, s1: 6.2, s2: 5.6 },
+  { id: 'o2', pre: 3.4, l1: 'Kapalı anahtar = kısa devre', l2: `anahtarda ${hl('V = 0')}, ama ${rd('i = 3 mA')}`, s1: 5.8, s2: 5.6 },
+  { id: 'g1', pre: 2.8, l1: 'Lamba söndürülünce:', l2: `${rd('i = 0')}, anahtarda ${hl('≈ 230 V')} (AC)`, s1: 5.6, s2: 5.4 },
+  { id: 'f1', pre: 1.4, l1: `Açık devre → yalnızca ${rd('i = 0')}`, l2: `Kısa devre → yalnızca ${hl('V = 0')}`, s1: 5.4, s2: 5.4 },
+  { id: 'f2', pre: 0.3, l1: `${rd('i')} = d${gr('q')}/dt  ·  ${gr('q')} = ∫ ${rd('i')} dt`, l2: `gerilim: ${hl('1 V')} = 1 J/C`, s1: 5.8, s2: 5.0, extra: 0.3 },
 ];
+// 1. geçiş: anahtarın açılma anını bul (c1 yazısı bittikten sonra, kapalı kalma süresi tam saniye)
+const P0 = penTimeline(mkBeats(0), { k: 1.0 });
+const G0 = P0.A.c1 + 0.2;                   // grafik saati başlangıcı (g = t − G0)
+const TC = G0 + 2;                          // kontak kapanır (g = 2 s)
+const DQ = Math.ceil(P0.Z.c1[1] + 0.2 - TC); // kapalı kalma süresi, s
+const TO = TC + DQ;                         // kontak açılır
+const BEATS = mkBeats(TO - P0.Z.c1[1] + 1.2 + 1.5, DQ);
 const { Z, A, W: WR, DUR } = penTimeline(BEATS, { k: 1.0 });
-export const _T = { Z, A };
+export const _T = { Z, A, TC, TO, DQ };
+const Q_MC = IMA * DQ;                      // mC
+const GX = 2 + DQ + 2;                     // grafik ekseni 0..GX s
+check(DQ >= 4 && DQ <= 10 && Math.abs(Q_MC - 3 * DQ) < 1e-12, `q = 3 mA × ${DQ} s = ${Q_MC} mC`);
+check(Math.abs(Z.c1[1] - P0.Z.c1[1]) < 1e-9 && TO > Z.c1[1], 'c1 yazısı anahtar açılmadan biter');
+check(TO + 1.2 + 1.5 <= Z.c2[0] + 1e-9, 'c2: anahtar açıldıktan ≥ 1,5 sn sonra etiket');
+check(G0 + GX <= Z.c2[1], 'grafik ekseni c2 bitmeden tamamlanır');
 
-// ---------------------------------------------------------------- sayılar (hepsi hesaptan)
-const E = 1.602176634e-19;                       // elektronun yükünün büyüklüğü, C
-const N1C = 1 / E;                               // 1 C'deki elektron sayısı ≈ 6,24 × 10^18
-const near = (a, b, e = 1e-9) => Math.abs(a - b) < e;
-check(near(N1C / 1e18, 6.2415, 1e-3), '1 C ≈ 6,24 × 10^18 elektron');
-check(near(6 / 3, 2) && near(18 / 2, 9) && near(1 / 1, 1), 'f2: 6 C / 3 s = 2 A; 18 J / 2 C = 9 V; 1 C / 1 s = 1 A');
-const NP = 3, NE = 3;                            // lityum atomu: 3 proton, 3 elektron (4 nötron)
-check(NP - NE === 0, 'a2: (+3) + (−3) = 0');
-const NB = 6;                                    // balona geçen elektron = kumaşta kalan + sayısı (yük korunur)
+// ---------------------------------------------------------------- olaylar
+const SWC1 = [TC - 1.2, TC];                 // anahtar kapanır (kontak TC'de)
+const SWO1 = [TO, TO + 1.2];                 // anahtar açılır (kontak TO'da kopar)
+const QM = [A.v1 + 0.4, A.v1 + 3.6];         // +1 C test yükü b → a taşınır
+const VM = [A.o1 + 0.3, A.o1 + 1.3];         // voltmetre yerinde belirir, uçlar anahtara değer
+const VMR = [A.o1 + 1.4, A.o1 + 2.1];        // voltmetre 0 → 9 V
+const SWC2 = [A.o2 + 0.4, A.o2 + 1.6];       // anahtar yeniden kapanır
+const CUT1 = A.g1 + 0.2, CUT2 = A.f1 + 0.2;  // gerçek hayat aralığı
+check(QM[1] + 0.8 <= Z.v1[0], 'v1: taşıma bitince etiket');
+check(VMR[1] + 1.5 <= Z.o1[0] && SWC2[1] + 1.5 <= Z.o2[0], 'o1/o2: olaydan ≥ 1,5 sn sonra etiket');
+check(DUR <= 90, `süre ≤ 90 sn (${DUR})`);
 
-// ---------------------------------------------------------------- olay zamanları
-const CUTB = A.b1 + 0.2, CUTW = A.q1 + 0.2, CUTC = A.v1 + 0.2;           // aynı kadrajda kesmeler
-const P_GLOW = [A.a1 + 0.3, A.a1 + 1.1], E_GLOW = [A.a1 + 1.3, A.a1 + 2.1];
-const CNT = [A.a2 + 0.3, A.a2 + 1.3];                                   // +3 / −3 etiketleri, sonra "toplam 0"
-const RUB = [A.b1 + 1.0, A.b1 + 3.6];                                   // kumaş balona sürtülür
-const HOP = Array.from({ length: NB }, (_, k) => RUB[0] + 0.25 + k * ((RUB[1] - RUB[0] - 0.6) / (NB - 1)));
-const AWAY = [A.b1 + 3.7, A.b1 + 4.6];                                  // kumaş yerine (sola) çekilir
-const PULL = [A.b2 + 0.3, A.b2 + 1.8];                                  // balon kumaşa doğru eğilir (çekim)
-const COUNT = [A.q1 + 0.5, A.q1 + 3.4];                                 // sayaç: 0 → 6,24 × 10^18 elektron
-const TIMER = [A.i1 + 0.4, A.i1 + 3.4];                                 // 3 s'de 3 C
-const nAt = (t) => { const p = easeInOut(seg(t, ...COUNT)); return p <= 0 ? 0 : Math.pow(10, p * Math.log10(N1C)); };
-const tAt = (t) => 3 * seg(t, ...TIMER);
-check(near(nAt(Z.q1[0]), N1C, N1C * 1e-9) && near(nAt(Z.q1[0]) * E, 1, 1e-9), 'q1: sayaç 6,24 × 10^18 → Q = 1,00 C');
-check(near(tAt(Z.i1[0]), 3) && near(tAt(Z.i1[0]) / 3, 1), 'i1: 3 C / 3 s = 1 A');
-const ok = (a, b) => a <= b + 0.01;
-check(ok(P_GLOW[1] + 1.5, Z.a1[0]) && ok(CNT[1] + 1.5, Z.a2[0]) && ok(HOP[NB - 1] + 1.5, Z.b1[0]) && ok(PULL[1] + 1.4, Z.b2[0]) && ok(COUNT[1] + 0.4, Z.q1[0]) && ok(TIMER[1] + 0.6, Z.i1[0]), 'olaydan sonra etiket');
+const closed = (t) => (t >= TC && t < TO) || t >= SWC2[1];          // kontak durumu (ideal anahtar)
+const swAng = (t) => easeInOut(seg(t, ...SWC1)) - easeInOut(seg(t, ...SWO1)) + easeInOut(seg(t, ...SWC2)); // 1 kapalı
+const iOf = (t) => (closed(t) ? IMA : 0);                            // mA
+const vSw = (t) => (closed(t) ? 0 : VB);                             // anahtar uçları arası gerilim (arka uç +)
+check(iOf(TC + 0.1) === 3 && vSw(TC + 0.1) === 0 && iOf(TO + 0.1) === 0 && vSw(TO + 0.1) === 9, 'ideal anahtar: kapalı → V=0, i=3 mA; açık → i=0, V=9 V');
+check(iOf(Z.o1[0]) === 0 && vSw(Z.o1[0]) === 9 && iOf(Z.o2[0]) === 3 && vSw(Z.o2[0]) === 0, 'o1/o2 değerleri');
+const qOfG = (g) => IMA * (clamp(g, 2, 2 + DQ) - 2);                 // mC, grafik saatinde (alan)
+check(Math.abs(qOfG(GX) - IMA * DQ) < 1e-12, 'alan = 3 mA × 8 s');
 
-// ---------------------------------------------------------------- efektler (olaylara bağlı, yumuşak)
+// görsel akış hızı ∝ akım
+const V0 = 0.9 / IMA;
+let _s = 0, _t = 0;
+const flowSpeed = (t) => V0 * IMA * clamp(swAng(t) > 0.999 && closed(t) ? 1 : 0);
+const dist = (t) => {
+  if (t < _t) { _s = 0; _t = 0; }
+  const dt = 1 / 120; while (_t + dt <= t) { _s += flowSpeed(_t) * dt; _t += dt; }
+  return _s + flowSpeed(_t) * (t - _t);
+};
+
+// ---------------------------------------------------------------- efektler
 export const meta = {
-  title: 'Elektrik yükü, akım ve gerilim',
+  title: 'Elektrik yükü, akım ve gerilim (Razavi ders 1)',
   duration: DUR,
   fps: 30,
   music: { off: true },
   cues: [
-    { t: P_GLOW[0] + 0.2, kind: 'pop', gain: 0.13 },
-    { t: E_GLOW[0] + 0.2, kind: 'pop', gain: 0.13 },
-    { t: CNT[1] + 0.1, kind: 'pop', gain: 0.13 },
-    ...HOP.map((h) => ({ t: h + 0.35, kind: 'pop', gain: 0.09 })),
-    { t: PULL[1] - 0.2, kind: 'thud', gain: 0.16 },
-    { t: CUTW + 0.1, kind: 'hum', d: CUTC - CUTW - 0.3, gain: 0.12 },
-    { t: COUNT[1], kind: 'pop', gain: 0.14 },
-    { t: TIMER[1], kind: 'pop', gain: 0.14 },
-    { t: CUTC + 0.1, kind: 'hum', d: DUR - CUTC - 0.4, gain: 0.17 },
-    { t: A.f1 + 0.6, kind: 'thud', gain: 0.14 },
+    { t: TC - 0.05, kind: 'click', gain: 0.16 },
+    { t: TC + 0.1, kind: 'hum', d: TO - TC - 0.2, gain: 0.14 },
+    { t: TO + 0.05, kind: 'click', gain: 0.14 },
+    { t: QM[1] - 0.05, kind: 'pop', gain: 0.13 },
+    { t: VM[1] - 0.05, kind: 'thud', gain: 0.15 },
+    { t: VMR[1], kind: 'pop', gain: 0.13 },
+    { t: SWC2[1] - 0.05, kind: 'click', gain: 0.15 },
+    { t: SWC2[1] + 0.1, kind: 'hum', d: CUT1 - SWC2[1] - 0.3, gain: 0.13 },
+    { t: CUT1 + 0.6, kind: 'thud', gain: 0.13 },
+    { t: CUT2 + 0.1, kind: 'hum', d: DUR - CUT2 - 0.4, gain: 0.12 },
   ],
 };
 
-// ---------------------------------------------------------------- yardımcılar
-function signTex(ch, color) {
-  return canvasTex(128, 128, (g) => {
-    g.fillStyle = color; g.font = '900 118px "InterDisplay", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
-    g.lineWidth = 8; g.strokeStyle = 'rgba(0,0,0,0.45)'; g.strokeText(ch, 64, 70); g.fillText(ch, 64, 70);
-  });
-}
-// İki satırlı LCD panel dokusu: set(satır1, satır2) — satırda "^" sonrası üs olarak küçük yazılır ("6,24 × 10^18")
-function lcd2(w, h) {
+// ---------------------------------------------------------------- yerleşim
+const X = 0.85, ZH = 0.95, Y = 0.2;
+const SWG = 0.55, SWZ = 0.05;               // anahtar sol kenarda
+const RL = 0.6, RZ = 0.0;                   // direnç sağ kenarda
+const CZ = -0.05;
+const GW = 1.4, GH = 1.15;                  // grafik paneli boyutu
+
+// LCD dokusu (005'ten): lcd(w,h,renk) → {tex, set(yazı)}
+function lcd(w, h, color) {
   const c = document.createElement('canvas'); c.width = w; c.height = h;
   const g = c.getContext('2d'); const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
   let last = null;
-  const line = (txt, y, size, color) => {
-    const [base, ex] = txt.split('^');
-    for (let k = 0; k < 2; k++) { g.font = `900 ${size}px "InterDisplay", sans-serif`; const b0 = g.measureText(base).width; g.font = `900 ${size * 0.55}px "InterDisplay", sans-serif`; const e0 = ex ? g.measureText(ex).width + 4 : 0; if (b0 + e0 > w - 60) size *= (w - 60) / (b0 + e0); }
-    g.font = `900 ${size}px "InterDisplay", sans-serif`; const bw = g.measureText(base).width;
-    g.font = `900 ${size * 0.55}px "InterDisplay", sans-serif`; const ew = ex ? g.measureText(ex).width : 0;
-    const x0 = (w - bw - ew) / 2;
-    g.fillStyle = color; g.shadowColor = color; g.shadowBlur = 14; g.textBaseline = 'middle'; g.textAlign = 'left';
-    g.font = `900 ${size}px "InterDisplay", sans-serif`; g.fillText(base, x0, y);
-    if (ex) { g.font = `900 ${size * 0.55}px "InterDisplay", sans-serif`; g.fillText(ex, x0 + bw + 4, y - size * 0.32); }
-    g.shadowBlur = 0;
-  };
-  return { tex, set(a, b) {
-    const key = a + '|' + b; if (key === last) return; last = key;
-    g.fillStyle = '#0b1410'; g.fillRect(0, 0, w, h); g.strokeStyle = '#2c3a33'; g.lineWidth = 10; g.strokeRect(5, 5, w - 10, h - 10);
-    line(a, h * 0.32, h * 0.27, '#3fe07a'); line(b, h * 0.72, h * 0.27, '#ffffff');
+  return { tex, set(txt) {
+    if (txt === last) return; last = txt;
+    g.fillStyle = '#0b1410'; g.fillRect(0, 0, w, h);
+    g.strokeStyle = '#2c3a33'; g.lineWidth = 10; g.strokeRect(5, 5, w - 10, h - 10);
+    g.textAlign = 'center'; g.textBaseline = 'middle'; g.font = `900 ${Math.round(h * 0.6)}px "InterDisplay", sans-serif`;
+    g.fillStyle = color; g.shadowColor = color; g.shadowBlur = 18; g.fillText(txt, w / 2, h / 2 + 6); g.shadowBlur = 0;
     tex.needsUpdate = true;
   } };
 }
-const sci = (n) => {                              // 6,24 × 10^18 biçimi
-  if (n < 1000) return String(Math.floor(n));
-  const e = Math.floor(Math.log10(n)); return `${fmt(n / Math.pow(10, e), 2)} × 10^${e}`;
-};
 
-// ---------------------------------------------------------------- yerleşim
-const CZ = 0.0, ELEV = 58;
-const AY = 0.95;                                  // atom merkezi yüksekliği
-const X = 0.8, ZH = 1.1, Y = 0.2;                 // devre dikdörtgeni
-const TL = 2.6, TR = 0.3, TY = 0.55;              // tel kesiti (x ekseni boyunca)
-const ANC = new THREE.Vector3(0.75, 0.08, 0.15), SL = 1.45, BR = 0.42; // balon ipi bağlantısı, ip boyu, balon yarıçapı
+// i(t) grafik paneli: canlı çizilir, eğri altı alan (yük) yeşil dolar
+function graphPanel(S) {
+  const Wc = 1024, Hc = 590;
+  const c = document.createElement('canvas'); c.width = Wc; c.height = Hc;
+  const k = c.getContext('2d'); const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
+  const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity: 1, depthWrite: false });
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(GW, GW * Hc / Wc), mat);
+  const ox = 120, oy = 480, sx = (Wc - 190) / GX, sy = 300 / 4;   // 0..GX s, 0..4 mA
+  const px = (g) => ox + g * sx, py = (i) => oy - i * sy;
+  let last = -1;
+  const draw = (g) => {
+    const gq = Math.round(clamp(g, 0, GX) * 60) / 60; if (gq === last) return; last = gq;
+    k.clearRect(0, 0, Wc, Hc);
+    k.fillStyle = 'rgba(14,20,24,0.92)'; k.strokeStyle = '#2b3d44'; k.lineWidth = 6;
+    k.beginPath(); k.roundRect(6, 6, Wc - 12, Hc - 12, 26); k.fill(); k.stroke();
+    k.strokeStyle = 'rgba(120,190,210,0.10)'; k.lineWidth = 2;
+    for (let s = 2; s <= GX; s += 2) { k.beginPath(); k.moveTo(px(s), oy); k.lineTo(px(s), py(4)); k.stroke(); }
+    for (let i = 1; i <= 4; i++) { k.beginPath(); k.moveTo(ox, py(i)); k.lineTo(px(GX), py(i)); k.stroke(); }
+    k.strokeStyle = '#cfe3ea'; k.lineWidth = 5; k.beginPath(); k.moveTo(ox, py(4.3)); k.lineTo(ox, oy); k.lineTo(px(GX + 0.3), oy); k.stroke();
+    k.fillStyle = '#cfe3ea'; k.font = '800 40px "InterDisplay", sans-serif'; k.textAlign = 'center'; k.textBaseline = 'top';
+    for (let s = 0; s <= GX; s += 2) k.fillText(String(s), px(s), oy + 12);
+    k.textAlign = 'right'; k.textBaseline = 'middle'; k.fillText('3', ox - 16, py(3)); k.fillText('0', ox - 16, oy);
+    k.textAlign = 'left'; k.font = '800 44px "InterDisplay", sans-serif';
+    k.fillStyle = '#ff6b5f'; k.fillText('i (mA)', ox + 14, py(4.2));
+    k.fillStyle = '#cfe3ea'; k.textAlign = 'right'; k.fillText('t (s)', px(GX + 0.3), oy - 34);
+    // alan (yük)
+    const a0 = 2, a1 = clamp(gq, 2, 2 + DQ);
+    if (a1 > a0) { k.fillStyle = 'rgba(63,224,122,0.42)'; k.fillRect(px(a0), py(IMA), px(a1) - px(a0), oy - py(IMA)); }
+    // eğri
+    if (gq > 0) {
+      k.strokeStyle = '#ff5a4f'; k.lineWidth = 9; k.lineJoin = 'round'; k.shadowColor = '#ff3b30'; k.shadowBlur = 16; k.beginPath(); k.moveTo(px(0), oy);
+      const e = Math.min(gq, 2); k.lineTo(px(e), oy);
+      if (gq >= 2) { k.lineTo(px(2), py(IMA)); k.lineTo(px(Math.min(gq, 2 + DQ)), py(IMA)); }
+      if (gq >= 2 + DQ) { k.lineTo(px(2 + DQ), oy); k.lineTo(px(gq), oy); }
+      k.stroke(); k.shadowBlur = 0;
+      const iy = gq >= 2 && gq < 2 + DQ ? IMA : 0;
+      k.fillStyle = '#ffffff'; k.beginPath(); k.arc(px(gq), py(iy), 11, 0, 7); k.fill();
+    }
+    // yük sayacı
+    k.textAlign = 'right'; k.textBaseline = 'top'; k.font = '900 54px "InterDisplay", sans-serif'; k.fillStyle = '#3fe07a';
+    k.fillText(`q = ${Math.round(qOfG(gq))} mC`, Wc - 40, 30);
+    tex.needsUpdate = true;
+  };
+  draw(0);
+  return { mesh: m, mat, draw };
+}
+
+// Voltmetre: {group, show, leads}
+function voltmeter(S) {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new RoundedBoxGeometry(0.62, 0.22, 0.42, 4, 0.04), new THREE.MeshPhysicalMaterial({ color: 0xd8a326, roughness: 0.45, clearcoat: 0.3 }));
+  body.position.y = 0.11; body.castShadow = true; g.add(body);
+  const face = new THREE.Mesh(new RoundedBoxGeometry(0.56, 0.02, 0.36, 2, 0.008), new THREE.MeshPhysicalMaterial({ color: 0x1b1d21, roughness: 0.5 })); face.position.y = 0.225; g.add(face);
+  const show = lcd(512, 220, '#ffd23f');
+  const scr = new THREE.Mesh(new THREE.PlaneGeometry(0.42, 0.18), new THREE.MeshBasicMaterial({ map: show.tex }));
+  scr.rotation.x = -Math.PI / 2; scr.position.set(0.04, 0.237, 0); g.add(scr);
+  const vt = canvasTex(128, 128, (k) => { k.strokeStyle = '#fff'; k.lineWidth = 10; k.beginPath(); k.arc(64, 64, 52, 0, 7); k.stroke(); k.fillStyle = '#fff'; k.font = '900 72px "InterDisplay", sans-serif'; k.textAlign = 'center'; k.textBaseline = 'middle'; k.fillText('V', 64, 68); });
+  const sym = new THREE.Mesh(new THREE.PlaneGeometry(0.1, 0.1), new THREE.MeshBasicMaterial({ map: vt, transparent: true })); sym.rotation.x = -Math.PI / 2; sym.position.set(-0.23, 0.237, 0); g.add(sym);
+  S.scene.add(g); return { group: g, show };
+}
+
+// Duvar lamba anahtarı + tavan lambası (gerçek hayat mini modeli)
+function wallSwitch(S) {
+  const g = new THREE.Group();
+  const plate = new THREE.Mesh(new RoundedBoxGeometry(0.62, 0.62, 0.1, 4, 0.05), new THREE.MeshPhysicalMaterial({ color: 0xeceae4, roughness: 0.35, clearcoat: 0.4 }));
+  plate.position.set(0, 0.4, 0); plate.castShadow = true; g.add(plate);
+  const rocker = new THREE.Mesh(new RoundedBoxGeometry(0.26, 0.36, 0.08, 3, 0.03), new THREE.MeshPhysicalMaterial({ color: 0xf7f6f2, roughness: 0.3, clearcoat: 0.6 }));
+  rocker.position.set(0, 0.4, 0.07); rocker.rotation.x = 0.16; g.add(rocker);
+  for (const s of [-1, 1]) { const term = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.08, 16), S.M.copper); term.position.set(s * 0.2, 0.76, 0); g.add(term); }
+  S.scene.add(g); return { group: g };
+}
 
 export function build(S) {
   const { scene } = S;
-  S.table({ size: 44, seed: 21 });
-  const sc = S.lights.key.shadow.camera; sc.left = -6; sc.right = 6; sc.top = 6; sc.bottom = -6; sc.updateProjectionMatrix();
+  S.table({ size: 44, seed: 7 });
+  const sc = S.lights.key.shadow.camera; sc.left = -10; sc.right = 10; sc.top = 6; sc.bottom = -6; sc.updateProjectionMatrix();
   const label = projLabel(S);
-  const plusT = signTex('+', '#ffffff'), minusT = signTex('−', '#08240f'), zeroT = signTex('0', '#1b1d21');
-  const cuPlusT = signTex('+', '#ffb37a');
-  const elMatBase = () => new THREE.MeshPhysicalMaterial({ color: 0x3fe07a, emissive: 0x2fd060, emissiveIntensity: 0.6, roughness: 0.25, clearcoat: 1 });
+  const CG = new THREE.Group(); scene.add(CG);
 
-  // ================================================= ATOM (lityum: 3 proton, 4 nötron, 3 elektron)
-  const AG = new THREE.Group(); AG.position.set(0, AY, 0); scene.add(AG);
-  const pMat = new THREE.MeshPhysicalMaterial({ color: 0xe9703f, roughness: 0.3, clearcoat: 0.8, emissive: 0xff7a3a, emissiveIntensity: 0 });
-  const nMat = new THREE.MeshPhysicalMaterial({ color: 0x9aa0a8, roughness: 0.35, clearcoat: 0.6 });
-  const NR = 0.13, ND = 0.24;
-  const NUC = [[0, 0, 0, 'n'], [ND, 0, 0, 'p'], [-ND, 0, 0, 'n'], [0, ND, 0, 'p'], [0, -ND, 0, 'n'], [0, 0, ND, 'p'], [0, 0, -ND, 'n']];
-  check(NUC.filter((n) => n[3] === 'p').length === NP && NUC.filter((n) => n[3] === 'n').length === 4, 'lityum-7: 3 p, 4 n');
-  check(ND >= 2 * NR - 0.03, 'nükleonlar iç içe geçmez (hafif temas)');
-  const nucG = new THREE.Group(); AG.add(nucG);
-  const nucSp = [];
-  for (const [x, y, z, k] of NUC) {
-    const m = new THREE.Mesh(new THREE.SphereGeometry(NR, 28, 20), k === 'p' ? pMat : nMat); m.position.set(x, y, z); m.castShadow = true; nucG.add(m);
-    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: k === 'p' ? plusT : zeroT, transparent: true, depthTest: false, opacity: 0 }));
-    sp.scale.setScalar(NR * 1.4); sp.renderOrder = 5; nucG.add(sp); nucSp.push({ sp, c: new THREE.Vector3(x, y, z), k });
-  }
-  const ORB = [{ R: 0.66, rot: [0.4, 0.0, 0.2], w: 1.6, ph: 0.4 }, { R: 0.95, rot: [1.2, 0.5, 0.0], w: 1.25, ph: 2.3 }, { R: 1.2, rot: [-0.75, -0.9, 0.1], w: 1.0, ph: 4.1 }];
-  check(ORB.length === NE, '3 elektron');
-  const ringMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.35 });
-  const aeMat = elMatBase();
-  const aEl = ORB.map((o) => {
-    const g = new THREE.Group(); g.rotation.set(...o.rot); AG.add(g);
-    g.add(new THREE.Mesh(new THREE.TorusGeometry(o.R, 0.006, 8, 140), ringMat));
-    const m = new THREE.Mesh(new THREE.SphereGeometry(0.085, 24, 16), aeMat); m.castShadow = true; g.add(m);
-    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: minusT, transparent: true, depthTest: false, opacity: 0 })); sp.scale.setScalar(0.12); sp.renderOrder = 6; g.add(sp);
-    return { g, m, sp, o };
-  });
-  const aLight = new THREE.PointLight(0xffffff, 10, 7, 2); aLight.position.set(0.8, AY + 1.6, 1.8); AG.add(aLight);
-  const wpos = new THREE.Vector3(), camDir = new THREE.Vector3();
-
-  // ================================================= BALON + YÜN KUMAŞ
-  const BG = new THREE.Group(); scene.add(BG);
-  BG.add(platform(S, -0.85, 0.15, { r: 0.42 }));
-  BG.add(platform(S, ANC.x, ANC.z, { r: 0.22 }));
-  const knot = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.05, 0.06, 16), S.M.steel); knot.position.copy(ANC).setY(0.11); BG.add(knot);
-  const balloon = new THREE.Group(); BG.add(balloon);
-  const bMat = new THREE.MeshPhysicalMaterial({ color: 0xc8438a, roughness: 0.22, clearcoat: 1, clearcoatRoughness: 0.08, sheen: 0.3 });
-  const bBody = new THREE.Mesh(new THREE.SphereGeometry(BR, 48, 36), bMat); bBody.scale.set(1, 1.18, 1); bBody.castShadow = true; balloon.add(bBody);
-  const bTie = new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.09, 16), bMat); bTie.position.y = -BR * 1.18 - 0.03; bTie.rotation.x = Math.PI; balloon.add(bTie);
-  const strMat = new THREE.MeshBasicMaterial({ color: 0xdedede });
-  const string = new THREE.Mesh(new THREE.CylinderGeometry(0.006, 0.006, 1, 6), strMat); BG.add(string);
-  // kumaş: yumuşak, dalgalı yün parçası (dik tutulur, sürterken yukarı-aşağı)
-  const cloth = new THREE.Group(); BG.add(cloth);
-  const cGeo = new RoundedBoxGeometry(0.1, 0.7, 0.55, 4, 0.04); { const p = cGeo.attributes.position; for (let i = 0; i < p.count; i++) p.setX(i, p.getX(i) + 0.018 * Math.sin(p.getY(i) * 22) * Math.cos(p.getZ(i) * 17)); cGeo.computeVertexNormals(); }
-  const cMat = new THREE.MeshPhysicalMaterial({ color: 0xd8c7a4, roughness: 0.95, sheen: 1, sheenColor: new THREE.Color(0xfff1d6), sheenRoughness: 0.6 });
-  const cBody = new THREE.Mesh(cGeo, cMat); cBody.castShadow = cBody.receiveShadow = true; cloth.add(cBody);
-  // balondaki elektronlar (yeşil) ve kumaştaki + işaretleri: eşit sayıda (yük korunur)
-  const hopMat = elMatBase();
-  const bEl = Array.from({ length: NB }, (_, k) => {
-    const a = (k - (NB - 1) / 2) * 0.32, b = ((k % 2) - 0.5) * 0.5;
-    const local = new THREE.Vector3(-Math.cos(a) * Math.cos(b), Math.sin(a) * 1.18, Math.cos(a) * Math.sin(b)).multiplyScalar(BR + 0.035);
-    const m = new THREE.Mesh(new THREE.SphereGeometry(0.05, 18, 12), hopMat); m.visible = false; BG.add(m);
-    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: minusT, transparent: true, depthTest: false })); sp.scale.setScalar(0.09); sp.renderOrder = 6; BG.add(sp); sp.visible = false;
-    return { local, m, sp };
-  });
-  const cPlus = Array.from({ length: NB }, (_, k) => {
-    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: cuPlusT, transparent: true, depthTest: false, opacity: 0 }));
-    sp.scale.setScalar(0.14); sp.renderOrder = 6; sp.position.set(k < 3 ? -0.07 : 0.07, -0.22 + (k % 3) * 0.22, 0.33); cloth.add(sp); return sp;
-  });
-  const pullMat = new THREE.MeshBasicMaterial({ color: 0xffe28a, transparent: true, opacity: 0, depthWrite: false });
-  const pullLines = [-0.18, 0, 0.18].map((dy) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 1, 6), pullMat); m.userData.dy = dy; BG.add(m); return m; });
-  const balloonAt = (t) => {                                     // ipin eğim açısı: dinlenme 0,08; çekimle 0,42 rad (kumaşa doğru)
-    const phi = 0.08 + 0.34 * easeInOut(seg(t, ...PULL)) + 0.025 * Math.sin(t * 1.3);
-    return new THREE.Vector3(ANC.x - SL * Math.sin(phi), ANC.y + SL * Math.cos(phi), ANC.z);
-  };
-  const clothAt = (t, bc) => {                                   // sürterken balonun sol yüzüne değer; sonra sola, platforma çekilir
-    const rub = seg(t, RUB[0] - 0.75, RUB[0]) * (1 - seg(t, ...AWAY));
-    const contactX = bc.x - BR - 0.06, homeX = -0.85;
-    const x = lerp(homeX, contactX, easeInOut(rub));
-    const wig = (t > RUB[0] && t < RUB[1]) ? 0.16 * Math.sin((t - RUB[0]) * 2 * Math.PI * 1.25) : 0;
-    return new THREE.Vector3(x, lerp(0.45, bc.y, easeInOut(rub)) + wig, ANC.z);
-  };
-  { const b0 = balloonAt(0); check(b0.x - BR > -0.85 + 0.05 + 0.1, 'balon kumaşla iç içe değil (dinlenme)');
-    const b1 = balloonAt(99); check(b1.x - BR - (-0.85 + 0.05) > 0.05, 'çekimde de balon kumaşa değmez'); }
-
-  // ================================================= BAKIR TEL İÇİ (iyonlar + serbest elektronlar, sayaç halkası, LCD)
-  const WG = new THREE.Group(); WG.position.set(0, TY, 0.1); scene.add(WG);
-  const tubeMat = new THREE.MeshPhysicalMaterial({ color: 0xc8744a, metalness: 0.6, roughness: 0.25, transparent: true, opacity: 0.32, depthWrite: false, clearcoat: 1 });
-  const tube = new THREE.Mesh(new THREE.CylinderGeometry(TR, TR, TL, 48, 1, true), tubeMat); tube.rotation.z = Math.PI / 2; tube.renderOrder = 2; WG.add(tube);
-  for (const s of [-1, 1]) { const r = new THREE.Mesh(new THREE.TorusGeometry(TR, 0.014, 10, 48), S.M.copper); r.rotation.y = Math.PI / 2; r.position.x = s * TL / 2; WG.add(r); }
-  const ionMat = new THREE.MeshPhysicalMaterial({ color: 0xa65a38, metalness: 1, roughness: 0.35 });
-  const NIC = 9, ions = new THREE.InstancedMesh(new THREE.SphereGeometry(0.055, 16, 12), ionMat, NIC * 4);
-  { const m4 = new THREE.Matrix4(); let k = 0; for (let c = 0; c < NIC; c++) for (const [y, z] of [[0.11, 0.11], [-0.11, 0.11], [0.11, -0.11], [-0.11, -0.11]]) { m4.makeTranslation(-TL / 2 + (TL / NIC) * (c + 0.5), y, z); ions.setMatrixAt(k++, m4); } }
-  WG.add(ions);
-  const LANES = [[0, 0], [0.2, 0], [-0.2, 0], [0, 0.2], [0, -0.2]];
-  check(Math.hypot(0.2 - 0.11, 0.11) > 0.055 + 0.035 + 0.02, 'elektron şeritleri iyonlara değmez');
-  const FE = 30, feMat = elMatBase(); feMat.emissiveIntensity = 0.9;
-  const fe = new THREE.InstancedMesh(new THREE.SphereGeometry(0.035, 16, 12), feMat, FE); WG.add(fe);
-  const RF = S.rng(17);
-  const FEP = Array.from({ length: FE }, (_, k) => ({ lane: k % 5, x0: (k / FE) * TL, p: [RF() * 6.28, RF() * 6.28, RF() * 6.28], w: [3 + RF() * 2, 3.5 + RF() * 2, 2.5 + RF() * 2] }));
-  const gateMat = new THREE.MeshPhysicalMaterial({ color: 0x3fe07a, emissive: 0x3fe07a, emissiveIntensity: 1.0, transparent: true, opacity: 0.9 });
-  const gate = new THREE.Mesh(new THREE.TorusGeometry(TR + 0.03, 0.02, 12, 60), gateMat); gate.rotation.y = Math.PI / 2; WG.add(gate);
-  const panel = lcd2(640, 280);
-  const pMesh = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 0.66), new THREE.MeshBasicMaterial({ map: panel.tex }));
-  pMesh.position.set(0, 0.62, -0.75); pMesh.rotation.x = -(ELEV - 10) * Math.PI / 180; WG.add(pMesh);
-  const pFrame = new THREE.Mesh(new RoundedBoxGeometry(1.58, 0.74, 0.05, 3, 0.02), new THREE.MeshPhysicalMaterial({ color: 0x2b2f36, roughness: 0.45 }));
-  pFrame.position.copy(pMesh.position); pFrame.rotation.copy(pMesh.rotation); pFrame.translateZ(-0.03); WG.add(pFrame);
-  const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.5, 10), S.M.steel); stem.position.set(0, 0.05 - TY + 0.25, -0.75); WG.add(stem);
-  const wArrMat = new THREE.MeshPhysicalMaterial({ color: 0xff5a4f, emissive: 0xff3b30, emissiveIntensity: 0.9, roughness: 0.35, transparent: true, opacity: 0 });
-  const wArr = new THREE.Group();
-  { const sh = new THREE.Mesh(new THREE.CylinderGeometry(0.028, 0.028, 0.9, 16), wArrMat); sh.rotation.z = Math.PI / 2; wArr.add(sh);
-    const hd = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.2, 20), wArrMat); hd.rotation.z = Math.PI / 2; hd.position.x = -0.55; wArr.add(hd); }
-  wArr.position.set(0.7, 0, 0.55); WG.add(wArr);                           // akım oku −x yönünde (elektronlar +x yönünde)
-
-  // ================================================= DEVRE: 9 V pil + ampul; elektronlar pilde enerji alır (sarı), ampulde bırakır
-  const CG = new THREE.Group(); CG.position.z = -0.4; scene.add(CG);
+  // ------------------------------------------------ bakır tel: anahtar ve direnç aralıkları boş
   const loop = roundedLoop([[X, 0], [X, -ZH], [-X, -ZH], [-X, ZH], [X, ZH]]);
-  const Wc = closedWire(S, loop, { y: Y }); scene.remove(Wc.mesh); CG.add(Wc.mesh);
-  const bat = battery(S, { len: 0.9 }); scene.remove(bat.group); bat.group.position.set(0, 0, ZH); CG.add(bat.group);
-  const bulb = makeBulb(S, { scale: 1.2 }); scene.remove(bulb.group); bulb.group.position.set(0, 0, -ZH); CG.add(bulb.group);
-  const batLight = new THREE.PointLight(0xffd23f, 0, 2.4, 2); batLight.position.set(0, 0.8, ZH); CG.add(batLight);
-  const N = 40;
-  const ceMat = new THREE.MeshPhysicalMaterial({ color: 0xffffff, emissive: 0x2fd060, emissiveIntensity: 0.45, roughness: 0.35, clearcoat: 0.6 });
-  const ce = new THREE.InstancedMesh(new THREE.SphereGeometry(0.048, 16, 12), ceMat, N);
-  ce.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(N * 3), 3); CG.add(ce);
-  const cLow = new THREE.Color(0x1f9a4a), cHigh = new THREE.Color(0xd8ff5a), col = new THREE.Color();
-  // enerji düzeyi (elektron dış devrede − → +): pilin içinde + → − giderken 0 → 1; ampulde 1 → 0
-  const energy = (x, z) => {
-    if (z > ZH - 0.05) { if (x > 0.45) return 0; if (x < -0.45) return 1; return (0.45 - x) / 0.9; }
-    if (z < -ZH + 0.05) { if (x < -0.22) return 1; if (x > 0.22) return 0; return (0.22 - x) / 0.44; }
-    return x < 0 ? 1 : 0;
-  };
-  check(energy(-X, 0) === 1 && energy(X, 0) === 0, 'enerji: pilden ampule giden yol yüksek, dönüş düşük');
-  const RC = S.rng(5);
-  const PH = Array.from({ length: N }, () => [RC() * 6.28, 5 + RC() * 4]);
-  const cArrMat = new THREE.MeshPhysicalMaterial({ color: 0xff5a4f, emissive: 0xff3b30, emissiveIntensity: 0.8, roughness: 0.35, transparent: true, opacity: 0 });
-  const cArr = new THREE.Group();
-  { const sh = new THREE.Mesh(new THREE.CylinderGeometry(0.028, 0.028, 0.8, 16), cArrMat); sh.rotation.z = Math.PI / 2; cArr.add(sh);
-    const hd = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.2, 20), cArrMat); hd.rotation.z = -Math.PI / 2; hd.position.x = 0.5; cArr.add(hd); }
-  cArr.position.set(X - 0.36, 0.25, 0.1); cArr.rotation.y = Math.PI / 2; CG.add(cArr);   // sağ kenar içinde −z yönüne: + ucundan (sağ) ampule (+ → −)
-  check(new THREE.Vector3(1, 0, 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI / 2).z < -0.99, 'akım oku sağ kenarda + uçtan uzaklaşır');
-  const m4 = new THREE.Matrix4(), qq = new THREE.Quaternion(), sv = new THREE.Vector3(), pv = new THREE.Vector3();
+  const Wc = closedWire(S, loop, { y: Y }); Wc.mesh.visible = false;
+  const gaps = [
+    [Wc.uOf(-X, SWZ - SWG / 2 + 0.02), Wc.uOf(-X, SWZ + SWG / 2 - 0.02)],
+    [Wc.uOf(X, RZ - RL / 2 - 0.02), Wc.uOf(X, RZ + RL / 2 + 0.02)],
+  ].map(([a, b]) => [Math.min(a, b), Math.max(a, b)]).sort((p, q) => p[0] - q[0]);
+  const segs = [[gaps[0][1], gaps[1][0]], [gaps[1][1], 1 + gaps[0][0]]];
+  for (const [a, b] of segs) {
+    const pts = []; for (let i = 0; i <= 300; i++) pts.push(Wc.curve.getPointAt(((a + ((b - a) * i) / 300) % 1 + 1) % 1));
+    const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 600, 0.03, 10), S.M.copper); m.castShadow = true; CG.add(m);
+  }
+  const B = battery(S, { len: 0.9, h: 0.3, w: 0.34, y: Y, text: '9 V' }); B.group.position.set(0, 0, ZH); CG.add(B.group);
+  const SW = makeSwitch(S, { gap: SWG, y: Y }); SW.group.position.set(-X, 0, SWZ); CG.add(SW.group);
+  const RX = resistor(S, { len: RL, radius: 0.14, bands: [0xff7a00, 0x111111, 0xe8231a, 0xd4af37], obstacles: 10 });
+  RX.group.position.set(X, Y, RZ); CG.add(RX.group);   // turuncu-siyah-kırmızı = 30 × 100 = 3 kΩ
+  check(30 * 100 === 3000, 'renk kodu: turuncu(3) siyah(0) kırmızı(×100) = 3 kΩ');
 
-  // ================================================= kamera: kadraj sabit, yerinde çok yavaş yaşar
+  // grafik paneli: arka kenarın üstünde, kameraya dönük
+  const GP = graphPanel(S);
+  GP.mesh.position.set(0, 0.5, -ZH - 0.32); GP.mesh.rotation.x = -0.8; CG.add(GP.mesh);
+
+  // elektronlar
+  const N = 44;
+  const eMat = new THREE.MeshPhysicalMaterial({ color: 0x1fcf5a, emissive: 0x14b84a, emissiveIntensity: 0.7, roughness: 0.25, clearcoat: 1 });
+  const el = new THREE.InstancedMesh(new THREE.SphereGeometry(0.042, 16, 12), eMat, N); el.castShadow = true; el.renderOrder = 2; CG.add(el);
+  const m4 = new THREE.Matrix4(), qq = new THREE.Quaternion(), sv = new THREE.Vector3(), pv = new THREE.Vector3();
+  const r = S.rng(11);
+  const PH = Array.from({ length: N }, () => [r() * 6.28, r() * 6.28, 5 + r() * 4, 6 + r() * 5]);
+
+  // geleneksel akım oku (kırmızı, + → −): sağ kenarda −z yönünde (pilin + ucundan arkaya)
+  const arrowMat = new THREE.MeshPhysicalMaterial({ color: 0xff5a4f, emissive: 0xff3b30, emissiveIntensity: 0.8, roughness: 0.35, transparent: true, opacity: 0 });
+  const arrow = new THREE.Group();
+  const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.026, 0.026, 0.55, 16), arrowMat); shaft.rotation.z = Math.PI / 2; arrow.add(shaft);
+  const head = new THREE.Mesh(new THREE.ConeGeometry(0.075, 0.18, 20), arrowMat); head.rotation.z = -Math.PI / 2; head.position.x = 0.36; arrow.add(head);
+  arrow.position.set(X - 0.3, 0.24, 0.62); arrow.rotation.y = Math.PI / 2; CG.add(arrow);
+  check(new THREE.Vector3(1, 0, 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI / 2).z < -0.99, 'ok −z yönünde (sağ kenarda + → −)');
+
+  // +1 C test yükü (v1): pilin − ucundan (b) + ucuna (a) yay üzerinde
+  const tq = new THREE.Mesh(new THREE.SphereGeometry(0.075, 24, 16), new THREE.MeshPhysicalMaterial({ color: 0xffd23f, emissive: 0xffb800, emissiveIntensity: 1.3, roughness: 0.3 }));
+  tq.visible = false; CG.add(tq);
+  const pa = new THREE.Vector3(0.52, Y + 0.1, ZH), pb = new THREE.Vector3(-0.52, Y + 0.1, ZH);
+  const qPos = (p, out) => out.lerpVectors(pb, pa, p).setY(Y + 0.1 + 0.55 * Math.sin(Math.PI * p));
+
+  // voltmetre + uçlar (o1'den itibaren)
+  const VMt = voltmeter(S); VMt.group.position.set(-0.12, 0, 0.12); CG.add(VMt.group);
+  const leadMat = (c) => new THREE.MeshPhysicalMaterial({ color: c, roughness: 0.5, transparent: true, opacity: 0 });
+  const mkLead = (from, to, mat) => {
+    const mid = from.clone().lerp(to, 0.5); mid.y += 0.25;
+    const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(from, mid, to), 40, 0.014, 8), mat); CG.add(m); return m;
+  };
+  const lmR = leadMat(0xe8231a), lmK = leadMat(0x202226);
+  const back = new THREE.Vector3(-X, 0.25, SWZ - SWG / 2), front = new THREE.Vector3(-X, 0.25, SWZ + SWG / 2);
+  mkLead(new THREE.Vector3(-0.3, 0.2, 0.0), back, lmR); mkLead(new THREE.Vector3(-0.3, 0.2, 0.24), front, lmK);
+
+  // ------------------------------------------------ gerçek hayat: duvar anahtarı + lamba (aynı kadrajda)
+  const LG = new THREE.Group(); scene.add(LG); LG.visible = false; LG.scale.setScalar(1.3);
+  LG.add(platform(S, -0.45, 0.0, { r: 0.55 })); LG.add(platform(S, 0.6, 0.0, { r: 0.45 }));
+  const WS = wallSwitch(S); WS.group.position.set(-0.45, 0.08, 0.0); LG.add(WS.group);
+  const LB = makeBulb(S, { scale: 0.9 }); LB.group.position.set(0.6, 0.08, 0.0); LG.add(LB.group);
+  for (const [a, b] of [[[-0.65, 0.84, 0], [-0.85, 0.12, 0.45]], [[-0.25, 0.84, 0], [0.45, 0.2, 0.0]]]) {
+    const A3 = new THREE.Vector3(...a), B3 = new THREE.Vector3(...b), M3 = A3.clone().lerp(B3, 0.5); M3.y += 0.3;
+    const w = new THREE.Mesh(new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(A3, M3, B3), 40, 0.02, 8), S.M.copper); LG.add(w);
+  }
+  const arc = new THREE.Mesh(new THREE.TorusGeometry(0.2, 0.012, 8, 40, Math.PI), new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true, opacity: 0 }));
+  arc.position.set(-0.45, 0.84, 0); LG.add(arc);
+
+  // ------------------------------------------------ kamera: yerinde, çok yavaş
   const cam = camRig(S, [
-    [0, -0.08, 11.4, ELEV, 0, CZ, 0.6], [A.b1, 0.06, 11.2, ELEV, 0, CZ, 0.6], [A.q1, -0.05, 11.3, ELEV, 0, CZ, 0.6],
-    [A.v1, 0.05, 11.2, ELEV, 0, CZ, 0.6], [A.f1, -0.05, 11.3, ELEV, 0, CZ, 0.6], [DUR, 0.06, 11.0, ELEV, 0, CZ, 0.6],
+    [0, 0.0, 10.6, 58, 0, CZ], [A.c1, 0.05, 10.5, 58, 0, CZ], [A.c2, -0.04, 10.4, 59, 0, CZ], [A.v1, 0.04, 10.5, 58, 0, CZ],
+    [A.o1, -0.05, 10.4, 58, 0, CZ], [A.o2, 0.04, 10.5, 59, 0, CZ], [A.g1, -0.04, 10.4, 58, 0, CZ], [A.f1, 0.05, 10.5, 58, 0, CZ],
+    [DUR, -0.04, 10.3, 59, 0, CZ],
   ]);
-  const yaz = narrationPen(S, BEATS, Z, WR, { y1: 16, y2: 23 });
-  let dS = 0, dT = 0;                                   // devre elektronlarının aldığı yol (sabit hız)
+  const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15, y2: 21.5 });
+
   return (t) => {
     cam(t);
-    const sec = t < CUTB ? 0 : t < CUTW ? 1 : t < CUTC ? 2 : 3;
-    AG.visible = sec === 0; BG.visible = sec === 1; WG.visible = sec === 2; CG.visible = sec === 3;
-    S.camera.getWorldDirection(camDir).negate();
+    const life = t >= CUT1 && t < CUT2;
+    CG.visible = !life; LG.visible = life;
+    SW.set(swAng(t));
+    GP.draw(t - G0);
+    GP.mat.opacity = easeOut(seg(t, A.c1, A.c1 + 0.3)); GP.mesh.visible = GP.mat.opacity > 0.01;
+    const on = closed(t);
 
-    // ---------------- atom
-    if (sec === 0) {
-      nucG.rotation.y = 0.35 * t; nucG.rotation.x = 0.15 * Math.sin(t * 0.4);
-      AG.position.y = AY + 0.04 * Math.sin(t * 0.9);
-      const pg = easeOut(seg(t, ...P_GLOW)), eg = easeOut(seg(t, ...E_GLOW));
-      pMat.emissiveIntensity = 0.55 * pg * (1 + 0.15 * Math.sin(t * 4)); aeMat.emissiveIntensity = 0.6 + 0.7 * eg;
-      const dLoc = camDir.clone().applyQuaternion(nucG.quaternion.clone().invert());
-      for (const n of nucSp) {                       // işaretler küreyle birlikte döner, kameraya bakan yüzde
-        n.sp.material.opacity = n.k === 'p' ? pg : easeOut(seg(t, E_GLOW[1], E_GLOW[1] + 0.5));
-        n.sp.position.copy(n.c).addScaledVector(dLoc, NR + 0.01);
-      }
-      for (const e of aEl) {
-        const a = e.o.w * t + e.o.ph; e.m.position.set(e.o.R * Math.cos(a), e.o.R * Math.sin(a), 0);
-        e.sp.material.opacity = eg; e.sp.position.copy(e.m.position).add(camDir.clone().applyQuaternion(e.g.quaternion.clone().invert()).multiplyScalar(0.09));
-      }
-      label('ap', cu('proton'), 0.55, AY + 0.15, 0.55, { opacity: fade(t, P_GLOW[0] + 0.3, Z.a1[1], 0.35), size: 4.4 });
-      label('ae', gr('elektron'), -1.05, AY + 1.25, 0, { opacity: fade(t, E_GLOW[0] + 0.3, Z.a1[1], 0.35), size: 4.4 });
-      label('an', 'nötron', -0.6, AY - 0.55, 0.5, { opacity: fade(t, E_GLOW[1] + 0.3, Z.a1[1], 0.35), size: 4.0 });
-      S.text('c1', `${cu('+3')} proton`, { x: 30, y: 30, size: 4.6, weight: 800, opacity: fade(t, CNT[0], Z.a2[1], 0.35), nowrap: true });
-      S.text('c2', `${gr('−3')} elektron`, { x: 70, y: 30, size: 4.6, weight: 800, opacity: fade(t, CNT[0] + 0.4, Z.a2[1], 0.35), nowrap: true });
-      S.text('c3', 'toplam yük: 0', { x: 50, y: 35.5, size: 4.8, weight: 800, opacity: fade(t, CNT[1], Z.a2[1], 0.35), nowrap: true });
-    } else { for (const id of ['ap', 'ae', 'an', 'c1', 'c2', 'c3']) S.text(id, '', { opacity: 0 }); }
+    // elektronlar: açıkken yerinde titrer, kapalıyken − → + akar
+    const s = dist(t);
+    for (let k = 0; k < N; k++) {
+      const p = PH[k];
+      const du = 0.03 * Math.sin(t * p[2] + p[0]) / Wc.L;
+      const u = ((((k / N) - s / Wc.L + du) % 1) + 1) % 1;
+      Wc.curve.getPointAt(Math.min(u, 1 - 1e-6), pv);
+      const bad = !Number.isFinite(pv.x + pv.y + pv.z); if (bad) pv.set(0, -1, 0);
+      pv.y += 0.012 * Math.sin(t * p[3] + p[1]);
+      const inBat = Math.abs(pv.x) < 0.47 && pv.z > ZH - 0.2;
+      const inSw = Math.abs(pv.x + X) < 0.05 && Math.abs(pv.z - SWZ) < SWG / 2 - 0.02 && !(on && swAng(t) > 0.999);
+      sv.setScalar(inBat || inSw || bad ? 0.0001 : 1); m4.compose(pv, qq, sv); el.setMatrixAt(k, m4);
+    }
+    el.instanceMatrix.needsUpdate = true;
+    RX.body.emissiveIntensity = on ? 0.25 + 0.05 * Math.sin(t * 9) : 0.02;
 
-    // ---------------- balon ve kumaş
-    if (sec === 1) {
-      const bc = balloonAt(t); balloon.position.copy(bc); balloon.rotation.z = -(bc.x - ANC.x) / SL * 0.6;
-      const top = new THREE.Vector3(bc.x, bc.y - BR * 1.18 - 0.07, bc.z), mid = top.clone().add(ANC).multiplyScalar(0.5);
-      string.position.copy(mid); string.scale.y = top.distanceTo(ANC); string.lookAt(top); string.rotateX(Math.PI / 2);
-      const cc = clothAt(t, bc); cloth.position.copy(cc); cloth.rotation.z = 0.04 * Math.sin(t * 1.7);
-      bEl.forEach((e, k) => {
-        const hop = seg(t, HOP[k], HOP[k] + 0.45);
-        const dst = e.local.clone().applyEuler(balloon.rotation).add(bc);
-        const src = cloth.position.clone().add(new THREE.Vector3((k < 3 ? -0.07 : 0.07) + 0.035, -0.14 + (k % 3) * 0.22, 0.37));
-        const p = src.lerp(dst, easeInOut(hop)); p.y += Math.sin(hop * Math.PI) * 0.12;
-        e.m.visible = true; e.m.position.copy(p);                // önce kumaşta (kumaş nötr: 6 + ve 6 −), sonra balona atlar
-        e.sp.visible = e.m.visible; e.sp.position.copy(p).addScaledVector(camDir, 0.055);
-        cPlus[k].material.opacity = 1;                          // + yükler yerinde kalır, yalnızca elektronlar hareket eder
-      });
-      pullMat.opacity = 0.4 * fade(t, PULL[0], Z.b2[1], 0.4) * (0.75 + 0.25 * Math.sin(t * 6));
-      for (const m of pullLines) {
-        const a = cloth.position.clone().add(new THREE.Vector3(0.07, m.userData.dy, 0)), b = bc.clone().add(new THREE.Vector3(-BR - 0.02, m.userData.dy * 1.2, 0));
-        m.position.copy(a).add(b).multiplyScalar(0.5); m.scale.y = Math.max(0.01, a.distanceTo(b) - 0.04); m.lookAt(b); m.rotateX(Math.PI / 2);
-      }
-      label('lb', 'balon', bc.x, bc.y + BR * 1.18 + 0.32, bc.z, { opacity: fade(t, CUTB + 0.3, Z.b1[1], 0.3), size: 4.4 });
-      label('lk', 'yün kumaş', cc.x, cc.y + 0.62, cc.z, { opacity: fade(t, CUTB + 0.2, RUB[0] - 0.6, 0.3) + fade(t, AWAY[1], Z.b1[1], 0.3), size: 4.4 });
-    } else { for (const id of ['lb', 'lk']) S.text(id, '', { opacity: 0 }); }
+    // akım oku: akım varken
+    const aOp = on ? easeOut(seg(t, (t < TO ? TC : SWC2[1]) + 0.3, (t < TO ? TC : SWC2[1]) + 0.8)) * (1 - easeOut(seg(t, TO, TO + 0.3)) * (t < TO + 0.3 && t >= TO ? 1 : 0)) : 0;
+    arrowMat.opacity = aOp; arrow.visible = aOp > 0.01;
 
-    // ---------------- tel içi: kulon sayacı ve akım
-    if (sec === 2) {
-      const drift = 0.45 * (t - CUTW);
-      for (let k = 0; k < FE; k++) {
-        const f = FEP[k], [ly, lz] = LANES[f.lane];
-        const x = ((f.x0 + drift) % TL + TL) % TL - TL / 2;
-        pv.set(x + 0.04 * Math.sin(t * f.w[0] + f.p[0]), ly + 0.022 * Math.sin(t * f.w[1] + f.p[1]), lz + 0.022 * Math.sin(t * f.w[2] + f.p[2]));
-        const edge = clamp((TL / 2 - Math.abs(x)) / 0.12);
-        sv.setScalar(Math.max(0.001, edge)); m4.compose(pv, qq, sv); fe.setMatrixAt(k, m4);
-      }
-      fe.instanceMatrix.needsUpdate = true;
-      gateMat.emissiveIntensity = 0.8 + 0.5 * Math.sin(t * 9) * (t > COUNT[0] ? 1 : 0.3);
-      if (t < A.i1) { const n = nAt(t); panel.set(`elektron: ${sci(n)}`, `Q = ${fmt(n * E, 2)} C`); }
-      else { const tt = tAt(t); panel.set(`t = ${fmt(tt, 1)} s`, `Q = ${fmt(tt * 1, 1)} C`); }
-      const ao = easeOut(seg(t, A.i1 + 0.2, A.i1 + 0.8)); wArrMat.opacity = ao; wArr.visible = ao > 0.01;
-      label('we', gr('elektronlar'), -0.75, TY + 0.48, 0.1, { opacity: fade(t, CUTW + 0.4, Z.i1[1], 0.35), size: 4.2 });
-      label('wa', rd('akım yönü'), 0.7, TY + 0.1, 0.95, { opacity: fade(t, A.i1 + 0.7, Z.i1[1], 0.35), size: 4.2 });
-      label('wc', 'sayaç', 0.0, TY + 0.48, 0.1, { opacity: fade(t, CUTW + 0.6, Z.q1[1], 0.35), size: 4.0 });
-    } else { for (const id of ['we', 'wa', 'wc']) S.text(id, '', { opacity: 0 }); }
+    // test yükü
+    const qp = easeInOut(seg(t, ...QM));
+    tq.visible = t >= QM[0] - 0.2 && t < Z.v1[1]; qPos(qp, tq.position); tq.scale.setScalar(easeOut(seg(t, QM[0] - 0.2, QM[0] + 0.2)) * (1 + 0.06 * Math.sin(t * 8)));
+    B.glow.emissiveIntensity = 0.15 + 0.6 * fade(t, QM[0], Z.v1[1], 0.4);
 
-    // ---------------- devre: pil enerji verir, ampul harcar
-    if (sec === 3) {
-      if (t < dT) { dS = 0; dT = 0; }
-      const tc = t - CUTC; dS = 0.75 * Math.max(0, tc); dT = t;
-      bulb.set(0.95 * easeOut(seg(tc, 0, 0.6)) * (1 + 0.025 * Math.sin(t * 13)));
-      bat.glow && (bat.glow.emissiveIntensity = 0.4 + 0.5 * (0.5 + 0.5 * Math.sin(t * 3)));
-      batLight.intensity = 2.5 + 1.0 * Math.sin(t * 3);
-      for (let k = 0; k < N; k++) {
-        const u = ((((k / N) - dS / Wc.L + 0.02 * Math.sin(t * PH[k][1] + PH[k][0]) / Wc.L) % 1) + 1) % 1;
-        Wc.curve.getPointAt(Math.min(u, 1 - 1e-6), pv);
-        const hidden = Math.abs(pv.x) < 0.47 && pv.z > ZH - 0.2;
-        const e = energy(pv.x, pv.z); col.copy(cLow).lerp(cHigh, e); ce.setColorAt(k, col);
-        sv.setScalar(hidden ? 0.0001 : 0.85 + 0.35 * e); m4.compose(pv, qq, sv); ce.setMatrixAt(k, m4);
-      }
-      ce.instanceMatrix.needsUpdate = true; ce.instanceColor.needsUpdate = true;
-      const ao = easeOut(seg(t, CUTC + 0.4, CUTC + 1.0)); cArrMat.opacity = ao; cArr.visible = ao > 0.01;
-      label('ce1', hl('enerji alır'), -0.95, 0.55, ZH - 0.45, { opacity: fade(t, CUTC + 1.2, Z.f1[0], 0.35), size: 4.2 });
-      label('ce2', 'enerji verir', 0.75, 0.75, -ZH - 0.4, { opacity: fade(t, CUTC + 2.4, Z.f1[0], 0.35), size: 4.2 });
-      label('ce3', gr('elektronlar'), -X - 0.05, 0.4, -0.5, { opacity: fade(t, CUTC + 0.6, Z.v1[1], 0.35), size: 4.0 });
-      label('ce4', rd('akım yönü'), X - 0.2, 0.45, -0.85, { opacity: fade(t, CUTC + 0.9, Z.v1[1], 0.35), size: 4.0 });
-    } else { for (const id of ['ce1', 'ce2', 'ce3', 'ce4']) S.text(id, '', { opacity: 0 }); }
+    // voltmetre
+    const vmO = easeOut(seg(t, ...VM));
+    VMt.group.visible = vmO > 0.01; VMt.group.scale.setScalar(Math.max(0.001, vmO)); lmR.opacity = lmK.opacity = vmO;
+    const vr = on ? 0 : VB * easeOut(seg(t, ...VMR));
+    VMt.show.set(`${fmt(t < VMR[0] ? 0 : vr, 2)} V`);
+
+    // gerçek hayat
+    LB.set(0); WS.group.rotation.y = 0.22 * Math.sin(t * 0.6);
+    arc.material.opacity = life ? 0.5 * easeOut(seg(t, CUT1 + 0.6, CUT1 + 1.2)) * (0.8 + 0.2 * Math.sin(t * 6)) : 0;
 
     yaz(t);
+
+    // kanca alt satırı ve ders etiketi
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
-    S.text('sub', 'Proton, elektron, kulon', { y: 28.6, size: 4.4, weight: 600, opacity: subO, nowrap: true });
-    S.text('tag', 'DERS 1', { x: 13, y: 12.4, size: 3.0, weight: 800, color: '#9fb4c8', opacity: subO, nowrap: true, maxWidth: 30 });
+    S.text('sub', 'Anahtar açık: akım yok. Ya gerilim?', { y: 26.3, size: 4.2, weight: 600, opacity: subO, nowrap: true });
+    S.text('tag', 'DERS 1', { x: 13, y: 12.0, size: 3.0, weight: 800, color: '#9fb4c8', opacity: subO, nowrap: true, maxWidth: 30 });
+
+    // nesne etiketleri
+    const onC = (a, b) => (life ? 0 : fade(t, a, b, 0.3));
+    label('lsw', 'anahtar', -X - 0.05, 0.62, SWZ - 0.05, { opacity: onC(0, Z.h1[1]), size: 3.8 });
+    label('lr', '3 kΩ', X + 0.0, 0.55, RZ, { opacity: onC(0, Z.c2[1]) + onC(A.f1, DUR + 1), size: 4.0 });
+    label('le', gr('elektronlar'), -0.25, 0.32, -ZH + 0.18, { opacity: onC(TC + 0.6, Z.c1[1]), size: 3.8 });
+    label('la', rd('akım yönü'), X - 0.45, 0.4, 0.62, { opacity: onC(TC + 1.0, Z.c1[1]), size: 3.8 });
+    label('lqa', hl('a (+)'), 0.55, 0.62, ZH, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
+    label('lqb', hl('b (−)'), -0.55, 0.62, ZH, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
+    label('lq', `+1 C`, tq.position.x, tq.position.y + 0.32, tq.position.z, { opacity: tq.visible ? onC(QM[0], Z.v1[1]) * (1 - seg(qp, 0.7, 0.85)) : 0, size: 3.6 });
+    label('lw', `W = ${hl(fmt(9 * qp, 1) + ' J')}`, 0.0, 1.3, ZH - 0.45, { opacity: onC(QM[0] + 0.2, Z.v1[1]), size: 4.2 });
+    label('lp', hl('+'), -X - 0.18, 0.4, SWZ - SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
+    label('ln', hl('−'), -X - 0.18, 0.4, SWZ + SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
+    label('li0', rd('i = 0'), X - 0.45, 0.45, RZ + 0.35, { opacity: onC(VM[0], SWC2[0]), size: 4.0 });
+    label('li3', rd('i = 3 mA'), X - 0.4, 0.45, -0.55, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
+    label('l230', hl('≈ 230 V (AC)'), -0.58, 1.6, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
+    label('loff', 'lamba sönük', 0.6, 1.55, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
   };
 }
