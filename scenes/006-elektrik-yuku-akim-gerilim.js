@@ -188,6 +188,8 @@ function wallSwitch(S) {
   S.scene.add(g); return { group: g };
 }
 
+const Wc_u = (w, x, z) => w.uOf(x, z);
+
 export function build(S) {
   const { scene } = S;
   S.table({ size: 44, seed: 7 });
@@ -196,12 +198,14 @@ export function build(S) {
   const CG = new THREE.Group(); scene.add(CG);
 
   // ------------------------------------------------ bakır tel: anahtar ve direnç aralıkları boş
-  const loop = roundedLoop([[X, 0], [X, -ZH], [-X, -ZH], [-X, ZH], [X, ZH]]);
+  // döngü başlangıcı arka kenarın ortasında: hiçbir eleman aralığı u = 0'ı kesmez, tel her yerde çizilir (2c-1)
+  const loop = roundedLoop([[0, -ZH], [-X, -ZH], [-X, ZH], [X, ZH], [X, -ZH]]);
   const Wc = closedWire(S, loop, { y: Y }); Wc.mesh.visible = false;
   const gaps = [
     [Wc.uOf(-X, SWZ - SWG / 2 + 0.02), Wc.uOf(-X, SWZ + SWG / 2 - 0.02)],
     [Wc.uOf(X, RZ - RL / 2 - 0.02), Wc.uOf(X, RZ + RL / 2 + 0.02)],
   ].map(([a, b]) => [Math.min(a, b), Math.max(a, b)]).sort((p, q) => p[0] - q[0]);
+  check(gaps.every(([a, b]) => b - a < 0.2), 'eleman aralıkları kısa (tel kesintisiz)');
   const segs = [[gaps[0][1], gaps[1][0]], [gaps[1][1], 1 + gaps[0][0]]];
   for (const [a, b] of segs) {
     const pts = []; for (let i = 0; i <= 300; i++) pts.push(Wc.curve.getPointAt(((a + ((b - a) * i) / 300) % 1 + 1) % 1));
@@ -252,15 +256,32 @@ export function build(S) {
 
   // ------------------------------------------------ gerçek hayat: duvar anahtarı + lamba (aynı kadrajda)
   const LG = new THREE.Group(); scene.add(LG); LG.visible = false; LG.scale.setScalar(1.3);
-  LG.add(platform(S, -0.45, 0.0, { r: 0.55 })); LG.add(platform(S, 0.6, 0.0, { r: 0.45 }));
-  const WS = wallSwitch(S); WS.group.position.set(-0.45, 0.08, 0.0); LG.add(WS.group);
-  const LB = makeBulb(S, { scale: 0.9 }); LB.group.position.set(0.6, 0.08, 0.0); LG.add(LB.group);
-  for (const [a, b] of [[[-0.65, 0.84, 0], [-0.85, 0.12, 0.45]], [[-0.25, 0.84, 0], [0.45, 0.2, 0.0]]]) {
-    const A3 = new THREE.Vector3(...a), B3 = new THREE.Vector3(...b), M3 = A3.clone().lerp(B3, 0.5); M3.y += 0.3;
-    const w = new THREE.Mesh(new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(A3, M3, B3), 40, 0.02, 8), S.M.copper); LG.add(w);
+  // priz (230 V AC kaynak, ön kenar) → açık bıçaklı anahtar (sol kenar) → lamba (sağ kenar); tel kesintisiz, açık devre = açık anahtar (2c-2)
+  const LX = 0.75, LZ = 0.45, LY = 0.2, LSG = 0.4;
+  LG.add(platform(S, 0, 0, { r: 0.9 }));
+  const LL = new THREE.Group(); LL.position.y = 0.08; LG.add(LL);
+  const lloop = roundedLoop([[0, -LZ], [-LX, -LZ], [-LX, LZ], [LX, LZ], [LX, -LZ]], { r: 0.16 });
+  const Lw = closedWire(S, lloop, { y: LY }); Lw.mesh.visible = false;
+  const lgaps = [[Wc_u(Lw, -LX, -LSG / 2 + 0.02), Wc_u(Lw, -LX, LSG / 2 - 0.02)], [Wc_u(Lw, -0.2, LZ), Wc_u(Lw, 0.2, LZ)], [Wc_u(Lw, LX, 0.15), Wc_u(Lw, LX, -0.15)]]
+    .map(([p, q]) => [Math.min(p, q), Math.max(p, q)]).sort((p, q) => p[0] - q[0]);
+  check(lgaps.every(([p, q]) => q - p < 0.2), 'gerçek hayat: aralıklar kısa');
+  for (let i = 0; i < 3; i++) {
+    const a0 = lgaps[i][1], b0 = i < 2 ? lgaps[i + 1][0] : 1 + lgaps[0][0];
+    const pts = []; for (let k = 0; k <= 200; k++) pts.push(Lw.curve.getPointAt(((a0 + ((b0 - a0) * k) / 200) % 1 + 1) % 1));
+    const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 400, 0.028, 10), S.M.copper); m.castShadow = true; LL.add(m);
   }
-  const arc = new THREE.Mesh(new THREE.TorusGeometry(0.2, 0.012, 8, 40, Math.PI), new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true, opacity: 0 }));
-  arc.position.set(-0.45, 0.84, 0); LG.add(arc);
+  const LSW = makeSwitch(S, { gap: LSG, y: LY }); LSW.group.position.set(-LX, 0, 0); LSW.set(0); LL.add(LSW.group);
+  const outlet = new THREE.Group(); outlet.position.set(0, 0, LZ); LL.add(outlet);
+  const ob = new THREE.Mesh(new RoundedBoxGeometry(0.44, 0.36, 0.2, 4, 0.05), new THREE.MeshPhysicalMaterial({ color: 0xeceae4, roughness: 0.35, clearcoat: 0.4 }));
+  ob.position.y = 0.18; ob.castShadow = true; outlet.add(ob);
+  const of = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.02, 32), new THREE.MeshPhysicalMaterial({ color: 0xd9d6ce, roughness: 0.4 }));
+  of.rotation.x = Math.PI / 2; of.position.set(0, 0.19, 0.105); outlet.add(of);
+  for (const sx of [-0.045, 0.045]) { const h = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.03, 12), new THREE.MeshBasicMaterial({ color: 0x15171a })); h.rotation.x = Math.PI / 2; h.position.set(sx, 0.19, 0.112); outlet.add(h); }
+  const LB = makeBulb(S, { scale: 0.9 }); LB.group.position.set(LX, 0, 0); LB.group.rotation.y = Math.PI / 2; LL.add(LB.group);
+  const arc = new THREE.Mesh(new THREE.TorusGeometry(LSG / 2, 0.018, 8, 40, Math.PI), new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true, opacity: 0 }));
+  arc.rotation.y = Math.PI / 2; arc.position.set(-LX, LY + 0.1, 0); LL.add(arc);
+  const WS = { group: LSW.group };
+  const lw = (x, y, z) => [x * 1.3, (y + 0.08) * 1.3, z * 1.3];   // LG yerelinden dünyaya
 
   // ------------------------------------------------ kamera: yerinde, çok yavaş
   const cam = camRig(S, [
@@ -311,15 +332,14 @@ export function build(S) {
     VMt.show.set(`${fmt(t < VMR[0] ? 0 : vr, 2)} V`);
 
     // gerçek hayat
-    LB.set(0); WS.group.rotation.y = 0.22 * Math.sin(t * 0.6);
-    arc.material.opacity = life ? 0.5 * easeOut(seg(t, CUT1 + 0.6, CUT1 + 1.2)) * (0.8 + 0.2 * Math.sin(t * 6)) : 0;
+    LB.set(0);
+    arc.material.opacity = life ? 0.85 * easeOut(seg(t, CUT1 + 0.6, CUT1 + 1.2)) * (0.8 + 0.2 * Math.sin(t * 6)) : 0;
 
     yaz(t);
 
-    // kanca alt satırı ve ders etiketi
+    // kanca alt satırı
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
     S.text('sub', 'Anahtar açık: akım yok. Ya gerilim?', { y: 26.3, size: 4.2, weight: 600, opacity: subO, nowrap: true });
-    S.text('tag', 'DERS 1', { x: 13, y: 12.0, size: 3.0, weight: 800, color: '#9fb4c8', opacity: subO, nowrap: true, maxWidth: 30 });
 
     // nesne etiketleri
     const onC = (a, b) => (life ? 0 : fade(t, a, b, 0.3));
@@ -335,7 +355,10 @@ export function build(S) {
     label('ln', hl('−'), -X - 0.18, 0.4, SWZ + SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
     label('li0', rd('i = 0'), X - 0.45, 0.45, RZ + 0.35, { opacity: onC(VM[0], SWC2[0]), size: 4.0 });
     label('li3', rd('i = 3 mA'), X - 0.4, 0.45, -0.55, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
-    label('l230', hl('≈ 230 V (AC)'), -0.58, 1.6, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
-    label('loff', 'lamba sönük', 0.6, 1.55, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
+    label('l230', hl('≈ 230 V (AC)'), ...lw(-LX + 0.08, 0.78, -0.45), { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
+    label('lsa', 'anahtar açık', ...lw(-LX + 0.42, 0.3, 0.02), { opacity: life ? easeOut(seg(t, CUT1 + 0.2, CUT1 + 0.6)) : 0, size: 3.6 });
+    label('loff', 'lamba sönük', ...lw(LX - 0.3, 1.0, -0.15), { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
+    label('lpr', 'priz (230 V AC)', ...lw(0, 0.62, LZ), { opacity: life ? easeOut(seg(t, CUT1 + 0.3, CUT1 + 0.7)) : 0, size: 3.6 });
+    label('lli0', rd('i = 0'), ...lw(0, 0.4, -LZ), { opacity: life ? easeOut(seg(t, CUT1 + 0.6, CUT1 + 1.0)) : 0, size: 3.8 });
   };
 }
