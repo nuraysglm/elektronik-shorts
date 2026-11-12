@@ -11,3 +11,8 @@
 - parca-03: tamam (22:11 UTC)
 - 22:1x UTC: birleştirildi, kalite geçti (85,8 sn). Sıradaki: Metricool taslağı (670534653296070172) güncelle → 13.11 16:00.
 - 22:14 UTC: Metricool taslağı güncellendi → 2026-11-13 16:00 Londra (planlandı). İş bitti; parçalar yayından sonra silinecek.
+
+## 2. sürüm (yeniden düzenle, bölüm 2b) — 12.11.2026
+- 08:07 UTC: Razavi Lec 1 transkripti alındı (vidIQ). Eski senaryo/doğruluk/kalite/sahne eski/ altına taşındı, eski parçalar silindi.
+- 08:35 UTC: yeni scene.js (87,1 sn) yazıldı; kare kontrolü 2 sayfa (grafik yazı bandından aşağı alındı, elektron rengi koyulaştırıldı).
+- Sıradaki: senaryo.md + dogruluk.md → bağımsız metin denetimi → güvenli alan → parça render → birleştir → kalite → eski MP4'ü media/…/eski/'ye taşı → Metricool taslağı (670534653296070172) güncelle → 15.11 16:00.
