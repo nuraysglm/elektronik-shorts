@@ -17,15 +17,15 @@ check(Math.abs(IMA - 3) < 1e-12, 'Ohm: 9 V ÷ 3 kΩ = 3 mA');
 
 // ---------------------------------------------------------------- anlatım
 const mkBeats = (c2pre, dq = 0) => [
-  { id: 'h1', pen: false, pre: 0, l1: 'Açık devrede', l2: `<b style="font-weight:900">${hl('gerilim')} sıfır mı?</b>`, s1: 7.4, s2: 7.4, extra: 1.4 },
-  { id: 'c1', pre: 3.7, l1: `${rd('i')}: değer + yön`, l2: `9 V ÷ 3 kΩ = ${rd('3 mA')}`, s1: 6.0, s2: 5.4 },
-  { id: 'c2', pre: c2pre, l1: `${gr('Yük')} = eğrinin altındaki alan`, l2: `${rd('3 mA')} × ${dq} s = ${gr(dq * 3 + ' mC')}`, s1: 5.8, s2: 5.4 },
-  { id: 'v1', pre: 4.5, l1: `${hl('Gerilim')}: iki nokta arasında`, l2: `+1 C, b → a: ${hl('9 J')} → ${hl('9 V')}`, s1: 5.8, s2: 5.4 },
-  { id: 'o1', pre: 3.6, l1: `Açık devre: ${rd('i = 0')}`, l2: `ama uçlarında ${hl('9 V')} var!`, s1: 6.2, s2: 5.6 },
-  { id: 'o2', pre: 3.4, l1: 'Kapalı anahtar = kısa devre', l2: `${hl('V = 0')}, ama ${rd('i = 3 mA')}`, s1: 5.8, s2: 5.6 },
-  { id: 'g1', pre: 3.2, l1: 'Lamba söndürülünce:', l2: `${rd('i = 0')}, uçlarında ${hl('≈ 230 V')}`, s1: 5.6, s2: 5.4 },
+  { id: 'h1', pen: false, pre: 0, l1: 'Açık devrede', l2: `<b style="font-weight:900">${hl('gerilim')} sıfır mı?</b>`, s1: 7.4, s2: 7.4, extra: 1.0 },
+  { id: 'c1', pre: 3.7, l1: `Akımın ${rd('değeri')} + ${rd('yönü')}`, l2: `9 V ÷ 3 kΩ = ${rd('3 mA')}`, s1: 6.0, s2: 5.4 },
+  { id: 'c2', pre: c2pre, l1: `${gr('Yük')} = ${rd('i(t)')} altındaki alan`, l2: `${rd('3 mA')} × ${dq} s = ${gr(dq * 3 + ' mC')}`, s1: 5.8, s2: 5.4 },
+  { id: 'v1', pre: 4.5, l1: `${hl('Gerilim')}: iki nokta arası`, l2: `${hl('V<sub>ab</sub>')} = 9 J ÷ 1 C = ${hl('9 V')}`, s1: 5.8, s2: 5.4 },
+  { id: 'o1', pre: 3.6, l1: `Açık devre: ${rd('i = 0')}`, l2: `ama anahtar uçlarında ${hl('9 V')}!`, s1: 6.2, s2: 5.6 },
+  { id: 'o2', pre: 3.4, l1: 'Kapalı anahtar = kısa devre', l2: `anahtarda ${hl('V = 0')}, ama ${rd('i = 3 mA')}`, s1: 5.8, s2: 5.6 },
+  { id: 'g1', pre: 2.8, l1: 'Lamba söndürülünce:', l2: `${rd('i = 0')}, anahtarda ${hl('≈ 230 V')} (AC)`, s1: 5.6, s2: 5.4 },
   { id: 'f1', pre: 1.4, l1: `Açık devre → yalnızca ${rd('i = 0')}`, l2: `Kısa devre → yalnızca ${hl('V = 0')}`, s1: 5.4, s2: 5.4 },
-  { id: 'f2', pre: 0.3, l1: `${rd('i')} = d${gr('q')}/dt  ·  ${gr('q')} = ∫ ${rd('i')} dt`, l2: `${hl('V')}: birim (+) yük başına enerji`, s1: 5.8, s2: 5.0, extra: 0.6 },
+  { id: 'f2', pre: 0.3, l1: `${rd('i')} = d${gr('q')}/dt  ·  ${gr('q')} = ∫ ${rd('i')} dt`, l2: `gerilim: ${hl('1 V')} = 1 J/C`, s1: 5.8, s2: 5.0, extra: 0.3 },
 ];
 // 1. geçiş: anahtarın açılma anını bul (c1 yazısı bittikten sonra, kapalı kalma süresi tam saniye)
 const P0 = penTimeline(mkBeats(0), { k: 1.0 });
@@ -99,7 +99,7 @@ const X = 0.85, ZH = 0.95, Y = 0.2;
 const SWG = 0.55, SWZ = 0.05;               // anahtar sol kenarda
 const RL = 0.6, RZ = 0.0;                   // direnç sağ kenarda
 const CZ = -0.05;
-const GW = 1.55, GH = 1.15;                  // grafik paneli boyutu
+const GW = 1.4, GH = 1.15;                  // grafik paneli boyutu
 
 // LCD dokusu (005'ten): lcd(w,h,renk) → {tex, set(yazı)}
 function lcd(w, h, color) {
@@ -215,7 +215,7 @@ export function build(S) {
 
   // grafik paneli: arka kenarın üstünde, kameraya dönük
   const GP = graphPanel(S);
-  GP.mesh.position.set(0, 0.36, -ZH - 0.3); GP.mesh.rotation.x = -0.8; CG.add(GP.mesh);
+  GP.mesh.position.set(0, 0.5, -ZH - 0.32); GP.mesh.rotation.x = -0.8; CG.add(GP.mesh);
 
   // elektronlar
   const N = 44;
@@ -251,7 +251,7 @@ export function build(S) {
   mkLead(new THREE.Vector3(-0.3, 0.2, 0.0), back, lmR); mkLead(new THREE.Vector3(-0.3, 0.2, 0.24), front, lmK);
 
   // ------------------------------------------------ gerçek hayat: duvar anahtarı + lamba (aynı kadrajda)
-  const LG = new THREE.Group(); scene.add(LG); LG.visible = false;
+  const LG = new THREE.Group(); scene.add(LG); LG.visible = false; LG.scale.setScalar(1.3);
   LG.add(platform(S, -0.45, 0.0, { r: 0.55 })); LG.add(platform(S, 0.6, 0.0, { r: 0.45 }));
   const WS = wallSwitch(S); WS.group.position.set(-0.45, 0.08, 0.0); LG.add(WS.group);
   const LB = makeBulb(S, { scale: 0.9 }); LB.group.position.set(0.6, 0.08, 0.0); LG.add(LB.group);
@@ -276,6 +276,7 @@ export function build(S) {
     CG.visible = !life; LG.visible = life;
     SW.set(swAng(t));
     GP.draw(t - G0);
+    GP.mat.opacity = easeOut(seg(t, A.c1, A.c1 + 0.3)); GP.mesh.visible = GP.mat.opacity > 0.01;
     const on = closed(t);
 
     // elektronlar: açıkken yerinde titrer, kapalıyken − → + akar
@@ -328,13 +329,13 @@ export function build(S) {
     label('la', rd('akım yönü'), X - 0.45, 0.4, 0.62, { opacity: onC(TC + 1.0, Z.c1[1]), size: 3.8 });
     label('lqa', hl('a (+)'), 0.55, 0.62, ZH, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
     label('lqb', hl('b (−)'), -0.55, 0.62, ZH, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
-    label('lq', `+1 C`, tq.position.x, tq.position.y + 0.2, tq.position.z, { opacity: tq.visible ? onC(QM[0], Z.v1[1]) : 0, size: 3.6 });
+    label('lq', `+1 C`, tq.position.x, tq.position.y + 0.32, tq.position.z, { opacity: tq.visible ? onC(QM[0], Z.v1[1]) : 0, size: 3.6 });
     label('lw', `W = ${hl(fmt(9 * qp, 1) + ' J')}`, 0.0, 0.95, ZH - 0.1, { opacity: onC(QM[0] + 0.2, Z.v1[1]), size: 4.2 });
     label('lp', hl('+'), -X - 0.18, 0.4, SWZ - SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
     label('ln', hl('−'), -X - 0.18, 0.4, SWZ + SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
     label('li0', rd('i = 0'), X - 0.45, 0.45, RZ + 0.35, { opacity: onC(VM[0], SWC2[0]), size: 4.0 });
-    label('li3', rd('i = 3 mA'), X - 0.55, 0.45, RZ + 0.35, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
-    label('l230', hl('≈ 230 V (AC)'), -0.45, 1.25, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
-    label('loff', 'lamba sönük', 0.6, 1.15, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
+    label('li3', rd('i = 3 mA'), X - 0.75, 0.45, RZ + 0.2, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
+    label('l230', hl('≈ 230 V (AC)'), -0.58, 1.6, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
+    label('loff', 'lamba sönük', 0.6, 1.55, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
   };
 }
