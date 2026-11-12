@@ -17,3 +17,4 @@
 - 08:35 UTC: yeni scene.js (87,1 sn) yazıldı; kare kontrolü 2 sayfa (grafik yazı bandından aşağı alındı, elektron rengi koyulaştırıldı).
 - Sıradaki: senaryo.md + dogruluk.md → bağımsız metin denetimi → güvenli alan → parça render → birleştir → kalite → eski MP4'ü media/…/eski/'ye taşı → Metricool taslağı (670534653296070172) güncelle → 15.11 16:00.
 - parca-01: tamam (08:42 UTC)
+- parca-02: tamam (08:43 UTC)
