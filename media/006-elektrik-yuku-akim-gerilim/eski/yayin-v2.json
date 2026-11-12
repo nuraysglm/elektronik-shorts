@@ -1,0 +1,33 @@
+{
+  "konu_no": 6,
+  "baslik": "Kısa Devre ve Açık Devre: Gerilim Sıfır mı?",
+  "aciklama": "Kısa devre ve açık devre: açık devrede gerilim sıfır mı? Hayır! Açık devre yalnızca i = 0'ı, kısa devre yalnızca V = 0'ı garanti eder. 9 V pil, anahtar ve 3 kΩ dirençle i(t) grafiğinin altındaki alanın yük olduğunu (q = ∫ i dt), gerilimin iki nokta arasında tanımlandığını ve açık anahtarın uçlarında neden 9 V göründüğünü animasyonla görüyoruz.\n\nKaynak: B. Razavi, Basic Circuits, Ders 1\n\n#elektronik #shorts #kısadevre #açıkdevre #devreanalizi",
+  "etiketler": [
+    "elektronik",
+    "kısa devre",
+    "açık devre",
+    "devre analizi",
+    "akım",
+    "gerilim",
+    "elektrik yükü",
+    "devre teorisi"
+  ],
+  "hashtagler": [
+    "#elektronik",
+    "#shorts",
+    "#kısadevre",
+    "#açıkdevre",
+    "#devreanalizi"
+  ],
+  "sure_sn": 87.2,
+  "youtube_tarih": "2026-11-15 16:00 (Londra, planlandı)",
+  "youtube_url": null,
+  "metricool_uuid": "670534653296070172",
+  "ilk_yorum": "9 V'luk pile 3 kΩ direnç ve açık bir anahtar seri bağlı. Açık anahtarın uçları arasındaki gerilim kaç volt? Cevabını yaz 👇",
+  "ilgili_video": "Ohm Kanunu (005) — 12.11 16:00 yayınından sonra YouTube adresi; şimdilik önceki: https://www.youtube.com/shorts/puiob5muSPo",
+  "instagram": {
+    "durum": "bekliyor",
+    "aciklama": null
+  },
+  "surum": 2
+}
