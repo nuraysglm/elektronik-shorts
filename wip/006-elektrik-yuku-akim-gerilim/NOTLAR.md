@@ -22,3 +22,4 @@
 - parca-03: tamam (08:43 UTC)
 - 08:52 UTC: kalite turu 1: li3 etiketi voltmetreyle çakışıyordu, +1 C / a(+) ve W etiketleri, gerçek hayatta kenardan taşan tel düzeltildi; parca-01..03 yeniden
 - parca-01: tamam (09:05 UTC)
+- parca-02: tamam (09:05 UTC)
