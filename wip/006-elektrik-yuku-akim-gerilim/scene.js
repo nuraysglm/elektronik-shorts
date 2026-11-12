@@ -255,7 +255,7 @@ export function build(S) {
   LG.add(platform(S, -0.45, 0.0, { r: 0.55 })); LG.add(platform(S, 0.6, 0.0, { r: 0.45 }));
   const WS = wallSwitch(S); WS.group.position.set(-0.45, 0.08, 0.0); LG.add(WS.group);
   const LB = makeBulb(S, { scale: 0.9 }); LB.group.position.set(0.6, 0.08, 0.0); LG.add(LB.group);
-  for (const [a, b] of [[[-0.65, 0.84, 0], [-1.05, 0.25, 0.45]], [[-0.25, 0.84, 0], [0.45, 0.2, 0.0]]]) {
+  for (const [a, b] of [[[-0.65, 0.84, 0], [-0.85, 0.12, 0.45]], [[-0.25, 0.84, 0], [0.45, 0.2, 0.0]]]) {
     const A3 = new THREE.Vector3(...a), B3 = new THREE.Vector3(...b), M3 = A3.clone().lerp(B3, 0.5); M3.y += 0.3;
     const w = new THREE.Mesh(new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(A3, M3, B3), 40, 0.02, 8), S.M.copper); LG.add(w);
   }
@@ -329,12 +329,12 @@ export function build(S) {
     label('la', rd('akım yönü'), X - 0.45, 0.4, 0.62, { opacity: onC(TC + 1.0, Z.c1[1]), size: 3.8 });
     label('lqa', hl('a (+)'), 0.55, 0.62, ZH, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
     label('lqb', hl('b (−)'), -0.55, 0.62, ZH, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
-    label('lq', `+1 C`, tq.position.x, tq.position.y + 0.32, tq.position.z, { opacity: tq.visible ? onC(QM[0], Z.v1[1]) : 0, size: 3.6 });
-    label('lw', `W = ${hl(fmt(9 * qp, 1) + ' J')}`, 0.0, 0.95, ZH - 0.1, { opacity: onC(QM[0] + 0.2, Z.v1[1]), size: 4.2 });
+    label('lq', `+1 C`, tq.position.x, tq.position.y + 0.32, tq.position.z, { opacity: tq.visible ? onC(QM[0], Z.v1[1]) * (1 - seg(qp, 0.7, 0.85)) : 0, size: 3.6 });
+    label('lw', `W = ${hl(fmt(9 * qp, 1) + ' J')}`, 0.0, 1.3, ZH - 0.45, { opacity: onC(QM[0] + 0.2, Z.v1[1]), size: 4.2 });
     label('lp', hl('+'), -X - 0.18, 0.4, SWZ - SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
     label('ln', hl('−'), -X - 0.18, 0.4, SWZ + SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
     label('li0', rd('i = 0'), X - 0.45, 0.45, RZ + 0.35, { opacity: onC(VM[0], SWC2[0]), size: 4.0 });
-    label('li3', rd('i = 3 mA'), X - 0.75, 0.45, RZ + 0.2, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
+    label('li3', rd('i = 3 mA'), X - 0.4, 0.45, -0.55, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
     label('l230', hl('≈ 230 V (AC)'), -0.58, 1.6, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
     label('loff', 'lamba sönük', 0.6, 1.55, 0.0, { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
   };
