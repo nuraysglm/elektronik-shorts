@@ -76,6 +76,12 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 5. **Bağımsız denetim (bölüm 7 A) seviyeyi de denetler:** denetçiye "bu video üniversite birinci sınıf devre teorisi öğrencisine yeni ve önemli bir şey öğretiyor mu, yoksa lise/ortaokul düzeyinde mi?" sorusunu da sor; "lise/ortaokul" cevabı → senaryoyu yeniden yaz.
 6. Konu 2–5 (4'lü temel seri) kanal sahibinin isteğiyle daha temel düzeyde yapılmıştı; bundan sonraki bütün videolar bu bölüme uyar.
 
+## 2c. Devre çizimi kuralları (kanal sahibinin emri, 12.11.2026)
+
+1. **Tel her zaman kesintisiz ve görünür:** Devredeki bakır tel her elemanın arasında bütün yol boyunca çizilir ve kamera açısında görünür kalır. Elektronlar/yük parçacıkları **yalnızca telin içinde** hareket eder; tel görünmeyen yerde "havada duran" elektron olmaz (006 v2'deki hata). Kalite kontrolünde kanca karesi ve her sahnenin ortasından alınan karede telin tamamı görünüyor mu, elektronlar telin üstünde mi kontrol et.
+2. **Açık devre = açık anahtar:** Açık devre her zaman devreye konmuş bir anahtarın **açık konumu** ile gösterilir; havada biten veya kopuk tel ucu ile gösterilmez (006 v2'deki priz-lamba sahnesi). Gerilim etiketleri açık anahtarın iki ucuna göre yazılır.
+3. **Ders sırası:** Konu 6'dan itibaren videolar Razavi Basic Circuits serisini ders 1'den başlayarak **sırayla** izler (konu N+5 = ders N); ders atlanmaz, sıra değiştirilmez.
+
 ## 3. Teknik hat (değiştirme)
 
 | Adım | Araç |
@@ -152,7 +158,7 @@ Bu sayfaların **tarzından** öğren; logolarını, karakterlerini, başlıklar
 3. **Zemin:** Çok koyu (siyah / koyu yeşil-siyah / koyu lacivert) mat zemin; çok silik ızgara çizgileri veya silik PCB izleri olabilir (opaklık ≤ %8, dikkat dağıtmaz). Gradyan karartma yine yok.
 4. **İki görsel dil, birlikte:** (a) Gerçekçi 3D parçalar: renk bantlı direnç, TO-92 transistör, PCB üzerinde çip ve yanan LED, multimetre; (b) ince neon çizgili şema: camgöbeği/sarı devre çizgileri, değer etiketleri (12 V, 1 kΩ, 50 Hz), osiloskop eğrisi (eksen değerleriyle), ölçü aleti ekranında sayı. 3D sahneden şemaya (ve geri) hareketli dönüşüm güçlü bir geçiştir.
 5. **Ölçüm ve sayı:** Mümkünse multimetre/osiloskop ekranında gerçek değer göster; değer animasyonla değişir (ör. direnç artınca ampermetre 0,50 A → 0,25 A).
-6. **Seri etiketi:** 4'lü seride ve derslerde üst köşede küçük "BÖLÜM 2" / "DERS 1" etiketi; küçük kategori etiketi ("ELEKTRONİK") kullanılabilir. Üst %10'a girmez.
+6. **Seri/ders etiketi yok (kanal sahibinin emri, 12.11.2026):** Videoda "DERS 1", "BÖLÜM 2" gibi etiketler kullanılmaz (kanalın kendi ders numaralarıyla karışıyor).
 7. **İlk kare kapak gibi çalışır:** Profil ızgarasında video bu kareyle görünür; ilk kare soru başlığı + net bir ana nesne (3D parça veya şema) içermeli, boş/karanlık olmamalı.
 
 ## 5. Senaryo ve kurgu
