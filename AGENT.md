@@ -148,7 +148,7 @@ Kanal sahibi yayındaki Gerilim videosunda iki hata buldu: (1) alttaki yazılar 
 **Diğer:**
 - Vurgu renkleri: `hl` sarı, `rd` kırmızı, `gr` yeşil, `bl` mavi, `cu` bakır. Aynı kavram her yerde aynı renkte (gerilim hep sarı, akım hep kırmızı, direnç hep mavi).
 - **Zemin:** Koyu, mat, nötr zemin; karartma katmanı veya gradyan yok. Yazılar kendi kontur/gölgeleriyle okunur.
-- Yazı hiçbir zaman ana nesnenin üstüne binmez.
+- **Yazı hiçbir nesnenin üstüne binmez** — devre elemanları, grafik/ölçü aleti ekranları, kablolar dahil (007'de üst yazılar grafiğin, etiketler direncin ve kabloların üstüne bindi). Yazı ile en yakın nesne arasında en az 2 vw boşluk kalır. **Otomatik kontrol:** `guvenli_alan.json` ölçümüne 3D nesnelerin (özellikle grafik ekranı ve devre elemanları) ekran izdüşüm kutuları da eklenir; herhangi bir yazı kutusu bir nesne kutusuyla kesişirse kalite kontrolünden geçmez.
 - Formüller tek satır (`nowrap: true`) ve yine 864 px'i aşmaz (aşarsa punto küçülür).
 
 ## 4a. Referans stil (kanal sahibinin örnek gösterdiği sayfalar: Hardwired, Mr. Integral, 3DIoT Education)
