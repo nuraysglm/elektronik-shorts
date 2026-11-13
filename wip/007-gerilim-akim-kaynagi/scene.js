@@ -22,11 +22,11 @@ check(near(IS * 1, 2) && near(IS * 2, 4) && near(IS * 3, 6), 'akım kaynağı: 2
 const BEATS = [
   { id: 'h1', pen: false, pre: 0, l1: `${rd('Akım kaynağını')}`, l2: `<b style="font-weight:900">${hl('açık')} bırakırsan?</b>`, s1: 7.4, s2: 7.4, extra: 1.2 },
   { id: 'v1', pre: 6.7, l1: `Gerilim kaynağı: ${hl('V sabit')}`, l2: `${rd('i')} = ${hl('V')}/${bl('R')} → yüke bağlı`, s1: 6.0, s2: 5.4 },
-  { id: 'v2', pre: 3.9, l1: `${bl('R → 0')} ise ${rd('i → ∞')}`, l2: 'gerçek pilde V düşer', s1: 6.2, s2: 5.2 },
+  { id: 'v2', pre: 3.9, l1: `İdealde ${bl('R → 0')}: ${rd('i → ∞')}`, l2: 'gerçek pilde V düşer', s1: 6.2, s2: 5.2 },
   { id: 'c1', pre: 7.7, l1: `Akım kaynağı: ${rd('i sabit')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')} → yüke bağlı`, s1: 6.0, s2: 5.4 },
-  { id: 'c2', pre: 5.0, l1: `Anahtar açık: ${bl('R → ∞')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')} → ${hl('∞')} !`, s1: 6.0, s2: 5.8 },
+  { id: 'c2', pre: 5.0, l1: `Anahtar açık: ${bl('R → ∞')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')} → ${hl('∞')} (tanımsız)`, s1: 6.0, s2: 5.8 },
   { id: 'c3', pre: 0.5, l1: `${rd('Akım kaynağı')} asla`, l2: 'açık bırakılmaz', s1: 6.4, s2: 6.0 },
-  { id: 'g1', pre: 4.15, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Şarj devresi ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
+  { id: 'g1', pre: 4.15, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Şarj, CC evresi ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
   { id: 'f1', pre: 1.3, l1: `Gerilim kaynağı → ${hl('V sabit')}`, l2: `Akım kaynağı → ${rd('i sabit')}`, s1: 5.6, s2: 5.6 },
   { id: 'f2', pre: 0.3, l1: `${hl('V')} kaynağı + ${bl('R → 0')}: ${rd('i → ∞')}`, l2: `${rd('i')} kaynağı + açık: ${hl('V → ∞')}`, s1: 5.4, s2: 5.4, extra: 0.4 },
 ];
@@ -289,7 +289,7 @@ export function build(S) {
     [0, 0.0, 10.6, 58, 0, CZ], [A.v1, 0.05, 10.5, 58, 0, CZ], [A.v2, -0.04, 10.4, 59, 0, CZ], [A.c1, 0.04, 10.5, 58, 0, CZ],
     [A.c2, -0.05, 10.4, 58, 0, CZ], [A.g1, 0.04, 10.5, 59, 0, CZ], [A.f1, -0.04, 10.4, 58, 0, CZ], [DUR, 0.05, 10.3, 59, 0, CZ],
   ]);
-  const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15, y2: 21.5 });
+  const yaz = narrationPen(S, BEATS, Z, WR, { y1: 16, y2: 22.5 });
 
   return (t) => {
     cam(t);
@@ -334,7 +334,7 @@ export function build(S) {
 
     // kanca alt satırı
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
-    S.text('sub', 'İdeal kaynak: ne sabit kalır?', { y: 26.3, size: 4.4, weight: 600, opacity: subO, nowrap: true });
+    S.text('sub', 'İdeal kaynak: ne sabit kalır?', { y: 27.3, size: 4.4, weight: 600, opacity: subO, nowrap: true });
 
     // nesne etiketleri
     const onC = (a, b) => (life ? 0 : fade(t, a, b, 0.3));
@@ -346,9 +346,9 @@ export function build(S) {
     label('lsw', 'anahtar', -X + 0.05, 0.6, SWZ + 0.05, { opacity: onC(A.c1 + 0.3, Z.c1[0]) + onC(A.c2, A.c2 + 1.8), size: 3.6 });
     label('lop', bl('açık devre'), -X + 0.1, 0.62, SWZ, { opacity: onC(SWO[1], CUTG), size: 3.8 });
     label('lm1', hl('≈ gerilim kaynağı'), ...lw(lerp(PX[0], PX[1], 0.5), 0.95, 0.15), { opacity: life ? easeOut(seg(t, GM[1] + 0.5, GM[1] + 0.9)) : 0, size: 3.8 });
-    label('lm2', rd('≈ akım kaynağı'), ...lw(PX[2], 0.95, 0.15), { opacity: life ? easeOut(seg(t, GM[2] + 0.5, GM[2] + 0.9)) : 0, size: 3.8 });
+    label('lm2', rd('≈ akım kaynağı'), ...lw(PX[2] - 0.3, 0.95, 0.15), { opacity: life ? easeOut(seg(t, GM[2] + 0.5, GM[2] + 0.9)) : 0, size: 3.8 });
     label('lpn', 'AA pil', ...lw(PX[0], 0.55, -0.35), { opacity: life ? easeOut(seg(t, GM[0] + 0.3, GM[0] + 0.7)) : 0, size: 3.4 });
     label('lpk', 'araba aküsü', ...lw(PX[1], 0.62, -0.35), { opacity: life ? easeOut(seg(t, GM[1] + 0.3, GM[1] + 0.7)) : 0, size: 3.4 });
-    label('lpt', 'telefon şarjı', ...lw(PX[2], 0.55, -0.35), { opacity: life ? easeOut(seg(t, GM[2] + 0.3, GM[2] + 0.7)) : 0, size: 3.4 });
+    label('lpt', 'şarj (CC evresi)', ...lw(PX[2] - 0.3, 0.55, -0.35), { opacity: life ? easeOut(seg(t, GM[2] + 0.3, GM[2] + 0.7)) : 0, size: 3.4 });
   };
 }
