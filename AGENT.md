@@ -133,7 +133,8 @@ Kanal sahibi yayındaki Gerilim videosunda iki hata buldu: (1) alttaki yazılar 
 - **Alt:** y %68–100 boş: **hiçbir yazı, etiket veya sayı alt %32'ye girmez** (YouTube kanal adı, başlık, açıklama, Super Thanks, alt menü). Ana nesneler en fazla y %72'ye kadar inebilir; alttaki %28 yalnızca zemin ve önemsiz süs.
 - **Sağ:** x %86–100'e yazı ve etiket girmez (beğen/yorum/kaydet/paylaş düğmeleri, y %50'nin altında). Ana nesneler de y %50'nin altında x %86'yı geçmez.
 - **Sol:** x %0–6 boş.
-- Böylece yazı alanı: x %6–86 (genişlik %80), y %11–68. Ana sahne (devre, boru, örnek nesneler) y %20–68 arasına sığacak şekilde ölçeklenir; gerekirse sahne küçültülür veya etiketler nesnenin yanına/üstüne (alta değil) konur.
+- Böylece yazı alanı: x %6–86 (genişlik %80), y %11–68.
+- **Ana sahnenin boyutu ve yeri — dengeli doluluk (kanal sahibinin emri, 13.11.2026):** Kanal sahibi Ders 1 videosunda devrenin küçük ve yukarıda kaldığını, ekranın boş/dolu oranının dengesiz olduğunu belirtti. Ana sahne (devre, boru, örnek nesneler) **ekran genişliğinin yaklaşık %76–80'ini** kaplayacak kadar büyük olur (x ≈ %8–86) ve dikeyde **yazı bandının hemen altından y ≈ %76'ya kadar** uzanır; sahnenin dikey merkezi y ≈ %50–52 civarındadır. Pil gibi büyük ve yazısız parçalar alt bölgeye y %76'ya kadar girebilir; **etiketler, sayılar ve yazılar yine alt %32'ye girmez** (bölüm 4 güvenli alan). Ekranda grafik/ölçü aleti ekranı varsa devreyle birlikte bu alana yerleştirilir, devreyi küçültmez. Altta kalan boşluk düz siyah/boş bırakılmaz: devrenin durduğu mat masa yüzeyi, yumuşak gölge ve hafif zemin dokusuyla doğal olarak dolar (yazısız, dikkat dağıtmayan). **Kontrol:** kanca karesinde ve her sahnenin ortasında ana sahnenin sınır kutusu ekran yüksekliğinin en az %50'sini ve genişliğinin en az %70'ini kaplamalı; aksi hâlde kamera yaklaştırılır.
 
 **Üst yazılar:**
 - Bant: y %12–26. En fazla 2 satır (kanca başlığı en fazla 3 satır).
