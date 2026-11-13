@@ -346,9 +346,9 @@ export function build(S) {
     label('lsw', 'anahtar', -X + 0.05, 0.6, SWZ + 0.05, { opacity: onC(A.c1 + 0.3, Z.c1[0]) + onC(A.c2, A.c2 + 1.8), size: 3.6 });
     label('lop', bl('açık devre'), -X + 0.1, 0.62, SWZ, { opacity: onC(SWO[1], CUTG), size: 3.8 });
     label('lm1', hl('≈ gerilim kaynağı'), ...lw(lerp(PX[0], PX[1], 0.5), 0.95, 0.15), { opacity: life ? easeOut(seg(t, GM[1] + 0.5, GM[1] + 0.9)) : 0, size: 3.8 });
-    label('lm2', rd('≈ akım kaynağı'), ...lw(PX[2] - 0.3, 0.95, 0.15), { opacity: life ? easeOut(seg(t, GM[2] + 0.5, GM[2] + 0.9)) : 0, size: 3.8 });
+    label('lm2', rd('≈ akım kaynağı'), ...lw(PX[2] - 0.15, 0.95, 0.15), { opacity: life ? easeOut(seg(t, GM[2] + 0.5, GM[2] + 0.9)) : 0, size: 3.8 });
     label('lpn', 'AA pil', ...lw(PX[0], 0.55, -0.35), { opacity: life ? easeOut(seg(t, GM[0] + 0.3, GM[0] + 0.7)) : 0, size: 3.4 });
-    label('lpk', 'araba aküsü', ...lw(PX[1], 0.62, -0.35), { opacity: life ? easeOut(seg(t, GM[1] + 0.3, GM[1] + 0.7)) : 0, size: 3.4 });
-    label('lpt', 'şarj (CC evresi)', ...lw(PX[2] - 0.3, 0.55, -0.35), { opacity: life ? easeOut(seg(t, GM[2] + 0.3, GM[2] + 0.7)) : 0, size: 3.4 });
+    label('lpk', 'akü', ...lw(PX[1], 0.62, -0.35), { opacity: life ? easeOut(seg(t, GM[1] + 0.3, GM[1] + 0.7)) : 0, size: 3.4 });
+    label('lpt', 'şarj', ...lw(PX[2], 0.55, -0.35), { opacity: life ? easeOut(seg(t, GM[2] + 0.3, GM[2] + 0.7)) : 0, size: 3.4 });
   };
 }
