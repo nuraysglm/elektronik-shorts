@@ -7,3 +7,4 @@
 - parca-01: tamam (09:05 UTC)
 - parca-00: tamam (09:05 UTC)
 - 09:16 UTC: birleştirildi + ses → media/007-…/ (83,0 sn). Kalite kontrolü GEÇTİ (kalite.md). scenes/007-gerilim-akim-kaynagi.js. Sıradaki: main'de doğrula → Metricool 2026-11-16 16:00.
+- 09:18 UTC: Metricool'da planlandı: 2026-11-16 16:00 Londra (uuid 7591375855375960443). Parçalar silindi. İş bitti.
