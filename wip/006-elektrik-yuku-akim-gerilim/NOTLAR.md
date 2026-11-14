@@ -36,3 +36,7 @@
 - parca-03: tamam (10:04 UTC)
 - 10:10 UTC: birleştirildi, kalite 1. turda geçti (87,2 sn). v2 eski/'ye taşındı. Sıradaki: Metricool güncelle → 15.11 16:00.
 - 10:12 UTC: Metricool güncellendi → 2026-11-15 16:00 Londra (draft:false, autoPublish:true). İş bitti.
+
+## 4. sürüm (yeniden düzenle, 13.11.2026: yalnızca ekran düzeni) — 14.11.2026
+- 08:25 UTC: render.mjs --safe artık yazı–nesne kesişimini (userData.box) ve ana sahne doluluğunu (userData.main; ≥ %70 genişlik, ≥ %50 yükseklik) ölçüyor. v3 ölçümü: doluluk x %19–80, y %36–68 (yetersiz); 16 çakışma (3 kΩ×direnç, a/b×pil, üst yazılar×grafik vb.).
+- Sıradaki: devre büyütülür/aşağı iner, grafik devre içine alınır, etiketler nesne yanına → güvenli alan 0/0/0 → 4 parça render → birleştir → kalite → v3 eski/'ye → Metricool (670534653296070172) yalnızca video, tarih 15.11 16:00 aynı.

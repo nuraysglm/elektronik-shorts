@@ -97,10 +97,21 @@ const shot = async (file) => {
 try {
   if (opt('safe', null)) {
     // güvenli alan kontrolü (AGENT.md bölüm 4): her 0,5 sn'de yazı kutuları; alan x %6–86, y %11–68, satır ≤ %80 (864 px)
-    const rows = [], bad = [];
+    const rows = [], bad = [], doluluk = [], dolBad = [], kesisim = [];
     for (let t = t0; t <= t1 + 1e-6; t += 0.5) {
       await page.evaluate((x) => window.__render(x), Math.min(t, t1 - 1e-3));
       const bx = await page.evaluate('window.__boxes()');
+      const ob = await page.evaluate('window.__objects ? window.__objects() : []');
+      const tt = +t.toFixed(2);
+      // dengeli doluluk (bölüm 4): ana sahne kutusu genişliğin ≥ %70'i, yüksekliğin ≥ %50'si
+      for (const o of ob.filter((o) => o.id === 'ANA')) {
+        const r = { t: tt, id: 'ANA', x0: +o.x0.toFixed(1), x1: +o.x1.toFixed(1), y0: +o.y0.toFixed(1), y1: +o.y1.toFixed(1) };
+        doluluk.push(r); if (o.x1 - o.x0 < 70 || o.y1 - o.y0 < 50) dolBad.push(r);
+      }
+      // yazı–nesne kesişimi (bölüm 4): hiçbir yazı kutusu bir nesne kutusuyla kesişmez
+      for (const b of bx) for (const o of ob.filter((o) => o.id !== 'ANA')) {
+        if (b.x0 < o.x1 && b.x1 > o.x0 && b.y0 < o.y1 && b.y1 > o.y0) kesisim.push({ t: tt, yazi: b.id, nesne: o.id, text: b.text, yx: [+b.x0.toFixed(1), +b.x1.toFixed(1)], yy: [+b.y0.toFixed(1), +b.y1.toFixed(1)], nx: [+o.x0.toFixed(1), +o.x1.toFixed(1)], ny: [+o.y0.toFixed(1), +o.y1.toFixed(1)] });
+      }
       for (const b of bx) {
         const why = [b.x0 < 6 && 'sol', b.x1 > 86 && 'sağ', b.y0 < 11 && 'üst', b.y1 > 68 && 'alt', b.x1 - b.x0 > 80 && 'genişlik'].filter(Boolean);
         const r = { t: +t.toFixed(2), ...b, x0: +b.x0.toFixed(1), x1: +b.x1.toFixed(1), y0: +b.y0.toFixed(1), y1: +b.y1.toFixed(1) };
@@ -109,8 +120,11 @@ try {
     }
     const sOut = path.resolve(opt('safe'));
     fs.mkdirSync(path.dirname(sOut), { recursive: true });
-    fs.writeFileSync(sOut, JSON.stringify({ alan: { x: [6, 86], y: [11, 68], genislik: 80 }, ornek: rows.length, ihlal_sayisi: bad.length, ihlaller: bad, kutular: rows }, null, 1));
+    fs.writeFileSync(sOut, JSON.stringify({ alan: { x: [6, 86], y: [11, 68], genislik: 80 }, ornek: rows.length, ihlal_sayisi: bad.length, ihlaller: bad, kesisim_sayisi: kesisim.length, kesisimler: kesisim, doluluk_ihlal_sayisi: dolBad.length, doluluk_ihlalleri: dolBad, doluluk, kutular: rows }, null, 1));
     console.log(`güvenli alan: ${rows.length} kutu, ${bad.length} ihlal → ${sOut}`);
+    console.log(`yazı–nesne kesişimi: ${kesisim.length} · doluluk: ${doluluk.length} örnek, ${dolBad.length} ihlal`);
+    for (const k of kesisim.slice(0, 20)) console.log(`  ${k.t} sn "${k.text}" × ${k.nesne}`);
+    for (const d of dolBad.slice(0, 10)) console.log(`  ${d.t} sn ANA x ${d.x0}–${d.x1} y ${d.y0}–${d.y1}`);
     for (const b of bad.slice(0, 30)) console.log(`  ${b.t} sn ${b.id} [${b.ihlal}] x ${b.x0}–${b.x1} y ${b.y0}–${b.y1} "${b.text}"`);
   } else if (stills) {
     const times = stills.split(',').map(Number);

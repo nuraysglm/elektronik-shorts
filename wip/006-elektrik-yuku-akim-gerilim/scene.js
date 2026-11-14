@@ -195,7 +195,7 @@ export function build(S) {
   S.table({ size: 44, seed: 7 });
   const sc = S.lights.key.shadow.camera; sc.left = -10; sc.right = 10; sc.top = 6; sc.bottom = -6; sc.updateProjectionMatrix();
   const label = projLabel(S);
-  const CG = new THREE.Group(); scene.add(CG);
+  const CG = new THREE.Group(); scene.add(CG); CG.userData.main = true;
 
   // ------------------------------------------------ bakır tel: anahtar ve direnç aralıkları boş
   // döngü başlangıcı arka kenarın ortasında: hiçbir eleman aralığı u = 0'ı kesmez, tel her yerde çizilir (2c-1)
@@ -214,11 +214,11 @@ export function build(S) {
   const B = battery(S, { len: 0.9, h: 0.3, w: 0.34, y: Y, text: '9 V' }); B.group.position.set(0, 0, ZH); CG.add(B.group);
   const SW = makeSwitch(S, { gap: SWG, y: Y }); SW.group.position.set(-X, 0, SWZ); CG.add(SW.group);
   const RX = resistor(S, { len: RL, radius: 0.14, bands: [0xff7a00, 0x111111, 0xe8231a, 0xd4af37], obstacles: 10 });
-  RX.group.position.set(X, Y, RZ); CG.add(RX.group);   // turuncu-siyah-kırmızı = 30 × 100 = 3 kΩ
+  RX.group.position.set(X, Y, RZ); CG.add(RX.group); RX.group.userData.box = 'direnç'; B.group.userData.box = 'pil'; SW.group.userData.box = 'anahtar';   // turuncu-siyah-kırmızı = 30 × 100 = 3 kΩ
   check(30 * 100 === 3000, 'renk kodu: turuncu(3) siyah(0) kırmızı(×100) = 3 kΩ');
 
   // grafik paneli: arka kenarın üstünde, kameraya dönük
-  const GP = graphPanel(S);
+  const GP = graphPanel(S); GP.mesh.userData.box = 'grafik';
   GP.mesh.position.set(0, 0.5, -ZH - 0.32); GP.mesh.rotation.x = -0.8; CG.add(GP.mesh);
 
   // elektronlar
@@ -244,7 +244,7 @@ export function build(S) {
   const qPos = (p, out) => out.lerpVectors(pb, pa, p).setY(Y + 0.1 + 0.55 * Math.sin(Math.PI * p));
 
   // voltmetre + uçlar (o1'den itibaren)
-  const VMt = voltmeter(S); VMt.group.position.set(-0.12, 0, 0.12); CG.add(VMt.group);
+  const VMt = voltmeter(S); VMt.group.userData.box = 'voltmetre'; VMt.group.position.set(-0.12, 0, 0.12); CG.add(VMt.group);
   const leadMat = (c) => new THREE.MeshPhysicalMaterial({ color: c, roughness: 0.5, transparent: true, opacity: 0 });
   const mkLead = (from, to, mat) => {
     const mid = from.clone().lerp(to, 0.5); mid.y += 0.25;
@@ -255,7 +255,7 @@ export function build(S) {
   mkLead(new THREE.Vector3(-0.3, 0.2, 0.0), back, lmR); mkLead(new THREE.Vector3(-0.3, 0.2, 0.24), front, lmK);
 
   // ------------------------------------------------ gerçek hayat: duvar anahtarı + lamba (aynı kadrajda)
-  const LG = new THREE.Group(); scene.add(LG); LG.visible = false; LG.scale.setScalar(1.3);
+  const LG = new THREE.Group(); scene.add(LG); LG.visible = false; LG.userData.main = true; LG.scale.setScalar(1.3);
   // priz (230 V AC kaynak, ön kenar) → açık bıçaklı anahtar (sol kenar) → lamba (sağ kenar); tel kesintisiz, açık devre = açık anahtar (2c-2)
   const LX = 0.75, LZ = 0.45, LY = 0.2, LSG = 0.4;
   LG.add(platform(S, 0, 0, { r: 0.9 }));
@@ -270,14 +270,14 @@ export function build(S) {
     const pts = []; for (let k = 0; k <= 200; k++) pts.push(Lw.curve.getPointAt(((a0 + ((b0 - a0) * k) / 200) % 1 + 1) % 1));
     const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 400, 0.028, 10), S.M.copper); m.castShadow = true; LL.add(m);
   }
-  const LSW = makeSwitch(S, { gap: LSG, y: LY }); LSW.group.position.set(-LX, 0, 0); LSW.set(0); LL.add(LSW.group);
-  const outlet = new THREE.Group(); outlet.position.set(0, 0, LZ); LL.add(outlet);
+  const LSW = makeSwitch(S, { gap: LSG, y: LY }); LSW.group.position.set(-LX, 0, 0); LSW.set(0); LL.add(LSW.group); LSW.group.userData.box = 'anahtar';
+  const outlet = new THREE.Group(); outlet.position.set(0, 0, LZ); LL.add(outlet);  outlet.userData.box = 'priz';
   const ob = new THREE.Mesh(new RoundedBoxGeometry(0.44, 0.36, 0.2, 4, 0.05), new THREE.MeshPhysicalMaterial({ color: 0xeceae4, roughness: 0.35, clearcoat: 0.4 }));
   ob.position.y = 0.18; ob.castShadow = true; outlet.add(ob);
   const of = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.02, 32), new THREE.MeshPhysicalMaterial({ color: 0xd9d6ce, roughness: 0.4 }));
   of.rotation.x = Math.PI / 2; of.position.set(0, 0.19, 0.105); outlet.add(of);
   for (const sx of [-0.045, 0.045]) { const h = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.03, 12), new THREE.MeshBasicMaterial({ color: 0x15171a })); h.rotation.x = Math.PI / 2; h.position.set(sx, 0.19, 0.112); outlet.add(h); }
-  const LB = makeBulb(S, { scale: 0.9 }); LB.group.position.set(LX, 0, 0); LB.group.rotation.y = Math.PI / 2; LL.add(LB.group);
+  const LB = makeBulb(S, { scale: 0.9 }); LB.group.position.set(LX, 0, 0); LB.group.rotation.y = Math.PI / 2; LL.add(LB.group); LB.group.userData.box = 'lamba';
   const arc = new THREE.Mesh(new THREE.TorusGeometry(LSG / 2, 0.018, 8, 40, Math.PI), new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true, opacity: 0 }));
   arc.rotation.y = Math.PI / 2; arc.position.set(-LX, LY + 0.1, 0); LL.add(arc);
   const WS = { group: LSW.group };

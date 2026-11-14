@@ -46,6 +46,23 @@
   // güvenli alan ölçümü (AGENT.md bölüm 4): görünen her yazının içerik kutusu, kare yüzdesi olarak
   window.__boxes = () => [...document.querySelectorAll('#overlay .ovl')].filter((e) => e.style.display !== 'none' && +getComputedStyle(e).opacity > 0.05 && e.firstChild)
     .map((e) => { const r = e.firstChild.getBoundingClientRect(); return { id: e.dataset.id, x0: r.left / W * 100, x1: r.right / W * 100, y0: r.top / H * 100, y1: r.bottom / H * 100, text: e.textContent.slice(0, 40) }; });
+  // nesne kutuları (bölüm 4: yazı nesneye binmez; dengeli doluluk): userData.box adı olan görünür nesnelerin ekran izdüşümü;
+  // userData.main = true olan görünür grupların birleşik kutusu 'ANA' olarak döner
+  window.__objects = () => {
+    const out = [], v = new (S.camera.position.constructor)();
+    const visible = (o) => { for (let p = o; p; p = p.parent) if (!p.visible) return false; return true; };
+    const proj = (o) => {
+      o.updateWorldMatrix(true, true); let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9, any = false;
+      o.traverse((m) => { if (!m.isMesh || !visible(m) || m.userData.nobox) return; const mt = m.material; if (mt && mt.transparent && mt.opacity < 0.05) return;
+        if (!m.geometry.boundingBox) m.geometry.computeBoundingBox(); const b = m.geometry.boundingBox;
+        for (let i = 0; i < 8; i++) { v.set(i & 1 ? b.max.x : b.min.x, i & 2 ? b.max.y : b.min.y, i & 4 ? b.max.z : b.min.z).applyMatrix4(m.matrixWorld).project(S.camera);
+          const X = (v.x + 1) * 50, Y = (1 - v.y) * 50; x0 = Math.min(x0, X); x1 = Math.max(x1, X); y0 = Math.min(y0, Y); y1 = Math.max(y1, Y); any = true; } });
+      return any ? { x0, x1, y0, y1 } : null; };
+    S.scene.traverse((o) => { if (!visible(o)) return;
+      if (o.userData.box) { const r = proj(o); if (r) out.push({ id: o.userData.box, ...r }); }
+      if (o.userData.main) { const r = proj(o); if (r) out.push({ id: 'ANA', ...r }); } });
+    return out;
+  };
   if (q.get('mask') === '1') (await import('./lib/maske.js')).mask(wrap);
   window.__ready = true;
 </script>
