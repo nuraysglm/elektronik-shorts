@@ -42,3 +42,4 @@
 - Sıradaki: devre büyütülür/aşağı iner, grafik devre içine alınır, etiketler nesne yanına → güvenli alan 0/0/0 → 4 parça render → birleştir → kalite → v3 eski/'ye → Metricool (670534653296070172) yalnızca video, tarih 15.11 16:00 aynı.
 - 08:20 UTC: v4 yerleşim bitti: devre X=1,0 ZH=1,4, grafik döngü içinde, kamera CD 9,3 / 62°; etiketler nesne yanına; gerçek hayat dikdörtgen kaide. Ölçüm: güvenli alan 0, kesişim 0, doluluk 0 ihlal (ANA x ≈ %7–86, y ≈ %27–79). Sıradaki: 4 parça render.
 - parca-01: tamam (08:59 UTC)
+- parca-00: tamam (09:00 UTC)
