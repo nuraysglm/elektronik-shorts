@@ -14,3 +14,4 @@
 - Sıradaki: 4 parça render → birleştir → kalite → v1 eski/'ye → Metricool (7591375855375960443) yalnızca video, tarih 16.11 16:00 aynı.
 - parca-03: tamam (12:53 UTC)
 - parca-01: tamam (12:53 UTC)
+- parca-00: tamam (12:53 UTC)
