@@ -76,6 +76,19 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 5. **Bağımsız denetim (bölüm 7 A) seviyeyi de denetler:** denetçiye "bu video üniversite birinci sınıf devre teorisi öğrencisine yeni ve önemli bir şey öğretiyor mu, yoksa lise/ortaokul düzeyinde mi?" sorusunu da sor; "lise/ortaokul" cevabı → senaryoyu yeniden yaz.
 6. Konu 2–5 (4'lü temel seri) kanal sahibinin isteğiyle daha temel düzeyde yapılmıştı; bundan sonraki bütün videolar bu bölüme uyar.
 
+## 2d. Doğruluk ve gösterim (kanal sahibinin emri, 14.11.2026 — mutlak kural)
+
+**Hiçbir videoda yanlış veya yanıltıcı tek bir bilgi, sayı, formül ya da gösterim olmaz.** Bilgi doğru olsa bile yazılışı yanlış okunmaya açıksa (006'da 'i = dq/dt · q = ∫ i dt': orta nokta çarpma gibi okundu) bu da hatadır.
+1. **Güvenilir kaynak:** Prof. Behzad Razavi'nin Basic Circuits dersleri (ve kitapları) güvenilir ana kaynaktır; ders konularında gösterim ve tanımlar Razavi'ye uyar. Razavi'de olmayan her iddia ikinci bir güvenilir kaynakla (Wikipedia/ders kitabı) doğrulanır; doğrulanamayan bilgi videoya girmez.
+2. **Formül yazım kuralları:**
+   - Her denklem ayrı satırda; iki denklem aynı satırdaysa yalnızca virgül veya noktalı virgülle ayrılır. **'·' (orta nokta) yalnızca çarpma için** kullanılır, ayırıcı olarak asla.
+   - Çarpma tutarlı yazılır (× veya ·, bir videoda tek biri).
+   - Belirli integral sınırlarıyla yazılır (q = ∫₀ᵗ i dt); türev/integral değişkenleri açık.
+   - Birimler ve ön ekler doğru (mA, kΩ, mC); sayılar Türkçe ondalık virgülle (0,30 A); büyüklük harfleri tutarlı (aynı videoda i ve I karışmaz; ani değer küçük harf).
+   - Oklar (→, ⇒) yalnızca "sonuç olarak/olursa" anlamında; "eşittir" yerine kullanılmaz.
+3. **Animasyon kalıntısı yok:** Kalem imleci yazı bitince tamamen kaybolur; yarım kalmış harf, takılı imleç, titreyen etiket olmaz.
+4. **Denetim:** Bölüm 7 A'daki bağımsız denetçiye ekrandaki **her yazı ve formül tek tek** verilir ve sorulur: "Bu doğru mu? Bir öğrenci bunu yanlış okuyabilir mi? Razavi'nin gösterimiyle tutarlı mı?" Ayrıca son videodan her yazının tam göründüğü kareler alınıp okunur. Tek bir şüpheli gösterim → düzelt, yeniden render et.
+
 ## 2c. Devre çizimi kuralları (kanal sahibinin emri, 12.11.2026)
 
 1. **Tel her zaman kesintisiz ve görünür:** Devredeki bakır tel her elemanın arasında bütün yol boyunca çizilir ve kamera açısında görünür kalır. Elektronlar/yük parçacıkları **yalnızca telin içinde** hareket eder; tel görünmeyen yerde "havada duran" elektron olmaz (006 v2'deki hata). Kalite kontrolünde kanca karesi ve her sahnenin ortasından alınan karede telin tamamı görünüyor mu, elektronlar telin üstünde mi kontrol et.
