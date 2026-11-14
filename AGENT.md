@@ -97,6 +97,13 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 4. **Eksen etiketleri ve notlar hiçbir şeyle çakışmaz** (eğri, nokta, başka not); etiketler her zaman okunur.
 5. Grafikteki her yazı bölüm 2d'deki denetimden geçer.
 
+## 2f. Zor noktalar ve "Bilmen gerekenler" kartı (kanal sahibinin emri, 14.11.2026 — her videoda zorunlu)
+
+1. **Senaryodan önce zor noktaları belirle:** Razavi transkriptini okuduktan sonra `wip/<id>/zor-noktalar.md` yaz: (a) öğrencilerin bu konuda anlamakta zorlandığı veya karıştırdığı 2–4 nokta (ör. "omik direncin I–V'si doğrusaldır ama V sabitken i–R doğrusal değildir"), (b) videoyu anlamak için önceden bilinmesi gereken 1–3 ön bilgi (ör. "Ohm yasası V = IR", "ideal kaynak tanımı"). Senaryo bu noktaları animasyonla açıklar; vurgulanan yanlış (bölüm 2b-2) bunlardan seçilir.
+2. **Videonun sonunda "Bilmen gerekenler" kartı:** Kapanıştan önce, aynı ekranda (sahne geçişi kurallarıyla) 3–4 maddelik kısa bir liste kalemle yazılır: konunun en önemli sonuçları ve zor noktaların doğru hâli; her madde ≤ 6–7 kelime, formüller bölüm 2d'ye uygun. Örnek (Ders 2): "• İdeal V kaynağı: V sabit, i yüke bağlı • İdeal i kaynağı: i sabit, V yüke bağlı • Akım kaynağı açık bırakılmaz • V sabitken i ∝ 1/R (doğrusal değil)". Kart en az 4 sn okunur kalır, arka planda sahne yaşamaya devam eder; toplam süre yine ≤ 90 sn (gerekirse başka sahneyi kısalt).
+3. **Açıklamada da aynı liste:** YouTube açıklamasına "Bilmen gerekenler:" başlığıyla aynı maddeler ve varsa ön bilgiler ("Önce bilmen gereken: …") yazılır (kaynak atfının üstüne).
+4. Bağımsız denetçi (bölüm 7 A) zor noktaların videoda gerçekten açıklandığını ve kartın doğru olduğunu da kontrol eder.
+
 ## 2c. Devre çizimi kuralları (kanal sahibinin emri, 12.11.2026)
 
 1. **Tel her zaman kesintisiz ve görünür:** Devredeki bakır tel her elemanın arasında bütün yol boyunca çizilir ve kamera açısında görünür kalır. Elektronlar/yük parçacıkları **yalnızca telin içinde** hareket eder; tel görünmeyen yerde "havada duran" elektron olmaz (006 v2'deki hata). Kalite kontrolünde kanca karesi ve her sahnenin ortasından alınan karede telin tamamı görünüyor mu, elektronlar telin üstünde mi kontrol et.
