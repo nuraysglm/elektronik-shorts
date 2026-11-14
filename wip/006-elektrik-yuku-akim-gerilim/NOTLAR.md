@@ -45,3 +45,4 @@
 - parca-00: tamam (09:00 UTC)
 - parca-02: tamam (09:01 UTC)
 - parca-03: tamam (09:02 UTC)
+- 09:20 UTC: render + 2 düzeltme aralığı, birleştirildi; kalite GEÇTİ (kalite.md). v3 eski/'ye. Parçalar silindi. Sıradaki: main'de doğrula → Metricool yalnızca video (tarih 15.11 16:00 aynı).

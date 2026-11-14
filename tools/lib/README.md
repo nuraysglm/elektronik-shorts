@@ -49,3 +49,8 @@ Bitmiş sahneler (`scenes/001-…`, `scenes/eski-002-…`) kendi kopyalarını k
 - `S.text(id, html, {reveal})` — `reveal` 0..1: soldan sağa yumuşak kenarlı açılma + kalem ucu parıltısı
 - `penSec(html)` — yazma süresi (0,3 sn/kelime); `penTimeline(BEATS)` → `{Z, A, W, DUR}` (yazma + okuma süresi)
 - `narrationPen(S, BEATS, Z, W)` — kalemli üst yazı; `chain: true` adımlar alt satırda yazılır, öncekiler yukarı kayar (en fazla 2 satır)
+
+## Yazı–nesne çakışması ve dengeli doluluk (bölüm 4, 14.11.2026) — player.html `__objects`, render.mjs `--safe`
+- Sahnede çakışma denetlenecek nesneye `obj.userData.box = 'ad'` (pil, direnç, grafik ekranı, voltmetre, ok…), ana sahne grubuna `group.userData.main = true` yaz.
+- `--safe` çıktısı (`guvenli_alan.json`): `kesisimler` (yazı × nesne ve yazı × yazı), `doluluk` (ana sahne kutusu; < %70 genişlik veya < %50 yükseklik → `doluluk_ihlalleri`). Teller kutulanmaz (döngü kutusu çok büyük); tel üstü yazıyı karelerde gözle kontrol et.
+- Kutular nesne geometrisinin sınır kutusu izdüşümüdür (biraz geniş/temkinli).

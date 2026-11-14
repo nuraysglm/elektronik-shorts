@@ -234,7 +234,7 @@ export function build(S) {
   const arrow = new THREE.Group();
   const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.026, 0.026, 0.55, 16), arrowMat); shaft.rotation.z = Math.PI / 2; arrow.add(shaft);
   const head = new THREE.Mesh(new THREE.ConeGeometry(0.075, 0.18, 20), arrowMat); head.rotation.z = -Math.PI / 2; head.position.x = 0.36; arrow.add(head);
-  arrow.position.set(X - 0.3, 0.24, 0.62); arrow.rotation.y = Math.PI / 2; CG.add(arrow);
+  arrow.position.set(X - 0.3, 0.24, 0.62); arrow.rotation.y = Math.PI / 2; CG.add(arrow); arrow.userData.box = 'akım oku';
   check(new THREE.Vector3(1, 0, 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI / 2).z < -0.99, 'ok −z yönünde (sağ kenarda + → −)');
 
   // +1 C test yükü (v1): pilin − ucundan (b) + ucuna (a) yay üzerinde
@@ -349,7 +349,7 @@ export function build(S) {
     label('lsw', 'anahtar', -X + 0.58, 0.45, SWZ - 0.05, { opacity: onC(0, Z.h1[1]), size: 3.8 });
     label('lr', '3 kΩ', X - 0.4, 0.45, RZ, { opacity: onC(0, Z.c2[1]) + onC(A.f1, DUR + 1), size: 4.0 });
     label('le', gr('elektronlar'), -X + 0.5, 0.32, 0.85, { opacity: onC(TC + 0.6, Z.c1[1]), size: 3.8 });
-    label('la', rd('akım yönü'), X - 0.45, 0.4, 0.62, { opacity: onC(TC + 1.0, Z.c1[1]), size: 3.8 });
+    label('la', rd('akım yönü'), X - 0.74, 0.4, 0.62, { opacity: onC(TC + 1.0, Z.c1[1]), size: 3.8 });
     label('lqa', hl('a (+)'), 0.56, 0.75, ZH - 0.5, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
     label('lqb', hl('b (−)'), -0.56, 0.75, ZH - 0.5, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
     label('lq', `+1 C`, tq.position.x, tq.position.y + 0.5, tq.position.z, { opacity: tq.visible ? onC(QM[0], Z.v1[1]) * seg(qp, 0.3, 0.4) * (1 - seg(qp, 0.6, 0.7)) : 0, size: 3.6 });
@@ -357,7 +357,7 @@ export function build(S) {
     label('lp', hl('+'), -X + 0.34, 0.4, SWZ - SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
     label('ln', hl('−'), -X + 0.34, 0.4, SWZ + SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
     label('li0', rd('i = 0'), X - 0.45, 0.45, RZ + 0.35, { opacity: onC(VM[0], SWC2[0]), size: 4.0 });
-    label('li3', rd('i = 3 mA'), X - 0.45, 0.45, RZ + 0.35, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
+    label('li3', rd('i = 3 mA'), X - 0.42, 0.45, RZ, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
     label('l230', hl('≈ 230 V (AC)'), ...lw(-LX + 0.45, 0.3, -0.3), { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
     label('lsa', 'anahtar açık', ...lw(-LX + 0.52, 0.3, 0.08), { opacity: life ? easeOut(seg(t, CUT1 + 0.2, CUT1 + 0.6)) : 0, size: 3.6 });
     label('loff', 'lamba sönük', ...lw(LX - 0.12, 0.4, -LZ), { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
