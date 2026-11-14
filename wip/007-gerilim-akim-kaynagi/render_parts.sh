@@ -9,7 +9,7 @@ one() {
   node tools/render.mjs $S --from ${B[$i]} --to ${B[$((i+1))]} --no-audio --out $f.tmp.mp4 > $D/.log$i 2>&1 && mv $f.tmp.mp4 $f || return
   ( flock 9
     echo "- parca-0$i: tamam ($(date -u +%H:%M) UTC)" >> $D/NOTLAR.md
-    git add $f $D/NOTLAR.md && git commit -qm "007: render parçası 0$i" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_01Bss84wESNXrDUNDa35kLcd" && \
+    git add $f $D/NOTLAR.md && git commit -qm "007 v2: render parçası 0$i" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_01Bss84yg24LWuFPgtkSst89" && \
     for k in 1 2 3 4; do git push -q origin claude/007-gerilim-akim-kaynagi && break; sleep $((2**k)); done
   ) 9>/tmp/render007.lock
 }
