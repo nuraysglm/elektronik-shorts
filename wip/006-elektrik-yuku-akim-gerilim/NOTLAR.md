@@ -40,4 +40,5 @@
 ## 4. sürüm (yeniden düzenle, 13.11.2026: yalnızca ekran düzeni) — 14.11.2026
 - 08:25 UTC: render.mjs --safe artık yazı–nesne kesişimini (userData.box) ve ana sahne doluluğunu (userData.main; ≥ %70 genişlik, ≥ %50 yükseklik) ölçüyor. v3 ölçümü: doluluk x %19–80, y %36–68 (yetersiz); 16 çakışma (3 kΩ×direnç, a/b×pil, üst yazılar×grafik vb.).
 - Sıradaki: devre büyütülür/aşağı iner, grafik devre içine alınır, etiketler nesne yanına → güvenli alan 0/0/0 → 4 parça render → birleştir → kalite → v3 eski/'ye → Metricool (670534653296070172) yalnızca video, tarih 15.11 16:00 aynı.
-- 08:58 UTC: v4 yerleşim bitti: devre X=1,0 ZH=1,4, grafik döngü içinde, kamera CD 9,3 / 62°; etiketler nesne yanına; gerçek hayat dikdörtgen kaide. Ölçüm: güvenli alan 0, kesişim 0, doluluk 0 ihlal (ANA x ≈ %7–86, y ≈ %27–79). Sıradaki: 4 parça render.
+- 08:20 UTC: v4 yerleşim bitti: devre X=1,0 ZH=1,4, grafik döngü içinde, kamera CD 9,3 / 62°; etiketler nesne yanına; gerçek hayat dikdörtgen kaide. Ölçüm: güvenli alan 0, kesişim 0, doluluk 0 ihlal (ANA x ≈ %7–86, y ≈ %27–79). Sıradaki: 4 parça render.
+- parca-01: tamam (08:59 UTC)
