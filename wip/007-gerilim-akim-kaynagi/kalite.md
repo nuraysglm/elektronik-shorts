@@ -1,10 +1,27 @@
-# 007 — kalite kontrolü (bölüm 7) — 1. tur GEÇTİ (render sonrası 1 etiket çakışması düzeltildi)
+# 007 (2. sürüm) — kalite kontrolü (bölüm 7)
 
-**A. İçerik:** dogruluk.md'de her iddia Razavi Ders 2 zaman damgasıyla ✔; tüm sayılar sahne kodunda hesaplanıp check() ile doğrulandı (render sırasında konsol hatası yok). Gerekli bilgi listesinin tamamı videoda. Bağımsız metin denetimi (render öncesi): seviye **üniversite**; 4 düzeltme uygulandı ("İdealde R → 0", "V = i·R → ∞ (tanımsız)", "Şarj, CC evresi ≈ akım kaynağı", etiket "şarj (CC evresi)" → "şarj"). Uygulanmayan öneriler (bilgi yoğunluğu/tek kavram kuralı): akım kaynağını kısa devre / gerilim kaynağını açık bırakmanın güvenli olduğu dörtlü tablo, akım kaynağında V işaretinin devreye bağlı olması — sonraki videolarda (bağımlı kaynaklar, I–V) ele alınabilir.
-**A2. Görsel öğretim:** Yazılar kapalıyken: R değişirken voltmetre sabit / ampermetre ve elektron hızı değişir (gerilim kaynağı); ampermetre sabit / voltmetre değişir (akım kaynağı); anahtar açılınca voltmetre ∞, kaynak kırmızı uyarı; canlı I(R) hiperbolü ve V(R) doğrusu. Gerçek hayat mini modelleri (AA pil, akü, şarj olan telefon) var. Kurallar en sonda. Elektronlar yeşil − → +, kırmızı geleneksel akım oku + → −.
-**B. Görüntü:** Kontak sayfaları (her yazının ilk anı + 0,5 sn, sahne geçişleri ±0,5 sn, genel kareler) incelendi. 1. bakışta gerçek hayat sahnesinde "araba aküsü" / "şarj (CC evresi)" etiketleri üst üste biniyordu → etiketler kısaltıldı, 57–69 sn yeniden render edilip eklendi; tekrar kontrol: çakışma yok. Geçişler kesme (≤ 0,3 sn), kayma/yakınlaşma yok. Tel kesintisiz, elektronlar yalnızca telde; açık devre = açık anahtar. Ders etiketi yok. Üst %11 boş, karartma/gradyan yok.
-**Güvenli alan:** guvenli_alan.json — tüm video 668 kutu, 1 ihlal (f1 çıkışında üst kenar y %10,8) → yazı bandı y %16/%22,5'e indirildi; 56–70 sn yeniden ölçüm 0 ihlal. YouTube maskeli kareler (kanca, v2, c2, g1) incelendi: alt %32 ve sağ sütunda yazı yok.
-**C. Ses:** −16,3 LUFS, tepe −2,0 dBFS (astats −1,97 dB); 4 kHz üstü en yüksek −18,5 dB. Seslendirme/müzik yok; yalnızca olay efektleri (pop, click, thud, hum).
-**Okuma süresi:** penTimeline ile her yazı ≥ 1,2 + 0,35 × kelime (+ kalem yazım süresi).
-**Durağan an:** freezedetect (n=0,001, d=0,5) → 0.
-**D. Teknik:** 1080×1920, 30 fps, H.264 + AAC, 83,0 sn (≤ 90).
+**Sonuç: GEÇTİ (1. turda).** Süre 83,0 sn (≤ 90). 1. sürümün raporu: `kalite-v1.md`.
+Kanal sahibinin iş emri (13.11.2026): YALNIZCA ekran düzeni + yazıların grafiğe/nesnelere binmesi. İçerik, ekran yazıları, zamanlama ve süre v1 ile aynı. v1 → `media/…/eski/007-gerilim-akim-kaynagi-v1.mp4`.
+
+## İş emri
+- Devre büyütüldü (X 0,85 → 1,0; ZH 0,95 → 1,4), kamera 10,6 → 9,6 / 58° → 62°. Ana sahne x ≈ %8–89, y ≈ %27–80 (kaynak gövdesi; yazısız).
+- Grafik ekranı devre döngüsünün içinde, yazı bandının altında (v1'de üst yazılar ve kanca alt satırı grafiğe biniyordu). Kanca alt satırı "İdeal kaynak: ne sabit kalır?" grafikle arasında boşlukla.
+- "R = … kΩ" etiketi direncin soluna alındı (v1'de direncin üstündeydi). "ideal gerilim/akım kaynağı" etiketi iki satır, devre içinde sol tarafta; voltmetre kablolarından ve alt %32'den uzak (v1'de kabloların üstündeydi). Voltmetre sağa (x 0,22), ampermetre sol-arka köşeye alındı.
+- Gerçek hayat sahnesi: tek dikdörtgen kaide, ölçek 1,05 → 1,25; önde AA pil + akü, arkada şarj olan telefon; etiketler model yanında.
+
+## Otomatik ölçüm (`render.mjs --safe`, guvenli_alan.json)
+- Güvenli alan: 666 kutu, **0 ihlal**. Yazı–nesne (kaynak, anahtar, ampermetre, voltmetre, voltmetre kabloları, direnç, grafik, akım oku, AA pil, akü, telefon) ve yazı–yazı kesişimi: **0**. Doluluk (≥ %70 genişlik, ≥ %50 yükseklik): 167 örnek, **0 ihlal**.
+
+## A. İçerik
+- v1 ile aynı (dogruluk.md; bağımsız denetim v1'de yapıldı, içerik değişmedi → tekrarlanmadı). Render günlüklerinde DOĞRULAMA HATASI yok.
+
+## B. Görüntü
+- Kontak sayfaları (son videodan): 0,3 / 4 / 11 / 16 / 21,7 / 27 / 35,5 / 42,3 / 47,3 / 51 / 53,4 / 57,4 / 61,8 / 66 / 69,9 / 76,4 sn + render öncesi YouTube maskeli 6+6 kare. Kesilme, taşma, titreme, çakışma yok; tel kesintisiz, elektronlar telde; açık devre = açık anahtar; üst %11 boş; karartma/gradyan yok; ders etiketi yok.
+- Kesmeler (≈ 35,0 / 57,3 / 69,5 sn): aynı kadraj, doğrudan kesme. 57,3 sn'de gerçek hayat kaidesi 0,3 sn boş görünür, sonra modeller belirir (v1 ile aynı zamanlama).
+- freezedetect: 0 donma.
+
+## C. Ses
+- Entegre −16,3 LUFS, tepe −2,0 dBFS; 4 kHz üstü max −18,5 dB. Seslendirme/müzik yok (efektler v1 ile aynı).
+
+## D. Teknik
+- 1080×1920, 30 fps, H.264 + AAC, 83,0 sn.
