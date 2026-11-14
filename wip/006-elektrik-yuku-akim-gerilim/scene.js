@@ -95,11 +95,11 @@ export const meta = {
 };
 
 // ---------------------------------------------------------------- yerleşim
-const X = 0.85, ZH = 0.95, Y = 0.2;
-const SWG = 0.55, SWZ = 0.05;               // anahtar sol kenarda
+const X = 1.0, ZH = 1.4, Y = 0.2;          // v4: devre büyütüldü (bölüm 4 dengeli doluluk)
+const SWG = 0.6, SWZ = 0.05;               // anahtar sol kenarda
 const RL = 0.6, RZ = 0.0;                   // direnç sağ kenarda
-const CZ = -0.05;
-const GW = 1.4, GH = 1.15;                  // grafik paneli boyutu
+const CZ = 0.0;
+const GW = 1.3, GH = 1.15;                  // grafik paneli boyutu
 
 // LCD dokusu (005'ten): lcd(w,h,renk) → {tex, set(yazı)}
 function lcd(w, h, color) {
@@ -219,7 +219,7 @@ export function build(S) {
 
   // grafik paneli: arka kenarın üstünde, kameraya dönük
   const GP = graphPanel(S); GP.mesh.userData.box = 'grafik';
-  GP.mesh.position.set(0, 0.5, -ZH - 0.32); GP.mesh.rotation.x = -0.8; CG.add(GP.mesh);
+  GP.mesh.position.set(0.12, 0.42, -0.66); GP.mesh.rotation.x = -0.8; CG.add(GP.mesh);   // v4: devre döngüsünün içinde, arka tel görünür
 
   // elektronlar
   const N = 44;
@@ -244,7 +244,7 @@ export function build(S) {
   const qPos = (p, out) => out.lerpVectors(pb, pa, p).setY(Y + 0.1 + 0.55 * Math.sin(Math.PI * p));
 
   // voltmetre + uçlar (o1'den itibaren)
-  const VMt = voltmeter(S); VMt.group.userData.box = 'voltmetre'; VMt.group.position.set(-0.12, 0, 0.12); CG.add(VMt.group);
+  const VMt = voltmeter(S); VMt.group.userData.box = 'voltmetre'; VMt.group.position.set(-0.12, 0, 0.42); CG.add(VMt.group);
   const leadMat = (c) => new THREE.MeshPhysicalMaterial({ color: c, roughness: 0.5, transparent: true, opacity: 0 });
   const mkLead = (from, to, mat) => {
     const mid = from.clone().lerp(to, 0.5); mid.y += 0.25;
@@ -252,13 +252,13 @@ export function build(S) {
   };
   const lmR = leadMat(0xe8231a), lmK = leadMat(0x202226);
   const back = new THREE.Vector3(-X, 0.25, SWZ - SWG / 2), front = new THREE.Vector3(-X, 0.25, SWZ + SWG / 2);
-  mkLead(new THREE.Vector3(-0.3, 0.2, 0.0), back, lmR); mkLead(new THREE.Vector3(-0.3, 0.2, 0.24), front, lmK);
+  mkLead(new THREE.Vector3(-0.3, 0.2, 0.3), back, lmR); mkLead(new THREE.Vector3(-0.3, 0.2, 0.54), front, lmK);
 
   // ------------------------------------------------ gerçek hayat: duvar anahtarı + lamba (aynı kadrajda)
-  const LG = new THREE.Group(); scene.add(LG); LG.visible = false; LG.userData.main = true; LG.scale.setScalar(1.3);
+  const LS = 1.55; const LG = new THREE.Group(); scene.add(LG); LG.visible = false; LG.userData.main = true; LG.scale.setScalar(LS);
   // priz (230 V AC kaynak, ön kenar) → açık bıçaklı anahtar (sol kenar) → lamba (sağ kenar); tel kesintisiz, açık devre = açık anahtar (2c-2)
-  const LX = 0.75, LZ = 0.45, LY = 0.2, LSG = 0.4;
-  LG.add(platform(S, 0, 0, { r: 0.9 }));
+  const LX = 0.56, LZ = 0.72, LY = 0.2, LSG = 0.4;
+  { const pb = new THREE.Mesh(new RoundedBoxGeometry(2 * LX + 0.2, 0.08, 2 * LZ + 0.5, 4, 0.04), new THREE.MeshPhysicalMaterial({ color: 0x3a3631, roughness: 0.6, clearcoat: 0.2 })); pb.position.y = 0.04; pb.receiveShadow = pb.castShadow = true; pb.position.x = 0.03; LG.add(pb); }   // v4: dikdörtgen kaide (doluluk)
   const LL = new THREE.Group(); LL.position.y = 0.08; LG.add(LL);
   const lloop = roundedLoop([[0, -LZ], [-LX, -LZ], [-LX, LZ], [LX, LZ], [LX, -LZ]], { r: 0.16 });
   const Lw = closedWire(S, lloop, { y: LY }); Lw.mesh.visible = false;
@@ -281,13 +281,16 @@ export function build(S) {
   const arc = new THREE.Mesh(new THREE.TorusGeometry(LSG / 2, 0.018, 8, 40, Math.PI), new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true, opacity: 0 }));
   arc.rotation.y = Math.PI / 2; arc.position.set(-LX, LY + 0.1, 0); LL.add(arc);
   const WS = { group: LSW.group };
-  const lw = (x, y, z) => [x * 1.3, (y + 0.08) * 1.3, z * 1.3];   // LG yerelinden dünyaya
+  const LGX = -0.12; LG.position.x = LGX; const lw = (x, y, z) => [x * LS + LGX, (y + 0.08) * LS, z * LS];   // LG yerelinden dünyaya
 
   // ------------------------------------------------ kamera: yerinde, çok yavaş
+  // v4 kamera: sahne yazı bandının altından y ≈ %76'ya, genişliğin ~%78'i (bölüm 4); yerinde çok yavaş yaşar
+  const CD = +(globalThis.__CD ?? 9.3), CE = +(globalThis.__CE ?? 62), CX = +(globalThis.__CX ?? 0.1), CT = +(globalThis.__CT ?? -0.07);
+  const ck = (t, a, dd, de) => [t, a, CD + dd, CE + de, CX, CT];
   const cam = camRig(S, [
-    [0, 0.0, 10.6, 58, 0, CZ], [A.c1, 0.05, 10.5, 58, 0, CZ], [A.c2, -0.04, 10.4, 59, 0, CZ], [A.v1, 0.04, 10.5, 58, 0, CZ],
-    [A.o1, -0.05, 10.4, 58, 0, CZ], [A.o2, 0.04, 10.5, 59, 0, CZ], [A.g1, -0.04, 10.4, 58, 0, CZ], [A.f1, 0.05, 10.5, 58, 0, CZ],
-    [DUR, -0.04, 10.3, 59, 0, CZ],
+    ck(0, 0.0, 0.1, 0), ck(A.c1, 0.04, 0.05, 0), ck(A.c2, -0.03, 0, 0.5), ck(A.v1, 0.03, 0.05, 0),
+    ck(A.o1, -0.04, 0, 0), ck(A.o2, 0.03, 0.05, 0.5), ck(A.g1, -0.03, 0, 0), ck(A.f1, 0.04, 0.05, 0),
+    ck(DUR, -0.03, -0.05, 0.5),
   ]);
   const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15, y2: 21.5 });
 
@@ -339,26 +342,26 @@ export function build(S) {
 
     // kanca alt satırı
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
-    S.text('sub', 'Anahtar açık: akım yok. Ya gerilim?', { y: 26.3, size: 4.2, weight: 600, opacity: subO, nowrap: true });
+    S.text('sub', 'Anahtar açık: akım yok. Ya gerilim?', { y: 25.7, size: 4.2, weight: 600, opacity: subO, nowrap: true });
 
     // nesne etiketleri
     const onC = (a, b) => (life ? 0 : fade(t, a, b, 0.3));
-    label('lsw', 'anahtar', -X - 0.05, 0.62, SWZ - 0.05, { opacity: onC(0, Z.h1[1]), size: 3.8 });
-    label('lr', '3 kΩ', X + 0.0, 0.55, RZ, { opacity: onC(0, Z.c2[1]) + onC(A.f1, DUR + 1), size: 4.0 });
-    label('le', gr('elektronlar'), -0.25, 0.32, -ZH + 0.18, { opacity: onC(TC + 0.6, Z.c1[1]), size: 3.8 });
+    label('lsw', 'anahtar', -X + 0.58, 0.45, SWZ - 0.05, { opacity: onC(0, Z.h1[1]), size: 3.8 });
+    label('lr', '3 kΩ', X - 0.4, 0.45, RZ, { opacity: onC(0, Z.c2[1]) + onC(A.f1, DUR + 1), size: 4.0 });
+    label('le', gr('elektronlar'), -X + 0.5, 0.32, 0.85, { opacity: onC(TC + 0.6, Z.c1[1]), size: 3.8 });
     label('la', rd('akım yönü'), X - 0.45, 0.4, 0.62, { opacity: onC(TC + 1.0, Z.c1[1]), size: 3.8 });
-    label('lqa', hl('a (+)'), 0.55, 0.62, ZH, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
-    label('lqb', hl('b (−)'), -0.55, 0.62, ZH, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
-    label('lq', `+1 C`, tq.position.x, tq.position.y + 0.32, tq.position.z, { opacity: tq.visible ? onC(QM[0], Z.v1[1]) * (1 - seg(qp, 0.7, 0.85)) : 0, size: 3.6 });
+    label('lqa', hl('a (+)'), 0.56, 0.75, ZH - 0.5, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
+    label('lqb', hl('b (−)'), -0.56, 0.75, ZH - 0.5, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
+    label('lq', `+1 C`, tq.position.x, tq.position.y + 0.5, tq.position.z, { opacity: tq.visible ? onC(QM[0], Z.v1[1]) * seg(qp, 0.3, 0.4) * (1 - seg(qp, 0.6, 0.7)) : 0, size: 3.6 });
     label('lw', `W = ${hl(fmt(9 * qp, 1) + ' J')}`, 0.0, 1.3, ZH - 0.45, { opacity: onC(QM[0] + 0.2, Z.v1[1]), size: 4.2 });
-    label('lp', hl('+'), -X - 0.18, 0.4, SWZ - SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
-    label('ln', hl('−'), -X - 0.18, 0.4, SWZ + SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
+    label('lp', hl('+'), -X + 0.34, 0.4, SWZ - SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
+    label('ln', hl('−'), -X + 0.34, 0.4, SWZ + SWG / 2, { opacity: onC(VMR[0], SWC2[0]), size: 4.6 });
     label('li0', rd('i = 0'), X - 0.45, 0.45, RZ + 0.35, { opacity: onC(VM[0], SWC2[0]), size: 4.0 });
-    label('li3', rd('i = 3 mA'), X - 0.4, 0.45, -0.55, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
-    label('l230', hl('≈ 230 V (AC)'), ...lw(-LX + 0.08, 0.78, -0.45), { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
-    label('lsa', 'anahtar açık', ...lw(-LX + 0.42, 0.3, 0.02), { opacity: life ? easeOut(seg(t, CUT1 + 0.2, CUT1 + 0.6)) : 0, size: 3.6 });
-    label('loff', 'lamba sönük', ...lw(LX - 0.3, 1.0, -0.15), { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
-    label('lpr', 'priz (230 V AC)', ...lw(0, 0.62, LZ), { opacity: life ? easeOut(seg(t, CUT1 + 0.3, CUT1 + 0.7)) : 0, size: 3.6 });
+    label('li3', rd('i = 3 mA'), X - 0.45, 0.45, RZ + 0.35, { opacity: onC(SWC2[1] + 0.3, CUT1), size: 4.0 });
+    label('l230', hl('≈ 230 V (AC)'), ...lw(-LX + 0.45, 0.3, -0.3), { opacity: life ? easeOut(seg(t, CUT1 + 1.0, CUT1 + 1.4)) : 0, size: 4.2 });
+    label('lsa', 'anahtar açık', ...lw(-LX + 0.52, 0.3, 0.08), { opacity: life ? easeOut(seg(t, CUT1 + 0.2, CUT1 + 0.6)) : 0, size: 3.6 });
+    label('loff', 'lamba sönük', ...lw(LX - 0.12, 0.4, -LZ), { opacity: life ? easeOut(seg(t, CUT1 + 0.4, CUT1 + 0.8)) : 0, size: 3.8 });
+    label('lpr', 'priz (230 V AC)', ...lw(0, 0.85, LZ - 0.1), { opacity: life ? easeOut(seg(t, CUT1 + 0.3, CUT1 + 0.7)) : 0, size: 3.6 });
     label('lli0', rd('i = 0'), ...lw(0, 0.4, -LZ), { opacity: life ? easeOut(seg(t, CUT1 + 0.6, CUT1 + 1.0)) : 0, size: 3.8 });
   };
 }

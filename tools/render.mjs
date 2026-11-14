@@ -112,6 +112,9 @@ try {
       for (const b of bx) for (const o of ob.filter((o) => o.id !== 'ANA')) {
         if (b.x0 < o.x1 && b.x1 > o.x0 && b.y0 < o.y1 && b.y1 > o.y0) kesisim.push({ t: tt, yazi: b.id, nesne: o.id, text: b.text, yx: [+b.x0.toFixed(1), +b.x1.toFixed(1)], yy: [+b.y0.toFixed(1), +b.y1.toFixed(1)], nx: [+o.x0.toFixed(1), +o.x1.toFixed(1)], ny: [+o.y0.toFixed(1), +o.y1.toFixed(1)] });
       }
+      // yazı–yazı çakışması (bölüm 4): iki görünür yazı kutusu kesişmez
+      for (let i = 0; i < bx.length; i++) for (let j = i + 1; j < bx.length; j++) { const a = bx[i], c = bx[j];
+        if (a.x0 < c.x1 && a.x1 > c.x0 && a.y0 < c.y1 && a.y1 > c.y0) kesisim.push({ t: tt, yazi: a.id, nesne: 'yazı:' + c.id, text: a.text + ' / ' + c.text }); }
       for (const b of bx) {
         const why = [b.x0 < 6 && 'sol', b.x1 > 86 && 'sağ', b.y0 < 11 && 'üst', b.y1 > 68 && 'alt', b.x1 - b.x0 > 80 && 'genişlik'].filter(Boolean);
         const r = { t: +t.toFixed(2), ...b, x0: +b.x0.toFixed(1), x1: +b.x1.toFixed(1), y0: +b.y0.toFixed(1), y1: +b.y1.toFixed(1) };
