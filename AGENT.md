@@ -89,6 +89,14 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 3. **Animasyon kalıntısı yok:** Kalem imleci yazı bitince tamamen kaybolur; yarım kalmış harf, takılı imleç, titreyen etiket olmaz.
 4. **Denetim:** Bölüm 7 A'daki bağımsız denetçiye ekrandaki **her yazı ve formül tek tek** verilir ve sorulur: "Bu doğru mu? Bir öğrenci bunu yanlış okuyabilir mi? Razavi'nin gösterimiyle tutarlı mı?" Ayrıca son videodan her yazının tam göründüğü kareler alınıp okunur. Tek bir şüpheli gösterim → düzelt, yeniden render et.
 
+## 2e. Grafik kuralları (kanal sahibinin emri, 14.11.2026)
+
+1. **Eksen her an gösterilen değeri kapsar.** Ölçü aletinde/yazıda görünen her değer grafikte de gerçek konumunda görünür; çalışma noktası eksen sınırına "yapışmaz" (007 v2'de ampermetre 14,3 mA gösterirken nokta 8 mA'de kaldı). Gerekirse eksen ölçeği animasyonla büyür veya baştan geniş seçilir; sınır dışına çıkan değer ancak açık bir "eksen dışı" oku ve değeriyle gösterilir.
+2. **Eğri formülle birebir:** Grafik veri noktaları sahne kodunda formülden hesaplanır; birkaç kontrol noktası (`console.assert`) ile eksen konumunun doğru değere denk geldiği doğrulanır (ör. i = V/R için R = 1 ve 3 kΩ).
+3. **Doğrusal olmayan ilişkiler adlandırılır:** Ters orantı, üstel vb. ilişkilerde kısa bir not yazılır (ör. "i ∝ 1/R — doğrusal değil"), çünkü öğrenciler sık sık doğrusal bekler.
+4. **Eksen etiketleri ve notlar hiçbir şeyle çakışmaz** (eğri, nokta, başka not); etiketler her zaman okunur.
+5. Grafikteki her yazı bölüm 2d'deki denetimden geçer.
+
 ## 2c. Devre çizimi kuralları (kanal sahibinin emri, 12.11.2026)
 
 1. **Tel her zaman kesintisiz ve görünür:** Devredeki bakır tel her elemanın arasında bütün yol boyunca çizilir ve kamera açısında görünür kalır. Elektronlar/yük parçacıkları **yalnızca telin içinde** hareket eder; tel görünmeyen yerde "havada duran" elektron olmaz (006 v2'deki hata). Kalite kontrolünde kanca karesi ve her sahnenin ortasından alınan karede telin tamamı görünüyor mu, elektronlar telin üstünde mi kontrol et.
