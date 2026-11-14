@@ -12,3 +12,5 @@
 ## 2. sürüm (yeniden düzenle, 13.11.2026: yalnızca ekran düzeni) — 14.11.2026
 - 12:20 UTC: yerleşim: devre X=1,0 ZH=1,4; grafik döngü içinde (GX −0,05, GZ −0,5, GW 1,3), voltmetre (0,22; 0,75), ampermetre arka-sol (AMZ −0,95), anahtar SWZ 0,35; kamera CD 9,6 / 62°. Kaynak etiketi ("ideal … kaynağı", 2 satır) devre içinde sola, kablolardan uzak; R etiketi direncin solunda; gerçek hayat dikdörtgen kaide, ölçek 1,25. render.mjs --safe: güvenli alan 0, yazı–nesne/yazı–yazı 0, doluluk 0 ihlal (ANA x ≈ %8–89, y ≈ %27–80). İçerik/yazılar/süre aynı (83,0 sn).
 - Sıradaki: 4 parça render → birleştir → kalite → v1 eski/'ye → Metricool (7591375855375960443) yalnızca video, tarih 16.11 16:00 aynı.
+- parca-03: tamam (12:53 UTC)
+- parca-01: tamam (12:53 UTC)
