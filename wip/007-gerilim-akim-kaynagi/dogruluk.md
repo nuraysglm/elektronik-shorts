@@ -21,4 +21,17 @@ Okunan kaynak: B. Razavi, Basic Circuits, Lecture 2 (YouTube Hd0ZTXM572U), vidIQ
 | Elektronlar − → +, geleneksel akım + → − | Akım yönü tanımı (kanal kuralı 2a-7) | Ders 1 | ✔ |
 | Renk kodu kırmızı-siyah-kırmızı (20 × 100 = 2 kΩ) — direnç gövdesi yalnızca simge; değer etiketi R değişkeni | Ayarlı direnç; bantlar sabit, ekrandaki R etiketi esas | — | ✔ |
 
+## v3 eklemeleri (15.11.2026)
+| İddia (ekranda) | Neden doğru | Kaynak | ✔ |
+|---|---|---|---|
+| Grafik i = 6/R: R = 3 kΩ'da 2 mA, 1 kΩ'da 6 mA, 0,25 kΩ'da 24 mA; eksen 0–30 mA hepsini kapsar | check() kontrol noktaları (gpy konumları %6,7 / %20 / %80) | hesap | ✔ |
+| i ∝ 1/R — doğrusal değil (V sabitken) | i = V/R hiperbol; Razavi i1 = v1/r1 eğrisi | [14:02–14:21] | ✔ |
+| Açık devrede grafik: V = i·R doğrusu 2 mA dayatılırsa; R → ∞ ⇒ V → ∞ (eksen dışı) | "this voltage has to be infinity, v = i1 × r" | [49:30–50:04] | ✔ |
+| 2 mA dayatılır (c2) | Akım kaynağı akımını dayatır; açık devre akıma izin vermez → ideal modelde çelişki | [38:10], [49:47] | ✔ |
+| Sabit akımla şarj ≈ akım kaynağı | "we charge the battery by a constant current" | [47:17], [48:20] | ✔ |
+| Kart • İdeal V kaynağı: V sabit, i yüke bağlı | tanım | [11:16–12:06], [14:02] | ✔ |
+| Kart • İdeal i kaynağı: i sabit, V yüke bağlı | tanım | [37:06–38:10], [41:14] | ✔ |
+| Kart • Akım kaynağı açık bırakılmaz | "we never want to leave a current source open" | [50:35] | ✔ |
+| Kart • V sabitken i ∝ 1/R (doğrusal değil) | i = V/R | [14:02–14:21] | ✔ |
+
 İlk yorum sorusu: "2 mA'lik ideal akım kaynağına 4 kΩ direnç bağlı. Direncin uçlarındaki gerilim kaç volt? Cevabını yaz 👇" → V = 2 mA × 4 kΩ = 8 V ✔
