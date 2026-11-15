@@ -57,7 +57,7 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
    - Sahne **içindeki** animasyonlar (direnç eklenmesi, ampulün kararması, yazının yazılması) yavaş ve yumuşak (ease-in-out, en az 1,2 sn); kamera hareketleri yavaş. Sahneden sahneye geçiş ise hızlıdır (kural 15).
    - Her önemli animasyon olayından (ör. direnç eklendi, ampul karardı) sonra izleyicinin sonucu görmesi için en az 1,5 sn bekle.
    - Bir anda tek değişiklik; iki olay üst üste binmez.
-   - Süre konuya göre 45–90 sn. **90 saniye kesin üst sınırdır (kanal sahibinin emri, 09.11.2026):** 90,0 sn'yi aşan video kalite kontrolünden geçemez; senaryo aşamasında süreyi hesapla, gerekirse bir sahneyi sadeleştir veya konuyu iki videoya bölmeyi panelden kanal sahibine sor.
+   - **Süre 50–60 sn; 60,0 sn kesin üst sınırdır (kanal sahibinin kararı, 15.11.2026 — ilk hafta verisi: ~100 sn'lik videolarda ortalama izleme 9–15 sn).** 60 sn'yi aşan video kalite kontrolünden geçemez. Tempo yavaş kalır; süre sahne sayısını azaltarak kısaltılır (bölüm 2g).
 10. **Açıklayıcı yazı ne zaman uzun olabilir:** Animasyonun gösterdiği sebep-sonuç zincirini (ör. toplam direnç artar → akım azalır → ampul gerilimi azalır → ampul kararır) sahnenin sonunda adım adım, kalemle yazılarak ve her adım ayrı satırda gösterebilirsin. Her adım ilgili görsel vurguyla (ok, parlama) eşleşir. Bu bölüm dışında yazılar kısa etiket olarak kalır.
 11. **Kaynak:** Her konuya başlamadan önce `kaynaklar.md`'ye bak. Kanal sahibi bir konu için kaynak bağlantısı verdiyse (orada veya konular.md'de), senaryodan önce o kaynağı oku (WebFetch) ve senaryoyu onunla tutarlı yaz; okunan kaynağı `dogruluk.md`'ye yaz. Kaynağa erişilemiyorsa panelde not düş ve kanal sahibine bildir (ağ izni gerekebilir: `en.wikipedia.org`).
 12. **Analoji fizik açısından doğru olmalı.** Bir benzetme (boru, su, koridor) yanlış bir fiziksel izlenim bırakmamalı; benzetmenin sınırı varsa animasyonu doğru davranışa göre kur (ör. seri devrede akım her yerde aynıdır).
@@ -102,9 +102,16 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 ## 2f. Zor noktalar ve "Bilmen gerekenler" kartı (kanal sahibinin emri, 14.11.2026 — her videoda zorunlu)
 
 1. **Senaryodan önce zor noktaları belirle:** Razavi transkriptini okuduktan sonra `wip/<id>/zor-noktalar.md` yaz: (a) öğrencilerin bu konuda anlamakta zorlandığı veya karıştırdığı 2–4 nokta (ör. "omik direncin I–V'si doğrusaldır ama V sabitken i–R doğrusal değildir"), (b) videoyu anlamak için önceden bilinmesi gereken 1–3 ön bilgi (ör. "Ohm yasası V = IR", "ideal kaynak tanımı"). Senaryo bu noktaları animasyonla açıklar; vurgulanan yanlış (bölüm 2b-2) bunlardan seçilir.
-2. **Videonun sonunda "Bilmen gerekenler" kartı:** Kapanıştan önce, aynı ekranda (sahne geçişi kurallarıyla) 3–4 maddelik kısa bir liste kalemle yazılır: konunun en önemli sonuçları ve zor noktaların doğru hâli; her madde ≤ 6–7 kelime, formüller bölüm 2d'ye uygun. Örnek (Ders 2): "• İdeal V kaynağı: V sabit, i yüke bağlı • İdeal i kaynağı: i sabit, V yüke bağlı • Akım kaynağı açık bırakılmaz • V sabitken i ∝ 1/R (doğrusal değil)". Kart en az 4 sn okunur kalır, arka planda sahne yaşamaya devam eder; toplam süre yine ≤ 90 sn (gerekirse başka sahneyi kısalt).
+2. **Videonun sonunda "Bilmen gerekenler" kartı:** Kapanıştan önce, aynı ekranda (sahne geçişi kurallarıyla) 2–3 maddelik kısa bir liste kalemle yazılır: konunun en önemli sonuçları ve zor noktaların doğru hâli; her madde ≤ 6–7 kelime, formüller bölüm 2d'ye uygun. Örnek (Ders 2): "• İdeal V kaynağı: V sabit, i yüke bağlı • İdeal i kaynağı: i sabit, V yüke bağlı • Akım kaynağı açık bırakılmaz • V sabitken i ∝ 1/R (doğrusal değil)". Kart yaklaşık 4 sn okunur kalır, arka planda sahne yaşamaya devam eder; toplam süre ≤ 60 sn. Tam liste (3–4 madde) açıklamada kalır.
 3. **Açıklamada da aynı liste:** YouTube açıklamasına "Bilmen gerekenler:" başlığıyla aynı maddeler ve varsa ön bilgiler ("Önce bilmen gereken: …") yazılır (kaynak atfının üstüne).
 4. Bağımsız denetçi (bölüm 7 A) zor noktaların videoda gerçekten açıklandığını ve kartın doğru olduğunu da kontrol eder.
+
+## 2g. Kısa video yapısı (kanal sahibinin kararı, 15.11.2026 — Ders 3'ten itibaren, 2 hafta test)
+
+1. **Tek video, tek fikir:** Her video yalnızca **bir** bilinen yanlışı veya önemli noktayı anlatır. Razavi'nin bir dersinde birden çok önemli nokta varsa ders **2 (gerekirse 3) videoya bölünür**. `konular.md`'de konu satırı gerektiğinde alt satırlara ayrılır (ör. "8a", "8b"); alt satırları ajan ekler, sırayı bozmaz, aynı dersin parçaları art arda yayınlanır. Videoda "a/b", "Bölüm" gibi etiket görünmez.
+2. **Zaman çizelgesi:** 0–2 sn soru kancası (ekranda hareketle); **en geç 8. saniyede cevabın ilk görüntüsü**; geri kalanında "neden" animasyonla; sonda ~4 sn "Bilmen gerekenler" (2–3 madde). Uzun kurulum, giriş veya tekrar sahnesi yok.
+3. **Süre 50–60 sn** (bölüm 3). Senaryo yazılırken her sahnenin süresi toplanır; 60 sn'yi aşıyorsa bir sahne çıkarılır veya konu bölünür.
+4. **Test:** 23.11.2026 değerlendirmesinde Ders 1–2 (~90 sn) ile Ders 3 ve sonrası (~55 sn) ortalama izleme yüzdesi karşılaştırılacak.
 
 ## 2c. Devre çizimi kuralları (kanal sahibinin emri, 12.11.2026)
 
