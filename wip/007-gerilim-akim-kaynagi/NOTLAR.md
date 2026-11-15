@@ -29,3 +29,8 @@
 - parca-03: tamam (12:49 UTC)
 - 12:50 UTC: 4 parça birleştirildi + ses; kalite 1. turda GEÇTİ (89,6 sn, −16,4 LUFS). v2 eski/'ye. Sıradaki: main'de doğrula → Metricool yalnızca video + açıklama (tarih 16.11 16:00 aynı).
 - 12:51 UTC: main'de doğrulandı; Metricool (7591375855375960443) video + açıklama güncellendi, tarih 16.11 16:00 aynı. Parçalar silindi. İş bitti.
+
+## 4. sürüm (kanal sahibinin 4. iş emri, 15.11.2026: yalnızca özet sahnesi, bölüm 2d-5/6) — 15.11.2026
+- 16:05 UTC: özet iki beat'e bölündü: f2a (gerilim kaynağı R 1 → 0 kısa devre, ampermetre → ∞ mA, 'kısa devre' etiketi) ve f2b (akım kaynağı 3 kΩ, anahtar açılır, voltmetre → ∞, 'açık devre'); kart başlarken anahtar yeniden kapanır (2 mA, 6 V). c3 kaldırıldı (f2b ile aynı). Kartta 'İdeal V kaynağı' kısaltması kaldırıldı, 'açık bırakılmaz' maddesi çıktı (özette tam cümle). R etiketi biçim hatası (',0' replace → '0,05' '05' oluyordu) fmtR ile düzeltildi.
+- Süre: iş emrindeki formüllü metinle 96,9 sn (> 90). Panelde onay isteği: onaylar/007-gerilim-akim-kaynagi-202611151605 (A: formülsüz özet + kısa kart + kanca 2,6 sn + gerçek hayat modelleri sık → 89,9 sn; B: formüllü ~97 sn; C: v3 yayınlansın). scene.js'de `SECENEK` sabiti ('A' hazır, tüm check'ler geçiyor).
+- Sıradaki: kararı uygula → kare kontrolü (özet ve kart) → --safe → bağımsız denetim (yazılar değişti) → 4 parça render (A'da kanca kısaldığı için tüm video) → birleştir → kalite → v3 eski/'ye → Metricool yalnızca video + açıklama (kart listesi), tarih 16.11 16:00 aynı. Son tarih 16.11 15:30.

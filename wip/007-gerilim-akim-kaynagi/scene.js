@@ -19,38 +19,49 @@ check(near(VS / 3, 2) && near(VS / 2, 3) && near(VS / 1, 6) && near(VS / 0.25, 2
 check(near(IS * 1, 2) && near(IS * 2, 4) && near(IS * 3, 6), 'akım kaynağı: 2 mA × 1, 2, 3 kΩ = 2, 4, 6 V');
 
 // ---------------------------------------------------------------- anlatım
+// v4 seçeneği (panel onayı 007-gerilim-akim-kaynagi-202611151605): 'A' formülsüz özet + kısa kart (~90 sn), 'B' formüllü (~97 sn)
+const SECENEK = 'A';
+const FA = SECENEK === 'B' ? ` (${rd('i')} = ${hl('V')}/${bl('R')} → ∞)` : '';
+const FB = SECENEK === 'B' ? ` (${hl('V')} = ${rd('i')}·${bl('R')} → ∞)` : '';
 const BEATS = [
-  { id: 'h1', pen: false, pre: 0, l1: `${rd('Akım kaynağını')}`, l2: `<b style="font-weight:900">${hl('açık')} bırakırsan?</b>`, s1: 7.4, s2: 7.4, extra: 1.2 },
+  { id: 'h1', pen: false, pre: 0, l1: `${rd('Akım kaynağını')}`, l2: `<b style="font-weight:900">${hl('açık')} bırakırsan?</b>`, s1: 7.4, s2: 7.4, extra: SECENEK === 'B' ? 1.2 : 0 },   // v4-A: kanca 2,6 sn (9a-1: 1–3 sn), süre için
   { id: 'v1', pre: 6.7, l1: `Gerilim kaynağı: ${hl('V sabit')}`, l2: `${rd('i')} = ${hl('V')}/${bl('R')}: yüke bağlı`, s1: 6.0, s2: 5.4 },
   { id: 'v2', pre: 3.9, l1: `İdealde ${bl('R → 0')}: ${rd('i → ∞')}`, l2: 'gerçek pilde V düşer', s1: 6.2, s2: 5.2 },
   { id: 'c1', pre: 7.7, l1: `Akım kaynağı: ${rd('i sabit')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')}: yüke bağlı`, s1: 6.0, s2: 5.4 },
   { id: 'c2', pre: 5.0, l1: `Anahtar açık: ${bl('R → ∞')}`, l2: `${rd('2 mA')} dayatılır: ${hl('V')} = ${rd('i')}·${bl('R')} → ${hl('∞')}`, s1: 6.0, s2: 5.8 },
-  { id: 'c3', pre: 0.5, l1: `${rd('Akım kaynağı')} asla`, l2: 'açık bırakılmaz', s1: 6.4, s2: 6.0 },
-  { id: 'g1', pre: 4.15, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Sabit akımla şarj ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
+  // v4: c3 ('Akım kaynağı asla açık bırakılmaz') özetteki f2b cümlesiyle aynı olduğu için kaldırıldı (süre ≤ 90 sn)
+  { id: 'g1', pre: SECENEK === 'B' ? 4.15 : 3.6, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Sabit akımla şarj ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
   // v3: f1 ('V sabit / i sabit') 'Bilmen gerekenler' kartına taşındı (bölüm 2f)
-  { id: 'f2', pre: 1.3, l1: `${hl('V')} kaynağı + ${bl('R → 0')}: ${rd('i → ∞')}`, l2: `${rd('i')} kaynağı + açık: ${hl('V → ∞')}`, s1: 5.4, s2: 5.4 },
+  // v4 (kanal sahibinin 4. iş emri, bölüm 2d-5/6): özet iki açık Türkçe cümle, her biri kendi görüntüsüyle
+  { id: 'f2a', pre: 2.9, l1: `${hl('Gerilim kaynağı')} kısa devre edilirse`, l2: `${rd('akım')} sonsuza gider${FA}`, s1: 5.4, s2: 5.0 },
+  { id: 'f2b', pre: 3.05, l1: `${rd('Akım kaynağı')} açık bırakılırsa`, l2: `${hl('gerilim')} sonsuza gider${FB}`, s1: 5.4, s2: 5.0 },
 ];
 const { Z, A, W: WR } = penTimeline(BEATS, { k: 1.0 });
 
 // 'Bilmen gerekenler' kartı (bölüm 2f): f2'den sonra, aynı ekranda, satır satır kalemle yazılır; satırlar birikir, son karede kalır
 const KART = [
   { id: 'kh', html: `<span style="color:#7fe3ff">Bilmen gerekenler</span>`, y: 13.4, size: 4.6, weight: 900 },
-  { id: 'k1', html: `• İdeal ${hl('V')} kaynağı: ${hl('V sabit')}, ${rd('i')} yüke bağlı`, y: 17.9 },
-  { id: 'k2', html: `• İdeal ${rd('i')} kaynağı: ${rd('i sabit')}, ${hl('V')} yüke bağlı`, y: 21.5 },
-  { id: 'k3', html: `• ${rd('Akım kaynağı')} açık bırakılmaz`, y: 25.1 },
-  { id: 'k4', html: `• ${hl('V')} sabitken ${rd('i')} ∝ 1/${bl('R')} (doğrusal değil)`, y: 28.7 },
+  // v4 (2d-5): kısaltma ('V kaynağı') ve kelime yerine ':' yok; 'açık bırakılmaz' özette (f2b) tam cümleyle var
+  SECENEK === 'B' ? { id: 'k1', html: `• İdeal ${hl('gerilim kaynağında')} ${hl('V')} sabit, ${rd('i')} yüke bağlı`, y: 17.9 }
+                  : { id: 'k1', html: `• İdeal ${hl('gerilim kaynağında')} ${hl('V')} sabittir`, y: 17.9 },
+  SECENEK === 'B' ? { id: 'k2', html: `• İdeal ${rd('akım kaynağında')} ${rd('i')} sabit, ${hl('V')} yüke bağlı`, y: 21.5 }
+                  : { id: 'k2', html: `• İdeal ${rd('akım kaynağında')} ${rd('i')} sabittir`, y: 21.5 },
+  { id: 'k4', html: `• ${hl('V')} sabitken ${rd('i')} ∝ 1/${bl('R')} (doğrusal değil)`, y: 25.1 },
 ];
-const KS = [Z.f2[1] - 1.7, Z.f2[1] - 0.4];   // devre yerinde hafifçe küçülür (kural 2a-16: yazıya yer), f2 okunurken; başka olay yok
+const KS = [Z.f2b[1] - 1.7, Z.f2b[1] - 0.4];   // devre yerinde hafifçe küçülür (kural 2a-16: yazıya yer), f2b okunurken; başka olay yok
 const KSC = 0.8;
-{ let t = Z.f2[1] + 0.1; for (const k of KART) { k.t0 = t; k.t1 = t + penSec(k.html); t = k.t1 + 0.06; } }
+{ let t = Z.f2b[1] + 0.1; for (const k of KART) { k.t0 = t; k.t1 = t + penSec(k.html); t = k.t1 + 0.06; } }
 const KEND = KART[KART.length - 1].t1;
 const DUR = Math.ceil((KEND + Math.max(4.0, ...KART.map((k) => 1.2 + 0.35 * wordsOf({ l1: k.html }) - (KEND - k.t1)))) * 30) / 30;
 for (const k of KART) check(DUR - k.t1 >= 1.2 + 0.35 * wordsOf({ l1: k.html }) - 1e-9, `kart ${k.id}: okuma süresi`);
 check(DUR - KEND >= 4.0, 'kart en az 4 sn okunur kalır (2f-2)');
-check(KS[0] >= WR.f2[1] + 1.0, 'küçülme f2 yazısı bittikten sonra');
+check(KS[0] >= WR.f2b[1] + 1.0, 'küçülme f2b yazısı bittikten sonra');
 export const _T = { Z, A, W: WR, KART, KS, DUR };
 check(DUR <= 90, `süre ≤ 90 sn (${DUR})`);
 
+// R etiketi: 3 kΩ, 1 kΩ, 0,25 kΩ; kısa devrede 'R = 0'
+const fmtR = (r) => (r < 0.004 ? '0' : r < 1 ? fmt(r, 2) : fmt(r, 1).replace(/,0$/, '')) + (r < 0.004 ? '' : ' kΩ');
+check(fmtR(3) === '3 kΩ' && fmtR(0.25) === '0,25 kΩ' && fmtR(0.05) === '0,05 kΩ' && fmtR(0) === '0', 'R etiketi biçimi');
 // ---------------------------------------------------------------- olaylar
 const RV1 = [A.v1 + 0.4, A.v1 + 2.0];       // 3 → 2 kΩ
 const RV2 = [A.v1 + 3.55, A.v1 + 5.15];       // 2 → 1 kΩ
@@ -60,28 +71,41 @@ const RC1 = [A.c1 + 1.5, A.c1 + 3.1];       // 1 → 2 kΩ
 const RC2 = [A.c1 + 4.65, A.c1 + 6.25];       // 2 → 3 kΩ
 const SWO = [A.c2 + 0.3, A.c2 + 1.5];       // anahtar açılır (kontak SWO[0]'da kopar)
 const VUP = [A.c2 + 1.3, A.c2 + 3.4];       // voltmetre büyür → ∞
-const CUTG = A.g1 + 0.1, CUTF = A.f2 + 0.1; // gerçek hayat aralığı
-const GM = [0, 1, 2].map((i) => CUTG + 0.3 + i * 0.85);
+const CUTG = A.g1 + 0.1, CUTF = A.f2a + 0.1; // gerçek hayat aralığı
+// v4 özet: (a) CUTF'de ideal gerilim kaynağı, R = 1 kΩ → kısa devre (R → 0), ampermetre → ∞
+//          (b) CUTB'de ideal akım kaynağı, R = 3 kΩ, anahtar açılır, voltmetre → ∞; kart başlarken anahtar yeniden kapanır
+const SC = [CUTF + 0.1, CUTF + 1.3];
+const CUTB = A.f2b + 0.1;
+const SWO2 = [CUTB + 0.15, CUTB + 1.35];
+const VUP2 = [CUTB + 0.25, CUTB + 1.45];
+const SWC = [Z.f2b[1] + 0.05, Z.f2b[1] + 1.25];
+check(SC[1] + 1.5 <= Z.f2a[0] + 1e-9 && VUP2[1] + 1.5 <= Z.f2b[0] + 1e-9, 'özet: olaydan sonra ≥ 1,5 sn, sonra yazı');
+const GM = [0, 1, 2].map((i) => CUTG + 0.3 + i * (SECENEK === 'B' ? 0.85 : 0.6));   // v4-A: modeller biraz daha sık
 check(RV2[1] + 1.5 <= Z.v1[0] && RV3[1] + 1.5 <= Z.v2[0] && RC2[1] + 1.4 <= Z.c1[0] && VUP[1] + 1.5 <= Z.c2[0], 'her olaydan sonra ≥ 1,5 sn bekleme');
 check(RV2[0] - RV1[1] >= 1.5 && RC2[0] - RC1[1] >= 1.5 && RC1[0] - CUTC >= 1.4, 'adımlar arası ≥ 1,5 sn');
 check(GM[2] + 0.5 + 1.5 <= Z.g1[0] + 1e-9, 'gerçek hayat: son model belirdikten sonra etiket');
 
-const isI = (t) => t >= CUTC;               // kaynak türü: akım kaynağı (c1'den sonra; gerçek hayattan sonra da)
+const isI = (t) => (t >= CUTC && t < CUTF) || t >= CUTB;   // kaynak türü: akım kaynağı (c1–özet a arası ve özet b'den sonra)
 const R = (t) => {                          // kΩ
+  if (!isI(t) && t >= CUTF) return Math.max(0, 1 - easeInOut(seg(t, ...SC)));   // özet a: kısa devre
   if (!isI(t)) return 3 - easeInOut(seg(t, ...RV1)) - easeInOut(seg(t, ...RV2)) - 0.75 * easeInOut(seg(t, ...RV3));
-  if (t >= CUTF) return 3;
+  if (t >= CUTB) return 3;
   return 1 + easeInOut(seg(t, ...RC1)) + easeInOut(seg(t, ...RC2));
 };
-const open = (t) => t >= SWO[0] && t < CUTF;           // ideal anahtar açık (yalnızca c2–g1 arası)
-const swAng = (t) => (t >= CUTF ? 1 : 1 - easeInOut(seg(t, ...SWO)));
-const I = (t) => (isI(t) ? (open(t) ? 0 : IS) : VS / R(t));            // mA
-const vInf = (t) => easeInOut(seg(t, ...VUP));                          // 0..1: V → ∞ animasyonu
+const open = (t) => (t >= SWO[0] && t < CUTF) || (t >= SWO2[0] && t < SWC[1]);   // ideal anahtar açık (c2–g1 ve özet b)
+const swAng = (t) => (t >= CUTB ? 1 - easeInOut(seg(t, ...SWO2)) + easeInOut(seg(t, ...SWC)) : t >= CUTF ? 1 : 1 - easeInOut(seg(t, ...SWO)));
+const I = (t) => (isI(t) ? (open(t) ? 0 : IS) : R(t) < 0.004 ? Infinity : VS / R(t));            // mA (kısa devre: ∞)
+const vInf = (t) => (t >= CUTB ? easeInOut(seg(t, ...VUP2)) : easeInOut(seg(t, ...VUP)));   // 0..1: V → ∞ animasyonu
 const V = (t) => (!isI(t) ? VS : open(t) ? IS * 3 + (1e4 - 6) * Math.pow(vInf(t), 3) : IS * R(t)); // V
 check(near(R(Z.v1[0]), 1) && near(I(Z.v1[0]), 6) && V(Z.v1[0]) === 6, 'v1: R = 1 kΩ, i = 6 mA, V = 6 V');
 check(near(R(Z.v2[0]), 0.25) && near(I(Z.v2[0]), 24), 'v2: R = 0,25 kΩ, i = 24 mA');
 check(near(R(Z.c1[0]), 3) && I(Z.c1[0]) === 2 && near(V(Z.c1[0]), 6), 'c1: R = 3 kΩ, i = 2 mA, V = 6 V');
 check(I(Z.c2[0]) === 0 && V(Z.c2[0]) > 9000, 'c2: açık → i = 0, V → ∞');
-check(near(R(Z.f2[0]), 3) && I(Z.f2[0]) === 2 && !open(Z.f2[0]), 'f2: devre kapalı, 2 mA');
+check(!isI(Z.f2a[0]) && R(Z.f2a[0]) === 0 && I(Z.f2a[0]) === Infinity && V(Z.f2a[0]) === 6, 'f2a: gerilim kaynağı kısa devre, i → ∞, V = 6 V');
+check(near(R(CUTF + 0.1), 1) && near(I(CUTF + 0.1), 6), 'f2a başı: R = 1 kΩ, 6 mA');
+check(isI(Z.f2b[0]) && open(Z.f2b[0]) && I(Z.f2b[0]) === 0 && V(Z.f2b[0]) > 9000, 'f2b: akım kaynağı açık, i = 0, V → ∞');
+check(near(I(CUTB + 0.1), 2) && near(V(CUTB + 0.1), 6), 'f2b başı: 2 mA, 3 kΩ, 6 V');
+check(!open(DUR - 0.1) && I(DUR - 0.1) === 2 && near(V(DUR - 0.1), 6), 'kart: devre yeniden kapalı, 2 mA, 6 V');
 
 // görsel akış hızı ∝ akım (24 mA'de sınırlı)
 const VEL = (t) => 0.32 * Math.min(I(t), 10) * (swAng(t) > 0.999 ? 1 : 0);
@@ -110,7 +134,13 @@ export const meta = {
     { t: SWO[0] + 0.02, kind: 'click', gain: 0.14 },
     { t: VUP[1], kind: 'thud', gain: 0.15 },
     ...GM.map((t) => ({ t: t + 0.35, kind: 'thud', gain: 0.11 })),
-    { t: CUTF + 0.1, kind: 'hum', d: DUR - CUTF - 0.4, gain: 0.11 },
+    { t: CUTF + 0.1, kind: 'hum', d: CUTB - CUTF - 0.4, gain: 0.11 },
+    { t: SC[1] - 0.05, kind: 'pop', gain: 0.12 },
+    { t: CUTB + 0.05, kind: 'thud', gain: 0.12 },
+    { t: SWO2[0] + 0.02, kind: 'click', gain: 0.14 },
+    { t: VUP2[1], kind: 'thud', gain: 0.14 },
+    { t: SWC[1] - 0.03, kind: 'click', gain: 0.12 },
+    { t: SWC[1] + 0.1, kind: 'hum', d: DUR - SWC[1] - 0.4, gain: 0.11 },
   ],
 };
 
@@ -343,7 +373,7 @@ export function build(S) {
   const ck = (t, a, dd, de) => [t, a, CD + dd, CE + de, CX, CT];
   const cam = camRig(S, [
     ck(0, 0.0, 0.1, 0), ck(A.v1, 0.04, 0.05, 0), ck(A.v2, -0.03, 0, 0), ck(A.c1, 0.03, 0.05, 0),
-    ck(A.c2, -0.04, 0, 0), ck(A.g1, 0.03, 0.05, 0), ck(A.f2, -0.03, 0, 0), ck(DUR, 0.04, -0.05, 0),
+    ck(A.c2, -0.04, 0, 0), ck(A.g1, 0.03, 0.05, 0), ck(A.f2a, -0.03, 0, 0), ck(A.f2b, 0.03, 0.05, 0), ck(DUR, 0.04, -0.05, 0),
   ]);
   const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15.5, y2: 22 });
 
@@ -382,7 +412,7 @@ export function build(S) {
     arrowMat.opacity = clamp(aOp) * easeOut(seg(t, 0.3, 0.8)); arrow.visible = arrowMat.opacity > 0.01;
 
     // ölçü aletleri
-    AM.show.set(`${fmt(i, i >= 10 ? 1 : 2)} mA`);
+    AM.show.set(!Number.isFinite(i) || i >= 1000 ? '∞ mA' : i >= 100 ? `${Math.round(i)} mA` : `${fmt(i, i >= 10 ? 1 : 2)} mA`, !Number.isFinite(i) || i >= 100 ? '#ff6b3f' : undefined);
     VM.show.set(inf >= 0.98 ? '∞ V' : v >= 100 ? `${Math.round(v)} V` : `${fmt(v, 2)} V`, inf > 0 ? '#ff6b3f' : '#ffd23f');
 
     // gerçek hayat modelleri sırayla
@@ -398,13 +428,14 @@ export function build(S) {
 
     // nesne etiketleri
     const onC = (a, b) => (life ? 0 : fade(t, a, b, 0.3));
-    label('lsv', hl('ideal gerilim<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(0, CUTC), size: 3.6 });
-    label('lsi', rd('ideal akım<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(CUTC, CUTG) + onC(CUTF, KS[0]), size: 3.6 });
-    label('lr', `${bl('R = ' + fmt(r, r < 1 ? 2 : 1).replace(',0', '') + ' kΩ')}`, X - 0.5, 0.3, RZ + 0.02, { opacity: onC(0, CUTG) + onC(CUTF, KS[0]), size: 3.7 });
+    label('lsv', hl('ideal gerilim<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(0, CUTC) + onC(CUTF, CUTB), size: 3.6 });
+    label('lsi', rd('ideal akım<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(CUTC, CUTG) + onC(CUTB, KS[0]), size: 3.6 });
+    label('lr', `${bl('R = ' + fmtR(r))}`, X - 0.5, 0.3, RZ + 0.02, { opacity: onC(0, CUTG) + onC(CUTF, KS[0]), size: 3.7 });
+    label('lks', bl('kısa devre'), X - 0.5, 0.3, RZ + 0.36, { opacity: onC(SC[1], CUTB), size: 3.8 });
     label('le', gr('elektronlar'), -0.25, 0.32, -ZH + 0.18, { opacity: onC(0.6, A.v1 + 1.5), size: 3.6 });
     label('la', rd('akım yönü'), X - 0.66, 0.3, 0.36, { opacity: onC(1.0, A.v1 + 1.5), size: 3.6 });
     label('lsw', 'anahtar', -X + 0.5, 0.3, 0.17, { opacity: onC(A.c1 + 0.3, Z.c1[0]) + onC(A.c2, SWO[1] - 0.35), size: 3.6 });
-    label('lop', bl('açık devre'), -X + 0.55, 0.3, 0.17, { opacity: onC(SWO[1], CUTG), size: 3.8 });
+    label('lop', bl('açık devre'), -X + 0.55, 0.3, 0.17, { opacity: onC(SWO[1], CUTG) + onC(SWO2[1], SWC[0]), size: 3.8 });
     const lo = (k, d = 0.4) => (life ? easeOut(seg(t, GM[k] + d, GM[k] + d + 0.4)) : 0);
     label('lm1', hl('≈ gerilim kaynağı'), ...lw(0, 0.1, 0.68), { opacity: lo(1, 0.5), size: 3.8 });
     label('lm2', rd('≈ akım kaynağı'), ...lw(-0.62, 0.1, -0.7), { opacity: lo(2, 0.5), size: 3.8 });
