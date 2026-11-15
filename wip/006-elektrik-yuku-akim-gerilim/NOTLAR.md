@@ -46,3 +46,8 @@
 - parca-02: tamam (09:01 UTC)
 - parca-03: tamam (09:02 UTC)
 - 09:20 UTC: render + 2 düzeltme aralığı, birleştirildi; kalite GEÇTİ (kalite.md). v3 eski/'ye. Parçalar silindi. Sıradaki: main'de doğrula → Metricool yalnızca video (tarih 15.11 16:00 aynı).
+
+## 5. sürüm (kanal sahibinin 4. iş emri, 14.11.2026: yalnızca son sahne + 'Bilmen gerekenler' kartı) — 15.11.2026
+- 08:35 UTC: f2 denklemleri ayrı satırlarda ('i = dq/dt', 'q = ∫₀ᵗ i dt'; '·' ayırıcı yok); f1 kaldırıldı (içeriği karta taşındı); kart: başlık + 4 madde (son madde 2 satır), satır satır kalemle; kart için devre yerinde %80'e küçülür (kural 2a-16). Süre 89,3 sn. Kalem imleci: stage.js'de r ≥ 0,97'de tamamen gizlenir.
+- 0–64,5 sn değişmedi: v4 MP4'ünden (eski/…-v4.mp4) kesilip kullanılacak (v4'te imleç kalıntısı yok, kareler kontrol edildi). Yalnızca 64,5–89,3 render: parca-03a (64,5–77), parca-03b (77–89,3).
+- Sıradaki: parçalar → birleştir (v4 0–64,5 + 03a + 03b, ses, loudnorm) → kalite → v4 eski/'ye → Metricool yalnızca video + açıklama ('Bilmen gerekenler'), tarih 15.11 16:00 aynı. Son tarih 15:30 Londra.

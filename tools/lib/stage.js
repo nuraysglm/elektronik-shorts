@@ -311,7 +311,9 @@ export function createStage({ canvas, overlay, width, height, background = 0x151
         const m = `linear-gradient(90deg,#000 0,#000 ${p}%,transparent ${p + 3}%)`;
         const c = el.firstChild.firstChild; c.style.webkitMaskImage = m; c.style.maskImage = m;
         const tip = el.firstChild.lastChild; tip.style.left = `${Math.min(100, Math.max(0, p + 1))}%`;
-        tip.style.opacity = r > 0.001 && r < 0.999 ? String(0.9 * Math.min(1, (1 - r) * 12)) : '0';
+        // imleç yazı bitmeden söner ve tamamen kaybolur (bölüm 2d-3: takılı imleç yok)
+        const tipOn = r > 0.001 && r < 0.97;
+        tip.style.opacity = tipOn ? String(0.9 * Math.min(1, (0.97 - r) * 14)) : '0'; tip.style.display = tipOn ? 'block' : 'none';
       }
       el.style.cssText = `left:${x}%;top:${y}%;font-size:${size}vw;color:${color};font-weight:${weight};` +
         `opacity:${opacity};width:${maxWidth}%;white-space:${nowrap ? 'nowrap' : 'normal'};text-align:${align};font-family:"${font}",sans-serif;` +

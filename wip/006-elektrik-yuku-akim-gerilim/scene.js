@@ -6,7 +6,7 @@
 // Sahne geçişleri aynı kadrajda, kesme ile (kural 15): devre → gerçek hayat (duvar anahtarı) → devre.
 
 import { THREE, RoundedBoxGeometry, clamp, seg, easeInOut, easeOut, fade, lerp } from '../../tools/lib/stage.js';
-import { hl, rd, gr, fmt, check, penTimeline, narrationPen } from '../../tools/lib/anlatim.js';
+import { hl, rd, gr, fmt, check, penTimeline, narrationPen, penSec, wordsOf } from '../../tools/lib/anlatim.js';
 import { canvasTex, roundedLoop, closedWire, battery, resistor, projLabel, camRig } from '../../tools/lib/parcalar.js';
 import { makeBulb, makeSwitch, platform } from '../../tools/lib/devre.js';
 
@@ -16,6 +16,8 @@ const IMA = VB / RK;                        // mA
 check(Math.abs(IMA - 3) < 1e-12, 'Ohm: 9 V ÷ 3 kΩ = 3 mA');
 
 // ---------------------------------------------------------------- anlatım
+// belirli integral (bölüm 2d): ∫ üstünde t, altında 0 — q = ∫₀ᵗ i dt
+const INT = `∫<span style="display:inline-block;position:relative;width:.34em;height:1.05em;vertical-align:-.2em;margin-right:.12em"><span style="position:absolute;left:.08em;top:-.06em;font-size:.46em;line-height:1">t</span><span style="position:absolute;left:-.04em;bottom:-.1em;font-size:.46em;line-height:1">0</span></span>`;
 const mkBeats = (c2pre, dq = 0) => [
   { id: 'h1', pen: false, pre: 0, l1: 'Açık devrede', l2: `<b style="font-weight:900">${hl('gerilim')} sıfır mı?</b>`, s1: 7.4, s2: 7.4, extra: 1.0 },
   { id: 'c1', pre: 3.7, l1: `Akımın ${rd('değeri')} + ${rd('yönü')}`, l2: `9 V ÷ 3 kΩ = ${rd('3 mA')}`, s1: 6.0, s2: 5.4 },
@@ -24,8 +26,8 @@ const mkBeats = (c2pre, dq = 0) => [
   { id: 'o1', pre: 3.6, l1: `Açık devre: ${rd('i = 0')}`, l2: `ama anahtar uçlarında ${hl('9 V')}!`, s1: 6.2, s2: 5.6 },
   { id: 'o2', pre: 3.4, l1: 'Kapalı anahtar = kısa devre', l2: `anahtarda ${hl('V = 0')}, ama ${rd('i = 3 mA')}`, s1: 5.8, s2: 5.6 },
   { id: 'g1', pre: 2.8, l1: 'Lamba söndürülünce:', l2: `${rd('i = 0')}, anahtarda ${hl('≈ 230 V')} (AC)`, s1: 5.6, s2: 5.4 },
-  { id: 'f1', pre: 1.4, l1: `Açık devre → yalnızca ${rd('i = 0')}`, l2: `Kısa devre → yalnızca ${hl('V = 0')}`, s1: 5.4, s2: 5.4 },
-  { id: 'f2', pre: 0.3, l1: `${rd('i')} = d${gr('q')}/dt  ·  ${gr('q')} = ∫ ${rd('i')} dt`, l2: `gerilim: ${hl('1 V')} = 1 J/C`, s1: 5.8, s2: 5.0, extra: 0.3 },
+  // v5 (kanal sahibinin 4. iş emri): iki denklem AYRI satırlarda, '·' ayırıcı yok; f1'in içeriği 'Bilmen gerekenler' kartına taşındı
+  { id: 'f2', pre: 0.6, l1: `${rd('i')} = d${gr('q')}/dt`, l2: `${gr('q')} = ${INT}${rd('i')} dt`, s1: 6.4, s2: 6.4 },
 ];
 // 1. geçiş: anahtarın açılma anını bul (c1 yazısı bittikten sonra, kapalı kalma süresi tam saniye)
 const P0 = penTimeline(mkBeats(0), { k: 1.0 });
@@ -34,8 +36,27 @@ const TC = G0 + 2;                          // kontak kapanır (g = 2 s)
 const DQ = Math.ceil(P0.Z.c1[1] + 0.2 - TC); // kapalı kalma süresi, s
 const TO = TC + DQ;                         // kontak açılır
 const BEATS = mkBeats(TO - P0.Z.c1[1] + 1.2 + 1.5, DQ);
-const { Z, A, W: WR, DUR } = penTimeline(BEATS, { k: 1.0 });
-export const _T = { Z, A, TC, TO, DQ };
+const { Z, A, W: WR } = penTimeline(BEATS, { k: 1.0 });
+
+// 'Bilmen gerekenler' kartı (bölüm 2f): f2'den sonra, aynı ekranda, satır satır kalemle yazılır; satırlar birikir, son karede kalır
+const KART = [
+  { id: 'kh', html: `<span style="color:#7fe3ff">Bilmen gerekenler</span>`, y: 13.4, size: 4.6, weight: 900 },
+  { id: 'k1', html: `• ${rd('i')} = d${gr('q')}/dt;&nbsp; ${gr('q')} = ${INT}${rd('i')} dt`, y: 17.9 },
+  { id: 'k2', html: `• Akımın ${rd('değeri')} ve ${rd('yönü')} vardır`, y: 21.5 },
+  { id: 'k3', html: `• ${hl('Gerilim')} iki nokta arasında tanımlıdır`, y: 25.1 },
+  { id: 'k4', html: `• Açık devre: yalnızca ${rd('i = 0')}`, y: 28.7, item: 'k4' },
+  { id: 'k5', html: `<span style="visibility:hidden">• </span>Kısa devre: yalnızca ${hl('V = 0')}`, y: 32.3, item: 'k4' },
+];
+const KS = [Z.f2[1] - 1.7, Z.f2[1] - 0.4];   // devre yerinde hafifçe küçülür (kural 2a-16: yazıya yer), f2 okunurken; başka olay yok
+const KSC = 0.8;                             // küçülme oranı (pil kenarı sabit)
+{ let t = Z.f2[1] + 0.1; for (const k of KART) { k.t0 = t; k.t1 = t + penSec(k.html); t = k.t1 + 0.06; } }
+const KEND = KART[KART.length - 1].t1;
+// her satır yazıldıktan sonra en az 1,2 + 0,35 × kelime okunur (bölüm 6); kart tamamlandıktan sonra en az 4 sn (2f-2)
+const DUR = Math.round((KEND + Math.max(4.0, ...KART.map((k) => 1.2 + 0.35 * wordsOf({ l1: k.html }) - (KEND - k.t1)))) * 30) / 30;
+for (const k of KART) check(DUR - k.t1 >= 1.2 + 0.35 * wordsOf({ l1: k.html }) - 1e-9, `kart ${k.id}: okuma süresi`);
+check(DUR - KEND >= 4.0, 'kart en az 4 sn okunur kalır (2f-2)');
+check(KS[1] <= Z.f2[1] && KS[0] >= WR.f2[1] + 1.0, 'küçülme f2 yazısı bittikten sonra, kart başlamadan önce');
+export const _T = { Z, A, W: WR, TC, TO, DQ, KART, KS, DUR };
 const Q_MC = IMA * DQ;                      // mC
 const GX = 2 + DQ + 2;                     // grafik ekseni 0..GX s
 check(DQ >= 4 && DQ <= 10 && Math.abs(Q_MC - 3 * DQ) < 1e-12, `q = 3 mA × ${DQ} s = ${Q_MC} mC`);
@@ -50,7 +71,7 @@ const QM = [A.v1 + 0.4, A.v1 + 3.6];         // +1 C test yükü b → a taşın
 const VM = [A.o1 + 0.3, A.o1 + 1.3];         // voltmetre yerinde belirir, uçlar anahtara değer
 const VMR = [A.o1 + 1.4, A.o1 + 2.1];        // voltmetre 0 → 9 V
 const SWC2 = [A.o2 + 0.4, A.o2 + 1.6];       // anahtar yeniden kapanır
-const CUT1 = A.g1 + 0.2, CUT2 = A.f1 + 0.2;  // gerçek hayat aralığı
+const CUT1 = A.g1 + 0.2, CUT2 = A.f2 + 0.2;  // gerçek hayat aralığı
 check(QM[1] + 0.8 <= Z.v1[0], 'v1: taşıma bitince etiket');
 check(VMR[1] + 1.5 <= Z.o1[0] && SWC2[1] + 1.5 <= Z.o2[0], 'o1/o2: olaydan ≥ 1,5 sn sonra etiket');
 check(DUR <= 90, `süre ≤ 90 sn (${DUR})`);
@@ -289,7 +310,7 @@ export function build(S) {
   const ck = (t, a, dd, de) => [t, a, CD + dd, CE + de, CX, CT];
   const cam = camRig(S, [
     ck(0, 0.0, 0.1, 0), ck(A.c1, 0.04, 0.05, 0), ck(A.c2, -0.03, 0, 0.5), ck(A.v1, 0.03, 0.05, 0),
-    ck(A.o1, -0.04, 0, 0), ck(A.o2, 0.03, 0.05, 0.5), ck(A.g1, -0.03, 0, 0), ck(A.f1, 0.04, 0.05, 0),
+    ck(A.o1, -0.04, 0, 0), ck(A.o2, 0.03, 0.05, 0.5), ck(A.g1, -0.03, 0, 0), ck(A.f2, 0.04, 0.05, 0),
     ck(DUR, -0.03, -0.05, 0.5),
   ]);
   const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15, y2: 21.5 });
@@ -298,6 +319,7 @@ export function build(S) {
     cam(t);
     const life = t >= CUT1 && t < CUT2;
     CG.visible = !life; LG.visible = life;
+    { const ks = 1 - (1 - KSC) * easeInOut(seg(t, ...KS)); CG.scale.setScalar(ks); CG.position.set(0, 0, ZH * (1 - ks)); }
     SW.set(swAng(t));
     GP.draw(t - G0);
     GP.mat.opacity = easeOut(seg(t, A.c1, A.c1 + 0.3)); GP.mesh.visible = GP.mat.opacity > 0.01;
@@ -339,6 +361,8 @@ export function build(S) {
     arc.material.opacity = life ? 0.85 * easeOut(seg(t, CUT1 + 0.6, CUT1 + 1.2)) * (0.8 + 0.2 * Math.sin(t * 6)) : 0;
 
     yaz(t);
+    for (const k of KART) S.text(k.id, k.html, { x: 54, y: k.y, size: k.size || 4.1, weight: k.weight || 700, align: 'left', maxWidth: 78, nowrap: true,
+      opacity: t >= k.t0 ? easeOut(seg(t, k.t0 - 0.05, k.t0 + 0.2)) : 0, reveal: clamp((t - k.t0) / (k.t1 - k.t0)) });
 
     // kanca alt satırı
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
@@ -347,7 +371,7 @@ export function build(S) {
     // nesne etiketleri
     const onC = (a, b) => (life ? 0 : fade(t, a, b, 0.3));
     label('lsw', 'anahtar', -X + 0.58, 0.45, SWZ - 0.05, { opacity: onC(0, Z.h1[1]), size: 3.8 });
-    label('lr', '3 kΩ', X - 0.4, 0.45, RZ, { opacity: onC(0, Z.c2[1]) + onC(A.f1, DUR + 1), size: 4.0 });
+    label('lr', '3 kΩ', X - 0.4, 0.45, RZ, { opacity: onC(0, Z.c2[1]) + onC(A.f2, KS[0]), size: 4.0 });
     label('le', gr('elektronlar'), -X + 0.5, 0.32, 0.85, { opacity: onC(TC + 0.6, Z.c1[1]), size: 3.8 });
     label('la', rd('akım yönü'), X - 0.74, 0.4, 0.62, { opacity: onC(TC + 1.0, Z.c1[1]), size: 3.8 });
     label('lqa', hl('a (+)'), 0.56, 0.75, ZH - 0.5, { opacity: onC(A.v1, Z.v1[1]), size: 4.0 });
