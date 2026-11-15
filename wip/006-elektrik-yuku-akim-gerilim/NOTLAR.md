@@ -52,3 +52,4 @@
 - 0–64,5 sn değişmedi: v4 MP4'ünden (eski/…-v4.mp4) kesilip kullanılacak (v4'te imleç kalıntısı yok, kareler kontrol edildi). Yalnızca 64,5–89,3 render: parca-03a (64,5–77), parca-03b (77–89,3).
 - Sıradaki: parçalar → birleştir (v4 0–64,5 + 03a + 03b, ses, loudnorm) → kalite → v4 eski/'ye → Metricool yalnızca video + açıklama ('Bilmen gerekenler'), tarih 15.11 16:00 aynı. Son tarih 15:30 Londra.
 - parca-03a, parca-03b: tamam (08:29 UTC)
+- 08:35 UTC: birleştirildi, kalite 1. turda GEÇTİ (89,3 sn). v4 eski/'ye. main'de doğrulandı. Metricool (670534653296070172) video + açıklama güncellendi, tarih 15.11 16:00 aynı. parca-03a/03b yayından sonra silinecek. İş bitti.
