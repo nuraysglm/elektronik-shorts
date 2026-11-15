@@ -119,6 +119,10 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 2. **Açık devre = açık anahtar:** Açık devre her zaman devreye konmuş bir anahtarın **açık konumu** ile gösterilir; havada biten veya kopuk tel ucu ile gösterilmez (006 v2'deki priz-lamba sahnesi). Gerilim etiketleri açık anahtarın iki ucuna göre yazılır.
 3. **Ders sırası:** Konu 6'dan itibaren videolar Razavi Basic Circuits serisini ders 1'den başlayarak **sırayla** izler (konu N+5 = ders N); ders atlanmaz, sıra değiştirilmez.
 
+## 2h. Büyüme Ajanı ile ilişki (15.11.2026)
+
+Haftalık çalışan bir **Büyüme Ajanı** (`BUYUME.md`) kanal verisini ve pazarı inceler. Shorts ajanı her çalışmada `buyume/shorts-ipuclari.md` dosyasını okur ve başlık/açıklama/ilk yorum yazarken ipuçlarını dikkate alır (kurallar `AGENT.md`'dedir; ipuçları kurallarla çelişirse kurallar geçerli). Büyüme Ajanı henüz yayınlanmamış gönderilerin başlık/açıklama/etiket/ilk yorumunu iyileştirebilir; tarihine ve videosuna dokunmaz.
+
 ## 3. Teknik hat (değiştirme)
 
 | Adım | Araç |
