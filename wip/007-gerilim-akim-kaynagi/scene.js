@@ -21,12 +21,12 @@ check(near(IS * 1, 2) && near(IS * 2, 4) && near(IS * 3, 6), 'akım kaynağı: 2
 // ---------------------------------------------------------------- anlatım
 const BEATS = [
   { id: 'h1', pen: false, pre: 0, l1: `${rd('Akım kaynağını')}`, l2: `<b style="font-weight:900">${hl('açık')} bırakırsan?</b>`, s1: 7.4, s2: 7.4, extra: 1.2 },
-  { id: 'v1', pre: 6.7, l1: `Gerilim kaynağı: ${hl('V sabit')}`, l2: `${rd('i')} = ${hl('V')}/${bl('R')} → yüke bağlı`, s1: 6.0, s2: 5.4 },
+  { id: 'v1', pre: 6.7, l1: `Gerilim kaynağı: ${hl('V sabit')}`, l2: `${rd('i')} = ${hl('V')}/${bl('R')}: yüke bağlı`, s1: 6.0, s2: 5.4 },
   { id: 'v2', pre: 3.9, l1: `İdealde ${bl('R → 0')}: ${rd('i → ∞')}`, l2: 'gerçek pilde V düşer', s1: 6.2, s2: 5.2 },
-  { id: 'c1', pre: 7.7, l1: `Akım kaynağı: ${rd('i sabit')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')} → yüke bağlı`, s1: 6.0, s2: 5.4 },
-  { id: 'c2', pre: 5.0, l1: `Anahtar açık: ${bl('R → ∞')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')} → ${hl('∞')} (tanımsız)`, s1: 6.0, s2: 5.8 },
+  { id: 'c1', pre: 7.7, l1: `Akım kaynağı: ${rd('i sabit')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')}: yüke bağlı`, s1: 6.0, s2: 5.4 },
+  { id: 'c2', pre: 5.0, l1: `Anahtar açık: ${bl('R → ∞')}`, l2: `${rd('2 mA')} dayatılır: ${hl('V')} = ${rd('i')}·${bl('R')} → ${hl('∞')}`, s1: 6.0, s2: 5.8 },
   { id: 'c3', pre: 0.5, l1: `${rd('Akım kaynağı')} asla`, l2: 'açık bırakılmaz', s1: 6.4, s2: 6.0 },
-  { id: 'g1', pre: 4.15, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Şarj, CC evresi ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
+  { id: 'g1', pre: 4.15, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Sabit akımla şarj ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
   // v3: f1 ('V sabit / i sabit') 'Bilmen gerekenler' kartına taşındı (bölüm 2f)
   { id: 'f2', pre: 1.3, l1: `${hl('V')} kaynağı + ${bl('R → 0')}: ${rd('i → ∞')}`, l2: `${rd('i')} kaynağı + açık: ${hl('V → ∞')}`, s1: 5.4, s2: 5.4 },
 ];
@@ -246,6 +246,10 @@ function graphPanel(S) {
       k.fillText('eksen dışı', ax + 30, top - 42);   // çizim alanının üstünde
       k.font = '900 44px "InterDisplay", sans-serif';
       k.fillText(!Number.isFinite(y) ? 'V → ∞' : `V = ${y >= 100 ? Math.round(y) : fmt(y, 2)} V`, ax - 34, ay + 26);   // doğrunun üstünde
+      k.font = '700 38px "InterDisplay", sans-serif'; k.textAlign = 'left';
+      k.fillText(`(${IS} mA dayatılırsa)`, ox + 24, py(6.2));
+      k.fillStyle = '#6fb2ff'; k.textAlign = 'right'; k.font = '900 42px "InterDisplay", sans-serif';
+      k.fillText('R → ∞', right - 4, py(1.3));
       k.globalAlpha = 1;
     }
     tex.needsUpdate = true;
