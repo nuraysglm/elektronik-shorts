@@ -254,7 +254,7 @@ function graphPanel(S) {
     k.stroke(); k.shadowBlur = 0; k.restore();
     // nokta: ölçü aletindeki değer; eksen dışına çıkarsa köşede durur + 'eksen dışı' oku ve değeri
     const outY = y > G.YMAX + 1e-9;
-    const dx = outY ? right : px(r), dy = py(Math.min(y, G.YMAX));
+    const dx = outY && mode === 'I' ? right : px(r), dy = py(Math.min(y, G.YMAX));
     k.fillStyle = '#ffffff'; k.beginPath(); k.arc(dx, dy, 12, 0, 7); k.fill();
     if (mode === 'V') {
       // dik uç notu: R → 0 yaklaşırken, eğrinin sağında (eksen etiketinden ayrı)
@@ -262,6 +262,15 @@ function graphPanel(S) {
       if (o > 0) {
         k.globalAlpha = o; k.fillStyle = col; k.font = '900 58px "InterDisplay", sans-serif'; k.textAlign = 'left'; k.textBaseline = 'middle';
         k.fillText('↑ ∞', px(0.62), py(25)); k.globalAlpha = 1;
+      }
+      // v4 özet (kısa devre): eksen dışı oku + ampermetreyle aynı değer (2e-1)
+      if (outY) {
+        const ax = px(Math.max(r, 0.08)) + 40;
+        k.strokeStyle = col; k.fillStyle = col; k.lineWidth = 7;
+        k.beginPath(); k.moveTo(ax, top + 40); k.lineTo(ax, top - 4); k.stroke();
+        k.beginPath(); k.moveTo(ax - 16, top + 14); k.lineTo(ax, top - 8); k.lineTo(ax + 16, top + 14); k.stroke();
+        k.font = '800 40px "InterDisplay", sans-serif'; k.textAlign = 'right'; k.textBaseline = 'middle';
+        k.fillText(`eksen dışı (${!Number.isFinite(y) || y >= 1000 ? 'i → ∞' : 'i = ' + Math.round(y) + ' mA'})`, right - 4, top - 42);
       }
       // doğrusal olmama notu (2e-3)
       k.fillStyle = '#cfe3ea'; k.globalAlpha = 0.9; k.font = '700 40px "InterDisplay", sans-serif'; k.textAlign = 'right'; k.textBaseline = 'middle';
@@ -431,11 +440,11 @@ export function build(S) {
     label('lsv', hl('ideal gerilim<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(0, CUTC) + onC(CUTF, CUTB), size: 3.6 });
     label('lsi', rd('ideal akım<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(CUTC, CUTG) + onC(CUTB, KS[0]), size: 3.6 });
     label('lr', `${bl('R = ' + fmtR(r))}`, X - 0.5, 0.3, RZ + 0.02, { opacity: onC(0, CUTG) + onC(CUTF, KS[0]), size: 3.7 });
-    label('lks', bl('kısa devre'), X - 0.5, 0.3, RZ + 0.36, { opacity: onC(SC[1], CUTB), size: 3.8 });
+    label('lks', bl('kısa devre'), X - 0.68, 0.3, RZ + 0.36, { opacity: onC(SC[1], CUTB), size: 3.8 });
     label('le', gr('elektronlar'), -0.25, 0.32, -ZH + 0.18, { opacity: onC(0.6, A.v1 + 1.5), size: 3.6 });
     label('la', rd('akım yönü'), X - 0.66, 0.3, 0.36, { opacity: onC(1.0, A.v1 + 1.5), size: 3.6 });
     label('lsw', 'anahtar', -X + 0.5, 0.3, 0.17, { opacity: onC(A.c1 + 0.3, Z.c1[0]) + onC(A.c2, SWO[1] - 0.35), size: 3.6 });
-    label('lop', bl('açık devre'), -X + 0.55, 0.3, 0.17, { opacity: onC(SWO[1], CUTG) + onC(SWO2[1], SWC[0]), size: 3.8 });
+    label('lop', bl('açık devre'), -X + 0.55, 0.3, 0.17, { opacity: onC(SWO[1], CUTG) + onC(SWO2[1], KS[0]), size: 3.8 });
     const lo = (k, d = 0.4) => (life ? easeOut(seg(t, GM[k] + d, GM[k] + d + 0.4)) : 0);
     label('lm1', hl('≈ gerilim kaynağı'), ...lw(0, 0.1, 0.68), { opacity: lo(1, 0.5), size: 3.8 });
     label('lm2', rd('≈ akım kaynağı'), ...lw(-0.62, 0.1, -0.7), { opacity: lo(2, 0.5), size: 3.8 });
