@@ -4,7 +4,7 @@
 
 Kaynak: B. Razavi, Basic Circuits, Ders 1 (YouTube U_4q0sfChOk) transkripti; zaman damgaları dogruluk.md'de.
 Seviye: üniversite 1. sınıf (bölüm 2b). Ortaokul benzetmeleri (balon-yün, atom modeli) çıkarıldı.
-Süre: 87,1 sn (≤ 90). Seslendirme/müzik yok; yalnızca olay efektleri (anahtar tıkı, akım uğultusu, pop, thud).
+Süre: 89,3 sn (≤ 90; v5). Seslendirme/müzik yok; yalnızca olay efektleri (anahtar tıkı, akım uğultusu, pop, thud).
 
 ## Gerekli bilgi (videoda geçtiği yer)
 - [x] Akımın değeri ve yönü vardır; referans ok (c1: kırmızı "akım yönü" oku, "i: değer + yön")
@@ -27,8 +27,11 @@ Süre: 87,1 sn (≤ 90). Seslendirme/müzik yok; yalnızca olay efektleri (anaht
 | o1 | 42,4–49,2 | Voltmetre yerinde belirir, uçları açık anahtarın iki ucuna değer; ekran 0 → 9,00 V; uçlarda + / −; dirençte "i = 0" | Açık devre: i = 0 / ama uçlarında 9 V var! | thud, pop |
 | o2 | 52,6–60,0 | Anahtar kapanır; voltmetre 0,00 V; elektronlar akar; "i = 3 mA" | Kapalı anahtar = kısa devre / V = 0, ama i = 3 mA | tık, uğultu |
 | g1 | 63,2–68,7 | Kesme (aynı kadraj): priz (230 V AC) → açık bıçaklı anahtar → sönük lamba, kesintisiz bakır tel döngüsü; açık anahtarın uçları arasında sarı yay, "≈ 230 V (AC)", "anahtar açık", "i = 0" | Lamba söndürülünce: / i = 0, uçlarında ≈ 230 V | thud |
-| f1 | 70,1–77,5 | Kesme: aynı devre (kapalı), elektronlar akar, kamera yavaşça yaşar | Açık devre → yalnızca i = 0 / Kısa devre → yalnızca V = 0 | uğultu |
-| f2 | 77,8–87,1 | Aynı devre, döngüye uygun son kare | i = dq/dt · q = ∫ i dt / V: birim (+) yük başına enerji | — |
+| f2 | 69,8–76,5 | Kesme: aynı devre (kapalı), elektronlar akar; okunurken devre yerinde %80'e küçülür | i = dq/dt (1. satır) / q = ∫₀ᵗ i dt (2. satır) | uğultu |
+| kart | 76,6–89,3 | Aynı devre yaşar (elektronlar, kamera); döngüye uygun son kare | Bilmen gerekenler: • i = dq/dt; q = ∫₀ᵗ i dt • Akımın değeri ve yönü vardır • Gerilim iki nokta arasında tanımlıdır • Açık devre: yalnızca i = 0 / Kısa devre: yalnızca V = 0 | — |
 
 
 **3. sürüm (12.11.2026, kanal sahibinin 2. iş emri):** tel bütün devre boyunca kesintisiz (elektronlar yalnızca telde), "DERS 1" etiketi yok, gerçek hayat sahnesinde açık devre = açık anahtar. İçerik ve yazılar v2 ile aynı.
+
+
+**5. sürüm (15.11.2026, kanal sahibinin 4. iş emri):** son sahnede denklemler ayrı satırlarda (q = ∫₀ᵗ i dt), imleç kalıntısı yok, f1 yerine 'Bilmen gerekenler' kartı (bölüm 2f; zor-noktalar.md). 0–64,5 sn v4 ile aynı.

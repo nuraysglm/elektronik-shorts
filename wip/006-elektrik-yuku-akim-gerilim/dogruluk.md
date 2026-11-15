@@ -24,3 +24,14 @@ Okunan kaynak: B. Razavi, Basic Circuits, Lecture 1 (YouTube U_4q0sfChOk), trans
 
 ## İlk yorum sorusu
 "9 V'luk pile 3 kΩ direnç ve açık bir anahtar seri bağlı. Açık anahtarın uçları arasındaki gerilim kaç volt? Cevabını yaz 👇" → Cevap: 9 V (i = 0 → dirençte 0 V → tüm 9 V anahtarda). Videodaki o1 ile aynı akıl yürütme.
+
+## 5. sürüm: son sahne ve 'Bilmen gerekenler' kartı (15.11.2026)
+| Yazı | Neden doğru / kaynak | ✔ |
+|---|---|---|
+| i = dq/dt (ayrı satır) | [16:35] tanım | ✔ |
+| q = ∫₀ᵗ i dt (ayrı satır; t = 0'da q = 0, grafik ve sayaç 0'dan başlıyor; q = t = 0'dan beri kesitten geçen yük) | [20:38], [23:08]; Razavi sınırsız yazar, sınırlar bölüm 2d gereği eklendi | ✔ |
+| • i = dq/dt; q = ∫₀ᵗ i dt (noktalı virgül ayırıcı, bölüm 2d'ye uygun) | aynı | ✔ |
+| • Akımın değeri ve yönü vardır | [17:40]–[17:56] | ✔ |
+| • Gerilim iki nokta arasında tanımlıdır | [35:54]–[36:44] | ✔ |
+| • Açık devre: yalnızca i = 0 | [18:29]–[19:34] "only guarantees a zero current" | ✔ |
+| Kısa devre: yalnızca V = 0 | [37:01]–[38:36] | ✔ |

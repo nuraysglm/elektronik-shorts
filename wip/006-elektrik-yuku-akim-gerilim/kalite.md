@@ -1,30 +1,28 @@
-# 006 (4. sürüm) — kalite kontrolü (bölüm 7)
+# 006 (5. sürüm) — kalite kontrolü (bölüm 7)
 
-**Sonuç: GEÇTİ (1. turda; render sonrası 2 etiket düzeltildi, 7–15 ve 50–61 sn aralıkları yeniden render edilip parçalara eklendi).** Süre 87,2 sn (≤ 90).
-Kanal sahibinin iş emri (13.11.2026): YALNIZCA ekran düzeni. İçerik, ekran yazıları, zamanlama ve süre v3 ile aynı. v3 → `media/…/eski/006-elektrik-yuku-akim-gerilim-v3.mp4`.
+**Sonuç: GEÇTİ (1. turda).** Süre 89,3 sn (≤ 90). v4 → `media/…/eski/006-elektrik-yuku-akim-gerilim-v4.mp4`.
+Kanal sahibinin 4. iş emri (14.11.2026): yalnızca son sahne + "Bilmen gerekenler" kartı (bölüm 2f). 0–64,5 sn v4 ile birebir aynı (v4 MP4'ünden kesildi; sahne kodu o aralıkta değişmedi); 64,5–89,3 yeniden render.
 
-## İş emri: dengeli doluluk (bölüm 4)
-- Devre büyütüldü (X 0,85 → 1,0; ZH 0,95 → 1,4), kamera yaklaştı (10,6 → 9,3) ve 62°'ye çıktı; ana sahne yazı bandının hemen altından (y ≈ %27) pil altına (y ≈ %79) uzanıyor, genişlik x ≈ %7–86.
-- Otomatik ölçüm (`render.mjs --safe`, yeni): ana sahne kutusu her 0,5 sn'de ≥ %70 genişlik ve ≥ %50 yükseklik → 175 örnek, **0 ihlal** (v3: 175/175 ihlal, x %19–80, y %36–68).
-- i(t) grafik ekranı devre döngüsünün içine alındı (yazı bandının altında; v3'te üst yazılar grafiğe biniyordu). Arka tel grafiğin üstünde kesintisiz görünüyor.
-- Gerçek hayat sahnesi: yuvarlak kaide → dikdörtgen kaide, ölçek 1,3 → 1,55, aynı kadraj.
-- Alt boşluk mat masa yüzeyi ve gölgeyle dolu; karartma/gradyan yok.
-
-## Yazı–nesne ve yazı–yazı çakışması (bölüm 4, yeni otomatik kontrol)
-- Nesne kutuları: pil, anahtar, direnç, grafik, voltmetre, akım oku, priz, lamba (userData.box). v3'te 16 çeşit çakışma vardı (3 kΩ×direnç, a/b×pil, üst yazılar×grafik, +/−×anahtar, priz etiketi×priz…).
-- v4: yazı–nesne **0**, yazı–yazı **0**; güvenli alan 627 kutu **0 ihlal** (`guvenli_alan.json`).
-- Render sonrası kontak sayfasında "i = 3 mA" ve "akım yönü" etiketlerinin akım okuna değdiği görüldü (ok kutusu ölçüme eklenmemişti) → ok ölçüme eklendi, etiketler sola alındı, ilgili aralıklar yeniden render edildi; birleşim noktaları (7, 15, 50, 61 sn) kare kare kontrol edildi, sıçrama yok.
+## İş emri
+1. **Ayrı satır denklemler:** f2'de "i = dq/dt" (1. satır) ve "q = ∫₀ᵗ i dt" (2. satır, belirli integral: alt sınır 0, üst sınır t). '·' ayırıcı yok. Integral sınırları HTML ile çizildi (InterDisplay'de ₀ᵗ glifi yok); kırpılma düzeltildi, tam çözünürlükte kontrol edildi.
+2. **İmleç:** `tools/lib/stage.js` kalem ucu artık r ≥ 0,97'de `display:none` (yazı bitmeden tamamen kaybolur). Her satırın bitişinden 0,07–0,1 sn sonraki karelerde biten satırda imleç yok; son karede imleç yok. v4'ün 0–64,5 sn'sindeki 12 satır bitiş karesi de kontrol edildi: kalıntı yok. (Yeni satır yazılmaya başlarken kalem ucu satır başında görünür; bu yazma animasyonudur.)
+3. **"Bilmen gerekenler" kartı** (76,6–89,3 sn): başlık + 4 madde (son madde 2 satır), satır satır kalemle yazılır, birikir, son karede kalır. Tamamlandıktan sonra 4,0 sn okunur; her satır kendi okuma süresini (1,2 + 0,35 × kelime) karşılar (kodda check). Arkada elektronlar akar, kamera yaşar.
+   - Kart için devre yerinde %80'e küçülür (pil kenarı sabit, 1,3 sn, f2 okunurken; kural 2a-16). Bu yüzden 75,5–89,3 sn'de "dengeli doluluk" ölçümü eşiğin altında (ANA ≈ x %15–79, y %36–80; 28 örnek). Diğer bütün sahnelerde doluluk v4'teki gibi. Kart 6 satır olduğu için bant y %12–34'ü kullanıyor; devre küçülmeden yazı tele binerdi.
+4. f1 ("Açık devre → yalnızca i = 0 / Kısa devre → yalnızca V = 0") kaldırıldı, içeriği kartın son maddesine taşındı; "gerilim: 1 V = 1 J/C" satırı kaldırıldı (v1'de V_ab = 9 J ÷ 1 C = 9 V zaten var). Süre ≤ 90 sn için gerekliydi.
 
 ## A. İçerik
-- v3 ile aynı (dogruluk.md; bağımsız denetim v2'de yapıldı, içerik değişmedi → bölüm 7 A gereği tekrarlanmadı). Render konsolunda DOĞRULAMA HATASI yok.
+- Bağımsız metin denetimi (alt ajan, yalnızca metin, her yazı tek tek): **zorunlu düzeltme yok**; seviye "üniversite 1. sınıf için yeni: i = dq/dt / q = ∫ i dt tanımı, V_ab gösterimi, açık/kısa devre ayrımı".
+  - Koşullu 2 madde koddan doğrulandı: i(t) basamak (anında 0 → 3 mA ve 3 → 0; alan tam dikdörtgen, 27 mC); voltmetre "+" ucu anahtarın arka ucunda (direnç üzerinden pilin + ucuna bağlı, i = 0 → +9 V).
+  - Uygulanmayan öneriler (kanal sahibinin önerdiği yazımla çelişiyor ya da kartı 4 maddenin üstüne çıkarıyor): q = ∫₀ᵗ i(τ) dτ; kısa devre satırına ayrı madde; "Açık devre: i = 0 (V her değeri alabilir)"; "ok yönü keyfi, ters ise i < 0" satırı; c1'de "+" yerine "ve" (c1 v4'ten değişmeden kullanıldı). Kanal sahibi isterse sonraki sürümde.
+- Kart maddeleri Razavi Ders 1 transkriptiyle doğrulandı (dogruluk.md). Render konsolunda DOĞRULAMA HATASI yok.
 
 ## B. Görüntü
-- Kontak sayfaları: 0,5 / 6 / 8,2 / 13 / 18,4 / 24 / 30,3 / 36 / 42,5 / 47 / 52,7 / 58 / 61,2 / 62,1 / 70,3 / 71,1 / 78,8 / 84 / 87,1 sn + düzeltme sonrası 10 kare. Kesme, taşma, titreme yok; tel kesintisiz, elektronlar telde; üst %11 boş.
-- Kesmeler (≈ 60,4 ve 69,4 sn): aynı kadraj, doğrudan kesme.
+- Kontak sayfaları (son MP4): 64,3 / 64,6 (birleşim) / 69,0 / 69,4 (kesme) / 71,5 / 73,5 / 75,0 / 76,8 / 76,95 / 78 / 80 / 82 / 84 / 85,6 / 87 / 89,2 sn + 8 satır bitiş karesi + tam çözünürlükte integral kırpıntıları. Birleşimde sıçrama yok, kesme aynı kadraj, taşma/titreme yok, tel kesintisiz.
+- Güvenli alan (64–89,3 sn, `guvenli_alan_v5.json`): yazı ihlali **0**, yazı–nesne/yazı–yazı kesişimi **0**. YouTube maskeli kareler (0,2 / 72,5 / 82 / 89,2): yazılar alt %32 ve sağ sütun dışında.
 - freezedetect: 0 donma.
 
 ## C. Ses
-- Entegre −16,6 LUFS, tepe −2,1 dB; 4 kHz üstü max −30,5 dB. Seslendirme/müzik yok (efektler v3 ile aynı).
+- Entegre −16,6 LUFS, tepe −2,1 dB; 4 kHz üstü max −30,5 dB. Seslendirme/müzik yok; efektler v4 ile aynı (meta.cues).
 
 ## D. Teknik
-- 1080×1920, 30 fps, H.264 + AAC, 87,2 sn.
+- 1080×1920, 30 fps, H.264 + AAC, 89,3 sn.
