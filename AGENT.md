@@ -87,7 +87,9 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
    - Birimler ve ön ekler doğru (mA, kΩ, mC); sayılar Türkçe ondalık virgülle (0,30 A); büyüklük harfleri tutarlı (aynı videoda i ve I karışmaz; ani değer küçük harf).
    - Oklar (→, ⇒) yalnızca "sonuç olarak/olursa" anlamında; "eşittir" yerine kullanılmaz.
 3. **Animasyon kalıntısı yok:** Kalem imleci yazı bitince tamamen kaybolur; yarım kalmış harf, takılı imleç, titreyen etiket olmaz.
-4. **Denetim:** Bölüm 7 A'daki bağımsız denetçiye ekrandaki **her yazı ve formül tek tek** verilir ve sorulur: "Bu doğru mu? Bir öğrenci bunu yanlış okuyabilir mi? Razavi'nin gösterimiyle tutarlı mı?" Ayrıca son videodan her yazının tam göründüğü kareler alınıp okunur. Tek bir şüpheli gösterim → düzelt, yeniden render et.
+5. **Yazı dili açık olur, aşırı kısaltma yok (kanal sahibinin emri, 15.11.2026):** Matematiksel işaretler (`+`, `→`, `=`, `:`, `/`) **asla kelime yerine** kullanılmaz: "ile birlikte" için `+`, "olursa/demek" için `→`, "ve" için `/` yazılmaz (007'de 'V kaynağı + R → 0: i → ∞' öğrencileri karıştırdı). İşaretler yalnızca formülün içinde, matematiksel anlamlarıyla yer alır. Ekrandaki yazılar kısa ama **tam Türkçe ifadeler**dir; "kısa devre", "açık devre", "gerilim kaynağı" gibi terimler kısaltılmadan yazılır ("V kaynağı", "i kaynağı" gibi kısaltmalar yok). Bir satır formül içeriyorsa önce sözlü ifade, sonra parantez içinde formül gelir: "Gerilim kaynağı kısa devre edilirse akım sonsuza gider (i = V/R → ∞)". Satır uzarsa iki satıra böl (bölüm 4), kısaltma.
+6. **Yazı ile görüntü aynı durumu gösterir:** Ekrandaki yazı hangi durumu anlatıyorsa (kısa devre, açık devre, R → 0 …) o anda görüntüde o durum gösterilir; yazı başka bir durumu anlatırken sahne farklı bir şey göstermez.
+7. **Denetim:** Bölüm 7 A'daki bağımsız denetçiye ekrandaki **her yazı ve formül tek tek** verilir ve sorulur: "Bu doğru mu? Bir öğrenci bunu yanlış okuyabilir mi? Razavi'nin gösterimiyle tutarlı mı?" Ayrıca son videodan her yazının tam göründüğü kareler alınıp okunur. Tek bir şüpheli gösterim → düzelt, yeniden render et.
 
 ## 2e. Grafik kuralları (kanal sahibinin emri, 14.11.2026)
 
