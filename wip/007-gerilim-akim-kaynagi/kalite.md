@@ -1,27 +1,8 @@
-# 007 (2. sürüm) — kalite kontrolü (bölüm 7)
+# 007 v3 — kalite kontrolü (15.11.2026) — GEÇTİ (1. tur)
 
-**Sonuç: GEÇTİ (1. turda).** Süre 83,0 sn (≤ 90). 1. sürümün raporu: `kalite-v1.md`.
-Kanal sahibinin iş emri (13.11.2026): YALNIZCA ekran düzeni + yazıların grafiğe/nesnelere binmesi. İçerik, ekran yazıları, zamanlama ve süre v1 ile aynı. v1 → `media/…/eski/007-gerilim-akim-kaynagi-v1.mp4`.
-
-## İş emri
-- Devre büyütüldü (X 0,85 → 1,0; ZH 0,95 → 1,4), kamera 10,6 → 9,6 / 58° → 62°. Ana sahne x ≈ %8–89, y ≈ %27–80 (kaynak gövdesi; yazısız).
-- Grafik ekranı devre döngüsünün içinde, yazı bandının altında (v1'de üst yazılar ve kanca alt satırı grafiğe biniyordu). Kanca alt satırı "İdeal kaynak: ne sabit kalır?" grafikle arasında boşlukla.
-- "R = … kΩ" etiketi direncin soluna alındı (v1'de direncin üstündeydi). "ideal gerilim/akım kaynağı" etiketi iki satır, devre içinde sol tarafta; voltmetre kablolarından ve alt %32'den uzak (v1'de kabloların üstündeydi). Voltmetre sağa (x 0,22), ampermetre sol-arka köşeye alındı.
-- Gerçek hayat sahnesi: tek dikdörtgen kaide, ölçek 1,05 → 1,25; önde AA pil + akü, arkada şarj olan telefon; etiketler model yanında.
-
-## Otomatik ölçüm (`render.mjs --safe`, guvenli_alan.json)
-- Güvenli alan: 666 kutu, **0 ihlal**. Yazı–nesne (kaynak, anahtar, ampermetre, voltmetre, voltmetre kabloları, direnç, grafik, akım oku, AA pil, akü, telefon) ve yazı–yazı kesişimi: **0**. Doluluk (≥ %70 genişlik, ≥ %50 yükseklik): 167 örnek, **0 ihlal**.
-
-## A. İçerik
-- v1 ile aynı (dogruluk.md; bağımsız denetim v1'de yapıldı, içerik değişmedi → tekrarlanmadı). Render günlüklerinde DOĞRULAMA HATASI yok.
-
-## B. Görüntü
-- Kontak sayfaları (son videodan): 0,3 / 4 / 11 / 16 / 21,7 / 27 / 35,5 / 42,3 / 47,3 / 51 / 53,4 / 57,4 / 61,8 / 66 / 69,9 / 76,4 sn + render öncesi YouTube maskeli 6+6 kare. Kesilme, taşma, titreme, çakışma yok; tel kesintisiz, elektronlar telde; açık devre = açık anahtar; üst %11 boş; karartma/gradyan yok; ders etiketi yok.
-- Kesmeler (≈ 35,0 / 57,3 / 69,5 sn): aynı kadraj, doğrudan kesme. 57,3 sn'de gerçek hayat kaidesi 0,3 sn boş görünür, sonra modeller belirir (v1 ile aynı zamanlama).
-- freezedetect: 0 donma.
-
-## C. Ses
-- Entegre −16,3 LUFS, tepe −2,0 dBFS; 4 kHz üstü max −18,5 dB. Seslendirme/müzik yok (efektler v1 ile aynı).
-
-## D. Teknik
-- 1080×1920, 30 fps, H.264 + AAC, 83,0 sn.
+**A. İçerik:** dogruluk.md v3 eklemeleri (grafik kontrol noktaları, kart maddeleri, Razavi zaman damgaları) ✔. check(): i(3/1/0,25 kΩ) = 2/6/24 mA konumları, 24 mA eksen içinde, süre ≤ 90 ✔. Bağımsız metin denetimi (render öncesi): seviye "üniversite"; 4 zorunlu düzeltme uygulandı (c2 '2 mA dayatılır: V = i·R → ∞'; '→ yüke bağlı' yerine ': yüke bağlı'; 'CC' yerine 'Sabit akımla şarj'; açık devre grafiğinde '(2 mA dayatılırsa)' ve 'R → ∞'). Kart doğru, 4 madde videoda açıklanıyor.
+**2e grafik:** i ekseni 0–30 mA (ampermetre 2 → 3 → 6 → 24 mA ile nokta aynı konumda, eksen sınırına yapışma yok); V(R) 0–8 V, açık devrede nokta doğru üzerinde köşede + 'eksen dışı' oku ve voltmetreyle aynı değer; '↑ ∞' eğrinin dik ucunun yanında, eksen etiketleri ayrı; 'i ∝ 1/R — doğrusal değil' notu ✔.
+**A2:** animasyon önce, etiket sonra; elektronlar − → +, kırmızı akım oku + → − ✔.
+**B. Görüntü:** 16 kare (2 kontak sayfası) + grafik yakın plan kareleri incelendi: kesilen yazı, çakışma, imleç kalıntısı yok; tel kesintisiz. render.mjs --safe: güvenli alan 0 ihlal (699 kutu), yazı–nesne kesişimi 0; doluluk yalnızca kart sırasında (76,5–81 sn; devre yazıya yer açmak için %80'e küçülür, kural 2a-16 — 006 v5 ile aynı). freezedetect: 0 donuk aralık. Konsol hatası yok.
+**C. Ses:** −16,4 LUFS, tepe −2,0 dBFS; 4 kHz üstü max_volume: -18.5 dB; yalnızca olay efektleri, seslendirme/müzik yok ✔.
+**D. Teknik:** 1080×1920, 30 fps, H.264 + AAC, 89,6 sn (≤ 90) ✔.

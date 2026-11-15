@@ -5,11 +5,11 @@
 // voltmetre kaynağın uçlarında; arkada canlı I(R) / V(R) grafiği. Elektronlar yeşil (dış devrede − → +), geleneksel akım oku kırmızı (+ → −).
 // Sahne geçişleri aynı kadrajda, kesme ile (kural 15). Ekrandaki tüm sayılar hesaplanır ve check() ile doğrulanır.
 
-import { THREE, RoundedBoxGeometry, clamp, seg, easeInOut, easeOut, fade, lerp } from '../tools/lib/stage.js';
-import { hl, rd, bl, gr, fmt, check, penTimeline, narrationPen } from '../tools/lib/anlatim.js';
-import { canvasTex, roundedLoop, closedWire, resistor, projLabel, camRig } from '../tools/lib/parcalar.js';
-import { makeSwitch, platform, phone } from '../tools/lib/devre.js';
-import { aaCell, carBattery } from '../tools/lib/kaynaklar.js';
+import { THREE, RoundedBoxGeometry, clamp, seg, easeInOut, easeOut, fade, lerp } from '../../tools/lib/stage.js';
+import { hl, rd, bl, gr, fmt, check, penTimeline, narrationPen, penSec, wordsOf } from '../../tools/lib/anlatim.js';
+import { canvasTex, roundedLoop, closedWire, resistor, projLabel, camRig } from '../../tools/lib/parcalar.js';
+import { makeSwitch, platform, phone } from '../../tools/lib/devre.js';
+import { aaCell, carBattery } from '../../tools/lib/kaynaklar.js';
 
 // ---------------------------------------------------------------- değerler
 const VS = 6;                 // ideal gerilim kaynağı, V
@@ -21,17 +21,34 @@ check(near(IS * 1, 2) && near(IS * 2, 4) && near(IS * 3, 6), 'akım kaynağı: 2
 // ---------------------------------------------------------------- anlatım
 const BEATS = [
   { id: 'h1', pen: false, pre: 0, l1: `${rd('Akım kaynağını')}`, l2: `<b style="font-weight:900">${hl('açık')} bırakırsan?</b>`, s1: 7.4, s2: 7.4, extra: 1.2 },
-  { id: 'v1', pre: 6.7, l1: `Gerilim kaynağı: ${hl('V sabit')}`, l2: `${rd('i')} = ${hl('V')}/${bl('R')} → yüke bağlı`, s1: 6.0, s2: 5.4 },
+  { id: 'v1', pre: 6.7, l1: `Gerilim kaynağı: ${hl('V sabit')}`, l2: `${rd('i')} = ${hl('V')}/${bl('R')}: yüke bağlı`, s1: 6.0, s2: 5.4 },
   { id: 'v2', pre: 3.9, l1: `İdealde ${bl('R → 0')}: ${rd('i → ∞')}`, l2: 'gerçek pilde V düşer', s1: 6.2, s2: 5.2 },
-  { id: 'c1', pre: 7.7, l1: `Akım kaynağı: ${rd('i sabit')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')} → yüke bağlı`, s1: 6.0, s2: 5.4 },
-  { id: 'c2', pre: 5.0, l1: `Anahtar açık: ${bl('R → ∞')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')} → ${hl('∞')} (tanımsız)`, s1: 6.0, s2: 5.8 },
+  { id: 'c1', pre: 7.7, l1: `Akım kaynağı: ${rd('i sabit')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')}: yüke bağlı`, s1: 6.0, s2: 5.4 },
+  { id: 'c2', pre: 5.0, l1: `Anahtar açık: ${bl('R → ∞')}`, l2: `${rd('2 mA')} dayatılır: ${hl('V')} = ${rd('i')}·${bl('R')} → ${hl('∞')}`, s1: 6.0, s2: 5.8 },
   { id: 'c3', pre: 0.5, l1: `${rd('Akım kaynağı')} asla`, l2: 'açık bırakılmaz', s1: 6.4, s2: 6.0 },
-  { id: 'g1', pre: 4.15, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Şarj, CC evresi ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
-  { id: 'f1', pre: 1.3, l1: `Gerilim kaynağı → ${hl('V sabit')}`, l2: `Akım kaynağı → ${rd('i sabit')}`, s1: 5.6, s2: 5.6 },
-  { id: 'f2', pre: 0.3, l1: `${hl('V')} kaynağı + ${bl('R → 0')}: ${rd('i → ∞')}`, l2: `${rd('i')} kaynağı + açık: ${hl('V → ∞')}`, s1: 5.4, s2: 5.4, extra: 0.4 },
+  { id: 'g1', pre: 4.15, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Sabit akımla şarj ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
+  // v3: f1 ('V sabit / i sabit') 'Bilmen gerekenler' kartına taşındı (bölüm 2f)
+  { id: 'f2', pre: 1.3, l1: `${hl('V')} kaynağı + ${bl('R → 0')}: ${rd('i → ∞')}`, l2: `${rd('i')} kaynağı + açık: ${hl('V → ∞')}`, s1: 5.4, s2: 5.4 },
 ];
-const { Z, A, W: WR, DUR } = penTimeline(BEATS, { k: 1.0 });
-export const _T = { Z, A };
+const { Z, A, W: WR } = penTimeline(BEATS, { k: 1.0 });
+
+// 'Bilmen gerekenler' kartı (bölüm 2f): f2'den sonra, aynı ekranda, satır satır kalemle yazılır; satırlar birikir, son karede kalır
+const KART = [
+  { id: 'kh', html: `<span style="color:#7fe3ff">Bilmen gerekenler</span>`, y: 13.4, size: 4.6, weight: 900 },
+  { id: 'k1', html: `• İdeal ${hl('V')} kaynağı: ${hl('V sabit')}, ${rd('i')} yüke bağlı`, y: 17.9 },
+  { id: 'k2', html: `• İdeal ${rd('i')} kaynağı: ${rd('i sabit')}, ${hl('V')} yüke bağlı`, y: 21.5 },
+  { id: 'k3', html: `• ${rd('Akım kaynağı')} açık bırakılmaz`, y: 25.1 },
+  { id: 'k4', html: `• ${hl('V')} sabitken ${rd('i')} ∝ 1/${bl('R')} (doğrusal değil)`, y: 28.7 },
+];
+const KS = [Z.f2[1] - 1.7, Z.f2[1] - 0.4];   // devre yerinde hafifçe küçülür (kural 2a-16: yazıya yer), f2 okunurken; başka olay yok
+const KSC = 0.8;
+{ let t = Z.f2[1] + 0.1; for (const k of KART) { k.t0 = t; k.t1 = t + penSec(k.html); t = k.t1 + 0.06; } }
+const KEND = KART[KART.length - 1].t1;
+const DUR = Math.ceil((KEND + Math.max(4.0, ...KART.map((k) => 1.2 + 0.35 * wordsOf({ l1: k.html }) - (KEND - k.t1)))) * 30) / 30;
+for (const k of KART) check(DUR - k.t1 >= 1.2 + 0.35 * wordsOf({ l1: k.html }) - 1e-9, `kart ${k.id}: okuma süresi`);
+check(DUR - KEND >= 4.0, 'kart en az 4 sn okunur kalır (2f-2)');
+check(KS[0] >= WR.f2[1] + 1.0, 'küçülme f2 yazısı bittikten sonra');
+export const _T = { Z, A, W: WR, KART, KS, DUR };
 check(DUR <= 90, `süre ≤ 90 sn (${DUR})`);
 
 // ---------------------------------------------------------------- olaylar
@@ -43,7 +60,7 @@ const RC1 = [A.c1 + 1.5, A.c1 + 3.1];       // 1 → 2 kΩ
 const RC2 = [A.c1 + 4.65, A.c1 + 6.25];       // 2 → 3 kΩ
 const SWO = [A.c2 + 0.3, A.c2 + 1.5];       // anahtar açılır (kontak SWO[0]'da kopar)
 const VUP = [A.c2 + 1.3, A.c2 + 3.4];       // voltmetre büyür → ∞
-const CUTG = A.g1 + 0.1, CUTF = A.f1 + 0.1; // gerçek hayat aralığı
+const CUTG = A.g1 + 0.1, CUTF = A.f2 + 0.1; // gerçek hayat aralığı
 const GM = [0, 1, 2].map((i) => CUTG + 0.3 + i * 0.85);
 check(RV2[1] + 1.5 <= Z.v1[0] && RV3[1] + 1.5 <= Z.v2[0] && RC2[1] + 1.4 <= Z.c1[0] && VUP[1] + 1.5 <= Z.c2[0], 'her olaydan sonra ≥ 1,5 sn bekleme');
 check(RV2[0] - RV1[1] >= 1.5 && RC2[0] - RC1[1] >= 1.5 && RC1[0] - CUTC >= 1.4, 'adımlar arası ≥ 1,5 sn');
@@ -64,7 +81,7 @@ check(near(R(Z.v1[0]), 1) && near(I(Z.v1[0]), 6) && V(Z.v1[0]) === 6, 'v1: R = 1
 check(near(R(Z.v2[0]), 0.25) && near(I(Z.v2[0]), 24), 'v2: R = 0,25 kΩ, i = 24 mA');
 check(near(R(Z.c1[0]), 3) && I(Z.c1[0]) === 2 && near(V(Z.c1[0]), 6), 'c1: R = 3 kΩ, i = 2 mA, V = 6 V');
 check(I(Z.c2[0]) === 0 && V(Z.c2[0]) > 9000, 'c2: açık → i = 0, V → ∞');
-check(near(R(Z.f1[0]), 3) && I(Z.f1[0]) === 2 && !open(Z.f1[0]), 'f1: devre kapalı, 2 mA');
+check(near(R(Z.f2[0]), 3) && I(Z.f2[0]) === 2 && !open(Z.f2[0]), 'f2: devre kapalı, 2 mA');
 
 // görsel akış hızı ∝ akım (24 mA'de sınırlı)
 const VEL = (t) => 0.32 * Math.min(I(t), 10) * (swAng(t) > 0.999 ? 1 : 0);
@@ -158,49 +175,82 @@ function source(S, kind, value) {
   S.scene.add(g); return { group: g, shell };
 }
 
-// canlı grafik: mode 'V' → I(R) = 6/R hiperbolü; mode 'I' → V(R) = 2R doğrusu (+ açık devrede ∞)
+// canlı grafik (v3, bölüm 2e): mode 'V' → i(R) = 6/R, eksenler R 0–3 kΩ, i 0–30 mA (gösterilen en büyük değer 24 mA kapsanır);
+// mode 'I' → V(R) = 2R, eksenler R 0–4 kΩ, V 0–8 V; açık devrede nokta doğru üzerinde eksen köşesine gider, ötesi 'eksen dışı' okuyla.
+// Çalışma noktası her an ölçü aletindeki değerin konumundadır (px/py doğrudan R(t), I(t), V(t)'den).
+const GAX = { V: { RMAX: 3, YMAX: 30, YST: 10, lab: 'i (mA)', f: (x) => VS / x }, I: { RMAX: 4, YMAX: 8, YST: 2, lab: 'V (V)', f: (x) => IS * x } };
+const GEO = { Wc: 1024, Hc: 590, ox: 130, oy: 480, top: 150, right: 1024 - 90 };
+const gpx = (m, r) => GEO.ox + (r * (GEO.right - GEO.ox)) / GAX[m].RMAX;
+const gpy = (m, v) => GEO.oy - (v * (GEO.oy - GEO.top)) / GAX[m].YMAX;
+{ // kontrol noktaları: eğri formülle birebir, eksen konumu doğru değere denk gelir
+  const tick = (m, v) => GEO.oy - (v / GAX[m].YST) * ((GEO.oy - GEO.top) / (GAX[m].YMAX / GAX[m].YST));
+  check(near(GAX.V.f(3), 2) && near(GAX.V.f(1), 6) && near(GAX.V.f(0.25), 24), 'grafik V: i(3 kΩ) = 2, i(1 kΩ) = 6, i(0,25 kΩ) = 24 mA');
+  check(near(gpy('V', GAX.V.f(1)), tick('V', 0) + 0.6 * (tick('V', 10) - tick('V', 0))), 'grafik V: 6 mA noktası 0–10 çizgileri arasında %60');
+  check(near(gpy('V', 24), GEO.oy - 0.8 * (GEO.oy - GEO.top)) && 24 < GAX.V.YMAX, 'grafik V: 24 mA eksen içinde (%80)');
+  check(near(gpx('V', 3), GEO.right) && near(gpx('I', 4), GEO.right), 'R ekseni sınırları');
+  check(near(gpy('I', GAX.I.f(3)), GEO.oy - 0.75 * (GEO.oy - GEO.top)), 'grafik I: 6 V noktası %75');
+}
 function graphPanel(S) {
-  const Wc = 1024, Hc = 590;
+  const { Wc, Hc, ox, oy, top, right } = GEO;
   const c = document.createElement('canvas'); c.width = Wc; c.height = Hc;
   const k = c.getContext('2d'); const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
   const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false });
   const m = new THREE.Mesh(new THREE.PlaneGeometry(GW, GW * Hc / Wc), mat);
-  const ox = 130, oy = 470, RMAX = 4, YMAX = 8, sx = (Wc - 210) / RMAX, sy = 330 / YMAX;
-  const px = (r) => ox + r * sx, py = (v) => oy - v * sy;
   let last = '';
-  const draw = (mode, r, r0, inf) => {
-    const key = `${mode}|${r.toFixed(3)}|${inf.toFixed(3)}`; if (key === last) return; last = key;
+  // r: anlık R (kΩ); r0: izin başladığı R; y: ölçü aletindeki değer (mA ya da V)
+  const draw = (mode, r, r0, y) => {
+    const key = `${mode}|${r.toFixed(4)}|${Number.isFinite(y) ? y.toFixed(3) : 'inf'}`; if (key === last) return; last = key;
+    const G = GAX[mode], px = (x) => gpx(mode, x), py = (v) => gpy(mode, v);
     k.clearRect(0, 0, Wc, Hc);
     k.fillStyle = 'rgba(14,20,24,0.92)'; k.strokeStyle = '#2b3d44'; k.lineWidth = 6;
     k.beginPath(); k.roundRect(6, 6, Wc - 12, Hc - 12, 26); k.fill(); k.stroke();
     k.strokeStyle = 'rgba(120,190,210,0.10)'; k.lineWidth = 2;
-    for (let s = 1; s <= RMAX; s++) { k.beginPath(); k.moveTo(px(s), oy); k.lineTo(px(s), py(YMAX)); k.stroke(); }
-    for (let v = 2; v <= YMAX; v += 2) { k.beginPath(); k.moveTo(ox, py(v)); k.lineTo(px(RMAX), py(v)); k.stroke(); }
-    k.strokeStyle = '#cfe3ea'; k.lineWidth = 5; k.beginPath(); k.moveTo(ox, py(YMAX + 0.4)); k.lineTo(ox, oy); k.lineTo(px(RMAX + 0.15), oy); k.stroke();
+    for (let s = 1; s <= G.RMAX; s++) { k.beginPath(); k.moveTo(px(s), oy); k.lineTo(px(s), top); k.stroke(); }
+    for (let v = G.YST; v <= G.YMAX; v += G.YST) { k.beginPath(); k.moveTo(ox, py(v)); k.lineTo(right, py(v)); k.stroke(); }
+    k.strokeStyle = '#cfe3ea'; k.lineWidth = 5; k.beginPath(); k.moveTo(ox, top - 12); k.lineTo(ox, oy); k.lineTo(right + 18, oy); k.stroke();
     k.fillStyle = '#cfe3ea'; k.font = '800 38px "InterDisplay", sans-serif'; k.textAlign = 'center'; k.textBaseline = 'top';
-    for (let s = 0; s <= RMAX; s++) k.fillText(String(s), px(s), oy + 12);
-    k.textAlign = 'right'; k.textBaseline = 'middle'; for (let v = 0; v <= YMAX; v += 2) k.fillText(String(v), ox - 16, py(v));
-    k.font = '800 44px "InterDisplay", sans-serif'; k.textAlign = 'left';
+    for (let s = 0; s <= G.RMAX; s++) k.fillText(String(s), px(s), oy + 12);
+    k.textAlign = 'right'; k.textBaseline = 'middle'; for (let v = 0; v <= G.YMAX; v += G.YST) k.fillText(String(v), ox - 16, py(v));
     const col = mode === 'V' ? '#ff5a4f' : '#ffd23f';
-    k.fillStyle = col; k.fillText(mode === 'V' ? 'i (mA)' : 'V (V)', ox + 14, py(YMAX + 0.1));
-    k.fillStyle = '#6fb2ff'; k.textAlign = 'right'; k.fillText('R (kΩ)', px(RMAX + 0.15), oy - 34);
-    const f = mode === 'V' ? (x) => VS / x : (x) => IS * x;
-    // çizilen iz: r0'dan r'ye
+    // eksen etiketleri: çizim alanının dışında (üstte / sağ altta), eğri ve noktayla çakışmaz
+    k.font = '800 44px "InterDisplay", sans-serif'; k.textAlign = 'left'; k.textBaseline = 'bottom';
+    k.fillStyle = col; k.fillText(G.lab, ox - 40, top - 22);
+    k.fillStyle = '#6fb2ff'; k.textAlign = 'right'; k.textBaseline = 'top'; k.font = '800 40px "InterDisplay", sans-serif'; k.fillText('R (kΩ)', right - 40, oy + 54);   // tik sayılarının altında, eğriden ayrı
+    // çizilen iz: r0'dan r'ye (formülden)
     const a = Math.min(r, r0), b = Math.max(r, r0);
-    k.save(); k.beginPath(); k.rect(ox, py(YMAX + 0.3), px(RMAX + 0.1) - ox, oy - py(YMAX + 0.3)); k.clip();
+    k.save(); k.beginPath(); k.rect(ox, top - 8, right - ox + 8, oy - top + 8); k.clip();
     k.strokeStyle = col; k.lineWidth = 9; k.lineJoin = 'round'; k.shadowColor = col; k.shadowBlur = 16; k.beginPath();
-    for (let i = 0; i <= 120; i++) { const x = a + ((b - a) * i) / 120; const yy = py(Math.min(f(x), YMAX + 1)); i ? k.lineTo(px(x), yy) : k.moveTo(px(x), yy); }
-    if (mode === 'I' && inf > 0) { const e = 3 + 1.2 * inf; k.lineTo(px(e), py(Math.min(IS * 3 + 6 * inf * 1.6, YMAX + 1))); }
+    for (let i = 0; i <= 160; i++) { const x = a + ((b - a) * i) / 160; const yy = py(Math.min(G.f(x), G.YMAX)); i ? k.lineTo(px(x), yy) : k.moveTo(px(x), yy); }
     k.stroke(); k.shadowBlur = 0; k.restore();
-    // nokta
-    let dx = px(r), dy = py(Math.min(f(r), YMAX + 0.2));
-    if (mode === 'I' && inf > 0) { dx = px(Math.min(3 + 1.2 * inf, RMAX + 0.05)); dy = py(Math.min(IS * 3 + 6 * inf * 1.6, YMAX + 0.2)); }
+    // nokta: ölçü aletindeki değer; eksen dışına çıkarsa köşede durur + 'eksen dışı' oku ve değeri
+    const outY = y > G.YMAX + 1e-9;
+    const dx = outY ? right : px(r), dy = py(Math.min(y, G.YMAX));
     k.fillStyle = '#ffffff'; k.beginPath(); k.arc(dx, dy, 12, 0, 7); k.fill();
-    // ∞ işareti (taşma)
-    const over = mode === 'V' ? clamp((f(r) - YMAX) / 4) : inf;
-    if (over > 0) {
-      k.globalAlpha = over; k.fillStyle = col; k.font = '900 64px "InterDisplay", sans-serif'; k.textAlign = 'left'; k.textBaseline = 'middle';
-      k.fillText('→ ∞', mode === 'V' ? px(0.75) : px(2.0), py(YMAX - 0.9)); k.globalAlpha = 1;
+    if (mode === 'V') {
+      // dik uç notu: R → 0 yaklaşırken, eğrinin sağında (eksen etiketinden ayrı)
+      const o = clamp((y - 9) / 9);
+      if (o > 0) {
+        k.globalAlpha = o; k.fillStyle = col; k.font = '900 58px "InterDisplay", sans-serif'; k.textAlign = 'left'; k.textBaseline = 'middle';
+        k.fillText('↑ ∞', px(0.62), py(25)); k.globalAlpha = 1;
+      }
+      // doğrusal olmama notu (2e-3)
+      k.fillStyle = '#cfe3ea'; k.globalAlpha = 0.9; k.font = '700 40px "InterDisplay", sans-serif'; k.textAlign = 'right'; k.textBaseline = 'middle';
+      k.fillText('i ∝ 1/R — doğrusal değil', right - 4, py(21)); k.globalAlpha = 1;
+    } else if (outY) {
+      const o = clamp((y - G.YMAX) / 4);
+      k.globalAlpha = o; k.strokeStyle = col; k.fillStyle = col; k.lineWidth = 7;
+      const ax = right - 150, ay = py(G.YMAX) + 6;
+      k.beginPath(); k.moveTo(ax, ay + 36); k.lineTo(ax, ay - 2); k.stroke();
+      k.beginPath(); k.moveTo(ax - 18, ay + 18); k.lineTo(ax, ay - 8); k.lineTo(ax + 18, ay + 18); k.stroke();
+      k.font = '800 40px "InterDisplay", sans-serif'; k.textAlign = 'right'; k.textBaseline = 'middle';
+      k.fillText('eksen dışı', ax + 30, top - 42);   // çizim alanının üstünde
+      k.font = '900 44px "InterDisplay", sans-serif';
+      k.fillText(!Number.isFinite(y) ? 'V → ∞' : `V = ${y >= 100 ? Math.round(y) : fmt(y, 2)} V`, ax - 34, ay + 26);   // doğrunun üstünde
+      k.font = '700 38px "InterDisplay", sans-serif'; k.textAlign = 'left';
+      k.fillText(`(${IS} mA dayatılırsa)`, ox + 24, py(6.2));
+      k.fillStyle = '#6fb2ff'; k.textAlign = 'right'; k.font = '900 42px "InterDisplay", sans-serif';
+      k.fillText('R → ∞', right - 4, py(1.3));
+      k.globalAlpha = 1;
     }
     tex.needsUpdate = true;
   };
@@ -293,7 +343,7 @@ export function build(S) {
   const ck = (t, a, dd, de) => [t, a, CD + dd, CE + de, CX, CT];
   const cam = camRig(S, [
     ck(0, 0.0, 0.1, 0), ck(A.v1, 0.04, 0.05, 0), ck(A.v2, -0.03, 0, 0), ck(A.c1, 0.03, 0.05, 0),
-    ck(A.c2, -0.04, 0, 0), ck(A.g1, 0.03, 0.05, 0), ck(A.f1, -0.03, 0, 0), ck(DUR, 0.04, -0.05, 0),
+    ck(A.c2, -0.04, 0, 0), ck(A.g1, 0.03, 0.05, 0), ck(A.f2, -0.03, 0, 0), ck(DUR, 0.04, -0.05, 0),
   ]);
   const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15.5, y2: 22 });
 
@@ -301,11 +351,13 @@ export function build(S) {
     cam(t);
     const life = t >= CUTG && t < CUTF;
     CG.visible = !life; LG.visible = life;
+    { const ks = 1 - (1 - KSC) * easeInOut(seg(t, ...KS)); CG.scale.setScalar(ks); CG.position.set(0, 0, ZH * (1 - ks)); }
     const ik = isI(t);
     SV.group.visible = !ik; SI.group.visible = ik;
     SW.set(swAng(t));
     const r = R(t), i = I(t), v = V(t), inf = ik && open(t) ? vInf(t) : 0;
-    GP.draw(ik ? 'I' : 'V', r, ik ? 1 : 3, inf);
+    // açık devrede nokta V = 2R doğrusunda, voltmetredeki değerin R'si (R = V / i) ile ilerler
+    if (!ik) GP.draw('V', r, 3, i); else if (inf > 0 || open(t)) GP.draw('I', Math.min(v / IS, GAX.I.RMAX), 1, inf >= 0.98 ? Infinity : v); else GP.draw('I', r, 1, v);
     GP.mat.opacity = 1;
 
     // elektronlar: akım varken − → + akar; açık anahtarda durur, yerinde titrer
@@ -337,6 +389,8 @@ export function build(S) {
     models.forEach((g, k) => { const o = easeOut(seg(t, GM[k], GM[k] + 0.5)); g.visible = life && o > 0.01; g.scale.setScalar(Math.max(0.001, o) * (k === 1 ? 0.95 : k === 2 ? 0.85 : 1)); g.position.y = 0.06 + (1 - o) * 0.25; });
 
     yaz(t);
+    for (const k of KART) S.text(k.id, k.html, { x: 54, y: k.y, size: k.size || 4.1, weight: k.weight || 700, align: 'left', maxWidth: 78, nowrap: true,
+      opacity: t >= k.t0 ? easeOut(seg(t, k.t0 - 0.05, k.t0 + 0.2)) : 0, reveal: clamp((t - k.t0) / (k.t1 - k.t0)) });
 
     // kanca alt satırı
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
@@ -345,8 +399,8 @@ export function build(S) {
     // nesne etiketleri
     const onC = (a, b) => (life ? 0 : fade(t, a, b, 0.3));
     label('lsv', hl('ideal gerilim<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(0, CUTC), size: 3.6 });
-    label('lsi', rd('ideal akım<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(CUTC, DUR + 1), size: 3.6 });
-    label('lr', `${bl('R = ' + fmt(r, r < 1 ? 2 : 1).replace(',0', '') + ' kΩ')}`, X - 0.5, 0.3, RZ + 0.02, { opacity: onC(0, CUTG) + onC(CUTF, DUR + 1), size: 3.7 });
+    label('lsi', rd('ideal akım<br>kaynağı'), -0.43, 0.3, 0.64, { opacity: onC(CUTC, CUTG) + onC(CUTF, KS[0]), size: 3.6 });
+    label('lr', `${bl('R = ' + fmt(r, r < 1 ? 2 : 1).replace(',0', '') + ' kΩ')}`, X - 0.5, 0.3, RZ + 0.02, { opacity: onC(0, CUTG) + onC(CUTF, KS[0]), size: 3.7 });
     label('le', gr('elektronlar'), -0.25, 0.32, -ZH + 0.18, { opacity: onC(0.6, A.v1 + 1.5), size: 3.6 });
     label('la', rd('akım yönü'), X - 0.66, 0.3, 0.36, { opacity: onC(1.0, A.v1 + 1.5), size: 3.6 });
     label('lsw', 'anahtar', -X + 0.5, 0.3, 0.17, { opacity: onC(A.c1 + 0.3, Z.c1[0]) + onC(A.c2, SWO[1] - 0.35), size: 3.6 });
