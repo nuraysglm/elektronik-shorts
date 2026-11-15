@@ -24,3 +24,4 @@
 - 12:40 UTC: grafik yeniden yazıldı: V modu R 0–3 kΩ, i 0–30 mA (24 mA eksen içinde); I modu R 0–4 kΩ, V 0–8 V, açık devrede nokta V = 2R doğrusunda köşeye gider, ötesi 'eksen dışı' oku + voltmetreyle aynı değer (V = … V / V → ∞). Eksen etiketleri çizim alanı dışında; '↑ ∞' dik ucun sağında; 'i ∝ 1/R — doğrusal değil' notu. check(): i(3 kΩ)=2, i(1 kΩ)=6, i(0,25 kΩ)=24 mA konumları. f1 karta taşındı; kart (başlık + 4 madde), devre %80'e küçülür. Süre 88,4 sn. --safe: güvenli alan 0, kesişim 0, doluluk yalnızca kart sırasında (küçülme, 2a-16).
 - Sıradaki: 4 parça render (render_parts.sh) → birlestir.sh → kalite → v2 eski/'ye → Metricool yalnızca video + açıklama, tarih 16.11 16:00 aynı. Son tarih 16.11 15:30.
 - parca-01: tamam (12:47 UTC)
+- parca-00: tamam (12:47 UTC)
