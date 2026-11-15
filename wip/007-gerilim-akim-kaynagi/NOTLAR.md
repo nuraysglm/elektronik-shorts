@@ -25,3 +25,4 @@
 - Sıradaki: 4 parça render (render_parts.sh) → birlestir.sh → kalite → v2 eski/'ye → Metricool yalnızca video + açıklama, tarih 16.11 16:00 aynı. Son tarih 16.11 15:30.
 - parca-01: tamam (12:47 UTC)
 - parca-00: tamam (12:47 UTC)
+- parca-02: tamam (12:47 UTC)
