@@ -4,3 +4,4 @@
 - Bağımsız metin denetimi: SEVİYE üniversite; zorunlu 3 düzeltme uygulandı (ilk yorum sorusu metni, kanca alt satırı "(k = 10 mA/V)", grafik eksenleri "v (V)", "t (s)"); öneriler: kart maddeleri, "mikrofondan sonraki yükselteç", giriş 3 basamak.
 - --safe: güvenli alan 0 ihlal, yazı–nesne kesişimi 0; doluluk yalnızca kart sırasında (devre %80, kural 2a-16). Süre 59,3 sn.
 - Sıradaki: 4 parça render (render_parts.sh) → birlestir.sh → kalite.md → scenes/ + media/ → Metricool (sıradaki boş gün: 2026-11-17 Salı 16:00 Londra).
+- parca-03: tamam (12:52 UTC)
