@@ -72,7 +72,7 @@ Konu 2–5 (4'lü temel seri) için de ders 1–3 transkriptleri kullanılabilir
 
 ## Sayısal Elektronik kaynakları (kanal sahibinin onayı, 16.11.2026)
 
-Telifli kitaplar; **herkese açık bu depoya asla konmaz**. Kanal sahibinin Google Drive'ında özel klasörde durur: **"Elektronik Kanal - Kaynaklar (özel)"** (klasör id `1cbFwuNwTfD3ywFPz8QQOFDf2QNEScMsF`). Ajan Google Drive bağlantısıyla (`search_files` → `read_file_content` / `download_file_content`) okur. Metin dosyaları her sayfanın başında `=== [Kitap, PDF sayfa N] ===` işareti taşır; `dogruluk.md`'ye "Mano 4e, PDF s. 112" gibi yaz. Kitaplardan **yalnızca bilgi** alınır: sorular, şekiller ve metin kopyalanmaz (bölüm 2b-4 telif kuralı); videolarda/kitapçıkta tamamen özgün sorular ve çizimler kullanılır.
+Telifli kitaplar; **herkese açık bu depoya asla konmaz**. Kanal sahibinin Google Drive'ında özel klasörde durur: **"Elektronik Kanal - Kaynaklar (özel)"** (klasör id `1cbFwuNwTfD3ywFPz8QQOFDf2QNEScMsF`). Ajan Google Drive bağlantısıyla (`search_files` → `read_file_content` / `download_file_content`) okur. Metin dosyaları her sayfanın başında `=== [Kitap, PDF sayfa N] ===` işareti taşır; `dogruluk.md`'ye "Mano 4e, PDF s. 112" gibi yaz. **Kanal sahibinin kuralı (16.11.2026): Bu kaynaklardaki soru ve çözümler ajana yalnızca REFERANSTIR.** Ajan videolarda ve dijital üründe (soru kitapçığı) **orijinal soruları kendisi üretir ve çözümlerini kendisi yapar**; kaynaklardaki sorular, çözümler, şekiller ve metin kopyalanmaz, çevrilmez, sayıları değiştirilerek uyarlanmaz. Kaynaklar kavram, yöntem, sınav tipi/zorluk seviyesi ve doğruluk kontrolü için kullanılır.
 
 | Dosya (Drive) | İçerik | Drive id |
 |---|---|---|
@@ -94,7 +94,7 @@ Telifli kitaplar; **herkese açık bu depoya asla konmaz**. Kanal sahibinin Goog
 | mano_cozum_1…5.txt | Mano 4e Çözüm Kılavuzu (metin; 1: Bölüm 1–3, 2: 3–5, 3: 5–7, 4: 7–8, 5: 8–9) | 1O5dtXs10f2FeWf58_p1xrpkcUSIYKMuX, 1R6be2Utgqr_jMxOIseKfPFjKrH1ssgvo, 1s6Bhrnclg9-ll89kQ9IRBimDSvHXQX0l, 1EJbf8vEbUHZu1bPGbiaHo6qSrgkodH0g, 1-q-p_MQN8fbw7IKFV9Utmh4TM4VkGDI0 |
 | Mano Digital Design 4e Çözüm Kılavuzu.pdf | Çözüm kılavuzunun PDF'i (şekiller/Karnaugh haritaları için) | 1Op2WiUzenCL6Y4FeHVjd6tLd19CGLoQZ |
 | Model sorular ve cevaplar (taranmış).pdf | Model sorular ve çözümleri (taranmış görüntü; metin yok) | 1YzlVHZCjeJMERTJye3hsvQlXvScqD-rs |
-| Midterm2 F2017 / F2018 Çözümler (taranmış) | Ara sınav çözümleri — **kanal sahibi Drive'a kendisi yükleyecek** (dosya boyutu nedeniyle) | — |
-| Mano ve Floyd kitaplarının orijinal PDF'leri | Şekiller için — **kanal sahibi Drive'a kendisi yükleyecek** (dosya boyutu nedeniyle); yüklenene kadar metin dosyaları kullanılır | — |
+| Midterm2 F2017 Solutions.pdf / Midterm2 F2018 Solutions.pdf | Ara sınav soruları ve çözümleri (taranmış) | 1O930qV-2Wck1E5NIUkz4aw4K_5X8cmN1 / 1aPoHYe25aaB9tf12eVObJkhR4ixPauAN |
+| Mano Digital Design 4e.pdf / Floyd Digital Fundamentals 11e.pdf | Kitapların orijinal PDF'leri (şekiller için; büyük dosyalar — önce metin dosyalarını kullan, şekil gerekirse ilgili sayfayı indir) | 1Wk5KvyNyxmZcpoIlpVTAr05LUsO2Q5Cy / 1H5FtgCBIjEXDfpz_f000_f96CG537yPj |
 
 Ders → kitap eşlemesi (sayisal-konular.md): S1 Floyd 1 · S2–S5 Mano 1, Floyd 2 · S6–S8 Mano 2, Floyd 3–4 · S9–S11 Mano 3, Floyd 4 · S12–S15 Mano 4, Floyd 5–6 · S16–S20 Mano 5, Floyd 7.

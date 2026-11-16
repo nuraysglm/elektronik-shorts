@@ -118,7 +118,8 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 1. **Yalnızca kanal sahibinin onayladığı kaynaklar kullanılır.** Onaylı kaynaklar `kaynaklar.md`'deki "Onaylı kaynaklar" bölümündedir. Şu an onaylı: Prof. Behzad Razavi'nin Basic Circuits ders serisi (Razavi serisi için), kanal sahibinin bağlantısını verdiği Wikipedia sayfaları (Resistor, Voltage, Electric current) ve Sayısal Elektronik için Mano ve Floyd kitapları, Mano çözüm kılavuzu, model sorular ve ara sınav çözümleri (Google Drive özel klasör; `kaynaklar.md`). Başka hiçbir kaynak (kitap, site, video) kanal sahibi onaylamadan kullanılmaz; doğrulama için bile.
 2. **Türkçe YouTube videoları asla kaynak değildir** (kanal sahibinin kendi eski dersleri dahil — bunlar yalnızca "ilgili video" bağlantısı olarak verilir). Türkçe videolar yalnızca **talebi anlamak** (hangi konu aranıyor, hangi format izleniyor) için kullanılabilir.
 3. **Kaynağı onaylanmamış konu üretilmez.** Bir serinin sıradaki konusunun onaylı kaynağı yoksa o slota Razavi serisinin sıradaki konusu üretilir (yayın boş kalmaz) ve panelde `onaylar`'a "<seri> için kaynak bekleniyor: <konular listesi>" isteği açılır (aynı istek açıksa yenisini açma).
-4. Her videonun `dogruluk.md`'sinde her iddianın hangi onaylı kaynağa (ve nerede — sayfa/zaman damgası) dayandığı yazılır. Onaylı kaynakta olmayan bilgi videoya girmez.
+4. **Kaynaklardaki soru ve çözümler yalnızca referanstır** (kanal sahibinin kuralı): videolarda ve dijital ürünlerde kullanılan bütün sorular, örnekler ve çözümler ajanın kendi ürettiği orijinal içeriktir; kaynaklardan soru, çözüm, şekil veya metin kopyalanmaz, çevrilmez, sayıları değiştirilerek uyarlanmaz.
+5. Her videonun `dogruluk.md`'sinde her iddianın hangi onaylı kaynağa (ve nerede — sayfa/zaman damgası) dayandığı yazılır. Onaylı kaynakta olmayan bilgi videoya girmez.
 
 ## 2c. Devre çizimi kuralları (kanal sahibinin emri, 12.11.2026)
 
