@@ -1,0 +1,8 @@
+# 008a — kalite kontrolü (16.11.2026) — GEÇTİ (1. tur, 1 onarım)
+
+**A. İçerik:** Tüm check() geçti (k·R₁ = 10; 0,1/0,2/0,15 V → 1/2/1,5 mA → 1/2/1,5 V; 10 mA/V = 1/(100 Ω); grafik ekseni |v| ≤ 2 V < 2,5 V; okuma süreleri; cevabın ilk görüntüsü 3,25 sn ≤ 8 sn; süre 59,3 ≤ 60). Gerekli bilgi listesinin tamamı videoda (senaryo.md). Bağımsız metin denetimi (render öncesi): SEVİYE üniversite; 3 zorunlu düzeltme + 6 öneri uygulandı (dogruluk.md).
+**A2. Görsel öğretim:** giriş düğmesi döner → ampermetre ve voltmetre izler (yazıdan önce); sinüs girişte ince, çıkışta 10 kat büyük iz; eksi yarıda akım eksi, elektronlar ters yöne (referans ok sabit, + ucu akımın girdiği uçta). Elektronlar yeşil (referans yönün tersine), referans akım oku kırmızı. Gerçek hayat: mikrofon + BC547 transistör. Formül parantez içinde, sözlü ifadeden sonra; kart en sonda.
+**B. Görüntü:** 24 kare (yazı başları + 0,5 sn, geçişler, ~3 sn aralık) kontak sayfasında incelendi: yazılar okunur, kesilme yok, kalem imleci kalmıyor, geçişler kesme (34,77 ve 43,88 sn, aynı kadraj). --safe: 583 kutu, 0 güvenli alan ihlali, yazı–nesne/yazı–yazı kesişimi 0; doluluk yalnızca kart sırasında (devre %80, kural 2a-16; ana sahne x ≈ %11–86, y ≈ %28–78). freezedetect: 0.
+  - Bulunan ve düzeltilen hata: parlaklık taramasında 3 tek karelik masa parlaması (n = 958, 1215, 1585; 31,9 / 40,5 / 52,8 sn) — tam çözünürlükte gölge haritası hatası (deterministik, 0,3 ölçekte yok). Kareler önceki kareyle değiştirildi (kare_onar.sh); tekrar tarama: parlama yok (kalan fark ≤ 0,8 luma, görünmez).
+**C. Ses:** −16,5 LUFS, tepe −2,0 dBFS; 4 kHz üstü max −23,0 dB; seslendirme/müzik yok, yalnızca olay efektleri (hum, pop, thud).
+**D. Teknik:** 1080×1920, 30 fps, H.264 + AAC, 59,33 sn (senaryo 59,3).

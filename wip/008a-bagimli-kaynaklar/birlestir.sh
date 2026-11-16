@@ -4,7 +4,7 @@ set -e
 cd "$(dirname "$0")/../.."
 D=wip/008a-bagimli-kaynaklar; O=media/008a-bagimli-kaynaklar; T=$(mktemp -d)
 mkdir -p $O
-for i in 0 1 2 3; do echo "file '$PWD/$D/parca-0$i.mp4'"; done > $T/list.txt
+echo "file '$PWD/$D/onarilmis.mp4'" > $T/list.txt   # kare_onar.sh çıktısı
 ffmpeg -y -loglevel error -f concat -safe 0 -i $T/list.txt -c copy $T/sessiz.mp4
 node -e "import('./$D/scene.js').then(m=>{const x=m.meta;require('fs').writeFileSync('$T/cues.json',JSON.stringify({duration:x.duration,offset:0,...x}))})"
 python3.13 tools/audio.py $T/cues.json $T/ses.wav

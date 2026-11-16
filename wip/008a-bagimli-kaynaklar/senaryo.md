@@ -5,7 +5,7 @@
 Kaynak: B. Razavi, Basic Circuits, Ders 3 (YouTube LUfU9LgClsA) transkripti; zaman damgaları dogruluk.md'de.
 Bölme (bölüm 2g-1, konular.md notu 15.11): Ders 3 → 8a bağımlı kaynaklar (bu video), 8b Ohm yasası ve I–V karakteristikleri.
 Seviye: üniversite 1. sınıf: bağımlı kaynak sembolü (eşkenar dörtgen), kontrol değişkeni, k'nın boyutu, v_in(t) ve v_out(t) grafiği.
-Süre: 56,9 sn (≤ 60). Seslendirme/müzik yok; yalnızca olay efektleri (pop: giriş adımı, thud: sinüse geçiş / modeller, hum: akım).
+Süre: 59,3 sn (≤ 60). Seslendirme/müzik yok; yalnızca olay efektleri (pop: giriş adımı, thud: sinüse geçiş / modeller, hum: akım).
 Değerler: k = 10 mA/V, R₁ = 1 kΩ, k·R₁ = 10; v_in: 0,10 V → 0,20 V (DC), sonra 0,15 V tepe, 0,5 Hz sinüs.
 
 ## Gerekli bilgi (videoda geçtiği yer)
