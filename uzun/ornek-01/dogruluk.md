@@ -15,7 +15,7 @@ Soru, devre ve sayılar bu çalışma için tasarlandı. Razavi'nin Ders 5–6'd
 
 ## 3. Soru
 
-Alt hat referans (0 V). Gerilim kaynağı 10 V (alt hat ile A arası, artı uç A'da). R₁ = 1 kΩ (A–1), R₂ = 2 kΩ (1–alt hat), R₃ = 1 kΩ (1–2), R₄ = 1 kΩ (2–alt hat). Akım kaynağı 4 mA (alt hattan 3 noktasına doğru), R₅ = 3 kΩ (3–2), yani akım kaynağıyla seri. İstenen V₁, V₂.
+Alt hat referans (0 V). Gerilim kaynağı 10 V (alt hat ile A arası, artı uç A'da). R₁ = 1 kΩ (A–1), R₂ = 2 kΩ (1–alt hat), R₃ = 1 kΩ (1–2), R₄ = 1 kΩ (2–alt hat). İdeal akım kaynağı 4 mA (alt hattan 3. düğüme doğru), R₅ = 3 kΩ (3. düğüm – 2. düğüm), yani akım kaynağıyla seri. İstenen V₁, V₂.
 
 Birimler: V, kΩ, mA (1 V = 1 kΩ × 1 mA).
 
@@ -48,7 +48,7 @@ YANLIS denklem (V2/3k eklenirse): V1 = 164/29 = 5.655172413793103  V2 = 120/29 =
 TUM KONTROLLER GECTI
 ```
 
-Yapılan kontroller: (1) videodaki iki denklemin çözümü; (2) bağımsız yöntem: R₅ ve 3 noktası dahil beş bilinmeyenli tam düğüm sistemi (VA, V₁, V₂, V₃ ve gerilim kaynağının akımı) — aynı sonuç; (3) A, 1, 2 düğümlerinde ve referansta KCL = 0; (4) güç dengesi: kaynakların verdiği 108 mW = dirençlerin harcadığı 108 mW; (5) R₅ 0,001 kΩ – 1 000 000 kΩ arasında değiştirildiğinde V₁ ve V₂ değişmiyor, yalnızca V₃ değişiyor; (6) yanlış terim (V₂/(3 kΩ)) eklenirse sonuç V₁ ≈ 5,66 V, V₂ ≈ 4,14 V olur (yanlış).
+Yapılan kontroller: (1) videodaki iki denklemin çözümü; (2) bağımsız yöntem: R₅ ve 3. düğüm dahil beş bilinmeyenli tam düğüm sistemi (VA, V₁, V₂, V₃ ve gerilim kaynağının akımı) — aynı sonuç; (3) A, 1, 2 düğümlerinde ve referansta KCL = 0; (4) güç dengesi: kaynakların verdiği 108 mW = dirençlerin harcadığı 108 mW; (5) R₅ 0,001 kΩ – 1 000 000 kΩ arasında değiştirildiğinde V₁ ve V₂ değişmiyor, yalnızca V₃ değişiyor; (6) yanlış terim (V₂/(3 kΩ)) eklenirse sonuç V₁ ≈ 5,66 V, V₂ ≈ 4,14 V olur (yanlış).
 
 ## 5. İddialar ve dayanakları
 
@@ -63,12 +63,14 @@ Yapılan kontroller: (1) videodaki iki denklemin çözümü; (2) bağımsız yö
 | 7 | 5V₁ − 2V₂ = 20 V | Hesap çıktısı ("sadelesmis" satırı: 20) |
 | 8 | Akım kaynağı kendi akımını dayatır; o kolun akımı bellidir, denklem yazılmaz | Ders 6 [15:07–15:22], [21:55–22:13]; Ders 5 [21:36–21:53] |
 | 9 | Seri kolda akım her yerde aynıdır | Ders 5 [15:15–15:33] (seri = aynı akım) |
-| 10 | Akım kaynağına seri direnç düğüm denklemine girmez; direnç 3 kΩ da 300 kΩ da olsa düğüme giren akım 4 mA'dır | **Çıkarım:** 8 ve 9'dan. Razavi Ders 5–6'da bu cümle açıkça geçmez. Sayısal doğrulama: bölüm 4, R₅ taraması (R₅ = 300 kΩ dahil, V₁ = 6, V₂ = 5 değişmiyor). İdeal akım kaynağı için geçerlidir (soru ideal kaynak içerir). |
-| 11 | "Bu, sık yapılan bir hatadır", "Birçok öğrenci … terim yazar" | Razavi transkriptlerinde yok. Dayanak yalnızca kanal talimatı (`UZUN.md` bölüm 2: bilinen yanlış örnekleri arasında "akım kaynağı içeren dalda direnci denkleme yanlış katmak"). **Onaylı ders kaynağıyla doğrulanmamış bir sıklık iddiasıdır**; kanal sahibi isterse "Dikkat edilmesi gereken bir tuzak" biçiminde yumuşatılabilir. |
+| 10 | İdeal akım kaynağına seri direnç düğüm denklemine girmez; düğüme 4 mA girer; seri direnç akım kaynağının uçlarındaki gerilimi değiştirir, düğüm gerilimlerini değiştirmez | **Çıkarım:** 8 ve 9'dan. Razavi Ders 5–6'da bu cümle açıkça geçmez. Sayısal doğrulama: bölüm 4, R₅ taraması (V₁ = 6, V₂ = 5 değişmiyor; yalnızca V₃ değişiyor). İdeal akım kaynağı için geçerlidir (soru ideal kaynak içerir). |
+| 11 | "Dikkat edilmesi gereken bir tuzaktır"; "Bu direnç için bir terim yazmak akla gelir" | Sıklık iddiası değildir (denetçi bulgusu Ö7 ile "sık yapılan hata" ve "birçok öğrenci" ifadeleri çıkarıldı). Tuzak olarak seçilmesinin dayanağı kanal talimatı (`UZUN.md` bölüm 2). |
+| 11a | Akım kaynağına paralel direnç denkleme girer | **Çıkarım:** paralel direnç düğüme bağlı ayrı bir koldur; her direnç kolunun akımı (uç gerilimleri farkı / direnç) düğüm denklemine yazılır (Ders 6 [6:54–8:17], [9:06–9:40]). Razavi Ders 5–6'da bu cümle açıkça geçmez; bu soruda paralel direnç yoktur, sayısal örneği yapılmadı. |
 | 12 | Doğru denklem: (V₂ − V₁)/(1 kΩ) + V₂/(1 kΩ) = 4 mA; giren = çıkan biçimi | Ders 6 [15:56–16:28] (giren akımlar = çıkan akımlar); hesap: bölüm 3–4 |
 | 13 | −V₁ + 2V₂ = 4 V; toplam 4V₁ = 24 V; V₁ = 6 V; 2V₂ = 10 V; V₂ = 5 V | Hesap çıktısı |
 | 14 | Kontrol: gerilim kaynağından 4 mA; R₂'den 3 mA; R₃'ten 1 mA; akım kaynağından 4 mA; R₄'ten 5 mA; 5 mA × 1 kΩ = 5 V | Hesap çıktısı ("Kol akimlari" ve KCL satırları) |
-| 15 | Akım kaynağının uçlarındaki gerilim 5 V + 12 V = 17 V; R₅'in tek etkisi budur | Hesap çıktısı (V₃ = 17 V; R₅ taramasında yalnızca V₃ değişiyor). "Tek etki" düğüm gerilimleri ve kol akımları açısındandır; R₅'te harcanan güç (48 mW) ve akım kaynağının verdiği güç (68 mW) de R₅'e bağlıdır — metinde güçten söz edilmez. |
+| 15 | R₅'in uçlarında 4 mA × 3 kΩ = 12 V; akım kaynağının üst ucu (3. düğüm) 5 V + 12 V = 17 V | Hesap çıktısı (V₃ = 17 V). |
+| 15a | Akım kaynağı ile R₅ arasındaki nokta da bir düğümdür; gerilimi en sonda bulunur | Düğüm tanımı (Ders 6 [4:28–5:16]); tam sistemde 3. düğüm bilinmeyen olarak çözüldü (bölüm 4, yöntem 2). |
 | 16 | "Bu tuzağa düşen, doğru yöntemle yanlış cevabı bulur" | Hesap çıktısı (yanlış denklemle V₁ ≈ 5,66 V, V₂ ≈ 4,14 V) |
 
 ## 6. Gösterim kontrolü (AGENT.md 2d)
@@ -80,11 +82,18 @@ Yapılan kontroller: (1) videodaki iki denklemin çözümü; (2) bağımsız yö
 
 ## 7. Bağımsız denetim
 
-**Yapılamadı.** Görev tanımındaki ayrı alt ajan (Agent aracı) bu oturumda mevcut değildi. Yerine yalnızca yazarın kendi ikinci okuması yapıldı (bağımsız denetim sayılmaz). Bu okumada yapılan düzeltmeler:
-- "beş V bir eksi iki V iki" biçimi sesli okunuşta "V bir" ile "iki V" karışabileceği için "beş çarpı V bir, eksi iki çarpı V iki" yapıldı.
-- Shorts bölümü tek başına anlaşılsın diye V bir'in ne olduğu ("gerilimi V bir olan komşu düğüm") eklendi.
-- "Dirençlerden çıkan akımlar" ifadesi "düğümden dirençlerle çıkan akımlar" yapıldı (akımın nereden çıktığı belirsizdi).
-- "En sık yapılan hatalardan biri" iddiası "sık yapılan bir hata"ya indirildi (bkz. iddia 11).
-- İkinci bir yanlış ("akım yönü korkusu") metinden çıkarıldı; video tek yanlışa odaklanır.
+Bağımsız denetçi (ayrı ajan, genel müdür başlattı) metni ve bu dosyayı denetledi: **fizik ve matematik doğru, kritik bulgu yok.** Denetçinin raporu bu ajana genel müdür aracılığıyla özet olarak iletildi. Düzeltilen maddeler:
 
-Kanal sahibine/genel müdüre açık kalan noktalar: (a) bağımsız denetim yapılmalı; (b) iddia 11; (c) yapay sesin "V bir", "V iki", "kiloohm" sözcüklerini nasıl okuduğu ancak ses üretilince görülebilir — bu aşamada denenmedi.
+- Ö1: Shorts bölümü 140 kelimeden 117 kelimeye, toplam metin 419 kelimeden 398 kelimeye indirildi.
+- Ö2: Devre tarifi tek anlamlı yapıldı (gerilim kaynağının eksi ucu alt hatta; "birinci ve ikinci düğüm arasında"; akım kaynağı kolu alt hat ile ikinci düğüm arasında, akım alt hattan ikinci düğüme doğru).
+- Ö3: "Akım kaynağına paralel direnç ise denkleme girer" uyarısı Shorts bölümüne eklendi.
+- Ö4: "yalnızca … belirler" ve "tek etkisi budur" çıkarıldı; yerine "akım kaynağının uçlarındaki gerilimi değiştirir, düğüm gerilimlerini değiştirmez" (ses ve ekran yazısı).
+- Ö5: Akım kaynağı ile direnç arasındaki nokta düğüm olarak anıldı; sahne planında "3. düğüm".
+- Ö6: "V bir ve V iki" yerine "Birinci düğümün gerilimine V bir, ikincisine V iki diyoruz".
+- Ö7: "sık yapılan hata" ve "birçok öğrenci" çıkarıldı.
+- K1 ("ideal akım kaynağı"), K3 ("ikinci düğümdeki bir kiloohmdan"), K4 (on iki voltun kaynağı), K5 (iki düğümde aynı biçim: dirençlerle çıkan akımların toplamı; birinci düğümde akım kaynağı olmadığı için sıfır, ikincide giren akıma eşit), K6, K7 (ekranda "Girmez"), K8 (kart), K9 ("İki düğümün gerilimini arıyoruz") uygulandı.
+- **K2 uygulanmadı** (dört miliamperin "on eksi altı, dört volt"tan geldiğini sesle söylemek): 400 kelime sınırına sığmadı. Sahne planında R₁ üzerindeki "4 mA" oku durur; istenirse ekrana `(10 V − 6 V)/(1 kΩ) = 4 mA` yazısı eklenebilir.
+
+Sayılar değişmedi; `dogrula.py` yeniden çalıştırıldı, bütün kontroller geçti.
+
+Açık kalan noktalar: (a) yapay sesin "V bir", "V iki", "kiloohm" sözcüklerini nasıl okuduğu ancak ses üretilince görülebilir; (b) süreler kelime sayısından tahmindir, ölçülmedi; (c) iddia 10 ve 11a Razavi'de açık cümle olarak geçmez, çıkarımdır.
