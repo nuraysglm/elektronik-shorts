@@ -31,3 +31,16 @@ Süre: 89,6 sn (≤ 90; v3). Seslendirme/müzik yok; yalnızca olay efektleri (p
 ## v3 (kanal sahibinin 3. iş emri, 14.11.2026)
 - i–R grafiği: gerilim kaynağı bölümünde eksenler R 0–3 kΩ, i 0–30 mA; nokta her an ampermetre değerinde (2 → 3 → 6 → 24 mA); '↑ ∞' dik ucun sağında, eksen etiketleri çizim alanı dışında; 'i ∝ 1/R — doğrusal değil' notu (2e-3). Akım kaynağı bölümünde R 0–4 kΩ, V 0–8 V; açık devrede nokta V = 2R doğrusunda köşeye gider, ötesi 'eksen dışı' oku + voltmetreyle aynı değer; '(2 mA dayatılırsa)', 'R → ∞' notları.
 - f1 kaldırıldı (içeriği karta); bağımsız denetim düzeltmeleri: '→ yüke bağlı' yerine ': yüke bağlı' (ok yalnızca sonuç/limit), c2 '2 mA dayatılır: V = i·R → ∞' (ampermetre 0 iken 0·∞ okunmasın), 'CC' kısaltması yerine 'Sabit akımla şarj'.
+
+## v4 (kanal sahibinin 4. iş emri + panel kararı A, 15–16.11.2026) — 87,5 sn
+Ekran yazıları (bölüm 2d-5: işaret kelime yerine yok, kısaltma yok):
+- h1 'Akım kaynağını / açık bırakırsan?' (2,6 sn)
+- v1 'Gerilim sabit kalır / akım yüke bağlıdır (i = V/R)'
+- v2 'R küçüldükçe akım büyür / sıfırda akım sonsuza gider'
+- c1 'Akım sabit kalır / gerilim yüke bağlıdır (V = i·R)'
+- c2 'Anahtar açılınca gerilim / sonsuza gider (V = 2 mA·R → ∞)' (ampermetre 0 iken 0·∞ okunmasın diye sabit 2 mA yazılır)
+- g1 'Pil gerilim kaynağı gibidir / şarj cihazı akım kaynağı gibidir'; etiketler 'gerilim kaynağı gibi', 'akım kaynağı gibi', 'şarj cihazı'
+- f2a 'Gerilim kaynağı kısa devre edilirse / akım sonsuza gider' (görüntü: R 1 kΩ → 0, ampermetre ∞, 'kısa devre')
+- f2b 'Akım kaynağı açık bırakılırsa / gerilim sonsuza gider' (görüntü: anahtar açılır, voltmetre ∞, 'açık devre')
+- Kart: 'Bilmen gerekenler' • İdeal gerilim kaynağında gerilim sabittir • İdeal akım kaynağında akım sabittir • Gerilim sabitken i ∝ 1/R (doğrusal değil)
+- c3 kaldırıldı. Grafik notu '(i = 2 mA sabit tutulursa)'. R adımları 1,3 sn.

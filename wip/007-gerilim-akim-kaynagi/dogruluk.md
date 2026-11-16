@@ -35,3 +35,10 @@ Okunan kaynak: B. Razavi, Basic Circuits, Lecture 2 (YouTube Hd0ZTXM572U), vidIQ
 | Kart • V sabitken i ∝ 1/R (doğrusal değil) | i = V/R | [14:02–14:21] | ✔ |
 
 İlk yorum sorusu: "2 mA'lik ideal akım kaynağına 4 kΩ direnç bağlı. Direncin uçlarındaki gerilim kaç volt? Cevabını yaz 👇" → V = 2 mA × 4 kΩ = 8 V ✔
+
+## v4 (16.11.2026) — değişen yazılar
+- 'R küçüldükçe akım büyür; sıfırda akım sonsuza gider': i = 6 V / R; 1 → 0,25 kΩ: 6 → 24 mA; R → 0 ⇒ i → ∞ (ideal kaynak, Razavi Ders 2; check) ✔
+- 'Anahtar açılınca gerilim sonsuza gider (V = 2 mA·R → ∞)': ideal akım kaynağı 2 mA'yı korumak zorunda; açık anahtar R → ∞ ⇒ V → ∞ (Razavi Ders 2) ✔
+- 'şarj cihazı akım kaynağı gibidir': Li-ion şarjının sabit akım (CC) evresinde şarj cihazı akımı sabit tutar (Wikipedia "Battery charger") ✔ — 'gibi' yaklaşık benzerlik
+- Kart: gerilim/akım sabit (ideal kaynak tanımları), i ∝ 1/R (V sabit) ✔
+- Bağımsız denetim (v4): zorunlu bulgular uygulandı: kartta sembol yerine kelime, 'şarj' → 'şarj cihazı', v2 yazısı görüntüyle uyumlu (gerçek pil yazısı kaldırıldı), c2'de i yerine 2 mA. 'Ampermetre 0 gösteriyor' bulgusu: açık anahtarda gerçek akım 0'dır ve çelişki (ideal kaynak 2 mA'yı koruyamaz → V → ∞) videonun anlattığı noktadır; grafik notu ve c2 formülü 2 mA ile yazıldı. 'V = 2R' ekranda yok (yalnızca kod yorumu). Seviye yorumu "lise": denetçi i–V karakteristiği ve ideal kaynak bağlantı tutarsızlığını önerdi; iş emri yalnızca yazı düzeltmesi olduğu için kanal sahibine panelde not olarak iletildi (önceki denetimler "üniversite" demişti).
