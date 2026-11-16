@@ -9,3 +9,4 @@
 - parca-01: tamam (12:54 UTC)
 - parca-02: tamam (12:54 UTC)
 - 13:1x UTC: birleştirildi + ses → media/008a-…/ (59,3 sn). 3 tek karelik gölge parlaması onarıldı (kare_onar.sh). Kalite GEÇTİ (kalite.md). Sıradaki: main'de doğrula → Metricool 2026-11-17 16:00.
+- 13:05 UTC: Metricool'da planlandı: 2026-11-17 16:00 Londra (uuid 8081578830196657094). Parçalar silindi. İş bitti.
