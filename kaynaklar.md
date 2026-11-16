@@ -6,7 +6,7 @@
 |---|---|---|
 | Razavi serisi (konu 6–45) ve 4'lü temel seri | Prof. Behzad Razavi, "Basic Circuits" YouTube ders serisi (aşağıdaki tablo) | 11.11.2026 |
 | Direnç / Gerilim / Akım | Wikipedia: Resistor, Voltage, Electric current (aşağıda) | 08.11.2026 |
-| Sayısal Elektronik serisi | **bekleniyor — kanal sahibi verecek** | — |
+| Sayısal Elektronik serisi ve Sayısal Elektronik soru kitapçığı | M. Morris Mano & M. Ciletti, *Digital Design* 4e; Thomas L. Floyd, *Digital Fundamentals* 11e; Mano *Digital Design* 4e Çözüm Kılavuzu; model sorular ve iki ara sınav çözümü (kanal sahibinin verdiği PDF'ler) — ayrıntı ve Drive dosyaları aşağıda | 16.11.2026 |
 | Bileşen serisi | **bekleniyor — kanal sahibi verecek** | — |
 
 Türkçe YouTube videoları (kanal sahibinin kendi dersleri dahil) kaynak değildir; yalnızca talep analizi ve "ilgili video" bağlantısı için kullanılır.
@@ -68,3 +68,33 @@ Konu listesindeki 40 ders (konu 6–45) bu serinin derslerine birebir karşılı
 | 40 | 45 | n-snjXiVzbE |
 
 Konu 2–5 (4'lü temel seri) için de ders 1–3 transkriptleri kullanılabilir.
+
+
+## Sayısal Elektronik kaynakları (kanal sahibinin onayı, 16.11.2026)
+
+Telifli kitaplar; **herkese açık bu depoya asla konmaz**. Kanal sahibinin Google Drive'ında özel klasörde durur: **"Elektronik Kanal - Kaynaklar (özel)"** (klasör id `1cbFwuNwTfD3ywFPz8QQOFDf2QNEScMsF`). Ajan Google Drive bağlantısıyla (`search_files` → `read_file_content` / `download_file_content`) okur. Metin dosyaları her sayfanın başında `=== [Kitap, PDF sayfa N] ===` işareti taşır; `dogruluk.md`'ye "Mano 4e, PDF s. 112" gibi yaz. Kitaplardan **yalnızca bilgi** alınır: sorular, şekiller ve metin kopyalanmaz (bölüm 2b-4 telif kuralı); videolarda/kitapçıkta tamamen özgün sorular ve çizimler kullanılır.
+
+| Dosya (Drive) | İçerik | Drive id |
+|---|---|---|
+| mano_bolum1.txt | Mano Bölüm 1: Digital Systems and Binary Numbers (PDF s. 14–48) | 1QnOo3NpXnTq7LUcWP0rocvs3HGore9Bv |
+| mano_bolum2.txt | Mano Bölüm 2: Boolean Algebra and Logic Gates (49–82) | 1nH3MQ1fNYE6NYZZHHh8nnNfMISLJjiIS |
+| mano_bolum3.txt | Mano Bölüm 3: Gate-Level Minimization (83–134) | 1hiTqEDdpYbXsFgvHk6Q3Q8VNiv45sbmA |
+| mano_bolum4.txt | Mano Bölüm 4: Combinational Logic (135–194) | 1Ix-rx76Xkjw254Tb3cW3ROsRjjdxi5Ap |
+| mano_bolum5.txt | Mano Bölüm 5: Synchronous Sequential Logic (195–254) | 18grhPtbnwl4jIOjHepncxTFIcrcerhVW |
+| mano_bolum6.txt | Mano Bölüm 6: Registers and Counters (255–296) | 12_A-zfi7QHfq3K3IIioPUylb_8vTk2N_ |
+| floyd_bolum1.txt | Floyd Bölüm 1: Introductory Concepts (16–65) | 1zdDgb7nPUAn-tqTNH42bOgetBWKlGVwv |
+| floyd_bolum2.txt | Floyd Bölüm 2: Number Systems, Operations, and Codes (66–125) | 1YG8X-mMU6oROtsXNfy-r-uO6CDwTGCeV |
+| floyd_bolum3.txt | Floyd Bölüm 3: Logic Gates (126–191) | 19SRm5n5--B01kFvtOBGQj_AZy1hHutML |
+| floyd_bolum4.txt | Floyd Bölüm 4: Boolean Algebra and Logic Simplification (192–261) | 1Y0Oqgseepwan4oJy_3Mn_jwv0vkEJDM9 |
+| floyd_bolum5.txt | Floyd Bölüm 5: Combinational Logic Analysis (262–313) | 1482GqVtVtaQiwcxscN5hrgdMTiWAU8BC |
+| floyd_bolum6.txt | Floyd Bölüm 6: Functions of Combinational Logic (314–387) | 1HDM4oV7EoG_8_TrugpDATrwXuLWsqqPW |
+| floyd_bolum7.txt | Floyd Bölüm 7: Latches, Flip-Flops, and Timers (388–449) | 1sGc7TTbt_NguuQ4gPTMwiPSfY032JwIK |
+| floyd_bolum8.txt | Floyd Bölüm 8: Shift Registers (450–497) | 1suBuJJAspkTL-9xkf6C1x-Cd3YqraMp4 |
+| floyd_bolum9.txt | Floyd Bölüm 9: Counters (498–561) | 1Gf65QlHVFDph1_K51Y_HyioW5jvOa-nB |
+| mano_cozum_1…5.txt | Mano 4e Çözüm Kılavuzu (metin; 1: Bölüm 1–3, 2: 3–5, 3: 5–7, 4: 7–8, 5: 8–9) | 1O5dtXs10f2FeWf58_p1xrpkcUSIYKMuX, 1R6be2Utgqr_jMxOIseKfPFjKrH1ssgvo, 1s6Bhrnclg9-ll89kQ9IRBimDSvHXQX0l, 1EJbf8vEbUHZu1bPGbiaHo6qSrgkodH0g, 1-q-p_MQN8fbw7IKFV9Utmh4TM4VkGDI0 |
+| Mano Digital Design 4e Çözüm Kılavuzu.pdf | Çözüm kılavuzunun PDF'i (şekiller/Karnaugh haritaları için) | 1Op2WiUzenCL6Y4FeHVjd6tLd19CGLoQZ |
+| Model sorular ve cevaplar (taranmış).pdf | Model sorular ve çözümleri (taranmış görüntü; metin yok) | 1YzlVHZCjeJMERTJye3hsvQlXvScqD-rs |
+| Midterm2 F2017 / F2018 Çözümler (taranmış) | Ara sınav çözümleri — **kanal sahibi Drive'a kendisi yükleyecek** (dosya boyutu nedeniyle) | — |
+| Mano ve Floyd kitaplarının orijinal PDF'leri | Şekiller için — **kanal sahibi Drive'a kendisi yükleyecek** (dosya boyutu nedeniyle); yüklenene kadar metin dosyaları kullanılır | — |
+
+Ders → kitap eşlemesi (sayisal-konular.md): S1 Floyd 1 · S2–S5 Mano 1, Floyd 2 · S6–S8 Mano 2, Floyd 3–4 · S9–S11 Mano 3, Floyd 4 · S12–S15 Mano 4, Floyd 5–6 · S16–S20 Mano 5, Floyd 7.
