@@ -25,12 +25,12 @@ const FA = SECENEK === 'B' ? ` (${rd('i')} = ${hl('V')}/${bl('R')} → ∞)` : '
 const FB = SECENEK === 'B' ? ` (${hl('V')} = ${rd('i')}·${bl('R')} → ∞)` : '';
 const BEATS = [
   { id: 'h1', pen: false, pre: 0, l1: `${rd('Akım kaynağını')}`, l2: `<b style="font-weight:900">${hl('açık')} bırakırsan?</b>`, s1: 7.4, s2: 7.4, extra: SECENEK === 'B' ? 1.2 : 0 },   // v4-A: kanca 2,6 sn (9a-1: 1–3 sn), süre için
-  { id: 'v1', pre: 6.7, l1: `Gerilim kaynağı: ${hl('V sabit')}`, l2: `${rd('i')} = ${hl('V')}/${bl('R')}: yüke bağlı`, s1: 6.0, s2: 5.4 },
-  { id: 'v2', pre: 3.9, l1: `İdealde ${bl('R → 0')}: ${rd('i → ∞')}`, l2: 'gerçek pilde V düşer', s1: 6.2, s2: 5.2 },
-  { id: 'c1', pre: 7.7, l1: `Akım kaynağı: ${rd('i sabit')}`, l2: `${hl('V')} = ${rd('i')}·${bl('R')}: yüke bağlı`, s1: 6.0, s2: 5.4 },
-  { id: 'c2', pre: 5.0, l1: `Anahtar açık: ${bl('R → ∞')}`, l2: `${rd('2 mA')} dayatılır: ${hl('V')} = ${rd('i')}·${bl('R')} → ${hl('∞')}`, s1: 6.0, s2: 5.8 },
+  { id: 'v1', pre: 6.0, l1: `${hl('Gerilim')} sabit kalır`, l2: `${rd('akım')} yüke bağlıdır (${rd('i')} = ${hl('V')}/${bl('R')})`, s1: 6.0, s2: 5.4 },
+  { id: 'v2', pre: 3.9, l1: `${bl('R')} sıfıra inerse ${rd('akım sonsuza gider')}`, l2: `gerçek pilde ${hl('gerilim')} düşer`, s1: 6.2, s2: 5.2 },
+  { id: 'c1', pre: 7.0, l1: `${rd('Akım')} sabit kalır`, l2: `${hl('gerilim')} yüke bağlıdır (${hl('V')} = ${rd('i')}·${bl('R')})`, s1: 6.0, s2: 5.4 },
+  { id: 'c2', pre: 5.0, l1: `Anahtar açılınca`, l2: `${hl('gerilim')} sonsuza gider (${hl('V')} = ${rd('i')}·${bl('R')} → ∞)`, s1: 6.0, s2: 5.8 },
   // v4: c3 ('Akım kaynağı asla açık bırakılmaz') özetteki f2b cümlesiyle aynı olduğu için kaldırıldı (süre ≤ 90 sn)
-  { id: 'g1', pre: SECENEK === 'B' ? 4.15 : 3.6, l1: `Pil, akü ≈ ${hl('gerilim kaynağı')}`, l2: `Sabit akımla şarj ≈ ${rd('akım kaynağı')}`, s1: 5.6, s2: 5.4 },
+  { id: 'g1', pre: SECENEK === 'B' ? 4.15 : 3.6, l1: `Pil ${hl('gerilim kaynağı')} gibidir`, l2: `Sabit akımla şarj ${rd('akım kaynağı')} gibidir`, s1: 5.6, s2: 5.4 },
   // v3: f1 ('V sabit / i sabit') 'Bilmen gerekenler' kartına taşındı (bölüm 2f)
   // v4 (kanal sahibinin 4. iş emri, bölüm 2d-5/6): özet iki açık Türkçe cümle, her biri kendi görüntüsüyle
   { id: 'f2a', pre: 2.9, l1: `${hl('Gerilim kaynağı')} kısa devre edilirse`, l2: `${rd('akım')} sonsuza gider${FA}`, s1: 5.4, s2: 5.0 },
@@ -63,12 +63,12 @@ check(DUR <= 90, `süre ≤ 90 sn (${DUR})`);
 const fmtR = (r) => (r < 0.004 ? '0' : r < 1 ? fmt(r, 2) : fmt(r, 1).replace(/,0$/, '')) + (r < 0.004 ? '' : ' kΩ');
 check(fmtR(3) === '3 kΩ' && fmtR(0.25) === '0,25 kΩ' && fmtR(0.05) === '0,05 kΩ' && fmtR(0) === '0', 'R etiketi biçimi');
 // ---------------------------------------------------------------- olaylar
-const RV1 = [A.v1 + 0.4, A.v1 + 2.0];       // 3 → 2 kΩ
-const RV2 = [A.v1 + 3.55, A.v1 + 5.15];       // 2 → 1 kΩ
+const RV1 = [A.v1 + 0.4, A.v1 + 1.7];   // v4: 1,3 sn (≥ 1,2 sn, kural 2a-9)       // 3 → 2 kΩ
+const RV2 = [A.v1 + 3.2, A.v1 + 4.5];       // 2 → 1 kΩ
 const RV3 = [A.v2 + 0.3, A.v2 + 2.4];       // 1 → 0,25 kΩ
 const CUTC = A.c1;                          // kesme: gerilim kaynağı → akım kaynağı (aynı kadraj)
-const RC1 = [A.c1 + 1.5, A.c1 + 3.1];       // 1 → 2 kΩ
-const RC2 = [A.c1 + 4.65, A.c1 + 6.25];       // 2 → 3 kΩ
+const RC1 = [A.c1 + 1.5, A.c1 + 2.8];       // 1 → 2 kΩ
+const RC2 = [A.c1 + 4.3, A.c1 + 5.6];       // 2 → 3 kΩ
 const SWO = [A.c2 + 0.3, A.c2 + 1.5];       // anahtar açılır (kontak SWO[0]'da kopar)
 const VUP = [A.c2 + 1.3, A.c2 + 3.4];       // voltmetre büyür → ∞
 const CUTG = A.g1 + 0.1, CUTF = A.f2a + 0.1; // gerçek hayat aralığı
@@ -286,7 +286,7 @@ function graphPanel(S) {
       k.font = '900 44px "InterDisplay", sans-serif';
       k.fillText(!Number.isFinite(y) ? 'V → ∞' : `V = ${y >= 100 ? Math.round(y) : fmt(y, 2)} V`, ax - 34, ay + 26);   // doğrunun üstünde
       k.font = '700 38px "InterDisplay", sans-serif'; k.textAlign = 'left';
-      k.fillText(`(${IS} mA dayatılırsa)`, ox + 24, py(6.2));
+      k.fillText(`(i = ${IS} mA sabit tutulursa)`, ox + 24, py(6.2));
       k.fillStyle = '#6fb2ff'; k.textAlign = 'right'; k.font = '900 42px "InterDisplay", sans-serif';
       k.fillText('R → ∞', right - 4, py(1.3));
       k.globalAlpha = 1;
@@ -446,8 +446,8 @@ export function build(S) {
     label('lsw', 'anahtar', -X + 0.5, 0.3, 0.17, { opacity: onC(A.c1 + 0.3, Z.c1[0]) + onC(A.c2, SWO[1] - 0.35), size: 3.6 });
     label('lop', bl('açık devre'), -X + 0.55, 0.3, 0.17, { opacity: onC(SWO[1], CUTG) + onC(SWO2[1], KS[0]), size: 3.8 });
     const lo = (k, d = 0.4) => (life ? easeOut(seg(t, GM[k] + d, GM[k] + d + 0.4)) : 0);
-    label('lm1', hl('≈ gerilim kaynağı'), ...lw(0, 0.1, 0.68), { opacity: lo(1, 0.5), size: 3.8 });
-    label('lm2', rd('≈ akım kaynağı'), ...lw(-0.62, 0.1, -0.7), { opacity: lo(2, 0.5), size: 3.8 });
+    label('lm1', hl('gerilim kaynağı gibi'), ...lw(0, 0.1, 0.68), { opacity: lo(1, 0.5), size: 3.8 });
+    label('lm2', rd('akım kaynağı gibi'), ...lw(-0.62, 0.1, -0.7), { opacity: lo(2, 0.5), size: 3.8 });
     label('lpn', 'AA pil', ...lw(-0.72, 0.1, -0.38), { opacity: lo(0, 0.3), size: 3.4 });
     label('lpk', 'akü', ...lw(PX[1], 0.1, -0.2), { opacity: lo(1, 0.3), size: 3.4 });
     label('lpt', 'şarj', ...lw(0, 0.1, -1.15), { opacity: lo(2, 0.3), size: 3.4 });
