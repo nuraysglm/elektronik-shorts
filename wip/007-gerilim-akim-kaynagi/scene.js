@@ -25,12 +25,12 @@ const FA = SECENEK === 'B' ? ` (${rd('i')} = ${hl('V')}/${bl('R')} → ∞)` : '
 const FB = SECENEK === 'B' ? ` (${hl('V')} = ${rd('i')}·${bl('R')} → ∞)` : '';
 const BEATS = [
   { id: 'h1', pen: false, pre: 0, l1: `${rd('Akım kaynağını')}`, l2: `<b style="font-weight:900">${hl('açık')} bırakırsan?</b>`, s1: 7.4, s2: 7.4, extra: SECENEK === 'B' ? 1.2 : 0 },   // v4-A: kanca 2,6 sn (9a-1: 1–3 sn), süre için
-  { id: 'v1', pre: 6.0, l1: `${hl('Gerilim')} sabit kalır`, l2: `${rd('akım')} yüke bağlıdır (${rd('i')} = ${hl('V')}/${bl('R')})`, s1: 6.0, s2: 5.4 },
-  { id: 'v2', pre: 3.9, l1: `${bl('R')} sıfıra inerse ${rd('akım sonsuza gider')}`, l2: `gerçek pilde ${hl('gerilim')} düşer`, s1: 6.2, s2: 5.2 },
-  { id: 'c1', pre: 7.0, l1: `${rd('Akım')} sabit kalır`, l2: `${hl('gerilim')} yüke bağlıdır (${hl('V')} = ${rd('i')}·${bl('R')})`, s1: 6.0, s2: 5.4 },
-  { id: 'c2', pre: 5.0, l1: `Anahtar açılınca`, l2: `${hl('gerilim')} sonsuza gider (${hl('V')} = ${rd('i')}·${bl('R')} → ∞)`, s1: 6.0, s2: 5.8 },
+  { id: 'v1', pre: 5.8, l1: `${hl('Gerilim')} sabit kalır`, l2: `${rd('akım')} yüke bağlıdır (${rd('i')} = ${hl('V')}/${bl('R')})`, s1: 6.0, s2: 5.4 },
+  { id: 'v2', pre: 3.4, l1: `${bl('R')} küçüldükçe ${rd('akım')} büyür`, l2: `sıfırda ${rd('akım')} sonsuza gider`, s1: 6.2, s2: 5.2 },
+  { id: 'c1', pre: 6.95, l1: `${rd('Akım')} sabit kalır`, l2: `${hl('gerilim')} yüke bağlıdır (${hl('V')} = ${rd('i')}·${bl('R')})`, s1: 6.0, s2: 5.4 },
+  { id: 'c2', pre: 5.0, l1: `Anahtar açılınca ${hl('gerilim')}`, l2: `sonsuza gider (${hl('V')} = ${rd('2 mA')}·${bl('R')} → ∞)`, s1: 6.0, s2: 5.8 },
   // v4: c3 ('Akım kaynağı asla açık bırakılmaz') özetteki f2b cümlesiyle aynı olduğu için kaldırıldı (süre ≤ 90 sn)
-  { id: 'g1', pre: SECENEK === 'B' ? 4.15 : 3.6, l1: `Pil ${hl('gerilim kaynağı')} gibidir`, l2: `Sabit akımla şarj ${rd('akım kaynağı')} gibidir`, s1: 5.6, s2: 5.4 },
+  { id: 'g1', pre: SECENEK === 'B' ? 4.15 : 3.4, l1: `Pil ${hl('gerilim kaynağı')} gibidir`, l2: `şarj cihazı ${rd('akım kaynağı')} gibidir`, s1: 5.6, s2: 5.4 },
   // v3: f1 ('V sabit / i sabit') 'Bilmen gerekenler' kartına taşındı (bölüm 2f)
   // v4 (kanal sahibinin 4. iş emri, bölüm 2d-5/6): özet iki açık Türkçe cümle, her biri kendi görüntüsüyle
   { id: 'f2a', pre: 2.9, l1: `${hl('Gerilim kaynağı')} kısa devre edilirse`, l2: `${rd('akım')} sonsuza gider${FA}`, s1: 5.4, s2: 5.0 },
@@ -43,10 +43,10 @@ const KART = [
   { id: 'kh', html: `<span style="color:#7fe3ff">Bilmen gerekenler</span>`, y: 13.4, size: 4.6, weight: 900 },
   // v4 (2d-5): kısaltma ('V kaynağı') ve kelime yerine ':' yok; 'açık bırakılmaz' özette (f2b) tam cümleyle var
   SECENEK === 'B' ? { id: 'k1', html: `• İdeal ${hl('gerilim kaynağında')} ${hl('V')} sabit, ${rd('i')} yüke bağlı`, y: 17.9 }
-                  : { id: 'k1', html: `• İdeal ${hl('gerilim kaynağında')} ${hl('V')} sabittir`, y: 17.9 },
+                  : { id: 'k1', html: `• İdeal ${hl('gerilim kaynağında')} ${hl('gerilim')} sabittir`, y: 17.9 },
   SECENEK === 'B' ? { id: 'k2', html: `• İdeal ${rd('akım kaynağında')} ${rd('i')} sabit, ${hl('V')} yüke bağlı`, y: 21.5 }
-                  : { id: 'k2', html: `• İdeal ${rd('akım kaynağında')} ${rd('i')} sabittir`, y: 21.5 },
-  { id: 'k4', html: `• ${hl('V')} sabitken ${rd('i')} ∝ 1/${bl('R')} (doğrusal değil)`, y: 25.1 },
+                  : { id: 'k2', html: `• İdeal ${rd('akım kaynağında')} ${rd('akım')} sabittir`, y: 21.5 },
+  { id: 'k4', html: `• ${hl('Gerilim')} sabitken ${rd('i')} ∝ 1/${bl('R')} (doğrusal değil)`, y: 25.1 },
 ];
 const KS = [Z.f2b[1] - 1.7, Z.f2b[1] - 0.4];   // devre yerinde hafifçe küçülür (kural 2a-16: yazıya yer), f2b okunurken; başka olay yok
 const KSC = 0.8;
@@ -63,12 +63,12 @@ check(DUR <= 90, `süre ≤ 90 sn (${DUR})`);
 const fmtR = (r) => (r < 0.004 ? '0' : r < 1 ? fmt(r, 2) : fmt(r, 1).replace(/,0$/, '')) + (r < 0.004 ? '' : ' kΩ');
 check(fmtR(3) === '3 kΩ' && fmtR(0.25) === '0,25 kΩ' && fmtR(0.05) === '0,05 kΩ' && fmtR(0) === '0', 'R etiketi biçimi');
 // ---------------------------------------------------------------- olaylar
-const RV1 = [A.v1 + 0.4, A.v1 + 1.7];   // v4: 1,3 sn (≥ 1,2 sn, kural 2a-9)       // 3 → 2 kΩ
-const RV2 = [A.v1 + 3.2, A.v1 + 4.5];       // 2 → 1 kΩ
-const RV3 = [A.v2 + 0.3, A.v2 + 2.4];       // 1 → 0,25 kΩ
+const RV1 = [A.v1 + 0.2, A.v1 + 1.5];   // v4: 1,3 sn (≥ 1,2 sn, kural 2a-9)       // 3 → 2 kΩ
+const RV2 = [A.v1 + 3.0, A.v1 + 4.3];       // 2 → 1 kΩ
+const RV3 = [A.v2 + 0.3, A.v2 + 1.9];       // 1 → 0,25 kΩ
 const CUTC = A.c1;                          // kesme: gerilim kaynağı → akım kaynağı (aynı kadraj)
-const RC1 = [A.c1 + 1.5, A.c1 + 2.8];       // 1 → 2 kΩ
-const RC2 = [A.c1 + 4.3, A.c1 + 5.6];       // 2 → 3 kΩ
+const RC1 = [A.c1 + 1.45, A.c1 + 2.75];       // 1 → 2 kΩ
+const RC2 = [A.c1 + 4.25, A.c1 + 5.55];       // 2 → 3 kΩ
 const SWO = [A.c2 + 0.3, A.c2 + 1.5];       // anahtar açılır (kontak SWO[0]'da kopar)
 const VUP = [A.c2 + 1.3, A.c2 + 3.4];       // voltmetre büyür → ∞
 const CUTG = A.g1 + 0.1, CUTF = A.f2a + 0.1; // gerçek hayat aralığı
@@ -80,7 +80,7 @@ const SWO2 = [CUTB + 0.15, CUTB + 1.35];
 const VUP2 = [CUTB + 0.25, CUTB + 1.45];
 const SWC = [Z.f2b[1] + 0.05, Z.f2b[1] + 1.25];
 check(SC[1] + 1.5 <= Z.f2a[0] + 1e-9 && VUP2[1] + 1.5 <= Z.f2b[0] + 1e-9, 'özet: olaydan sonra ≥ 1,5 sn, sonra yazı');
-const GM = [0, 1, 2].map((i) => CUTG + 0.3 + i * (SECENEK === 'B' ? 0.85 : 0.6));   // v4-A: modeller biraz daha sık
+const GM = [0, 1, 2].map((i) => CUTG + 0.3 + i * (SECENEK === 'B' ? 0.85 : 0.5));   // v4-A: modeller biraz daha sık
 check(RV2[1] + 1.5 <= Z.v1[0] && RV3[1] + 1.5 <= Z.v2[0] && RC2[1] + 1.4 <= Z.c1[0] && VUP[1] + 1.5 <= Z.c2[0], 'her olaydan sonra ≥ 1,5 sn bekleme');
 check(RV2[0] - RV1[1] >= 1.5 && RC2[0] - RC1[1] >= 1.5 && RC1[0] - CUTC >= 1.4, 'adımlar arası ≥ 1,5 sn');
 check(GM[2] + 0.5 + 1.5 <= Z.g1[0] + 1e-9, 'gerçek hayat: son model belirdikten sonra etiket');
@@ -428,7 +428,7 @@ export function build(S) {
     models.forEach((g, k) => { const o = easeOut(seg(t, GM[k], GM[k] + 0.5)); g.visible = life && o > 0.01; g.scale.setScalar(Math.max(0.001, o) * (k === 1 ? 0.95 : k === 2 ? 0.85 : 1)); g.position.y = 0.06 + (1 - o) * 0.25; });
 
     yaz(t);
-    for (const k of KART) S.text(k.id, k.html, { x: 54, y: k.y, size: k.size || 4.1, weight: k.weight || 700, align: 'left', maxWidth: 78, nowrap: true,
+    for (const k of KART) S.text(k.id, k.html, { x: 47, y: k.y, size: k.size || 4.1, weight: k.weight || 700, align: 'left', maxWidth: 78, nowrap: true,
       opacity: t >= k.t0 ? easeOut(seg(t, k.t0 - 0.05, k.t0 + 0.2)) : 0, reveal: clamp((t - k.t0) / (k.t1 - k.t0)) });
 
     // kanca alt satırı
@@ -450,6 +450,6 @@ export function build(S) {
     label('lm2', rd('akım kaynağı gibi'), ...lw(-0.62, 0.1, -0.7), { opacity: lo(2, 0.5), size: 3.8 });
     label('lpn', 'AA pil', ...lw(-0.72, 0.1, -0.38), { opacity: lo(0, 0.3), size: 3.4 });
     label('lpk', 'akü', ...lw(PX[1], 0.1, -0.2), { opacity: lo(1, 0.3), size: 3.4 });
-    label('lpt', 'şarj', ...lw(0, 0.1, -1.15), { opacity: lo(2, 0.3), size: 3.4 });
+    label('lpt', 'şarj cihazı', ...lw(0, 0.1, -1.15), { opacity: lo(2, 0.3), size: 3.4 });
   };
 }
