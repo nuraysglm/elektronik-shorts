@@ -5,3 +5,4 @@
 - --safe: güvenli alan 0 ihlal, yazı–nesne kesişimi 0; doluluk yalnızca kart sırasında (devre %80, kural 2a-16). Süre 59,3 sn.
 - Sıradaki: 4 parça render (render_parts.sh) → birlestir.sh → kalite.md → scenes/ + media/ → Metricool (sıradaki boş gün: 2026-11-17 Salı 16:00 Londra).
 - parca-03: tamam (12:52 UTC)
+- parca-00: tamam (12:53 UTC)
