@@ -37,6 +37,7 @@ Depo: bu klasör (`nuraysglm/elektronik-shorts`). Önce `git pull`. Push yalnız
 
 - `buyume/rapor-<YYYY-MM-DD>.md`: (a) hedefe göre durum (abone yolu tablosu), (b) geçen haftanın sayıları ve en iyi/en kötü Short (izleme yüzdesiyle), (c) pazar bulguları (en önemli 5), (d) yaptığın küçük değişiklikler, (e) açtığın onay istekleri, (f) Shorts ve uzun video ajanları için öneriler.
 - Panelde `bolumler/<YYYY-MM-DD>-buyume-<HHmm>` belgesi: `tarih`, `zaman`, `no: 0`, `konu: "Büyüme raporu"`, `sonuc: "rapor"`, `not` (3–4 cümlelik özet + rapor dosyasının GitHub adresi).
+- **Paneldeki "Büyüme Ajanı" kutusu:** `buyume/ozet` belgesini her çalışmada `set` ile baştan yaz (önce `get` edip `if_version` ver). Alanlar: `abone` (sayı), `baslangic` (12200), `hedef` (50000), `hedef_tarih` ("15 Mayıs 2027"), `hiz` (ör. "~9 net abone/gün (son 7 gün)"), `gereken` (ör. "~210/gün"), `durum` (2–3 cümle: hedefe göre konum ve düzeltici adım), `bulgular` (en fazla 3 kısa madde), `degisiklikler` (yaptığın küçük değişiklikler, kısa maddeler), `rapor` (rapor dosyasının GitHub adresi), `rapor_tarihi` (YYYY-MM-DD), `sonraki` (bir sonraki çalışma günü), `kilometre_taslari` (`[{tarih, hedef, gercek}]`; tarihi geçenlerin `gercek` değerini doldur).
 - Son mesajın (kanal sahibine bildirim olarak gider) Türkçe, kısa: abone durumu vs hedef, 3 ana bulgu, açılan onay istekleri.
 
 ## 4a. Kaynak kuralı (kanal sahibinin emri, 16.11.2026)
