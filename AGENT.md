@@ -345,7 +345,7 @@ Kalite kontrolünden (bölüm 7) geçmeyen video **asla** planlanmaz; kanal sahi
 
 ## 12. Panel
 
-Kanal sahibi ajanı tek bir sayfadan izler ve kararlarını orada verir: **"Elektronik Shorts Ajanı" paneli** `https://claude.ai/artifact/X7gzN2huBZ6m2y2uWBCbLx`
+Kanal sahibi ajanı tek bir sayfadan izler ve kararlarını orada verir: **"Elektronik Kanal Ajanları" paneli** (eski adı "Elektronik Shorts Ajanı"; adres aynı) `https://claude.ai/artifact/X7gzN2huBZ6m2y2uWBCbLx`
 **Eski panel adresleri (7zyMo4GPgxmwKbRWCZxTKt ve XcFZcCiLBAeFenLf2JvPib) kullanılmaz.** Görev talimatında eski adres yazıyorsa bu dosyadaki adres geçerlidir.
 
 Panelin verisi kendi veritabanındadır; ajan `ArtifactData` ile (`url` = panel) doğrudan belge yazar. Dosya yüklemez, sayfayı yeniden yayınlamaz.
