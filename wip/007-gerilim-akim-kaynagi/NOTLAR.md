@@ -42,3 +42,4 @@
 - Sıradaki: --safe + bağımsız denetim → 4 parça render → birleştir → kalite → v3 eski/'ye → Metricool yalnızca video + açıklama (tarih 16.11 16:00 aynı). Son tarih 15:30.
 - parca-00: tamam (08:47 UTC)
 - parca-01: tamam (08:47 UTC)
+- parca-02: tamam (08:47 UTC)
