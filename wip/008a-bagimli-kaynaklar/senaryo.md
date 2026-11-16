@@ -20,9 +20,9 @@ Değerler: k = 10 mA/V, R₁ = 1 kΩ, k·R₁ = 10; v_in: 0,10 V → 0,20 V (DC)
 ## Sahneler (zamanlar sahne kodundan)
 | # | Yazı (sn) | Animasyon (yazısız anlaşılmalı) | Etiket (sonra) | Efekt |
 |---|---|---|---|---|
-| h1 | 0–2,95 | Arkada giriş modülü (v_in = 0,100 V, düğme), ışıklı kesikli kontrol bağı eşkenar dörtgen kaynağa; çıkış döngüsü: kaynak, ampermetre 1,00 mA, R₁ = 1 kΩ, voltmetre 1,00 V; grafik v_in ve v_out izleri; elektronlar akar | Bu akım kaynağı / neye bağlı? (alt satır: Bağımlı kaynak, k = 10 mA/V) | hum |
-| a1 | 5,55–12,33 | 3,25–4,55 sn: düğme döner, v_in 0,100 → 0,200 V; ampermetre 1,00 → 2,00 mA, voltmetre 2,00 V; elektronlar hızlanır; grafikte iki iz birlikte basamak yapar; 'k = 10 mA/V' etiketi | Akım, girişteki gerilimi izler / (i₁ = k·v_in) | pop |
-| a3 | 15,53–24,79 | 12,5–13,9 sn: giriş sinüse geçer (0,15 V tepe, mikrofon sinyali gibi); ampermetre ±1,5 mA (eksi yarıda elektronlar ters yöne), voltmetre ±1,5 V; grafikte ince giriş izi, kalın çıkış izi | R₁ üzerinde çıkış gerilimi oluşur / (v_out = k·R₁·v_in) | thud |
-| a4 | 25,39–32,79 | Grafikte tepe değerleri belirir: çıkış 1,5 V, giriş 0,15 V | k·R₁ = 10 olduğu için / çıkış, girişin 10 katıdır | — |
-| g1 | 35,19–41,97 | Kesme (aynı kadraj): kaide üzerinde mikrofon, BC547 (TO-92) transistör sırayla | Transistörler bağımlı kaynakla modellenir / mikrofon yükselteci bu ilkeyle çalışır | thud ×2 |
-| kart | 42,0–56,9 | Kesme: devre %80 ölçekte, sinüs sürer; kart satır satır kalemle | Bilmen gerekenler: • Bağımlı kaynak başka bir büyüklüğü izler • i₁ = k·v_in ise k'nın birimi A/V (1/Ω) • v_out = k·R₁·v_in; k·R₁ > 1 ise yükseltir | hum |
+| h1 | 0–2,95 | Arkada giriş modülü (v_in = 0,100 V, düğme), ışıklı kesikli kontrol bağı eşkenar dörtgen kaynağa; çıkış döngüsü: kaynak, ampermetre 1,00 mA, R₁ = 1 kΩ, voltmetre 1,00 V; grafik v_in ve v_out izleri; elektronlar akar | Bu akım kaynağı / neye bağlı? (alt satır: Bağımlı kaynak (k = 10 mA/V)) | hum |
+| a1 | 5,55–14,19 | 3,25–4,55 sn: düğme döner, v_in 0,100 → 0,200 V; ampermetre 1,00 → 2,00 mA, voltmetre 2,00 V; elektronlar hızlanır; grafikte iki iz birlikte basamak yapar; 'k = 10 mA/V' etiketi | Akım, girişteki gerilimi izler / (i₁ = k·v_in, k = 10 mA/V) | pop |
+| a3 | 17,39–26,65 | 14,4–15,8 sn: giriş sinüse geçer (0,15 V tepe, mikrofon sinyali gibi); ampermetre ±1,5 mA (eksi yarıda elektronlar ters yöne), voltmetre ±1,5 V; grafikte ince giriş izi, kalın çıkış izi | R₁ üzerinde çıkış gerilimi oluşur / (v_out = k·R₁·v_in) | thud |
+| a4 | 27,25–34,65 | Grafikte tepe değerleri belirir: çıkış 1,5 V, giriş 0,15 V | k·R₁ = 10 olduğu için / çıkış, girişin 10 katıdır | — |
+| g1 | 37,05–43,83 | Kesme (aynı kadraj): kaide üzerinde mikrofon, BC547 (TO-92) transistör sırayla | Transistörler bağımlı kaynakla modellenir / mikrofondan sonraki yükselteç böyle çalışır | thud ×2 |
+| kart | 44,1–59,3 | Kesme: devre %80 ölçekte, sinüs sürer; kart satır satır kalemle | Bilmen gerekenler: • Bağımlı kaynak bir akımı veya gerilimi izler • i₁ = k·v_in ise k'nın birimi A/V = 1/Ω • v_out = k·R₁·v_in; k·R₁ > 1 ise devre yükseltir | hum |
