@@ -41,3 +41,4 @@
 - 08:15 UTC: panel kararı A + gövde düzeltmeleri okundu. Gövde yazıları bölüm 2d-5'e göre tam Türkçe cümle: v1 'Gerilim sabit kalır / akım yüke bağlıdır (i = V/R)', v2 'R sıfıra inerse akım sonsuza gider / gerçek pilde gerilim düşer', c1 'Akım sabit kalır / gerilim yüke bağlıdır (V = i·R)', c2 'Anahtar açılınca / gerilim sonsuza gider (V = i·R → ∞)', g1 'Pil gerilim kaynağı gibidir / Sabit akımla şarj akım kaynağı gibidir'; etiketler '≈' yerine '… gibi'; grafik notu '(i = 2 mA sabit tutulursa)'. Süre için R adımları 1,6 → 1,3 sn (v1/c1 pre −0,7). DUR 89,7 sn, tüm check'ler geçiyor.
 - Sıradaki: --safe + bağımsız denetim → 4 parça render → birleştir → kalite → v3 eski/'ye → Metricool yalnızca video + açıklama (tarih 16.11 16:00 aynı). Son tarih 15:30.
 - parca-00: tamam (08:47 UTC)
+- parca-01: tamam (08:47 UTC)
