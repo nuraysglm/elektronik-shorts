@@ -1,0 +1,6 @@
+# 008a — notlar
+- 16.11.2026 12:10 UTC: stok 1 (yalnızca 007, 16.11 16:00). Konu 8 (Razavi Ders 3) bölüm 2g'ye göre ikiye bölündü: 8a bağımlı kaynaklar (bu iş), 8b Ohm yasası ve I–V karakteristikleri.
+- Transkript (LUfU9LgClsA) alındı; zor-noktalar.md, senaryo.md, dogruluk.md, scene.js yazıldı. Kare kontrolü 6 tur (yerleşim, etiket yerleri, tel aralığı u = 0 sarması düzeltildi).
+- Bağımsız metin denetimi: SEVİYE üniversite; zorunlu 3 düzeltme uygulandı (ilk yorum sorusu metni, kanca alt satırı "(k = 10 mA/V)", grafik eksenleri "v (V)", "t (s)"); öneriler: kart maddeleri, "mikrofondan sonraki yükselteç", giriş 3 basamak.
+- --safe: güvenli alan 0 ihlal, yazı–nesne kesişimi 0; doluluk yalnızca kart sırasında (devre %80, kural 2a-16). Süre 59,3 sn.
+- Sıradaki: 4 parça render (render_parts.sh) → birlestir.sh → kalite.md → scenes/ + media/ → Metricool (sıradaki boş gün: 2026-11-17 Salı 16:00 Londra).
