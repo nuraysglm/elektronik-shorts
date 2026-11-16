@@ -74,6 +74,8 @@ Konu 2–5 (4'lü temel seri) için de ders 1–3 transkriptleri kullanılabilir
 
 Telifli kitaplar; **herkese açık bu depoya asla konmaz**. Kanal sahibinin Google Drive'ında özel klasörde durur: **"Elektronik Kanal - Kaynaklar (özel)"** (klasör id `1cbFwuNwTfD3ywFPz8QQOFDf2QNEScMsF`). Ajan Google Drive bağlantısıyla (`search_files` → `read_file_content` / `download_file_content`) okur. Metin dosyaları her sayfanın başında `=== [Kitap, PDF sayfa N] ===` işareti taşır; `dogruluk.md`'ye "Mano 4e, PDF s. 112" gibi yaz. **Kanal sahibinin kuralı (16.11.2026): Bu kaynaklardaki soru ve çözümler ajana yalnızca REFERANSTIR.** Ajan videolarda ve dijital üründe (soru kitapçığı) **orijinal soruları kendisi üretir ve çözümlerini kendisi yapar**; kaynaklardaki sorular, çözümler, şekiller ve metin kopyalanmaz, çevrilmez, sayıları değiştirilerek uyarlanmaz. Kaynaklar kavram, yöntem, sınav tipi/zorluk seviyesi ve doğruluk kontrolü için kullanılır.
 
+**Kanal sahibinin kuralı (16.11.2026): Bu kaynaklardaki soru ve çözümler ajana yalnızca referanstır.** Videolarda ve dijital üründe (soru kitapçığı) ajan **orijinal soruları kendisi üretir ve çözümlerini kendisi yapar**; kaynaklardaki soru, çözüm, şekil ve metin kopyalanmaz, çevrilmez, sayıları değiştirilerek uyarlanmaz. Kaynaklar kavram, yöntem, sınav tipi/zorluk seviyesi ve doğruluk kontrolü için kullanılır.
+
 | Dosya (Drive) | İçerik | Drive id |
 |---|---|---|
 | mano_bolum1.txt | Mano Bölüm 1: Digital Systems and Binary Numbers (PDF s. 14–48) | 1QnOo3NpXnTq7LUcWP0rocvs3HGore9Bv |
