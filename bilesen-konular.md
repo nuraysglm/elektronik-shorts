@@ -1,6 +1,6 @@
 # Bileşen Shorts testi (kanal sahibinin onayı, 16.11.2026 — Büyüme Ajanı önerisi buyume-20261116-2; 4 hafta, Pazar slotu)
 
-Üniversite düzeyinde, ≤ 60 sn, her video bir bileşenle ilgili **bilinen bir yanlış** (AGENT.md 2b, 2d, 2f, 2g aynen geçerli; devre şeması, i(t)/v(t), gerçek sayılar). Kaynak: Razavi Basic Circuits (kaynaklar.md tablosu: kondansatör Lec 13–14, bobin Lec 23–24) ve Razavi *Fundamentals of Microelectronics* / "Electronics 1" ders serisi (diyot, BJT, MOSFET); ikinci doğrulama Wikipedia. 4 hafta sonra (Büyüme Ajanı raporunda) izlenme ve abone kazanımı Razavi Shorts'larıyla karşılaştırılır; devam kararı kanal sahibinindir.
+Üniversite düzeyinde, ≤ 60 sn, her video bir bileşenle ilgili **bilinen bir yanlış** (AGENT.md 2b, 2d, 2f, 2g aynen geçerli; devre şeması, i(t)/v(t), gerçek sayılar). **KAYNAK: kanal sahibinin onayı bekleniyor (AGENT.md bölüm 2i).** Kaynak `kaynaklar.md`'de onaylanana kadar bu seriden video üretilmez; Pazar slotuna Razavi serisi üretilir. 4 hafta sonra (Büyüme Ajanı raporunda) izlenme ve abone kazanımı Razavi Shorts'larıyla karşılaştırılır; devam kararı kanal sahibinindir.
 
 | # | Konu | Vurgulanacak yanlış | Durum | Tarih |
 |---|------|---------------------|-------|-------|

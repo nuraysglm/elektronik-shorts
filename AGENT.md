@@ -71,7 +71,7 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 yaşında çocuğa anlatır gibi" bulup geri çevirdi. **İzleyici üniversite öğrencisidir** (Temel Elektronik / Devre Teorisi I dersi; mühendislik birinci sınıf). Kurallar:
 1. **Seviye:** Ortaokul düzeyi benzetmeler (balon-yün, "atomda proton ve elektron var") ve "ampul parlar/söner" üzerine kurulu anlatım yok. Devre şeması dili kullanılır: düğüm, kol, referans yönü, işaret (+/−), ideal kaynak, i(t) ve v(t) grafikleri, birimler. Formüller doğru biçimde (i = dq/dt, q = ∫i dt, V = IR …) ve gerçek sayılarla. 3D animasyon hâlâ ana anlatıcıdır; ama öğrettiği şey ders düzeyindedir (ör. i(t) grafiğinin altındaki alanın yük olarak dolması, referans yönü ters çevrilince işaretin değişmesi).
 2. **Her videonun omurgası "bilinen bir yanlış" veya "az bilinen önemli nokta":** Senaryo, öğrencilerin sık yaptığı bir hatayı veya gözden kaçırdığı kritik bir noktayı merkeze alır. Kanca bu yanlışı soru olarak sorar (ör. "Açık devrede gerilim sıfır mı?"), animasyon doğrusunu gösterir. Her videoda 1, en fazla 2 böyle nokta; `senaryo.md`'nin başına "Vurgulanan yanlış/nokta: …" yaz.
-3. **Kaynak zorunlu, uydurma yok:** Ana kaynak Prof. Behzad Razavi'nin "Basic Circuits" ders serisidir (`kaynaklar.md`'deki tablo: ders N = konu N+5). Senaryodan önce ilgili dersin transkriptini vidIQ `vidiq_video_transcript` ile al; vurgulanacak noktayı bu dersin içinden seç; `dogruluk.md`'ye her iddianın dayandığı transkript zaman damgasını yaz (ör. "[18:29] açık devre yalnızca I=0'ı garanti eder"). Transkriptte olmayan bir iddia kullanılacaksa Wikipedia veya Razavi'nin kitaplarıyla doğrula ve kaynağını yaz; doğrulanamayan bilgi videoya girmez. Transkript alınamazsa panele yaz ve o konuyu üretme (`inceleme`).
+3. **Kaynak zorunlu, uydurma yok:** Ana kaynak Prof. Behzad Razavi'nin "Basic Circuits" ders serisidir (`kaynaklar.md`'deki tablo: ders N = konu N+5). Senaryodan önce ilgili dersin transkriptini vidIQ `vidiq_video_transcript` ile al; vurgulanacak noktayı bu dersin içinden seç; `dogruluk.md`'ye her iddianın dayandığı transkript zaman damgasını yaz (ör. "[18:29] açık devre yalnızca I=0'ı garanti eder"). Transkriptte olmayan bir iddia kullanılacaksa yalnızca onaylı bir kaynakla (bölüm 2i) doğrula ve kaynağını yaz; doğrulanamayan bilgi videoya girmez. Transkript alınamazsa panele yaz ve o konuyu üretme (`inceleme`).
 4. **Telif:** Razavi'nin anlatımından fikir ve kavram alınır; slaytları, çizimleri, uzun alıntıları kopyalanmaz. Açıklamanın sonuna kısa atıf eklenir: "Kaynak: B. Razavi, Basic Circuits, Ders N".
 5. **Bağımsız denetim (bölüm 7 A) seviyeyi de denetler:** denetçiye "bu video üniversite birinci sınıf devre teorisi öğrencisine yeni ve önemli bir şey öğretiyor mu, yoksa lise/ortaokul düzeyinde mi?" sorusunu da sor; "lise/ortaokul" cevabı → senaryoyu yeniden yaz.
 6. Konu 2–5 (4'lü temel seri) kanal sahibinin isteğiyle daha temel düzeyde yapılmıştı; bundan sonraki bütün videolar bu bölüme uyar.
@@ -79,7 +79,7 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 ## 2d. Doğruluk ve gösterim (kanal sahibinin emri, 14.11.2026 — mutlak kural)
 
 **Hiçbir videoda yanlış veya yanıltıcı tek bir bilgi, sayı, formül ya da gösterim olmaz.** Bilgi doğru olsa bile yazılışı yanlış okunmaya açıksa (006'da 'i = dq/dt · q = ∫ i dt': orta nokta çarpma gibi okundu) bu da hatadır.
-1. **Güvenilir kaynak:** Prof. Behzad Razavi'nin Basic Circuits dersleri (ve kitapları) güvenilir ana kaynaktır; ders konularında gösterim ve tanımlar Razavi'ye uyar. Razavi'de olmayan her iddia ikinci bir güvenilir kaynakla (Wikipedia/ders kitabı) doğrulanır; doğrulanamayan bilgi videoya girmez.
+1. **Güvenilir kaynak:** Prof. Behzad Razavi'nin Basic Circuits dersleri (ve kitapları) güvenilir ana kaynaktır; ders konularında gösterim ve tanımlar Razavi'ye uyar. Razavi'de olmayan her iddia yalnızca kanal sahibinin onayladığı başka bir kaynakla (bölüm 2i) doğrulanabilir; doğrulanamayan bilgi videoya girmez.
 2. **Formül yazım kuralları:**
    - Her denklem ayrı satırda; iki denklem aynı satırdaysa yalnızca virgül veya noktalı virgülle ayrılır. **'·' (orta nokta) yalnızca çarpma için** kullanılır, ayırıcı olarak asla.
    - Çarpma tutarlı yazılır (× veya ·, bir videoda tek biri).
@@ -112,6 +112,13 @@ Kanal sahibi "Elektrik yükü, akım ve gerilim" videosunu "aşırı basit, 10 y
 2. **Zaman çizelgesi:** 0–2 sn soru kancası (ekranda hareketle); **en geç 8. saniyede cevabın ilk görüntüsü**; geri kalanında "neden" animasyonla; sonda ~4 sn "Bilmen gerekenler" (2–3 madde). Uzun kurulum, giriş veya tekrar sahnesi yok.
 3. **Süre 50–60 sn** (bölüm 3). Senaryo yazılırken her sahnenin süresi toplanır; 60 sn'yi aşıyorsa bir sahne çıkarılır veya konu bölünür.
 4. **Test:** 23.11.2026 değerlendirmesinde Ders 1–2 (~90 sn) ile Ders 3 ve sonrası (~55 sn) ortalama izleme yüzdesi karşılaştırılacak.
+
+## 2i. Kaynak onayı (kanal sahibinin emri, 16.11.2026 — mutlak kural)
+
+1. **Yalnızca kanal sahibinin onayladığı kaynaklar kullanılır.** Onaylı kaynaklar `kaynaklar.md`'deki "Onaylı kaynaklar" bölümündedir. Şu an onaylı: Prof. Behzad Razavi'nin Basic Circuits ders serisi (Razavi serisi için) ve kanal sahibinin bağlantısını verdiği Wikipedia sayfaları (Resistor, Voltage, Electric current). Başka hiçbir kaynak (kitap, site, video) kanal sahibi onaylamadan kullanılmaz; doğrulama için bile.
+2. **Türkçe YouTube videoları asla kaynak değildir** (kanal sahibinin kendi eski dersleri dahil — bunlar yalnızca "ilgili video" bağlantısı olarak verilir). Türkçe videolar yalnızca **talebi anlamak** (hangi konu aranıyor, hangi format izleniyor) için kullanılabilir.
+3. **Kaynağı onaylanmamış konu üretilmez.** Bir serinin sıradaki konusunun onaylı kaynağı yoksa o slota Razavi serisinin sıradaki konusu üretilir (yayın boş kalmaz) ve panelde `onaylar`'a "<seri> için kaynak bekleniyor: <konular listesi>" isteği açılır (aynı istek açıksa yenisini açma).
+4. Her videonun `dogruluk.md`'sinde her iddianın hangi onaylı kaynağa (ve nerede — sayfa/zaman damgası) dayandığı yazılır. Onaylı kaynakta olmayan bilgi videoya girmez.
 
 ## 2c. Devre çizimi kuralları (kanal sahibinin emri, 12.11.2026)
 

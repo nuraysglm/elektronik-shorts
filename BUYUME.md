@@ -39,6 +39,10 @@ Depo: bu klasör (`nuraysglm/elektronik-shorts`). Önce `git pull`. Push yalnız
 - Panelde `bolumler/<YYYY-MM-DD>-buyume-<HHmm>` belgesi: `tarih`, `zaman`, `no: 0`, `konu: "Büyüme raporu"`, `sonuc: "rapor"`, `not` (3–4 cümlelik özet + rapor dosyasının GitHub adresi).
 - Son mesajın (kanal sahibine bildirim olarak gider) Türkçe, kısa: abone durumu vs hedef, 3 ana bulgu, açılan onay istekleri.
 
+## 4a. Kaynak kuralı (kanal sahibinin emri, 16.11.2026)
+
+Kanal her zaman doğru bilgi verir; güvenilirlik en önemli değerdir. **Türkçe YouTube videoları yalnızca talebi anlamak için** (aranan konular, tutan formatlar) incelenir; asla içerik kaynağı olarak önerilmez. Yeni bir seri veya konu önerirken kaynak önerme; "kaynakları kanal sahibi belirleyecek" yaz ve önerinin içinde başlanacak derslerin/konuların listesini ver ki kanal sahibi kaynak verebilsin (`AGENT.md` bölüm 2i).
+
 ## 5. Asla yapma
 
 - Video yayınlama, silme, gizleme; planlı gönderilerin **tarihini/videosunu** değiştirme; "şimdi yayınla".

@@ -1,8 +1,8 @@
 # Sayısal Elektronik Shorts serisi (kanal sahibinin onayı, 16.11.2026 — Büyüme Ajanı önerisi buyume-20261116-1)
 
-Kaynak: kanal sahibinin kendi "Sayısal Elektronik" ders videoları (transkript: vidIQ `vidiq_video_transcript`, `language: tr`; yoksa varsayılan). Her Short **o dersten tek bir kritik nokta / sık yapılan yanlış** anlatır (AGENT.md 2b, 2d, 2f, 2g aynen geçerli; ≤ 60 sn). Bilgiler ikinci bir standart kaynakla doğrulanır (ör. M. Morris Mano, *Digital Design*; Wikipedia). Açıklamanın ilk satırında: "Dersin tamamı: https://www.youtube.com/watch?v=<videoId>"; panelde kanal sahibine "Studio'da ilgili video: <ders adresi>" notu. Ajan durumu bu tabloda tutar (Durum sütunu: bekliyor · planlandı · yayında).
+**KAYNAK: kanal sahibinin onayı bekleniyor (AGENT.md bölüm 2i).** Kaynak `kaynaklar.md`'de onaylanana kadar bu seriden video üretilmez; Salı/Perşembe slotlarına Razavi serisi üretilir. Kanal sahibinin eski ders videoları kaynak DEĞİLDİR; yalnızca "ilgili video" bağlantısıdır. Her Short **o dersin konusundan tek bir kritik nokta / sık yapılan yanlış** anlatır (AGENT.md 2b, 2d, 2f, 2g aynen geçerli; ≤ 60 sn). Açıklamanın ilk satırında: "Dersin tamamı: https://www.youtube.com/watch?v=<videoId>"; panelde kanal sahibine "Studio'da ilgili video: <ders adresi>" notu. Ajan durumu bu tabloda tutar (Durum sütunu: bekliyor · planlandı · yayında).
 
-| # | Ders | Ders videosu (videoId) | Önerilen nokta (ajan transkriptle doğrular/değiştirir) | Durum | Tarih |
+| # | Ders | İlgili video (videoId; kaynak değil) | Önerilen nokta (onaylı kaynakla doğrulanır) | Durum | Tarih |
 |---|------|------------------------|--------------------------------------------------------|-------|-------|
 | S1 | Ders 1 — Analog ve Sayısal Kavramlar | I4o4vBcORSo | Sayısal sinyal "0 ve 1" değil, iki gerilim **aralığıdır** (gürültü payı) | bekliyor | |
 | S2 | Ders 2 — Sayı Sistemleri | bIOWChqPS1E | Taban (radix) ve basamak ağırlığı; 10 neden her tabanda "taban"dır | bekliyor | |

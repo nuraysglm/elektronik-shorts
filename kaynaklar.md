@@ -1,5 +1,17 @@
 # Kanal sahibinin verdiği kaynaklar
 
+## Onaylı kaynaklar (yalnızca bunlar kullanılır — AGENT.md bölüm 2i)
+
+| Seri / konu | Onaylı kaynak | Onay tarihi |
+|---|---|---|
+| Razavi serisi (konu 6–45) ve 4'lü temel seri | Prof. Behzad Razavi, "Basic Circuits" YouTube ders serisi (aşağıdaki tablo) | 11.11.2026 |
+| Direnç / Gerilim / Akım | Wikipedia: Resistor, Voltage, Electric current (aşağıda) | 08.11.2026 |
+| Sayısal Elektronik serisi | **bekleniyor — kanal sahibi verecek** | — |
+| Bileşen serisi | **bekleniyor — kanal sahibi verecek** | — |
+
+Türkçe YouTube videoları (kanal sahibinin kendi dersleri dahil) kaynak değildir; yalnızca talep analizi ve "ilgili video" bağlantısı için kullanılır.
+
+
 Ajan bir konuya başlamadan (veya `yeniden düzenle` işinden) önce bu listeye bakar. Konunun satırı varsa kaynakları senaryodan önce okur (WebFetch), senaryo ve `dogruluk.md` bu kaynaklarla tutarlı olur, okunan kaynaklar `dogruluk.md`'ye yazılır, analojiler için de bu kaynaklardan ilham alınır (görseller kopyalanmaz, fikir kodla 3D animasyona çevrilir). Bu dosyayı yalnızca genel müdür/kanal sahibi düzenler.
 
 | Konu # | Konu | Kaynak |
@@ -10,7 +22,7 @@ Ajan bir konuya başlamadan (veya `yeniden düzenle` işinden) önce bu listeye 
 
 ## Ana kaynak: Prof. Behzad Razavi, "Basic Circuits" ders serisi (kanal sahibinin kararı, 11.11.2026)
 
-Konu listesindeki 40 ders (konu 6–45) bu serinin derslerine birebir karşılık gelir: **ders N = konu N+5**. Her video için ilgili dersin transkriptini vidIQ `vidiq_video_transcript` (videoId aşağıda, `language: en`) ile al ve bölüm 2b'ye göre kullan. Oynatma listesi: https://www.youtube.com/playlist?list=PL9KyzjPFbwH37w22z-UHVEt37pdJHjZ7x . Destek kaynağı: Razavi'nin kitapları (ör. *Fundamentals of Microelectronics*) — yalnızca bilinen içerikle tutarlılık kontrolü için; uydurma alıntı yapma.
+Konu listesindeki 40 ders (konu 6–45) bu serinin derslerine birebir karşılık gelir: **ders N = konu N+5**. Her video için ilgili dersin transkriptini vidIQ `vidiq_video_transcript` (videoId aşağıda, `language: en`) ile al ve bölüm 2b'ye göre kullan. Oynatma listesi: https://www.youtube.com/playlist?list=PL9KyzjPFbwH37w22z-UHVEt37pdJHjZ7x . Başka destek kaynağı yalnızca kanal sahibi onaylarsa eklenir.
 
 | Ders | Konu # | YouTube videoId |
 |------|--------|-----------------|
