@@ -28,7 +28,7 @@ Seslendirme metni kuralları (yapay ses doğru okusun diye):
 - 1920×1080, 16:9, 30 fps. **Beyaz tahta**: beyaz/kırık beyaz zemin; kalem renkleri siyah (ana), mavi (değişkenler, akımlar), kırmızı (vurgu, sık yapılan hata). Shorts'un koyu teması uzun videoda kullanılmaz.
 - Devre çizgi çizgi **çizilerek** belirir (SVG stroke animasyonu); denklemler konuşmayla eş zamanlı **el yazısıyla yazılıyormuş gibi** belirir; önemli yerler kırmızı daire/alt çizgi ile işaretlenir.
 - Gerçek el görüntüsü YOK (yapay zekâ veya başkasının görseli kullanılmaz). Yazıyı, ajanın kendi çizdiği sade bir **kalem ucu** takip eder.
-- El yazısı yazı tipi: kanal sahibinin yükleyeceği OFL lisanslı dosya (Patrick Hand veya Kalam) — `tools/vendor/fonts/` altına konur; Türkçe harfler (ç ğ ı İ ö ş ü) kontrol edilir. Devre çizim kuralları AGENT.md 2c (kesintisiz tel, bağlantı noktaları net).
+- El yazısı yazı tipi: **Patrick Hand** (OFL lisanslı; `tools/vendor/fonts/PatrickHand-Regular.ttf`). Türkçe harfler ve Ω, −, ×, ÷ var. **Yok:** alt simge rakamları (₁ ₂) ve ok (→) — alt simgeyi küçültülmüş ve aşağı kaydırılmış normal rakamla yaz, okları çizgiyle çiz; yedek yazı tipine düşen karakter bırakma (render sonrası kontrol et). Devre çizim kuralları AGENT.md 2c (kesintisiz tel, bağlantı noktaları net).
 - Tahta dolunca **anında** silinir (geçiş ≤0,3 sn).
 - Geçişler anlık (≤0,3 sn); kayma/yakınlaşma/küçülme yok; hiçbir sahne tamamen durağan değil (çözüm adımları yazılırken belirginleşir).
 - Denklemler ekranda adım adım; o an konuşulan terim vurgulanır. Yazı nesnelerin üstüne binmez.
