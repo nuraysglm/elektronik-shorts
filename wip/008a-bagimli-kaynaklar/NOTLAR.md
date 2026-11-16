@@ -6,3 +6,4 @@
 - Sıradaki: 4 parça render (render_parts.sh) → birlestir.sh → kalite.md → scenes/ + media/ → Metricool (sıradaki boş gün: 2026-11-17 Salı 16:00 Londra).
 - parca-03: tamam (12:52 UTC)
 - parca-00: tamam (12:53 UTC)
+- parca-01: tamam (12:54 UTC)
