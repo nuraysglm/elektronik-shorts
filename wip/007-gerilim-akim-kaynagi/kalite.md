@@ -1,8 +1,8 @@
-# 007 v3 — kalite kontrolü (15.11.2026) — GEÇTİ (1. tur)
+# 007 v4 — kalite kontrolü (16.11.2026) — GEÇTİ (1. tur)
 
-**A. İçerik:** dogruluk.md v3 eklemeleri (grafik kontrol noktaları, kart maddeleri, Razavi zaman damgaları) ✔. check(): i(3/1/0,25 kΩ) = 2/6/24 mA konumları, 24 mA eksen içinde, süre ≤ 90 ✔. Bağımsız metin denetimi (render öncesi): seviye "üniversite"; 4 zorunlu düzeltme uygulandı (c2 '2 mA dayatılır: V = i·R → ∞'; '→ yüke bağlı' yerine ': yüke bağlı'; 'CC' yerine 'Sabit akımla şarj'; açık devre grafiğinde '(2 mA dayatılırsa)' ve 'R → ∞'). Kart doğru, 4 madde videoda açıklanıyor.
-**2e grafik:** i ekseni 0–30 mA (ampermetre 2 → 3 → 6 → 24 mA ile nokta aynı konumda, eksen sınırına yapışma yok); V(R) 0–8 V, açık devrede nokta doğru üzerinde köşede + 'eksen dışı' oku ve voltmetreyle aynı değer; '↑ ∞' eğrinin dik ucunun yanında, eksen etiketleri ayrı; 'i ∝ 1/R — doğrusal değil' notu ✔.
-**A2:** animasyon önce, etiket sonra; elektronlar − → +, kırmızı akım oku + → − ✔.
-**B. Görüntü:** 16 kare (2 kontak sayfası) + grafik yakın plan kareleri incelendi: kesilen yazı, çakışma, imleç kalıntısı yok; tel kesintisiz. render.mjs --safe: güvenli alan 0 ihlal (699 kutu), yazı–nesne kesişimi 0; doluluk yalnızca kart sırasında (76,5–81 sn; devre yazıya yer açmak için %80'e küçülür, kural 2a-16 — 006 v5 ile aynı). freezedetect: 0 donuk aralık. Konsol hatası yok.
-**C. Ses:** −16,4 LUFS, tepe −2,0 dBFS; 4 kHz üstü max_volume: -18.5 dB; yalnızca olay efektleri, seslendirme/müzik yok ✔.
-**D. Teknik:** 1080×1920, 30 fps, H.264 + AAC, 89,6 sn (≤ 90) ✔.
+**A. İçerik:** Panel kararı A (formülsüz özet, c3 yok, kart 3 madde) + gövde 2d-5 düzeltmeleri. Tüm check() geçti (i = 6/R: 2/3/6/24 mA; V = 2R: 2/4/6 V; okuma süreleri; ≥ 1,5 sn bekleme). Bağımsız metin denetimi (v4): zorunlu bulgular uygulandı (kartta sembol yerine kelime; 'şarj cihazı'; v2 yazısı görüntüyle uyumlu; c2'de 2 mA). Denetçinin seviye yorumu ("lise", i–V karakteristiği önerisi) iş emri kapsamı dışında; panelde kanal sahibine not edildi.
+**A2. Görsel öğretim:** önce animasyon, sonra yazı; elektronlar − → +, akım oku + → −; gerçek hayat modelleri; özet her cümle kendi görüntüsüyle (kısa devre → ampermetre ∞; anahtar açık → voltmetre ∞).
+**B. Görüntü:** 16 + 6 kare kontak sayfası incelendi: yazılar okunur, kesilme/çakışma yok, kalem imleci yazı bitince kayboluyor. --safe: 687 kutu, 0 ihlal; yazı–nesne kesişimi 0; doluluk yalnızca kart sırasında devrenin %80'e küçülmesinde (kural 2a-16). freezedetect: 0.
+**C. Ses:** −16,4 LUFS, tepe −2,1 dB; 4 kHz üstü max −18,6 dB; yalnızca olay efektleri.
+**D. Teknik:** 1080×1920, 30 fps, H.264 + AAC, 87,5 sn (senaryo 87,5).
+Not: 60 sn kuralı (2g) Ders 3'ten itibaren; bu video Ders 2, kanal sahibinin ~90 sn kararı (A).

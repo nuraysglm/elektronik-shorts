@@ -44,3 +44,4 @@
 - parca-01: tamam (08:47 UTC)
 - parca-02: tamam (08:47 UTC)
 - parca-03: tamam (08:48 UTC)
+- 08:58 UTC: 4 parça birleştirildi + ses (87,5 sn, −16,4 LUFS); kalite 1. turda GEÇTİ. v3 eski/'ye. Sıradaki: main'de doğrula → Metricool video + açıklama (tarih aynı).
