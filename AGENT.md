@@ -274,6 +274,8 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 
 Kanal sahibinin kararı:
 - **Haftada 5 video (kanal sahibinin kararı, 11.11.2026): Pazartesi, Salı, Çarşamba, Perşembe ve Pazar, saat 16:00'da (Europe/London; Türkiye 19:00).** Cuma ve Cumartesi yayın yok (kanal verisinde en zayıf günler).
+- **Seri dağılımı (kanal sahibinin kararı, 16.11.2026):** **Pazartesi ve Çarşamba: Razavi serisi** (`konular.md`) · **Salı ve Perşembe: Sayısal Elektronik serisi** (`sayisal-konular.md`) · **Pazar: Bileşen serisi** (`bilesen-konular.md`, 4 haftalık test: 22.11, 29.11, 06.12, 13.12; sonrasında kanal sahibi karar verene kadar Pazar Razavi'ye döner). 17.11 Salı'ya önceden planlanmış 008a (Razavi) olduğu gibi kalır; yeni dağılım 18.11'den başlar.
+- **Hangi konuyu üreteceğini seçme:** Planlanacak ilk boş yayın gününü bul; o günün serisinin sıradaki `bekliyor` konusunu üret. Her serinin kendi dosyasındaki sıra korunur. `yeniden düzenle` işleri her zaman önce gelir. Sayısal ve Bileşen serilerinin kaynak ve açıklama kuralları kendi dosyalarının başındadır.
 - Ajan **günde iki kez** çalışır: **08:00** ve **12:00** (Londra).
 - **Stok kuralı:** Planlanmış ve henüz yayınlanmamış YouTube Short sayısı
   - **2 veya daha fazla** ise: yeni video üretme. Yalnızca kayıtları güncelle (bkz. aşağı) ve dur.
