@@ -10,9 +10,9 @@ Onaylı kaynak: Floyd, *Digital Fundamentals* 11e, Bölüm 1 (Drive `floyd_bolum
 | 2,5 V → 1 okunur (kanca sorusu ve cevabı) | Floyd s. 21: "If a voltage of 2.5 V is applied, the circuit will accept it as a HIGH or binary 1" | ✔ |
 | 0,5 V ve 0,2 V → 0 | Floyd s. 21: "If a voltage of 0.5 V is applied, the circuit will accept it as a LOW"; 0,2 V aynı aralıkta | ✔ |
 | 0,8 V ile 2 V arası kabul edilemez | Floyd s. 21: "voltages between 0.8 V and 2 V are unacceptable" | ✔ |
-| Devre bunu 1 de 0 da okuyabilir (gösterge "?") | Floyd s. 21: "A voltage in the unacceptable range can appear as either a HIGH or a LOW to a given circuit" | ✔ |
+| Devre bunu 1 de 0 da okuyabilir (gösterge düzensiz 1/0) | Floyd s. 21: "A voltage in the unacceptable range can appear as either a HIGH or a LOW to a given circuit" | ✔ |
 | Gürültü aralığın içinde kalırsa okunan bit değişmez | Floyd s. 18: "Noise (unwanted voltage fluctuations) does not affect digital data nearly as much as it does analog signals" + s. 21 (aralıktaki her gerilim aynı bit olarak kabul edilir). Sahnede gürültülü LOW 0,15–0,65 V, gürültülü HIGH 2,65–3,15 V; `check()` her 1/240 sn'de bandın içinde kaldığını doğrular | ✔ |
-| Kartta "1 ve 0 birer gerilim aralığıdır" | s. 21 (yukarıda) | ✔ |
+| Kart: 'Örnekte 1, 2 V ile 3,3 V arasıdır', 'Örnekte 0, 0 V ile 0,8 V arasıdır', '0,8 V ile 2 V arası kabul edilemez' | s. 21 (Floyd'un 'a certain type of … CMOS' örneği; genelleme yapılmadı) | ✔ |
 | Ekrandaki V değerleri (güç kaynağı göstergesi) | Sahne kodunda Vof(t)'den hesaplanır; 3,3 V eksen içinde (eksen 0–3,5 V), `check()` | ✔ |
 
 Not: "gürültü payı" (noise margin) terimi ve formülü onaylı metin dosyalarında (Floyd Bölüm 1 ve 3) tanımlı bulunmadığı için videoda kullanılmadı (2i-5).

@@ -16,23 +16,25 @@ const b0 = (x) => `<span style="color:${C0}">${x}</span>`;
 const bx = (x) => `<span style="color:${CX}">${x}</span>`;
 const VIL = 0.8, VIH = 2.0, VMAX = 3.3;                     // Floyd s. 21, CMOS örneği
 const bitOf = (v) => (v >= VIH ? '1' : v <= VIL ? '0' : '?');
+// gösterge: kabul edilemez bölgede f1 sırasında düzensiz 1/0 (Floyd s. 21: 'can appear as either a HIGH or a LOW'); kısa geçişlerde önceki bit kalır
+const wob = (t) => Math.sin(2 * Math.PI * 0.9 * t + 0.4) + 0.8 * Math.sin(2 * Math.PI * 1.7 * t + 2.1) + 0.5 * Math.sin(2 * Math.PI * 3.1 * t);
 check(bitOf(2.5) === '1' && bitOf(0.5) === '0' && bitOf(1.4) === '?', 'Floyd örneği: 2,5 V → 1, 0,5 V → 0, 0,8–2 V arası kabul edilemez');
 
 // ---------------------------------------------------------------- anlatım
 const BEATS = [
-  { id: 'h1', pen: false, pre: 0, l1: `Sayısal sinyalde ${b1('1')}`, l2: `<b style="font-weight:900">tam olarak kaç volt?</b>`, s1: 7.0, s2: 7.0 },
-  { id: 'r1', pre: 2.7, l1: `${b1('1')} tek bir gerilim değildir`, l2: `${hl('2 V')} ile ${hl('3,3 V')} arası bir aralıktır`, s1: 6.0, s2: 5.6 },
+  { id: 'h1', pen: false, pre: 0, l1: `Sayısal sinyalde ${b1('1')}`, l2: `<b style="font-weight:900">tam olarak kaç volt?</b>`, s1: 6.6, s2: 6.6 },
+  { id: 'r1', pre: 2.7, l1: `${b1('1')} tek bir gerilim değildir`, l2: `${hl('2 V')} ile ${hl('3,3 V')} arasında bir aralıktır`, s1: 6.0, s2: 5.6 },
   { id: 'r2', pre: 2.9, l1: `${b0('0')} da bir aralıktır`, l2: `${hl('0 V')} ile ${hl('0,8 V')} arası`, s1: 6.0, s2: 5.6 },
-  { id: 'n1', pre: 4.2, l1: `Gürültü aralığın içinde kalırsa`, l2: `okunan bit değişmez`, s1: 6.0, s2: 5.6 },
+  { id: 'n1', pre: 3.6, l1: `Gürültü aralığın içinde kalırsa`, l2: `okunan bit değişmez`, s1: 6.0, s2: 5.6 },
   { id: 'f1', pre: 2.7, l1: `${hl('0,8 V')} ile ${hl('2 V')} arası ${bx('kabul edilemez')}`, l2: `Devre bunu ${b1('1')} de ${b0('0')} da okuyabilir`, s1: 5.8, s2: 5.4 },
 ];
 const { Z, A, W: WR } = penTimeline(BEATS, { k: 1.0 });
 
 const KART = [
-  { id: 'kh', html: `<span style="color:#7fe3ff">Bilmen gerekenler</span>`, y: 13.4, size: 4.6, weight: 900 },
-  { id: 'k1', html: `• ${b1('1')} ve ${b0('0')} birer ${hl('gerilim')} aralığıdır`, y: 17.9 },
-  { id: 'k2', html: `• CMOS: ${b1('1')} için 2–3,3 V, ${b0('0')} için 0–0,8 V`, y: 21.5 },
-  { id: 'k3', html: `• 0,8–2 V arası ${bx('kabul edilemez')}`, y: 25.1 },
+  { id: 'kh', html: `<span style="color:#7fe3ff">Bilmen gerekenler</span>`, y: 12.6, size: 4.6, weight: 900 },
+  { id: 'k1', html: `• Örnekte ${b1('1')}, ${hl('2 V')} ile ${hl('3,3 V')} arasıdır`, y: 16.7 },
+  { id: 'k2', html: `• Örnekte ${b0('0')}, ${hl('0 V')} ile ${hl('0,8 V')} arasıdır`, y: 20.2 },
+  { id: 'k3', html: `• ${hl('0,8 V')} ile ${hl('2 V')} arası ${bx('kabul edilemez')}`, y: 23.7 },
 ];
 { let t = Z.f1[1] + 0.1; for (const k of KART) { k.t0 = t; k.t1 = t + penSec(k.html); t = k.t1 + 0.06; } }
 const KEND = KART[KART.length - 1].t1;
@@ -75,6 +77,7 @@ check(bitOf(Vof(Z.f1[0])) === '?' && Math.abs(Vof(Z.f1[0]) - 1.4) < 1e-9, 'f1: 1
 check(bitOf(Vof(Z.r1[0])) === '1' && bitOf(Vof(Z.r2[0])) === '0', 'r1 = 1, r2 = 0');
 for (let t = 0; t < DUR; t += 0.01) { const v = Vof(t); if (v < 0 || v > VMAX + 1e-9) { check(false, `V eksen dışı t=${t}`); break; } }
 
+{ let n = 0, p = null; for (let t = A.f1 + 1.0; t < Z.f1[1]; t += 1 / 30) { const q = wob(t) > 0.2; if (p !== null && q !== p) n++; p = q; } check(n >= 4, `f1: gösterge 1 ile 0 arasında düzensiz gidip gelir (${n} değişim)`); }
 const BANDS = [[A.r1 + 0.0, Z.r1[1]], [A.r2 + 1.3, Z.r2[1]], [A.f1 + 1.0, Z.f1[1]]];   // HIGH, LOW, kabul edilemez vurgusu
 
 export const meta = {
@@ -95,7 +98,7 @@ export const meta = {
 };
 
 // ---------------------------------------------------------------- panel (gerilim ölçeği + v(t) izi), bölüm 2e
-const GEO = { Wc: 1400, Hc: 760, top: 110, oy: 690, bx0: 210, bx1: 300, nx: 330, tx0: 610, tx1: 1350, WIN: 5, YMAX: 3.5 };
+const GEO = { Wc: 1400, Hc: 830, top: 110, oy: 760, bx0: 210, bx1: 300, nx: 330, tx0: 610, tx1: 1350, WIN: 5, YMAX: 3.5 };
 const gy = (v) => GEO.oy - (v * (GEO.oy - GEO.top)) / GEO.YMAX;
 check(gy(VMAX) > GEO.top && gy(0) === GEO.oy, '3,3 V eksen içinde (eksen 0–3,5 V)');
 const INK = '#cfe3ea', YEL = '#ffd23f';
@@ -132,8 +135,8 @@ function panel() {
     k.fillStyle = C1; k.fillText('HIGH (1)', nx, (gy(VIH) + gy(VMAX)) / 2);
     k.fillStyle = C0; k.fillText('LOW (0)', nx, (gy(0) + gy(VIL)) / 2);
     k.fillStyle = CX; k.font = '900 38px "InterDisplay", sans-serif'; k.fillText('kabul', nx, (gy(VIL) + gy(VIH)) / 2 - 22); k.fillText('edilemez', nx, (gy(VIL) + gy(VIH)) / 2 + 22);
-    k.fillStyle = YEL; k.font = '900 46px "InterDisplay", sans-serif'; k.textAlign = 'right'; k.textBaseline = 'bottom'; k.fillText('giriş gerilimi v(t)', tx1, top - 30);
-    k.fillStyle = INK; k.font = '700 38px "InterDisplay", sans-serif'; k.textBaseline = 'top'; k.fillText('zaman →', tx1, oy + 12);
+    k.fillStyle = YEL; k.font = '900 46px "InterDisplay", sans-serif'; k.textAlign = 'right'; k.textBaseline = 'bottom'; k.fillText('giriş gerilimi', tx1, top - 30);
+    k.fillStyle = INK; k.font = '700 38px "InterDisplay", sans-serif'; k.textBaseline = 'top'; k.fillText('zaman', tx1, oy + 12);
     // v(t) izi: son WIN saniye; sağ uç = şimdi
     k.save(); k.beginPath(); k.rect(tx0, top - 10, tx1 - tx0 + 4, oy - top + 12); k.clip();
     k.strokeStyle = YEL; k.lineWidth = 7; k.lineJoin = 'round'; k.shadowColor = YEL; k.shadowBlur = 12; k.beginPath();
@@ -150,8 +153,8 @@ function panel() {
 }
 
 // ---------------------------------------------------------------- yerleşim
-const PX = -0.85, PZ = -0.12, BX = 0.58, BZ = -0.12, Y = 0.2;
-const GW = 2.2, GZ = -1.35, GYc = 0.82, GRX = -0.62;
+const PX = -0.85, PZ = 0.15, BX = 0.58, BZ = 0.15, Y = 0.2;
+const GW = 2.2, GZ = -1.35, GYc = 1.02, GRX = -0.35;
 
 function tube(S, pts, parent, r = 0.03) {
   const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p))), 240, r, 10), S.M.copper);
@@ -193,25 +196,26 @@ export function build(S) {
   tube(S, [[PX + 0.57, Y, PZ], [PX + 0.85, Y + 0.05, PZ - 0.02], [inX - 0.35, 0.16, inZ - 0.02], [inX - 0.05, 0.1, inZ], [inX, 0.085, inZ]], CG);
   const gX = BX - 0.5, gZ = BZ + 0.38;
   const gp = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.01, 20), padM); gp.position.set(gX, 0.065, gZ); CG.add(gp);
-  tube(S, [[PX - 0.57, Y, PZ], [PX - 0.75, Y - 0.02, PZ + 0.2], [PX - 0.55, 0.12, PZ + 0.45], [PX + 0.6, 0.08, gZ + 0.05], [gX - 0.1, 0.07, gZ], [gX, 0.07, gZ]], CG, 0.026);
+  tube(S, [[PX - 0.57, Y, PZ], [PX - 0.66, Y - 0.04, PZ + 0.12], [PX - 0.5, 0.1, PZ + 0.36], [PX + 0.6, 0.08, gZ + 0.05], [gX - 0.1, 0.07, gZ], [gX, 0.07, gZ]], CG, 0.026);
 
   const GP = panel();
   const gm = new THREE.Mesh(new THREE.PlaneGeometry(GW, GW * GEO.Hc / GEO.Wc), GP.mat);
   gm.position.set(0, GYc, GZ); gm.rotation.x = GRX; CG.add(gm); gm.userData.box = 'panel';
 
-  const CD = 10.8, CE = 60, CXc = 0.0, CT = -1.0;
+  const CD = 10.2, CE = 60, CXc = 0.12, CT = -1.0;
   const ck = (t, a, dd) => [t, a, CD + dd, CE, CXc, CT];
-  const cam = camRig(S, [ck(0, 0.0, 0.1), ck(A.r1, 0.035, 0.0), ck(A.r2, -0.03, 0.05), ck(A.n1, 0.03, 0), ck(A.f1, -0.03, 0.05), ck(Z.f1[1], 0.02, 0), ck(DUR, 0.04, -0.05)]);
+  const cam = camRig(S, [ck(0, 0.0, 0.03), ck(A.r1, 0.035, 0.0), ck(A.r2, -0.03, 0.05), ck(A.n1, 0.03, 0), ck(A.f1, -0.03, 0.05), ck(Z.f1[1], 0.02, 0.03), ck(DUR, 0.04, 0.05)]);
   const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15.4, y2: 21.0 });
 
   return (t) => {
     cam(t);
-    const v = Vof(t), b = bitOf(v);
+    const v = Vof(t); let b = bitOf(v);
+    if (b === '?') b = t >= A.f1 ? (wob(t) > 0.2 ? '1' : '0') : (t < A.r2 + 0.5 ? '1' : '0');
     const g = BANDS.map(([a, e]) => fade(t, a, e, 0.5) * (0.75 + 0.25 * Math.sin(t * 3.1)));
     GP.draw(t, g);
     P.show.set(`${fmt(v, 2)} V`);
     P.knob.rotation.y = -(Vbase(t) / VMAX) * 4.2;
-    bitShow.set(b, b === '1' ? C1 : b === '0' ? C0 : CX);
+    bitShow.set(b, b === '1' ? C1 : C0);
     led.set(b === '1' ? 0.85 + 0.05 * Math.sin(t * 7) : 0);
     P.glow.emissiveIntensity = 0.3 + 0.1 * Math.sin(t * 2.3);
 
@@ -219,11 +223,11 @@ export function build(S) {
     for (const k of KART) S.text(k.id, k.html, { x: 47, y: k.y, size: k.size || 4.1, weight: k.weight || 700, align: 'left', maxWidth: 78, nowrap: true,
       opacity: t >= k.t0 ? easeOut(seg(t, k.t0 - 0.05, k.t0 + 0.2)) : 0, reveal: clamp((t - k.t0) / (k.t1 - k.t0)) });
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
-    S.text('sub', `CMOS girişine ${hl('2,5 V')} verirsek ne okunur?`, { y: 24.7, size: 3.7, weight: 600, opacity: subO, nowrap: true });
+    S.text('sub', `Bu CMOS girişine ${hl('2,5 V')} verirsek ne okunur?`, { y: 24.2, size: 3.3, weight: 600, opacity: subO, nowrap: true });
 
     const on = (a, e) => fade(t, a, e, 0.3);
-    label('lg', 'CMOS kapı girişi', BX - 0.18, 0.36, BZ - 0.32, { opacity: on(0.3, A.r2), size: 3.5 });
-    label('lb', 'okunan bit', BX + 0.4, 0.55, BZ - 0.26, { opacity: on(0.3, A.n1), size: 3.5 });
-    label('lp', hl('ayarlı güç kaynağı'), PX, 0.62, PZ - 0.12, { opacity: on(0.3, A.r2), size: 3.5 });
+    label('lg', 'kapı girişi', BX - 0.45, 0.38, BZ - 0.3, { opacity: on(0.3, A.r2), size: 3.5 });
+    label('lb', 'okunan bit', BX + 0.3, 0.6, BZ - 0.34, { opacity: on(0.3, A.n1), size: 3.5 });
+    label('lp', hl('ayarlı güç kaynağı'), PX + 0.3, 0.98, PZ - 0.12, { opacity: on(0.3, A.r2), size: 3.5 });
   };
 }
