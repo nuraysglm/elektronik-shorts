@@ -9,7 +9,7 @@
 
 import { THREE, RoundedBoxGeometry, clamp, seg, easeInOut, easeOut, fade, lerp } from '../../tools/lib/stage.js';
 import { hl, rd, gr, fmt, check, penSec } from '../../tools/lib/anlatim.js';
-import { roundedLoop, closedWire, resistor, projLabel, camRig, canvasTex } from '../../tools/lib/parcalar.js';
+import { roundedLoop, closedWire, resistor, projLabel, canvasTex } from '../../tools/lib/parcalar.js';
 import { meter } from '../../tools/lib/olcum.js';
 
 // ---------------------------------------------------------------- sayılar (dogrula.py ile aynı)
@@ -49,11 +49,11 @@ const BAND = [
   ['a1', 'İkisi de olur', C[1][0], C[9][0], 15.0, 6.6, true, 900],
   ['a2', 'Tek denklemde tek kural', C[2][0], C[9][0], 20.6, 5.4, true, 800],
   ['b1', 'Birinci kural', C[9][0], C[12][0], 14.4, 6.0, true, 900],
-  ['b2', 'Artıdan eksiye eksi, eksiden artıya artı', 23.86, C[12][0], 19.4, 4.7, true, 700],
+  ['b2', 'Artıdan eksiye eksi, eksiden artıya artı', 23.86, C[12][0], 19.1, 4.7, true, 700],
   ['c1', 'İkinci kural', C[12][0], C[15][0], 14.4, 6.0, true, 900],
-  ['c2', 'Girdiğin uçtaki işareti yaz', 35.84, C[15][0], 19.4, 4.9, true, 700],
+  ['c2', 'Girdiğin uçtaki işareti yaz', 35.84, C[15][0], 19.1, 4.9, true, 700],
   ['d1', rd('Kurallar karışırsa'), C[15][0], K0, 14.4, 6.0, true, 900],
-  ['d2', rd('Bu yanlış'), C[19][0], K0, 19.4, 5.4, true, 900],
+  ['d2', rd('Bu yanlış'), C[19][0], K0, 19.1, 5.4, true, 900],
 ];
 // denklemler: terimler ve sesle eşzamanlı başlangıçları (iç duraklamalara göre)
 const V2s = hl('V₂');
@@ -180,13 +180,18 @@ export function build(S) {
 
   // elektronlar (sönük, gerçek yönde: dolaşmanın tersine)
   const N = 40;
-  const eMat = new THREE.MeshPhysicalMaterial({ color: 0x1fcf5a, emissive: 0x14b84a, emissiveIntensity: 0.35, roughness: 0.3, transparent: true, opacity: 0.55 });
+  const eMat = new THREE.MeshPhysicalMaterial({ color: 0x1fcf5a, emissive: 0x14b84a, emissiveIntensity: 0.5, roughness: 0.3, transparent: true, opacity: 0.75 });
   const el = new THREE.InstancedMesh(new THREE.SphereGeometry(0.03, 12, 10), eMat, N); CG.add(el);
   const m4 = new THREE.Matrix4(), qq = new THREE.Quaternion(), sv = new THREE.Vector3(), pv = new THREE.Vector3(), mp = new THREE.Vector3();
 
   const CD = 10.5, CE = 66, CX = 0.0, CT = -0.2;
-  const ck = (t, a, dd) => [t, a, CD + dd, CE, CX, CT];
-  const cam = camRig(S, [ck(0, -0.02, 0.05), ck(15, 0.02, 0), ck(30, -0.015, 0.05), ck(45, 0.02, 0), ck(DUR, -0.01, 0.06)]);
+  // kamera: yerinde sürekli, çok yavaş yaşar (durağan an yok, 2a-13); anahtar karelerde durmasın diye düzgün sinüs + doğrusal kayma
+  const tgt = new THREE.Vector3(CX, 0.1, CT);
+  const cam = (t) => {
+    const a = -0.03 + 0.06 * (t / DUR) + 0.018 * Math.sin(t * 0.42), D = CD + 0.08 * Math.sin(t * 0.31 + 1), el = ((CE + 0.6 * Math.sin(t * 0.23)) * Math.PI) / 180;
+    S.camera.position.set(CX + D * Math.cos(el) * Math.sin(a), 0.1 + D * Math.sin(el), CT + D * Math.cos(el) * Math.cos(a));
+    S.camera.lookAt(tgt); S.camera.updateMatrixWorld();
+  };
 
   // denklem: her terim kendi zamanında soldan sağa açılır (kalem izi gibi)
   const eqHtml = (e, t) => e.terms.map(([s, t0]) => { const p = clamp((t - t0) / 0.45) * 112 - 6;
@@ -203,7 +208,7 @@ export function build(S) {
     }
     for (const e of EQ) {
       const o = t >= e.t0 && t < e.t1 ? easeOut(seg(t, e.t0, e.t0 + 0.1)) * (1 - easeOut(seg(t, e.t1 - 0.15, e.t1))) : 0;
-      S.text(e.id, eqHtml(e, t), { x: 46, y: 23.5, size: 6.3, weight: 900, opacity: o, maxWidth: 88, nowrap: true });
+      S.text(e.id, eqHtml(e, t), { x: 46, y: 23.2, size: 6.3, weight: 900, opacity: o, maxWidth: 88, nowrap: true });
     }
     for (const k of KART) S.text(k.id, k.html, { x: 47, y: k.y, size: k.size || 4.6, weight: k.weight || 700, align: 'left', maxWidth: 78, nowrap: true,
       opacity: t >= k.t0 ? easeOut(seg(t, k.t0 - 0.02, k.t0 + 0.15)) : 0, ...(k.pen === false ? {} : { reveal: clamp((t - k.t0) / (k.t1 - k.t0)) }) });
@@ -214,7 +219,7 @@ export function build(S) {
     label('cp', `<span style="color:${YEL}">+12 V</span>${ok || ' ?'}`, -0.4, 0.3, -0.12, { size: 4.6, opacity: chipO });
     label('cn', `<span style="color:${YEL}">−12 V</span>${ok || ' ?'}`, -0.4, 0.3, 0.34, { size: 4.6, opacity: chipO });
     const pen = (a, d) => clamp((t - a) / d);
-    label('l12', hl('12 V'), -0.55, 0.3, 0.1, { size: 4.6, opacity: t >= 7.35 ? 1 : 0 });
+    label('l12', hl('12 V'), -0.5, 0.3, 0.1, { size: 4.6, opacity: t >= 7.35 ? 1 : 0 });
     // V₁
     label('lv1', `${hl('V₁')} = 5 V`, MX, 0.3, MZ + 0.56, { size: 4.2, opacity: t >= 11.7 ? 1 : 0 });
     // V₂: ? → 7 V (kural 1) → ? → 7 V (kural 2) → ? → −17 V (karışık, üstü çizilir)

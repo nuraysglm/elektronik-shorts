@@ -1,0 +1,36 @@
+{
+ "durum": "taslak — kanal sahibinin onayı bekleniyor; Metricool'a planlanmadı (22.11.2026 16:00 Londra slotu ayrıldı)",
+ "konu_no": 9,
+ "baslik": "Kirchhoff Gerilim Yasası: Artı mı, Eksi mi?",
+ "aciklama": "Devre analizi 1 / devre teorisi dersinde Kirchhoff gerilim yasası (KVL): döngüde kaynağın önüne artı mı, eksi mi yazılır? İki işaret kuralı da doğru denklemi verir; ama aynı denklemde karıştırılırsa, yani kaynakta birinci, dirençlerde ikinci kural kullanılırsa, bu örnekte 7 V yerine −17 V bulunur.\n\nBilmen gerekenler:\n• Kapalı döngüde gerilimlerin toplamı sıfırdır; döngü kapanmadan toplanan gerilimler sıfır olmak zorunda değildir.\n• Birinci kural: artıdan eksiye geçerken eksi, eksiden artıya geçerken artı yazılır.\n• İkinci kural: elemana girilen uçtaki işaret yazılır.\n• İki kural birbirinin tam tersidir; ikisi de doğrudur, ama bir denklemde yalnızca biri kullanılır.\n\nÖnce bilmen gereken: Seri bağlı elemanlar aynı akımı taşır. Ohm yasasını eksi işaretsiz kullanmak için, direncin gerilimi akımın girdiği uç artı olacak şekilde işaretlenir.\n\nKaynak: B. Razavi, Basic Circuits, Ders 4 (yöntem; örnek özgündür).\n\n#elektronik #kirchhoff #devreanalizi",
+ "ilk_yorum": "9 V kaynağa seri iki direnç bağlı, birincisinin uçlarında 4 V var. İkinci direncin gerilimi kaç volt? Videodaki gibi kaynakta birinci, dirençlerde ikinci kuralı kullanan kaç bulur? Cevabını yaz.",
+ "ilk_yorum_cevap": "doğrusu 5 V; videodaki karışımla −13 V (dogrula.py)",
+ "etiketler": [
+  "kirchhoff gerilim yasası",
+  "kirchhoff yasaları",
+  "KVL",
+  "devre analizi 1",
+  "devre teorisi",
+  "elektrik devreleri"
+ ],
+ "hashtagler": [
+  "#elektronik",
+  "#kirchhoff",
+  "#devreanalizi"
+ ],
+ "youtube": {
+  "tur": "short",
+  "privacy": "public",
+  "madeForKids": false,
+  "category": "EDUCATION",
+  "isAiGeneratedContent": false
+ },
+ "sure_sn": null,
+ "youtube_tarih": null,
+ "youtube_url": null,
+ "metricool_uuid": null,
+ "instagram": {
+  "durum": "bekliyor",
+  "aciklama": null
+ }
+}

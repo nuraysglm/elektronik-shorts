@@ -1,9 +1,9 @@
 #!/bin/bash
-# 009: 2 sessiz parça (makinede 2 çekirdek), aynı anda 2. Var olan parçayı atlar; biten parça commit + push edilir (yalnızca wip/009).
+# 009: 4 sessiz parça (~15 sn), aynı anda 2 (makinede 2 çekirdek; parça kısa tutuldu: kesilirse yalnızca yarım parça kaybolur). Var olan parçayı atlar; biten parça commit + push edilir (yalnızca wip/009).
 cd "$(dirname "$0")/../.."
 S=wip/009-sesli-test/scene.js; D=wip/009-sesli-test
 DUR=$(node -e "import('./$S').then(m=>console.log(m.meta.duration))" 2>/dev/null | tail -1)
-B=(0 30 $DUR)
+B=(0 15 30 45 $DUR)
 one() {
   i=$1; f=$D/parca-0$i.mp4; [ -f $f ] && return
   node tools/render.mjs $S --from ${B[$i]} --to ${B[$((i+1))]} --no-audio --out $f.tmp.mp4 > $D/.log$i 2>&1 && mv $f.tmp.mp4 $f || return
@@ -14,5 +14,5 @@ one() {
   ) 9>$D/.render.lock
 }
 export -f one; export S D DUR; export B_STR="${B[*]}"
-for i in 0 1; do echo $i; done | xargs -P 2 -I{} bash -c 'B=($B_STR); one {}'
+for i in 0 1 2 3; do echo $i; done | xargs -P 2 -I{} bash -c 'B=($B_STR); one {}'
 echo BITTI > $D/.render_done
