@@ -1,0 +1,30 @@
+{
+ "konu_no": "S1",
+ "baslik": "Sayısal Sinyal Nedir? 1 Tam Olarak Kaç Volt?",
+ "aciklama": "Dersin tamamı: https://www.youtube.com/watch?v=I4o4vBcORSo\n\nSayısal elektronikte 1 ve 0 tam olarak kaç volt? Sayısal sinyal tek bir gerilim değil, iki gerilim aralığıdır. Floyd'un CMOS örneğinde 2 V ile 3,3 V arası 1, 0 V ile 0,8 V arası 0 okunur; aradaki gerilimler kabul edilemez. Animasyonda gürültü aralığın içinde kaldıkça okunan bitin neden değişmediğini görüyoruz.\n\nBilmen gerekenler:\n• 1 ve 0 tek bir gerilim değil, birer gerilim aralığıdır\n• Örnekte 2 V ile 3,3 V arası 1 okunur\n• Örnekte 0 V ile 0,8 V arası 0 okunur\n• 0,8 V ile 2 V arası kabul edilemez; devre bunu 1 de 0 da okuyabilir\n\nÖnce bilmen gereken: gerilim kavramı; pozitif lojikte 1 yüksek (HIGH), 0 düşük (LOW) gerilimdir\n\nKaynak: T. L. Floyd, Digital Fundamentals, Bölüm 1\n\n#elektronik #sayisalelektronik #lojikkapilar",
+ "etiketler": [
+  "sayısal elektronik",
+  "sayısal sinyal",
+  "lojik seviye",
+  "lojik kapılar",
+  "dijital elektronik",
+  "sayısal tasarım",
+  "cmos",
+  "elektronik"
+ ],
+ "hashtagler": [
+  "#elektronik",
+  "#sayisalelektronik",
+  "#lojikkapilar"
+ ],
+ "sure_sn": 59.6,
+ "youtube_tarih": "2026-11-19 16:00 (Londra)",
+ "youtube_url": null,
+ "metricool_uuid": null,
+ "ilgili_video": "https://www.youtube.com/watch?v=I4o4vBcORSo",
+ "ilk_yorum": "Aynı CMOS girişine 1,9 V veriliyor. Devre bunu 1 olarak okur mu? Neden? Cevabını yaz 👇",
+ "instagram": {
+  "durum": "bekliyor",
+  "aciklama": null
+ }
+}

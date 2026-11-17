@@ -32,8 +32,8 @@ const { Z, A, W: WR } = penTimeline(BEATS, { k: 1.0 });
 
 const KART = [
   { id: 'kh', html: `<span style="color:#7fe3ff">Bilmen gerekenler</span>`, y: 12.6, size: 4.6, weight: 900 },
-  { id: 'k1', html: `• Örnekte ${b1('1')}, ${hl('2 V')} ile ${hl('3,3 V')} arasıdır`, y: 16.7 },
-  { id: 'k2', html: `• Örnekte ${b0('0')}, ${hl('0 V')} ile ${hl('0,8 V')} arasıdır`, y: 20.2 },
+  { id: 'k1', html: `• ${hl('2 V')} ile ${hl('3,3 V')} arası ${b1('1')} okunur`, y: 16.7 },
+  { id: 'k2', html: `• ${hl('0 V')} ile ${hl('0,8 V')} arası ${b0('0')} okunur`, y: 20.2 },
   { id: 'k3', html: `• ${hl('0,8 V')} ile ${hl('2 V')} arası ${bx('kabul edilemez')}`, y: 23.7 },
 ];
 { let t = Z.f1[1] + 0.1; for (const k of KART) { k.t0 = t; k.t1 = t + penSec(k.html); t = k.t1 + 0.06; } }
@@ -209,6 +209,7 @@ export function build(S) {
 
   return (t) => {
     cam(t);
+    { const sq = seg(t, 24.4, 27.6); if (sq > 0 && sq < 1) { S.camera.position.x += 0.035 * Math.sin(2 * Math.PI * sq) * Math.sin(Math.PI * sq) ** 2; S.camera.updateMatrixWorld(); } }   // 25,9–26,4 sn donuk anı önler (2a-13)
     const v = Vof(t); let b = bitOf(v);
     if (b === '?') b = t >= A.f1 ? (wob(t) > 0.2 ? '1' : '0') : (t < A.r2 + 0.5 ? '1' : '0');
     const g = BANDS.map(([a, e]) => fade(t, a, e, 0.5) * (0.75 + 0.25 * Math.sin(t * 3.1)));
