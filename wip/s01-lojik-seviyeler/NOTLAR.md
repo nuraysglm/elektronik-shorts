@@ -9,3 +9,4 @@
 - parca-02: tamam (23:00 UTC)
 - parca-01: tamam (23:07 UTC)
 - parca-03: tamam (23:15 UTC)
+- Birleştirme + kalite kontrolü tamam (23:15 UTC). Sıradaki: main'de doğrula → Metricool 19.11 16:00.

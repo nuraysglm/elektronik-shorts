@@ -18,10 +18,11 @@ Süre: 59,6 sn (≤ 60). Ses: yalnızca efekt (knob tık, bit değişimi pop, ka
 | 15,6–25,9 (r2) | Gerilim 2,2 → 0,5 → 0,2 V; kabul edilemez bölgeden hızlı geçerken gösterge önceki biti korur, LOW'a girince 0, LED söner; LOW bandı parlar. | "0 da bir aralıktır / 0 V ile 0,8 V arası" |
 | 25,9–35,7 (n1) | Gürültü eklenir (±0,25 V): LOW'da 0,15–0,65 V arası titrer, gösterge 0 sabit; HIGH'a (2,9 V ± 0,25) çıkar, gösterge 1 sabit. | "Gürültü aralığın içinde kalırsa / okunan bit değişmez" |
 | 35,7–48,9 (f1) | Gürültü biter, gerilim 2,9 → 1,4 V; kabul edilemez bandı turuncu parlar; gösterge düzensiz aralıklarla 1 ile 0 arasında gidip gelir, LED de ona uyar (Floyd s. 21: 'either a HIGH or a LOW'). | "0,8 V ile 2 V arası kabul edilemez / Devre bunu 1 de 0 da okuyabilir" |
-| 48,9–59,1 (kart) | Sahne yaşamaya devam eder (kamera yavaş, panel izi akar). | Bilmen gerekenler: • Örnekte 1, 2 V ile 3,3 V arasıdır • Örnekte 0, 0 V ile 0,8 V arasıdır • 0,8 V ile 2 V arası kabul edilemez |
+| 48,9–59,1 (kart) | Sahne yaşamaya devam eder (kamera yavaş, panel izi akar). | Bilmen gerekenler: • 2 V ile 3,3 V arası 1 okunur • 0 V ile 0,8 V arası 0 okunur • 0,8 V ile 2 V arası kabul edilemez |
 
 Gerçek hayat bağlantısı (2a-4): PCB üzerinde DIP kılıflı CMOS kapı, çıkış LED'i, ayarlı güç kaynağı (kodla çizilmiş 3D modeller).
 Akım yönü kuralı (2a-7): bu sahnede akım gösterilen bir devre yok (CMOS girişi sinyal hattı); elektron/akım oku kullanılmadı.
 
 ## Bağımsız denetim (7A, render öncesi) — seviye: üniversite
 Zorunlu düzeltmeler uygulandı: (1) cihaz göstergesinde '?' yok; kabul edilemez bölgede gösterge 1/0 arasında düzensiz gider, geçişte önceki bit kalır; (2) kart: iki nokta ve '–' kaldırıldı, 'CMOS' genellemesi yerine 'Örnekte'; (3) '0,8 V ile 2 V arası'; (4) panelde 'zaman →' → 'zaman'; (5) alt satır 'Bu CMOS girişine …'. Öneriler: r1 'arasında bir aralıktır', panel başlığı 'giriş gerilimi' (v(t) kaldırıldı).
+Görüntü kontrolü (render sonrası): kart 'Örnekte 1, 2 V …' '1,2 V' gibi okunabiliyordu (2d) → '2 V ile 3,3 V arası 1 okunur', '0 V ile 0,8 V arası 0 okunur'; yalnızca parça 03 yeniden render.
