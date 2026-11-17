@@ -3,3 +3,4 @@
 - Kare kontrolü 6 tur: yerleşim (güç kaynağı arka kenara, direnç ön kenara; grafik paneli arkada büyük), etiketler; --safe: güvenli alan 0, kesişim 0, doluluk yalnızca kart sırasında (kural 2a-16).
 - Sıradaki: bağımsız metin denetimi → render_parts.sh (4 parça) → birlestir.sh → kalite.md → scenes/ + media/ → Metricool 2026-11-18 16:00 Londra.
 - parca-03: tamam (08:50 UTC)
+- parca-00: tamam (08:55 UTC)
