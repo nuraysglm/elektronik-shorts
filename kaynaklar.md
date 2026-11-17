@@ -24,7 +24,7 @@ Ajan bir konuya başlamadan (veya `yeniden düzenle` işinden) önce bu listeye 
 
 Konu listesindeki 40 ders (konu 6–45) bu serinin derslerine birebir karşılık gelir: **ders N = konu N+5**. Her video için ilgili dersin transkriptini vidIQ `vidiq_video_transcript` (videoId aşağıda, `language: en`) ile al ve bölüm 2b'ye göre kullan. Oynatma listesi: https://www.youtube.com/playlist?list=PL9KyzjPFbwH37w22z-UHVEt37pdJHjZ7x . Başka destek kaynağı yalnızca kanal sahibi onaylarsa eklenir.
 
-**Transkriptler (kanal sahibinin YouTube'dan elle verdiği, özel Drive klasöründe; depoya kopyalanmaz):** Ders 4 → `1nQYBzMtmOvWoxJTuXWrZ8tHJSRj9H3ME` · Ders 8 → `1FRCADV6Z96YL_5I6si-XKamUCNVaoRGZ`. Yenileri geldikçe buraya eklenir.
+**Transkriptler (kanal sahibinin YouTube'dan elle verdiği, özel Drive klasöründe; depoya kopyalanmaz):** Ders 4 → `1nQYBzMtmOvWoxJTuXWrZ8tHJSRj9H3ME` · Ders 5 → `1pmpowYsN9sA0KJIEKkK_zCoUiknv-lwl` · Ders 8 → `1FRCADV6Z96YL_5I6si-XKamUCNVaoRGZ`. Yenileri geldikçe buraya eklenir.
 
 | Ders | Konu # | YouTube videoId |
 |------|--------|-----------------|
