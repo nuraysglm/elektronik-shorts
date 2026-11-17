@@ -47,6 +47,19 @@ Araştır ve her başlık için **en iyi yöntemi veriyle** belirle (İngilizce 
 
 Çıktı: `buyume/uzun-video-rehberi.md` (her öneri: ne, neden — hangi veri/örnek video, beklenen etki). Kanal sahibine en fazla **3 onay isteği** (`onaylar`, `kaynak: "buyume"`): kapak şablonu seçimi, başlık+kanca kuralı, açıklama+abone çağrısı kuralı. Onaylananlar daha sonra genel müdür tarafından `UZUN.md`'ye işlenir; sen `UZUN.md`'yi değiştirmezsin. Bu iş bu haftanın 3 onay isteği sınırına sayılır.
 
+## 3b. Tek seferlik görev: "Devre Teorisi I" uzun video serisi paketi (kanal sahibinin emri, 17.11.2026)
+
+**23.11.2026 çalışmanda, haftalık işlerden ÖNCE** (Uzun Video Ajanı aynı gün 09:13'te ilk bölümün metnine başlıyor). Seri: Razavi "Basic Circuit Theory" ders 1'den itibaren Türkçe; her ders 3 bölüm × ~15 dk; haftada 1 bölüm, Cumartesi 11:00 TR; whiteboard, kanal sahibinin klon sesi (`UZUN.md`). vidIQ kredisi 09.12'ye kadar 0 — kanal verisi (Metricool), `buyume/` dosyaları ve herkese açık web kaynaklarıyla çalış; vidIQ'lu kısmı 09.12 sonrasına not et.
+
+Araştır ve `buyume/uzun-seri-rehberi.md`'ye yaz (her öneri: ne, neden — veri/örnek, beklenen etki):
+1. **Intro ve kanca:** ders serisi videolarında (İngilizce eğitim kanalları; ders serisi formatı) ilk 30 sn'nin en iyi yapısı; her bölüme **kendine özgü** kanca yazmanın kalıpları; seri kimliği kartı (≤4 sn) için öneri. 3 örnek kanca (Ders 1 bölümleri için, Razavi Ders 1 konularına göre — kaynak önerme, yalnızca biçim).
+2. **Kapanış ve sözlü çağrı:** kanal sahibinin isteği "video sonunda öğrencilerden sesli olarak kanalı takip etmeleri, beğenip paylaşmaları rica edilsin". Ne zaman ve nasıl söylenmeli (izleyicinin çoğu ilk 4 dk'da ayrılıyor — veriye göre değerlendir), önerilen cümle kalıpları (doğal, samimi, kısa), bitiş ekranı düzeni.
+3. **Kapak:** "dikkat çekici" seri kapağı — seri tutarlılığı + tek tek dikkat; kanal sahibinin fotoğrafı mevcut (Şablon B mümkün). Shorts panelindeki `buyume-20261117-2` onay isteğine bağla.
+4. **SEO:** seri için başlık kalıbı, ilk 2 satır, bölümler (zaman damgaları), etiketler, oynatma listesi adı ve açıklaması; "devre analizi 1", "devre teorisi", "doğru akım devre analizi" gibi aramalar; YouTube önerilerine girmek için oturum süresi/oynatma listesi stratejisi.
+5. **Oynatma listesi:** sıralı liste adı, açıklaması, ilk videodan itibaren kurulum adımları (kanal sahibi elle yapacak).
+
+Kanal sahibine en fazla **2** onay isteği (Shorts paneli `onaylar`, `kaynak: "buyume"`): (a) intro/kanca/kapanış kuralı, (b) seri kapak şablonu + SEO kalıbı. Bu hafta toplam onay isteği sınırı 3. Onaylananları genel müdür `UZUN.md`'ye işler.
+
 ## 4. Rapor (her çalışmanın sonunda)
 
 - `buyume/rapor-<YYYY-MM-DD>.md`: (a) hedefe göre durum (abone yolu tablosu), (b) geçen haftanın sayıları ve en iyi/en kötü Short (izleme yüzdesiyle), (c) pazar bulguları (en önemli 5), (d) yaptığın küçük değişiklikler, (e) açtığın onay istekleri, (f) Shorts ve uzun video ajanları için öneriler.
