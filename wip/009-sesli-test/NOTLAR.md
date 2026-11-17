@@ -3,3 +3,4 @@
 - Render: render_parts.sh (4 parça × ~15 sn, 2'si aynı anda; tek başına ~3,4 sn/kare, makineyi paralel Uzun Video render'ı ile paylaşıyor). Sonra birlestir.sh → media/009-sesli-test/.
 - parca-00: tamam (20:37 UTC)
 - parca-01: tamam (20:37 UTC)
+- parca-03: tamam (21:02 UTC)
