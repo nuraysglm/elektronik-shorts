@@ -9,7 +9,7 @@ Kaynak: Razavi, Basic Circuits, Ders 4 (videoId `UOQxyJGCo3U`), kanal sahibinin 
 3. **Akım yasasında "toplam sıfır" koşulu:** Σi = 0 yalnızca bütün akımlar düğüme giriyor ya da bütün akımlar düğümden çıkıyor diye tanımlanmışsa yazılır; aksi hâlde giren akımlar toplamı = çıkan akımlar toplamı biçimi kullanılır. Yasa yük korunumundan gelir.
 4. **Direncin gerilim işareti:** Akımın girdiği uç artı olarak işaretlenir (Ohm yasasını eksi işaretsiz kullanmak için).
 
-Bu videoda yalnızca 1. nokta anlatılır (AGENT.md 2g-1: tek fikir). 2. nokta son cümlede ("döngü kapanana kadar") ve açıklamada dokunulur; 3. nokta konu 10'a (Ders 5) veya ayrı bir videoya kalır.
+Bu videoda yalnızca 1. nokta anlatılır (AGENT.md 2g-1: tek fikir). 2. nokta yalnızca açıklamada geçer (son seslendirme metninde bu cümle yok); 3. nokta konu 10'a (Ders 5) veya ayrı bir videoya kalır.
 
 ## (b) Önce bilinmesi gerekenler
 
