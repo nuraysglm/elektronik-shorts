@@ -51,10 +51,10 @@ Yapılan kontroller: (1) videodaki iki çevre denkleminin çözümü ve iki sade
 
 | # | Metindeki iddia | Dayanak (Ders 8) |
 |---|---|---|
-| 1 | Çevre (mesh) en küçük halkadır; bu devrede iki çevre var | [5:49–6:38] "a mesh is a loop that does not contain any other loops within it"; [7:02–7:24] büyük dış halka çevre sayılmaz |
+| 1 | Çevre (mesh) en küçük halkadır; bu devrede iki çevre var | [5:49–6:38] "it's a loop that does not contain any other loops within it"; [7:02–7:24] büyük dış halka çevre sayılmaz |
 | 2 | Her çevreye bir akım atanır (i₁, i₂) | [7:43–8:48] "identify all of the meshes and assign a current to each" |
 | 3 | Yön seçimi serbest; burada ikisi de saat yönünde | [8:57–9:03] "you can pick the direction clockwise or counterclockwise it doesn't matter" |
-| 4 | Ortak dirençte iki çevre akımı zıt yönde geçer (ikisi de saat yönündeyken) | [9:27–9:44] matematiksel olarak dirençten iki akım geçtiği kabul edilir; [16:34–16:51] Razavi'nin örneğinde (iki akım da saat yönünde, [14:28–14:43]) ortak dirençte i1 yukarıdan aşağı, i2 aşağıdan yukarı |
+| 4 | Ortak dirençte iki çevre akımı zıt yönde geçer (ikisi de saat yönündeyken) | [9:27–9:44] matematiksel olarak dirençten iki akım geçtiği kabul edilir; [16:34–16:51] Razavi'nin örneğinde (iki akım da saat yönünde, [14:28–14:43]; i2 de saat yönünde: [15:55] r3'te soldan sağa) ortak dirençte i1 yukarıdan aşağı, i2 aşağıdan yukarı |
 | 5 | Ortak dirençteki gerilim iki akımın farkıyla yazılır; artı uç, önce yazılan akımın girdiği uçtur | Lemma [4:31–5:26] "the total voltage ... will be i1 minus i2 times r"; [16:59–18:06] "this voltage drop is equal to i1 minus i2 times r2" |
 | 6 | Her çevrede KVL yazılır; kazanılan gerilim düşümlerin toplamına eşittir | [11:50–12:16] "write a kvl around every mesh"; [18:37–19:01] gerilimin yükseldiği yerde artı, düştüğü yerde eksi işaretle toplam sıfır. "Kazanılan = düşümler toplamı" biçimi bu KVL'nin terimleri karşı tarafa geçirilmiş hâlidir. |
 | 7 | Sol çevre denklemi ve 3i₁ − i₂ = 8 mA | Hesap (bölüm 3–4) |
