@@ -33,6 +33,20 @@ Depo: bu klasör (`nuraysglm/elektronik-shorts`). Önce `git pull`. Push yalnız
 6. **Uzun video konusu:** Uzun Video Ajanı kurulduğunda, her hafta 1 uzun video konusu öner (arama hacmi + İngilizce'de tutan format + kanalın Shorts'larıyla bağ). Onaylanınca `uzun/konular.md`'ye işle.
 7. **Önceki önerilerin takibi:** Onaylanan/reddedilen önerileri (`onaylar` koleksiyonu, `kaynak: "buyume"`) oku; onaylananların uygulanıp uygulanmadığını ve etkisini raporda yaz.
 
+## 3a. Tek seferlik görev: uzun video "paket" araştırması (kanal sahibinin emri, 17.11.2026)
+
+Bir sonraki çalışmanda, haftalık işlerden ÖNCE bunu yap (vidIQ çağrı sınırı bu çalışma için ~40). Uzun videolar: haftada 1–2, 10–20 dk, whiteboard tarzı, kanal sahibinin klon sesiyle, final tipi çözümlü sorular (örnek: `uzun/ornek-01/`).
+
+Araştır ve her başlık için **en iyi yöntemi veriyle** belirle (İngilizce eğitim kanallarında tutanlar + Türkçe talep; `vidiq_outliers`, `vidiq_title_thumbnail_wins`, `vidiq_similar_thumbnails`, `vidiq_youtube_search`, `vidiq_keyword_research`, `vidiq_score_title`):
+1. **Kapak (thumbnail):** öne çıkan eğitim videolarının kapak kalıpları (yazı miktarı, renk, yüz/yüzsüz, devre görseli, "çözümlü" vurgusu). Kapak **kodla** üretilecek (yapay zekâ görsel aracı YOK; vidIQ generate_thumbnail dahil); kanal sahibinin kendi fotoğrafı kullanılabilir (o sağlarsa). 2–3 somut kapak şablonu tarif et.
+2. **Başlık:** kalıplar ve Türkçe arama kelimeleri; 5 örnek başlık (`vidiq_score_title` puanlarıyla). Clickbait yok (AGENT.md 2d).
+3. **Kanca (ilk 30 sn):** tutma oranı yüksek eğitim videolarının açılış yapıları; seslendirme metni için kural önerisi.
+4. **Açıklama:** yapı (ilk 2 satır, bölümler/zaman damgaları, ilgili videolar, oynatma listesi, Bilmen gerekenler), etiketler.
+5. **Abone olmaya teşvik:** videoda nerede ve nasıl (zamanlama, sözlü çağrı, ekran animasyonu, bitiş ekranı, sabitlenmiş yorum, oynatma listesi); kanal sahibinin eski videolarındaki "abone ol + zil" animasyonu ayrıca yapılacak, sen yerini ve sıklığını öner.
+6. **Uzun video ile Shorts bağı:** Shorts'tan uzun videoya yönlendirme (ilgili video bağlantısı, sabit yorum).
+
+Çıktı: `buyume/uzun-video-rehberi.md` (her öneri: ne, neden — hangi veri/örnek video, beklenen etki). Kanal sahibine en fazla **3 onay isteği** (`onaylar`, `kaynak: "buyume"`): kapak şablonu seçimi, başlık+kanca kuralı, açıklama+abone çağrısı kuralı. Onaylananlar daha sonra genel müdür tarafından `UZUN.md`'ye işlenir; sen `UZUN.md`'yi değiştirmezsin. Bu iş bu haftanın 3 onay isteği sınırına sayılır.
+
 ## 4. Rapor (her çalışmanın sonunda)
 
 - `buyume/rapor-<YYYY-MM-DD>.md`: (a) hedefe göre durum (abone yolu tablosu), (b) geçen haftanın sayıları ve en iyi/en kötü Short (izleme yüzdesiyle), (c) pazar bulguları (en önemli 5), (d) yaptığın küçük değişiklikler, (e) açtığın onay istekleri, (f) Shorts ve uzun video ajanları için öneriler.
