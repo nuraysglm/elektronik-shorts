@@ -61,4 +61,19 @@ Vs2, V12 = F(9), F(4)
 dogru = Vs2 - V12; karisik = -(Vs2 + V12)
 print("Ilk yorum sorusu: dogru V2 =", dogru, "V; karisik kuralla V2 =", karisik, "V")
 assert (dogru, karisik) == (5, -13)
+# K1 (denetci): karistirmak her devrede yanlis vermez. Ters cevrilen terimlerin toplami
+# sifirsa tesadufen dogru cikar. Ornek (videoda yok): dongude ucuncu bir eleman, referansi
+# girisi "+" ucundan, referans gerilimi -5 V; R1 ile bu eleman ters kuralla yazilirsa
+# ters cevrilen terimlerin toplami (-5) + (+5) = 0 -> sonuc yine dogru.
+def coz_genel(elemanlar, kurallar):
+    sabit, kb = F(0), F(0)
+    for (ad, deger, giris), k in zip(elemanlar, kurallar):
+        c = katsayi(giris, k)
+        if deger is None: kb += c
+        else: sabit += c * deger
+    return -sabit / kb
+E3 = [("kaynak", F(12), "-"), ("R1", F(5), "+"), ("X", F(-5), "+"), ("R2", None, "+")]
+dogru3 = coz_genel(E3, (1, 1, 1, 1)); tesaduf = coz_genel(E3, (1, 2, 2, 1))
+print("K1 ornegi: tutarli =", dogru3, "V; R1 ve X ters kuralla =", tesaduf, "V (tesadufen ayni)")
+assert dogru3 == tesaduf
 print("TUM KONTROLLER GECTI")
