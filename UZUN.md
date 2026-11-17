@@ -18,7 +18,7 @@ Seslendirme metni kuralları (yapay ses doğru okusun diye):
 - Metinde iki kısım: (a) **Seslendirme metni** (yalnızca okunacak düz metin, kopyala-yapıştır hazır) ve (b) **Sahne planı** (her paragraf için ekranda ne görüneceği).
 
 ## 2. Kaynak ve doğruluk (AGENT.md 2b, 2d, 2i aynen geçerli)
-- Kaynak: yalnızca onaylı kaynaklar (`kaynaklar.md`). Bu konu için Razavi Temel Devre Teorisi I **ders 5** (`Ron0vdYaBAE`) ve **ders 6** (`JEw5iCdhVFw`) transkriptleri (vidIQ `vidiq_video_transcript`, `language: en`). Türkçe YouTube videoları kaynak değildir.
+- Kaynak: yalnızca onaylı kaynaklar (`kaynaklar.md`). Bu konu için Razavi Temel Devre Teorisi I **ders 5** (`Ron0vdYaBAE`) ve **ders 6** (`JEw5iCdhVFw`) transkriptleri — önce özel Drive'daki transkript dosyası (`kaynaklar.md`'deki id'ler), yoksa vidIQ `vidiq_video_transcript` (`language: en`). Türkçe YouTube videoları kaynak değildir.
 - Kaynaklardaki soru ve çözümler **yalnızca referanstır**: soru, devre ve sayılar tamamen senin özgün tasarımın.
 - Çözümü Python ile doğrula (doğrusal denklem sistemi; düğüm denklemleri + bağımsız kontrol: KCL her düğümde, güç dengesi). Sonuçları `uzun/ornek-01/dogruluk.md`'ye yaz.
 - Video tek bir **bilinen yanlışı** vurgular (ör. akım yönünü varsayınca işaret hatası korkusu; referans düğüm seçimi; akım kaynağı içeren dalda direnci denkleme yanlış katmak). Üniversite düzeyi, çocuksu değil.
