@@ -215,7 +215,7 @@ export function build(S) {
 
   const P = psu(S, { y: Y }); P.group.position.set(0, 0, -ZH); CG.add(P.group); P.group.userData.box = 'güç kaynağı';
   const AM = meter(S, 'A', RED, { w: 0.5, d: 0.36 }); AM.group.position.set(-X, 0, AMZ); CG.add(AM.group); AM.group.userData.box = 'ampermetre';
-  const RX = resistor(S, { len: RL, radius: 0.14, bands: [0xe8231a, 0x111111, 0xe8231a, 0xd4af37], obstacles: 10 });
+  const RX = resistor(S, { len: RL, radius: 0.14, bands: [], obstacles: 10 });
   const RG = new THREE.Group(); RG.position.set(0, 0, ZH); RG.rotation.y = Math.PI / 2; CG.add(RG);
   RX.group.position.set(0, Y, 0); RG.add(RX.group); RX.group.userData.box = 'direnç';
   const vaMat = new THREE.MeshPhysicalMaterial({ color: 0x6fb2ff, emissive: 0x2f6fff, emissiveIntensity: 0.6, roughness: 0.4 });

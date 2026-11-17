@@ -5,3 +5,9 @@
 **B. Görüntü:** son videodan 29 kare (her yazının ilk görünüşü +0,5 sn, yazı geçişleri, her 6 sn) 4 kontak sayfasında incelendi: kesilen/taşan yazı yok, yazı–nesne çakışması yok, grafik etiketleri (1/2/3 kΩ, eksenler, "doğrusal değil") ayrık, kalem imleci yazı bitince kayboluyor. --safe: güvenli alan 0 ihlal, yazı–nesne kesişimi 0; doluluk ihlali yalnızca kart sırasında (devre %80'e küçülür, kural 2a-16; 2e/doluluk precedent 007, 008a). freezedetect: 0 donuk aralık. Sahne geçişi yok (tek kadraj).
 **C. Ses:** −16,2 LUFS, gerçek tepe −2,0 dBTP; 4 kHz üstü en yüksek −19,1 dB; seslendirme/müzik yok, yalnızca olay efektleri (pop, tık, thud, hafif uğultu).
 **D. Teknik:** 1080×1920, 30 fps, H.264 + AAC, 56,17 sn (≤ 60 sn).
+
+## v2 — renk bandı iş emri (17.11.2026, 20:25 UTC) — GEÇTİ (1. tur)
+- Değişiklik: ayarlı direncin gövdesindeki renk bantları kaldırıldı (`bands: []`); değer yalnızca R etiketiyle (1/2/3 kΩ) verilir. Yazı, süre, zamanlama, kamera değişmedi → güvenli alan / kesişim ölçümü (guvenli_alan.json) ve bağımsız metin denetimi geçerli kalır.
+- Kare kontrolü (3; 14,9/15,05; 29,9/30,05; 44,9/45,05; 55 sn): bant yok, parça birleşimlerinde zıplama/renk farkı yok, devre ve yazılar v1 ile aynı.
+- D: 1080×1920, 30 fps, H.264 + AAC, 56,2 sn. C: −16,2 LUFS, tepe −2,0 dB, 4 kHz üstü max −19,1 dB. Donuk an (freezedetect 0,5 sn): 0.
+- v1: media/008b-ohm-iv-karakteristigi/eski/008b-ohm-iv-karakteristigi-v1.mp4
