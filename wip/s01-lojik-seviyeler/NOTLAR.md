@@ -10,3 +10,4 @@
 - parca-01: tamam (23:07 UTC)
 - parca-03: tamam (23:15 UTC)
 - Birleştirme + kalite kontrolü tamam (23:15 UTC). Sıradaki: main'de doğrula → Metricool 19.11 16:00.
+- Planlandı: 2026-11-19 16:00 Londra, Metricool uuid -8337519003133392254 (23:17 UTC). Parçalar yayından sonra silinecek.
