@@ -41,6 +41,27 @@ Seslendirme metni kuralları (yapay ses doğru okusun diye):
 - Shorts kırpma değil, aynı sahnelerin **9:16 dikey yeniden çizimidir** (1080×1920, whiteboard tarzı); AGENT.md bölüm 3–4 Shorts kuralları geçerli (güvenli alan, ilk 8 sn'de cevap, 60 sn sınır, Bilmen gerekenler kartı).
 - Açıklamaya uzun videonun bağlantısı (yayınlandığında) konur.
 
+## 3b. "Abone ol + zil" animasyonu (kanal sahibinin eski videolarındaki düzen, 17.11.2026)
+
+Referans (kanal sahibinin özel Drive klasörü `1cbFwuNwTfD3ywFPz8QQOFDf2QNEScMsF`; **bu dosyalar ve kırpılmış hâlleri herkese açık depoya ASLA konmaz** — çalışma sırasında Drive'dan indir, `/tmp` veya scratchpad'de kullan, işten sonra sil; `.gitignore` ile koru):
+- Profil fotoğrafı: `profil-fotografi.jpg` (id `1PY_8DNq7vr4miITVKfhJJ9P7mwQP8qQQ`). Yalnızca yüz/omuz kısmını yuvarlak kırp (masa, bardak, telefon görünmez).
+- Eski düzen: `abone-ol-eski-1-abone-ol.png` (id `1cJZR-DpljMWieX9X-y_mAZsYoz3Qts_p`) ve `abone-ol-eski-2-abone-olundu.png` (id `1W3B9Ip3XFrJw2n-RVkosIkENtRG55udH`).
+
+Görünüm (eski düzene sadık, kodla çizilir):
+- Ekranın alt ortasında beyaz, tam yuvarlak köşeli yatay kart (genişlik ~%42, yükseklik ~%17); whiteboard zemininde ayrışması için ince gri kenar + yumuşak gölge.
+- Solda yuvarlak profil fotoğrafı; ortada kalın, dar yazı tipiyle **"ÖĞR. GÖR. NURAY SAĞLAM"**, altında küçük gri **"ELEKTRİK-ELEKTRONİK MÜHENDİSLİĞİ"**.
+- Sağda kırmızı hap biçimli **"ABONE OL"** düğmesi; içinde sağ uçta beyaz daire ve gri zil simgesi.
+- Zil ve düğme ajanın kendi çizimi; YouTube logosu veya YouTube'un düğme görseli birebir kopyalanmaz.
+
+Hareket (~6 sn; kayma bu animasyon için **istisna** olarak serbesttir, bölüm 3'teki anlık geçiş kuralı burada uygulanmaz):
+1. Kart alttan yukarı kayarak girer (~0,5 sn).
+2. Kodla çizilmiş fare imleci ekrana girip "ABONE OL"a gider ve tıklar (küçük basılma efekti + tık sesi).
+3. Düğme griye döner ve **"ABONE OLUNDU"** olur; zil siyah olur.
+4. İmleç zile gider ve tıklar; zil sallanır ve yanlarında titreşim çizgileri belirir.
+5. Kısa bekleme, sonra kart aşağı kayarak çıkar (~0,5 sn).
+- Kart ekrandayken tahtadaki denklem/devre üstüne binmez; o anda alt bölge boş olmalı (gerekirse sahne yerleşimi buna göre ayarlanır).
+- Sıklık ve yer: Büyüme Ajanı'nın araştırması onaylanana kadar varsayılan 10–20 dk'lık videoda **2 kez** (ilk soru çözüldükten sonra ~%25–30'da ve son bölümden önce) + sözlü kısa çağrı yok (seslendirmeye ekleme yapılmaz); onaylanan rehber gelince ona göre güncellenir.
+
 ## 4. Asla yapma
 - Yayınlama, Metricool'a gönderi ekleme; para harcama; kullanıcının bilgisayarını kullanma; Higgsfield veya yapay zekâ görsel/video aracı.
 - API anahtarı veya kişisel bilgiyi depoya yazma.

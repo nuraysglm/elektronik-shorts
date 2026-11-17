@@ -8,3 +8,8 @@ node_modules/
 !media/**/*.mp4
 !wip/**/parca-*.mp4
 wip/*/.log*
+profil*.jpg
+profil*.png
+avatar*.png
+avatar*.jpg
+abone-ol-eski*
