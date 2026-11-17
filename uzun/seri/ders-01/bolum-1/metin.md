@@ -1,144 +1,138 @@
 # Devre Teorisi I · Ders 1 · Bölüm 1/3 — Akım nedir? Ortalama akım ile anlık akım
 
-Kaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA) [1:27–17:01]. Referanstır, çeviri değildir: anlatım ve bütün örnekler özgündür (`../plan.md`, `dogruluk.md`).
+Kaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA) [1:27–17:01]. Referanstır, çeviri değildir: anlatım ve bütün örnekler özgündür (`../plan.md`, `dogruluk.md`). Sürüm 2: bağımsız denetimden sonra yeniden yazıldı (denetim özeti `dogruluk.md` bölüm 6).
 
-Vurgulanan nokta: **Yükü süreye bölmek (Δq/Δt) yalnızca seçilen penceredeki ortalama akımı verir; akım anlık bir büyüklüktür, i = dq/dt.** Pencere kötü seçilirse sonuç gerçek akımdan yüzlerce kat farklı çıkabilir (kanca örneği: 500 kat).
-Az bilinen nokta: "Yük nedir?" sorusunun cevabı bir modeldir [12:07–12:30].
+Vurgulanan nokta: **Yükü süreye bölmek (Δq/Δt) yalnızca seçilen penceredeki ortalama akımı verir; akım anlık bir büyüklüktür, i = dq/dt.** Kanca: telde akım hiç durmadan akarken ortalama sıfır çıkabilir.
+Az bilinen nokta: yük en büyük değerindeyken akım sıfır olabilir (Örnek 3).
 
-Ön bilgi (açıklamaya): türev kavramı; Ohm yasası (v = i × R).
+Ön bilgi (açıklamaya): türev kavramı; Ohm yasası (v = R × i).
 
-Gösterim: anlık akım küçük i; yük küçük q; pencere Δq ve Δt. Büyük harf I, Q, T kullanılmaz. Çarpma yalnızca "×". Birimler: µC, mC, ms, mA, µA, A, C. Ondalık virgül (12,2 mA).
+Gösterim: anlık akım küçük i; yük küçük q; pencere Δq ve Δt. Büyük harf I, Q, T kullanılmaz. Çarpma yalnızca "×". Birim bütün ifadeye aitse parantez: "(6t − t²) mC". Ondalık virgül. Ekranda "·" hiç kullanılmaz (intro kartı dahil; UZUN.md 4a kalıbı ile AGENT.md 2d çelişkisi kanal sahibine soruldu, karar gelene kadar tire ve virgül).
 
-Seslendirme: her parça ayrı üretilir (ElevenLabs, voice_id sLFd2sFq5fDrVDNCuUfI, eleven_v4, generations_count 1). Metinde rakam, simge, parantez yok. "q" sesle "kü", "t" sesle "te", "Δ" sesle "delta", "R" sesle "er".
+Seslendirme: her parça ayrı üretilir (ElevenLabs, voice_id sLFd2sFq5fDrVDNCuUfI, eleven_v4, generations_count 1). Metinde rakam, simge, parantez yok. "q" sesle "kü", "t" sesle "te", "Δ" sesle "delta", "R" sesle "er". "de te" ve "de kü" yalnızca cümle başında veya "eşittir/bölü" sonrasında geçer. Çarpımlar gruplama belirsizliği olmasın diye "iki te kare", "altı te eksi te kare" biçiminde okunur. Parça 5'teki "tahmin et" sonrasına üretimden sonra 1,5 sn sessizlik eklenir (görüntüde kalem hareket eder).
 
-Zaman bütçesi (2,35 kelime/sn): kelime sayıları `dogrula.py` çıktısında. Intro kartı (4 sn, sessiz) parça 1'deki işarette; bitiş ekranı alanı (son 20 sn) parça 7'nin sonunda sessiz.
+Zaman bütçesi (2,35 kelime/sn): `dogrula.py` çıktısı. Intro kartı (4 sn, sessiz) parça 1'deki işarette; bitiş ekranı alanı (son 20 sn) parça 7'nin sonunda sessiz.
 
 ---
 
-## [PARÇA 1] Kanca, intro kartı, neden devre teorisi (~1:45)
+## [PARÇA 1] Kanca, intro kartı (~1:00)
 
 ```
 Bir telden geçen akımı nasıl hesaplarsın? İlk akla gelen cevap şu: geçen yükü, geçen süreye bölmek.
 
-Peki bu basit bölme işlemi, gerçek akımı beş yüz kat küçük gösterebilir mi? Hem de hiçbir hesap hatası yapmadan? Evet, gösterebilir. Birazdan nasıl olduğunu göreceğiz.
+Peki telde akım bir an bile durmadan akarken, bu bölme işlemi sana sıfır diyebilir mi? Hem de hiçbir hesap hatası yapmadan? Evet, diyebilir. Birazdan nasıl olduğunu göreceğiz.
 
-Bu bölümün sonunda akımın gerçek tanımını kurmuş olacağız. Üç özgün örnekte de ortalama akımla anlık akımı birbirinden ayırmayı öğreneceğiz. Sonuncusunda şaşırtıcı bir şey göreceğiz: telden geçen yük en büyük değerindeyken akım sıfır olabiliyor.
+Bu bölümün sonunda akımın asıl tanımını kurmuş olacağız. Üç örnekle de ortalama akımı anlık akımdan ayırmayı öğreneceğiz. Sonuncusunda şaşırtıcı bir şey göreceğiz: telden geçen yük en büyük değerindeyken akım sıfır olabiliyor.
 
-Önce kısa bir soru soralım. Devreler yüz yılı aşkın süredir var, değil mi? Peki akla gelebilecek her devre çoktan icat edildi mi? Hayır. Her yıl yeni devreler tasarlanıyor. Çünkü yeni uygulamalar daha yüksek performans istiyor, bu da devre tasarımında yenilik gerektiriyor.
-
-Ama ne tasarlarsan tasarla, ilk adım hep aynı. Devredeki büyüklükleri doğru tanımlamak. Bir büyüklüğü yanlış tanımlarsan, en güzel denklemler bile seni yanlış sonuca götürür. İşte bu seriye tam da buradan başlıyoruz. Bugünkü iki büyüklüğümüz yük ve akım. Önce yükü tanıyacağız, sonra akımı. Akımı tanımlarken de ilk akla gelen yolun neden yetmediğini adım adım göreceğiz. Gerilimi de bu dersin üçüncü bölümünde ele alacağız.
+Devre teorisinde ne tasarlarsan tasarla, işe büyüklükleri doğru tanımlayarak başlarsın. Bu seriye de tam buradan giriyoruz. Bugünün konusu yük ve akım. Gerilimi bu dersin üçüncü bölümünde ele alacağız.
 ```
 
 Sahne planı:
-- 0:00 (ilk kare) kalem, sol üstte yatay bir tel çizer (siyah), telin ortasına dik kesik çizgiyle kesit. Kesitin yanına mavi "i = ?" yazılır.
-- "geçen yükü geçen süreye bölmek": telin altına "akım = yük / süre ?" (soru işareti kırmızı). (Yazı formül değil, sözlü ifade; "/" burada bölme anlamında.)
-- "beş yüz kat küçük": sağda kırmızı "500 kat" yazılır, altı çizilir.
-- "Bu bölümün sonunda": "i = ?" sözcüğünün altı mavi çizilir. Kanca biter → tahta silinir (≤0,3 sn).
-- **[INTRO KARTI — 4 sn, sessiz; ses bu noktada 4 sn boşluk]** Kalem ortada yazar: "Devre Teorisi I · Ders 1 · Bölüm 1/3" (siyah), altına "Akım nedir? Ortalama akım ile anlık akım" (mavi). Kart bitince silinir.
-- "Devreler yüz yılı aşkın": sol yarıya zaman oku (çizgi + çizgiyle ok ucu), üstüne "100 yılı aşkın". Sağa "yeni uygulama" → "daha yüksek performans" → "yeni devre" kutuları sırayla, aralarında çizgi oklar.
-- "Bugünkü iki büyüklüğümüz": tahta silinir, ortaya iki başlık: "yük" ve "akım".
+- 0:00 (ilk kare) kalem, sol üstte bir kutu ("devre") ve kutunun iki ucundan çıkıp yine kutuya dönen kapalı bir tel halkası çizer (siyah; tel uçları boşta değil). Halkanın üst kolunda dik kesik çizgi: kesit. Kesitin yanına mavi "i = ?".
+- "geçen yükü geçen süreye bölmek": telin altına "akım = geçen yük / süre ?" (soru işareti kırmızı).
+- "sana sıfır diyebilir mi": sağa kırmızı "ortalama = 0 ?" yazılır; kesitin iki yanına zıt yönlü iki küçük mavi ok.
+- "Bu bölümün sonunda": "i = ?" altı mavi çizilir. Kanca biter, tahta silinir (≤0,3 sn).
+- **[INTRO KARTI — 4 sn, sessiz]** Ortada: "Devre Teorisi I – Ders 1, Bölüm 1/3" (siyah), altına "Akım nedir? Ortalama akım ile anlık akım" (mavi). Silinir.
+- "büyüklükleri doğru tanımlayarak": ortaya iki başlık sırayla: "yük", "akım"; sağda küçük gri "gerilim: Bölüm 3".
 
-## [PARÇA 2] Yük, akımın ilk tanımı, pencere sorunu, i = dq/dt (~2:20)
+## [PARÇA 2] Yük, ilk tanım, pencere sorunu, i = dq/dt (~3:00)
 
 ```
 Önce yük. Yükü kü harfiyle gösteriyoruz, birimi kulon.
 
-Peki yük tam olarak nedir? Dürüst cevap şu: bilmiyoruz. Yük, elektron ve proton gibi temel parçacıklara yüklediğimiz bir özellik. Elektronun yükü negatif, protonunki pozitif diyoruz. Bu bir model. Parçacıkların davranışını açıklamamıza yarayan bir soyutlama. Bizim için bu kadarı yeterli. Bu serinin geri kalanında yükün kendisinden çok, nereden nereye ve ne hızla gittiğiyle ilgileneceğiz.
+Yük nedir diye sorarsan, işin ilginç yanı şu: kesin bir cevabımız yok. Elektronlara negatif, protonlara pozitif yük deriz, ama bu bir modeldir. Doğada gördüğümüz davranışı açıklamak için kullandığımız bir kavram. Devre teorisinde de bu kadarı bize yetiyor. Çünkü bizi ilgilendiren, yükün ne olduğundan çok, nereden nereye ve ne hızla gittiği.
 
-Asıl ilginç olan, yükün hareket etmeye başladığı an. Çünkü yük hareket edince akım oluşur.
+Yük hareket etmeye başladığında akım dediğimiz şey ortaya çıkıyor. Şimdi bu akımı nasıl ölçeceğimizi düşünelim.
 
-Şimdi bir tel çizelim. Telin içinden geçen hayalî bir kesit düşün, bu kesite de bir sayaç koyalım. Sayaç, kesitten geçen yükü sayıyor. Bir yönde geçen yükü artı, ters yönde geçeni eksi sayıyor diyelim. Şimdilik yükün hep aynı yönde aktığını düşünelim. Bir süre bekliyoruz. Bu süreye delta te, bu sürede geçen yüke de delta kü diyelim. İlk akla gelen tanım: akım, delta kü bölü delta te.
+Telin içinden geçen hayalî bir kesit düşün. Bu kesite bir sayaç koyalım. Sayaç, sağa geçen yükü artı, sola geçen yükü eksi sayıyor. Bir süre bekleyelim. Bu süreye delta te, sayacın gösterdiği net yüke de delta kü diyelim. İlk akla gelen tanım: akım eşittir delta kü bölü delta te.
 
-Mantıklı görünüyor, değil mi? Ama bir sorun var. Delta te'yi nasıl seçeceğiz?
+Mantıklı görünüyor, değil mi? Ama bir sorun var. Delta te değerini nasıl seçeceğiz?
 
-Bir saniye seçelim. Şimdi şöyle bir devre düşün. Her saniyenin yalnızca iki milisaniyesinde çalışıyor, kalan sürede tamamen susuyor. Çalıştığı sürede kesitten her milisaniyede düzgün biçimde on mikrokulon geçiyor. Yani bir saniyelik pencerede toplam yirmi mikrokulon geçmiş oluyor. Bunu bir saniyeye bölersek yirmi mikroamper buluruz.
+Şöyle bir tel düşünelim. İlk yarım saniyede kesitten sağa doğru, düzgün biçimde beş milikulon geçiyor. Sonraki yarım saniyede bu kez sola doğru, yine düzgün biçimde beş milikulon geçiyor. Pencereyi bir saniye seçersek sayaç artı beş ile eksi beşi toplar ve sıfır gösterir. Delta kü bölü delta te sıfır çıkar.
 
-Oysa devre çalışırken her milisaniyede on mikrokulon geçiyordu. Bu da on miliamper eder. Yirmi mikroamper ise bunun beş yüzde biri. Hiçbir hesap hatası yapmadık. Sadece pencereyi yanlış seçtik.
+Peki telde hiç akım yok mu? Var, hem de hiç durmadan. Yük ilk yarım saniyede saniyede on milikulon hızla sağa, sonra aynı hızla sola gidiyor. Yani akım önce artı on miliamper, sonra eksi on miliamper. Hiçbir anda sıfır değil. Hesap hatası yapmadık, sadece pencereyi kötü seçtik. Tel boyunca bir saniye boyunca hep yük aktı. Ama net olarak taşınan yük sıfır olduğu için ortalama sıfır çıktı. Pencere ne kadar genişse, içinde olup bitenler o kadar çok tek bir sayıya sıkışıyor.
 
-Peki pencereyi bir milisaniye seçsek sorun biter mi? Pencere tam da devrenin çalıştığı sürenin içine düşerse evet, on miliamper buluruz. Ama pencereyi biraz kaydıralım. Yarısı devrenin çalıştığı son yarım milisaniyeye, yarısı da sustuğu ana denk gelsin. Bu kez pencerede yalnızca beş mikrokulon var ve sonuç beş miliamper çıkıyor. Yani sonuç, pencerenin nerede durduğuna göre değişiyor. Bu, iyi bir tanımda olmaması gereken bir şey. Bizim istediğimiz evrensel bir tanım. Hangi devreye, hangi ana bakarsak bakalım aynı kuralla çalışsın.
+Pencereyi daraltırsak ne olur? İlk yarım saniyenin içine yerleştirirsek on miliamper buluruz. Ama aynı genişlikteki pencereyi kaydırıp tam ortaya, yükün yön değiştirdiği ana oturtursak sonuç yine sıfır olur. Yani sonuç pencerenin nerede durduğuna bağlı. Oysa iyi bir tanım, pencereyi nereye koyduğumuza bağlı olmamalı.
 
-Çözüm, pencereyi küçültmek. Hem de çok küçültmek. Sonsuz küçük bir de te süresi alıyoruz, bu sürede geçen sonsuz küçük yüke de de kü diyoruz. Akımın resmî tanımı işte bu: akım, yükün kesitten geçme hızıdır. Yani i eşittir de kü bölü de te. Birimi amper. Saniyede bir kulon yük geçiyorsa akım bir amperdir. Örneğin her milisaniyede iki mikrokulon geçiyorsa akım iki miliamper. Bu, saniyede iki milikulon demek.
+Çözüm, pencereyi sınırsız küçültmek. De te, çok çok kısa bir süre. De kü ise bu kısacık sürede kesitten geçen çok küçük yük. İşte akımın asıl tanımı: akım, yükün kesitten geçme hızıdır. Yani i eşittir de kü bölü de te. Birimi amper. Saniyede bir kulon yük geçiyorsa akım bir amperdir. Örneğin her milisaniyede iki mikrokulon geçiyorsa akım iki miliamper eder. Bu, saniyede iki milikulon demek. Bu tanımla akım artık tek bir sayı değil, zamanın bir fonksiyonu. Grafiğini çizebilir, türevini alabiliriz.
 ```
 
 Sahne planı:
-- Sol üst: "yük: q" (q mavi), altına "birim: kulon (C)".
-- "bilmiyoruz": sağa "Yük nedir?" ve altına "bir model" (kırmızı altı çizgi). "elektron" yanına küçük daire ve "−", "proton" yanına daire ve "+".
-- Silme. Ortada kalın yatay tel (siyah), kesit kesik çizgi; kesitin üstüne küçük sayaç kutusu "sayaç". Telin içinde mavi noktalar (yükler) yalnızca telin içinde soldan sağa ilerler (AGENT.md 2c).
-- "delta te ... delta kü": altına "akım = Δq / Δt ?" (soru işareti kırmızı).
-- "Bir saniye seçelim": sağ yarıya zaman ekseni (0–1 s, işaret 0,5 s ve 1 s). Eksenin başında 2 ms genişliğinde dar bir dikdörtgen darbe (mavi), üstüne "10 mA". Eksen ölçeği: darbe genişliği gerçek oranda çok dar olacağından eksen kırık işaretiyle ikiye bölünür (0–2 ms büyütülmüş, sonra kırık, 1 s'ye kadar); kırık işareti açıkça çizilir.
-- Denklem sütunu satır satır: "Δq = 20 µC", "Δt = 1 s", "Δq / Δt = 20 µA" (kırmızı), sonra "çalışırken: 10 µC / 1 ms = 10 mA" (mavi), "10 mA / 20 µA = 500" (kırmızı daire).
-- "Çözüm, pencereyi küçültmek": darbe üstünde pencere çerçevesi (kesik dikdörtgen) üç adımda daralır (her adım ayrı çizim; tek kalem).
-- "resmî tanımı": ortada büyük "i = dq / dt" (mavi), altına "birim: amper (A)", "1 A = 1 C / s".
-- Sonda tahta tamamen dolu → **abone animasyonu 1** parça 3'ün başında.
+- Sol üst: "yük: q" (q mavi), altına "birim: kulon (C)". Yanına "elektron: negatif", "proton: pozitif", altında kırmızı altı çizili "bir model".
+- Silme. Üstte kalın yatay tel; tel iki ucunda "devre" kutusuna bağlanır (kapalı yol). Kesit kesik çizgi; üstünde küçük "sayaç" kutusu, içinde "sağa: artı, sola: eksi". Mavi noktalar yalnızca telin içinde hareket eder (önce sağa, sonra sola).
+- "akım eşittir delta kü bölü delta te": altına "akım = Δq / Δt ?" (soru işareti kırmızı).
+- "Şöyle bir tel": sağ yarıda grafik, y %32–72. Yatay eksen "t (s)", işaretler 0; 0,5; 1. Dikey eksen "i (mA)", işaretler −10, 0, 10 (eksen −15…15). Mavi: 0–0,5 s arası +10 mA, 0,5–1 s arası −10 mA (0,5 s'deki dikey geçiş ince kesik).
+- Denklem sütunu (sol, y %32–72): "0–0,5 s: +5 mC", "0,5–1 s: −5 mC", "Δq = 5 mC − 5 mC = 0", "Δq / Δt = 0" (kırmızı). Sonra mavi "5 mC / 0,5 s = 10 mA".
+- "Pencereyi daraltırsak": grafiğe kesik çerçeve pencereler, her biri ayrı çizilir: önce 0–1 s (kırmızı "0"), sonra 0,1–0,3 s (mavi "10 mA"), sonra 0,4–0,6 s (kırmızı "0").
+- "asıl tanımı": silme; ortada büyük "i = dq / dt" (mavi), altına "birim: amper (A)", "1 A = 1 C / s", "2 µC / 1 ms = 2 mA".
+- Abone animasyonu 1 parça 3'ün başında.
 
-## [PARÇA 3] Abone çağrısı, yol haritası, ön bilgi (~2:10)
+## [PARÇA 3] Abone çağrısı, seri haritası (~1:20)
 
 ```
 Bu serinin devamı için kanala abone olabilirsin.
 
 Fark ettin mi? Artık akım bir ortalama değil. Her an için ayrı bir değeri olan, zamana bağlı bir büyüklük.
 
-Şimdi bir adım geri çekilip yol haritamıza bakalım. Bu sıra rastgele değil, her adım bir öncekinin üstüne kuruluyor. Önce elektriksel büyüklükleri tanıyacağız. Yük ve akımla başladık, sırada gerilim var. Sonra devre elemanlarına geçeceğiz. Gerilim kaynağı, akım kaynağı, direnç, kondansatör gibi. Bir devreyi kurmadan önce, onu oluşturan elemanların nasıl davrandığını, onlar için hangi denklemleri yazabileceğimizi bilmemiz gerekiyor.
+Bu seride nereye gideceğimize de kısaca bakalım. Yük ve akımdan sonra gerilimi tanıyacağız. Ardından kaynakları, direnci ve kondansatörü inceleyeceğiz. Sonra Kirchhoff yasalarını, onların üstüne kurulan analiz yöntemlerini ve devre teoremlerini göreceğiz. Daha sonra direnç ve kondansatörlü, direnç ve bobinli devrelere, sonra da üçünün bir arada olduğu devrelere geçeceğiz. Fırsat olursa işlemsel kuvvetlendiricilere de uğrayacağız.
 
-Bu elemanları birbirine bağladığımızda bir devre elde ediyoruz. Ardından devrelerin davranışını belirleyen yasalara geleceğiz, yani Kirchhoff yasalarına. Onları fizik derslerinden hatırlıyor olabilirsin. Aslında bu bilgiyle her devreyi çözebiliriz. Peki neden daha fazlasına ihtiyaç duyuyoruz? Çünkü devreler karmaşıklaştıkça hem hesap uzuyor hem de devrenin nasıl çalıştığını sezmek zorlaşıyor. Bu yüzden analizi adım adım izlenen bir yönteme dönüştüren sistematik yollar ve devreye bakar bakmaz ne yapacağını söyleten teoremler istiyoruz. Onlardan sonra direnç ve kondansatörlü, direnç ve bobinli devreleri, son olarak da üçünün bir arada olduğu devreleri ele alacağız. Zaman kalırsa işlemsel kuvvetlendirici devrelerine de bakacağız. İşlemsel kuvvetlendirici, ilginç devreler kurmamızı sağlayan çok kullanışlı bir eleman.
-
-Bir de ön bilgi hatırlatalım: Ohm yasası. Değeri er olan bir dirençten i akımı geçiyorsa, direncin uçlarında i çarpı er kadar gerilim oluşur. Örneğin iki kiloohmluk bir dirençten üç miliamper geçiyorsa, uçlarında altı volt vardır. Bu yasayı serinin her yerinde kullanacağız.
-
-Peki akımın tanımını neden bu kadar titizlikle kurduk? Çünkü bundan sonraki derslerde akımı hep bu anlık tanımla kullanacağız. Ohm yasasında geçen i de bir ortalama değil, o andaki akım. Şimdi bunu üç örnekle sağlamlaştıralım.
+Her dersi yaklaşık on beşer dakikalık üç bölümde işliyoruz. Bütün bu yolda akımı bugünkü tanımla kullanacağız. Şimdi bunu üç örnekle pekiştirelim.
 ```
 
 Sahne planı:
-- 0:00–0:06 **abone animasyonu 1** (UZUN.md 4b; alt bant). Tahtanın üst kısmında parça 2'nin son hâli durur; kalem "i = dq / dt" yanına "(t)" ekleyerek "i(t)" yazar ("zamana bağlı" ile eşzamanlı), sonra altını yavaşça mavi çizer (durağanlık yok).
-- Silme. Yol haritası: soldan sağa basamaklar halinde kutular, her biri sırayla yazılır, aralarında çizgi oklar: "elektriksel büyüklükler" → "devre elemanları" → "Kirchhoff yasaları" → "analiz yöntemleri" → "teoremler" → "RC, RL, RLC devreleri" → "işlemsel kuvvetlendirici". İlk kutunun içine küçük "yük, akım, gerilim"; ikincisine "kaynaklar, direnç, kondansatör". İlk kutu mavi daire ("buradayız").
-- "Ohm yasası": silme; sol tarafa direnç (zikzak) ve üstünden geçen mavi akım oku "i", uçlarında "+" ve "−"; sağda "v = i × R".
-- "anlık tanımla": sağ altta "i = dq / dt" tekrar yazılır, mavi daire.
+- 0:00–0:06 **abone animasyonu 1** (UZUN.md 4b; alt bant). Üstte kalem "i = dq / dt" yanına "(t)" ekleyerek "i(t)" yazar ("zamana bağlı" ile eşzamanlı), sonra altını mavi çizer.
+- Silme. Seri haritası iki sıra numaralı basamak (ok ucu yok, basamaklar ince çizgiyle bağlı), sırayla yazılır. 1. sıra (y %15–35): "1. yük, akım, gerilim", "2. kaynaklar, direnç, kondansatör", "3. Kirchhoff yasaları", "4. analiz yöntemleri ve teoremler". 2. sıra (y %42–62): "5. direnç–kondansatör ve direnç–bobin devreleri", "6. direnç, bobin ve kondansatörlü devreler", "7. işlemsel kuvvetlendirici". Basamak 1 mavi daire ("buradayız").
+- "bugünkü tanımla": sağ altta (y ≤ %72) "i = dq / dt", mavi daire.
 
-## [PARÇA 4] Örnek 1 — ortalama tuzağı (~2:55)
+## [PARÇA 4] Örnek 1 — basamaklı akım ve ortalama (~2:50)
 
 ```
 İlk örneğimize geçelim. Bir telden dört milisaniye boyunca yük geçiyor. İlk bir milisaniyede beş mikrokulon geçiyor. Sonraki üç milisaniyede ise yalnızca üç mikrokulon. Her aralığın içinde yük düzgün biçimde akıyor. Soru şu: bu teldeki akım nedir?
 
 İlk refleks, toplam yükü toplam süreye bölmek. Sekiz mikrokulon bölü dört milisaniye, iki miliamper. Hesap doğru. Peki teldeki akım herhangi bir anda gerçekten iki miliamper oldu mu?
 
-Hadi bakalım. İlk aralıkta beş mikrokulon, bir milisaniyede geçti. Bu da beş miliamper eder. Burada küçük bir kolaylık var: mikrokulonu milisaniyeye bölünce doğrudan miliamper buluyoruz. İkinci aralıkta üç mikrokulon, üç milisaniyede geçti. Bu da bir miliamper.
+Hadi bakalım. İlk aralıkta beş mikrokulon bir milisaniyede geçti, bu da beş miliamper eder. Burada küçük bir kolaylık var: mikrokulonu milisaniyeye bölünce doğrudan miliamper buluyoruz. İkinci aralıkta üç mikrokulon üç milisaniyede geçti, bu da bir miliamper.
 
-Şimdi grafiği çizelim. Yatay eksen zaman, milisaniye cinsinden. Dikey eksen akım, miliamper cinsinden. Sıfırla bir milisaniye arasında akım beş miliamper. Birle dört milisaniye arasında bir miliamper.
+Şimdi grafiği çizelim. Yatay eksen zaman, milisaniye cinsinden. Dikey eksen akım, miliamper cinsinden. Sıfır ile bir milisaniye arasında akım beş miliamper. Bir ile dört milisaniye arasında bir miliamper.
 
 Buradan iki soruyu hemen cevaplayabiliriz. Yarım milisaniye anında akım nedir? Beş miliamper. Üç milisaniye anında akım nedir? Bir miliamper. Her an için tek bir cevap var.
 
-Bir de pencereyi sıfırla iki milisaniye arasında seçelim. Bu aralıkta beş artı bir, altı mikrokulon geçiyor. İki milisaniyeye bölünce üç miliamper. Bu da hiçbir anın değeri değil. Pencereyi değiştirdikçe ortalama da değişiyor.
+Bir de sıfır ile yarım milisaniye arasında bir pencere seçelim. Bu sürede iki buçuk mikrokulon geçer, yarım milisaniyeye bölünce yine beş miliamper. Pencere akımın sabit olduğu aralıkta kaldıkça, genişliği ne olursa olsun aynı cevabı alırız.
+
+Şimdi de pencereyi sıfır ile iki milisaniye arasında seçelim. İlk milisaniyede beş, sonraki milisaniyede bir mikrokulon geçiyor, toplam altı mikrokulon. İki milisaniyeye bölünce üç miliamper. Bu da hiçbir anın değeri değil. Pencereyi değiştirdikçe ortalama da değişiyor.
 
 Peki iki miliamper nerede? Grafikte iki miliamperlik çizgiyi kesik çizgiyle çizelim. Gördüğün gibi, akım hiçbir an bu değeri almıyor. İki miliamper, bu dört milisaniyedeki ortalama akım.
 
-Ortalama yanlış değil. Sadece başka bir soruya cevap veriyor. Toplamda ne kadar yük geçti, diye soruyorsan ortalama işini görür. İki miliamper çarpı dört milisaniye, yine sekiz mikrokulon eder. Ama şu anda telden ne kadar akım geçiyor, diye soruyorsan ortalama sana cevap vermez.
+Ortalama yanlış değil, sadece başka bir soruya cevap veriyor. Dört milisaniyede toplam ne kadar yük geçti diye soruyorsan ortalama işini görür. Ama şu anda telden ne kadar akım geçiyor diye soruyorsan, ortalama sana cevap vermez.
 
-Burada dikkat edilmesi gereken tuzak şu. Soru ortalama akımı mı istiyor, yoksa belirli bir andaki akımı mı? Buna bakmadan delta kü bölü delta te yazmak. Bir de şunu fark et: her aralığın içinde yük düzgün aktığı için, o aralıkta delta kü bölü delta te zaten anlık akıma eşit. Pencereyi akımın sabit kaldığı aralığın içinde seçersen sorun kalmıyor.
+Buradaki tuzak, sorunun ne istediğine bakmadan delta kü bölü delta te yazmak. Soru ortalamayı mı soruyor, yoksa belirli bir andaki akımı mı? Bir de şunu fark et: her aralığın içinde yük düzgün aktığı için, pencereyi akımın sabit kaldığı bir aralığın içinde seçersen, delta kü bölü delta te zaten anlık akıma eşit çıkar.
 ```
 
 Sahne planı:
-- Üstte soru metni kısa satırlarla: "0–1 ms: 5 µC", "1–4 ms: 3 µC", "her aralıkta düzgün", "akım = ?" (mavi).
+- Üstte soru: "0–1 ms: 5 µC", "1–4 ms: 3 µC", "her aralıkta düzgün", "akım = ?" (mavi).
 - "İlk refleks": sağda "8 µC / 4 ms = 2 mA" (siyah), yanına kırmızı "?".
-- "Hadi bakalım": altına "5 µC / 1 ms = 5 mA", "3 µC / 3 ms = 1 mA" (mavi sonuçlar). "µC / ms = mA" küçük not.
-- Grafik (sol alt, y %40–72): eksenler, "t (ms)" ve "i (mA)" etiketleri; işaretler 0, 1, 2, 3, 4 ms ve 0, 1, 2, 3, 4, 5 mA (eksen 0–6 mA, 2e-1). Mavi basamak: 0–1 ms'de 5 mA, 1–4 ms'de 1 mA (eğri değerleri kodda `console.assert`).
-- "iki miliamperlik çizgi": kırmızı kesik yatay çizgi 2 mA'de, ucuna "ortalama: 2 mA".
-- "toplamda ne kadar yük": grafikte iki dikdörtgen alan sırayla açık mavi taranır: "5 µC" ve "3 µC"; sonra kesik çizginin altındaki dikdörtgen kırmızı çerçeve: "2 mA × 4 ms = 8 µC".
-- "tuzak şu": sağ üstte kırmızı kutu "ortalama akım mı, anlık akım mı?".
-- (Parça 5'e geçiş.)
+- "Hadi bakalım": altına "5 µC / 1 ms = 5 mA", "3 µC / 3 ms = 1 mA" (mavi). Küçük not "µC / ms = mA".
+- Grafik (sol, y %40–72): yatay eksen "t (ms)" işaretler 0, 1, 2, 3, 4; dikey eksen "i (mA)" işaretler 0, 1, 2, 3, 4, 5 (eksen 0–6). Mavi basamak: 0–1 ms 5 mA, 1–4 ms 1 mA; t = 1 ms'deki dikey geçiş ince kesik. Değerler kodda `console.assert`.
+- "Yarım milisaniye anında": t = 0,5 ms'de mavi nokta "5 mA"; t = 3 ms'de mavi nokta "1 mA".
+- "sıfır ile iki milisaniye": grafikte 0–2 ms kesik çerçeve, yanında "6 µC / 2 ms = 3 mA".
+- "iki miliamperlik çizgi": kırmızı kesik yatay çizgi 2 mA'de, ucunda "ortalama 2 mA".
+- "toplam ne kadar yük": yanında "2 mA × 4 ms = 8 µC" (tarama yok; alan konusu Bölüm 2'de).
+- "Buradaki tuzak": sağ üstte kırmızı kutu "ortalama akım mı, anlık akım mı?".
 
-## [PARÇA 5] Örnek 2 — akım her an değişirse (~2:50)
+## [PARÇA 5] Örnek 2 — akım her an değişiyor (~3:10)
 
 ```
 Şimdi biraz daha zor bir örnek. Burada akım her an değişiyor.
 
-Bir telin kesitinden geçen toplam yük, sıfır anından itibaren şöyle artıyor: kü eşittir iki çarpı te kare milikulon. Burada te, saniye cinsinden. Soru: te eşittir üç saniye anında akım nedir?
+Bir telin kesitinden geçen toplam yük, sıfır anından itibaren şöyle artıyor: kü eşittir iki te kare milikulon. Yani te karenin iki katı. Burada te, saniye cinsinden. Soru: te eşittir üç saniye anında akım nedir?
 
-Önce ortalama yoldan gidelim. Üç saniyede geçen yük, iki çarpı dokuz, yani on sekiz milikulon. Bunu üç saniyeye bölünce altı miliamper.
+Önce ortalama yoldan gidelim. Üç saniyede geçen yük, dokuzun iki katı, yani on sekiz milikulon. Bunu üç saniyeye bölünce altı miliamper.
 
 Bir an dur ve tahmin et: üç saniyedeki akım bu ortalamadan büyük mü, küçük mü?
 
-Şimdi tanımı kullanalım. Akım, yükün zamana göre türevi. İki çarpı te karenin türevi, dört çarpı te. Yani akım, dört çarpı te miliamper. Üç saniye anında bu, on iki miliamper eder. Ortalamanın tam iki katı. Birime de bakalım: milikulon bölü saniye, miliamper eder. Birimler de tutuyor.
+Şimdi tanımı kullanalım. Akım, yükün zamana göre türevi. İki te karenin türevi dört te. Yani akım, dört te miliamper. Üç saniye anında bu, on iki miliamper eder. Ortalamanın tam iki katı. Birime de bakalım: milikulon bölü saniye, miliamper eder. Birimler de tutuyor.
 
-Bu iki kat bir tesadüf değil. Yük zamanın karesiyle artıyorsa, sıfırdan te anına kadarki ortalama akım, o andaki akımın her zaman yarısıdır. Çünkü akım başta sıfırdan başlıyor ve düzgün biçimde artıyor. Ortalama, başlangıçla son değerin tam ortasında kalıyor.
+Bu iki kat bir tesadüf değil. Yük sıfırdan başlayıp zamanın karesiyle artıyorsa, sıfırdan o ana kadarki ortalama akım, o andaki akımın tam yarısıdır. Çünkü akım sıfırdan başlıyor ve düzgün biçimde artıyor. Ortalama da başlangıç ile son değerin tam ortasında kalıyor.
 
 Bunu türev almadan da görebiliriz. Zaten tanımın özü bu. Üçüncü saniyeden başlayan bir pencere açalım ve onu adım adım daraltalım.
 
@@ -146,64 +140,73 @@ Pencere bir saniye olsun. Üç ile dört saniye arasında yük on sekiz milikulo
 
 Gördün mü? Pencere küçüldükçe sonuç on iki miliampere yaklaşıyor. De kü bölü de te tam olarak bu sınır değer.
 
-Bunu grafikte de görelim. Yükü zamana göre çizdiğimizde, iki nokta arasındaki ortalama akım, o iki noktayı birleştiren doğrunun eğimidir. Pencere daraldıkça bu doğru, üç saniyedeki noktada eğriye teğet olan doğruya yaklaşır. Yani anlık akım, yük grafiğinin o andaki eğimidir. Bu bakış açısı bir sonraki örnekte çok işimize yarayacak.
+Bunu grafikte de görelim. Yükü zamana göre çizdiğimizde, iki nokta arasındaki ortalama akım, o iki noktayı birleştiren doğrunun eğimidir. Pencere daraldıkça bu doğru, üç saniyedeki noktada eğriye teğet olan doğruya yaklaşır. Yani anlık akım, yük grafiğinin o andaki eğimidir.
 
-Peki baştaki altı miliamper yanlış mıydı? Hayır. Sıfırla üç saniye arasındaki ortalama akım gerçekten altı miliamper. Ama üçüncü saniyedeki akım on iki miliamper. İkisi farklı soruların cevabı.
+Bir soru daha soralım. Akım hangi anda ortalama değere, yani altı miliampere eşit oluyor? Dört te eşittir altı dersek, te bir buçuk saniye çıkıyor. Demek ki ortalama değer de aslında akımın bir anda aldığı bir değer. Ama o an, bizim sorduğumuz üç saniye değil, bir buçuk saniye. Grafikte de bunu görebilirsin: sıfırdan üçe uzanan kirişe paralel teğet, tam bir buçuk saniyede eğriye değiyor.
+
+Bu akım iki kiloohmluk bir dirençten geçseydi ne olurdu? Ohm yasasına göre direncin uçlarındaki gerilim, direnç ile akımın çarpımıdır. Üç saniye anında iki kiloohm çarpı on iki miliamper, yirmi dört volt eder. Ortalama akımı kullansaydık on iki volt bulurduk, yani o andaki gerilimin yarısını. Anlık akımla ortalamayı karıştırmak, ondan sonra yapılan hesabı da aynı oranda kaydırıyor.
 ```
 
 Sahne planı:
-- 0:00 üstte kalem soruyu yazmaya başlar ("q(t) = 2t² mC", "t saniye cinsinden", "i(3 s) = ?"). 
+- Üstte: "q(t) = 2t² mC", "t saniye cinsinden", "i(3 s) = ?" (mavi).
 - "ortalama yoldan": "q(3 s) = 2 × 9 = 18 mC", "18 mC / 3 s = 6 mA" (siyah).
+- "tahmin et": kalem "i(3 s) = ?" etrafına yavaş daire (1,5 sn sessizlik boyunca hareket sürer).
 - "tanımı kullanalım": "i = dq / dt = 4t mA" (mavi), "i(3 s) = 12 mA" (mavi, daire). Yanına kırmızı "ortalamanın 2 katı".
-- Grafik (sol alt): q(t) eğrisi 0–4 s (eksen 0–35 mC), t = 3 s'de nokta (18 mC). Pencere adımlarında 3 s noktasından kesik kirişler çizilir (3–4 s kirişi; 3–3,1 s yakınlaştırma notu).
-- Tablo (sağ alt, y ≤ %72): "Δt | Δq / Δt" satırları: "1 s | 14 mA", "0,1 s | 12,2 mA", "0,01 s | 12,02 mA", alt satır "Δt küçüldükçe sonuç 12 mA'e yaklaşır".
-- "İkisi farklı": "0–3 s ortalama: 6 mA" ve "t = 3 s anında: 12 mA" iki satır yan yana, farklı renk.
+- Grafik (sol, y %40–72): yatay eksen "t (s)" işaretler 0, 1, 2, 3, 4; dikey eksen "q (mC)" işaretler 0, 10, 20, 30 (eksen 0–35). Eğri q = 2t² (q(3) = 18, q(4) = 32 `console.assert`). t = 3 s'de nokta. Pencere adımlarında 3 s noktasından çıkan kirişler sırayla: 3–4 s kirişi (siyah kesik), 3–3,1 s kirişi (siyah kesik, neredeyse teğet), sonra teğet (mavi düz), yanında "eğim = 12 mA".
+- Tablo (sağ, y %40–72): başlık "Δt" ve "Δq / Δt"; satırlar "1 s, 14 mA", "0,1 s, 12,2 mA", "0,01 s, 12,02 mA"; alt satır "Δt küçüldükçe sonuç 12 mA'e yaklaşır".
+- "Bir soru daha": tabloya "4t = 6, t = 1,5 s" (mavi); grafikte 0–3 s kirişi (siyah kesik) ve t = 1,5 s'de ona paralel teğet (mavi), "eğim = 6 mA".
+- "iki kiloohmluk": silme; küçük direnç çizimi, akım oku (mavi "i") direncin "+" ucundan girer, uçlarda "+" ve "−"; yanında "v = R × i", "v(3 s) = 2 kΩ × 12 mA = 24 V" (mavi), "ortalama akımla: 2 kΩ × 6 mA = 12 V" (kırmızı).
 
-## [PARÇA 6] Örnek 3 — yük en büyükken akım sıfır (~2:40)
+## [PARÇA 6] Örnek 3 — yük en büyükken akım sıfır (~2:50)
 
 ```
-Son örneğimiz biraz düşündürücü. Bu kez yük şöyle değişiyor: kü eşittir altı çarpı te, eksi te kare milikulon. Te yine saniye cinsinden ve sıfırla dört saniye arasına bakıyoruz.
+Son örneğimiz biraz düşündürücü. Bu kez yük şöyle değişiyor: kü eşittir altı te eksi te kare milikulon. Te yine saniye cinsinden ve sıfır ile dört saniye arasına bakıyoruz.
 
 Önce sana bir soru. Üç saniye anında yük kaç milikulon, akım kaç miliamper? Bir an durup kendin bulmaya çalış.
 
-Yükten başlayalım. Üç saniyede altı çarpı üç, on sekiz. Eksi üçün karesi, dokuz. Yani yük dokuz milikulon. Bu aralıktaki en büyük değer bu.
+Yükten başlayalım. Üç saniyede altı te, on sekiz eder. Te kare ise dokuz. On sekizden dokuzu çıkarınca yük dokuz milikulon. Bu aralıktaki en büyük değer bu. Bunu sayılarla da kontrol edelim. İki buçuk saniyede de üç buçuk saniyede de yük sekiz virgül yetmiş beş milikulon. Üç saniyenin iki yanında yük daha küçük, yani üç saniye gerçekten tepe noktası.
 
-Şimdi akım. Türevi alalım: altı çarpı te teriminin türevi altı, te karenin türevi iki çarpı te. Yani akım, altı eksi iki çarpı te miliamper. Üç saniye anında altı eksi altı, sıfır miliamper.
+Şimdi akım. Türevi alalım. Altı te teriminin türevi altı, te karenin türevi iki te. Yani akım, altıdan iki te çıkarılarak bulunuyor: altı eksi iki te miliamper. Üç saniye anında iki te altı eder, altıdan altıyı çıkarınca sıfır miliamper.
 
 İlginç değil mi? Yük en büyük değerindeyken akım sıfır. Aslında bir önceki örnekteki eğim yorumu bunu hemen söylüyor. Yük grafiği üç saniyede tepe noktasında. Tepede teğet yatay, yani eğim sıfır. Akım yükün ne kadar olduğuna değil, ne kadar hızlı değiştiğine bakar.
 
-Bir de başka anlara bakalım. Bir saniyede akım altı eksi iki, dört miliamper. Dört saniyede ise altı eksi sekiz, eksi iki miliamper. Eksi işaret ne demek? Üç saniyeden sonra yük azalmaya başlıyor. Yani yük kesitten artık ters yönde geçiyor. Akımın bir de yönü olduğunu, işaretin bu yönü nasıl taşıdığını bir sonraki bölümde ayrıntılı göreceğiz.
+Bir de başka anlara bakalım. Bir saniyede iki te iki eder, altıdan ikiyi çıkarınca akım dört miliamper. Dört saniyede iki te sekiz eder, altıdan sekizi çıkarınca akım eksi iki miliamper. Eksi işaret ne demek? Üç saniyeden sonra yük azalmaya başlıyor. Yani yük kesitten artık ters yönde geçiyor. Akımın yönünü ve işaretin bu yönü nasıl taşıdığını ikinci bölümde ayrıntılı göreceğiz.
 
-Bir de sıfırla dört saniye arasındaki ortalamaya bakalım. Dört saniyede yük, yirmi dört eksi on altı, sekiz milikulon. Sekizi dörde bölünce iki miliamper. Oysa bu aralıkta akım dört, sıfır, eksi iki gibi çok farklı değerler aldı. Ortalama, bu hikâyenin tamamını tek bir sayıya sıkıştırıyor.
+Peki akım hangi anda en büyük? Altı eksi iki te ifadesi te büyüdükçe küçülüyor. Yani en büyük değer başlangıçta, te sıfırken: altı miliamper. O anda yük ise sıfır. Tablo tam ters döndü. Yük sıfırken akım en büyük, yük en büyükken akım sıfır.
 
-Tuzak burada şu. Yük büyükse akım da büyüktür sanmak. Az önce gördük: yük en büyükken akım sıfırdı.
+Bir de sıfır ile dört saniye arasındaki ortalamaya bakalım. Dört saniyede yük, yirmi dörtten on altıyı çıkarınca sekiz milikulon. Sekizi dörde bölünce iki miliamper. Oysa bu aralıkta akım dört, sıfır, eksi iki gibi çok farklı değerler aldı. Ortalama, bu hikâyenin tamamını tek bir sayıya sıkıştırıyor.
+
+Buradaki tuzak, yük büyükse akımın da büyük olacağını sanmak. Az önce gördük: yük en büyükken akım sıfırdı.
 ```
 
 Sahne planı:
 - 0:00–0:06 **abone animasyonu 2** (alt bant; son çözümlü sorudan önce). Kart bir katmandır; tahtadaki kalem yazmaya devam eder.
-- Üstte: "q(t) = 6t − t² mC", "0 ≤ t ≤ 4 s", "t = 3 s anında q = ?  i = ?" (mavi). "Bir an durup": kalem soru işaretlerinin etrafına yavaşça daire çizer (durağanlık yok).
+- Üstte: "q(t) = (6t − t²) mC", "0 ≤ t ≤ 4 s", "t = 3 s anında: q = ?, i = ?" (mavi). "Bir an durup": kalem soru işaretlerinin etrafına yavaşça daire çizer.
 - "Yükten başlayalım": "q(3 s) = 18 − 9 = 9 mC" (siyah).
-- "Türevi alalım": "i = dq / dt = 6 − 2t mA" (mavi), "i(3 s) = 6 − 6 = 0 mA" (mavi, kırmızı daire).
-- Grafik (sol alt): q(t) parabolü 0–4 s, eksen 0–10 mC (değerler q(0)=0, q(1)=5, q(3)=9, q(4)=8; `console.assert`). t = 3 s'de tepe noktası, oradan yatay kesik teğet (kırmızı), yanına "eğim = 0".
+- "Türevi alalım": "i = dq / dt = (6 − 2t) mA" (mavi), "i(3 s) = 6 − 6 = 0 mA" (mavi, kırmızı daire).
+- Grafik (sol, y %40–72): yatay eksen "t (s)" işaretler 0, 1, 2, 3, 4; dikey eksen "q (mC)" işaretler 0, 2, 4, 6, 8, 10 (eksen 0–10). Parabol değerleri q(0)=0, q(1)=5, q(3)=9, q(4)=8 (`console.assert`). t = 3 s tepe noktasında yatay kesik teğet (kırmızı), "eğim = 0".
 - "Bir saniyede": t = 1 s'de pozitif eğimli kısa teğet, "i = 4 mA"; t = 4 s'de negatif eğimli kısa teğet, "i = −2 mA" (kırmızı).
-- "Tuzak burada": sağ üstte kırmızı kutu: "yük en büyük, akım sıfır".
+- "en büyük": t = 0'da pozitif eğimli kısa teğet, "i(0) = 6 mA", "q(0) = 0".
+- "ortalamaya bakalım": sağda "q(4 s) = 24 − 16 = 8 mC", "8 mC / 4 s = 2 mA".
+- "Buradaki tuzak": sağ üstte kırmızı kutu "yük en büyükken akım sıfır".
 
-## [PARÇA 7] Kapanış (~1:00 + 20 sn bitiş ekranı)
+## [PARÇA 7] Kapanış (~1:05 + 20 sn bitiş ekranı)
 
 ```
-Toparlayalım. Akım, yükün kesitten geçme hızıdır: i eşittir de kü bölü de te. Delta kü bölü delta te ise yalnızca seçtiğin penceredeki ortalamayı verir. Pencere küçüldükçe bu ortalama, anlık akıma yaklaşır. Ve akımı belirleyen, geçen yükün miktarı değil, değişme hızıdır.
+Toparlayalım. Akım, yükün kesitten geçme hızıdır: i eşittir de kü bölü de te. Delta kü bölü delta te ise yalnızca seçtiğin penceredeki ortalamayı verir, pencere küçüldükçe de anlık akıma yaklaşır. Akımı belirleyen, geçen yükün miktarı değil, değişme hızıdır.
 
-Üç örnekte de aynı şeyi gördük. Basamaklı akımda ortalama hiçbir anın değeri değildi. Sürekli artan akımda anlık değer ortalamanın iki katıydı. Son örnekte de yük en büyükken akım sıfırdı.
+Üç örnekte de aynı şeyi gördük. Basamaklı akımda ortalama hiçbir anın değeri değildi. Sürekli artan akımda anlık değer ortalamanın iki katıydı. Son örnekte de yük en büyükken akım sıfırdı. Ohm yasasıyla gerilimi bulurken de anlık akımı kullandık.
 
-Sana da bir soru bırakayım. Yük, dört çarpı te, eksi te kare milikulon olsaydı, akım hangi anda sıfır olurdu? İpucu: tepe noktasını düşün. Cevabını yorumlara yaz.
+Sana da bir soru bırakayım. Yük, dört te eksi te kare milikulon olsaydı, akım hangi anda sıfır olurdu? İpucu: tepe noktasını düşün. Cevabını yorumlara yaz.
 
-Bu ders işine yaradıysa videoyu beğenip sınıf arkadaşlarınla paylaşır mısın? Kanala abone olursan Bölüm ikiyi kaçırmazsın.
+Bu ders işine yaradıysa videoyu beğenip sınıf arkadaşlarınla paylaşır mısın? Kanala abone olursan ikinci bölümü kaçırmazsın.
 
-Bölüm ikide akımın yönünü, açık devrenin bize neyi garanti ettiğini ve akım grafiğinden geçen yükü nasıl bulacağımızı göreceğiz. Yani bugün yaptığımızın tersini: akımdan yüke gideceğiz.
+İkinci bölümde akımın yönünü, açık devrenin bize neyi garanti ettiğini ve bugün yaptığımızın tersini, yani akım grafiğinden geçen yükü bulmayı göreceğiz.
 ```
 
 Sahne planı:
-- **"Bilmen gerekenler" kartı** (≥4 sn okunur, alt bant kartı değil, tahtanın ortası; y %15–65): başlık "Bilmen gerekenler", maddeler: "• Akım, yükün geçiş hızı: i = dq / dt", "• Δq / Δt yalnızca penceredeki ortalama", "• Pencere küçülürse ortalama, anlık akıma yaklaşır", "• Akımı belirleyen yükün miktarı değil, değişme hızı".
-- "beğenip paylaşır mısın": kart durur, kalem "i = dq / dt"nin altını mavi çizer.
-- "Bölüm ikide": silme; üstte "Sıradaki: Bölüm 2/3" ve "akımın yönü · açık devre · yük = alan" (burada "·" ayırıcı olarak **kullanılmaz** → "akımın yönü, açık devre, akım grafiğinden yük").
-- Son 20 sn **bitiş ekranı alanı**: orta ve alt boş; yalnızca sol üstte küçük, yavaşça yazılan "Devre Teorisi I" (hareket sürer, ≥2 sn durağan yok). Ses yok.
+- **"Bilmen gerekenler" kartı** (tahtanın ortası, y %15–65; ≥4 sn okunur): başlık "Bilmen gerekenler"; maddeler: "• Akım, yükün geçiş hızıdır (i = dq / dt)", "• Δq / Δt pencere ortalamasıdır; pencere küçülünce anlık akıma yaklaşır", "• Yük en büyükken akım sıfır olabilir".
+- "Sana da bir soru": kart silinir; ortada "q(t) = (4t − t²) mC", "akım hangi anda sıfır olur?" (mavi), "cevabını yorumlara yaz".
+- "beğenip paylaşır mısın": kalem sorunun altını mavi çizer.
+- "İkinci bölümde": silme; üstte "Sıradaki: Bölüm 2/3", altında "akımın yönü, açık devre, akım grafiğinden yük".
+- Son 20 sn **bitiş ekranı alanı**: orta ve alt boş; yalnızca sol üstte küçük, yavaşça yazılan "Devre Teorisi I" (hareket sürer). Ses yok.
