@@ -2,13 +2,80 @@
   "seri": "Devre Teorisi I",
   "ders": 1,
   "bolum": 1,
-  "adim": "metin",
+  "adim": "zamanlama",
   "yayin": "2026-11-28",
   "yayin_saati": "08:00 Europe/London",
-  "parcalar": {},
+  "parcalar": {
+    "1": {
+      "ses": "uzun/seri/ders-01/bolum-1/ses/parca-1.mp3",
+      "sure_sn": 45.79,
+      "generation_id": "N8va88nkFYufXBbOPU66",
+      "render": "bekliyor",
+      "qc": "bekliyor"
+    },
+    "2": {
+      "ses": "uzun/seri/ders-01/bolum-1/ses/parca-2.mp3",
+      "sure_sn": 165.96,
+      "generation_id": "YIt7atzCM4TH2b5MESSM",
+      "render": "bekliyor",
+      "qc": "bekliyor"
+    },
+    "3": {
+      "ses": "uzun/seri/ders-01/bolum-1/ses/parca-3.mp3",
+      "sure_sn": 48.27,
+      "generation_id": "dkIVWyz4abl5P1De4PX5",
+      "render": "bekliyor",
+      "qc": "bekliyor"
+    },
+    "4": {
+      "ses": "uzun/seri/ders-01/bolum-1/ses/parca-4.mp3",
+      "sure_sn": 150.05,
+      "generation_id": "TjeRunuhfu1Tcm9dJKRp",
+      "render": "bekliyor",
+      "qc": "bekliyor"
+    },
+    "5": {
+      "ses": "uzun/seri/ders-01/bolum-1/ses/parca-5.mp3",
+      "sure_sn": 168.91,
+      "generation_id": "ydQnm7onNj4xa8kUL0X5",
+      "render": "bekliyor",
+      "qc": "bekliyor"
+    },
+    "6": {
+      "ses": "uzun/seri/ders-01/bolum-1/ses/parca-6.mp3",
+      "sure_sn": 148.19,
+      "generation_id": "B6OKl5qvQgLKLNWzWw8a",
+      "render": "bekliyor",
+      "qc": "bekliyor"
+    },
+    "7": {
+      "ses": "uzun/seri/ders-01/bolum-1/ses/parca-7.mp3",
+      "sure_sn": 61.47,
+      "generation_id": "YR46jtb8iEyTcbO7wOc9",
+      "render": "bekliyor",
+      "qc": "bekliyor"
+    }
+  },
   "drive_sesler_klasoru": "1xlxpzK_CmMwVdYp62d9ZFUh98MntrYNn",
   "gecmis": [
-    {"tarih": "2026-11-17T21:55Z", "not": "Ders 1 transkripti Drive'da yoktu; beklendi."},
-    {"tarih": "2026-11-17T22:30Z", "not": "Transkript geldi. Ders planı (uzun/seri/ders-01/plan.md) ve Bölüm 1 metni yazıldı; dogrula.py geçti; bağımsız denetim başlatıldı."}
-  ]
+    {
+      "tarih": "2026-11-17T21:55Z",
+      "not": "Ders 1 transkripti Drive'da yoktu; beklendi."
+    },
+    {
+      "tarih": "2026-11-17T22:30Z",
+      "not": "Transkript geldi. Ders planı (uzun/seri/ders-01/plan.md) ve Bölüm 1 metni yazıldı; dogrula.py geçti; bağımsız denetim başlatıldı."
+    },
+    {
+      "tarih": "2026-11-17T23:20Z",
+      "not": "Bağımsız denetim 2 tur (sürüm 2 + ek düzeltmeler). 7 parça ses üretildi (eleven_v4, 1 take, ~12.100 kredi) ve curl ile indirildi; Drive yüklemesine gerek kalmadı. Toplam ses 13:09; videoyla ~13:34."
+    }
+  ],
+  "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
+  "toplam_ses_sn": 788.64,
+  "tahmini_video_dk": 13.57,
+  "acik_sorular": [
+    "Intro kartında \"·\" ayırıcı (UZUN 4a) mı, tire/virgül (AGENT 2d) mi? Panelde soruldu."
+  ],
+  "sonraki_is": "Sesleri normalize et (-20..-19 LUFS, tepe <= -1,5 dBTP), parça 5 \"tahmin et\" sonrasına 1,5 sn sessizlik, zamanlama (zamanla.py), tahta/sahne uyarlaması (ornek-02 kopyası), parça render."
 }
