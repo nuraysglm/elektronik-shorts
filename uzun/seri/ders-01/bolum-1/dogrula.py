@@ -4,15 +4,15 @@ Birimler: uC / ms = mA ; mC / s = mA ; uC / s = uA."""
 from fractions import Fraction as F
 import re, pathlib
 
-# --- Kanca: her saniyenin 2 ms'sinde calisan devre, her ms'de 10 uC
-dq_uC = 10 * 2                      # 1 s pencerede gecen yuk, uC
-i_pencere_uA = F(dq_uC, 1)          # uC / 1 s = uA
-i_gercek_mA = F(10, 1)              # 10 uC / 1 ms = 10 mA
-oran = i_gercek_mA * 1000 / i_pencere_uA
-print("Kanca: 1 s pencere ->", i_pencere_uA, "uA; calisirken", i_gercek_mA, "mA; oran", oran)
-assert dq_uC == 20 and i_pencere_uA == 20 and oran == 500
-# bagimsiz: SI birimlerinde
-assert F(20, 10**6) / 1 == F(20, 10**6) and F(10, 10**6) / F(1, 1000) == F(10, 1000)
+# --- Kanca (surum 2): 0-0,5 s saga 5 mC, 0,5-1 s sola 5 mC (duzgun)
+qk = lambda t: 10 * t if t <= F(1, 2) else 5 - 10 * (t - F(1, 2))   # mC, t s (net, saga arti)
+pencere = lambda a, b: (qk(b) - qk(a)) / (b - a)                     # mC/s = mA
+print("Kanca: 0-1 s ->", pencere(F(0), F(1)), "mA; 0,1-0,3 s ->", pencere(F(1,10), F(3,10)),
+      "mA; 0,4-0,6 s ->", pencere(F(4,10), F(6,10)), "mA")
+assert pencere(F(0), F(1)) == 0 and pencere(F(1,10), F(3,10)) == 10 and pencere(F(4,10), F(6,10)) == 0
+assert F(5) / F(1, 2) == 10                                           # 5 mC / 0,5 s = 10 mA
+h = F(1, 1000); anl = {pencere(k*h, k*h + h) for k in range(1000)}
+assert anl == {10, -10}                                               # akim hicbir an sifir degil
 
 # --- Ornek 1
 seg = [(F(0), F(1), F(5)), (F(1), F(4), F(3))]   # (bas ms, son ms, yuk uC)
@@ -45,10 +45,9 @@ for t in [F(1), F(2), F(3)]:
 
 
 # --- Ek sayilar (metin genisletmesi)
-assert F(10, 2) == 5                                  # kayik 1 ms pencere: 5 uC / 1 ms = 5 mA
 assert (qf(F(2)) - qf(F(0))) / 2 == 3                # ornek 1: 0-2 ms penceresi 3 mA
 assert F(2) / 1 == 2                                  # 2 uC / 1 ms = 2 mA = 2 mC/s
-assert 2 * 3 == 6                                     # Ohm: 2 kOhm x 3 mA = 6 V
+assert 2 * i_t(3) == 24 and 2 * ort3 == 12              # Ohm: 2 kOhm x 12 mA = 24 V; ortalamayla 12 V
 for a in [F(1), F(2), F(7, 3)]:                       # q = a t^2: ortalama = anlik / 2
     for t in [F(1), F(3), F(5)]:
         assert (a * t * t) / t == (2 * a * t) / 2
@@ -59,6 +58,10 @@ assert max(q3(F(k, 100)) for k in range(401)) == 9 == q3(F(3))
 assert (i3(1), i3(3), i3(4)) == (4, 0, -2) and q3(F(4)) / 4 == 2
 for t in [F(1), F(3), F(4)]:
     h = F(1, 10**6); assert (q3(t + h) - q3(t - h)) / (2 * h) == i3(t)
+assert i3(0) == 6 == max(i3(F(k,100)) for k in range(401)) and q3(F(0)) == 0
+assert F(6, 4) == F(3, 2) and i_t(F(3, 2)) == ort3            # ortalama deger t = 1,5 s'de
+assert q3(F(5,2)) == q3(F(7,2)) == F(875,100) < 9
+assert qf(F(1,2)) / F(1,2) == 5                         # ornek 1: 0-0,5 ms 2,5 uC -> 5 mA
 # Yorum sorusu: q = 4t - t^2 -> i = 4 - 2t = 0 -> t = 2 s
 assert 4 - 2 * 2 == 0
 print("Ornek 3: q(3) = 9 mC (en buyuk), i(1)=4, i(3)=0, i(4)=-2 mA; 0-4 s ortalama 2 mA; yorum sorusu t = 2 s")
