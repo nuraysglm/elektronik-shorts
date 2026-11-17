@@ -15,3 +15,6 @@ Kaynak: Razavi, Basic Circuits Lec 3 (LUfU9LgClsA) transkripti (vidIQ, 17.11.202
 | Renk bantları kırmızı-siyah-kırmızı (sahnede ayarlı direncin gövdesi; değer etiketi ayrı) | süs; değer R etiketiyle verilir | — | ✔ |
 
 İlk yorum sorusu: "12 V sabit bir kaynağa önce 3 kΩ, sonra 6 kΩ direnç bağlanıyor. Akım kaç mA'den kaç mA'e düşer? i–R grafiği bu iki noktayı düz çizgiyle mi birleştirir? Cevabını yaz 👇" Cevap: 12/3 = 4 mA, 12/6 = 2 mA; hayır, i = 12/R hiperboldür (ör. 4,5 kΩ'da 2,67 mA, düz çizgi 3 mA derdi). ✔
+
+## Bağımsız metin denetimi (17.11.2026, render öncesi)
+SEVİYE: üniversite. Zorunlu 2 düzeltme uygulandı: (1) kart 3. madde "i ∝ 1/R (doğrusal değil)" yanlış okunabilir (i, 1/R ile doğrusaldır) → "Gerilim sabitken i–R grafiği hiperboldür"; (2) "6 V ile kesişim" → "V = 6 V çizgisiyle". Öneri: r1'de hangi grafik → "i–R grafiği hiperboldür" (uygulandı). "Orijinden geçen" kart önerisi süre (≤ 60 sn) için yazıya eklenmedi; animasyonda doğrular (0, 0)'dan çizilir, açıklamada yazılı. Sayılar ve ilk yorum sorusu denetçi tarafından doğrulandı.
