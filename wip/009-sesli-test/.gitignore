@@ -1,0 +1,4 @@
+.log*
+.render.lock
+.render_done
+*.tmp.mp4
