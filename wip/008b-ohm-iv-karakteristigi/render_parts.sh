@@ -9,9 +9,9 @@ one() {
   node tools/render.mjs $S --from ${B[$i]} --to ${B[$((i+1))]} --no-audio --out $f.tmp.mp4 > $D/.log$i 2>&1 && mv $f.tmp.mp4 $f || return
   ( flock 9
     echo "- parca-0$i: tamam ($(date -u +%H:%M) UTC)" >> $D/NOTLAR.md
-    git add $f $D/NOTLAR.md && git commit -qm "008b: render parçası 0$i" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_01Bss84xoGcCU11QL9oB3mEA" && \
-    for k in 1 2 3 4; do git push -q origin claude/008b-ohm-iv-karakteristigi && break; sleep $((2**k)); done
-  ) 9>/tmp/render008b.lock
+    git add $f $D/NOTLAR.md && git commit -qm "008b: render parçası 0$i" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_01Bss84zDXteeNcZC4645xpW" && \
+    for k in 1 2 3 4; do git push -q origin claude/008b-ohm-iv-karakteristigi-renk && break; sleep $((2**k)); done
+  ) 9>/tmp/claude-0/render008b.lock
 }
 export -f one; export S D DUR; export B_STR="${B[*]}"
 for i in 0 1 2 3; do echo $i; done | xargs -P 4 -I{} bash -c 'B=($B_STR); one {}'

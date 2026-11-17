@@ -12,7 +12,7 @@ Kaynak: Razavi, Basic Circuits Lec 3 (LUfU9LgClsA) transkripti (vidIQ, 17.11.202
 | i–V doğrularının V = 6 V ile kesişimleri i–R hiperbolünün noktalarıdır | i = 6/R her iki grafikte aynı değer | kesişimler (6 V; 6, 3, 2 mA) → (1, 2, 3 kΩ; 6, 3, 2 mA), aynı yükseklik (check) | ✔ |
 | Grafik eksenleri: i 0–8 mA, V 0–8 V, R 0–4 kΩ; gösterilen en büyük akım 6 mA eksen içinde; hiperbol R = 0,75 kΩ'da 8 mA'e ulaşır, öncesi çizim alanı dışında (kırpılır) | bölüm 2e | check() | ✔ |
 | Elektronlar dış devrede − → +, geleneksel akım + → − (güç kaynağının + ucundan dirence) | Ders 1 referans yönü; bölüm 2a-7 | ok +z (check), elektron u yönü | ✔ |
-| Renk bantları kırmızı-siyah-kırmızı (sahnede ayarlı direncin gövdesi; değer etiketi ayrı) | süs; değer R etiketiyle verilir | — | ✔ |
+| Ayarlı direncin gövdesinde renk bandı yok (17.11 iş emri: kırmızı-siyah-kırmızı = 2 kΩ, ekrandaki 1/2/3 kΩ etiketiyle çelişiyordu; R sürekli değiştiği için bant yerine yalnızca R etiketi) | değer yalnızca R etiketiyle verilir; renk kodu ile çelişki kalmaz | iş emri 17.11 | ✔ |
 
 İlk yorum sorusu: "12 V sabit bir kaynağa önce 3 kΩ, sonra 6 kΩ direnç bağlanıyor. Akım kaç mA'den kaç mA'e düşer? i–R grafiği bu iki noktayı düz çizgiyle mi birleştirir? Cevabını yaz 👇" Cevap: 12/3 = 4 mA, 12/6 = 2 mA; hayır, i = 12/R hiperboldür (ör. 4,5 kΩ'da 2,67 mA, düz çizgi 3 mA derdi). ✔
 

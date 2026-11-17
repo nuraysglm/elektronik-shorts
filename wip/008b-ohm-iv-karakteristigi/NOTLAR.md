@@ -8,3 +8,7 @@
 - parca-02: tamam (08:55 UTC)
 - 08:57 UTC: birleştirildi + ses → media/008b-…/ (56,2 sn). Kalite 1. turda GEÇTİ (kalite.md). Sıradaki: main'de doğrula → Metricool 2026-11-18 16:00.
 - 08:58 UTC: Metricool'da planlandı: 2026-11-18 16:00 Londra (uuid 5936940515449914811). Parçalar silindi. İş bitti.
+
+## v2 — renk bandı iş emri (17.11.2026, ~20:05 UTC)
+- İş emri: gövdedeki kırmızı-siyah-kırmızı bantlar R etiketiyle (1/2/3 kΩ) çelişiyor. R sürekli değiştiği (3 → 1 → 2 → 3 kΩ, ara değerler) için her an uyan bant hızlı renk değişimi (titreme) yapardı → iş emrindeki 2. seçenek: gövdede renk bandı yok (`bands: []`). Başka değişiklik yok.
+- Direnç bütün videoda göründüğü için 4 parçanın hepsi yeniden render ediliyor (dal: claude/008b-ohm-iv-karakteristigi-renk).
