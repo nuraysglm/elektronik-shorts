@@ -24,7 +24,7 @@ Ajan bir konuya başlamadan (veya `yeniden düzenle` işinden) önce bu listeye 
 
 Konu listesindeki 40 ders (konu 6–45) bu serinin derslerine birebir karşılık gelir: **ders N = konu N+5**. Her video için ilgili dersin transkriptini vidIQ `vidiq_video_transcript` (videoId aşağıda, `language: en`) ile al ve bölüm 2b'ye göre kullan. Oynatma listesi: https://www.youtube.com/playlist?list=PL9KyzjPFbwH37w22z-UHVEt37pdJHjZ7x . Başka destek kaynağı yalnızca kanal sahibi onaylarsa eklenir.
 
-**Transkriptler (kanal sahibinin YouTube'dan elle verdiği, özel Drive klasöründe; depoya kopyalanmaz):** Ders 1 → `1-smnUzmnSn-evJiD7ypgqm93scvD-e80` · Ders 2 → `1pvyKsiX_NC_VrmIYrwVhBGWZ9Ol1Fqhd` · Ders 4 → `1nQYBzMtmOvWoxJTuXWrZ8tHJSRj9H3ME` · Ders 5 → `1pmpowYsN9sA0KJIEKkK_zCoUiknv-lwl` · Ders 6 → `1-rXet4qXHg40db1nIqbQrkcjsjp-FB2a` · Ders 7 → `1Is1CLSzyzF1P1oiYeIir48GaRlCHtmAC` · Ders 8 → `1FRCADV6Z96YL_5I6si-XKamUCNVaoRGZ`. Yenileri geldikçe buraya eklenir.
+**Transkriptler (kanal sahibinin YouTube'dan elle verdiği, özel Drive klasöründe; depoya kopyalanmaz):** Ders 1 → `1-smnUzmnSn-evJiD7ypgqm93scvD-e80` · Ders 2 → `1pvyKsiX_NC_VrmIYrwVhBGWZ9Ol1Fqhd` · Ders 3 → `1GHT2E-GIRmEYnm_u28nhlPs5xdD5AYyA` · Ders 4 → `1nQYBzMtmOvWoxJTuXWrZ8tHJSRj9H3ME` · Ders 5 → `1pmpowYsN9sA0KJIEKkK_zCoUiknv-lwl` · Ders 6 → `1-rXet4qXHg40db1nIqbQrkcjsjp-FB2a` · Ders 7 → `1Is1CLSzyzF1P1oiYeIir48GaRlCHtmAC` · Ders 8 → `1FRCADV6Z96YL_5I6si-XKamUCNVaoRGZ`. Yenileri geldikçe buraya eklenir.
 
 | Ders | Konu # | YouTube videoId |
 |------|--------|-----------------|
