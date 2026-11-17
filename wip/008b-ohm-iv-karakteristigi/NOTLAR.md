@@ -14,3 +14,4 @@
 - Direnç bütün videoda göründüğü için 4 parçanın hepsi yeniden render ediliyor (dal: claude/008b-ohm-iv-karakteristigi-renk).
 - parca-03: tamam (20:17 UTC)
 - parca-01: tamam (20:22 UTC)
+- parca-00: tamam (20:23 UTC)
