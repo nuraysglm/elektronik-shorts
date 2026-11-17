@@ -19,10 +19,10 @@ check(near(1 / 1, 1), 'eğim 1/R: 1 kΩ → 1 mA/V');
 const iR = `${rd('i')}–${bl('R')}`, iV = `${rd('i')}–${hl('V')}`;
 const BEATS = [
   { id: 'h1', pen: false, pre: 0, l1: `${hl('Gerilim')} sabitken`, l2: `<b style="font-weight:900">${iR} grafiği düz çizgi mi?</b>`, s1: 7.0, s2: 7.0 },
-  { id: 'r1', pre: 3.3, l1: `${rd('Akım')} ${bl('R')} ile ters orantılıdır`, l2: `grafik düz çizgi değil, hiperboldür`, s1: 6.0, s2: 5.6 },
-  { id: 'v1', pre: 3.2, l1: `${bl('R')} sabitken ${iV} grafiği`, l2: `düz çizgidir, eğimi 1/${bl('R')}'dir`, s1: 5.8, s2: 5.6 },
-  { id: 'v2', pre: 4.3, l1: `Her direncin kendi doğrusu vardır`, l2: `${bl('R')} büyüdükçe eğim azalır`, s1: 6.0, s2: 5.6 },
-  { id: 'x1', pre: 4.6, l1: `Doğruların ${hl('6 V')} ile kesişimleri`, l2: `${iR} hiperbolünün noktalarıdır`, s1: 6.0, s2: 5.6 },
+  { id: 'r1', pre: 2.8, l1: `${rd('Akım')} ${bl('R')} ile ters orantılıdır`, l2: `${iR} grafiği hiperboldür`, s1: 6.0, s2: 5.6 },
+  { id: 'v1', pre: 3.1, l1: `${bl('R')} sabitken ${iV} grafiği`, l2: `düz çizgidir, eğimi 1/${bl('R')}'dir`, s1: 5.8, s2: 5.6 },
+  { id: 'v2', pre: 3.9, l1: `Her direncin kendi doğrusu vardır`, l2: `${bl('R')} büyüdükçe eğim azalır`, s1: 6.0, s2: 5.6 },
+  { id: 'x1', pre: 4.3, l1: `Doğruların ${hl('V = 6 V')} çizgisiyle`, l2: `kesişimleri ${iR} hiperbolündedir`, s1: 6.0, s2: 5.6 },
 ];
 const { Z, A, W: WR } = penTimeline(BEATS, { k: 1.0 });
 
@@ -30,8 +30,8 @@ const { Z, A, W: WR } = penTimeline(BEATS, { k: 1.0 });
 const KART = [
   { id: 'kh', html: `<span style="color:#7fe3ff">Bilmen gerekenler</span>`, y: 13.4, size: 4.6, weight: 900 },
   { id: 'k1', html: `• Omik dirençte ${iV} grafiği düz çizgidir`, y: 17.9 },
-  { id: 'k2', html: `• Bu doğrunun eğimi 1/${bl('R')}'dir`, y: 21.5 },
-  { id: 'k3', html: `• ${hl('Gerilim')} sabitken ${rd('i')} ∝ 1/${bl('R')} (doğrusal değil)`, y: 25.1 },
+  { id: 'k2', html: `• Doğrunun eğimi 1/${bl('R')}'dir`, y: 21.5 },
+  { id: 'k3', html: `• ${hl('Gerilim')} sabitken ${iR} grafiği hiperboldür`, y: 25.1 },
 ];
 const KS = [Z.x1[1] - 1.7, Z.x1[1] - 0.4];   // devre yerinde hafifçe küçülür (kural 2a-16: karta yer), x1 okunurken
 const KSC = 0.8;
@@ -45,17 +45,17 @@ check(DUR <= 60, `süre ≤ 60 sn (${DUR})`);
 export const _T = { Z, A, W: WR, KART, DUR };
 
 // ---------------------------------------------------------------- olaylar
-const RS = [A.r1 + 0.3, A.r1 + 2.6];            // r1: V = 6 V sabit, R 3 → 1 kΩ (hiperbol izlenir)
+const RS = [A.r1 + 0.2, A.r1 + 2.1];            // r1: V = 6 V sabit, R 3 → 1 kΩ (hiperbol izlenir)
 check(RS[1] + 0.7 <= Z.r1[0] + 1e-9, 'r1: olaydan sonra yazı');
 // i–V geçişleri: [t0, t1, R, Vbaş, Vson]; aralarda R, V uçta (0 veya 6 V) değişir
-const P1 = [A.v1 + 0.2, A.v1 + 1.7, 1, 6, 0];   // 1 kΩ doğrusu (6 → 0 V)
-const RA = [A.v2 + 0.2, A.v2 + 1.4];            // V = 0'da R 1 → 2 kΩ
-const P2 = [A.v2 + 1.5, A.v2 + 3.2, 2, 0, 6];   // 2 kΩ doğrusu (0 → 6 V)
+const P1 = [A.v1 + 0.2, A.v1 + 1.6, 1, 6, 0];   // 1 kΩ doğrusu (6 → 0 V)
+const RA = [A.v2 + 0.1, A.v2 + 1.3];            // V = 0'da R 1 → 2 kΩ
+const P2 = [A.v2 + 1.4, A.v2 + 2.9, 2, 0, 6];   // 2 kΩ doğrusu (0 → 6 V)
 const RB = [Z.v2[0] + 0.0, Z.v2[0] + 0.0];      // (yer tutucu; 3 kΩ x1'in başında)
 const RC = [A.x1 + 0.1, A.x1 + 1.3];            // V = 6 V'ta R 2 → 3 kΩ (akım 3 → 2 mA)
 const P3 = [A.x1 + 1.4, A.x1 + 2.6, 3, 6, 0];   // 3 kΩ doğrusu (6 → 0 V)
-const P3b = [A.x1 + 2.7, A.x1 + 3.5, 3, 0, 6];  // aynı doğru üzerinde geri 6 V'a
-const VL = [A.x1 + 3.4, A.x1 + 3.9];            // V = 6 V dikey çizgisi
+const P3b = [A.x1 + 2.65, A.x1 + 3.35, 3, 0, 6];  // aynı doğru üzerinde geri 6 V'a
+const VL = [A.x1 + 3.3, A.x1 + 3.75];            // V = 6 V dikey çizgisi
 const FLY = [Z.x1[0] + 0.2, Z.x1[0] + 1.7];     // kesişim noktaları sağ grafiğe taşınır (aynı i)
 const FULL = [FLY[1] + 0.1, FLY[1] + 1.0];      // hiperbol tüm R ekseninde
 void RB;
@@ -247,7 +247,7 @@ export function build(S) {
   const CD = 11.15, CE = 62, CX = 0.02, CT = -0.8;
   const ck = (t, a, dd) => [t, a, CD + dd, CE, CX, CT];
   const cam = camRig(S, [ck(0, 0.0, 0.1), ck(A.r1, 0.035, 0.0), ck(A.v1, -0.03, 0.05), ck(A.v2, 0.03, 0), ck(A.x1, -0.03, 0.05), ck(Z.x1[0], 0.02, 0), ck(DUR, 0.04, -0.05)]);
-  const yaz = narrationPen(S, BEATS, Z, WR, { y1: 14.3, y2: 20.2 });
+  const yaz = narrationPen(S, BEATS, Z, WR, { y1: 15.4, y2: 21.0 });
 
   return (t) => {
     cam(t);
@@ -285,7 +285,7 @@ export function build(S) {
     for (const k of KART) S.text(k.id, k.html, { x: 47, y: k.y, size: k.size || 4.1, weight: k.weight || 700, align: 'left', maxWidth: 78, nowrap: true,
       opacity: t >= k.t0 ? easeOut(seg(t, k.t0 - 0.05, k.t0 + 0.2)) : 0, reveal: clamp((t - k.t0) / (k.t1 - k.t0)) });
     const subO = 1 - easeInOut(seg(t, Z.h1[1] - 0.4, Z.h1[1]));
-    S.text('sub', `Ohm kanunu (${rd('i')} = ${hl('V')}/${bl('R')})`, { y: 24.3, size: 4.0, weight: 600, opacity: subO, nowrap: true });
+    S.text('sub', `Ohm kanunu (${rd('i')} = ${hl('V')}/${bl('R')})`, { y: 24.7, size: 3.7, weight: 600, opacity: subO, nowrap: true });
 
     const on = (a, b) => fade(t, a, b, 0.3);
     label('lr', bl('R = ' + fmt(r, r % 1 < 1e-6 || r % 1 > 1 - 1e-6 ? 0 : 1) + ' kΩ'), 0, 0.3, ZH - 0.55, { opacity: on(0, KS[0]), size: 3.7 });
