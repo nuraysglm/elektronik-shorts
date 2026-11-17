@@ -1,0 +1,1127 @@
+{
+ "yontem": "RMS enerji (10 ms, esik -38 dBFS, en az 0,10 sn) duraklamalari + hece sayisina gore dinamik programlama; elle duzeltme yok; kelime zamanlari cumle icinde hece sayisiyla orantili tahmindir; konusma tanima yok, ses dinlenmedi",
+ "ses_suresi": 52.72,
+ "ortalama_hece_suresi": 0.1387,
+ "kontroller": [
+  "20 cumle sinirinin 20 tanesinde: duraklama enerjisi < -38 dBFS ve onceki/sonraki 0,3 sn en az 8 dB daha yuksek",
+  "noktalama cumle 0 'yazılır,' tahmin 2.55 sn; en yakin ic duraklama (0.37, 0.49); fark 2.12 sn",
+  "noktalama cumle 7 'kaynaktan,' tahmin 17.34 sn; en yakin ic duraklama (17.08, 17.22); fark 0.19 sn",
+  "noktalama cumle 7 'birinci,' tahmin 18.33 sn; en yakin ic duraklama (18.49, 18.7); fark 0.27 sn",
+  "noktalama cumle 9 'kural:' tahmin 24.01 sn; en yakin ic duraklama (23.52, 23.86); fark 0.32 sn",
+  "noktalama cumle 9 'eksi,' tahmin 25.90 sn; en yakin ic duraklama (25.9, 26.12); fark 0.11 sn",
+  "noktalama cumle 10 'iki,' tahmin 29.73 sn; en yakin ic duraklama (29.43, 29.69); fark 0.17 sn",
+  "noktalama cumle 10 'beş,' tahmin 30.28 sn; en yakin ic duraklama (30.45, 30.7); fark 0.29 sn",
+  "noktalama cumle 10 'gerilim,' tahmin 31.91 sn; en yakin ic duraklama (32.04, 32.28); fark 0.25 sn",
+  "noktalama cumle 12 'kural:' tahmin 35.96 sn; en yakin ic duraklama (35.58, 35.84); fark 0.25 sn",
+  "noktalama cumle 13 'iki,' tahmin 39.12 sn; en yakin ic duraklama (38.77, 39.04); fark 0.21 sn",
+  "noktalama cumle 13 'beş,' tahmin 39.70 sn; en yakin ic duraklama (39.8, 40.05); fark 0.22 sn",
+  "noktalama cumle 16 'kural,' tahmin 44.78 sn; en yakin ic duraklama (44.8, 44.96); fark 0.10 sn",
+  "noktalama cumle 17 'iki,' tahmin 47.86 sn; en yakin ic duraklama (47.52, 47.78); fark 0.21 sn",
+  "noktalama cumle 17 'beş,' tahmin 48.42 sn; en yakin ic duraklama (48.54, 48.76); fark 0.23 sn",
+  "hece hizi (sesli sure uzerinden): ortalama 7.22, std 0.93, en dusuk 4.29 (cumle 19), en yuksek 8.84 (cumle 5)"
+ ],
+ "cumleler": [
+  {
+   "p": 1,
+   "text": "Kaynak geriliminin önüne artı mı yazılır, eksi mi?",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 0,
+   "start": 0.05,
+   "end": 3.01,
+   "pause_after": 0.4,
+   "voiced": 2.42,
+   "syl_per_s": 7.85,
+   "inner_pauses": [
+    [
+     0.37,
+     0.49
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kaynak",
+     "t0": 0.05,
+     "t1": 0.34
+    },
+    {
+     "w": "geriliminin",
+     "t0": 0.34,
+     "t1": 1.1
+    },
+    {
+     "w": "önüne",
+     "t0": 1.1,
+     "t1": 1.56
+    },
+    {
+     "w": "artı",
+     "t0": 1.56,
+     "t1": 1.9
+    },
+    {
+     "w": "mı",
+     "t0": 1.9,
+     "t1": 2.03
+    },
+    {
+     "w": "yazılır,",
+     "t0": 2.03,
+     "t1": 2.55
+    },
+    {
+     "w": "eksi",
+     "t0": 2.55,
+     "t1": 2.88
+    },
+    {
+     "w": "mi?",
+     "t0": 2.88,
+     "t1": 3.01
+    }
+   ],
+   "sinir_db": {
+    "once": -31.7,
+    "duraklama": -82.7,
+    "sonra": -28.9
+   }
+  },
+  {
+   "p": 1,
+   "text": "İkisi de olur.",
+   "last": false,
+   "shorts": false,
+   "syl": 6,
+   "no": 1,
+   "start": 3.41,
+   "end": 4.18,
+   "pause_after": 0.21,
+   "voiced": 0.72,
+   "syl_per_s": 8.33,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "İkisi",
+     "t0": 3.41,
+     "t1": 3.82
+    },
+    {
+     "w": "de",
+     "t0": 3.82,
+     "t1": 3.94
+    },
+    {
+     "w": "olur.",
+     "t0": 3.94,
+     "t1": 4.18
+    }
+   ],
+   "sinir_db": {
+    "once": -29.0,
+    "duraklama": -78.3,
+    "sonra": -24.6
+   }
+  },
+  {
+   "p": 1,
+   "text": "Yeter ki tek denklemde tek kural kullan.",
+   "last": true,
+   "shorts": false,
+   "syl": 12,
+   "no": 2,
+   "start": 4.39,
+   "end": 6.87,
+   "pause_after": 0.43,
+   "voiced": 1.64,
+   "syl_per_s": 7.32,
+   "inner_pauses": [
+    [
+     4.99,
+     5.14
+    ],
+    [
+     5.24,
+     5.37
+    ],
+    [
+     5.9,
+     6.02
+    ],
+    [
+     6.12,
+     6.23
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yeter",
+     "t0": 4.39,
+     "t1": 4.71
+    },
+    {
+     "w": "ki",
+     "t0": 4.71,
+     "t1": 4.92
+    },
+    {
+     "w": "tek",
+     "t0": 4.92,
+     "t1": 5.21
+    },
+    {
+     "w": "denklemde",
+     "t0": 5.21,
+     "t1": 5.79
+    },
+    {
+     "w": "tek",
+     "t0": 5.79,
+     "t1": 6.05
+    },
+    {
+     "w": "kural",
+     "t0": 6.05,
+     "t1": 6.46
+    },
+    {
+     "w": "kullan.",
+     "t0": 6.46,
+     "t1": 6.87
+    }
+   ],
+   "sinir_db": {
+    "once": -33.3,
+    "duraklama": -86.0,
+    "sonra": -27.7
+   }
+  },
+  {
+   "p": 2,
+   "text": "On iki voltluk kaynağa seri iki direnç bağlı.",
+   "last": false,
+   "shorts": false,
+   "syl": 16,
+   "no": 3,
+   "start": 7.3,
+   "end": 10.0,
+   "pause_after": 0.24,
+   "voiced": 2.29,
+   "syl_per_s": 6.99,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "On",
+     "t0": 7.3,
+     "t1": 7.45
+    },
+    {
+     "w": "iki",
+     "t0": 7.45,
+     "t1": 7.77
+    },
+    {
+     "w": "voltluk",
+     "t0": 7.77,
+     "t1": 8.23
+    },
+    {
+     "w": "kaynağa",
+     "t0": 8.23,
+     "t1": 8.68
+    },
+    {
+     "w": "seri",
+     "t0": 8.68,
+     "t1": 8.97
+    },
+    {
+     "w": "iki",
+     "t0": 8.97,
+     "t1": 9.33
+    },
+    {
+     "w": "direnç",
+     "t0": 9.33,
+     "t1": 9.72
+    },
+    {
+     "w": "bağlı.",
+     "t0": 9.72,
+     "t1": 10.0
+    }
+   ],
+   "sinir_db": {
+    "once": -26.2,
+    "duraklama": -83.3,
+    "sonra": -21.3
+   }
+  },
+  {
+   "p": 2,
+   "text": "Birincisinin uçlarında beş volt var.",
+   "last": false,
+   "shorts": false,
+   "syl": 12,
+   "no": 4,
+   "start": 10.24,
+   "end": 12.18,
+   "pause_after": 0.32,
+   "voiced": 1.7,
+   "syl_per_s": 7.06,
+   "inner_pauses": [
+    [
+     11.91,
+     12.04
+    ]
+   ],
+   "words": [
+    {
+     "w": "Birincisinin",
+     "t0": 10.24,
+     "t1": 10.99
+    },
+    {
+     "w": "uçlarında",
+     "t0": 10.99,
+     "t1": 11.59
+    },
+    {
+     "w": "beş",
+     "t0": 11.59,
+     "t1": 11.73
+    },
+    {
+     "w": "volt",
+     "t0": 11.73,
+     "t1": 11.9
+    },
+    {
+     "w": "var.",
+     "t0": 11.9,
+     "t1": 12.18
+    }
+   ],
+   "sinir_db": {
+    "once": -38.9,
+    "duraklama": -70.3,
+    "sonra": -28.1
+   }
+  },
+  {
+   "p": 2,
+   "text": "İkincisinin gerilimi bilinmiyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 13,
+   "no": 5,
+   "start": 12.5,
+   "end": 14.05,
+   "pause_after": 0.36,
+   "voiced": 1.47,
+   "syl_per_s": 8.84,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "İkincisinin",
+     "t0": 12.5,
+     "t1": 13.13
+    },
+    {
+     "w": "gerilimi",
+     "t0": 13.13,
+     "t1": 13.58
+    },
+    {
+     "w": "bilinmiyor.",
+     "t0": 13.58,
+     "t1": 14.05
+    }
+   ],
+   "sinir_db": {
+    "once": -32.0,
+    "duraklama": -82.3,
+    "sonra": -18.4
+   }
+  },
+  {
+   "p": 2,
+   "text": "Kaynağın eksi ucundan başlayalım.",
+   "last": false,
+   "shorts": false,
+   "syl": 12,
+   "no": 6,
+   "start": 14.41,
+   "end": 16.15,
+   "pause_after": 0.29,
+   "voiced": 1.64,
+   "syl_per_s": 7.32,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Kaynağın",
+     "t0": 14.41,
+     "t1": 14.84
+    },
+    {
+     "w": "eksi",
+     "t0": 14.84,
+     "t1": 15.18
+    },
+    {
+     "w": "ucundan",
+     "t0": 15.18,
+     "t1": 15.59
+    },
+    {
+     "w": "başlayalım.",
+     "t0": 15.59,
+     "t1": 16.15
+    }
+   ],
+   "sinir_db": {
+    "once": -29.8,
+    "duraklama": -81.7,
+    "sonra": -21.9
+   }
+  },
+  {
+   "p": 2,
+   "text": "Önce kaynaktan, sonra birinci, sonra ikinci dirençten geçelim.",
+   "last": false,
+   "shorts": false,
+   "syl": 21,
+   "no": 7,
+   "start": 16.44,
+   "end": 20.27,
+   "pause_after": 0.29,
+   "voiced": 2.99,
+   "syl_per_s": 7.02,
+   "inner_pauses": [
+    [
+     17.08,
+     17.22
+    ],
+    [
+     17.41,
+     17.68
+    ],
+    [
+     18.49,
+     18.7
+    ]
+   ],
+   "words": [
+    {
+     "w": "Önce",
+     "t0": 16.44,
+     "t1": 16.73
+    },
+    {
+     "w": "kaynaktan,",
+     "t0": 16.73,
+     "t1": 17.34
+    },
+    {
+     "w": "sonra",
+     "t0": 17.34,
+     "t1": 17.89
+    },
+    {
+     "w": "birinci,",
+     "t0": 17.89,
+     "t1": 18.33
+    },
+    {
+     "w": "sonra",
+     "t0": 18.33,
+     "t1": 18.82
+    },
+    {
+     "w": "ikinci",
+     "t0": 18.82,
+     "t1": 19.31
+    },
+    {
+     "w": "dirençten",
+     "t0": 19.31,
+     "t1": 19.78
+    },
+    {
+     "w": "geçelim.",
+     "t0": 19.78,
+     "t1": 20.27
+    }
+   ],
+   "sinir_db": {
+    "once": -34.6,
+    "duraklama": -78.2,
+    "sonra": -19.6
+   }
+  },
+  {
+   "p": 2,
+   "text": "Her dirence artı ucundan giriyoruz.",
+   "last": true,
+   "shorts": false,
+   "syl": 13,
+   "no": 8,
+   "start": 20.56,
+   "end": 22.38,
+   "pause_after": 0.5,
+   "voiced": 1.69,
+   "syl_per_s": 7.69,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Her",
+     "t0": 20.56,
+     "t1": 20.69
+    },
+    {
+     "w": "dirence",
+     "t0": 20.69,
+     "t1": 21.08
+    },
+    {
+     "w": "artı",
+     "t0": 21.08,
+     "t1": 21.36
+    },
+    {
+     "w": "ucundan",
+     "t0": 21.36,
+     "t1": 21.83
+    },
+    {
+     "w": "giriyoruz.",
+     "t0": 21.83,
+     "t1": 22.38
+    }
+   ],
+   "sinir_db": {
+    "once": -30.5,
+    "duraklama": -65.8,
+    "sonra": -18.4
+   }
+  },
+  {
+   "p": 3,
+   "text": "Birinci kural: artıdan eksiye geçersen eksi, eksiden artıya geçersen artı yaz.",
+   "last": false,
+   "shorts": false,
+   "syl": 28,
+   "no": 9,
+   "start": 22.88,
+   "end": 28.22,
+   "pause_after": 0.34,
+   "voiced": 3.98,
+   "syl_per_s": 7.04,
+   "inner_pauses": [
+    [
+     23.52,
+     23.86
+    ],
+    [
+     25.9,
+     26.12
+    ]
+   ],
+   "words": [
+    {
+     "w": "Birinci",
+     "t0": 22.88,
+     "t1": 23.38
+    },
+    {
+     "w": "kural:",
+     "t0": 23.38,
+     "t1": 24.01
+    },
+    {
+     "w": "artıdan",
+     "t0": 24.01,
+     "t1": 24.5
+    },
+    {
+     "w": "eksiye",
+     "t0": 24.5,
+     "t1": 24.98
+    },
+    {
+     "w": "geçersen",
+     "t0": 24.98,
+     "t1": 25.49
+    },
+    {
+     "w": "eksi,",
+     "t0": 25.49,
+     "t1": 25.9
+    },
+    {
+     "w": "eksiden",
+     "t0": 25.9,
+     "t1": 26.62
+    },
+    {
+     "w": "artıya",
+     "t0": 26.62,
+     "t1": 27.14
+    },
+    {
+     "w": "geçersen",
+     "t0": 27.14,
+     "t1": 27.63
+    },
+    {
+     "w": "artı",
+     "t0": 27.63,
+     "t1": 27.99
+    },
+    {
+     "w": "yaz.",
+     "t0": 27.99,
+     "t1": 28.22
+    }
+   ],
+   "sinir_db": {
+    "once": -33.8,
+    "duraklama": -80.1,
+    "sonra": -26.4
+   }
+  },
+  {
+   "p": 3,
+   "text": "Artı on iki, eksi beş, eksi bilinmeyen gerilim, eşittir sıfır.",
+   "last": false,
+   "shorts": false,
+   "syl": 22,
+   "no": 10,
+   "start": 28.56,
+   "end": 33.09,
+   "pause_after": 0.43,
+   "voiced": 3.14,
+   "syl_per_s": 7.01,
+   "inner_pauses": [
+    [
+     29.11,
+     29.21
+    ],
+    [
+     29.43,
+     29.69
+    ],
+    [
+     30.45,
+     30.7
+    ],
+    [
+     32.04,
+     32.28
+    ],
+    [
+     32.5,
+     32.63
+    ]
+   ],
+   "words": [
+    {
+     "w": "Artı",
+     "t0": 28.56,
+     "t1": 28.93
+    },
+    {
+     "w": "on",
+     "t0": 28.93,
+     "t1": 29.07
+    },
+    {
+     "w": "iki,",
+     "t0": 29.07,
+     "t1": 29.73
+    },
+    {
+     "w": "eksi",
+     "t0": 29.73,
+     "t1": 30.13
+    },
+    {
+     "w": "beş,",
+     "t0": 30.13,
+     "t1": 30.28
+    },
+    {
+     "w": "eksi",
+     "t0": 30.28,
+     "t1": 30.85
+    },
+    {
+     "w": "bilinmeyen",
+     "t0": 30.85,
+     "t1": 31.46
+    },
+    {
+     "w": "gerilim,",
+     "t0": 31.46,
+     "t1": 31.91
+    },
+    {
+     "w": "eşittir",
+     "t0": 31.91,
+     "t1": 32.71
+    },
+    {
+     "w": "sıfır.",
+     "t0": 32.71,
+     "t1": 33.09
+    }
+   ],
+   "sinir_db": {
+    "once": -37.0,
+    "duraklama": -64.1,
+    "sonra": -29.0
+   }
+  },
+  {
+   "p": 3,
+   "text": "Sonuç yedi volt.",
+   "last": true,
+   "shorts": false,
+   "syl": 5,
+   "no": 11,
+   "start": 33.52,
+   "end": 34.44,
+   "pause_after": 0.49,
+   "voiced": 0.74,
+   "syl_per_s": 6.76,
+   "inner_pauses": [
+    [
+     33.92,
+     34.03
+    ]
+   ],
+   "words": [
+    {
+     "w": "Sonuç",
+     "t0": 33.52,
+     "t1": 33.89
+    },
+    {
+     "w": "yedi",
+     "t0": 33.89,
+     "t1": 34.3
+    },
+    {
+     "w": "volt.",
+     "t0": 34.3,
+     "t1": 34.44
+    }
+   ],
+   "sinir_db": {
+    "once": -24.2,
+    "duraklama": -72.9,
+    "sonra": -28.9
+   }
+  },
+  {
+   "p": 4,
+   "text": "İkinci kural: girdiğin uçtaki işareti yaz.",
+   "last": false,
+   "shorts": false,
+   "syl": 16,
+   "no": 12,
+   "start": 34.93,
+   "end": 37.6,
+   "pause_after": 0.32,
+   "voiced": 2.04,
+   "syl_per_s": 7.84,
+   "inner_pauses": [
+    [
+     35.58,
+     35.84
+    ]
+   ],
+   "words": [
+    {
+     "w": "İkinci",
+     "t0": 34.93,
+     "t1": 35.45
+    },
+    {
+     "w": "kural:",
+     "t0": 35.45,
+     "t1": 35.96
+    },
+    {
+     "w": "girdiğin",
+     "t0": 35.96,
+     "t1": 36.34
+    },
+    {
+     "w": "uçtaki",
+     "t0": 36.34,
+     "t1": 36.89
+    },
+    {
+     "w": "işareti",
+     "t0": 36.89,
+     "t1": 37.48
+    },
+    {
+     "w": "yaz.",
+     "t0": 37.48,
+     "t1": 37.6
+    }
+   ],
+   "sinir_db": {
+    "once": -31.7,
+    "duraklama": -79.8,
+    "sonra": -29.8
+   }
+  },
+  {
+   "p": 4,
+   "text": "Eksi on iki, artı beş, artı bilinmeyen.",
+   "last": false,
+   "shorts": false,
+   "syl": 14,
+   "no": 13,
+   "start": 37.92,
+   "end": 40.96,
+   "pause_after": 0.24,
+   "voiced": 2.18,
+   "syl_per_s": 6.42,
+   "inner_pauses": [
+    [
+     38.46,
+     38.56
+    ],
+    [
+     38.77,
+     39.04
+    ],
+    [
+     39.8,
+     40.05
+    ]
+   ],
+   "words": [
+    {
+     "w": "Eksi",
+     "t0": 37.92,
+     "t1": 38.29
+    },
+    {
+     "w": "on",
+     "t0": 38.29,
+     "t1": 38.44
+    },
+    {
+     "w": "iki,",
+     "t0": 38.44,
+     "t1": 39.12
+    },
+    {
+     "w": "artı",
+     "t0": 39.12,
+     "t1": 39.54
+    },
+    {
+     "w": "beş,",
+     "t0": 39.54,
+     "t1": 39.7
+    },
+    {
+     "w": "artı",
+     "t0": 39.7,
+     "t1": 40.34
+    },
+    {
+     "w": "bilinmeyen.",
+     "t0": 40.34,
+     "t1": 40.96
+    }
+   ],
+   "sinir_db": {
+    "once": -28.8,
+    "duraklama": -85.1,
+    "sonra": -19.0
+   }
+  },
+  {
+   "p": 4,
+   "text": "Yine yedi volt.",
+   "last": true,
+   "shorts": false,
+   "syl": 5,
+   "no": 14,
+   "start": 41.2,
+   "end": 41.89,
+   "pause_after": 0.43,
+   "voiced": 0.68,
+   "syl_per_s": 7.35,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Yine",
+     "t0": 41.2,
+     "t1": 41.48
+    },
+    {
+     "w": "yedi",
+     "t0": 41.48,
+     "t1": 41.75
+    },
+    {
+     "w": "volt.",
+     "t0": 41.75,
+     "t1": 41.89
+    }
+   ],
+   "sinir_db": {
+    "once": -27.9,
+    "duraklama": -72.3,
+    "sonra": -23.9
+   }
+  },
+  {
+   "p": 5,
+   "text": "Şimdi karıştıralım.",
+   "last": false,
+   "shorts": false,
+   "syl": 7,
+   "no": 15,
+   "start": 42.32,
+   "end": 43.26,
+   "pause_after": 0.27,
+   "voiced": 0.83,
+   "syl_per_s": 8.43,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Şimdi",
+     "t0": 42.32,
+     "t1": 42.56
+    },
+    {
+     "w": "karıştıralım.",
+     "t0": 42.56,
+     "t1": 43.26
+    }
+   ],
+   "sinir_db": {
+    "once": -28.9,
+    "duraklama": -84.2,
+    "sonra": -17.9
+   }
+  },
+  {
+   "p": 5,
+   "text": "Kaynakta birinci kural, dirençlerde ikinci kural.",
+   "last": false,
+   "shorts": false,
+   "syl": 17,
+   "no": 16,
+   "start": 43.53,
+   "end": 46.29,
+   "pause_after": 0.36,
+   "voiced": 2.23,
+   "syl_per_s": 7.62,
+   "inner_pauses": [
+    [
+     44.8,
+     44.96
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kaynakta",
+     "t0": 43.53,
+     "t1": 44.04
+    },
+    {
+     "w": "birinci",
+     "t0": 44.04,
+     "t1": 44.52
+    },
+    {
+     "w": "kural,",
+     "t0": 44.52,
+     "t1": 44.78
+    },
+    {
+     "w": "dirençlerde",
+     "t0": 44.78,
+     "t1": 45.5
+    },
+    {
+     "w": "ikinci",
+     "t0": 45.5,
+     "t1": 45.94
+    },
+    {
+     "w": "kural.",
+     "t0": 45.94,
+     "t1": 46.29
+    }
+   ],
+   "sinir_db": {
+    "once": -38.1,
+    "duraklama": -76.8,
+    "sonra": -26.5
+   }
+  },
+  {
+   "p": 5,
+   "text": "Artı on iki, artı beş, artı bilinmeyen.",
+   "last": false,
+   "shorts": false,
+   "syl": 14,
+   "no": 17,
+   "start": 46.65,
+   "end": 49.67,
+   "pause_after": 0.35,
+   "voiced": 2.22,
+   "syl_per_s": 6.31,
+   "inner_pauses": [
+    [
+     47.52,
+     47.78
+    ],
+    [
+     48.54,
+     48.76
+    ]
+   ],
+   "words": [
+    {
+     "w": "Artı",
+     "t0": 46.65,
+     "t1": 47.04
+    },
+    {
+     "w": "on",
+     "t0": 47.04,
+     "t1": 47.2
+    },
+    {
+     "w": "iki,",
+     "t0": 47.2,
+     "t1": 47.86
+    },
+    {
+     "w": "artı",
+     "t0": 47.86,
+     "t1": 48.26
+    },
+    {
+     "w": "beş,",
+     "t0": 48.26,
+     "t1": 48.42
+    },
+    {
+     "w": "artı",
+     "t0": 48.42,
+     "t1": 49.04
+    },
+    {
+     "w": "bilinmeyen.",
+     "t0": 49.04,
+     "t1": 49.67
+    }
+   ],
+   "sinir_db": {
+    "once": -28.6,
+    "duraklama": -69.6,
+    "sonra": -28.6
+   }
+  },
+  {
+   "p": 5,
+   "text": "Sonuç eksi on yedi volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 8,
+   "no": 18,
+   "start": 50.02,
+   "end": 51.42,
+   "pause_after": 0.39,
+   "voiced": 1.17,
+   "syl_per_s": 6.84,
+   "inner_pauses": [
+    [
+     50.42,
+     50.53
+    ]
+   ],
+   "words": [
+    {
+     "w": "Sonuç",
+     "t0": 50.02,
+     "t1": 50.38
+    },
+    {
+     "w": "eksi",
+     "t0": 50.38,
+     "t1": 50.83
+    },
+    {
+     "w": "on",
+     "t0": 50.83,
+     "t1": 50.98
+    },
+    {
+     "w": "yedi",
+     "t0": 50.98,
+     "t1": 51.28
+    },
+    {
+     "w": "volt.",
+     "t0": 51.28,
+     "t1": 51.42
+    }
+   ],
+   "sinir_db": {
+    "once": -28.9,
+    "duraklama": -71.1,
+    "sonra": -19.7
+   }
+  },
+  {
+   "p": 5,
+   "text": "Bu yanlış.",
+   "last": true,
+   "shorts": false,
+   "syl": 3,
+   "no": 19,
+   "start": 51.81,
+   "end": 52.52,
+   "pause_after": 0.2,
+   "voiced": 0.7,
+   "syl_per_s": 4.29,
+   "inner_pauses": [
+    [
+     52.52,
+     52.72
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 51.81,
+     "t1": 52.05
+    },
+    {
+     "w": "yanlış.",
+     "t0": 52.05,
+     "t1": 52.52
+    }
+   ],
+   "sinir_db": {
+    "once": -29.8,
+    "duraklama": -71.6,
+    "sonra": null
+   }
+  }
+ ]
+}
