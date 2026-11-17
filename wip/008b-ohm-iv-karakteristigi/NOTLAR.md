@@ -12,3 +12,4 @@
 ## v2 — renk bandı iş emri (17.11.2026, ~20:05 UTC)
 - İş emri: gövdedeki kırmızı-siyah-kırmızı bantlar R etiketiyle (1/2/3 kΩ) çelişiyor. R sürekli değiştiği (3 → 1 → 2 → 3 kΩ, ara değerler) için her an uyan bant hızlı renk değişimi (titreme) yapardı → iş emrindeki 2. seçenek: gövdede renk bandı yok (`bands: []`). Başka değişiklik yok.
 - Direnç bütün videoda göründüğü için 4 parçanın hepsi yeniden render ediliyor (dal: claude/008b-ohm-iv-karakteristigi-renk).
+- parca-03: tamam (20:17 UTC)
