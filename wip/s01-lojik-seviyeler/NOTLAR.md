@@ -4,3 +4,6 @@
 - Sıradaki: bağımsız denetim (7A) → güvenli alan ölçümü → parça render (render_parts.sh) → birleştir → kalite → Metricool 19.11 16:00.
 - Bağımsız denetim: üniversite, 5 zorunlu düzeltme uygulandı. Güvenli alan/kesişim/doluluk 0. Parça render başladı (22:38 UTC).
 - parca-03: tamam (22:59 UTC)
+- parca-00: tamam (22:59 UTC)
+- parca-01: tamam (22:59 UTC)
+- parca-02: tamam (23:00 UTC)
