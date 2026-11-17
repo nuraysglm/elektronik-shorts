@@ -130,3 +130,9 @@ Cevap (`dogrula.py`): doğrusu 5 V; videodaki karışımla −13 V.
 6. **Ses–ekran tutarlılığı:** Her ekran yazısı aynı anda söylenen cümlenin kısaltılmışı ya da onun değeridir. Sesin söylemediği yalnızca görsel kanıtlar var: multimetre ekranı (5,00 V, sesteki değerle aynı) ve "akım yönü / elektronlar" etiketleri (AGENT.md 2a-7 zorunluluğu).
 7. **Sıkışık yer:** Sahne 4–6 (7,0–14,7 sn) altı sıralı olay içerir; ölçülen hızla sığıyor ama pay az. Aşama 2'de gerçek ses zamanlarıyla sığmazsa öneri: "akım yönü / elektronlar" etiketleri bu videoda gösterilmez (2a-7 istisnası, kanal sahibine sorulmalı) ya da sahne 1–3 sırasında gösterilir.
 8. **Kural istisnaları:** 2a-2 ve 2a-3 istisnası için kanal sahibinin onayı bekleniyor (Ö4, bölüm b başı). AGENT.md 3 ve 6'daki "seslendirme yok" kuralının istisnası kanal sahibinin sesli test kararıdır (`konular.md` satır 20).
+
+
+## Kanal sahibinin kararları (17.11.2026, 19:41)
+- 2a-2 / 2a-3 istisnası: **onaylandı** (sesli Short'larda genel kural olarak AGENT.md 2a-S'ye işlendi).
+- 2a-7 istisnası (akım yönü / elektron etiketleri gösterilmeyebilir): **yalnızca bu video için** onaylandı.
+- Ses: `ses.mp3` (kanal sahibinin seçtiği 1. okuma, 52,77 sn).
