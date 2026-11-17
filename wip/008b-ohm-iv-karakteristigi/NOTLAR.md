@@ -7,3 +7,4 @@
 - parca-01: tamam (08:55 UTC)
 - parca-02: tamam (08:55 UTC)
 - 08:57 UTC: birleştirildi + ses → media/008b-…/ (56,2 sn). Kalite 1. turda GEÇTİ (kalite.md). Sıradaki: main'de doğrula → Metricool 2026-11-18 16:00.
+- 08:58 UTC: Metricool'da planlandı: 2026-11-18 16:00 Londra (uuid 5936940515449914811). Parçalar silindi. İş bitti.

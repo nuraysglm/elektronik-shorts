@@ -54,3 +54,8 @@ Bitmiş sahneler (`scenes/001-…`, `scenes/eski-002-…`) kendi kopyalarını k
 - Sahnede çakışma denetlenecek nesneye `obj.userData.box = 'ad'` (pil, direnç, grafik ekranı, voltmetre, ok…), ana sahne grubuna `group.userData.main = true` yaz.
 - `--safe` çıktısı (`guvenli_alan.json`): `kesisimler` (yazı × nesne ve yazı × yazı), `doluluk` (ana sahne kutusu; < %70 genişlik veya < %50 yükseklik → `doluluk_ihlalleri`). Teller kutulanmaz (döngü kutusu çok büyük); tel üstü yazıyı karelerde gözle kontrol et.
 - Kutular nesne geometrisinin sınır kutusu izdüşümüdür (biraz geniş/temkinli).
+
+## olcum.js — ölçü aletleri (005 → 007 → 008b, ikinci kullanımda taşındı)
+- `lcd(w, h, renk)` → `{tex, set(metin, renk?)}` — değişen sayı göstergesi
+- `meter(S, 'A' | 'V', renk, {w, d})` → `{group, show}` — masa üstü ampermetre/voltmetre
+- `psu(S, {y})` → `{group, show, knob, glow}` — ayarlı güç kaynağı (+ ucu +x), V ekranı + düğme
