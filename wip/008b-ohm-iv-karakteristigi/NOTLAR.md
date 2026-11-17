@@ -4,3 +4,4 @@
 - Sıradaki: bağımsız metin denetimi → render_parts.sh (4 parça) → birlestir.sh → kalite.md → scenes/ + media/ → Metricool 2026-11-18 16:00 Londra.
 - parca-03: tamam (08:50 UTC)
 - parca-00: tamam (08:55 UTC)
+- parca-01: tamam (08:55 UTC)
