@@ -1,0 +1,14 @@
+{
+  "seri": "Devre Teorisi I",
+  "ders": 1,
+  "bolum": 1,
+  "adim": "metin",
+  "yayin": "2026-11-28",
+  "yayin_saati": "08:00 Europe/London",
+  "parcalar": {},
+  "drive_sesler_klasoru": "1xlxpzK_CmMwVdYp62d9ZFUh98MntrYNn",
+  "gecmis": [
+    {"tarih": "2026-11-17T21:55Z", "not": "Ders 1 transkripti Drive'da yoktu; beklendi."},
+    {"tarih": "2026-11-17T22:30Z", "not": "Transkript geldi. Ders planı (uzun/seri/ders-01/plan.md) ve Bölüm 1 metni yazıldı; dogrula.py geçti; bağımsız denetim başlatıldı."}
+  ]
+}
