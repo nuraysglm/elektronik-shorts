@@ -1,4 +1,4 @@
-# Doğruluk kaydı — uzun/ornek-02 (çevre akımları yöntemi, final tipi soru)
+# Doğruluk kaydı — uzun/ornek-02 (çevre akımları yöntemi, çözümlü soru)
 
 Tarih: 17.11.2026. Aşama 1 (yalnızca metin). Görüntü ve ses üretilmedi.
 
@@ -58,13 +58,13 @@ Yapılan kontroller: (1) videodaki iki çevre denkleminin çözümü ve iki sade
 | 5 | Ortak dirençteki gerilim iki akımın farkıyla yazılır; artı uç, önce yazılan akımın girdiği uçtur | Lemma [4:31–5:26] "the total voltage ... will be i1 minus i2 times r"; [16:59–18:06] "this voltage drop is equal to i1 minus i2 times r2" |
 | 6 | Her çevrede KVL yazılır; kazanılan gerilim düşümlerin toplamına eşittir | [11:50–12:16] "write a kvl around every mesh"; [18:37–19:01] gerilimin yükseldiği yerde artı, düştüğü yerde eksi işaretle toplam sıfır. "Kazanılan = düşümler toplamı" biçimi bu KVL'nin terimleri karşı tarafa geçirilmiş hâlidir. |
 | 7 | Sol çevre denklemi ve 3i₁ − i₂ = 8 mA | Hesap (bölüm 3–4) |
-| 8 | **Kural:** ortak dirençte önce o çevrenin kendi akımı yazılır, komşu akım çıkarılır; iki akım aynı yönde dönüyorsa geçerli | **Çıkarım:** 5'teki lemma, dolaşım yönü o çevrenin akım yönüyle aynı alındığında (kendi akımı girdiği uçtan, yani artı uçtan girilir) düşüm (kendi − komşu) × R olur. Razavi aynı terimi sağ çevrede [19:08–19:24] "+(i1 − i2) r2" (gerilim yükseldiği için artı) diye yazar; bu, sağ çevrenin dolaşım yönünde (i2 − i1) r2 düşümüne eşittir. Bu cümle Razavi'de kural olarak geçmez. Koşulun gerekliliği sayısal olarak gösterildi (bölüm 4, kontrol 6). |
-| 9 | "Birinci denklemdeki farkı aynen kopyalamak akla gelir"; "Tuzak, ortadaki ortak dirençte" | Sıklık iddiası değildir ("sık yapılan", "birçok öğrenci" kullanılmadı; örnek 01 denetim bulgusu Ö7). Tuzak olarak seçilmesinin dayanağı: Razavi'nin işaret uyarısı [5:19–5:26] "it's important that you really get the hang of this with all the signs" ve ortak direnç için [16:18–16:27] "r2 requires special attention". |
+| 8 | **Kural:** kendi akımın yönünde dolaşırken ortak dirençte önce o çevrenin akımı yazılır, komşu akım çıkarılır; iki akımın dönme yönü aynıysa geçerli | **Çıkarım:** 5'teki lemma, dolaşım yönü o çevrenin akım yönüyle aynı alındığında (kendi akımı girdiği uçtan, yani artı uçtan girilir) düşüm (kendi − komşu) × R olur. Razavi aynı terimi sağ çevrede [19:08–19:24] "+(i1 − i2) r2" (gerilim yükseldiği için artı) diye yazar; bu, sağ çevrenin dolaşım yönünde (i2 − i1) r2 düşümüne eşittir. Bu cümle Razavi'de kural olarak geçmez. Koşulun gerekliliği sayısal olarak gösterildi (bölüm 4, kontrol 6). |
+| 9 | "Birinci denklemdeki farkı düşüm olarak aynen kopyalamak akla gelir"; "Tuzak, ortadaki ortak dirençte" | Sıklık iddiası değildir ("sık yapılan", "birçok öğrenci" kullanılmadı; örnek 01 denetim bulgusu Ö7). Tuzak olarak seçilmesinin dayanağı: Razavi'nin işaret uyarısı [5:19–5:26] "it's important that you really get the hang of this with all the signs" ve ortak direnç için [16:18–16:27] "r2 requires special attention". |
 | 10 | Sağ çevrede kaynak yok; düşümlerin toplamı sıfır | KVL [11:50–12:16]; sağ çevrede yalnızca R₂, R₃, R₄ var |
 | 11 | Sağ çevre denklemi ve i₁ = 3i₂ | Hesap |
 | 12 | i₂ = 1 mA, i₁ = 3 mA | Hesap; bağımsız düğüm yöntemiyle aynı (bölüm 4) |
 | 13 | "Farkı ters yazsaydık i₁ = 2 mA, i₂ = −2 mA çıkardı. Sayılar düzgün ama yanlış." | Hesap (YANLIS satırı; KVL sağlanmıyor) |
-| 14 | Kontrol: ortak dirençten 2 mA iner, uçlarında 6 V; soldan 24 V − 18 V = 6 V; sağdan 2 V + 4 V = 6 V | Hesap (kol akımları, VM = 6 V). Akımlar bulununca diğer büyüklüklerin bulunması: [19:47–19:55] "once we have those we can find anything else we want" |
+| 14 | Kontrol: ortak dirençten 2 mA iner, uçlarında 6 V; sol yoldan 24 V eksi 6 kΩ'daki 18 V = 6 V; sağ yoldan 2 V + 4 V = 6 V | Hesap (kol akımları, VM = 6 V). Akımlar bulununca diğer büyüklüklerin bulunması: [19:47–19:55] "once we have those we can find anything else we want" |
 | 15 | Ekranda küçük harf i₁, i₂ | Ders 8 gösterimi (i1, i2) [8:30–8:48]; AGENT.md 2d-1 (gösterim Razavi'ye uyar) |
 
 Videoda kullanılmayan ama dersle tutarlı not: çevre yönteminde referans düğüm gerekmez ([12:31–12:39]); kontrol adımındaki "alt hatta göre 6 V" yalnızca kontrol içindir ve seslendirmede "uçlarında altı volt" diye söylenir.
@@ -73,7 +73,7 @@ Videoda kullanılmayan ama dersle tutarlı not: çevre yönteminde referans dü�
 
 - Çarpma işareti yalnızca "×" ("3i₁" gibi katsayı yazımı dışında); "·" kullanılmadı. Her denklem ayrı satırda; "Ters işaretle çıkan: i₁ = 2 mA, i₂ = −2 mA" satırında iki eşitlik virgülle ayrılır. Oklar eşittir yerine kullanılmadı.
 - Birimler: V, kΩ, mA; denklemlerde birimler yazılı. Sadeleşmiş denklemlerin sağ tarafı mA (V / kΩ).
-- Ekran yazılarında kısaltma yok ("gerilim kaynağı", "ortak direnç", "çevre akımı" tam yazılır). Kart maddelerinde ":" yalnızca "Sonuç:" etiketinde.
+- Ekran yazılarında kısaltma yok ("gerilim kaynağı", "ortak direnç", "çevre akımı" tam yazılır). Kart maddelerinde ":" yok.
 - Seslendirme metninde rakam ve simge yok (otomatik kontrol: rakam, =, +, /, parantez, tire bulunmadı).
 
 ## 7. Kendi ikinci okumam (bağımsız denetim değildir)
@@ -81,7 +81,26 @@ Videoda kullanılmayan ama dersle tutarlı not: çevre yönteminde referans dü�
 - Sesli okunuş: "i bir", "i iki" küçük harf; "çarpı," + "farkı" ile çarpma kapsamı sesle tek anlamlı; "i iki de bir" ("ikide bir") dizilişinden kaçınıldı; dört direnç değeri farklı olduğundan "iki kiloohm" gibi bir değer tek bir direnci gösterir.
 - Devre tarifi sesle tek anlamlı: kaynağın kolu ve artı ucu, üst teldeki iki direncin sırası, ortak direncin bağlandığı nokta ("iki direncin arasından alt hatta"), sağ kolun iki ucu ("üst telden alt hatta").
 - Birim boyutu: her açık denklemde kΩ × mA = V; bölme sonrası mA.
-- Mutlak ifade yok: kural koşuluyla söylenir ("iki akım aynı yönde dönüyorsa geçerlidir"); "her zaman", "asla", "sık" yok.
+- Mutlak ifade yok: kural koşuluyla söylenir ("Bu, iki akımın dönme yönü aynıysa geçerlidir"); ortak dirençteki akımlar için "zıt yönde geçer", çevre akımları için "dönme yönü" denir; "her zaman", "asla", "sık" yok.
 - Tek kaynak ideal gerilim kaynağıdır; kontrolde kaynağın uç gerilimi 24 V olarak kullanıldı (ideal kaynak varsayımı; soru tanımı).
 
-Açık kalan noktalar: (a) bağımsız denetçi henüz bakmadı; (b) yapay sesin "i bir", "kiloohm" sözcüklerini nasıl okuduğu ancak ses üretilince görülür; (c) süreler örnek 01'in ölçülen hızından tahmindir; (d) iddia 8 (kural cümlesi) Razavi'de açık cümle olarak geçmez, lemmadan çıkarımdır; (e) vaat cümlesi tahminen 12–16 sn'de, rehberdeki 15–30 sn aralığının biraz önünde.
+Açık kalan noktalar: (a) [bağımsız denetim yapıldı, bölüm 8]; (b) yapay sesin "i bir", "kiloohm" sözcüklerini nasıl okuduğu ancak ses üretilince görülür; (c) süreler örnek 01'in ölçülen hızından tahmindir; (d) iddia 8 (kural cümlesi) Razavi'de açık cümle olarak geçmez, lemmadan çıkarımdır; (e) vaat cümlesi tahminen 12–16 sn'de, rehberdeki 15–30 sn aralığının biraz önünde.
+
+## 8. Bağımsız denetim
+
+Bağımsız denetim (genel müdürün başlattığı ayrı ajan): **fizik ve matematik doğru, kritik bulgu yok; Ö1–Ö4 ve 7 küçük bulgu uygulandı.** Denetçinin raporu bu ajana genel müdür aracılığıyla özet olarak iletildi.
+
+- Ö1: Kural cümlesi Razavi'nin [19:08–19:24]'teki yazımıyla (sağ çevrede +(i1 − i2) r2, gerilim yükselişi) çelişiyor gibi duyulmasın diye: "Birinci denklemdeki farkı düşüm olarak aynen kopyalamak akla gelir." ve "Kural: kendi akımın yönünde dolaşırken ortak dirençte önce o çevrenin akımı yazılır, komşu akım çıkarılır. Bu, iki akımın dönme yönü aynıysa geçerlidir."
+- Ö2: Çevre akımları için her yerde "dönme yönü" (sesli metin, sahne 7 kural satırı parantezsiz, kart 2. madde "Kural, çevre akımlarının dönme yönü aynıysa geçerli"); "zıt yönde geçer" yalnızca ortak dirençteki akımlar için.
+- Ö3: Abone animasyonu ilk cevaptan hemen sonra: "…i bir eşittir üç miliamper." cümlesi bitince girer (tahmini 1:37–1:43); kırmızı yanlış sonuç satırı y %56–62'de, alt bant (y %76–100) boş.
+- Ö4: "Final tipi" ifadesi metinden ve başlık önerisinden çıkarıldı (devre seri-paralel indirgemeyle de çözülebilir); "çözümlü soru" denir. Devre değişmedi.
+- Küçük 1: "İşaretin kuralını göreceğiz ve sonucu sonunda iki yoldan kontrol edeceğiz."
+- Küçük 2: "sağınki" yerine "sağ çevreninki".
+- Küçük 3: Cümle başında "İ iki" yok: "…; yani i iki eşittir bir miliamper, i bir eşittir üç miliamper."
+- Küçük 4 ("Açıp üç kiloohma bölünce"): **uygulanmadı** — 280 kelime sınırına sığmadı ("Üç kiloohma bölünce" kaldı; ekranda açık denklem zaten yazılı).
+- Küçük 5: "Sol yoldan: yirmi dört volt eksi altı kiloohmdaki on sekiz volt, altı volt." ve "Sağ yoldan: iki volt artı dört volt, altı volt." (sağ yolda dirençlerin adı kelime sınırı nedeniyle sesle söylenmez; ekranda R₃ ve R₄'ün altında 1 mA × 2 kΩ = 2 V ve 1 mA × 4 kΩ = 4 V yazılır).
+- Küçük 6: Sahne 9'da "6 V" R₂'nin yanında, üst uçta +, alt uçta −; tahtaya "M" yazılmaz.
+- Küçük 7: Kartın 3. maddesi "Ters işaret düzgün ama yanlış sonuç verir"; sahne 9'daki kontrol yazıları R₁ ve R₃'ün altına (etiketler üstte), "24 V" etiketi için devre sağa kaydırılıp solda x %2–8 boş bırakıldı.
+- Kelime sınırı için denetçinin önerdiği kısaltmalar uygulandı ("Üst telde soldan sağa altı ve iki kiloohm var.", "Kaynak yok; düşümlerin toplamı sıfır.", "yine" çıkarıldı); ayrıca "ters sırayla yazan" yerine "ters yazan", "ikisi de saat yönünde" yerine "dönme yönleri saat yönü", "düşümlerin toplamına eşittir" yerine "düşümlerin toplamıdır", "iki akım" yerine "akımlar zıt yönde geçer". Sonuç: **280 kelime.**
+
+Sayılar değişmedi; `dogrula.py` yeniden çalıştırıldı, bütün kontroller geçti.
