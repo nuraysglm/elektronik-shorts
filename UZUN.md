@@ -8,7 +8,7 @@ Panelin: **https://claude.ai/artifact/2Kz4oqz43CzXp6vDobpFZ7** ("Uzun Video Ajan
 
 - Seri adı: **Devre Teorisi I** (arama için "devre analizi" de kullanılır). Prof. Behzad Razavi'nin "Basic Circuit Theory" ders serisi **ders 1'den başlayarak sırayla** referans alınır (`kaynaklar.md` ders tablosu).
 - Her Razavi dersi (~45 dk) **3 bölüme** bölünür; her bölüm **~15 dk (13–17 dk)** tek bir YouTube videosudur. Ad: "Ders N - Bölüm k/3". Seri adı her yerde "Devre Teorisi I" (kanal sahibi 18.11.2026: içerik birinci dönem dersi; AC konuları ileride "Devre Teorisi II" olabilir). Açıklama ve etiketlerde "devre analizi 1" ifadesi de geçer (okulunda dersin adı Devre Analizi olan öğrenciler için).
-- Sıklık: **haftada 1 bölüm**, **Cumartesi 08:00 Londra (11:00 TR)** yayın. İlk yayın: 28.11.2026 (Ders 1 - Bölüm 1/3).
+- Sıklık ve yayın günleri: bölüm 1a takvimi (ilk yayın 21.11.2026 Cumartesi; sonra Çarşamba, 14.12 haftasından itibaren şartlı Pazartesi + Perşembe, 16:00 TR).
 - Her bölüm **parça parça** (4–6 parça, her biri ~2–4 dk) üretilir, sonda intro ve kapanışla **tek 15 dk'lık video** olarak birleştirilir.
 - **Her sayının nereden geldiği gösterilir (kanal sahibinin emri, 18.11.2026 — mutlak kural):** İzleyici ortalama bir üniversite öğrencisidir; çok hızlı değildir ve "bu sayı nereden çıktı?" diye sorar. Bu yüzden ekranda görünen her ara sonuç ve sonuç, adım atlanmadan elde edilir: önce formül yazılır, sonra değerler yerine konur, sonra ara işlem, sonra sonuç (ör. "q(3,1 s) = 2 × 3,1² = 2 × 9,61 = 19,22 mC", ardından "Δq = 19,22 − 18 = 1,22 mC", ardından "Δq / Δt = 1,22 mC / 0,1 s = 12,2 mA"). Tablo, grafik ya da liste içindeki sayılar da dahildir: tablodaki her satırın hesabı en az bir kez tam gösterilir, benzer satırlar için de en az formül + yerine koyma yazılır. Ses aynı adımları söyler (2d-6). "Bu kolay, siz yaparsınız" diye adım atlanmaz. Bağımsız denetçi her sayıyı tek tek arar: hesabı ekranda ve seste gösterilmeyen sayı **önemli bulgu** sayılır. (Uzun videoda geçerli; AGENT.md 2b-7.)
 - **METİN ONAYI KURALI (kanal sahibi, 18.11.2026): Kanal sahibi metni panelde açıkça `onayla` demeden hiçbir bölümün sesi üretilmez.** Bağımsız denetimden geçen metin panelde onaya sunulur (bölüm 2, "Metin onayı"); onay yoksa ses, zamanlama ve render adımlarına geçilmez.
@@ -17,20 +17,33 @@ Panelin: **https://claude.ai/artifact/2Kz4oqz43CzXp6vDobpFZ7** ("Uzun Video Ajan
 ### 0a. Telif ve özgünlük — çok önemli
 Razavi'nin dersleri **referanstır, çeviri değildir.** Konuları, sırayı ve kavramları onun dersinden alırsın; anlatımı **kendi cümlelerinle, kendi yapınla** kurarsın. Satır satır çeviri, onun cümlelerini Türkçeleştirip okuma, onun örneklerini (devre, sembolik veya sayısal) aynen veya sayılarını değiştirerek kullanma **yasak**. Örnekler ve sorular tamamen özgün (AGENT.md 2i, `kaynaklar.md` kuralı). Açıklamada kaynak atfı: "Kaynak: B. Razavi, Basic Circuit Theory, Ders N (UCLA)". Razavi'nin videolarından görüntü/ses/çizim kullanılmaz.
 
-## 1. Haftalık akış (zamanlanmış çalışmalar, Londra saati)
+## 1. Takvim ve çalışma düzeni
 
 Durum dosyası: `uzun/seri/durum.json` (hangi ders/bölüm, hangi adım, parça durumları, yayın tarihi). Her çalışmada önce `git pull`, sonra durum dosyasını oku, **sıradaki adımı** yap, durum dosyasını ve paneli güncelle. Bir adım bitince süre kalırsa sonrakine geç; bir çalışmada yarım kalan iş kaybolmaz (dosyalar commit edilir). Depo: push yalnızca `claude/uzun-<ders>-<bolum>-<YYYYMMDD>` dalına.
 
-| Çalışma | Varsayılan iş |
-|---|---|
-| Pzt 09:13 | (Bölüm 1/3 ise) dersin **bölüm planı** (3 bölüme ayırma) → bu bölümün **metni** (parçalara ayrılmış) → doğrulama → bağımsız denetim → düzeltme → panelde **metin onayı isteği** (ses ÜRETİLMEZ) |
-| Sal 09:13 | Metin onayı geldiyse: **ses üretimi** → ses dosyalarını al (bölüm 3) → zamanlama → parça render'ları başlar. Onay yoksa bekle (başka adıma geçme), panelde hatırlat |
-| Çar 09:13 | Parça render'ları + parça QC |
-| Per 09:13 | Kalan parçalar + intro + kapanış |
-| Cum 09:13 | **Birleştirme** + tam QC + kapak + başlık/açıklama/etiket/bölümler → panelde **onay isteği** |
-| Cum 20:43 | Onay kontrolü → onaylıysa Metricool'a **Cmt 08:00 Londra** planla; değilse bekle |
+### 1a. Yayın takvimi (kanal sahibinin kararı, 18.11.2026)
 
-Geride kalınırsa (ses gelmedi, QC tutmadı) yayın **bir sonraki Cumartesiye** kayar; panelde ve son mesajında açıkça yaz. Asla kalitesi düşük video planlama.
+| Bölüm | Yayın | Londra saati |
+|---|---|---|
+| Ders 1 - Bölüm 1/3 | **21.11.2026 Cumartesi 11:00 TR** (hızlı mod) | 08:00 |
+| Ders 1 - Bölüm 2/3 | **02.12.2026 Çarşamba 16:00 TR** | 13:00 |
+| Ders 1 - Bölüm 3/3 | **09.12.2026 Çarşamba 16:00 TR** | 13:00 |
+| Sonrası | **14.12.2026 haftasından itibaren haftada 2 bölüm: Pazartesi ve Perşembe 16:00 TR** (ilk: 14.12 Pzt, 17.12 Per) | 13:00 (Mart sonundan itibaren İngiltere yaz saatinde 14:00) |
+
+**Haftada 2'ye geçiş şartı (kanal sahibi onayladı):** Bölüm 2 ve 3 kanal sahibinin onayından **büyük düzeltme gerekmeden** (metin onayında en fazla küçük düzeltme, video onayında "düzelt" yok veya yalnızca görsel küçük düzeltme) geçerse. Genel müdür 10.12'de değerlendirir ve kanal sahibine bildirir; şart tutmazsa haftada 1 (Çarşamba 16:00 TR) devam edilir. Durum dosyasında `takvim` alanı bunu gösterir; yayın tarihlerini yalnızca `durum.json`'dan al.
+
+### 1b. Çalışma düzeni (her hafta içi 09:13 Londra; gün sırası yok)
+
+Her çalışmada sıradaki adımı bitir; süre kalırsa hemen sonrakine geç. Adım sırası:
+1. (Bölüm 1/3 ise) dersin **bölüm planı** → bu bölümün **metni** (parçalara ayrılmış) → doğrulama → bağımsız denetim → düzeltme → panelde **metin onayı isteği**. Ses ÜRETİLMEZ.
+2. Metin onayı geldiyse: **ses** → ses dosyalarını al (bölüm 3) → zamanlama → **parça render'ları** + parça QC. Onay yoksa bekle (başka adıma geçme), panelde hatırlat.
+3. Kalan parçalar → **birleştirme** + tam QC + kapak + başlık/açıklama/etiket/zaman damgaları (`yayin.json`) → panelde **video onay isteği** (`onaylar/uzun-<ders>-<bolum>`).
+4. Bölüm onaya sunulduktan sonra bekleme yok: **bir sonraki bölümün** 1. adımına başla (yayın sırası değişmez; bir bölüm önde gitmek serbest, iki bölümden fazla önde gitme).
+
+**Zamanlama payı:** Video onay isteği yayından **en az 48 saat önce** panelde olmalı. Metin onayı yayından 4 gün önce gelmemişse panelde uyar ("yayın kayabilir").
+**Planlama** "Uzun Video Ajanı — onay ve yayın planı" görevinde (her akşam 20:43 Londra) veya genel müdür tarafından yapılır: panelde `onayla` varsa `durum.json`'daki yayın tarih/saatine Metricool'da planlanır. Onaysız planlama yok.
+
+Geride kalınırsa (onay gelmedi, QC tutmadı) yayın **bir sonraki yayın gününe** kayar ve sonraki bölümler de birer slot kayar; panelde ve son mesajında açıkça yaz. Asla kalitesi düşük video planlama.
 
 ## 2. Kaynak, metin ve doğruluk
 
@@ -41,7 +54,7 @@ Geride kalınırsa (ses gelmedi, QC tutmadı) yayın **bir sonraki Cumartesiye**
 - Üniversite düzeyi, çocuksu değil. Gösterim AGENT.md 2d (işaret kelime yerine kullanılmaz, kısaltma yok, ekrandaki yazı sesle aynı şeyi söyler).
 - **Doğrulama:** her sayısal sonuç Python ile (`dogrula.py`; denklem çözümü + bağımsız kontrol: KCL/KVL, güç dengesi, alternatif yöntem). `dogruluk.md`: her iddia → transkript zaman damgası veya hesap.
 - **Bağımsız denetim (zorunlu):** Agent aracıyla ayrı bir denetçi alt ajanı başlat; metni, dogruluk.md'yi, transkripti ve bu kuralları ver; "fizik doğru mu, sesle tek anlamlı mı, okunuş riski, kopya/çeviri riski, mutlak ifade" sorularını sor. Kritik/önemli bulguları düzelt. Agent aracı yoksa panele yaz ve **ses üretme**.
-- **Metin onayı (zorunlu, kanal sahibinin kuralı 18.11.2026):** Denetimden geçen metni commit + push et, sonra panelde `onaylar/metin-<ders>-<bolum>` isteği aç: `baslik` "Metni okuyun — Ders N - Bölüm k", `aciklama` (konu, kelime sayısı, tahmini süre, parça listesi ve her parçanın 1 cümlelik özeti, denetimde değişenler, örnek sorunun kendisi), `baglanti`: metnin GitHub adresi (`https://github.com/nuraysglm/elektronik-shorts/blob/main/uzun/seri/ders-NN/bolum-k/metin.md`), `secenekler`: onayla / düzelt (not ile) / reddet, `durum: "bekliyor"`, `olusturma`. Durum dosyasında `adim: "metin_onayi"`. **`onayla` gelmeden ses üretme.** `düzelt` ise notu uygula → doğrula → değişen kısımları denetçiye yeniden gönder → aynı isteği güncelleyip tekrar onaya sun (`durum: "bekliyor"`, açıklamaya "neler değişti"). Sesi önceden üretilmiş bir bölümde düzeltme gelirse **yalnızca metni değişen parçaların** sesi yeniden üretilir. `reddet` ise dur, panele yaz. Onay gecikirse yayın bir sonraki Cumartesiye kayar; panelde açıkça yaz.
+- **Metin onayı (zorunlu, kanal sahibinin kuralı 18.11.2026):** Denetimden geçen metni commit + push et, sonra panelde `onaylar/metin-<ders>-<bolum>` isteği aç: `baslik` "Metni okuyun — Ders N - Bölüm k", `aciklama` (konu, kelime sayısı, tahmini süre, parça listesi ve her parçanın 1 cümlelik özeti, denetimde değişenler, örnek sorunun kendisi), `baglanti`: metnin GitHub adresi (`https://github.com/nuraysglm/elektronik-shorts/blob/main/uzun/seri/ders-NN/bolum-k/metin.md`), `secenekler`: onayla / düzelt (not ile) / reddet, `durum: "bekliyor"`, `olusturma`. Durum dosyasında `adim: "metin_onayi"`. **`onayla` gelmeden ses üretme.** `düzelt` ise notu uygula → doğrula → değişen kısımları denetçiye yeniden gönder → aynı isteği güncelleyip tekrar onaya sun (`durum: "bekliyor"`, açıklamaya "neler değişti"). Sesi önceden üretilmiş bir bölümde düzeltme gelirse **yalnızca metni değişen parçaların** sesi yeniden üretilir. `reddet` ise dur, panele yaz. Onay gecikirse yayın bir sonraki yayın gününe kayar (bölüm 1a); panelde açıkça yaz.
 
 ## 3. Ses (ElevenLabs)
 
@@ -81,7 +94,7 @@ Görünüm: alt ortada beyaz yuvarlak kart (ince gri kenar + gölge), solda yuva
 ### 4c. Shorts türevi
 Şimdilik **üretilmez** (Shorts takvimi dolu, limit). Kanal sahibi isterse açılır.
 
-## 5. Birleştirme ve kalite kontrolü (Cuma)
+## 5. Birleştirme ve kalite kontrolü
 
 - Parçalar + intro kartı + kapanış birleşir (`ffmpeg concat`, ses kesintisiz; parça sınırlarında görüntü/ses atlaması yok). Çıktı: `media/uzun/devre-teorisi-1-ders-NN-bolum-k.mp4` (hedef ≤ 90 MB; büyükse CRF 25–26). Süre 13–17 dk.
 - **QC (zorunlu, kendi gözünle):** en az 40 kare PNG çıkarıp Read ile bak (her parça, her sahne, abone animasyonunun 4 anı, intro kartı, kapanış kartı, bitiş ekranı alanı). Otomatik taramalar: yazı–yazı/yazı–devre/yazı–kart çakışması, taşma, ≥2 sn durağan aralık, **tek kalem** (iki öğenin yazılma aralığı çakışmaz), yedek yazı tipine düşen karakter. Ekrandaki her denklem `dogruluk.md` ile aynı. `ffprobe` süre/çözünürlük/ses; ses düzeyi. Bulunanı düzelt, yeniden render et. QC'den geçmeyen video onaya sunulmaz.
@@ -92,7 +105,7 @@ Görünüm: alt ortada beyaz yuvarlak kart (ince gri kenar + gölge), solda yuva
 - İzinli Canva araçları: `create-design`, `create-design-from-brand-template` / `autofill-design`, `edit-design`, `upload-asset-from-url`, `export-design`, `get-export-formats`, `search-designs`, `list-brand-kits`. Kanal sahibinin fotoğrafı yalnızca Canva içinde kullanılır (Drive'dan alınıp yüklenir), depoya girmez.
 - **Yasak:** Canva'nın yapay zekâ ile görsel/tasarım üreten araçları (`generate-image`, `generate-design`, `generate-design-structured`, `create-design-from-candidate`) — kanal sahibinin "yapay zekâ görsel üretici yok" kuralı. Kanal sahibinin **Canva Pro** hesabı var (17.11.2026): Pro aboneliğine dahil öğe, şablon, yazı tipi ve marka kiti serbestçe kullanılır; abonelik dışında ayrıca ücretli öğe satın alma/para harcatma yok; lisansı belirsiz öğe yok; başka kanalların görselleri yok. Arka plan kaldırma (yapay zekâ ile düzenleme) kanal sahibi onaylayana kadar kullanılmaz.
 - Seçim: her kapak için kodla ve Canva'yla hızlı birer taslak üretilebilir; hangisi daha okunur ve dikkat çekiciyse o kullanılır ve onay isteğinde ikisi birden gösterilir. Canva tasarımının bağlantısı onay isteğine konur.
-- Canva dışa aktarım bağlantıları geçicidir: kapak Metricool'a yüklenirken (Cuma akşamı) `export-design` ile yeni bağlantı alınır; dosya indirilebiliyorsa `media/uzun/` altına da kaydedilir.
+- Canva dışa aktarım bağlantıları geçicidir: kapak Metricool'a yüklenirken (planlama anında) `export-design` ile yeni bağlantı alınır; dosya indirilebiliyorsa `media/uzun/` altına da kaydedilir.
 
 - **Kapak (dikkat çekici, kodla üretilir):** 1280×720 JPG (`media/uzun/...-kapak.jpg`, ≤2 MB). Kanal sahibinin seçtiği şablon (Shorts panelindeki `buyume-20261117-2` kararı); karar gelene kadar **Şablon B** (solda kanal sahibinin fotoğrafı — yüz/omuz, yalnızca render sırasında Drive'dan; sağda devre + 4–6 kelime büyük, kalın yazı; whiteboard zemini; kırmızı tek vurgu; sağ alt köşe boş). Yazı telefonda okunur; bölüm numarası küçük bir şeritte ("DERS 1 - BÖLÜM 1/3"; ayırıcı olarak "·" yok, kanal sahibinin 18.11 kararı). Yanıltıcı kapak yok; yapay zekâ görseli yok. Kapakta fotoğraf olduğu için kapak dosyası depoya **girebilir** (YouTube'da zaten herkese açık olacak), ama ham fotoğraf girmez.
 - **Başlık:** `<Aranan konu>: <somut vaat> | Devre Teorisi Ders N (k/3)` — ana kısım ≤60 karakter; aranan ifade başta (`buyume/anahtar-kelimeler.md`, Büyüme rehberi). Clickbait yok.
@@ -105,8 +118,8 @@ Görünüm: alt ortada beyaz yuvarlak kart (ince gri kenar + gölge), solda yuva
 
 ## 7. Onay ve yayın
 
-- Cuma 09:13: panelde `onaylar/uzun-<ders>-<bolum>` (`baslik`, `aciklama`: video bağlantısı (GitHub raw mp4), kapak bağlantısı, süre, başlık/açıklama taslağı, QC özeti, bilinen kusurlar; `secenekler`: onayla / düzelt (not ile) / reddet; `durum: "bekliyor"`, `olusturma`).
-- Cuma 20:43: `onayla` ise Metricool `createScheduledPost` (brand **7697516**): `providers: [{network: "youtube"}]`, `youtubeData: {title, type: "video", privacy: "public", tags, category: "EDUCATION", madeForKids: false, isAiGeneratedContent: false}`, `media: [raw GitHub mp4 URL]`, `videoThumbnailUrl: raw GitHub kapak URL`, `firstCommentText`, `text` (açıklama), tarih **Cumartesi 08:00 Europe/London**, `autoPublish: true`, `draft: false`. `düzelt` ise notu uygula ve tekrar onaya sun (yayın kayar). Cevap yoksa planlama; ertesi hafta tekrar sor.
+- Video hazır olunca (yayından ≥48 saat önce): panelde `onaylar/uzun-<ders>-<bolum>` (`baslik`, `aciklama`: video bağlantısı (GitHub raw mp4), kapak bağlantısı, süre, başlık/açıklama taslağı, QC özeti, bilinen kusurlar; `secenekler`: onayla / düzelt (not ile) / reddet; `durum: "bekliyor"`, `olusturma`).
+- Planlama (her akşam 20:43 görevi veya genel müdür): `onayla` ise `durum.json` `takvim`deki tarih/saate Metricool `createScheduledPost` (brand **7697516**): `providers: [{network: "youtube"}]`, `youtubeData: {title, type: "video", privacy: "public", tags, category: "EDUCATION", madeForKids: false, isAiGeneratedContent: false}`, `media: [raw GitHub mp4 URL]`, `videoThumbnailUrl: raw GitHub kapak URL`, `firstCommentText`, `text` (açıklama), tarih **Cumartesi 08:00 Europe/London**, `autoPublish: true`, `draft: false`. `düzelt` ise notu uygula ve tekrar onaya sun (yayın kayar). Cevap yoksa planlama; ertesi hafta tekrar sor.
 - Yayınlanmış veya planlanmış gönderinin tarihini/videosunu kanal sahibinin açık talimatı olmadan değiştirme; "şimdi yayınla" yok.
 
 ## 8. Panel ve rapor

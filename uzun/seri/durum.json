@@ -113,5 +113,26 @@
   "is_emri": "uzun/seri/ders-01/bolum-1/is-emri-20261118.md",
   "hizli_mod": "18.11.2026 20:42 kanal sahibi: 'Bir an önce ilk videoyu yayınlamak istiyorum.' Bu bölüm için gün sırası (Pzt–Cuma tablosu) BEKLENMEZ: her çalışmada sıradaki adımı bitir ve süre kaldıkça hemen sonrakine geç. Sıra: (1) iş emri: parça 5 metin düzeltmesi + doğrulama + değişen kısımlar için bağımsız denetim → panelde onaylar/metin-1-1-p5 (eski/yeni yan yana) → ONAY YOKSA DUR. (2) metin onayı geldiyse: parça 5 sesi (generations_count 1) → zamanlama → parça 5 render (yeni renkler) → parça QC. (3) birleştirme (profil-kucuk.jpg Drive 1XNF7lgiaE9FQA-0dYfG8tWOz_xj9VR6h) → tam QC → kapak → yayin.json (başlık, açıklama, zaman damgaları, etiketler, ilk yorum) → panelde onaylar/uzun-1-1 onay isteği. Yayın tarihini/saatini kanal sahibi belirler; planlamayı genel müdür ya da Cuma akşamı görevi yapar. Onaysız planlama yok.",
   "sonraki_yayin": "2026-11-21",
-  "eksik_hesaplar": "uzun/seri/ders-01/bolum-1/eksik-hesaplar.md; panel onaylar/eksik-hesaplar-1-1 (A/B/C) bekliyor"
+  "eksik_hesaplar": "uzun/seri/ders-01/bolum-1/eksik-hesaplar.md; panel onaylar/eksik-hesaplar-1-1 (A/B/C) bekliyor",
+  "takvim": {
+    "karar": "kanal sahibi 18.11.2026 21:08",
+    "slotlar": [
+      {
+        "ders": 1,
+        "bolum": 1,
+        "yayin": "2026-11-21T08:00:00 Europe/London (11:00 TR)"
+      },
+      {
+        "ders": 1,
+        "bolum": 2,
+        "yayin": "2026-12-02T13:00:00 Europe/London (16:00 TR)"
+      },
+      {
+        "ders": 1,
+        "bolum": 3,
+        "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)"
+      }
+    ],
+    "sonrasi": "14.12.2026'dan itibaren Pazartesi + Perşembe 13:00 Londra (16:00 TR), şart: Bölüm 2 ve 3 büyük düzeltmesiz geçerse (genel müdür 10.12'de değerlendirir). Şart tutmazsa Çarşamba 13:00 Londra haftada 1."
+  }
 }
