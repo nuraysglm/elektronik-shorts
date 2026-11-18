@@ -2,7 +2,7 @@
   "seri": "Devre Teorisi I",
   "ders": 1,
   "bolum": 1,
-  "adim": "birlestirme",
+  "adim": "duzeltme",
   "yayin": "2026-11-28",
   "yayin_saati": "08:00 Europe/London",
   "parcalar": {
@@ -46,8 +46,8 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-5.mp3",
       "sure_sn": 168.91,
       "generation_id": "ydQnm7onNj4xa8kUL0X5",
-      "render": "tamam",
-      "qc": "parca QC tamam (otomatik + kare)",
+      "render": "yeniden (iş emri)",
+      "qc": "bekliyor",
       "video": "wip/uzun-d01-b1/parca-5.mp4",
       "video_sn": 170.97
     },
@@ -96,7 +96,7 @@
     "Abone kartı için küçük profil fotoğrafı gerekli (orijinal ~1 MB, bu ortamda indirilemiyor): Drive özel klasöre 'profil-kucuk.jpg' (≤150 KB, ~400×400, yüz/omuz). Panelde istendi."
   ],
   "sonraki_is": "Cuma: abone katmani (profil-daire.png gerekli) -> parca 3 (0,15 sn) ve 6 (0,25 sn) bindirme -> concat -> tam QC (40+ kare) -> kapak -> baslik/aciklama/etiket/bolumler -> panelde onay istegi.",
-  "not": "18.11.2026 08:31: Kanal sahibi Ders 1 Bölüm 1 metnini onayladı. Mevcut seslerle devam: zamanlama → render. | 18.11 08:36: Kanal sahibi intro kartı biçimini belirledi: 'Devre Teorisi I: Ders N - Bölüm k/3' (UZUN.md 4a).",
+  "not": "18.11 19:20 genel müdür: Kanal sahibi parçaları izledi. Birleştirmeden önce iş emrini uygula (parça 5: hesaplar adım adım + grafik renkleri). Metin değişikliği kanal sahibinin onayına gider; onaydan sonra yalnızca parça 5 sesi + render.",
   "metin_onayi": {
     "durum": "onaylandi",
     "zaman": "2026-11-18T08:31:00Z",
@@ -104,5 +104,6 @@
   },
   "intro_karti": "Devre Teorisi I: Ders 1 - Bölüm 1/3",
   "toplam_video_sn": 818.07,
-  "tahta": "uzun/seri/ders-01/bolum-1/tahta/ (NOTLAR.md)"
+  "tahta": "uzun/seri/ders-01/bolum-1/tahta/ (NOTLAR.md)",
+  "is_emri": "uzun/seri/ders-01/bolum-1/is-emri-20261118.md"
 }
