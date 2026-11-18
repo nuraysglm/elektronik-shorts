@@ -8,3 +8,4 @@
 - 21:10 UTC: freezedetect 8 donuk aralık (kamera anahtar karelerde duruyordu) → kamera sürekli sinüs hareketi, elektronlar daha görünür; parçalar silindi, yeniden render.
 - parca-00: tamam (08:09 UTC)
 - parca-01: tamam (08:09 UTC)
+- parca-03: tamam (08:33 UTC)
