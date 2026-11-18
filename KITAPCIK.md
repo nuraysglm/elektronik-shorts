@@ -33,10 +33,26 @@ Toplam ~50. Her bölümde kolaydan zora; her soruya zorluk etiketi (Kolay / Orta
 - Doğruluk tablosu, Karnaugh haritası, zamanlama diyagramı gereken yerde Markdown tablo veya düz metin çizim; tasarımcı sonra çizecek — gerekiyorsa `[ŞEKİL: ...ayrıntılı tarif...]` yaz.
 - AGENT.md 2d gösterim kuralları geçerli: işaretler kelime yerine kullanılmaz, kısaltma yok, `·` yalnızca VE/çarpma, tümleyen gösterimi tutarlı (A′ veya Ā — tek biri).
 
+- **Taban gösterimi (kanal sahibi, 18.11.2026):** Taban her zaman gerçek alt simgeyle yazılır: (24)₆, (ED)₁₆, (101)₂. "(24)_b", "(24)b", "24_6" gibi alt çizgili/düz yazım **asla** yok. Taban bilinmiyorsa (ör. "b tabanında") Google Docs'un alt simge biçimlendirmesi kullanılır (b harfi gerçek alt simge olarak); taban bulunduktan sonra sayılar sayıyla yazılır: (24)₆ + (35)₆ = (103)₆.
+
+### 4a. Yazım dili: doğal, öğretmen sesi (kanal sahibi, 18.11.2026 — zorunlu)
+Kitapçık deneyimli bir öğretim görevlisinin kendi eliyle yazdığı çözümlü soru kitabı gibi okunmalı; makine çıktısı gibi kalıplı, aşırı düzenli, her yeri işaretli bir metin olmamalı. Kurallar:
+1. **Ses:** Sınıfta tahtada çözer gibi, sıcak ama ağırbaşlı: "Önce tam kısmı çevirelim.", "Burada işaret bitine dikkat edin.", "Sonucu bir de onluk tabanda kontrol edelim." Öğrenciye "siz" diye hitap; abartılı övgü, ünlem, "harika", "hadi bakalım" yok.
+2. **Kalıp yok:** Her adıma "**Adım 1 —**" başlığı koyma; adımları doğal geçişlerle bağla ("Önce…", "Şimdi…", "Geriye … kaldı."). Gerekirse kısa numaralı adımlar kullanılabilir ama her soruda aynı iskelet tekrar etmez. Paragraf uzunlukları ve cümle yapıları çeşitli olur.
+3. **Az biçimlendirme:** Kalın yazı yalnızca sonuç ve gerçekten kritik bir kelime için. Uzun tire (—) kullanılmaz; ✔, ✓, emoji, ok işaretleriyle süsleme yok ("Sağlama: … ✔" yerine "Kontrol edelim: … Sonuç tutuyor."). Her cümleyi parantezle açıklama.
+4. **İngilizce karşılık** yalnızca terim kitapçıkta **ilk** geçtiğinde bir kez; sonra yalnızca Türkçe.
+5. **Türk sınav kitabı geleneği:** "Çözüm:" başlığı, kısa ve net cümleler, gereksiz giriş cümlesi yok ("Bu soruda … öğreneceğiz" yok). "En sık yapılan hata" ve "Doğrusu" kutuları da aynı doğal dille, kısa.
+6. **Tekrar eden bağlaçlar yok:** "Dolayısıyla", "Bu yüzden", "Yani" her paragrafta değil; aynı açılış kelimesiyle art arda iki paragraf başlamaz.
+7. **Kaynak notu** çözümün içinde değil, sorunun en altında küçük ve tek satır: "Kaynak: Mano, 4. baskı, s. 18–22." (italik paragraf, "PDF s." yazma).
+8. **Denetim:** Bağımsız denetçiye ayrıca "Bu metin insan bir öğretmenin yazdığı gibi doğal mı; kalıplı, aşırı biçimlendirilmiş veya makine çıktısı gibi görünen yerler var mı? Örnek cümleleri göster." diye sor; bulguları düzelt.
+9. Kanal sahibinin kendi yazdığı bir çözüm/ders notu örneği Drive'da varsa (`ornek-yazim` adlı dosya), üslubu ona yaklaştır.
+
+**İş emri (18.11.2026):** Hazır Bölüm 1 ve 2 bir sonraki çalışmada bu kurallara göre yeniden yazılır (içerik ve sayılar aynı, yalnızca dil ve biçim; (24)_b → gerçek alt simge / (24)₆; "Dikkat:" → "En sık yapılan hata / Doğrusu"; her sayının hesabı gösterilir). Sonra yeni bölümlere geçilir.
+
 ## 5. Doğruluk kontrolü (her soru, zorunlu)
 1. Cevabı **kodla doğrula**: Python ile doğruluk tablosu üret, sadeleştirilmiş ifadeyi tüm girişlerde karşılaştır; sayı dönüşümlerini ve tümleyen işlemlerini hesapla; ardışıl devrede durum dizisini simüle et. Doğrulama çıktısını `urun/dogrulama/` altına **yalnızca geçti/kaldı ve soru no** olarak yaz (soru içeriği değil).
 2. Bağımsız denetçi (ayrı Claude alt ajanı): soruyu ve çözümü verip "doğru mu, öğrenci yanlış anlayabilir mi, gösterim tutarlı mı, soru kaynaktaki bir sorunun kopyası mı?" diye sor. Sorun → düzelt.
-3. Kanal sahibinin son kontrolü için her bölüm dokümanının başına "Kontrol durumu: ajan doğruladı · kanal sahibi kontrolü bekliyor" yaz.
+3. Kanal sahibinin son kontrolü için her bölüm dokümanının başına "Kontrol durumu: ajan doğruladı, kanal sahibi kontrolü bekliyor" yaz.
 
 ## 6. Çalışma planı
 - Her çalışmada sıradaki bölüm(ler)i yaz (~8–10 soru), doğrula, Drive'a kaydet; `urun/ilerleme.md`'yi güncelle (depo, `claude/kitapcik-<YYYY-MM-DD>` dalı).
