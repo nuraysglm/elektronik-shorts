@@ -1,0 +1,891 @@
+{
+ "yontem": "RMS enerji (10 ms, esik -38 dBFS, en az 0,10 sn) duraklamalari + hece sayisina gore dinamik programlama; kelime zamanlari cumle icinde hece sayisiyla orantili tahmindir; konusma tanima yok, ses dinlenmedi",
+ "ses_suresi": 45.76,
+ "ortalama_hece_suresi": 0.1315,
+ "belirsiz_sinirlar": [],
+ "kontroller": [
+  "13 cumle sinirinin 13 tanesinde: duraklama enerjisi < -38 dBFS ve onceki/sonraki 0,3 sn en az 8 dB daha yuksek",
+  "noktalama cumle 1 'şu:' tahmin 4.14 sn; en yakin ic duraklama (4.18, 4.54); fark 0.22 sn",
+  "noktalama cumle 1 'yükü,' tahmin 5.24 sn; en yakin ic duraklama (5.09, 5.19); fark 0.10 sn",
+  "noktalama cumle 2 'akarken,' tahmin 10.06 sn; en yakin ic duraklama (10.16, 10.37); fark 0.21 sn",
+  "noktalama cumle 4 'Evet,' tahmin 15.67 sn; en yakin ic duraklama (15.68, 15.82); fark 0.08 sn",
+  "noktalama cumle 8 'göreceğiz:' tahmin 29.01 sn; en yakin ic duraklama (28.4, 28.87); fark 0.38 sn",
+  "noktalama cumle 9 'tasarla,' tahmin 35.43 sn; en yakin ic duraklama (35.69, 35.88); fark 0.35 sn",
+  "hece hizi (sesli sure uzerinden): ortalama 7.74, std 0.69, en dusuk 6.60 (cumle 1), en yuksek 8.72 (cumle 5)"
+ ],
+ "cumleler": [
+  {
+   "p": 1,
+   "text": "Bir telden geçen akımı nasıl hesaplarsın?",
+   "last": false,
+   "shorts": false,
+   "syl": 14,
+   "no": 0,
+   "start": 0.04,
+   "end": 2.36,
+   "pause_after": 0.44,
+   "voiced": 1.99,
+   "syl_per_s": 7.04,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 0.04,
+     "t1": 0.19
+    },
+    {
+     "w": "telden",
+     "t0": 0.19,
+     "t1": 0.53
+    },
+    {
+     "w": "geçen",
+     "t0": 0.53,
+     "t1": 0.84
+    },
+    {
+     "w": "akımı",
+     "t0": 0.84,
+     "t1": 1.31
+    },
+    {
+     "w": "nasıl",
+     "t0": 1.31,
+     "t1": 1.6
+    },
+    {
+     "w": "hesaplarsın?",
+     "t0": 1.6,
+     "t1": 2.36
+    }
+   ],
+   "sinir_db": {
+    "once": -35.7,
+    "duraklama": -83.5,
+    "sonra": -21.0
+   }
+  },
+  {
+   "p": 1,
+   "text": "İlk akla gelen cevap şu: geçen yükü, geçen süreye bölmek.",
+   "last": true,
+   "shorts": false,
+   "syl": 19,
+   "no": 1,
+   "start": 2.8,
+   "end": 6.62,
+   "pause_after": 0.61,
+   "voiced": 2.88,
+   "syl_per_s": 6.6,
+   "inner_pauses": [
+    [
+     4.18,
+     4.54
+    ],
+    [
+     5.09,
+     5.19
+    ],
+    [
+     5.42,
+     5.59
+    ],
+    [
+     5.93,
+     6.03
+    ]
+   ],
+   "words": [
+    {
+     "w": "İlk",
+     "t0": 2.8,
+     "t1": 2.99
+    },
+    {
+     "w": "akla",
+     "t0": 2.99,
+     "t1": 3.33
+    },
+    {
+     "w": "gelen",
+     "t0": 3.33,
+     "t1": 3.63
+    },
+    {
+     "w": "cevap",
+     "t0": 3.63,
+     "t1": 3.99
+    },
+    {
+     "w": "şu:",
+     "t0": 3.99,
+     "t1": 4.14
+    },
+    {
+     "w": "geçen",
+     "t0": 4.14,
+     "t1": 4.83
+    },
+    {
+     "w": "yükü,",
+     "t0": 4.83,
+     "t1": 5.24
+    },
+    {
+     "w": "geçen",
+     "t0": 5.24,
+     "t1": 5.75
+    },
+    {
+     "w": "süreye",
+     "t0": 5.75,
+     "t1": 6.3
+    },
+    {
+     "w": "bölmek.",
+     "t0": 6.3,
+     "t1": 6.62
+    }
+   ],
+   "sinir_db": {
+    "once": -24.8,
+    "duraklama": -77.3,
+    "sonra": -27.4
+   }
+  },
+  {
+   "p": 2,
+   "text": "Peki telde akım bir an bile durmadan akarken, bu bölme işlemi sana sıfır diyebilir mi?",
+   "last": false,
+   "shorts": false,
+   "syl": 31,
+   "no": 2,
+   "start": 7.23,
+   "end": 12.55,
+   "pause_after": 0.32,
+   "voiced": 4.46,
+   "syl_per_s": 6.95,
+   "inner_pauses": [
+    [
+     7.58,
+     7.77
+    ],
+    [
+     10.16,
+     10.37
+    ]
+   ],
+   "words": [
+    {
+     "w": "Peki",
+     "t0": 7.23,
+     "t1": 7.79
+    },
+    {
+     "w": "telde",
+     "t0": 7.79,
+     "t1": 8.09
+    },
+    {
+     "w": "akım",
+     "t0": 8.09,
+     "t1": 8.46
+    },
+    {
+     "w": "bir",
+     "t0": 8.46,
+     "t1": 8.61
+    },
+    {
+     "w": "an",
+     "t0": 8.61,
+     "t1": 8.76
+    },
+    {
+     "w": "bile",
+     "t0": 8.76,
+     "t1": 9.04
+    },
+    {
+     "w": "durmadan",
+     "t0": 9.04,
+     "t1": 9.48
+    },
+    {
+     "w": "akarken,",
+     "t0": 9.48,
+     "t1": 10.06
+    },
+    {
+     "w": "bu",
+     "t0": 10.06,
+     "t1": 10.42
+    },
+    {
+     "w": "bölme",
+     "t0": 10.42,
+     "t1": 10.71
+    },
+    {
+     "w": "işlemi",
+     "t0": 10.71,
+     "t1": 11.17
+    },
+    {
+     "w": "sana",
+     "t0": 11.17,
+     "t1": 11.48
+    },
+    {
+     "w": "sıfır",
+     "t0": 11.48,
+     "t1": 11.84
+    },
+    {
+     "w": "diyebilir",
+     "t0": 11.84,
+     "t1": 12.41
+    },
+    {
+     "w": "mi?",
+     "t0": 12.41,
+     "t1": 12.55
+    }
+   ],
+   "sinir_db": {
+    "once": -25.7,
+    "duraklama": -81.9,
+    "sonra": -21.8
+   }
+  },
+  {
+   "p": 2,
+   "text": "Hem de hiçbir hesap hatası yapmadan?",
+   "last": false,
+   "shorts": false,
+   "syl": 12,
+   "no": 3,
+   "start": 12.87,
+   "end": 14.78,
+   "pause_after": 0.54,
+   "voiced": 1.42,
+   "syl_per_s": 8.45,
+   "inner_pauses": [
+    [
+     13.12,
+     13.24
+    ],
+    [
+     14.39,
+     14.51
+    ]
+   ],
+   "words": [
+    {
+     "w": "Hem",
+     "t0": 12.87,
+     "t1": 12.99
+    },
+    {
+     "w": "de",
+     "t0": 12.99,
+     "t1": 13.11
+    },
+    {
+     "w": "hiçbir",
+     "t0": 13.11,
+     "t1": 13.56
+    },
+    {
+     "w": "hesap",
+     "t0": 13.56,
+     "t1": 13.87
+    },
+    {
+     "w": "hatası",
+     "t0": 13.87,
+     "t1": 14.3
+    },
+    {
+     "w": "yapmadan?",
+     "t0": 14.3,
+     "t1": 14.78
+    }
+   ],
+   "sinir_db": {
+    "once": -30.7,
+    "duraklama": -82.3,
+    "sonra": -26.7
+   }
+  },
+  {
+   "p": 2,
+   "text": "Evet, diyebilir.",
+   "last": false,
+   "shorts": false,
+   "syl": 6,
+   "no": 4,
+   "start": 15.32,
+   "end": 16.37,
+   "pause_after": 0.38,
+   "voiced": 0.84,
+   "syl_per_s": 7.14,
+   "inner_pauses": [
+    [
+     15.68,
+     15.82
+    ]
+   ],
+   "words": [
+    {
+     "w": "Evet,",
+     "t0": 15.32,
+     "t1": 15.67
+    },
+    {
+     "w": "diyebilir.",
+     "t0": 15.67,
+     "t1": 16.37
+    }
+   ],
+   "sinir_db": {
+    "once": -23.9,
+    "duraklama": -81.4,
+    "sonra": -17.2
+   }
+  },
+  {
+   "p": 2,
+   "text": "Birazdan nasıl olduğunu göreceğiz.",
+   "last": true,
+   "shorts": false,
+   "syl": 13,
+   "no": 5,
+   "start": 16.75,
+   "end": 18.27,
+   "pause_after": 0.53,
+   "voiced": 1.49,
+   "syl_per_s": 8.72,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Birazdan",
+     "t0": 16.75,
+     "t1": 17.1
+    },
+    {
+     "w": "nasıl",
+     "t0": 17.1,
+     "t1": 17.33
+    },
+    {
+     "w": "olduğunu",
+     "t0": 17.33,
+     "t1": 17.79
+    },
+    {
+     "w": "göreceğiz.",
+     "t0": 17.79,
+     "t1": 18.27
+    }
+   ],
+   "sinir_db": {
+    "once": -28.7,
+    "duraklama": -70.0,
+    "sonra": -17.3
+   }
+  },
+  {
+   "p": 3,
+   "text": "Bu bölümün sonunda akımın asıl tanımını kurmuş olacağız.",
+   "last": false,
+   "shorts": false,
+   "syl": 22,
+   "no": 6,
+   "start": 18.8,
+   "end": 21.83,
+   "pause_after": 0.36,
+   "voiced": 2.57,
+   "syl_per_s": 8.56,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 18.8,
+     "t1": 18.92
+    },
+    {
+     "w": "bölümün",
+     "t0": 18.92,
+     "t1": 19.36
+    },
+    {
+     "w": "sonunda",
+     "t0": 19.36,
+     "t1": 19.72
+    },
+    {
+     "w": "akımın",
+     "t0": 19.72,
+     "t1": 20.2
+    },
+    {
+     "w": "asıl",
+     "t0": 20.2,
+     "t1": 20.51
+    },
+    {
+     "w": "tanımını",
+     "t0": 20.51,
+     "t1": 21.02
+    },
+    {
+     "w": "kurmuş",
+     "t0": 21.02,
+     "t1": 21.33
+    },
+    {
+     "w": "olacağız.",
+     "t0": 21.33,
+     "t1": 21.83
+    }
+   ],
+   "sinir_db": {
+    "once": -31.1,
+    "duraklama": -72.3,
+    "sonra": -20.3
+   }
+  },
+  {
+   "p": 3,
+   "text": "Üç örnekle de ortalama akımı anlık akımdan ayırmayı öğreneceğiz.",
+   "last": false,
+   "shorts": false,
+   "syl": 26,
+   "no": 7,
+   "start": 22.19,
+   "end": 25.9,
+   "pause_after": 0.48,
+   "voiced": 3.14,
+   "syl_per_s": 8.28,
+   "inner_pauses": [
+    [
+     24.06,
+     24.16
+    ]
+   ],
+   "words": [
+    {
+     "w": "Üç",
+     "t0": 22.19,
+     "t1": 22.33
+    },
+    {
+     "w": "örnekle",
+     "t0": 22.33,
+     "t1": 22.76
+    },
+    {
+     "w": "de",
+     "t0": 22.76,
+     "t1": 22.88
+    },
+    {
+     "w": "ortalama",
+     "t0": 22.88,
+     "t1": 23.47
+    },
+    {
+     "w": "akımı",
+     "t0": 23.47,
+     "t1": 23.92
+    },
+    {
+     "w": "anlık",
+     "t0": 23.92,
+     "t1": 24.27
+    },
+    {
+     "w": "akımdan",
+     "t0": 24.27,
+     "t1": 24.75
+    },
+    {
+     "w": "ayırmayı",
+     "t0": 24.75,
+     "t1": 25.23
+    },
+    {
+     "w": "öğreneceğiz.",
+     "t0": 25.23,
+     "t1": 25.9
+    }
+   ],
+   "sinir_db": {
+    "once": -33.1,
+    "duraklama": -66.8,
+    "sonra": -17.3
+   }
+  },
+  {
+   "p": 3,
+   "text": "Sonuncusunda şaşırtıcı bir şey göreceğiz: telden geçen yük en büyük değerindeyken akım sıfır olabiliyor.",
+   "last": true,
+   "shorts": false,
+   "syl": 37,
+   "no": 8,
+   "start": 26.38,
+   "end": 32.79,
+   "pause_after": 0.35,
+   "voiced": 4.99,
+   "syl_per_s": 7.41,
+   "inner_pauses": [
+    [
+     28.4,
+     28.87
+    ],
+    [
+     29.82,
+     29.92
+    ],
+    [
+     29.94,
+     30.11
+    ],
+    [
+     30.49,
+     30.6
+    ],
+    [
+     31.37,
+     31.55
+    ]
+   ],
+   "words": [
+    {
+     "w": "Sonuncusunda",
+     "t0": 26.38,
+     "t1": 27.14
+    },
+    {
+     "w": "şaşırtıcı",
+     "t0": 27.14,
+     "t1": 27.72
+    },
+    {
+     "w": "bir",
+     "t0": 27.72,
+     "t1": 27.85
+    },
+    {
+     "w": "şey",
+     "t0": 27.85,
+     "t1": 27.99
+    },
+    {
+     "w": "göreceğiz:",
+     "t0": 27.99,
+     "t1": 29.01
+    },
+    {
+     "w": "telden",
+     "t0": 29.01,
+     "t1": 29.28
+    },
+    {
+     "w": "geçen",
+     "t0": 29.28,
+     "t1": 29.57
+    },
+    {
+     "w": "yük",
+     "t0": 29.57,
+     "t1": 29.7
+    },
+    {
+     "w": "en",
+     "t0": 29.7,
+     "t1": 29.94
+    },
+    {
+     "w": "büyük",
+     "t0": 29.94,
+     "t1": 30.38
+    },
+    {
+     "w": "değerindeyken",
+     "t0": 30.38,
+     "t1": 31.25
+    },
+    {
+     "w": "akım",
+     "t0": 31.25,
+     "t1": 31.78
+    },
+    {
+     "w": "sıfır",
+     "t0": 31.78,
+     "t1": 32.05
+    },
+    {
+     "w": "olabiliyor.",
+     "t0": 32.05,
+     "t1": 32.79
+    }
+   ],
+   "sinir_db": {
+    "once": -21.2,
+    "duraklama": -81.1,
+    "sonra": -21.1
+   }
+  },
+  {
+   "p": 4,
+   "text": "Devre teorisinde ne tasarlarsan tasarla, işe büyüklükleri doğru tanımlayarak başlarsın.",
+   "last": false,
+   "shorts": false,
+   "syl": 32,
+   "no": 9,
+   "start": 33.14,
+   "end": 38.27,
+   "pause_after": 0.33,
+   "voiced": 4.43,
+   "syl_per_s": 7.22,
+   "inner_pauses": [
+    [
+     35.69,
+     35.88
+    ],
+    [
+     37.61,
+     37.71
+    ]
+   ],
+   "words": [
+    {
+     "w": "Devre",
+     "t0": 33.14,
+     "t1": 33.46
+    },
+    {
+     "w": "teorisinde",
+     "t0": 33.46,
+     "t1": 34.15
+    },
+    {
+     "w": "ne",
+     "t0": 34.15,
+     "t1": 34.37
+    },
+    {
+     "w": "tasarlarsan",
+     "t0": 34.37,
+     "t1": 34.96
+    },
+    {
+     "w": "tasarla,",
+     "t0": 34.96,
+     "t1": 35.43
+    },
+    {
+     "w": "işe",
+     "t0": 35.43,
+     "t1": 35.9
+    },
+    {
+     "w": "büyüklükleri",
+     "t0": 35.9,
+     "t1": 36.74
+    },
+    {
+     "w": "doğru",
+     "t0": 36.74,
+     "t1": 37.02
+    },
+    {
+     "w": "tanımlayarak",
+     "t0": 37.02,
+     "t1": 37.83
+    },
+    {
+     "w": "başlarsın.",
+     "t0": 37.83,
+     "t1": 38.27
+    }
+   ],
+   "sinir_db": {
+    "once": -31.2,
+    "duraklama": -83.3,
+    "sonra": -22.5
+   }
+  },
+  {
+   "p": 4,
+   "text": "Bu seriye de tam buradan giriyoruz.",
+   "last": false,
+   "shorts": false,
+   "syl": 13,
+   "no": 10,
+   "start": 38.6,
+   "end": 40.34,
+   "pause_after": 0.43,
+   "voiced": 1.53,
+   "syl_per_s": 8.5,
+   "inner_pauses": [
+    [
+     39.27,
+     39.37
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 38.6,
+     "t1": 38.72
+    },
+    {
+     "w": "seriye",
+     "t0": 38.72,
+     "t1": 39.08
+    },
+    {
+     "w": "de",
+     "t0": 39.08,
+     "t1": 39.19
+    },
+    {
+     "w": "tam",
+     "t0": 39.19,
+     "t1": 39.44
+    },
+    {
+     "w": "buradan",
+     "t0": 39.44,
+     "t1": 39.79
+    },
+    {
+     "w": "giriyoruz.",
+     "t0": 39.79,
+     "t1": 40.34
+    }
+   ],
+   "sinir_db": {
+    "once": -31.3,
+    "duraklama": -68.5,
+    "sonra": -17.4
+   }
+  },
+  {
+   "p": 4,
+   "text": "Bugünün konusu yük ve akım.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 11,
+   "start": 40.77,
+   "end": 42.6,
+   "pause_after": 0.31,
+   "voiced": 1.29,
+   "syl_per_s": 7.75,
+   "inner_pauses": [
+    [
+     41.37,
+     41.52
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bugünün",
+     "t0": 40.77,
+     "t1": 41.21
+    },
+    {
+     "w": "konusu",
+     "t0": 41.21,
+     "t1": 41.84
+    },
+    {
+     "w": "yük",
+     "t0": 41.84,
+     "t1": 41.97
+    },
+    {
+     "w": "ve",
+     "t0": 41.97,
+     "t1": 42.23
+    },
+    {
+     "w": "akım.",
+     "t0": 42.23,
+     "t1": 42.6
+    }
+   ],
+   "sinir_db": {
+    "once": -37.6,
+    "duraklama": -82.6,
+    "sonra": -16.6
+   }
+  },
+  {
+   "p": 4,
+   "text": "Gerilimi bu dersin üçüncü bölümünde ele alacağız.",
+   "last": true,
+   "shorts": false,
+   "syl": 20,
+   "no": 12,
+   "start": 42.91,
+   "end": 45.53,
+   "pause_after": 0.23,
+   "voiced": 2.5,
+   "syl_per_s": 8.0,
+   "inner_pauses": [
+    [
+     45.53,
+     45.76
+    ]
+   ],
+   "words": [
+    {
+     "w": "Gerilimi",
+     "t0": 42.91,
+     "t1": 43.41
+    },
+    {
+     "w": "bu",
+     "t0": 43.41,
+     "t1": 43.54
+    },
+    {
+     "w": "dersin",
+     "t0": 43.54,
+     "t1": 43.79
+    },
+    {
+     "w": "üçüncü",
+     "t0": 43.79,
+     "t1": 44.24
+    },
+    {
+     "w": "bölümünde",
+     "t0": 44.24,
+     "t1": 44.74
+    },
+    {
+     "w": "ele",
+     "t0": 44.74,
+     "t1": 44.99
+    },
+    {
+     "w": "alacağız.",
+     "t0": 44.99,
+     "t1": 45.53
+    }
+   ],
+   "sinir_db": {
+    "once": -30.5,
+    "duraklama": -59.1,
+    "sonra": null
+   }
+  }
+ ]
+}

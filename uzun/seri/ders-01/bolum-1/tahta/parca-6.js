@@ -1,0 +1,48 @@
+// Parca 6: Ornek 3 — q = (6t - t^2) mC; yuk en buyukken akim sifir (metin.md [PARCA 6]). Abone karti 0,25-6,25 sn (ayri katman).
+import { K, B, R, GR, S, E, Wt, text, row, path, line, dashed, frame, under, erase, oval, pulse, pad, axes, dot, curve, mark } from './motor.js';
+export function build() {
+  mark('abone', 0.25);
+  const g = 'o3';
+  text('Örnek 3', 80, 68, 46, R, S(0) + 0.05, { g, dur: 0.5 });
+  text('q(t) = (6t − t²) mC', 80, 145, 54, K, Wt(1, 'kü'), { g, dur: 1.3 });
+  text('0 ≤ t ≤ 4 s', 80, 212, 42, GR, Wt(2, 'sıfır'), { g, dur: 0.6 });
+  const qq = text('t = 3 s anında: q = ?, i = ?', 80, 290, 52, B, Wt(4, 'üç'), { g, dur: 1.6 });
+  oval(qq.box, R, S(5) + 0.1, 1.3, { g });
+  row(80, 375, 48, [{ s: 'q(3 s) = 18', t: Wt(7, 'on'), dur: 0.8 }, { s: '− 9', t: Wt(8, 'dokuz'), dur: 0.4 }, { s: '= 9 mC', t: Wt(9, 'yük'), dur: 0.6 }], { g });
+  text('en büyük değer', 620, 375, 40, R, S(10) + 0.2, { g, dur: 0.6 });
+  text('q(2,5 s) = 8,75 mC', 80, 445, 44, K, S(12) + 0.1, { g: 'chk', dur: 1.0 });
+  text('q(3,5 s) = 8,75 mC', 80, 510, 44, K, Wt(12, 'üç'), { g: 'chk', dur: 1.0 });
+  text('iki yanda daha küçük, tepe 3 s', 80, 575, 40, GR, Wt(13, 'tepe') - 0.6, { g: 'chk', dur: 1.2 });
+  erase('chk', S(21) - 0.1);
+  const XR = 1000;
+  row(XR, 145, 54, [{ s: 'i = dq / dt', t: S(16), dur: 0.8, color: B }, { s: '= (6 − 2t) mA', t: Wt(17, 'altı', 1), dur: 1.0, color: B }], { g });
+  const i0 = text('i(3 s) = 6 − 6 = 0 mA', XR, 228, 54, B, Wt(18, 'altıdan'), { g, dur: 1.4 });
+  oval(i0.box, R, S(20), 0.5, { g });
+  // grafik
+  const ax = axes({ box: [150, 480, 860, 758], xr: [0, 4.4], yr: [0, 10], xt: [0, 1, 2, 3, 4], yt: [2, 4, 6, 8, 10], xl: 't (s)', yl: 'q (mC)', t: S(21), g, dt: 0.3, fs: 32 });
+  const q = (t) => 6 * t - t * t;
+  for (const [a, b] of [[0, 0], [1, 5], [3, 9], [4, 8]]) if (q(a) !== b) throw new Error('q kontrol ' + a);
+  curve(q, 0, 4, ax, B, 5, ax.end + 0.05, 1.0, { g });
+  dot([ax.X(3), ax.Y(9)], 9, K, ax.end + 1.2, { g });
+  const tan = (a, col, tt, w = 0.45, gg = g) => { const m = 6 - 2 * a, lo = Math.max(0, a - w), hi = Math.min(4.4, a + w); return line([ax.X(lo), ax.Y(q(a) + m * (lo - a))], [ax.X(hi), ax.Y(q(a) + m * (hi - a))], col, 4, tt, 0.4, { g: gg }); };
+  const lo = 2.2, hi = 3.8;
+  dashed([ax.X(lo), ax.Y(9)], [ax.X(hi), ax.Y(9)], R, 4, Wt(23, 'teğet'), 0.5, { g });
+  text('eğim = 0', ax.X(3), ax.Y(9) - 22, 36, R, Wt(23, 'eğim'), { g, align: 'c', dur: 0.4 });
+  tan(1, K, Wt(26, 'bir'));
+  dot([ax.X(1), ax.Y(5)], 7, B, Wt(26, 'bir') + 0.5, { g });
+  text('i(1 s) = 4 mA', ax.X(1.25), ax.Y(3.3), 34, B, Wt(26, 'dört'), { g, dur: 0.6 });
+  tan(4, R, Wt(27, 'dört'), 0.4);
+  dot([ax.X(4), ax.Y(8)], 7, R, Wt(27, 'dört') + 0.5, { g });
+  text('i(4 s) = −2 mA', ax.X(3.15), ax.Y(5.7), 34, R, Wt(27, 'eksi'), { g, dur: 0.7 });
+  text('eksi işaret: yük ters yönde geçiyor', XR, 330, 44, R, S(30), { g, dur: 1.4 });
+  tan(0, K, Wt(34, 'başlangıçta'), 0.45);
+  text('i(0) = 6 mA', ax.X(0.2), ax.Y(8.3), 34, B, Wt(34, 'altı'), { g, dur: 0.5 });
+  text('q(0) = 0', ax.X(0.2), ax.Y(6.9), 34, K, S(35) + 0.2, { g, dur: 0.4 });
+  text('yük sıfırken akım en büyük,', XR, 420, 46, K, S(37), { g, dur: 1.2 });
+  text('yük en büyükken akım sıfır', XR, 480, 46, K, Wt(37, 'yük', 1), { g, dur: 1.2 });
+  text('q(4 s) = 24 − 16 = 8 mC', XR, 580, 48, K, Wt(39, 'yirmi'), { g, dur: 1.4 });
+  text('8 mC / 4 s = 2 mA', XR, 650, 48, K, S(40), { g, dur: 1.1 });
+  text('ortalama, farklı değerleri tek sayıya sıkıştırır', XR, 712, 38, GR, Wt(41, 'dört'), { g, dur: 1.8 });
+  const tz = text('yük en büyükken akım sıfır olabilir', XR, 785, 46, R, Wt(43, 'tuzak'), { g, dur: 1.5 });
+  frame(pad(tz.box, 8), R, S(44), 0.5, { g, lw: 3 });
+}

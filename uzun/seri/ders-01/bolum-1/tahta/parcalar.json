@@ -1,0 +1,9 @@
+{
+ "1": {"ara": [[32.96, 4.0]], "kuyruk": 0.6, "not": "32,96 sn: kanca bitti -> 4 sn sessiz intro karti"},
+ "2": {"kuyruk": 0.6},
+ "3": {"kuyruk": 0.6, "abone": 0.15},
+ "4": {"kuyruk": 0.6},
+ "5": {"kuyruk": 0.6, "not": "ses_hazirla.sh 32,82 sn'ye 1,5 sn sessizlik ekledi (zamanlama bunu zaten iceriyor)"},
+ "6": {"kuyruk": 0.6, "abone": 0.25},
+ "7": {"kuyruk": 20.6, "not": "son 20 sn bitis ekrani alani (sessiz)"}
+}

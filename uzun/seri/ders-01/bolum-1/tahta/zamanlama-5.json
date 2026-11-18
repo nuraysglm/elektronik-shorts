@@ -1,0 +1,3474 @@
+{
+ "yontem": "RMS enerji (10 ms, esik -38 dBFS, en az 0,10 sn) duraklamalari + hece sayisina gore dinamik programlama; kelime zamanlari cumle icinde hece sayisiyla orantili tahmindir; konusma tanima yok, ses dinlenmedi",
+ "ses_suresi": 170.38,
+ "ortalama_hece_suresi": 0.1321,
+ "belirsiz_sinirlar": [],
+ "kontroller": [
+  "49 cumle sinirinin 49 tanesinde: duraklama enerjisi < -38 dBFS ve onceki/sonraki 0,3 sn en az 8 dB daha yuksek",
+  "noktalama cumle 2 'yük,' tahmin 6.19 sn; en yakin ic duraklama (5.88, 5.99); fark 0.25 sn",
+  "noktalama cumle 2 'artıyor:' tahmin 8.71 sn; en yakin ic duraklama (8.52, 8.67); fark 0.12 sn",
+  "noktalama cumle 4 'te,' tahmin 14.33 sn; en yakin ic duraklama None; fark yok",
+  "noktalama cumle 5 'şu:' tahmin 16.12 sn; en yakin ic duraklama (16.19, 16.44); fark 0.20 sn",
+  "noktalama cumle 7 'yük,' tahmin 21.52 sn; en yakin ic duraklama (21.62, 21.88); fark 0.23 sn",
+  "noktalama cumle 7 'katı,' tahmin 23.04 sn; en yakin ic duraklama (24.16, 24.26); fark 1.17 sn",
+  "noktalama cumle 9 'et:' tahmin 28.78 sn; en yakin ic duraklama (29.03, 29.4); fark 0.43 sn",
+  "noktalama cumle 9 'mü,' tahmin 31.94 sn; en yakin ic duraklama (32.07, 32.2); fark 0.20 sn",
+  "noktalama cumle 11 'Akım,' tahmin 36.30 sn; en yakin ic duraklama (36.33, 36.44); fark 0.09 sn",
+  "noktalama cumle 13 'akım,' tahmin 40.94 sn; en yakin ic duraklama (40.96, 41.08); fark 0.08 sn",
+  "noktalama cumle 14 'bu,' tahmin 43.64 sn; en yakin ic duraklama (43.89, 44.08); fark 0.34 sn",
+  "noktalama cumle 16 'bakalım:' tahmin 48.58 sn; en yakin ic duraklama (48.24, 48.44); fark 0.24 sn",
+  "noktalama cumle 16 'saniye,' tahmin 49.79 sn; en yakin ic duraklama (49.87, 50.0); fark 0.15 sn",
+  "noktalama cumle 19 'artıyorsa,' tahmin 57.10 sn; en yakin ic duraklama (56.78, 56.91); fark 0.26 sn",
+  "noktalama cumle 19 'akım,' tahmin 59.71 sn; en yakin ic duraklama (59.8, 59.92); fark 0.15 sn",
+  "noktalama cumle 27 'geçmiş,' tahmin 86.19 sn; en yakin ic duraklama (86.2, 86.37); fark 0.09 sn",
+  "noktalama cumle 30 'indirelim:' tahmin 95.30 sn; en yakin ic duraklama (95.3, 95.53); fark 0.11 sn",
+  "noktalama cumle 35 'çizdiğimizde,' tahmin 107.98 sn; en yakin ic duraklama (107.87, 107.97); fark 0.06 sn",
+  "noktalama cumle 35 'akım,' tahmin 110.58 sn; en yakin ic duraklama (110.31, 110.47); fark 0.19 sn",
+  "noktalama cumle 36 'doğru,' tahmin 114.90 sn; en yakin ic duraklama (115.22, 115.39); fark 0.41 sn",
+  "noktalama cumle 37 'akım,' tahmin 120.06 sn; en yakin ic duraklama (120.15, 120.29); fark 0.16 sn",
+  "noktalama cumle 39 'değere,' tahmin 125.68 sn; en yakin ic duraklama (125.79, 125.91); fark 0.17 sn",
+  "noktalama cumle 40 'dersek,' tahmin 129.68 sn; en yakin ic duraklama (129.85, 130.14); fark 0.31 sn",
+  "noktalama cumle 42 'an,' tahmin 136.74 sn; en yakin ic duraklama (136.8, 136.95); fark 0.13 sn",
+  "noktalama cumle 42 'değil,' tahmin 138.84 sn; en yakin ic duraklama (138.86, 139.03); fark 0.10 sn",
+  "noktalama cumle 43 'görebilirsin:' tahmin 142.03 sn; en yakin ic duraklama (141.65, 141.86); fark 0.28 sn",
+  "noktalama cumle 43 'teğet,' tahmin 144.92 sn; en yakin ic duraklama (144.48, 144.7); fark 0.33 sn",
+  "noktalama cumle 45 'gerilim,' tahmin 153.20 sn; en yakin ic duraklama (153.35, 153.47); fark 0.21 sn",
+  "noktalama cumle 46 'miliamper,' tahmin 158.96 sn; en yakin ic duraklama (158.73, 158.91); fark 0.14 sn",
+  "noktalama cumle 47 'bulurduk,' tahmin 163.56 sn; en yakin ic duraklama (163.02, 163.43); fark 0.33 sn",
+  "noktalama cumle 48 'hata,' tahmin 168.36 sn; en yakin ic duraklama (169.15, 169.25); fark 0.84 sn",
+  "hece hizi (sesli sure uzerinden): ortalama 7.65, std 0.82, en dusuk 5.26 (cumle 31), en yuksek 9.63 (cumle 22)"
+ ],
+ "cumleler": [
+  {
+   "p": 1,
+   "text": "Şimdi biraz daha zor bir örnek.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 0,
+   "start": 0.03,
+   "end": 1.65,
+   "pause_after": 0.45,
+   "voiced": 1.46,
+   "syl_per_s": 6.85,
+   "inner_pauses": [
+    [
+     0.39,
+     0.53
+    ]
+   ],
+   "words": [
+    {
+     "w": "Şimdi",
+     "t0": 0.03,
+     "t1": 0.33
+    },
+    {
+     "w": "biraz",
+     "t0": 0.33,
+     "t1": 0.76
+    },
+    {
+     "w": "daha",
+     "t0": 0.76,
+     "t1": 1.05
+    },
+    {
+     "w": "zor",
+     "t0": 1.05,
+     "t1": 1.2
+    },
+    {
+     "w": "bir",
+     "t0": 1.2,
+     "t1": 1.36
+    },
+    {
+     "w": "örnek.",
+     "t0": 1.36,
+     "t1": 1.65
+    }
+   ],
+   "sinir_db": {
+    "once": -29.6,
+    "duraklama": -73.3,
+    "sonra": -19.2
+   }
+  },
+  {
+   "p": 1,
+   "text": "Burada akım her an değişiyor.",
+   "last": true,
+   "shorts": false,
+   "syl": 11,
+   "no": 1,
+   "start": 2.1,
+   "end": 3.91,
+   "pause_after": 0.29,
+   "voiced": 1.7,
+   "syl_per_s": 6.47,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Burada",
+     "t0": 2.1,
+     "t1": 2.57
+    },
+    {
+     "w": "akım",
+     "t0": 2.57,
+     "t1": 2.98
+    },
+    {
+     "w": "her",
+     "t0": 2.98,
+     "t1": 3.14
+    },
+    {
+     "w": "an",
+     "t0": 3.14,
+     "t1": 3.3
+    },
+    {
+     "w": "değişiyor.",
+     "t0": 3.3,
+     "t1": 3.91
+    }
+   ],
+   "sinir_db": {
+    "once": -28.9,
+    "duraklama": -83.3,
+    "sonra": -28.2
+   }
+  },
+  {
+   "p": 2,
+   "text": "Bir telin kesitinden geçen toplam yük, sıfır anından itibaren şöyle artıyor: kü eşittir iki te kare milikulon.",
+   "last": false,
+   "shorts": false,
+   "syl": 39,
+   "no": 2,
+   "start": 4.2,
+   "end": 11.45,
+   "pause_after": 0.22,
+   "voiced": 5.22,
+   "syl_per_s": 7.47,
+   "inner_pauses": [
+    [
+     5.88,
+     5.99
+    ],
+    [
+     6.35,
+     6.67
+    ],
+    [
+     8.52,
+     8.67
+    ],
+    [
+     8.86,
+     9.19
+    ],
+    [
+     9.67,
+     9.82
+    ],
+    [
+     10.05,
+     10.2
+    ],
+    [
+     11.13,
+     11.23
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 4.2,
+     "t1": 4.34
+    },
+    {
+     "w": "telin",
+     "t0": 4.34,
+     "t1": 4.68
+    },
+    {
+     "w": "kesitinden",
+     "t0": 4.68,
+     "t1": 5.3
+    },
+    {
+     "w": "geçen",
+     "t0": 5.3,
+     "t1": 5.6
+    },
+    {
+     "w": "toplam",
+     "t0": 5.6,
+     "t1": 6.06
+    },
+    {
+     "w": "yük,",
+     "t0": 6.06,
+     "t1": 6.19
+    },
+    {
+     "w": "sıfır",
+     "t0": 6.19,
+     "t1": 6.8
+    },
+    {
+     "w": "anından",
+     "t0": 6.8,
+     "t1": 7.27
+    },
+    {
+     "w": "itibaren",
+     "t0": 7.27,
+     "t1": 7.88
+    },
+    {
+     "w": "şöyle",
+     "t0": 7.88,
+     "t1": 8.16
+    },
+    {
+     "w": "artıyor:",
+     "t0": 8.16,
+     "t1": 8.71
+    },
+    {
+     "w": "kü",
+     "t0": 8.71,
+     "t1": 8.86
+    },
+    {
+     "w": "eşittir",
+     "t0": 8.86,
+     "t1": 9.59
+    },
+    {
+     "w": "iki",
+     "t0": 9.59,
+     "t1": 10.01
+    },
+    {
+     "w": "te",
+     "t0": 10.01,
+     "t1": 10.38
+    },
+    {
+     "w": "kare",
+     "t0": 10.38,
+     "t1": 10.82
+    },
+    {
+     "w": "milikulon.",
+     "t0": 10.82,
+     "t1": 11.45
+    }
+   ],
+   "sinir_db": {
+    "once": -35.6,
+    "duraklama": -83.1,
+    "sonra": -16.8
+   }
+  },
+  {
+   "p": 2,
+   "text": "Yani te karenin iki katı.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 3,
+   "start": 11.67,
+   "end": 13.3,
+   "pause_after": 0.27,
+   "voiced": 1.19,
+   "syl_per_s": 8.4,
+   "inner_pauses": [
+    [
+     12.08,
+     12.18
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yani",
+     "t0": 11.67,
+     "t1": 11.91
+    },
+    {
+     "w": "te",
+     "t0": 11.91,
+     "t1": 12.03
+    },
+    {
+     "w": "karenin",
+     "t0": 12.03,
+     "t1": 12.55
+    },
+    {
+     "w": "iki",
+     "t0": 12.55,
+     "t1": 12.92
+    },
+    {
+     "w": "katı.",
+     "t0": 12.92,
+     "t1": 13.3
+    }
+   ],
+   "sinir_db": {
+    "once": -37.9,
+    "duraklama": -79.8,
+    "sonra": -19.1
+   }
+  },
+  {
+   "p": 2,
+   "text": "Burada te, saniye cinsinden.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 4,
+   "start": 13.57,
+   "end": 15.34,
+   "pause_after": 0.39,
+   "voiced": 1.53,
+   "syl_per_s": 6.54,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Burada",
+     "t0": 13.57,
+     "t1": 14.13
+    },
+    {
+     "w": "te,",
+     "t0": 14.13,
+     "t1": 14.33
+    },
+    {
+     "w": "saniye",
+     "t0": 14.33,
+     "t1": 14.81
+    },
+    {
+     "w": "cinsinden.",
+     "t0": 14.81,
+     "t1": 15.34
+    }
+   ],
+   "sinir_db": {
+    "once": -32.5,
+    "duraklama": -72.4,
+    "sonra": -22.0
+   }
+  },
+  {
+   "p": 2,
+   "text": "Soru şu: üçüncü saniyede akım ne kadar?",
+   "last": true,
+   "shorts": false,
+   "syl": 15,
+   "no": 5,
+   "start": 15.73,
+   "end": 18.16,
+   "pause_after": 0.44,
+   "voiced": 1.93,
+   "syl_per_s": 7.77,
+   "inner_pauses": [
+    [
+     16.19,
+     16.44
+    ]
+   ],
+   "words": [
+    {
+     "w": "Soru",
+     "t0": 15.73,
+     "t1": 15.99
+    },
+    {
+     "w": "şu:",
+     "t0": 15.99,
+     "t1": 16.12
+    },
+    {
+     "w": "üçüncü",
+     "t0": 16.12,
+     "t1": 16.79
+    },
+    {
+     "w": "saniyede",
+     "t0": 16.79,
+     "t1": 17.33
+    },
+    {
+     "w": "akım",
+     "t0": 17.33,
+     "t1": 17.69
+    },
+    {
+     "w": "ne",
+     "t0": 17.69,
+     "t1": 17.82
+    },
+    {
+     "w": "kadar?",
+     "t0": 17.82,
+     "t1": 18.16
+    }
+   ],
+   "sinir_db": {
+    "once": -34.3,
+    "duraklama": -73.0,
+    "sonra": -18.6
+   }
+  },
+  {
+   "p": 3,
+   "text": "Önce ortalama yoldan gidelim.",
+   "last": false,
+   "shorts": false,
+   "syl": 11,
+   "no": 6,
+   "start": 18.6,
+   "end": 20.07,
+   "pause_after": 0.26,
+   "voiced": 1.38,
+   "syl_per_s": 7.97,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Önce",
+     "t0": 18.6,
+     "t1": 18.86
+    },
+    {
+     "w": "ortalama",
+     "t0": 18.86,
+     "t1": 19.38
+    },
+    {
+     "w": "yoldan",
+     "t0": 19.38,
+     "t1": 19.64
+    },
+    {
+     "w": "gidelim.",
+     "t0": 19.64,
+     "t1": 20.07
+    }
+   ],
+   "sinir_db": {
+    "once": -32.5,
+    "duraklama": -83.5,
+    "sonra": -29.7
+   }
+  },
+  {
+   "p": 3,
+   "text": "Üç saniyede geçen yük, dokuzun iki katı, yani on sekiz milikulon.",
+   "last": false,
+   "shorts": false,
+   "syl": 24,
+   "no": 7,
+   "start": 20.33,
+   "end": 24.47,
+   "pause_after": 0.26,
+   "voiced": 3.25,
+   "syl_per_s": 7.38,
+   "inner_pauses": [
+    [
+     21.62,
+     21.88
+    ],
+    [
+     24.16,
+     24.26
+    ]
+   ],
+   "words": [
+    {
+     "w": "Üç",
+     "t0": 20.33,
+     "t1": 20.52
+    },
+    {
+     "w": "saniyede",
+     "t0": 20.52,
+     "t1": 21.06
+    },
+    {
+     "w": "geçen",
+     "t0": 21.06,
+     "t1": 21.38
+    },
+    {
+     "w": "yük,",
+     "t0": 21.38,
+     "t1": 21.52
+    },
+    {
+     "w": "dokuzun",
+     "t0": 21.52,
+     "t1": 22.24
+    },
+    {
+     "w": "iki",
+     "t0": 22.24,
+     "t1": 22.66
+    },
+    {
+     "w": "katı,",
+     "t0": 22.66,
+     "t1": 23.04
+    },
+    {
+     "w": "yani",
+     "t0": 23.04,
+     "t1": 23.31
+    },
+    {
+     "w": "on",
+     "t0": 23.31,
+     "t1": 23.5
+    },
+    {
+     "w": "sekiz",
+     "t0": 23.5,
+     "t1": 23.77
+    },
+    {
+     "w": "milikulon.",
+     "t0": 23.77,
+     "t1": 24.47
+    }
+   ],
+   "sinir_db": {
+    "once": -38.4,
+    "duraklama": -83.6,
+    "sonra": -24.6
+   }
+  },
+  {
+   "p": 3,
+   "text": "Bunu üç saniyeye bölünce altı miliamper.",
+   "last": true,
+   "shorts": false,
+   "syl": 16,
+   "no": 8,
+   "start": 24.73,
+   "end": 27.31,
+   "pause_after": 0.38,
+   "voiced": 2.21,
+   "syl_per_s": 7.24,
+   "inner_pauses": [
+    [
+     26.3,
+     26.47
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bunu",
+     "t0": 24.73,
+     "t1": 25.02
+    },
+    {
+     "w": "üç",
+     "t0": 25.02,
+     "t1": 25.21
+    },
+    {
+     "w": "saniyeye",
+     "t0": 25.21,
+     "t1": 25.76
+    },
+    {
+     "w": "bölünce",
+     "t0": 25.76,
+     "t1": 26.18
+    },
+    {
+     "w": "altı",
+     "t0": 26.18,
+     "t1": 26.62
+    },
+    {
+     "w": "miliamper.",
+     "t0": 26.62,
+     "t1": 27.31
+    }
+   ],
+   "sinir_db": {
+    "once": -36.0,
+    "duraklama": -72.8,
+    "sonra": -15.1
+   }
+  },
+  {
+   "p": 4,
+   "text": "Bir an dur ve tahmin et: üç saniyedeki akım bu ortalamadan büyük mü, küçük mü?",
+   "last": true,
+   "shorts": false,
+   "syl": 27,
+   "no": 9,
+   "start": 27.69,
+   "end": 32.68,
+   "pause_after": 1.83,
+   "voiced": 3.78,
+   "syl_per_s": 7.14,
+   "inner_pauses": [
+    [
+     29.03,
+     29.4
+    ],
+    [
+     32.07,
+     32.2
+    ],
+    [
+     32.42,
+     32.55
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 27.69,
+     "t1": 27.83
+    },
+    {
+     "w": "an",
+     "t0": 27.83,
+     "t1": 27.97
+    },
+    {
+     "w": "dur",
+     "t0": 27.97,
+     "t1": 28.12
+    },
+    {
+     "w": "ve",
+     "t0": 28.12,
+     "t1": 28.25
+    },
+    {
+     "w": "tahmin",
+     "t0": 28.25,
+     "t1": 28.64
+    },
+    {
+     "w": "et:",
+     "t0": 28.64,
+     "t1": 28.78
+    },
+    {
+     "w": "üç",
+     "t0": 28.78,
+     "t1": 28.92
+    },
+    {
+     "w": "saniyedeki",
+     "t0": 28.92,
+     "t1": 30.05
+    },
+    {
+     "w": "akım",
+     "t0": 30.05,
+     "t1": 30.52
+    },
+    {
+     "w": "bu",
+     "t0": 30.52,
+     "t1": 30.66
+    },
+    {
+     "w": "ortalamadan",
+     "t0": 30.66,
+     "t1": 31.42
+    },
+    {
+     "w": "büyük",
+     "t0": 31.42,
+     "t1": 31.7
+    },
+    {
+     "w": "mü,",
+     "t0": 31.7,
+     "t1": 31.94
+    },
+    {
+     "w": "küçük",
+     "t0": 31.94,
+     "t1": 32.38
+    },
+    {
+     "w": "mü?",
+     "t0": 32.38,
+     "t1": 32.68
+    }
+   ],
+   "sinir_db": {
+    "once": -40.8,
+    "duraklama": -113.6,
+    "sonra": -22.7
+   }
+  },
+  {
+   "p": 5,
+   "text": "Şimdi tanımı kullanalım.",
+   "last": false,
+   "shorts": false,
+   "syl": 9,
+   "no": 10,
+   "start": 34.51,
+   "end": 35.65,
+   "pause_after": 0.29,
+   "voiced": 1.03,
+   "syl_per_s": 8.74,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Şimdi",
+     "t0": 34.51,
+     "t1": 34.74
+    },
+    {
+     "w": "tanımı",
+     "t0": 34.74,
+     "t1": 35.13
+    },
+    {
+     "w": "kullanalım.",
+     "t0": 35.13,
+     "t1": 35.65
+    }
+   ],
+   "sinir_db": {
+    "once": -28.2,
+    "duraklama": -84.7,
+    "sonra": -29.5
+   }
+  },
+  {
+   "p": 5,
+   "text": "Akım, yükün zamana göre türevi.",
+   "last": false,
+   "shorts": false,
+   "syl": 12,
+   "no": 11,
+   "start": 35.94,
+   "end": 37.95,
+   "pause_after": 0.24,
+   "voiced": 1.63,
+   "syl_per_s": 7.36,
+   "inner_pauses": [
+    [
+     36.33,
+     36.44
+    ],
+    [
+     37.52,
+     37.65
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akım,",
+     "t0": 35.94,
+     "t1": 36.3
+    },
+    {
+     "w": "yükün",
+     "t0": 36.3,
+     "t1": 36.74
+    },
+    {
+     "w": "zamana",
+     "t0": 36.74,
+     "t1": 37.15
+    },
+    {
+     "w": "göre",
+     "t0": 37.15,
+     "t1": 37.42
+    },
+    {
+     "w": "türevi.",
+     "t0": 37.42,
+     "t1": 37.95
+    }
+   ],
+   "sinir_db": {
+    "once": -24.5,
+    "duraklama": -83.0,
+    "sonra": -31.3
+   }
+  },
+  {
+   "p": 5,
+   "text": "İki te karenin türevi dört te.",
+   "last": false,
+   "shorts": false,
+   "syl": 11,
+   "no": 12,
+   "start": 38.19,
+   "end": 39.97,
+   "pause_after": 0.24,
+   "voiced": 1.28,
+   "syl_per_s": 8.59,
+   "inner_pauses": [
+    [
+     38.95,
+     39.05
+    ],
+    [
+     39.65,
+     39.84
+    ]
+   ],
+   "words": [
+    {
+     "w": "İki",
+     "t0": 38.19,
+     "t1": 38.52
+    },
+    {
+     "w": "te",
+     "t0": 38.52,
+     "t1": 38.67
+    },
+    {
+     "w": "karenin",
+     "t0": 38.67,
+     "t1": 39.12
+    },
+    {
+     "w": "türevi",
+     "t0": 39.12,
+     "t1": 39.55
+    },
+    {
+     "w": "dört",
+     "t0": 39.55,
+     "t1": 39.86
+    },
+    {
+     "w": "te.",
+     "t0": 39.86,
+     "t1": 39.97
+    }
+   ],
+   "sinir_db": {
+    "once": -52.6,
+    "duraklama": -79.9,
+    "sonra": -14.9
+   }
+  },
+  {
+   "p": 5,
+   "text": "Yani akım, dört te miliamper.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 13,
+   "start": 40.21,
+   "end": 42.16,
+   "pause_after": 0.35,
+   "voiced": 1.47,
+   "syl_per_s": 6.8,
+   "inner_pauses": [
+    [
+     40.96,
+     41.08
+    ],
+    [
+     41.33,
+     41.48
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yani",
+     "t0": 40.21,
+     "t1": 40.51
+    },
+    {
+     "w": "akım,",
+     "t0": 40.51,
+     "t1": 40.94
+    },
+    {
+     "w": "dört",
+     "t0": 40.94,
+     "t1": 41.21
+    },
+    {
+     "w": "te",
+     "t0": 41.21,
+     "t1": 41.52
+    },
+    {
+     "w": "miliamper.",
+     "t0": 41.52,
+     "t1": 42.16
+    }
+   ],
+   "sinir_db": {
+    "once": -36.4,
+    "duraklama": -71.4,
+    "sonra": -29.9
+   }
+  },
+  {
+   "p": 5,
+   "text": "Üç saniye anında bu, on iki miliamper eder.",
+   "last": false,
+   "shorts": false,
+   "syl": 17,
+   "no": 14,
+   "start": 42.51,
+   "end": 45.18,
+   "pause_after": 0.31,
+   "voiced": 2.29,
+   "syl_per_s": 7.42,
+   "inner_pauses": [
+    [
+     43.89,
+     44.08
+    ]
+   ],
+   "words": [
+    {
+     "w": "Üç",
+     "t0": 42.51,
+     "t1": 42.7
+    },
+    {
+     "w": "saniye",
+     "t0": 42.7,
+     "t1": 43.1
+    },
+    {
+     "w": "anında",
+     "t0": 43.1,
+     "t1": 43.51
+    },
+    {
+     "w": "bu,",
+     "t0": 43.51,
+     "t1": 43.64
+    },
+    {
+     "w": "on",
+     "t0": 43.64,
+     "t1": 43.78
+    },
+    {
+     "w": "iki",
+     "t0": 43.78,
+     "t1": 44.24
+    },
+    {
+     "w": "miliamper",
+     "t0": 44.24,
+     "t1": 44.89
+    },
+    {
+     "w": "eder.",
+     "t0": 44.89,
+     "t1": 45.18
+    }
+   ],
+   "sinir_db": {
+    "once": -30.0,
+    "duraklama": -69.6,
+    "sonra": -21.5
+   }
+  },
+  {
+   "p": 5,
+   "text": "Ortalamanın tam iki katı.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 15,
+   "start": 45.49,
+   "end": 47.15,
+   "pause_after": 0.24,
+   "voiced": 1.14,
+   "syl_per_s": 8.77,
+   "inner_pauses": [
+    [
+     46.16,
+     46.28
+    ],
+    [
+     46.94,
+     47.05
+    ]
+   ],
+   "words": [
+    {
+     "w": "Ortalamanın",
+     "t0": 45.49,
+     "t1": 46.11
+    },
+    {
+     "w": "tam",
+     "t0": 46.11,
+     "t1": 46.36
+    },
+    {
+     "w": "iki",
+     "t0": 46.36,
+     "t1": 46.74
+    },
+    {
+     "w": "katı.",
+     "t0": 46.74,
+     "t1": 47.15
+    }
+   ],
+   "sinir_db": {
+    "once": -38.2,
+    "duraklama": -81.7,
+    "sonra": -17.9
+   }
+  },
+  {
+   "p": 5,
+   "text": "Birime de bakalım: milikulon bölü saniye, miliamper eder.",
+   "last": false,
+   "shorts": false,
+   "syl": 22,
+   "no": 16,
+   "start": 47.39,
+   "end": 50.77,
+   "pause_after": 0.3,
+   "voiced": 2.86,
+   "syl_per_s": 7.69,
+   "inner_pauses": [
+    [
+     48.24,
+     48.44
+    ],
+    [
+     49.87,
+     50.0
+    ]
+   ],
+   "words": [
+    {
+     "w": "Birime",
+     "t0": 47.39,
+     "t1": 47.78
+    },
+    {
+     "w": "de",
+     "t0": 47.78,
+     "t1": 47.92
+    },
+    {
+     "w": "bakalım:",
+     "t0": 47.92,
+     "t1": 48.58
+    },
+    {
+     "w": "milikulon",
+     "t0": 48.58,
+     "t1": 49.14
+    },
+    {
+     "w": "bölü",
+     "t0": 49.14,
+     "t1": 49.4
+    },
+    {
+     "w": "saniye,",
+     "t0": 49.4,
+     "t1": 49.79
+    },
+    {
+     "w": "miliamper",
+     "t0": 49.79,
+     "t1": 50.49
+    },
+    {
+     "w": "eder.",
+     "t0": 50.49,
+     "t1": 50.77
+    }
+   ],
+   "sinir_db": {
+    "once": -28.0,
+    "duraklama": -70.0,
+    "sonra": -16.7
+   }
+  },
+  {
+   "p": 5,
+   "text": "Birimler de tutuyor.",
+   "last": true,
+   "shorts": false,
+   "syl": 7,
+   "no": 17,
+   "start": 51.07,
+   "end": 52.05,
+   "pause_after": 0.26,
+   "voiced": 0.73,
+   "syl_per_s": 9.59,
+   "inner_pauses": [
+    [
+     51.62,
+     51.86
+    ]
+   ],
+   "words": [
+    {
+     "w": "Birimler",
+     "t0": 51.07,
+     "t1": 51.39
+    },
+    {
+     "w": "de",
+     "t0": 51.39,
+     "t1": 51.49
+    },
+    {
+     "w": "tutuyor.",
+     "t0": 51.49,
+     "t1": 52.05
+    }
+   ],
+   "sinir_db": {
+    "once": -40.8,
+    "duraklama": -81.4,
+    "sonra": -31.2
+   }
+  },
+  {
+   "p": 6,
+   "text": "Bu iki kat bir tesadüf değil.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 18,
+   "start": 52.31,
+   "end": 53.87,
+   "pause_after": 0.33,
+   "voiced": 1.1,
+   "syl_per_s": 9.09,
+   "inner_pauses": [
+    [
+     53.55,
+     53.69
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 52.31,
+     "t1": 52.42
+    },
+    {
+     "w": "iki",
+     "t0": 52.42,
+     "t1": 52.79
+    },
+    {
+     "w": "kat",
+     "t0": 52.79,
+     "t1": 53.0
+    },
+    {
+     "w": "bir",
+     "t0": 53.0,
+     "t1": 53.18
+    },
+    {
+     "w": "tesadüf",
+     "t0": 53.18,
+     "t1": 53.51
+    },
+    {
+     "w": "değil.",
+     "t0": 53.51,
+     "t1": 53.87
+    }
+   ],
+   "sinir_db": {
+    "once": -38.4,
+    "duraklama": -70.2,
+    "sonra": -29.3
+   }
+  },
+  {
+   "p": 6,
+   "text": "Yük sıfırdan başlayıp zamanın karesiyle artıyorsa, sıfırdan o ana kadarki ortalama akım, o andaki akımın tam yarısıdır.",
+   "last": false,
+   "shorts": false,
+   "syl": 45,
+   "no": 19,
+   "start": 54.2,
+   "end": 61.97,
+   "pause_after": 0.36,
+   "voiced": 6.02,
+   "syl_per_s": 7.48,
+   "inner_pauses": [
+    [
+     56.78,
+     56.91
+    ],
+    [
+     57.33,
+     57.56
+    ],
+    [
+     59.8,
+     59.92
+    ],
+    [
+     60.04,
+     60.24
+    ],
+    [
+     61.13,
+     61.25
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yük",
+     "t0": 54.2,
+     "t1": 54.34
+    },
+    {
+     "w": "sıfırdan",
+     "t0": 54.34,
+     "t1": 54.89
+    },
+    {
+     "w": "başlayıp",
+     "t0": 54.89,
+     "t1": 55.29
+    },
+    {
+     "w": "zamanın",
+     "t0": 55.29,
+     "t1": 55.8
+    },
+    {
+     "w": "karesiyle",
+     "t0": 55.8,
+     "t1": 56.41
+    },
+    {
+     "w": "artıyorsa,",
+     "t0": 56.41,
+     "t1": 57.1
+    },
+    {
+     "w": "sıfırdan",
+     "t0": 57.1,
+     "t1": 57.73
+    },
+    {
+     "w": "o",
+     "t0": 57.73,
+     "t1": 57.95
+    },
+    {
+     "w": "ana",
+     "t0": 57.95,
+     "t1": 58.3
+    },
+    {
+     "w": "kadarki",
+     "t0": 58.3,
+     "t1": 58.76
+    },
+    {
+     "w": "ortalama",
+     "t0": 58.76,
+     "t1": 59.44
+    },
+    {
+     "w": "akım,",
+     "t0": 59.44,
+     "t1": 59.71
+    },
+    {
+     "w": "o",
+     "t0": 59.71,
+     "t1": 59.96
+    },
+    {
+     "w": "andaki",
+     "t0": 59.96,
+     "t1": 60.56
+    },
+    {
+     "w": "akımın",
+     "t0": 60.56,
+     "t1": 61.13
+    },
+    {
+     "w": "tam",
+     "t0": 61.13,
+     "t1": 61.38
+    },
+    {
+     "w": "yarısıdır.",
+     "t0": 61.38,
+     "t1": 61.97
+    }
+   ],
+   "sinir_db": {
+    "once": -34.2,
+    "duraklama": -67.0,
+    "sonra": -25.5
+   }
+  },
+  {
+   "p": 6,
+   "text": "Çünkü akım sıfırdan başlıyor ve düzgün biçimde artıyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 20,
+   "start": 62.33,
+   "end": 65.51,
+   "pause_after": 0.22,
+   "voiced": 2.72,
+   "syl_per_s": 6.99,
+   "inner_pauses": [
+    [
+     65.18,
+     65.33
+    ]
+   ],
+   "words": [
+    {
+     "w": "Çünkü",
+     "t0": 62.33,
+     "t1": 62.67
+    },
+    {
+     "w": "akım",
+     "t0": 62.67,
+     "t1": 63.05
+    },
+    {
+     "w": "sıfırdan",
+     "t0": 63.05,
+     "t1": 63.54
+    },
+    {
+     "w": "başlıyor",
+     "t0": 63.54,
+     "t1": 64.02
+    },
+    {
+     "w": "ve",
+     "t0": 64.02,
+     "t1": 64.16
+    },
+    {
+     "w": "düzgün",
+     "t0": 64.16,
+     "t1": 64.45
+    },
+    {
+     "w": "biçimde",
+     "t0": 64.45,
+     "t1": 64.94
+    },
+    {
+     "w": "artıyor.",
+     "t0": 64.94,
+     "t1": 65.51
+    }
+   ],
+   "sinir_db": {
+    "once": -41.4,
+    "duraklama": -81.1,
+    "sonra": -21.6
+   }
+  },
+  {
+   "p": 6,
+   "text": "Ortalama da başlangıç ile son değerin tam ortasında kalıyor.",
+   "last": true,
+   "shorts": false,
+   "syl": 22,
+   "no": 21,
+   "start": 65.73,
+   "end": 69.2,
+   "pause_after": 0.27,
+   "voiced": 3.01,
+   "syl_per_s": 7.31,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Ortalama",
+     "t0": 65.73,
+     "t1": 66.33
+    },
+    {
+     "w": "da",
+     "t0": 66.33,
+     "t1": 66.47
+    },
+    {
+     "w": "başlangıç",
+     "t0": 66.47,
+     "t1": 66.95
+    },
+    {
+     "w": "ile",
+     "t0": 66.95,
+     "t1": 67.26
+    },
+    {
+     "w": "son",
+     "t0": 67.26,
+     "t1": 67.4
+    },
+    {
+     "w": "değerin",
+     "t0": 67.4,
+     "t1": 67.87
+    },
+    {
+     "w": "tam",
+     "t0": 67.87,
+     "t1": 68.08
+    },
+    {
+     "w": "ortasında",
+     "t0": 68.08,
+     "t1": 68.71
+    },
+    {
+     "w": "kalıyor.",
+     "t0": 68.71,
+     "t1": 69.2
+    }
+   ],
+   "sinir_db": {
+    "once": -28.2,
+    "duraklama": -82.4,
+    "sonra": -31.9
+   }
+  },
+  {
+   "p": 7,
+   "text": "Bunu türev almadan da görebiliriz.",
+   "last": false,
+   "shorts": false,
+   "syl": 13,
+   "no": 22,
+   "start": 69.47,
+   "end": 71.09,
+   "pause_after": 0.23,
+   "voiced": 1.35,
+   "syl_per_s": 9.63,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bunu",
+     "t0": 69.47,
+     "t1": 69.78
+    },
+    {
+     "w": "türev",
+     "t0": 69.78,
+     "t1": 69.99
+    },
+    {
+     "w": "almadan",
+     "t0": 69.99,
+     "t1": 70.3
+    },
+    {
+     "w": "da",
+     "t0": 70.3,
+     "t1": 70.41
+    },
+    {
+     "w": "görebiliriz.",
+     "t0": 70.41,
+     "t1": 71.09
+    }
+   ],
+   "sinir_db": {
+    "once": -36.3,
+    "duraklama": -70.0,
+    "sonra": -22.6
+   }
+  },
+  {
+   "p": 7,
+   "text": "Zaten tanımın özü bu.",
+   "last": false,
+   "shorts": false,
+   "syl": 8,
+   "no": 23,
+   "start": 71.32,
+   "end": 72.58,
+   "pause_after": 0.28,
+   "voiced": 1.15,
+   "syl_per_s": 6.96,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Zaten",
+     "t0": 71.32,
+     "t1": 71.65
+    },
+    {
+     "w": "tanımın",
+     "t0": 71.65,
+     "t1": 72.15
+    },
+    {
+     "w": "özü",
+     "t0": 72.15,
+     "t1": 72.44
+    },
+    {
+     "w": "bu.",
+     "t0": 72.44,
+     "t1": 72.58
+    }
+   ],
+   "sinir_db": {
+    "once": -24.2,
+    "duraklama": -81.7,
+    "sonra": -27.0
+   }
+  },
+  {
+   "p": 7,
+   "text": "Üçüncü saniyeden başlayan bir pencere açalım ve onu adım adım daraltalım.",
+   "last": true,
+   "shorts": false,
+   "syl": 28,
+   "no": 24,
+   "start": 72.86,
+   "end": 76.88,
+   "pause_after": 0.24,
+   "voiced": 3.55,
+   "syl_per_s": 7.89,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Üçüncü",
+     "t0": 72.86,
+     "t1": 73.28
+    },
+    {
+     "w": "saniyeden",
+     "t0": 73.28,
+     "t1": 73.78
+    },
+    {
+     "w": "başlayan",
+     "t0": 73.78,
+     "t1": 74.2
+    },
+    {
+     "w": "bir",
+     "t0": 74.2,
+     "t1": 74.33
+    },
+    {
+     "w": "pencere",
+     "t0": 74.33,
+     "t1": 74.79
+    },
+    {
+     "w": "açalım",
+     "t0": 74.79,
+     "t1": 75.22
+    },
+    {
+     "w": "ve",
+     "t0": 75.22,
+     "t1": 75.44
+    },
+    {
+     "w": "onu",
+     "t0": 75.44,
+     "t1": 75.8
+    },
+    {
+     "w": "adım",
+     "t0": 75.8,
+     "t1": 76.05
+    },
+    {
+     "w": "adım",
+     "t0": 76.05,
+     "t1": 76.31
+    },
+    {
+     "w": "daraltalım.",
+     "t0": 76.31,
+     "t1": 76.88
+    }
+   ],
+   "sinir_db": {
+    "once": -36.9,
+    "duraklama": -82.0,
+    "sonra": -17.8
+   }
+  },
+  {
+   "p": 8,
+   "text": "Pencere bir saniye olsun.",
+   "last": false,
+   "shorts": false,
+   "syl": 9,
+   "no": 25,
+   "start": 77.12,
+   "end": 78.56,
+   "pause_after": 0.25,
+   "voiced": 1.27,
+   "syl_per_s": 7.09,
+   "inner_pauses": [
+    [
+     78.32,
+     78.48
+    ]
+   ],
+   "words": [
+    {
+     "w": "Pencere",
+     "t0": 77.12,
+     "t1": 77.55
+    },
+    {
+     "w": "bir",
+     "t0": 77.55,
+     "t1": 77.69
+    },
+    {
+     "w": "saniye",
+     "t0": 77.69,
+     "t1": 78.11
+    },
+    {
+     "w": "olsun.",
+     "t0": 78.11,
+     "t1": 78.56
+    }
+   ],
+   "sinir_db": {
+    "once": -38.9,
+    "duraklama": -83.8,
+    "sonra": -25.4
+   }
+  },
+  {
+   "p": 8,
+   "text": "Üç ile dört saniye arasında yük on sekiz milikulondan otuz iki milikulona çıkıyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 32,
+   "no": 26,
+   "start": 78.81,
+   "end": 83.62,
+   "pause_after": 0.21,
+   "voiced": 3.96,
+   "syl_per_s": 8.08,
+   "inner_pauses": [
+    [
+     82.16,
+     82.27
+    ],
+    [
+     83.31,
+     83.42
+    ]
+   ],
+   "words": [
+    {
+     "w": "Üç",
+     "t0": 78.81,
+     "t1": 78.98
+    },
+    {
+     "w": "ile",
+     "t0": 78.98,
+     "t1": 79.23
+    },
+    {
+     "w": "dört",
+     "t0": 79.23,
+     "t1": 79.35
+    },
+    {
+     "w": "saniye",
+     "t0": 79.35,
+     "t1": 79.76
+    },
+    {
+     "w": "arasında",
+     "t0": 79.76,
+     "t1": 80.27
+    },
+    {
+     "w": "yük",
+     "t0": 80.27,
+     "t1": 80.39
+    },
+    {
+     "w": "on",
+     "t0": 80.39,
+     "t1": 80.51
+    },
+    {
+     "w": "sekiz",
+     "t0": 80.51,
+     "t1": 80.84
+    },
+    {
+     "w": "milikulondan",
+     "t0": 80.84,
+     "t1": 81.57
+    },
+    {
+     "w": "otuz",
+     "t0": 81.57,
+     "t1": 81.91
+    },
+    {
+     "w": "iki",
+     "t0": 81.91,
+     "t1": 82.15
+    },
+    {
+     "w": "milikulona",
+     "t0": 82.15,
+     "t1": 83.07
+    },
+    {
+     "w": "çıkıyor.",
+     "t0": 83.07,
+     "t1": 83.62
+    }
+   ],
+   "sinir_db": {
+    "once": -39.0,
+    "duraklama": -81.9,
+    "sonra": -22.9
+   }
+  },
+  {
+   "p": 8,
+   "text": "Bir saniyede on dört milikulon geçmiş, yani on dört miliamper.",
+   "last": false,
+   "shorts": false,
+   "syl": 21,
+   "no": 27,
+   "start": 83.83,
+   "end": 87.82,
+   "pause_after": 0.35,
+   "voiced": 3.17,
+   "syl_per_s": 6.62,
+   "inner_pauses": [
+    [
+     85.11,
+     85.21
+    ],
+    [
+     86.2,
+     86.37
+    ],
+    [
+     87.19,
+     87.3
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 83.83,
+     "t1": 83.99
+    },
+    {
+     "w": "saniyede",
+     "t0": 83.99,
+     "t1": 84.59
+    },
+    {
+     "w": "on",
+     "t0": 84.59,
+     "t1": 84.83
+    },
+    {
+     "w": "dört",
+     "t0": 84.83,
+     "t1": 84.98
+    },
+    {
+     "w": "milikulon",
+     "t0": 84.98,
+     "t1": 85.78
+    },
+    {
+     "w": "geçmiş,",
+     "t0": 85.78,
+     "t1": 86.19
+    },
+    {
+     "w": "yani",
+     "t0": 86.19,
+     "t1": 86.66
+    },
+    {
+     "w": "on",
+     "t0": 86.66,
+     "t1": 86.89
+    },
+    {
+     "w": "dört",
+     "t0": 86.89,
+     "t1": 87.04
+    },
+    {
+     "w": "miliamper.",
+     "t0": 87.04,
+     "t1": 87.82
+    }
+   ],
+   "sinir_db": {
+    "once": -37.7,
+    "duraklama": -71.7,
+    "sonra": -24.0
+   }
+  },
+  {
+   "p": 8,
+   "text": "Şimdi pencereyi saniyenin onda birine indirelim.",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 28,
+   "start": 88.17,
+   "end": 90.93,
+   "pause_after": 0.22,
+   "voiced": 2.53,
+   "syl_per_s": 7.51,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Şimdi",
+     "t0": 88.17,
+     "t1": 88.44
+    },
+    {
+     "w": "pencereyi",
+     "t0": 88.44,
+     "t1": 89.04
+    },
+    {
+     "w": "saniyenin",
+     "t0": 89.04,
+     "t1": 89.59
+    },
+    {
+     "w": "onda",
+     "t0": 89.59,
+     "t1": 89.95
+    },
+    {
+     "w": "birine",
+     "t0": 89.95,
+     "t1": 90.35
+    },
+    {
+     "w": "indirelim.",
+     "t0": 90.35,
+     "t1": 90.93
+    }
+   ],
+   "sinir_db": {
+    "once": -30.0,
+    "duraklama": -84.1,
+    "sonra": -26.3
+   }
+  },
+  {
+   "p": 8,
+   "text": "Bu kez sonuç on iki virgül iki miliamper.",
+   "last": false,
+   "shorts": false,
+   "syl": 15,
+   "no": 29,
+   "start": 91.15,
+   "end": 93.62,
+   "pause_after": 0.34,
+   "voiced": 1.93,
+   "syl_per_s": 7.77,
+   "inner_pauses": [
+    [
+     91.97,
+     92.08
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 91.15,
+     "t1": 91.32
+    },
+    {
+     "w": "kez",
+     "t0": 91.32,
+     "t1": 91.45
+    },
+    {
+     "w": "sonuç",
+     "t0": 91.45,
+     "t1": 91.8
+    },
+    {
+     "w": "on",
+     "t0": 91.8,
+     "t1": 92.1
+    },
+    {
+     "w": "iki",
+     "t0": 92.1,
+     "t1": 92.41
+    },
+    {
+     "w": "virgül",
+     "t0": 92.41,
+     "t1": 92.68
+    },
+    {
+     "w": "iki",
+     "t0": 92.68,
+     "t1": 93.05
+    },
+    {
+     "w": "miliamper.",
+     "t0": 93.05,
+     "t1": 93.62
+    }
+   ],
+   "sinir_db": {
+    "once": -35.7,
+    "duraklama": -72.6,
+    "sonra": -17.3
+   }
+  },
+  {
+   "p": 8,
+   "text": "Bir de yüzde birine indirelim: on iki virgül sıfır iki miliamper.",
+   "last": true,
+   "shorts": false,
+   "syl": 24,
+   "no": 30,
+   "start": 93.96,
+   "end": 97.38,
+   "pause_after": 0.35,
+   "voiced": 2.92,
+   "syl_per_s": 8.22,
+   "inner_pauses": [
+    [
+     95.3,
+     95.53
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 93.96,
+     "t1": 94.09
+    },
+    {
+     "w": "de",
+     "t0": 94.09,
+     "t1": 94.21
+    },
+    {
+     "w": "yüzde",
+     "t0": 94.21,
+     "t1": 94.45
+    },
+    {
+     "w": "birine",
+     "t0": 94.45,
+     "t1": 94.82
+    },
+    {
+     "w": "indirelim:",
+     "t0": 94.82,
+     "t1": 95.3
+    },
+    {
+     "w": "on",
+     "t0": 95.3,
+     "t1": 95.66
+    },
+    {
+     "w": "iki",
+     "t0": 95.66,
+     "t1": 95.95
+    },
+    {
+     "w": "virgül",
+     "t0": 95.95,
+     "t1": 96.2
+    },
+    {
+     "w": "sıfır",
+     "t0": 96.2,
+     "t1": 96.44
+    },
+    {
+     "w": "iki",
+     "t0": 96.44,
+     "t1": 96.84
+    },
+    {
+     "w": "miliamper.",
+     "t0": 96.84,
+     "t1": 97.38
+    }
+   ],
+   "sinir_db": {
+    "once": -36.1,
+    "duraklama": -73.2,
+    "sonra": -18.0
+   }
+  },
+  {
+   "p": 9,
+   "text": "Gördün mü?",
+   "last": false,
+   "shorts": false,
+   "syl": 3,
+   "no": 31,
+   "start": 97.73,
+   "end": 98.3,
+   "pause_after": 0.21,
+   "voiced": 0.57,
+   "syl_per_s": 5.26,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Gördün",
+     "t0": 97.73,
+     "t1": 98.11
+    },
+    {
+     "w": "mü?",
+     "t0": 98.11,
+     "t1": 98.3
+    }
+   ],
+   "sinir_db": {
+    "once": -25.1,
+    "duraklama": -82.2,
+    "sonra": -15.0
+   }
+  },
+  {
+   "p": 9,
+   "text": "Pencere küçüldükçe sonuç on iki miliampere yaklaşıyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 21,
+   "no": 32,
+   "start": 98.51,
+   "end": 101.75,
+   "pause_after": 0.22,
+   "voiced": 2.58,
+   "syl_per_s": 8.14,
+   "inner_pauses": [
+    [
+     99.36,
+     99.47
+    ],
+    [
+     99.71,
+     99.88
+    ]
+   ],
+   "words": [
+    {
+     "w": "Pencere",
+     "t0": 98.51,
+     "t1": 98.88
+    },
+    {
+     "w": "küçüldükçe",
+     "t0": 98.88,
+     "t1": 99.57
+    },
+    {
+     "w": "sonuç",
+     "t0": 99.57,
+     "t1": 99.99
+    },
+    {
+     "w": "on",
+     "t0": 99.99,
+     "t1": 100.15
+    },
+    {
+     "w": "iki",
+     "t0": 100.15,
+     "t1": 100.51
+    },
+    {
+     "w": "miliampere",
+     "t0": 100.51,
+     "t1": 101.16
+    },
+    {
+     "w": "yaklaşıyor.",
+     "t0": 101.16,
+     "t1": 101.75
+    }
+   ],
+   "sinir_db": {
+    "once": -28.3,
+    "duraklama": -81.8,
+    "sonra": -32.5
+   }
+  },
+  {
+   "p": 9,
+   "text": "De kü bölü de te tam olarak bu sınır değer.",
+   "last": true,
+   "shorts": false,
+   "syl": 15,
+   "no": 33,
+   "start": 101.97,
+   "end": 104.6,
+   "pause_after": 0.36,
+   "voiced": 2.11,
+   "syl_per_s": 7.11,
+   "inner_pauses": [
+    [
+     102.16,
+     102.27
+    ],
+    [
+     102.82,
+     102.92
+    ],
+    [
+     103.14,
+     103.29
+    ],
+    [
+     103.78,
+     103.88
+    ]
+   ],
+   "words": [
+    {
+     "w": "De",
+     "t0": 101.97,
+     "t1": 102.12
+    },
+    {
+     "w": "kü",
+     "t0": 102.12,
+     "t1": 102.37
+    },
+    {
+     "w": "bölü",
+     "t0": 102.37,
+     "t1": 102.65
+    },
+    {
+     "w": "de",
+     "t0": 102.65,
+     "t1": 102.79
+    },
+    {
+     "w": "te",
+     "t0": 102.79,
+     "t1": 103.05
+    },
+    {
+     "w": "tam",
+     "t0": 103.05,
+     "t1": 103.35
+    },
+    {
+     "w": "olarak",
+     "t0": 103.35,
+     "t1": 103.77
+    },
+    {
+     "w": "bu",
+     "t0": 103.77,
+     "t1": 104.01
+    },
+    {
+     "w": "sınır",
+     "t0": 104.01,
+     "t1": 104.29
+    },
+    {
+     "w": "değer.",
+     "t0": 104.29,
+     "t1": 104.6
+    }
+   ],
+   "sinir_db": {
+    "once": -29.5,
+    "duraklama": -71.5,
+    "sonra": -20.8
+   }
+  },
+  {
+   "p": 10,
+   "text": "Bunu grafikte de görelim.",
+   "last": false,
+   "shorts": false,
+   "syl": 9,
+   "no": 34,
+   "start": 104.96,
+   "end": 106.07,
+   "pause_after": 0.22,
+   "voiced": 1.0,
+   "syl_per_s": 9.0,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bunu",
+     "t0": 104.96,
+     "t1": 105.19
+    },
+    {
+     "w": "grafikte",
+     "t0": 105.19,
+     "t1": 105.63
+    },
+    {
+     "w": "de",
+     "t0": 105.63,
+     "t1": 105.74
+    },
+    {
+     "w": "görelim.",
+     "t0": 105.74,
+     "t1": 106.07
+    }
+   ],
+   "sinir_db": {
+    "once": -25.6,
+    "duraklama": -81.8,
+    "sonra": -27.0
+   }
+  },
+  {
+   "p": 10,
+   "text": "Yükü zamana göre çizdiğimizde, iki nokta arasındaki ortalama akım, o iki noktayı birleştiren doğrunun eğimidir.",
+   "last": false,
+   "shorts": false,
+   "syl": 44,
+   "no": 35,
+   "start": 106.29,
+   "end": 113.05,
+   "pause_after": 0.31,
+   "voiced": 5.36,
+   "syl_per_s": 8.21,
+   "inner_pauses": [
+    [
+     107.87,
+     107.97
+    ],
+    [
+     108.15,
+     108.32
+    ],
+    [
+     110.31,
+     110.47
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yükü",
+     "t0": 106.29,
+     "t1": 106.59
+    },
+    {
+     "w": "zamana",
+     "t0": 106.59,
+     "t1": 106.95
+    },
+    {
+     "w": "göre",
+     "t0": 106.95,
+     "t1": 107.2
+    },
+    {
+     "w": "çizdiğimizde,",
+     "t0": 107.2,
+     "t1": 107.98
+    },
+    {
+     "w": "iki",
+     "t0": 107.98,
+     "t1": 108.46
+    },
+    {
+     "w": "nokta",
+     "t0": 108.46,
+     "t1": 108.8
+    },
+    {
+     "w": "arasındaki",
+     "t0": 108.8,
+     "t1": 109.5
+    },
+    {
+     "w": "ortalama",
+     "t0": 109.5,
+     "t1": 110.06
+    },
+    {
+     "w": "akım,",
+     "t0": 110.06,
+     "t1": 110.58
+    },
+    {
+     "w": "o",
+     "t0": 110.58,
+     "t1": 110.82
+    },
+    {
+     "w": "iki",
+     "t0": 110.82,
+     "t1": 111.18
+    },
+    {
+     "w": "noktayı",
+     "t0": 111.18,
+     "t1": 111.54
+    },
+    {
+     "w": "birleştiren",
+     "t0": 111.54,
+     "t1": 112.07
+    },
+    {
+     "w": "doğrunun",
+     "t0": 112.07,
+     "t1": 112.44
+    },
+    {
+     "w": "eğimidir.",
+     "t0": 112.44,
+     "t1": 113.05
+    }
+   ],
+   "sinir_db": {
+    "once": -33.0,
+    "duraklama": -71.6,
+    "sonra": -16.5
+   }
+  },
+  {
+   "p": 10,
+   "text": "Pencere daraldıkça bu doğru, üç saniyedeki noktada eğriye teğet olan doğruya yaklaşır.",
+   "last": false,
+   "shorts": false,
+   "syl": 32,
+   "no": 36,
+   "start": 113.36,
+   "end": 118.76,
+   "pause_after": 0.33,
+   "voiced": 4.46,
+   "syl_per_s": 7.17,
+   "inner_pauses": [
+    [
+     115.22,
+     115.39
+    ],
+    [
+     116.35,
+     116.48
+    ],
+    [
+     118.4,
+     118.52
+    ]
+   ],
+   "words": [
+    {
+     "w": "Pencere",
+     "t0": 113.36,
+     "t1": 113.78
+    },
+    {
+     "w": "daraldıkça",
+     "t0": 113.78,
+     "t1": 114.47
+    },
+    {
+     "w": "bu",
+     "t0": 114.47,
+     "t1": 114.62
+    },
+    {
+     "w": "doğru,",
+     "t0": 114.62,
+     "t1": 114.9
+    },
+    {
+     "w": "üç",
+     "t0": 114.9,
+     "t1": 115.06
+    },
+    {
+     "w": "saniyedeki",
+     "t0": 115.06,
+     "t1": 115.98
+    },
+    {
+     "w": "noktada",
+     "t0": 115.98,
+     "t1": 116.6
+    },
+    {
+     "w": "eğriye",
+     "t0": 116.6,
+     "t1": 117.1
+    },
+    {
+     "w": "teğet",
+     "t0": 117.1,
+     "t1": 117.46
+    },
+    {
+     "w": "olan",
+     "t0": 117.46,
+     "t1": 117.8
+    },
+    {
+     "w": "doğruya",
+     "t0": 117.8,
+     "t1": 118.22
+    },
+    {
+     "w": "yaklaşır.",
+     "t0": 118.22,
+     "t1": 118.76
+    }
+   ],
+   "sinir_db": {
+    "once": -37.7,
+    "duraklama": -63.7,
+    "sonra": -14.2
+   }
+  },
+  {
+   "p": 10,
+   "text": "Yani anlık akım, yük grafiğinin o andaki eğimidir.",
+   "last": true,
+   "shorts": false,
+   "syl": 19,
+   "no": 37,
+   "start": 119.09,
+   "end": 122.32,
+   "pause_after": 0.36,
+   "voiced": 2.33,
+   "syl_per_s": 8.15,
+   "inner_pauses": [
+    [
+     120.15,
+     120.29
+    ],
+    [
+     120.43,
+     120.56
+    ],
+    [
+     120.74,
+     120.84
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yani",
+     "t0": 119.09,
+     "t1": 119.34
+    },
+    {
+     "w": "anlık",
+     "t0": 119.34,
+     "t1": 119.65
+    },
+    {
+     "w": "akım,",
+     "t0": 119.65,
+     "t1": 120.06
+    },
+    {
+     "w": "yük",
+     "t0": 120.06,
+     "t1": 120.32
+    },
+    {
+     "w": "grafiğinin",
+     "t0": 120.32,
+     "t1": 121.04
+    },
+    {
+     "w": "o",
+     "t0": 121.04,
+     "t1": 121.26
+    },
+    {
+     "w": "andaki",
+     "t0": 121.26,
+     "t1": 121.62
+    },
+    {
+     "w": "eğimidir.",
+     "t0": 121.62,
+     "t1": 122.32
+    }
+   ],
+   "sinir_db": {
+    "once": -35.9,
+    "duraklama": -71.6,
+    "sonra": -22.7
+   }
+  },
+  {
+   "p": 11,
+   "text": "Bir soru daha soralım.",
+   "last": false,
+   "shorts": false,
+   "syl": 8,
+   "no": 38,
+   "start": 122.68,
+   "end": 123.61,
+   "pause_after": 0.23,
+   "voiced": 0.9,
+   "syl_per_s": 8.89,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 122.68,
+     "t1": 122.8
+    },
+    {
+     "w": "soru",
+     "t0": 122.8,
+     "t1": 123.02
+    },
+    {
+     "w": "daha",
+     "t0": 123.02,
+     "t1": 123.25
+    },
+    {
+     "w": "soralım.",
+     "t0": 123.25,
+     "t1": 123.61
+    }
+   ],
+   "sinir_db": {
+    "once": -25.7,
+    "duraklama": -84.2,
+    "sonra": -28.6
+   }
+  },
+  {
+   "p": 11,
+   "text": "Akım hangi anda ortalama değere, yani altı miliampere eşit oluyor?",
+   "last": false,
+   "shorts": false,
+   "syl": 27,
+   "no": 39,
+   "start": 123.84,
+   "end": 127.81,
+   "pause_after": 0.24,
+   "voiced": 3.42,
+   "syl_per_s": 7.89,
+   "inner_pauses": [
+    [
+     125.79,
+     125.91
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akım",
+     "t0": 123.84,
+     "t1": 124.16
+    },
+    {
+     "w": "hangi",
+     "t0": 124.16,
+     "t1": 124.43
+    },
+    {
+     "w": "anda",
+     "t0": 124.43,
+     "t1": 124.68
+    },
+    {
+     "w": "ortalama",
+     "t0": 124.68,
+     "t1": 125.26
+    },
+    {
+     "w": "değere,",
+     "t0": 125.26,
+     "t1": 125.68
+    },
+    {
+     "w": "yani",
+     "t0": 125.68,
+     "t1": 126.05
+    },
+    {
+     "w": "altı",
+     "t0": 126.05,
+     "t1": 126.38
+    },
+    {
+     "w": "miliampere",
+     "t0": 126.38,
+     "t1": 127.1
+    },
+    {
+     "w": "eşit",
+     "t0": 127.1,
+     "t1": 127.35
+    },
+    {
+     "w": "oluyor?",
+     "t0": 127.35,
+     "t1": 127.81
+    }
+   ],
+   "sinir_db": {
+    "once": -25.8,
+    "duraklama": -82.2,
+    "sonra": -26.3
+   }
+  },
+  {
+   "p": 11,
+   "text": "Dört te eşittir altı dersek, te bir buçuk saniye çıkıyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 40,
+   "start": 128.05,
+   "end": 131.69,
+   "pause_after": 0.23,
+   "voiced": 2.7,
+   "syl_per_s": 7.04,
+   "inner_pauses": [
+    [
+     128.29,
+     128.44
+    ],
+    [
+     128.8,
+     128.92
+    ],
+    [
+     129.85,
+     130.14
+    ],
+    [
+     131.38,
+     131.5
+    ]
+   ],
+   "words": [
+    {
+     "w": "Dört",
+     "t0": 128.05,
+     "t1": 128.2
+    },
+    {
+     "w": "te",
+     "t0": 128.2,
+     "t1": 128.5
+    },
+    {
+     "w": "eşittir",
+     "t0": 128.5,
+     "t1": 129.05
+    },
+    {
+     "w": "altı",
+     "t0": 129.05,
+     "t1": 129.4
+    },
+    {
+     "w": "dersek,",
+     "t0": 129.4,
+     "t1": 129.68
+    },
+    {
+     "w": "te",
+     "t0": 129.68,
+     "t1": 129.84
+    },
+    {
+     "w": "bir",
+     "t0": 129.84,
+     "t1": 130.29
+    },
+    {
+     "w": "buçuk",
+     "t0": 130.29,
+     "t1": 130.57
+    },
+    {
+     "w": "saniye",
+     "t0": 130.57,
+     "t1": 131.1
+    },
+    {
+     "w": "çıkıyor.",
+     "t0": 131.1,
+     "t1": 131.69
+    }
+   ],
+   "sinir_db": {
+    "once": -40.9,
+    "duraklama": -82.0,
+    "sonra": -32.9
+   }
+  },
+  {
+   "p": 11,
+   "text": "Demek ki ortalama değer de aslında akımın bir anda aldığı bir değer.",
+   "last": false,
+   "shorts": false,
+   "syl": 25,
+   "no": 41,
+   "start": 131.92,
+   "end": 135.81,
+   "pause_after": 0.33,
+   "voiced": 3.46,
+   "syl_per_s": 7.23,
+   "inner_pauses": [
+    [
+     132.12,
+     132.23
+    ]
+   ],
+   "words": [
+    {
+     "w": "Demek",
+     "t0": 131.92,
+     "t1": 132.31
+    },
+    {
+     "w": "ki",
+     "t0": 132.31,
+     "t1": 132.46
+    },
+    {
+     "w": "ortalama",
+     "t0": 132.46,
+     "t1": 133.05
+    },
+    {
+     "w": "değer",
+     "t0": 133.05,
+     "t1": 133.35
+    },
+    {
+     "w": "de",
+     "t0": 133.35,
+     "t1": 133.58
+    },
+    {
+     "w": "aslında",
+     "t0": 133.58,
+     "t1": 134.08
+    },
+    {
+     "w": "akımın",
+     "t0": 134.08,
+     "t1": 134.57
+    },
+    {
+     "w": "bir",
+     "t0": 134.57,
+     "t1": 134.71
+    },
+    {
+     "w": "anda",
+     "t0": 134.71,
+     "t1": 134.98
+    },
+    {
+     "w": "aldığı",
+     "t0": 134.98,
+     "t1": 135.4
+    },
+    {
+     "w": "bir",
+     "t0": 135.4,
+     "t1": 135.54
+    },
+    {
+     "w": "değer.",
+     "t0": 135.54,
+     "t1": 135.81
+    }
+   ],
+   "sinir_db": {
+    "once": -24.3,
+    "duraklama": -67.5,
+    "sonra": -23.3
+   }
+  },
+  {
+   "p": 11,
+   "text": "Ama o an, bizim sorduğumuz üç saniye değil, bir buçuk saniye.",
+   "last": false,
+   "shorts": false,
+   "syl": 22,
+   "no": 42,
+   "start": 136.14,
+   "end": 139.94,
+   "pause_after": 0.25,
+   "voiced": 3.0,
+   "syl_per_s": 7.33,
+   "inner_pauses": [
+    [
+     136.8,
+     136.95
+    ],
+    [
+     137.78,
+     137.92
+    ],
+    [
+     138.86,
+     139.03
+    ]
+   ],
+   "words": [
+    {
+     "w": "Ama",
+     "t0": 136.14,
+     "t1": 136.47
+    },
+    {
+     "w": "o",
+     "t0": 136.47,
+     "t1": 136.6
+    },
+    {
+     "w": "an,",
+     "t0": 136.6,
+     "t1": 136.74
+    },
+    {
+     "w": "bizim",
+     "t0": 136.74,
+     "t1": 137.16
+    },
+    {
+     "w": "sorduğumuz",
+     "t0": 137.16,
+     "t1": 137.94
+    },
+    {
+     "w": "üç",
+     "t0": 137.94,
+     "t1": 138.13
+    },
+    {
+     "w": "saniye",
+     "t0": 138.13,
+     "t1": 138.54
+    },
+    {
+     "w": "değil,",
+     "t0": 138.54,
+     "t1": 138.84
+    },
+    {
+     "w": "bir",
+     "t0": 138.84,
+     "t1": 139.14
+    },
+    {
+     "w": "buçuk",
+     "t0": 139.14,
+     "t1": 139.52
+    },
+    {
+     "w": "saniye.",
+     "t0": 139.52,
+     "t1": 139.94
+    }
+   ],
+   "sinir_db": {
+    "once": -32.1,
+    "duraklama": -82.8,
+    "sonra": -26.1
+   }
+  },
+  {
+   "p": 11,
+   "text": "Grafikte de bunu görebilirsin: sıfırdan üçe uzanan kirişe paralel teğet, tam bir buçuk saniyede eğriye değiyor.",
+   "last": true,
+   "shorts": false,
+   "syl": 41,
+   "no": 43,
+   "start": 140.19,
+   "end": 146.88,
+   "pause_after": 0.27,
+   "voiced": 5.51,
+   "syl_per_s": 7.44,
+   "inner_pauses": [
+    [
+     140.46,
+     140.57
+    ],
+    [
+     141.65,
+     141.86
+    ],
+    [
+     144.48,
+     144.7
+    ]
+   ],
+   "words": [
+    {
+     "w": "Grafikte",
+     "t0": 140.19,
+     "t1": 140.75
+    },
+    {
+     "w": "de",
+     "t0": 140.75,
+     "t1": 140.88
+    },
+    {
+     "w": "bunu",
+     "t0": 140.88,
+     "t1": 141.15
+    },
+    {
+     "w": "görebilirsin:",
+     "t0": 141.15,
+     "t1": 142.03
+    },
+    {
+     "w": "sıfırdan",
+     "t0": 142.03,
+     "t1": 142.57
+    },
+    {
+     "w": "üçe",
+     "t0": 142.57,
+     "t1": 142.88
+    },
+    {
+     "w": "uzanan",
+     "t0": 142.88,
+     "t1": 143.36
+    },
+    {
+     "w": "kirişe",
+     "t0": 143.36,
+     "t1": 143.86
+    },
+    {
+     "w": "paralel",
+     "t0": 143.86,
+     "t1": 144.35
+    },
+    {
+     "w": "teğet,",
+     "t0": 144.35,
+     "t1": 144.92
+    },
+    {
+     "w": "tam",
+     "t0": 144.92,
+     "t1": 145.06
+    },
+    {
+     "w": "bir",
+     "t0": 145.06,
+     "t1": 145.19
+    },
+    {
+     "w": "buçuk",
+     "t0": 145.19,
+     "t1": 145.53
+    },
+    {
+     "w": "saniyede",
+     "t0": 145.53,
+     "t1": 146.07
+    },
+    {
+     "w": "eğriye",
+     "t0": 146.07,
+     "t1": 146.47
+    },
+    {
+     "w": "değiyor.",
+     "t0": 146.47,
+     "t1": 146.88
+    }
+   ],
+   "sinir_db": {
+    "once": -28.8,
+    "duraklama": -80.7,
+    "sonra": -24.7
+   }
+  },
+  {
+   "p": 12,
+   "text": "Bu akım iki kiloohmluk bir dirençten geçseydi ne olurdu?",
+   "last": false,
+   "shorts": false,
+   "syl": 20,
+   "no": 44,
+   "start": 147.15,
+   "end": 150.38,
+   "pause_after": 0.24,
+   "voiced": 2.65,
+   "syl_per_s": 7.55,
+   "inner_pauses": [
+    [
+     147.65,
+     147.76
+    ],
+    [
+     148.45,
+     148.55
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 147.15,
+     "t1": 147.29
+    },
+    {
+     "w": "akım",
+     "t0": 147.29,
+     "t1": 147.61
+    },
+    {
+     "w": "iki",
+     "t0": 147.61,
+     "t1": 148.13
+    },
+    {
+     "w": "kiloohmluk",
+     "t0": 148.13,
+     "t1": 148.76
+    },
+    {
+     "w": "bir",
+     "t0": 148.76,
+     "t1": 148.89
+    },
+    {
+     "w": "dirençten",
+     "t0": 148.89,
+     "t1": 149.34
+    },
+    {
+     "w": "geçseydi",
+     "t0": 149.34,
+     "t1": 149.78
+    },
+    {
+     "w": "ne",
+     "t0": 149.78,
+     "t1": 149.92
+    },
+    {
+     "w": "olurdu?",
+     "t0": 149.92,
+     "t1": 150.38
+    }
+   ],
+   "sinir_db": {
+    "once": -32.4,
+    "duraklama": -82.8,
+    "sonra": -17.5
+   }
+  },
+  {
+   "p": 12,
+   "text": "Ohm yasasına göre direncin uçlarındaki gerilim, direnç ile akımın çarpımıdır.",
+   "last": false,
+   "shorts": false,
+   "syl": 29,
+   "no": 45,
+   "start": 150.62,
+   "end": 155.07,
+   "pause_after": 0.26,
+   "voiced": 3.9,
+   "syl_per_s": 7.44,
+   "inner_pauses": [
+    [
+     153.35,
+     153.47
+    ]
+   ],
+   "words": [
+    {
+     "w": "Ohm",
+     "t0": 150.62,
+     "t1": 150.76
+    },
+    {
+     "w": "yasasına",
+     "t0": 150.76,
+     "t1": 151.3
+    },
+    {
+     "w": "göre",
+     "t0": 151.3,
+     "t1": 151.58
+    },
+    {
+     "w": "direncin",
+     "t0": 151.58,
+     "t1": 151.98
+    },
+    {
+     "w": "uçlarındaki",
+     "t0": 151.98,
+     "t1": 152.72
+    },
+    {
+     "w": "gerilim,",
+     "t0": 152.72,
+     "t1": 153.2
+    },
+    {
+     "w": "direnç",
+     "t0": 153.2,
+     "t1": 153.58
+    },
+    {
+     "w": "ile",
+     "t0": 153.58,
+     "t1": 153.87
+    },
+    {
+     "w": "akımın",
+     "t0": 153.87,
+     "t1": 154.34
+    },
+    {
+     "w": "çarpımıdır.",
+     "t0": 154.34,
+     "t1": 155.07
+    }
+   ],
+   "sinir_db": {
+    "once": -31.3,
+    "duraklama": -69.6,
+    "sonra": -27.9
+   }
+  },
+  {
+   "p": 12,
+   "text": "Üç saniye anında iki kiloohm çarpı on iki miliamper, yirmi dört volt eder.",
+   "last": false,
+   "shorts": false,
+   "syl": 27,
+   "no": 46,
+   "start": 155.33,
+   "end": 159.96,
+   "pause_after": 0.31,
+   "voiced": 3.72,
+   "syl_per_s": 7.26,
+   "inner_pauses": [
+    [
+     156.6,
+     156.7
+    ],
+    [
+     158.73,
+     158.91
+    ]
+   ],
+   "words": [
+    {
+     "w": "Üç",
+     "t0": 155.33,
+     "t1": 155.52
+    },
+    {
+     "w": "saniye",
+     "t0": 155.52,
+     "t1": 155.94
+    },
+    {
+     "w": "anında",
+     "t0": 155.94,
+     "t1": 156.35
+    },
+    {
+     "w": "iki",
+     "t0": 156.35,
+     "t1": 156.72
+    },
+    {
+     "w": "kiloohm",
+     "t0": 156.72,
+     "t1": 157.28
+    },
+    {
+     "w": "çarpı",
+     "t0": 157.28,
+     "t1": 157.59
+    },
+    {
+     "w": "on",
+     "t0": 157.59,
+     "t1": 157.84
+    },
+    {
+     "w": "iki",
+     "t0": 157.84,
+     "t1": 158.16
+    },
+    {
+     "w": "miliamper,",
+     "t0": 158.16,
+     "t1": 158.96
+    },
+    {
+     "w": "yirmi",
+     "t0": 158.96,
+     "t1": 159.23
+    },
+    {
+     "w": "dört",
+     "t0": 159.23,
+     "t1": 159.37
+    },
+    {
+     "w": "volt",
+     "t0": 159.37,
+     "t1": 159.6
+    },
+    {
+     "w": "eder.",
+     "t0": 159.6,
+     "t1": 159.96
+    }
+   ],
+   "sinir_db": {
+    "once": -33.0,
+    "duraklama": -66.8,
+    "sonra": -20.0
+   }
+  },
+  {
+   "p": 12,
+   "text": "Ortalama akımı kullansaydık on iki volt bulurduk, yani o andaki gerilimin yarısını.",
+   "last": false,
+   "shorts": false,
+   "syl": 32,
+   "no": 47,
+   "start": 160.27,
+   "end": 165.53,
+   "pause_after": 0.36,
+   "voiced": 4.04,
+   "syl_per_s": 7.92,
+   "inner_pauses": [
+    [
+     162.58,
+     162.72
+    ],
+    [
+     163.02,
+     163.43
+    ]
+   ],
+   "words": [
+    {
+     "w": "Ortalama",
+     "t0": 160.27,
+     "t1": 160.8
+    },
+    {
+     "w": "akımı",
+     "t0": 160.8,
+     "t1": 161.32
+    },
+    {
+     "w": "kullansaydık",
+     "t0": 161.32,
+     "t1": 161.82
+    },
+    {
+     "w": "on",
+     "t0": 161.82,
+     "t1": 162.15
+    },
+    {
+     "w": "iki",
+     "t0": 162.15,
+     "t1": 162.43
+    },
+    {
+     "w": "volt",
+     "t0": 162.43,
+     "t1": 162.56
+    },
+    {
+     "w": "bulurduk,",
+     "t0": 162.56,
+     "t1": 163.56
+    },
+    {
+     "w": "yani",
+     "t0": 163.56,
+     "t1": 163.9
+    },
+    {
+     "w": "o",
+     "t0": 163.9,
+     "t1": 164.03
+    },
+    {
+     "w": "andaki",
+     "t0": 164.03,
+     "t1": 164.46
+    },
+    {
+     "w": "gerilimin",
+     "t0": 164.46,
+     "t1": 164.98
+    },
+    {
+     "w": "yarısını.",
+     "t0": 164.98,
+     "t1": 165.53
+    }
+   ],
+   "sinir_db": {
+    "once": -34.8,
+    "duraklama": -81.5,
+    "sonra": -17.3
+   }
+  },
+  {
+   "p": 12,
+   "text": "Yani bu örnekte akımda yapılan hata, gerilime de aynen taşınıyor.",
+   "last": true,
+   "shorts": false,
+   "syl": 25,
+   "no": 48,
+   "start": 165.89,
+   "end": 170.2,
+   "pause_after": 0.18,
+   "voiced": 3.58,
+   "syl_per_s": 6.98,
+   "inner_pauses": [
+    [
+     167.01,
+     167.12
+    ],
+    [
+     169.15,
+     169.25
+    ],
+    [
+     170.2,
+     170.38
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yani",
+     "t0": 165.89,
+     "t1": 166.18
+    },
+    {
+     "w": "bu",
+     "t0": 166.18,
+     "t1": 166.32
+    },
+    {
+     "w": "örnekte",
+     "t0": 166.32,
+     "t1": 166.88
+    },
+    {
+     "w": "akımda",
+     "t0": 166.88,
+     "t1": 167.47
+    },
+    {
+     "w": "yapılan",
+     "t0": 167.47,
+     "t1": 167.96
+    },
+    {
+     "w": "hata,",
+     "t0": 167.96,
+     "t1": 168.36
+    },
+    {
+     "w": "gerilime",
+     "t0": 168.36,
+     "t1": 169.02
+    },
+    {
+     "w": "de",
+     "t0": 169.02,
+     "t1": 169.27
+    },
+    {
+     "w": "aynen",
+     "t0": 169.27,
+     "t1": 169.55
+    },
+    {
+     "w": "taşınıyor.",
+     "t0": 169.55,
+     "t1": 170.2
+    }
+   ],
+   "sinir_db": {
+    "once": -30.0,
+    "duraklama": -53.9,
+    "sonra": null
+   }
+  }
+ ]
+}
