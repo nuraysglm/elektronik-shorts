@@ -74,6 +74,7 @@ Büyüme Ajanı'nın onaylanan rehberi (`buyume/uzun-video-rehberi.md`, `buyume/
 ### 4b. "Abone ol + zil" animasyonu (kanal sahibinin eski düzeni)
 Referanslar kanal sahibinin özel Drive klasöründe; **dosyalar ve kırpılmış hâlleri herkese açık depoya ASLA konmaz** (yalnızca scratchpad/`/tmp`; işten sonra sil; `.gitignore` profil*/avatar*/abone-ol-eski* kalıpları):
 - Profil fotoğrafı `1PY_8DNq7vr4miITVKfhJJ9P7mwQP8qQQ` — yalnızca yüz/omuz yuvarlak kırp (masa, bardak, telefon görünmez).
+- **Küçük profil fotoğrafı (hazır, 18.11.2026): `profil-kucuk.jpg`, Drive ID `1XNF7lgiaE9FQA-0dYfG8tWOz_xj9VR6h`** (400×400 kare, yüz/omuz, 51 KB). Abone kartında ve kapakta bunu kullan (Drive aracıyla indirilebilir boyutta); yuvarlak maskeyi koda uygula. Depoya konmaz, işten sonra yerel kopyayı sil.
 - Eski düzen: `1cJZR-DpljMWieX9X-y_mAZsYoz3Qts_p`, `1W3B9Ip3XFrJw2n-RVkosIkENtRG55udH`.
 Görünüm: alt ortada beyaz yuvarlak kart (ince gri kenar + gölge), solda yuvarlak fotoğraf, "ÖĞR. GÖR. NURAY SAĞLAM" + "ELEKTRİK-ELEKTRONİK MÜHENDİSLİĞİ", sağda kırmızı "ABONE OL" + zil. Hareket ~6 sn: alttan kayarak giriş → imleç ABONE OL'a tıklar → gri "ABONE OLUNDU", zil siyah → imleç zile tıklar, zil sallanır → kayarak çıkış. Kayma bu animasyona özel istisna. YouTube logosu/düğme görseli kopyalanmaz. Uygulaması `uzun/ornek-02/sahne.js`'de.
 
