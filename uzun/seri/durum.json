@@ -65,8 +65,8 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-7.mp3",
       "sure_sn": 61.47,
       "generation_id": "YR46jtb8iEyTcbO7wOc9",
-      "render": "tamam",
-      "qc": "parca QC tamam (otomatik + kare)",
+      "render": "tamam (iş emri B: bitiş ekranı yeniden render, 18.11 22:25)",
+      "qc": "parca QC tamam (otomatik + kare; bitiş ekranı 66 ve 78 sn kareleri)",
       "video": "wip/uzun-d01-b1/parca-7.mp4",
       "video_sn": 82.03
     }
@@ -92,6 +92,10 @@
     {
       "tarih": "2026-11-18T21:30Z",
       "not": "İş emri: parça 5 metni sürüm 3 (her sayı adım adım, kesen/teğet renkleri), dogrula.py ara adım assert'leri, bağımsız denetim (kritik yok; 4 önemli ekran/ifade bulgusu düzeltildi). Diğer parçalar tarandı: eksik-hesaplar.md. Panelde metin-1-1-p5 ve eksik-hesaplar-1-1 onayı istendi. Onay yok → DUR."
+    },
+    {
+      "tarih": "2026-11-18T22:30Z",
+      "not": "İş emri B uygulandı: parça 7 son 20 sn'de sol üstte 'Sıradaki: Bölüm 2 — Akımın yönü, açık devre ve akım grafiğinden geçen yük' + gri 'Oynatma listesi: Devre Teorisi I'; ses değişmedi; yeniden render (82,03 sn) + otomatik QC temiz + kareler kontrol edildi. metin-1-1-p5 onayı hâlâ bekliyor → parça 5 sesi üretilmedi, DUR."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
@@ -100,7 +104,7 @@
   "acik_sorular": [
     "Abone kartı için küçük profil fotoğrafı gerekli (orijinal ~1 MB, bu ortamda indirilemiyor): Drive özel klasöre 'profil-kucuk.jpg' (≤150 KB, ~400×400, yüz/omuz). Panelde istendi."
   ],
-  "sonraki_is": "Onay gelirse: parça 5 sesi (eleven_v4, 1 take, ~4.300 kredi) -> ses_hazirla (sessizlik noktası yeniden bulunur) -> zamanlama -> parca-5.js (Tahta A-D) -> render + QC; eksik-hesaplar kararına göre parça 4/6 -> birleştirme -> tam QC -> kapak -> yayin.json -> onaylar/uzun-1-1.",
+  "sonraki_is": "Onay gelirse: parça 5 sesi (eleven_v4, 1 take, ~4.300 kredi) -> ses_hazirla -> zamanlama -> parca-5.js -> render + QC; eksik-hesaplar kararına göre parça 4/6 -> birleştirme -> tam QC -> kapak -> yayin.json -> onaylar/uzun-1-1. (İş emri B tamam.)",
   "not": "18.11 19:20 genel müdür: Kanal sahibi parçaları izledi. Birleştirmeden önce iş emrini uygula (parça 5: hesaplar adım adım + grafik renkleri). Metin değişikliği kanal sahibinin onayına gider; onaydan sonra yalnızca parça 5 sesi + render.",
   "metin_onayi": {
     "durum": "onaylandi",

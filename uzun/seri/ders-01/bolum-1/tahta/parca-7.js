@@ -28,7 +28,8 @@ export function build({ ses, dur }) {
   text('açık devre', 960, 520, 52, B, Wt(15, 'açık'), { g, align: 'c', dur: 0.6 });
   text('akım grafiğinden geçen yük', 960, 600, 52, B, Wt(15, 'grafiğinden'), { g, align: 'c', dur: 1.2 });
   const te = E(15) + 0.3; erase(g, te);
-  // bitis ekrani alani (son ~20 sn): orta ve alt bos; sol ustte yavasca yazilan seri adi
+  // bitis ekrani alani (son ~20 sn, UZUN.md 4a, is emri B): orta ve alt bos; sol ustte siradaki bolum + oynatma listesi
   mark('bitis', [te, dur]);
-  text('Devre Teorisi I', 80, 90, 46, GR, te + 0.3, { g: 'bitis', dur: 3.0 });
+  text('Sıradaki: Bölüm 2 — Akımın yönü, açık devre ve akım grafiğinden geçen yük', 80, 110, 50, K, te + 0.3, { g: 'bitis', dur: 2.6 });
+  text('Oynatma listesi: Devre Teorisi I', 80, 180, 34, GR, te + 3.1, { g: 'bitis', dur: 1.4 });
 }
