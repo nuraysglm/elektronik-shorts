@@ -117,6 +117,7 @@ Görünüm: alt ortada beyaz yuvarlak kart (ince gri kenar + gölge), solda yuva
 - **Bitiş ekranı ve kartlar:** YouTube Studio'da elle; hatırlatmaya ekle (sonraki bölüm + liste + abone).
 
 ## 7. Onay ve yayın
+- **Takvim önceliği (kanal sahibi, 18.11.2026):** Görev metninde "yarın Cumartesi 08:00" yazsa bile yayın tarih/saati YALNIZCA `durum.json` `takvim` alanından alınır. Onaylı bölümün takvimdeki tarihi yarın değilse ve 7 günden uzaksa bile takvimdeki tarihe planla; takvimde tarihi olmayan bölümü planlama, genel müdüre (panel notu) bildir.
 
 - Video hazır olunca (yayından ≥48 saat önce): panelde `onaylar/uzun-<ders>-<bolum>` (`baslik`, `aciklama`: video bağlantısı (GitHub raw mp4), kapak bağlantısı, süre, başlık/açıklama taslağı, QC özeti, bilinen kusurlar; `secenekler`: onayla / düzelt (not ile) / reddet; `durum: "bekliyor"`, `olusturma`).
 - Planlama (her akşam 20:43 görevi veya genel müdür): `onayla` ise `durum.json` `takvim`deki tarih/saate Metricool `createScheduledPost` (brand **7697516**): `providers: [{network: "youtube"}]`, `youtubeData: {title, type: "video", privacy: "public", tags, category: "EDUCATION", madeForKids: false, isAiGeneratedContent: false}`, `media: [raw GitHub mp4 URL]`, `videoThumbnailUrl: raw GitHub kapak URL`, `firstCommentText`, `text` (açıklama), tarih **Cumartesi 08:00 Europe/London**, `autoPublish: true`, `draft: false`. `düzelt` ise notu uygula ve tekrar onaya sun (yayın kayar). Cevap yoksa planlama; ertesi hafta tekrar sor.
