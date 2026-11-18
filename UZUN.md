@@ -10,6 +10,7 @@ Panelin: **https://claude.ai/artifact/2Kz4oqz43CzXp6vDobpFZ7** ("Uzun Video Ajan
 - Her Razavi dersi (~45 dk) **3 bölüme** bölünür; her bölüm **~15 dk (13–17 dk)** tek bir YouTube videosudur. Ad: "Ders N · Bölüm k/3".
 - Sıklık: **haftada 1 bölüm**, **Cumartesi 08:00 Londra (11:00 TR)** yayın. İlk yayın: 28.11.2026 (Ders 1 · Bölüm 1/3).
 - Her bölüm **parça parça** (4–6 parça, her biri ~2–4 dk) üretilir, sonda intro ve kapanışla **tek 15 dk'lık video** olarak birleştirilir.
+- **METİN ONAYI KURALI (kanal sahibi, 18.11.2026): Kanal sahibi metni panelde açıkça `onayla` demeden hiçbir bölümün sesi üretilmez.** Bağımsız denetimden geçen metin panelde onaya sunulur (bölüm 2, "Metin onayı"); onay yoksa ses, zamanlama ve render adımlarına geçilmez.
 - **MUTLAK KURAL (kanal sahibi, 17.11.2026): Hiçbir uzun video kanal sahibinin panelde açıkça verdiği `onayla` kararı olmadan kanalda paylaşılmaz, planlanmaz, taslak olarak bile Metricool'a yüklenmez.** Onay yoksa, belirsizse veya karar `düzelt`/`reddet` ise yayın yapılmaz; şüphede yayınlama. Bu kural hiçbir gerekçeyle (takvim, gecikme, rehber önerisi) esnetilmez.
 
 ### 0a. Telif ve özgünlük — çok önemli
@@ -21,8 +22,8 @@ Durum dosyası: `uzun/seri/durum.json` (hangi ders/bölüm, hangi adım, parça 
 
 | Çalışma | Varsayılan iş |
 |---|---|
-| Pzt 09:13 | (Bölüm 1/3 ise) dersin **bölüm planı** (3 bölüme ayırma) → bu bölümün **metni** (parçalara ayrılmış) → doğrulama → bağımsız denetim → düzeltme → **ses üretimi** |
-| Sal 09:13 | Ses dosyalarını al (bölüm 2) → zamanlama → parça render'ları başlar |
+| Pzt 09:13 | (Bölüm 1/3 ise) dersin **bölüm planı** (3 bölüme ayırma) → bu bölümün **metni** (parçalara ayrılmış) → doğrulama → bağımsız denetim → düzeltme → panelde **metin onayı isteği** (ses ÜRETİLMEZ) |
+| Sal 09:13 | Metin onayı geldiyse: **ses üretimi** → ses dosyalarını al (bölüm 3) → zamanlama → parça render'ları başlar. Onay yoksa bekle (başka adıma geçme), panelde hatırlat |
 | Çar 09:13 | Parça render'ları + parça QC |
 | Per 09:13 | Kalan parçalar + intro + kapanış |
 | Cum 09:13 | **Birleştirme** + tam QC + kapak + başlık/açıklama/etiket/bölümler → panelde **onay isteği** |
@@ -39,6 +40,7 @@ Geride kalınırsa (ses gelmedi, QC tutmadı) yayın **bir sonraki Cumartesiye**
 - Üniversite düzeyi, çocuksu değil. Gösterim AGENT.md 2d (işaret kelime yerine kullanılmaz, kısaltma yok, ekrandaki yazı sesle aynı şeyi söyler).
 - **Doğrulama:** her sayısal sonuç Python ile (`dogrula.py`; denklem çözümü + bağımsız kontrol: KCL/KVL, güç dengesi, alternatif yöntem). `dogruluk.md`: her iddia → transkript zaman damgası veya hesap.
 - **Bağımsız denetim (zorunlu):** Agent aracıyla ayrı bir denetçi alt ajanı başlat; metni, dogruluk.md'yi, transkripti ve bu kuralları ver; "fizik doğru mu, sesle tek anlamlı mı, okunuş riski, kopya/çeviri riski, mutlak ifade" sorularını sor. Kritik/önemli bulguları düzelt. Agent aracı yoksa panele yaz ve **ses üretme**.
+- **Metin onayı (zorunlu, kanal sahibinin kuralı 18.11.2026):** Denetimden geçen metni commit + push et, sonra panelde `onaylar/metin-<ders>-<bolum>` isteği aç: `baslik` "Metni okuyun — Ders N · Bölüm k", `aciklama` (konu, kelime sayısı, tahmini süre, parça listesi ve her parçanın 1 cümlelik özeti, denetimde değişenler, örnek sorunun kendisi), `baglanti`: metnin GitHub adresi (`https://github.com/nuraysglm/elektronik-shorts/blob/main/uzun/seri/ders-NN/bolum-k/metin.md`), `secenekler`: onayla / düzelt (not ile) / reddet, `durum: "bekliyor"`, `olusturma`. Durum dosyasında `adim: "metin_onayi"`. **`onayla` gelmeden ses üretme.** `düzelt` ise notu uygula → doğrula → değişen kısımları denetçiye yeniden gönder → aynı isteği güncelleyip tekrar onaya sun (`durum: "bekliyor"`, açıklamaya "neler değişti"). Sesi önceden üretilmiş bir bölümde düzeltme gelirse **yalnızca metni değişen parçaların** sesi yeniden üretilir. `reddet` ise dur, panele yaz. Onay gecikirse yayın bir sonraki Cumartesiye kayar; panelde açıkça yaz.
 
 ## 3. Ses (ElevenLabs)
 

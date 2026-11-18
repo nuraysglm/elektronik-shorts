@@ -2,7 +2,7 @@
   "seri": "Devre Teorisi I",
   "ders": 1,
   "bolum": 1,
-  "adim": "zamanlama",
+  "adim": "metin_onayi",
   "yayin": "2026-11-28",
   "yayin_saati": "08:00 Europe/London",
   "parcalar": {
@@ -77,5 +77,6 @@
   "acik_sorular": [
     "Intro kartında \"·\" ayırıcı (UZUN 4a) mı, tire/virgül (AGENT 2d) mi? Panelde soruldu."
   ],
-  "sonraki_is": "Sesleri normalize et (-20..-19 LUFS, tepe <= -1,5 dBTP), parça 5 \"tahmin et\" sonrasına 1,5 sn sessizlik, zamanlama (zamanla.py), tahta/sahne uyarlaması (ornek-02 kopyası), parça render."
+  "sonraki_is": "Sesleri normalize et (-20..-19 LUFS, tepe <= -1,5 dBTP), parça 5 \"tahmin et\" sonrasına 1,5 sn sessizlik, zamanlama (zamanla.py), tahta/sahne uyarlaması (ornek-02 kopyası), parça render.",
+  "not": "18.11.2026 genel müdür: Kanal sahibi metni görmeden ses üretilmişti (o zaman metin onayı adımı yoktu). Yeni kural: metin onayı. Bu bölümün sesleri ZATEN VAR; panelde onaylar/metin-1-1 'onayla' gelene kadar zamanlama/render YAPMA. 'onayla' gelirse mevcut seslerle devam et (adim: zamanlama). 'düzelt' gelirse yalnızca metni değişen parçaların sesini yeniden üret."
 }
