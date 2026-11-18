@@ -28,7 +28,7 @@ Toplam ~50. Her bölümde kolaydan zora; her soruya zorluk etiketi (Kolay / Orta
 
 ## 4. Soru ve çözüm biçimi
 - Türkçe, üniversite düzeyi; terimler: Türkçe + ilk geçişte parantez içinde İngilizce (ör. "kod çözücü (decoder)").
-- **Adım adım çözüm**: her adımın gerekçesi; sık yapılan hata varsa "Dikkat:" notu; sonuç kutusu.
+- **Adım adım çözüm**: her adımın gerekçesi; "En sık yapılan hata:" kutusu (yanlış yol ve yanlış sonuç) ve hemen ardından "Doğrusu:" (eski "Dikkat:" notu yerine). **"En sık yapılan hata" (kanal sahibinin kararı, 18.11.2026):** Bilinen yanlış "En sık yapılan hata" diye adlandırılır (öğrencinin dikkatini çeker) ve hep aynı sırayla gösterilir: önce hata (o hatayla bulunan yanlış sonuçla), sonra **"Doğrusu"** ve neden doğru olduğu. Bu ad yalnızca gerçekten yaygın, bilinen bir hataya verilir: kaynağın kendisi uyarıyorsa, ders kitabında "yaygın hata" notu varsa, kanal sahibi not düştüyse ya da derslerde bilinen klasik bir yanlışsa. Uydurma ya da nadir bir hata bu adla sunulmaz. Bir video (veya kitapçıkta bir soru) yalnızca bir "en sık yapılan hata" içerir. Hazırlanan bölümlerdeki "Dikkat:" kutuları bu biçime çevrilir; sonuç kutusu.
 - Doğruluk tablosu, Karnaugh haritası, zamanlama diyagramı gereken yerde Markdown tablo veya düz metin çizim; tasarımcı sonra çizecek — gerekiyorsa `[ŞEKİL: ...ayrıntılı tarif...]` yaz.
 - AGENT.md 2d gösterim kuralları geçerli: işaretler kelime yerine kullanılmaz, kısaltma yok, `·` yalnızca VE/çarpma, tümleyen gösterimi tutarlı (A′ veya Ā — tek biri).
 
