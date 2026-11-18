@@ -78,11 +78,11 @@
     "Intro kartında \"·\" ayırıcı (UZUN 4a) mı, tire/virgül (AGENT 2d) mi? Panelde soruldu."
   ],
   "sonraki_is": "Sesleri normalize et (-20..-19 LUFS, tepe <= -1,5 dBTP), parça 5 \"tahmin et\" sonrasına 1,5 sn sessizlik, zamanlama (zamanla.py), tahta/sahne uyarlaması (ornek-02 kopyası), parça render.",
-  "not": "18.11.2026 08:31: Kanal sahibi Ders 1 Bölüm 1 metnini onayladı. Mevcut seslerle devam: zamanlama → render. | 18.11 08:36: Kanal sahibi intro kartı biçimini belirledi: 'Devre Teorisi: Ders N - Bölüm k/3' (UZUN.md 4a).",
+  "not": "18.11.2026 08:31: Kanal sahibi Ders 1 Bölüm 1 metnini onayladı. Mevcut seslerle devam: zamanlama → render. | 18.11 08:36: Kanal sahibi intro kartı biçimini belirledi: 'Devre Teorisi I: Ders N - Bölüm k/3' (UZUN.md 4a).",
   "metin_onayi": {
     "durum": "onaylandi",
     "zaman": "2026-11-18T08:31:00Z",
     "kaynak": "kanal sahibi (sohbette, genel müdür panele işledi)"
   },
-  "intro_karti": "Devre Teorisi: Ders 1 - Bölüm 1/3"
+  "intro_karti": "Devre Teorisi I: Ders 1 - Bölüm 1/3"
 }
