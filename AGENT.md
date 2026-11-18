@@ -51,7 +51,7 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
    - **Anahtar mekanizması:** anahtar fiziksel olarak kapanır; kapanınca parçacıklar akmaya başlar.
    - **Geri bildirim:** devre tamamlanınca ampul karanlıktan sıcak sarı ışığa geçer; parlaklık akımla orantılıdır.
    - **Potansiyel farkı:** gerilim gösterilirken tel içinde renk geçişi kullanılır (pilin + ucundan − ucuna doğru yüksek potansiyelden düşük potansiyele, ör. sarıdan koyu turuncuya).
-7. **Akım yönü (kanal sahibinin kararı):** Parçacıklar **elektron** olarak gösterilir ve gerçek elektron yönünde (pilin − ucundan + ucuna) akar. Ayrıca + → − yönünde ayrı renkte bir **geleneksel akım oku** gösterilir. İkisi ilk göründüğünde kısa etiketle ayrılır ("elektronlar", "akım yönü"). Bu kural "akımı küreler + → − akar" yazan eski kuralların yerine geçer.
+7. **Akım yönü (kanal sahibinin kararı):** Parçacıklar **elektron** olarak gösterilir ve gerçek elektron yönünde (pilin − ucundan + ucuna) akar. Ayrıca + → − yönünde ayrı renkte bir **geleneksel akım oku** gösterilir. İkisi ilk göründüğünde kısa etiketle ayrılır ("elektronlar", "akım yönü"). Bu kural "akımı küreler + → − akar" yazan eski kuralların yerine geçer. **Elektron boyutu (kanal sahibi, 18.11.2026):** Elektron küreleri telin üstünde kolayca seçilecek kadar belirgin olur: sessiz videolardaki boyuttan (008b: yarıçap 0,042, kamera uzaklığı ~11) **biraz daha büyük**, yani yarıçap / kamera uzaklığı ≥ 0,0042 (ör. uzaklık 10,5 ise yarıçap ≥ 0,045). Elektronlar opak ve parlak (opaklık 1, emissiveIntensity ≥ 0,7); yazı veya ses öne çıksın diye küçültülmez, soluklaştırılmaz, yarı saydam yapılmaz (009 sesli testteki 0,03 yarıçaplı, %75 saydam elektronlar çok küçük kaldı). Sesli ve sessiz bütün Short'larda geçerli.
 8. **Yazı animasyonu — kalemle yazılıyor gibi (kanal sahibinin kararı).** Ekran yazıları bir anda belirmez; harf harf, kalemle yazılıyormuş gibi soldan sağa çizilerek gelir (her harf kısa bir çizgi/iz animasyonuyla). Hız: kelime başına yaklaşık 0,25–0,35 sn. Yazı tamamlandıktan sonra okuma süresi (bölüm 6) başlar. Bu efekti `tools/lib/anlatim.js`'e ortak fonksiyon olarak ekle ve tüm videolarda kullan.
 9. **Tempo — acele yok (kanal sahibinin kararı).** Videolar hızlı ilerliyordu, geçişler anlamayı zorlaştırıyordu:
    - Sahne **içindeki** animasyonlar (direnç eklenmesi, ampulün kararması, yazının yazılması) yavaş ve yumuşak (ease-in-out, en az 1,2 sn); kamera hareketleri yavaş. Sahneden sahneye geçiş ise hızlıdır (kural 15).
@@ -251,6 +251,7 @@ Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama;
 - Yazılar kapalıyken (yalnızca sahne) kareler incelendiğinde konu anlaşılıyor mu? Her değişkenin değişimi ve sonucu animasyonda görünüyor mu?
 - Gerçek hayat mini modelleri var mı? Yasa/formül en sonda mı? Hiçbir etiket ilgili animasyondan önce gelmiyor mu?
 - Akım yönü kuralı (elektronlar − → +, ayrı renkte geleneksel akım oku) doğru mu?
+- Elektronlar belirgin mi (2a-7: yarıçap / kamera uzaklığı ≥ 0,0042, opak, soluk değil)? Telefonda (kare 1080 px genişlikte) her elektron tek tek seçilebiliyor mu?
 
 **B. Görüntü**
 - Son render'dan şu kareleri çıkar ve kontak sayfaları halinde (sayfa başına 8 kare, düşük çözünürlük: kare genişliği ~270 px) Read ile incele:
