@@ -10,3 +10,4 @@
 - parca-01: tamam (08:09 UTC)
 - parca-03: tamam (08:33 UTC)
 - parca-02: tamam (08:34 UTC)
+- 18.11.2026 08:34 UTC: yeniden render tamam (genel müdür yeniden başlattı); birleştirildi. freezedetect: 1 aralık (11,0–11,5 sn, 0,53 sn; ≥2 sn kuralının altında). -16,2 LUFS. 13 kare gözle kontrol edildi.
