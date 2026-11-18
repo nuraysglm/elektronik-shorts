@@ -2,7 +2,7 @@
   "seri": "Devre Teorisi I",
   "ders": 1,
   "bolum": 1,
-  "adim": "zamanlama",
+  "adim": "birlestirme",
   "yayin": "2026-11-28",
   "yayin_saati": "08:00 Europe/London",
   "parcalar": {
@@ -10,50 +10,64 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-1.mp3",
       "sure_sn": 45.79,
       "generation_id": "N8va88nkFYufXBbOPU66",
-      "render": "bekliyor",
-      "qc": "bekliyor"
+      "render": "tamam",
+      "qc": "parca QC tamam (otomatik + kare)",
+      "video": "wip/uzun-d01-b1/parca-1.mp4",
+      "video_sn": 50.36
     },
     "2": {
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-2.mp3",
       "sure_sn": 165.96,
       "generation_id": "YIt7atzCM4TH2b5MESSM",
-      "render": "bekliyor",
-      "qc": "bekliyor"
+      "render": "tamam",
+      "qc": "parca QC tamam (otomatik + kare)",
+      "video": "wip/uzun-d01-b1/parca-2.mp4",
+      "video_sn": 166.52
     },
     "3": {
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-3.mp3",
       "sure_sn": 48.27,
       "generation_id": "dkIVWyz4abl5P1De4PX5",
-      "render": "bekliyor",
-      "qc": "bekliyor"
+      "render": "tamam",
+      "qc": "parca QC tamam (otomatik + kare)",
+      "video": "wip/uzun-d01-b1/parca-3.mp4",
+      "video_sn": 48.83
     },
     "4": {
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-4.mp3",
       "sure_sn": 150.05,
       "generation_id": "TjeRunuhfu1Tcm9dJKRp",
-      "render": "bekliyor",
-      "qc": "bekliyor"
+      "render": "tamam",
+      "qc": "parca QC tamam (otomatik + kare)",
+      "video": "wip/uzun-d01-b1/parca-4.mp4",
+      "video_sn": 150.6
     },
     "5": {
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-5.mp3",
       "sure_sn": 168.91,
       "generation_id": "ydQnm7onNj4xa8kUL0X5",
-      "render": "bekliyor",
-      "qc": "bekliyor"
+      "render": "tamam",
+      "qc": "parca QC tamam (otomatik + kare)",
+      "video": "wip/uzun-d01-b1/parca-5.mp4",
+      "video_sn": 170.97
     },
     "6": {
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-6.mp3",
       "sure_sn": 148.19,
       "generation_id": "B6OKl5qvQgLKLNWzWw8a",
-      "render": "bekliyor",
-      "qc": "bekliyor"
+      "render": "tamam",
+      "qc": "parca QC tamam (otomatik + kare)",
+      "video": "wip/uzun-d01-b1/parca-6.mp4",
+      "video_sn": 148.76
     },
     "7": {
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-7.mp3",
       "sure_sn": 61.47,
       "generation_id": "YR46jtb8iEyTcbO7wOc9",
-      "render": "bekliyor",
-      "qc": "bekliyor"
+      "render": "tamam",
+      "qc": "parca QC tamam (otomatik + kare)",
+      "video": "wip/uzun-d01-b1/parca-7.mp4",
+      "video_sn": 82.03
     }
   },
   "drive_sesler_klasoru": "1xlxpzK_CmMwVdYp62d9ZFUh98MntrYNn",
@@ -69,20 +83,26 @@
     {
       "tarih": "2026-11-17T23:20Z",
       "not": "Bağımsız denetim 2 tur (sürüm 2 + ek düzeltmeler). 7 parça ses üretildi (eleven_v4, 1 take, ~12.100 kredi) ve curl ile indirildi; Drive yüklemesine gerek kalmadı. Toplam ses 13:09; videoyla ~13:34."
+    },
+    {
+      "tarih": "2026-11-18T10:15Z",
+      "not": "Sesler normalize edildi (-19,5 LUFS, tepe -1,5 dBTP; parça 5'e 1,5 sn sessizlik). 7 parça zamanlandı, tahta motoru (tek kalem) + 7 sahne yazıldı, otomatik QC temiz (çakışma/taşma/durağan/tek kalem), 7 parça render edildi (toplam 13:38), 28 kare gözle kontrol edildi. Abone kartı ayrı saydam katman; profil fotoğrafı indirilemediği için küçük sürümü istendi."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
-  "tahmini_video_dk": 13.57,
+  "tahmini_video_dk": 13.63,
   "acik_sorular": [
-    "Intro kartında \"·\" ayırıcı (UZUN 4a) mı, tire/virgül (AGENT 2d) mi? Panelde soruldu."
+    "Abone kartı için küçük profil fotoğrafı gerekli (orijinal ~1 MB, bu ortamda indirilemiyor): Drive özel klasöre 'profil-kucuk.jpg' (≤150 KB, ~400×400, yüz/omuz). Panelde istendi."
   ],
-  "sonraki_is": "Sesleri normalize et (-20..-19 LUFS, tepe <= -1,5 dBTP), parça 5 \"tahmin et\" sonrasına 1,5 sn sessizlik, zamanlama (zamanla.py), tahta/sahne uyarlaması (ornek-02 kopyası), parça render.",
+  "sonraki_is": "Cuma: abone katmani (profil-daire.png gerekli) -> parca 3 (0,15 sn) ve 6 (0,25 sn) bindirme -> concat -> tam QC (40+ kare) -> kapak -> baslik/aciklama/etiket/bolumler -> panelde onay istegi.",
   "not": "18.11.2026 08:31: Kanal sahibi Ders 1 Bölüm 1 metnini onayladı. Mevcut seslerle devam: zamanlama → render. | 18.11 08:36: Kanal sahibi intro kartı biçimini belirledi: 'Devre Teorisi I: Ders N - Bölüm k/3' (UZUN.md 4a).",
   "metin_onayi": {
     "durum": "onaylandi",
     "zaman": "2026-11-18T08:31:00Z",
     "kaynak": "kanal sahibi (sohbette, genel müdür panele işledi)"
   },
-  "intro_karti": "Devre Teorisi I: Ders 1 - Bölüm 1/3"
+  "intro_karti": "Devre Teorisi I: Ders 1 - Bölüm 1/3",
+  "toplam_video_sn": 818.07,
+  "tahta": "uzun/seri/ders-01/bolum-1/tahta/ (NOTLAR.md)"
 }
