@@ -1,10 +1,10 @@
 #!/bin/bash
 # Ders 1 Bolum 1: parca seslerini hazirlar (UZUN.md 3: yalnizca kesme/sessizlik ve duzey normalizasyonu).
-#  - parca 5: "... buyuk mu, kucuk mu?" sorusundan sonraki duraklamaya (32,82 sn) 1,5 sn sessizlik (metin.md)
+#  - parca 5: "... buyuk mu, kucuk mu?" sorusundan sonraki duraklamaya (44,93 sn; ses 19.11 sürüm 3) 1,5 sn sessizlik (metin.md)
 #  - her parca: loudnorm iki gecisli, dogrusal kazanc; hedef -19,5 LUFS, tepe <= -1,5 dBTP
 #  Kullanim: bash ses_hazirla.sh CIKTI_KLASORU   -> CIKTI/parca-N.wav (48 kHz mono) + CIKTI/parca-N.raw (16 kHz, zamanlama icin)
 set -e; cd "$(dirname "$0")/../ses"; OUT="$1"; mkdir -p "$OUT"
-EK5=32.82; SES5=1.5
+EK5=44.93; SES5=1.5
 for i in 1 2 3 4 5 6 7; do
   src=parca-$i.mp3; tmp="$OUT/_ham$i.wav"
   if [ $i = 5 ]; then
