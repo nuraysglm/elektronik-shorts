@@ -66,6 +66,18 @@ assert qf(F(1,2)) / F(1,2) == 5                         # ornek 1: 0-0,5 ms 2,5 
 assert 4 - 2 * 2 == 0
 print("Ornek 3: q(3) = 9 mC (en buyuk), i(1)=4, i(3)=0, i(4)=-2 mA; 0-4 s ortalama 2 mA; yorum sorusu t = 2 s")
 
+# --- Ornek 2 surum 3 (is emri 18.11): ekranda ve seste gosterilen her ara adim
+assert 3**2 == 9 and 2 * 9 == 18                                    # q(3) = 2 x 3^2 = 2 x 9 = 18 mC
+assert F(18) / 3 == 6 and 2 * 2 == 4 and 4 * 3 == 12 and F(12, 6) == 2 and F(0 + 12, 2) == 6
+ara = [(F(4), 16, 32, 14, F(1), 14), (F(31,10), F(961,100), F(1922,100), F(122,100), F(1,10), F(122,10)),
+       (F(301,100), F(90601,10000), F(181202,10000), F(1202,10000), F(1,100), F(1202,100))]
+for son, kare, qson, dq, dt, akim in ara:
+    assert son * son == kare and 2 * kare == qson == q(son) and qson - 18 == dq and dq / dt == akim
+    assert son - 3 == dt
+assert F(6, 4) == F(3, 2) and 4 * F(3, 2) == 6 and F(18, 3) == 6    # 4t = 6 -> t = 1,5 s; kesen 0-3 s egimi 6
+assert 2 * 12 == 24 and 2 * 6 == 12 and F(12, 24) == F(1, 2)        # kOhm x mA = V
+print("Ornek 2 ara adimlar: tamam")
+
 # --- Seslendirme metni
 md = pathlib.Path(__file__).with_name("metin.md").read_text()
 parcalar = re.findall(r"## \[PARÇA (\d)\].*?```\n(.*?)```", md, re.S)

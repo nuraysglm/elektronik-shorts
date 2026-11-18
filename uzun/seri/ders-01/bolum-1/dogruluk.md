@@ -21,9 +21,9 @@ B. Razavi, Basic Circuit Theory, **Ders 1** (videoId `U_4q0sfChOk`). Transkript 
 | 12 | 1 A = 1 C/s; 2 µC/ms = 2 mA = 2 mC/s | tanımdan (#11) ve birim hesabı |
 | 13 | Kesitten bir yönde geçen yük artı, ters yönde eksi sayılır; negatif akım = ters yön | akımın değeri ve yönü vardır [17:28–18:07]; işaretin yönü taşıması bu tanımdan. Ayrıntı Bölüm 2'de |
 | 14 | Δq/Δt pencere ortalamasıdır; pencere küçüldükçe anlık değere yaklaşır | #11'in kendisi (tanım bir limittir); `dogrula.py` sayısal pencere tablosu |
-| 15 | q(t) grafiğinde ortalama akım kirişin eğimi, anlık akım teğetin eğimi; tepe noktasında eğim sıfır | türevin geometrik anlamı (#11'den); `dogrula.py` merkezi fark kontrolü. Not: bu yorum transkriptte açıkça yok; matematiksel sonuçtur |
+| 15 | q(t) grafiğinde ortalama akım kesenin eğimi, anlık akım teğetin eğimi; tepe noktasında eğim sıfır | türevin geometrik anlamı (#11'den); `dogrula.py` merkezi fark kontrolü. Not: bu yorum transkriptte açıkça yok; matematiksel sonuçtur |
 | 16 | q = a t² ise 0–t ortalaması anlık akımın yarısı | cebir: (a t²)/t = a t = (2 a t)/2; `dogrula.py` |
-| 16b | Örnek 2'de akım t = 1,5 s'de ortalamaya (6 mA) eşit; 0–3 s kirişine paralel teğet orada | 4t = 6; ortalama değer teoremi (türevin geometrik anlamı); `dogrula.py` |
+| 16b | Örnek 2'de akım t = 1,5 s'de ortalamaya (6 mA) eşit; 0–3 s kesenine paralel teğet orada | 4t = 6; ortalama değer teoremi (türevin geometrik anlamı); `dogrula.py` |
 | 16c | Örnek 3'te akım t = 0'da en büyük (6 mA), o an q = 0; q(2,5) = q(3,5) = 8,75 mC < 9 | `dogrula.py` |
 | 17 | Bölüm 2 ön tanıtımı: akımın yönü, açık devre, akımdan yük (q = ∫ i dt) | [17:12–23:31] |
 
@@ -31,6 +31,7 @@ B. Razavi, Basic Circuit Theory, **Ders 1** (videoId `U_4q0sfChOk`). Transkript 
 - Kanca (sürüm 2): 0–1 s pencere 0 mA; 0,1–0,3 s pencere 10 mA; 0,4–0,6 s pencere 0 mA; 5 mC / 0,5 s = 10 mA; 1 ms'lik bütün pencerelerde yalnızca +10 ve −10 mA.
 - Örnek 1: 0–1 ms 5 µC → 5 mA; 1–4 ms 3 µC → 1 mA; 0–4 ms ortalama 8 µC / 4 ms = 2 mA (hiçbir an değil); 0–2 ms penceresi 6 µC / 2 ms = 3 mA; alan kontrolü 2 mA × 4 ms = 8 µC = 5 + 3. Bağımsız: 1 µs adımlı sayısal ayrık türev yalnızca {5, 1} verir.
 - Örnek 2: q = 2t² mC → q(3) = 18 mC, 0–3 s ortalama 6 mA, i = 4t mA, i(3) = 12 mA; pencere 1 s → 14, 0,1 s → 12,2, 0,01 s → 12,02 mA (= 12 + 2Δt); q(4) = 32 mC. Bağımsız: merkezi fark.
+- Örnek 2 sürüm 3 (iş emri 18.11.2026) ara adımları, ekranda ve seste: q(3) = 2 × 3² = 2 × 9 = 18 mC; 18 / 3 = 6 mA; d(2t²)/dt = 2 × 2t = 4t; i(3) = 4 × 3 = 12 mA; 12 / 6 = 2; (0 + 12) / 2 = 6. Pencereler: 4² = 16, 2 × 16 = 32, 32 − 18 = 14, 14 / 1 = 14 mA; 3,1² = 9,61, 2 × 9,61 = 19,22, 19,22 − 18 = 1,22, 1,22 / 0,1 = 12,2 mA; 3,01² = 9,0601, 2 × 9,0601 = 18,1202, 18,1202 − 18 = 0,1202, 0,1202 / 0,01 = 12,02 mA. 4t = 6 → t = 6 / 4 = 1,5 s; 0–3 s kesen eğimi 18 / 3 = 6 mA; 2 kΩ × 12 mA = 24 V, 2 kΩ × 6 mA = 12 V (kΩ × mA = V). Hepsi `dogrula.py` "Ornek 2 ara adimlar" bloğunda assert.
 - Örnek 3: q = 6t − t² mC → q(0, 1, 3, 4) = 0, 5, 9, 8 mC; en büyük q = 9 mC (t = 3 s, 0,01 s ızgarada tarama); i = 6 − 2t → i(1) = 4, i(3) = 0, i(4) = −2 mA; 0–4 s ortalama 2 mA. Bağımsız: merkezi fark.
 - Yorum sorusu: q = 4t − t² → i = 4 − 2t = 0 → t = 2 s.
 

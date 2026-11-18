@@ -119,43 +119,55 @@ Sahne planı:
 - "toplam ne kadar yük": yanında "2 mA × 4 ms = 8 µC" (tarama yok; alan konusu Bölüm 2'de).
 - "Buradaki tuzak": sağ üstte kırmızı kutu "ortalama akım mı, anlık akım mı?".
 
-## [PARÇA 5] Örnek 2 — akım her an değişiyor (~3:10)
+## [PARÇA 5] Örnek 2 — akım her an değişiyor (~4:25)
 
 ```
 Şimdi biraz daha zor bir örnek. Burada akım her an değişiyor.
 
-Bir telin kesitinden geçen toplam yük, sıfır anından itibaren şöyle artıyor: kü eşittir iki te kare milikulon. Yani te karenin iki katı. Burada te, saniye cinsinden. Soru şu: üçüncü saniyede akım ne kadar?
+Bir telin kesitinden geçen toplam yük, sıfır anından itibaren şöyle artıyor: kü eşittir iki te kare milikulon. Burada te, saniye cinsinden. Soru şu: te eşittir üç saniye anında akım ne kadar?
 
-Önce ortalama yoldan gidelim. Üç saniyede geçen yük, dokuzun iki katı, yani on sekiz milikulon. Bunu üç saniyeye bölünce altı miliamper.
+Önce ortalama yoldan gidelim. Üç saniyede ne kadar yük geçmiş, onu bulalım. Formülde te yerine üç yazıyoruz. Üçün karesi dokuz, dokuzun iki katı on sekiz. Yani üç saniyede on sekiz milikulon geçmiş. Ortalama akım, geçen yük bölü geçen süre. On sekiz milikulonu üç saniyeye bölünce altı miliamper.
 
 Bir an dur ve tahmin et: üç saniyedeki akım bu ortalamadan büyük mü, küçük mü?
 
-Şimdi tanımı kullanalım. Akım, yükün zamana göre türevi. İki te karenin türevi dört te. Yani akım, dört te miliamper. Üç saniye anında bu, on iki miliamper eder. Ortalamanın tam iki katı. Birime de bakalım: milikulon bölü saniye, miliamper eder. Birimler de tutuyor.
+Şimdi tanımı kullanalım. Akım, yükün zamana göre türevi. Te karenin türevi iki te. Bunu da iki ile çarpınca dört te buluyoruz. Yani akım, dört te miliamper. Üç saniye anında te yerine üç yazalım. Dört çarpı üç, on iki miliamper. Bu, ortalamanın tam iki katı, çünkü on ikiyi altıya bölünce iki çıkıyor. Birime de bakalım: milikulon bölü saniye, miliamper eder.
 
-Bu iki kat bir tesadüf değil. Yük sıfırdan başlayıp zamanın karesiyle artıyorsa, sıfırdan o ana kadarki ortalama akım, o andaki akımın tam yarısıdır. Çünkü akım sıfırdan başlıyor ve düzgün biçimde artıyor. Ortalama da başlangıç ile son değerin tam ortasında kalıyor.
+Bu iki kat bir tesadüf değil. Yük sıfırdan başlayıp zamanın karesiyle artıyorsa, sıfırdan o ana kadarki ortalama akım, o andaki akımın tam yarısıdır. Çünkü akım sıfırdan başlıyor ve zamanla doğrusal olarak artıyor. Ortalama da başlangıç ile son değerin tam ortasında kalıyor. Sıfır ile on ikinin tam ortası da altı.
 
-Bunu türev almadan da görebiliriz. Zaten tanımın özü bu. Üçüncü saniyeden başlayan bir pencere açalım ve onu adım adım daraltalım.
+Bunu türev almadan da görebiliriz. Üç saniye anından başlayan bir pencere açalım ve onu adım adım daraltalım. Her pencerede aynı üç adımı izleyeceğiz. Önce pencerenin sonundaki yükü formülden bulacağız. Sonra bundan, üç saniyedeki on sekiz milikulonu çıkaracağız. Bu fark, pencerede geçen yük. En son bu farkı pencerenin genişliğine böleceğiz.
 
-Pencere bir saniye olsun. Üç ile dört saniye arasında yük on sekiz milikulondan otuz iki milikulona çıkıyor. Bir saniyede on dört milikulon geçmiş, yani on dört miliamper. Şimdi pencereyi saniyenin onda birine indirelim. Bu kez sonuç on iki virgül iki miliamper. Bir de yüzde birine indirelim: on iki virgül sıfır iki miliamper.
+Pencere bir saniye olsun, yani üç ile dört saniye arası. Dördün karesi on altı, iki katı otuz iki milikulon. Otuz ikiden on sekizi çıkarınca on dört milikulon kalıyor. Bunu bir saniyeye bölünce on dört miliamper.
 
-Gördün mü? Pencere küçüldükçe sonuç on iki miliampere yaklaşıyor. De kü bölü de te tam olarak bu sınır değer.
+Şimdi pencereyi saniyenin onda birine indirelim. Pencerenin sonu üç virgül bir saniye. Üç virgül birin karesi, dokuz virgül altmış bir. Bunun iki katı, on dokuz virgül yirmi iki milikulon. On sekizi çıkarınca bir virgül yirmi iki milikulon kalıyor. Bunu sıfır virgül bir saniyeye bölünce on iki virgül iki miliamper.
 
-Bunu grafikte de görelim. Yükü zamana göre çizdiğimizde, iki nokta arasındaki ortalama akım, o iki noktayı birleştiren doğrunun eğimidir. Pencere daraldıkça bu doğru, üç saniyedeki noktada eğriye teğet olan doğruya yaklaşır. Yani anlık akım, yük grafiğinin o andaki eğimidir.
+Bir de pencereyi yüzde birine indirelim. Pencerenin sonu üç virgül sıfır bir saniye. Üç virgül sıfır birin karesi, dokuz virgül sıfır altı sıfır bir. Bunun iki katı, on sekiz virgül bir iki sıfır iki milikulon. On sekizi çıkarınca sıfır virgül bir iki sıfır iki milikulon kalıyor. Bunu sıfır virgül sıfır bir saniyeye bölünce on iki virgül sıfır iki miliamper.
 
-Bir soru daha soralım. Akım hangi anda ortalama değere, yani altı miliampere eşit oluyor? Dört te eşittir altı dersek, te bir buçuk saniye çıkıyor. Demek ki ortalama değer de aslında akımın bir anda aldığı bir değer. Ama o an, bizim sorduğumuz üç saniye değil, bir buçuk saniye. Grafikte de bunu görebilirsin: sıfırdan üçe uzanan kirişe paralel teğet, tam bir buçuk saniyede eğriye değiyor.
+Gördün mü? Önce on dört, sonra on iki virgül iki, sonra on iki virgül sıfır iki. Pencere küçüldükçe sonuç on iki miliampere yaklaşıyor. De kü bölü de te tam olarak bu sınır değer.
 
-Bu akım iki kiloohmluk bir dirençten geçseydi ne olurdu? Ohm yasasına göre direncin uçlarındaki gerilim, direnç ile akımın çarpımıdır. Üç saniye anında iki kiloohm çarpı on iki miliamper, yirmi dört volt eder. Ortalama akımı kullansaydık on iki volt bulurduk, yani o andaki gerilimin yarısını. Yani bu örnekte akımda yapılan hata, gerilime de aynen taşınıyor.
+Bunu grafikte de görelim. Yükü zamana göre çizdiğimizde, iki nokta arasındaki ortalama akım, o iki noktayı birleştiren doğrunun eğimidir. Bu doğruya kesen diyoruz. Pencere daraldıkça kesen, üç saniyedeki noktada eğriye teğet olan doğruya yaklaşır. Bu teğetin eğimi on iki miliamper. Yani anlık akım, yük grafiğinin o andaki eğimidir.
+
+Bir soru daha soralım. Akım hangi anda ortalama değere, yani altı miliampere eşit oluyor? Akım dört te olduğuna göre, dört te eşittir altı yazıyoruz. Altıyı dörde bölünce te, bir buçuk saniye çıkıyor. Demek ki ortalama değer de aslında akımın bir anda aldığı bir değer. Ama o an, bizim sorduğumuz üç saniye değil, bir buçuk saniye. Grafikte de bunu görebilirsin: sıfırdan üçe uzanan kesene paralel teğet, tam bir buçuk saniyede eğriye değiyor.
+
+Bu akım iki kiloohmluk bir dirençten geçseydi ne olurdu? Ohm yasasına göre direncin uçlarındaki gerilim, direnç ile akımın çarpımıdır. Üç saniye anında iki kiloohm çarpı on iki miliamper. İki çarpı on iki yirmi dört eder. Kiloohm ile miliamperin çarpımı da volt verir. Yani yirmi dört volt. Ortalama akımı kullansaydık iki kiloohm çarpı altı miliamper, yani on iki volt bulurduk. Bu, o andaki gerilimin yarısı. Yani bu örnekte akımda yapılan hata, gerilime de aynen taşınıyor.
 ```
 
-Sahne planı:
-- Üstte: "q(t) = 2t² mC", "t saniye cinsinden", "i(3 s) = ?" (mavi).
-- "ortalama yoldan": "q(3 s) = 2 × 9 = 18 mC", "18 mC / 3 s = 6 mA" (siyah).
+Sahne planı (sürüm 3, iş emri 18.11: her sayının hesabı adım adım; grafik renkleri kanal sahibinin onayıyla):
+- **Tahta A.** Üstte: "q(t) = 2t² mC", "t saniye cinsinden", "i(3 s) = ?" (mavi).
+- "ortalama yoldan": "q(3 s) = 2 × 3² = 2 × 9 = 18 mC" (siyah), "ortalama = 18 mC / 3 s = 6 mA" (siyah).
 - "tahmin et": kalem "i(3 s) = ?" etrafına yavaş daire (1,5 sn sessizlik boyunca hareket sürer).
-- "tanımı kullanalım": "i = dq / dt = 4t mA" (mavi), "i(3 s) = 12 mA" (mavi, daire). Yanına kırmızı "ortalamanın 2 katı".
-- Grafik (sol, y %40–72): yatay eksen "t (s)" işaretler 0, 1, 2, 3, 4; dikey eksen "q (mC)" işaretler 0, 10, 20, 30 (eksen 0–35). Eğri q = 2t² (q(3) = 18, q(4) = 32 `console.assert`). t = 3 s'de nokta. Pencere adımlarında 3 s noktasından çıkan kirişler sırayla: 3–4 s kirişi (siyah kesik), 3–3,1 s kirişi (siyah kesik, neredeyse teğet), sonra teğet (mavi düz), yanında "eğim = 12 mA".
-- Tablo (sağ, y %40–72): başlık "Δt" ve "Δq / Δt"; iki ayrı sütunda satırlar 1 s ve 14 mA; 0,1 s ve 12,2 mA; 0,01 s ve 12,02 mA; alt satır "Δt küçüldükçe sonuç 12 mA'e yaklaşır".
-- "Bir soru daha": tabloya iki satır: "4t = 6", "t = 1,5 s" (mavi); grafikte 0–3 s kirişi (siyah kesik) ve t = 1,5 s'de ona paralel teğet (mavi), "eğim = 6 mA".
-- "iki kiloohmluk": silme; küçük direnç çizimi, akım oku (mavi "i") direncin "+" ucundan girer, uçlarda "+" ve "−"; yanında "v = R × i", "v(3 s) = 2 kΩ × 12 mA = 24 V" (mavi), "ortalama akımla: 2 kΩ × 6 mA = 12 V" (kırmızı).
+- "tanımı kullanalım": "i = dq / dt = 2 × 2t = 4t mA" (mavi), "i(3 s) = 4 × 3 = 12 mA" (mavi, daire). Yanına kırmızı "12 mA, ortalamanın 2 katıdır (12 / 6 = 2)"; altına küçük "mC / s = mA".
+- "Sıfır ile on ikinin": altına "(0 + 12) / 2 = 6 mA" (siyah).
+- **Tahta B (silme): pencere hesapları.** Üstte başlık "Her pencerede üç adım", altında numaralı üç satır: "1. q(son)", "2. Δq = q(son) − q(3 s)", "3. Δq / Δt" (ok ve iki nokta yok). Altında üç sütun, her sütun sesle eşzamanlı üç satır:
+  - Δt = 1 s: "q(4 s) = 2 × 4² = 2 × 16 = 32 mC", "Δq = 32 − 18 = 14 mC", "Δq / Δt = 14 mC / 1 s = 14 mA".
+  - Δt = 0,1 s: "q(3,1 s) = 2 × 3,1² = 2 × 9,61 = 19,22 mC", "Δq = 19,22 − 18 = 1,22 mC", "Δq / Δt = 1,22 mC / 0,1 s = 12,2 mA".
+  - Δt = 0,01 s: "q(3,01 s) = 2 × 3,01² = 2 × 9,0601 = 18,1202 mC", "Δq = 18,1202 − 18 = 0,1202 mC", "Δq / Δt = 0,1202 mC / 0,01 s = 12,02 mA".
+  - Uzun satırlar sığmazsa sütunlar yerine üç satır bloğu alt alta (yazı boyu küçültülmez < 40 px). "Gördün mü": üç sonucun altı sırayla mavi çizilir, altına "Δt küçüldükçe sonuç 12 mA'e yaklaşır".
+- **Tahta C (silme): grafik** (sol, y %15–72): yatay eksen "t (s)" işaretler 0, 1, 2, 3, 4; dikey eksen "q (mC)" işaretler 0, 10, 20, 30 (eksen 0–35). Eğri q = 2t² **mavi** (q(3) = 18, q(4) = 32 `console.assert`). t = 3 s'de nokta.
+  - "kesen diyoruz": 3–4 s keseni **gri kesikli**, yanında gri "kesen, Δt = 1 s, eğim = 14 mC / 1 s = 14 mA"; ardından 3–3,1 s keseni gri kesikli (etiketsiz).
+  - "teğetin eğimi": t = 3 s teğeti **kırmızı düz**, yanında kırmızı "teğet, eğim = i(3 s) = 4 × 3 = 12 mA".
+  - Sağda küçük özet tablo (y %15–50): "Δt" ve "Δq / Δt": 1 s ve 14 mA; 0,1 s ve 12,2 mA; 0,01 s ve 12,02 mA (hesapları Tahta B'de gösterildi).
+  - "Bir soru daha": sağda (y %52–72) "i = 4t mA = 6 mA", altında "4t = 6", "t = 6 / 4 = 1,5 s" (mavi); grafikte 0–3 s keseni **gri kesikli** ("kesen, eğim = 18 / 3 = 6 mA") ve t = 1,5 s'de ona paralel teğet **kırmızı düz** ("teğet, eğim = 4 × 1,5 = 6 mA").
+- **Tahta D (silme): Ohm.** Küçük direnç çizimi, akım oku (mavi "i") direncin "+" ucundan girer, uçlarda "+" ve "−"; yanında "v = R × i", "v(3 s) = 2 kΩ × 12 mA = 24 V" (mavi), altında küçük "kΩ × mA = V", "ortalama akımla: 2 kΩ × 6 mA = 12 V" (kırmızı), "12 V, 24 V'un yarısıdır (24 / 2 = 12)".
 
 ## [PARÇA 6] Örnek 3 — yük en büyükken akım sıfır (~2:50)
 

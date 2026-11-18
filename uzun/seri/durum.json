@@ -2,7 +2,7 @@
   "seri": "Devre Teorisi I",
   "ders": 1,
   "bolum": 1,
-  "adim": "duzeltme",
+  "adim": "metin_onayi",
   "yayin": "2026-11-21",
   "yayin_saati": "Cumartesi 21.11.2026 11:00 TR = 08:00 Europe/London (kanal sahibinin kararı, 18.11 20:50). Cuma akşamı görevi panelde 'onayla' varsa bu saate planlar.",
   "parcalar": {
@@ -46,10 +46,11 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-5.mp3",
       "sure_sn": 168.91,
       "generation_id": "ydQnm7onNj4xa8kUL0X5",
-      "render": "yeniden (iş emri)",
+      "render": "bekliyor (metin onayı sonrası ses + render)",
       "qc": "bekliyor",
       "video": "wip/uzun-d01-b1/parca-5.mp4",
-      "video_sn": 170.97
+      "video_sn": 170.97,
+      "metin": "sürüm 3 (iş emri), 630 kelime, ~4:25; onaylar/metin-1-1-p5 bekliyor"
     },
     "6": {
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-6.mp3",
@@ -87,6 +88,10 @@
     {
       "tarih": "2026-11-18T10:15Z",
       "not": "Sesler normalize edildi (-19,5 LUFS, tepe -1,5 dBTP; parça 5'e 1,5 sn sessizlik). 7 parça zamanlandı, tahta motoru (tek kalem) + 7 sahne yazıldı, otomatik QC temiz (çakışma/taşma/durağan/tek kalem), 7 parça render edildi (toplam 13:38), 28 kare gözle kontrol edildi. Abone kartı ayrı saydam katman; profil fotoğrafı indirilemediği için küçük sürümü istendi."
+    },
+    {
+      "tarih": "2026-11-18T21:30Z",
+      "not": "İş emri: parça 5 metni sürüm 3 (her sayı adım adım, kesen/teğet renkleri), dogrula.py ara adım assert'leri, bağımsız denetim (kritik yok; 4 önemli ekran/ifade bulgusu düzeltildi). Diğer parçalar tarandı: eksik-hesaplar.md. Panelde metin-1-1-p5 ve eksik-hesaplar-1-1 onayı istendi. Onay yok → DUR."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
@@ -95,7 +100,7 @@
   "acik_sorular": [
     "Abone kartı için küçük profil fotoğrafı gerekli (orijinal ~1 MB, bu ortamda indirilemiyor): Drive özel klasöre 'profil-kucuk.jpg' (≤150 KB, ~400×400, yüz/omuz). Panelde istendi."
   ],
-  "sonraki_is": "Cuma: abone katmani (profil-daire.png gerekli) -> parca 3 (0,15 sn) ve 6 (0,25 sn) bindirme -> concat -> tam QC (40+ kare) -> kapak -> baslik/aciklama/etiket/bolumler -> panelde onay istegi.",
+  "sonraki_is": "Onay gelirse: parça 5 sesi (eleven_v4, 1 take, ~4.300 kredi) -> ses_hazirla (sessizlik noktası yeniden bulunur) -> zamanlama -> parca-5.js (Tahta A-D) -> render + QC; eksik-hesaplar kararına göre parça 4/6 -> birleştirme -> tam QC -> kapak -> yayin.json -> onaylar/uzun-1-1.",
   "not": "18.11 19:20 genel müdür: Kanal sahibi parçaları izledi. Birleştirmeden önce iş emrini uygula (parça 5: hesaplar adım adım + grafik renkleri). Metin değişikliği kanal sahibinin onayına gider; onaydan sonra yalnızca parça 5 sesi + render.",
   "metin_onayi": {
     "durum": "onaylandi",
@@ -107,5 +112,6 @@
   "tahta": "uzun/seri/ders-01/bolum-1/tahta/ (NOTLAR.md)",
   "is_emri": "uzun/seri/ders-01/bolum-1/is-emri-20261118.md",
   "hizli_mod": "18.11.2026 20:42 kanal sahibi: 'Bir an önce ilk videoyu yayınlamak istiyorum.' Bu bölüm için gün sırası (Pzt–Cuma tablosu) BEKLENMEZ: her çalışmada sıradaki adımı bitir ve süre kaldıkça hemen sonrakine geç. Sıra: (1) iş emri: parça 5 metin düzeltmesi + doğrulama + değişen kısımlar için bağımsız denetim → panelde onaylar/metin-1-1-p5 (eski/yeni yan yana) → ONAY YOKSA DUR. (2) metin onayı geldiyse: parça 5 sesi (generations_count 1) → zamanlama → parça 5 render (yeni renkler) → parça QC. (3) birleştirme (profil-kucuk.jpg Drive 1XNF7lgiaE9FQA-0dYfG8tWOz_xj9VR6h) → tam QC → kapak → yayin.json (başlık, açıklama, zaman damgaları, etiketler, ilk yorum) → panelde onaylar/uzun-1-1 onay isteği. Yayın tarihini/saatini kanal sahibi belirler; planlamayı genel müdür ya da Cuma akşamı görevi yapar. Onaysız planlama yok.",
-  "sonraki_yayin": "2026-11-21"
+  "sonraki_yayin": "2026-11-21",
+  "eksik_hesaplar": "uzun/seri/ders-01/bolum-1/eksik-hesaplar.md; panel onaylar/eksik-hesaplar-1-1 (A/B/C) bekliyor"
 }
