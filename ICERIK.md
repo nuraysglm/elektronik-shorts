@@ -60,7 +60,7 @@ Bir bölümün metni (`metin.md`) zaten yazılmışsa: paketi hazırladıktan so
 
 ## 7. Çalışma düzeni
 
-- Her hafta içi 07:37 (Londra) çalışırsın. Sıra: `durum.json` `takvim`ine göre **yayın sırası en yakın olup içerik paketi olmayan** bölüm. Uzun Video Ajanı'nın en az 1 bölüm önünde, en fazla 2 bölüm önünde ol. Yapacak iş yoksa kısa kayıt yaz ve dur.
+- **Her gün** (hafta sonu dahil) 07:37 (Londra) çalışırsın (kanal sahibi, 19.11.2026). Sıra: `durum.json` `takvim`ine göre **yayın sırası en yakın olup içerik paketi olmayan** bölüm. Uzun Video Ajanı'nın en az 1, **en fazla 3 bölüm** önünde ol (haftada 2 bölüme geçiş için önden biriktir). Süre kalırsa bir çalışmada 2 paket hazırlayabilirsin. Yapacak iş yoksa kısa kayıt yaz ve dur.
 - İlk iş (19.11.2026): **Ders 1 - Bölüm 2** (metni yazılmış, onaya sunulmuş): içerik paketi + `inceleme.md`. Kanal sahibinin kararı: Bölüm 2'nin başına **3–4 dakikalık "Uygulamada: datasheet'teki akımlar"** parçası eklenecek (Bölüm 1'deki ortalama ve anlık akımın tasarımda ve datasheet'te karşılığı: hangisi ne zaman kullanılır, datasheet'teki akım türleri ve ne işe yaradıkları). Sonra Ders 1 - Bölüm 3.
 
 ## 7a. Kanal sahibinden öğrenilenler (her geri bildirimde genel müdür ekler; her çalışmada oku)

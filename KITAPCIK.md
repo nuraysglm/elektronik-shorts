@@ -64,3 +64,6 @@ Kitapçık deneyimli bir öğretim görevlisinin kendi eliyle yazdığı çözü
 - İçeriği herkese açık yere koymak; kitaplardan soru/şekil/metin kopyalamak; onaysız kaynak kullanmak.
 - Satış/fiyat/yayın işlemi (Gumroad'u kanal sahibi açar; satış ayrı onayla).
 - Para harcamak; kullanıcının bilgisayarını kullanmak.
+
+## Çalışma sıklığı (kanal sahibi, 19.11.2026)
+Ajan **her gün** 09:23 (Londra) çalışır. Her çalışmada önce bekleyen iş emirlerini (yeniden yazım) bitir, sonra sıradaki bölüme geç; süre kalırsa aynı çalışmada bir bölüm daha hazırla. Hedef: 50 soru ~26.11.2026'da tamam, ardından genel müdür satış hazırlığını başlatır. Hız için kalite, doğrulama ve bağımsız denetim kuralları gevşetilmez.
