@@ -2,7 +2,7 @@
   "seri": "Devre Teorisi I",
   "ders": 1,
   "bolum": 1,
-  "adim": "duzeltme_d",
+  "adim": "video_onayi",
   "yayin": "2026-11-21",
   "yayin_saati": "Cumartesi 21.11.2026 11:00 TR = 08:00 Europe/London (kanal sahibinin kararı, 18.11 20:50). Cuma akşamı görevi panelde 'onayla' varsa bu saate planlar.",
   "parcalar": {
@@ -10,17 +10,23 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-1.mp3",
       "sure_sn": 45.79,
       "generation_id": "N8va88nkFYufXBbOPU66",
-      "render": "tamam",
-      "qc": "parca QC tamam (otomatik + kare)",
+      "render": "tamam (iş emri D yeni tahta düzeni, 19.11 19:46)",
+      "qc": "parca QC tamam (otomatik: çakışma/taşma/durağan/tek kalem temiz + kareler)",
       "video": "wip/uzun-d01-b1/parca-1.mp4",
-      "video_sn": 50.36
+      "video_sn": 54.76,
+      "selam": {
+        "ses": "uzun/seri/ders-01/bolum-1/ses/selam.mp3",
+        "sure_sn": 7.68,
+        "generation_id": "feJcmPRmyx8ws5dIwjKl",
+        "yer": "32,96 sn + 0,3 sn (intro aralığı 8,4 sn)"
+      }
     },
     "2": {
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-2.mp3",
       "sure_sn": 165.96,
       "generation_id": "YIt7atzCM4TH2b5MESSM",
-      "render": "tamam",
-      "qc": "parca QC tamam (otomatik + kare)",
+      "render": "tamam (iş emri D yeni tahta düzeni, 19.11 19:46)",
+      "qc": "parca QC tamam (otomatik: çakışma/taşma/durağan/tek kalem temiz + kareler)",
       "video": "wip/uzun-d01-b1/parca-2.mp4",
       "video_sn": 166.52
     },
@@ -28,8 +34,8 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-3.mp3",
       "sure_sn": 48.27,
       "generation_id": "dkIVWyz4abl5P1De4PX5",
-      "render": "tamam",
-      "qc": "parca QC tamam (otomatik + kare)",
+      "render": "tamam (iş emri D yeni tahta düzeni, 19.11 19:46)",
+      "qc": "parca QC tamam (otomatik: çakışma/taşma/durağan/tek kalem temiz + kareler)",
       "video": "wip/uzun-d01-b1/parca-3.mp4",
       "video_sn": 48.83
     },
@@ -37,8 +43,8 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-4.mp3",
       "sure_sn": 150.05,
       "generation_id": "TjeRunuhfu1Tcm9dJKRp",
-      "render": "tamam (eksik-hesaplar A: ekran hesapları tamamlandı, ses değişmedi; 18.11 23:00)",
-      "qc": "parca QC tamam (otomatik + kare)",
+      "render": "tamam (iş emri D yeni tahta düzeni, 19.11 19:46)",
+      "qc": "parca QC tamam (otomatik: çakışma/taşma/durağan/tek kalem temiz + kareler)",
       "video": "wip/uzun-d01-b1/parca-4.mp4",
       "video_sn": 150.6
     },
@@ -46,8 +52,8 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-5.mp3",
       "sure_sn": 264.52,
       "generation_id": "cmaoLsOB8R6V2HwDRBuh",
-      "render": "tamam (sürüm 3, 18.11 23:05)",
-      "qc": "parca QC tamam (otomatik + kare)",
+      "render": "tamam (iş emri D yeni tahta düzeni, 19.11 19:46)",
+      "qc": "parca QC tamam (otomatik: çakışma/taşma/durağan/tek kalem temiz + kareler)",
       "video": "wip/uzun-d01-b1/parca-5.mp4",
       "video_sn": 266.57,
       "metin": "sürüm 3 onaylandı (onaylar/metin-1-1-p5, 18.11 22:13)"
@@ -56,8 +62,8 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-6.mp3",
       "sure_sn": 148.19,
       "generation_id": "B6OKl5qvQgLKLNWzWw8a",
-      "render": "tamam (eksik-hesaplar A: ekran hesapları tamamlandı, ses değişmedi; 18.11 23:00)",
-      "qc": "parca QC tamam (otomatik + kare)",
+      "render": "tamam (iş emri D yeni tahta düzeni, 19.11 19:46)",
+      "qc": "parca QC tamam (otomatik: çakışma/taşma/durağan/tek kalem temiz + kareler)",
       "video": "wip/uzun-d01-b1/parca-6.mp4",
       "video_sn": 148.76
     },
@@ -65,8 +71,8 @@
       "ses": "uzun/seri/ders-01/bolum-1/ses/parca-7.mp3",
       "sure_sn": 61.47,
       "generation_id": "YR46jtb8iEyTcbO7wOc9",
-      "render": "tamam (iş emri B: bitiş ekranı yeniden render, 18.11 22:25)",
-      "qc": "parca QC tamam (otomatik + kare; bitiş ekranı 66 ve 78 sn kareleri)",
+      "render": "tamam (iş emri D yeni tahta düzeni, 19.11 19:46)",
+      "qc": "parca QC tamam (otomatik: çakışma/taşma/durağan/tek kalem temiz + kareler)",
       "video": "wip/uzun-d01-b1/parca-7.mp4",
       "video_sn": 82.03
     }
@@ -108,21 +114,25 @@
     {
       "tarih": "2026-11-19T14:40Z",
       "not": "İş emri C uygulandı (ses kaydı değişmedi, kredi yok): abone kartı sözlü çağrının başında girer (parça 3 0,05 sn = cümle başı; ikinci an parça 6'dan parça 7 49,35 sn'deki 'Kanala abone olursan…' cümlesine taşındı, çünkü parça 6'da sözlü çağrı yok); animasyon 4,5 sn'ye sıkıştırıldı, iki tık cümle bitmeden (1,0 ve 1,9 sn); numpy fare tıkı + tık/zil (≤1 sn, konuşmanın ~12 dB altında); birleşik video −16,0 LUFS, tepe −1,5 dBTP; 15:13,6, 29,5 MB. 12 abone karesi gözle kontrol. onaylar/uzun-1-1 güncellendi (bağlantı main dalına). B2: içerik paketi henüz yok → metin güncellenmedi."
+    },
+    {
+      "tarih": "2026-11-19T20:00Z",
+      "not": "İş emri D: 7 parça yeni tahta düzeniyle yeniden yazıldı (sol üst kırmızı 'Ders 1 - Bölüm 1: Akım nedir?', kırmızı başlıklar, '- ' maddeler, büyük harf/imla, iki sütun, koyu yeşil etiketler); selam sesi (eleven_v4, 1 take, 111 kredi, curl ile indirildi) intro kartıyla; müzik yok (Drive'da dosya yok). Otomatik QC 7/7 temiz, render, birleştirme 15:18, 30,3 MB, −16,0 LUFS / −1,6 dBTP; 48 kare gözle kontrol; zaman damgaları +4,4 sn (yayin.json). onaylar/uzun-1-1 güncellendi."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
-  "tahmini_video_dk": 15.23,
+  "tahmini_video_dk": 15.3,
   "acik_sorular": [],
-  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: Cuma akşamı görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar (medya: main dalı raw URL); 'düzelt' gelirse notu uygula. B2: İçerik Ajanı paketi (uzun/seri/ders-01/bolum-2/icerik.md) gelince metne 'Uygulamada' parçası eklenir → doğrulama + denetim → onaylar/metin-1-2 yeniden onaya.",
-  "not": "19.11 19:25 genel müdür: Kanal sahibi yeni tahta düzeni + selam + (varsa) müzik istedi; B kararı: 21.11 yayınına yetiştir. İş emri D'yi uygula, video onay isteği Cuma 17:00'ye kadar panelde. B2: inceleme.md'yi bu çalışmada değil, D bittikten sonra uygula (yeni düzen kurallarıyla).",
+  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: Cuma akşamı görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar (medya: main dalı raw URL); 'düzelt' gelirse notu uygula. B2: inceleme.md uygula → doğrulama + denetim → onaylar/metin-1-2 yeniden onaya.",
+  "not": "İş emri D uygulandı; onaylar/uzun-1-1 güncel video ile yeniden 'bekliyor'. B2: inceleme.md sıradaki çalışmada (yeni düzen kurallarıyla).",
   "metin_onayi": {
     "durum": "onaylandi",
     "zaman": "2026-11-18T08:31:00Z",
     "kaynak": "kanal sahibi (sohbette, genel müdür panele işledi)"
   },
   "intro_karti": "Devre Teorisi I: Ders 1 - Bölüm 1/3",
-  "toplam_video_sn": 913.6,
+  "toplam_video_sn": 918.0,
   "tahta": "uzun/seri/ders-01/bolum-1/tahta/ (NOTLAR.md)",
   "is_emri": "uzun/seri/ders-01/bolum-1/is-emri-20261118.md",
   "hizli_mod": "18.11.2026 20:42 kanal sahibi: 'Bir an önce ilk videoyu yayınlamak istiyorum.' Bu bölüm için gün sırası (Pzt–Cuma tablosu) BEKLENMEZ: her çalışmada sıradaki adımı bitir ve süre kaldıkça hemen sonrakine geç. Sıra: (1) iş emri: parça 5 metin düzeltmesi + doğrulama + değişen kısımlar için bağımsız denetim → panelde onaylar/metin-1-1-p5 (eski/yeni yan yana) → ONAY YOKSA DUR. (2) metin onayı geldiyse: parça 5 sesi (generations_count 1) → zamanlama → parça 5 render (yeni renkler) → parça QC. (3) birleştirme (profil-kucuk.jpg Drive 1XNF7lgiaE9FQA-0dYfG8tWOz_xj9VR6h) → tam QC → kapak → yayin.json (başlık, açıklama, zaman damgaları, etiketler, ilk yorum) → panelde onaylar/uzun-1-1 onay isteği. Yayın tarihini/saatini kanal sahibi belirler; planlamayı genel müdür ya da Cuma akşamı görevi yapar. Onaysız planlama yok.",
@@ -176,7 +186,8 @@
     }
   },
   "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar.",
-  "ses_duzeyi": "−16,0 LUFS, tepe −1,5 dBTP (iş emri C, 19.11)",
-  "abone_anlari": "3:36,9 (parça 3, 'Bu serinin devamı için…') ve 14:40,9 (parça 7, 'Kanala abone olursan…')",
-  "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md"
+  "ses_duzeyi": "−16,0 LUFS, tepe −1,6 dBTP (iş emri D, 19.11)",
+  "abone_anlari": "3:41,3 (parça 3, 'Bu serinin devamı için…') ve 14:45,3 (parça 7, 'Kanala abone olursan…')",
+  "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
+  "muzik": "Drive'da 'seri-muzik' yok (19.11 19:30) → Bölüm 1 müziksiz; dosya gelirse Bölüm 2'den başlar."
 }
