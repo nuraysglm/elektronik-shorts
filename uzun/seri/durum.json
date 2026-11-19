@@ -120,7 +120,7 @@
       "not": "İş emri D: 7 parça yeni tahta düzeniyle yeniden yazıldı (sol üst kırmızı 'Ders 1 - Bölüm 1: Akım nedir?', kırmızı başlıklar, '- ' maddeler, büyük harf/imla, iki sütun, koyu yeşil etiketler); selam sesi (eleven_v4, 1 take, 111 kredi, curl ile indirildi) intro kartıyla; müzik yok (Drive'da dosya yok). Otomatik QC 7/7 temiz, render, birleştirme 15:18, 30,3 MB, −16,0 LUFS / −1,6 dBTP; 48 kare gözle kontrol; zaman damgaları +4,4 sn (yayin.json). onaylar/uzun-1-1 güncellendi."
     },
     {
-      "tarih": "2026-11-19T21:45Z",
+      "tarih": "2026-11-19T21:05Z",
       "not": "uzun-1-1 video onayı hâlâ bekliyor (Perşembe; planlama yok). B2 metin sürüm 3: inceleme.md uygulandı (yeni Parça 2 'Uygulamada: datasheet'teki akımlar', 8 parça; buton örneği; de te; köprüler; üç kısaltma + ek kısaltmalar), selam ve yeni tahta düzeni sahne planlarında, abone kartları sözlü çağrılarla eşzamanlı. dogrula.py güncellendi (TAMAM). Bağımsız denetim: kritik yok, 8 önemli + küçükler düzeltildi. 2.248 kelime, ~16,5 dk. onaylar/metin-1-2 yeniden 'bekliyor'. Ses üretilmedi."
     }
   ],
@@ -173,7 +173,7 @@
     "dal": "claude/uzun-1-2-20261119",
     "kelime": 2248,
     "tahmini_dk": 16.5,
-    "onay_istegi": "onaylar/metin-1-2 (sürüm 3, 19.11.2026 21:45Z, bekliyor)",
+    "onay_istegi": "onaylar/metin-1-2 (sürüm 3, 19.11.2026 21:05Z, bekliyor)",
     "not": "Sürüm 3: inceleme.md uygulandı, bağımsız denetim (kritik yok, 8 önemli düzeltildi). Metin onayı 28.11'e kadar gelmezse yayın kayabilir (UZUN.md 1b).",
     "surum": 3
   },
