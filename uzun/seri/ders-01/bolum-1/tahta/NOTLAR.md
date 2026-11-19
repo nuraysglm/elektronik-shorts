@@ -19,3 +19,8 @@ Parça videoları: `wip/uzun-d01-b1/parca-N.mp4` (abone kartı yok; birleştirme
 1. `OZEL` klasörüne `profil-daire.png` (yüz/omuz, yuvarlak kırpılmış) + `kalin.ttf` → `node abone.mjs --out abone.mov`.
 2. Parça 3 ve 6'ya `overlay` (parcalar.json `abone` zamanı); diğer parçalar olduğu gibi.
 3. `ffmpeg concat` → `media/uzun/devre-teorisi-1-ders-01-bolum-1.mp4`; tam QC (UZUN.md 5).
+
+## İş emri C (19.11.2026)
+- `abone.js`: animasyon 4,5 sn; kart 0,4 sn'de girer, tık 1,0 sn (ABONE OL), 1,9 sn (zil), zil sallanması 1,0 sn. Kart sözlü çağrı cümlesinin başında girer.
+- `abone_ses.py`: fare tıkı + tık/zil sesi (numpy, telifsiz) → `abone.wav` (scratchpad).
+- `birlestir.sh PARCA_KLASORU abone.mov abone.wav CIKTI.mp4`: abone anları parça 3 0,05 sn ve parça 7 49,35 sn (parça 6'daki eski an kaldırıldı: orada sözlü çağrı yok); tepe sınırlama + iki geçişli doğrusal loudnorm → −16 LUFS, ≤ −1,5 dBTP; efektler −7,3 dB (anlık en yüksek ≈ −28 LUFS, konuşmanın ~12 dB altı).

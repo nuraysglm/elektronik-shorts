@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Abone kartini saydam 6 sn'lik katman olarak render eder (ProRes 4444, alfa).
+// Abone kartini saydam 4,5 sn'lik katman olarak render eder (ProRes 4444, alfa).
 //   OZEL=/scratchpad/ozel node abone.mjs --out abone.mov      (OZEL: profil-daire.png + kalin.ttf; depoya girmez)
 //   OZEL=... node abone.mjs --stills 0.3,1.6,3.1,5 --outdir DIR
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path'; import { spawn } from 'node:child_process'; import { fileURLToPath } from 'node:url';
@@ -18,6 +18,6 @@ try {
   if (opt('stills')) { const dir = opt('outdir', '.'); fs.mkdirSync(dir, { recursive: true });
     for (const s of opt('stills').split(',')) { await page.evaluate(`window.__draw(${+s})`); await page.screenshot({ path: path.join(dir, `abone-${s}.png`), omitBackground: true }); } }
   else { const out = opt('out'); const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-framerate', '30', '-c:v', 'png', '-i', '-', '-c:v', 'prores_ks', '-profile:v', '4444', '-pix_fmt', 'yuva444p10le', out], { stdio: ['pipe', 'inherit', 'inherit'] });
-    for (let i = 0; i < 180; i++) { await page.evaluate(`window.__draw(${i / 30})`); const buf = await page.screenshot({ type: 'png', omitBackground: true }); if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once('drain', r)); }
+    const N = Math.round(30 * (await page.evaluate('window.__meta.duration'))); for (let i = 0; i < N; i++) { await page.evaluate(`window.__draw(${i / 30})`); const buf = await page.screenshot({ type: 'png', omitBackground: true }); if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once('drain', r)); }
     ff.stdin.end(); await new Promise((r) => ff.on('close', r)); console.log('->', out); }
 } finally { await b.close(); srv.close(); }
