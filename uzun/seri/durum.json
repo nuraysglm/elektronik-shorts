@@ -100,13 +100,17 @@
     {
       "tarih": "2026-11-18T23:15Z",
       "not": "metin-1-1-p5 ve eksik-hesaplar-1-1 (A) onaylı. Parça 5 sesi üretildi (eleven_v4, 1 take, 3.988 kredi, curl ile indirildi), normalize, 1,5 sn sessizlik 44,93 sn'ye; zamanlama; parca-5.js sürüm 3; parça 4 ve 6 ekran hesapları (A); 4/5/6 render + otomatik QC temiz. Abone katmanı (profil-kucuk.jpg, scratchpad) + birleştirme (birlestir.sh): 15:13,6, 28,6 MB, -19,5 LUFS, tepe -1,5 dBTP. 44+ kare gözle kontrol, 4 zaman damgası karelerle doğrulandı. Kapak şablon B (kodla), yayin.json. Panelde onaylar/uzun-1-1 video onayı istendi. Planlama YOK (onay + Cuma akşamı/genel müdür)."
+    },
+    {
+      "tarih": "2026-11-19T12:00Z",
+      "not": "uzun-1-1 video onayı hâlâ bekliyor (Perşembe; planlama yok). Bölüm 2 adım 1: transkript [17:01–27:52] okundu; metin.md (7 parça, 1.953 kelime, ~14,5 dk), dogrula.py geçti, dogruluk.md; bağımsız denetim 2 tur (1 kritik + 7 önemli düzeltildi). Dal claude/uzun-1-2-20261119. Panelde onaylar/metin-1-2 açıldı. Onay yok → B2 sesi üretilmez."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.23,
   "acik_sorular": [],
-  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: planlama görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar. 'düzelt' gelirse notu uygula. Bu arada Ders 1 - Bölüm 2 planı/metni (adım 1).",
+  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: Cuma akşamı görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar; 'düzelt' gelirse notu uygula. onaylar/metin-1-2 'onayla' gelirse: Bölüm 2 sesleri (7 parça, generations_count 1) → indirme → zamanlama → render.",
   "not": "18.11 19:20 genel müdür: Kanal sahibi parçaları izledi. Birleştirmeden önce iş emrini uygula (parça 5: hesaplar adım adım + grafik renkleri). Metin değişikliği kanal sahibinin onayına gider; onaydan sonra yalnızca parça 5 sesi + render.",
   "metin_onayi": {
     "durum": "onaylandi",
@@ -143,5 +147,15 @@
   },
   "video": "media/uzun/devre-teorisi-1-ders-01-bolum-1.mp4",
   "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg",
-  "yayin_json": "uzun/seri/ders-01/bolum-1/yayin.json"
+  "yayin_json": "uzun/seri/ders-01/bolum-1/yayin.json",
+  "bolum_2": {
+    "adim": "metin_onayi",
+    "yayin": "2026-12-02T13:00:00 Europe/London (16:00 TR)",
+    "metin": "uzun/seri/ders-01/bolum-2/metin.md",
+    "dal": "claude/uzun-1-2-20261119",
+    "kelime": 1953,
+    "tahmini_dk": 14.6,
+    "onay_istegi": "onaylar/metin-1-2 (19.11.2026)",
+    "not": "Metin onayı 28.11'e kadar gelmezse yayın kayabilir (UZUN.md 1b)."
+  }
 }
