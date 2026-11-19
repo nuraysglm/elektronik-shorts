@@ -39,3 +39,4 @@ Ajan her çalışmanın sonunda en alta bir satır ekler. Panel bu tablodan besl
 | 2026-11-18 | — | — | — | — | stok dolu | — | — | — | stok 2 (Ohm/i–V 18.11 16:00, Sayısal Sinyal 19.11 16:00 Londra); yeni video üretilmedi |
 | 2026-11-18 | — | — | — | — | stok dolu | — | — | — | stok 2 (Ohm/i–V 18.11 16:00, Sayısal Sinyal 19.11 16:00 Londra); yeni video üretilmedi (12:08 UTC çalışması) |
 | 2026-11-19 | — | — | — | — | stok dolu | — | — | — | stok 2 (Sayısal Sinyal 19.11 16:00, Kirchhoff KVL 22.11 16:00 Londra); 008b yayında işaretlendi (youtube.com/shorts/tpXMntyP8TQ); yeni video üretilmedi (08:07 UTC çalışması) |
+| 2026-11-19 | — | — | — | — | stok dolu | — | — | — | stok 2 (Sayısal Sinyal 19.11 16:00, Kirchhoff KVL 22.11 16:00 Londra); yeni video üretilmedi (12:08 UTC çalışması) |
