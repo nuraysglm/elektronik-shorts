@@ -126,14 +126,18 @@
     {
       "tarih": "2026-11-19T22:30Z",
       "not": "İş emri E: B1'e seri müziği (Pawn) eklendi: açılış kesiti intro kartı + selamda (selam başlayınca ~14 dB altına), kapanış kesiti son 10 sn kısık, son 2 sn siyaha kararma; alimiter. Birleşik video −16,1 LUFS, tepe −1,8 dBTP, 15:18, 30,2 MB; 10 kare (intro, selam, bitiş ekranı, kararma) gözle kontrol; abone anları (3:41, 14:45) müzik dışında. yayin.json açıklamasına müzik satırı. onaylar/uzun-1-1 'müzik eklendi' diye güncellendi. Görüntü/konuşma değişmedi, kredi yok."
+    },
+    {
+      "tarih": "2026-11-19T22:45Z",
+      "not": "B2 metin onayı geldi (21:13Z). 8 parça + selam sesi üretildi (eleven_v4, 1 take, 14.926 kredi; kalan ~89.700) ve curl ile indirildi; normalize (−19,5 LUFS), parça 7'ye 1,5 sn sessizlik; zamanlama 8/8 (zayıf sınır yalnız parça 5 c40); parcalar.json (intro 37,5 sn + 11,4 sn, abone 211,62 / 46,97 sn). Tahmini 16:53. Render sonraki çalışmada."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.3,
   "acik_sorular": [],
-  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: Cuma akşamı görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar; 'düzelt' gelirse notu uygula. B2: metin-1-2 'onayla' gelirse ses (8 parça + selam) → zamanlama → render (önce 2N7002E tp = 10 µs PDF'de gözle doğrula). Onay yoksa B3 adım 1 (icerik.md hazır) başlanabilir.",
-  "not": "B1: onaylar/uzun-1-1 bekliyor. B2: metin sürüm 3 onaylar/metin-1-2'de bekliyor; onay gelmeden ses yok.",
+  "sonraki_is": "B1: onaylar/uzun-1-1 (müzikli sürüm) 'onayla' gelirse akşam görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar; 'düzelt' gelirse notu uygula. B2: sahneler (parca-1..8.js) + QC + render + birleştirme; video onay isteği en geç 30.11 13:00 Londra.",
+  "not": "B1: müzik eklendi (iş emri E), onaylar/uzun-1-1 bekliyor. B2: metin onaylı, ses + zamanlama tamam, sıradaki render.",
   "metin_onayi": {
     "durum": "onaylandi",
     "zaman": "2026-11-18T08:31:00Z",
@@ -171,15 +175,19 @@
   "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg",
   "yayin_json": "uzun/seri/ders-01/bolum-1/yayin.json",
   "bolum_2": {
-    "adim": "metin_onayi",
+    "adim": "render",
     "yayin": "2026-12-02T13:00:00 Europe/London (16:00 TR)",
     "metin": "uzun/seri/ders-01/bolum-2/metin.md",
     "dal": "claude/uzun-1-2-20261119",
     "kelime": 2248,
     "tahmini_dk": 16.5,
-    "onay_istegi": "onaylar/metin-1-2 (sürüm 3, 19.11.2026 21:05Z, bekliyor)",
-    "not": "Sürüm 3: inceleme.md uygulandı, bağımsız denetim (kritik yok, 8 önemli düzeltildi). Metin onayı 28.11'e kadar gelmezse yayın kayabilir (UZUN.md 1b).",
-    "surum": 3
+    "onay_istegi": "onaylar/metin-1-2 onaylandı",
+    "not": "Ses + zamanlama tamam. Sıradaki: 2N7002E tp=10 µs PDF kontrolü → 8 sahne (parca-N.js) → otomatik QC → render → birleştirme (müzikli) → onaylar/uzun-1-2 (yayından ≥48 sa önce: 30.11 13:00 Londra'ya kadar).",
+    "surum": 3,
+    "metin_onayi": "onaylandı 2026-11-19T21:13Z (onaylar/metin-1-2, 'Onaylıyorum (ses üretilsin)')",
+    "ses": "tamam 19.11 22:15Z: 8 parça + selam, eleven_v4, 1 take, 14.926 kredi, curl ile indirildi (uzun/seri/ders-01/bolum-2/ses/)",
+    "zamanlama": "tamam: tahta/zamanlama-1..8.json, parcalar.json; tahmini 16:53",
+    "tahta": "uzun/seri/ders-01/bolum-2/tahta/ (NOTLAR.md)"
   },
   "is_emri_c": "uzun/seri/ders-01/bolum-1/is-emri-20261119-c.md — UYGULANDI 19.11 14:40Z",
   "icerik": {

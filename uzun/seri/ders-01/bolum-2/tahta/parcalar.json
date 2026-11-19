@@ -1,0 +1,11 @@
+{
+ "1": {"ara": [[37.5, 11.4]], "kuyruk": 0.6,
+       "not": "37,25 sn: kanca biter ('... hesaplayacaksın.') -> 37,5 sn'de 11,4 sn intro kartı + selam (ses/selam.mp3 10,76 sn, aralığın 0,3 sn'sinden itibaren); 48,9 sn'de 'Birinci bölümde...' ile devam"},
+ "2": {"kuyruk": 2.4, "abone": 211.62, "not": "abone kartı 1: 'Bu serinin devamı için kanala abone olabilirsin.' 211,62–214,27 sn; kart 4,5 sn -> kuyruk 2,4 sn"},
+ "3": {"kuyruk": 0.6},
+ "4": {"kuyruk": 0.6},
+ "5": {"kuyruk": 0.6, "not": "cümle 40 sınırı zayıf (duraklama −42 dBFS); kelime zamanları tahmin"},
+ "6": {"kuyruk": 0.6},
+ "7": {"kuyruk": 0.6, "not": "ses_hazirla.sh 29,77 sn'ye 1,5 sn sessizlik ekledi ('nasıl kurardın?' sonrası; zamanlama bunu içeriyor)"},
+ "8": {"kuyruk": 20.6, "abone": 46.97, "not": "abone kartı 2: 'Kanala abone olursan…' 46,97–49,55 sn; son 20 sn bitiş ekranı (sessiz) + müzik kapanış kesiti son 10 sn"}
+}
