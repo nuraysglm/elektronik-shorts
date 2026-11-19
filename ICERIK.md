@@ -63,6 +63,14 @@ Bir bölümün metni (`metin.md`) zaten yazılmışsa: paketi hazırladıktan so
 - Her hafta içi 07:37 (Londra) çalışırsın. Sıra: `durum.json` `takvim`ine göre **yayın sırası en yakın olup içerik paketi olmayan** bölüm. Uzun Video Ajanı'nın en az 1 bölüm önünde, en fazla 2 bölüm önünde ol. Yapacak iş yoksa kısa kayıt yaz ve dur.
 - İlk iş (19.11.2026): **Ders 1 - Bölüm 2** (metni yazılmış, onaya sunulmuş): içerik paketi + `inceleme.md`. Kanal sahibinin kararı: Bölüm 2'nin başına **3–4 dakikalık "Uygulamada: datasheet'teki akımlar"** parçası eklenecek (Bölüm 1'deki ortalama ve anlık akımın tasarımda ve datasheet'te karşılığı: hangisi ne zaman kullanılır, datasheet'teki akım türleri ve ne işe yaradıkları). Sonra Ders 1 - Bölüm 3.
 
+## 7a. Kanal sahibinden öğrenilenler (her geri bildirimde genel müdür ekler; her çalışmada oku)
+
+1. (19.11) Ders 1 - Bölüm 1'de ortalama ve anlık akım anlatıldı ama **hangisinin ne zaman kullanıldığı, devre tasarımında hangisine dikkat edileceği ve datasheet'teki akım türleri** anlatılmadı. Her kavram için "mühendis bunu nerede kullanır?" sorusu cevaplanmalı.
+2. (18.11) Öğrenciler ortalama düzeyde; **her sayının nereden geldiği** adım adım gösterilir, "bu sayı nereden çıktı?" sorusu kalmaz.
+3. (18.11) Bilinen yanlış **"En sık yapılan hata"** adıyla, hemen ardından **"Doğrusu"** ile verilir; yalnızca gerçekten yaygın hatalar.
+4. (18.11) Grafiklerde karışabilecek çizgiler farklı renk ve etiketle ayrılır (ör. eğri mavi, teğet kırmızı, kesen gri kesikli).
+5. (18.11) Ekranda kelime yerine matematik işareti kullanılmaz; işaretler yalnızca denklemde.
+
 ## 8. Asla
 
 Para harcama; kullanıcının bilgisayarını kullanma; Higgsfield veya yapay zekâ görsel/video aracı kullanma; yayın/planlama yapma; transkript, kitap PDF'i, datasheet PDF'i veya profil fotoğrafını depoya koyma; başka ajanın dosyasını değiştirme.
