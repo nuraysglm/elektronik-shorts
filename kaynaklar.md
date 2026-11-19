@@ -103,7 +103,7 @@ Telifli kitaplar; **herkese açık bu depoya asla konmaz**. Kanal sahibinin Goog
 
 Ders → kitap eşlemesi (sayisal-konular.md): S1 Floyd 1 · S2–S5 Mano 1, Floyd 2 · S6–S8 Mano 2, Floyd 3–4 · S9–S11 Mano 3, Floyd 4 · S12–S15 Mano 4, Floyd 5–6 · S16–S20 Mano 5, Floyd 7.
 
-## İçerik Ajanı kaynakları (kanal sahibi, 19.11.2026) — Drive "Icerik Kaynaklari" klasörü `1gQl8u09Um2_ah9u6Rxzfx-BxQqjRr6NX`
+## İçerik Ajanı kaynakları (kanal sahibi, 19.11.2026; 17 PDF) — Drive "Icerik Kaynaklari" klasörü `1gQl8u09Um2_ah9u6Rxzfx-BxQqjRr6NX`
 Yalnızca başvuru içindir; metin, şekil, soru kopyalanmaz; depoya asla konmaz (ICERIK.md 2).
 
 | Kaynak | Drive ID | Ne için |
@@ -113,3 +113,11 @@ Yalnızca başvuru içindir; metin, şekil, soru kopyalanmaz; depoya asla konmaz
 | A. V. Oppenheim, A. S. Willsky, S. H. Nawab, *Signals and Systems*, 2. baskı (Prentice Hall, 1996/97) | `11tY6w87r-lwD4M4LoaiHsOxiJdaqIbgN` | Geçici hal, sinüzoidal işaretler, sistem bakışı gereken bölümler (ileri dersler) |
 | Oppenheim, *Signals and Systems* 2. baskı çözüm kılavuzu | `1w37tFay9hgKhzP39i5zvtPBAYNLOIcDp` | Yalnızca doğrulama; çözüm ve soru kullanılmaz |
 | H. P. Hsu, *Schaum's Outline: Signals and Systems* (1995) | `1mC5LmhMWbUk6d4UcaF1rGwVQNi16gysu` | Kavram kontrolü ve doğrulama (ileri dersler) |
+| M. Geier, *How to Diagnose and Fix Everything Electronic* | `1ZL2383fkP0mnqrGYlSL4M1CT3LXs1ZzS` | "Uygulamada": arıza bulma, ölçüm, gerçek devrede ne bozulur |
+| *PCB Rework and Repair Guide* | `1rkzUnCYlruQHLKbUKAavLh2YtQOzcZCc` | "Uygulamada": üretim/onarım pratiği, lehim, kart üzerinde akım/ısı etkileri |
+| *Beginner's Guide to Reading Schematics* (McGraw-Hill, ISBN 0071827781) | `1BPG0EgzCcPBEJOCmE8h5kfLdCEC8fSk1` | Şema okuma, sembol ve gösterim alışkanlıkları |
+| *Fundamentals of Circuit Design* | `16jnm5p94s2z5gipBjQaYdQl9kyIcweAt` | Tasarım yaklaşımı, uygulama örnekleri |
+| A. S. Sedra, K. C. Smith, *Microelectronic Circuits*, 6. baskı | `1v636rLfVeUf6cYQkpE3ZU4HQ-2oLQcEd` (ikinci kopya `1m7GP_I-y7FIcQk5aSYflMa99pi70Aa6f`) | Elektronik teori; diyot, BJT, MOSFET, op-amp (ileri dersler, Bileşen Shorts) |
+| Sedra/Smith çözüm kılavuzu (3 parça) ve *Solution Manual of Microelectronic Circuits* | `1D2lERP00RVNdOlYyXvVhpJx9kOc80pAe`, `1DrAJSt0uQ-gJGsdZcMrZu583WURpKs4s`, `1QmBeGPy_bTd2o7qqUQgeuM371bXk37jJ`, `1zwQrei3xLYnKQfUSNT7M9_HVX_GRBSW5` | Yalnızca kendi hesabını doğrulamak için; çözüm ve soru kullanılmaz |
+| B. Parhami, *Computer Arithmetic: Algorithms and Hardware Designs* | `1AL26SeaWETS51lLXtTdQ2KFAixVB3J3Q` | Sayısal Elektronik: aritmetik devreler, sayı gösterimleri (Sayısal Shorts, kitapçık doğrulaması) |
+| S. Türköz, *Analog Elektronik eski sınav soruları* | `1oCyPwY6oqScZUP6kH5PtVuDRiWyu_gjy` | Yalnızca Türk üniversitelerindeki sınav düzeyini ve terim kullanımını görmek için; sorular kopyalanmaz, uyarlanmaz |
