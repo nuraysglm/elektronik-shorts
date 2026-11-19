@@ -1,0 +1,32 @@
+{
+ "ders": 1,
+ "bolum": 2,
+ "video": "media/uzun/devre-teorisi-1-ders-01-bolum-2.mp4",
+ "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-2-kapak.jpg",
+ "baslik": "Açık Devre ve Akımın Yönü: Akım Grafiğinden Yük | Devre Teorisi Ders 1 (2/3)",
+ "aciklama": "Açık devrede akım sıfırsa gerilim de sıfır mı? Devre Teorisi I (Devre Analizi 1) dersinin ikinci bölümünde akımın yönünü (referans oku), açık devrenin neyi garanti ettiğini ve akım grafiğinden geçen yükü (integral = alan) özgün çözümlü örneklerle öğreniyoruz.\nAyrıca bir veri sayfasında (datasheet) sürekli akımı darbe akımından ayırıyor, bir düğme pilin ömrünü ortalama akımdan hesaplıyoruz.\n\nBölümler\n0:00 Kanca: açık anahtarın gerilimi sıfır mı?\n0:49 Bölüm 1'den: ortalama ve anlık akım\n1:00 Uygulamada: datasheet'teki akımlar\n2:06 Akım satırını okurken üç soru\n2:21 Mini tasarım: düğme pilin ömrü\n4:37 Akımın değeri ve yönü: referans oku\n5:35 Elektronlar ve akımın yönü\n6:29 Açık devre: en sık yapılan hata\n7:48 Uygulamada: buton ve mikrodenetleyici girişi\n8:41 Akımdan yüke: integral ve alan\n9:41 Sabit akım ve Bölüm 1 ile sınama\n11:01 Örnek: rampa, sabit ve ters yönlü akım\n12:35 Zamanın yarısı, yükün dörtte biri\n13:15 İstenen akımı veren devre\n15:35 Bilmen gerekenler\n16:03 Sana bir soru\n\nBilmen gerekenler\n• Her akımın bir değeri ve bir yönü vardır; yön, şemadaki referans okuyla verilir.\n• Açık devre yalnızca i = 0'ı garanti eder; uçlarındaki gerilimi çevresindeki devre belirler.\n• Geçen yük, akım grafiğinin altındaki alandır (q = ∫ i dt); eksenin altındaki alan eksi sayılır.\n• Datasheet'te sürekli akım ile darbe akımı ayrı satırlardır; her değerin koşulunu (süre, sıcaklık, montaj) oku.\nÖnce bilmen gereken: Bölüm 1 (i = dq / dt, ortalama akım), Ohm yasası (v = R × i), integral kavramı.\n\nÖnceki: Ders 1 - Bölüm 1/3: Akım nedir? Ortalama akım ile anlık akım.\nSıradaki: Ders 1 - Bölüm 3/3: Gerilim, kısa devre ve ideal kaynak.\nOynatma listesi: Devre Teorisi I — Türkçe Ders Serisi\n\nKaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA). Anlatım ve bütün örnekler özgündür.\nDatasheet değerleri: Vishay 1N4001–1N4007 (2020), onsemi 2N7002E (2023), Vishay TLHR540x (2024), Panasonic CR2032 (2026).\nMüzik: Pawn – The Grey Room / Golden Palms (YouTube Ses Kitaplığı)\n\n#devreteorisi #devreanalizi #elektronik #açıkdevre",
+ "etiketler": [
+  "açık devre",
+  "akımın yönü",
+  "referans yönü",
+  "akım grafiği alan",
+  "integral ile yük",
+  "devre analizi 1",
+  "devre teorisi",
+  "doğru akım devre analizi",
+  "devre analizi ders",
+  "datasheet okuma",
+  "pil ömrü hesabı"
+ ],
+ "ilk_yorum": "Kısa bir soru: bir telden 2 saniye boyunca 5 mA, sonraki 1 saniye boyunca −3 mA akım geçiyor. 3 saniyenin sonunda ok yönünde net ne kadar yük geçmiştir? Cevabını yaz 👇",
+ "kategori": "EDUCATION",
+ "yayin": "2026-12-02T13:00:00 Europe/London (16:00 TR)",
+ "oynatma_listesi": "Devre Teorisi I — Türkçe Ders Serisi (sıra 2)",
+ "studio_hatirlatma": [
+  "Oynatma listesi 'Devre Teorisi I — Türkçe Ders Serisi'ne ekle, sıra 2 (Ders 1 Bölüm 2).",
+  "Bitiş ekranı (son 20 sn, 16:32–16:52 arası; orta ve alt boş): sonraki bölüm (yayınlanınca) + oynatma listesi + abone.",
+  "Bilgi kartı: 0:49 'Bölüm 1'den' anına Ders 1 - Bölüm 1/3 videosu.",
+  "Bölüm 1 videosunun bitiş ekranına bu videoyu 'sonraki bölüm' olarak ekle."
+ ],
+ "zaman_damgasi_kaynagi": "parça süreleri (render meta): p1 60.56, p2 216.8, p3 112.2, p4 132.2, p5 139.32, p6 134.76, p7 139.78, p8 77.08; başlangıçlar [0, 60.56, 277.36, 389.56, 521.76, 661.08, 795.84, 935.62]; parça 1'de 37,5 sn'de 11,4 sn intro + selam; zamanlama-N.json cümle başları"
+}
