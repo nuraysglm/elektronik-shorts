@@ -102,3 +102,14 @@ Telifli kitaplar; **herkese açık bu depoya asla konmaz**. Kanal sahibinin Goog
 | Mano Digital Design 4e.pdf / Floyd Digital Fundamentals 11e.pdf | Kitapların orijinal PDF'leri (şekiller için; büyük dosyalar — önce metin dosyalarını kullan, şekil gerekirse ilgili sayfayı indir) | 1Wk5KvyNyxmZcpoIlpVTAr05LUsO2Q5Cy / 1H5FtgCBIjEXDfpz_f000_f96CG537yPj |
 
 Ders → kitap eşlemesi (sayisal-konular.md): S1 Floyd 1 · S2–S5 Mano 1, Floyd 2 · S6–S8 Mano 2, Floyd 3–4 · S9–S11 Mano 3, Floyd 4 · S12–S15 Mano 4, Floyd 5–6 · S16–S20 Mano 5, Floyd 7.
+
+## İçerik Ajanı kaynakları (kanal sahibi, 19.11.2026) — Drive "Icerik Kaynaklari" klasörü `1gQl8u09Um2_ah9u6Rxzfx-BxQqjRr6NX`
+Yalnızca başvuru içindir; metin, şekil, soru kopyalanmaz; depoya asla konmaz (ICERIK.md 2).
+
+| Kaynak | Drive ID | Ne için |
+|---|---|---|
+| T. C. Hayes, P. Horowitz, *The Art of Electronics: Student Manual* (Cambridge UP, 1989) | `1DQ8z5bkHa9cNUx4lmmCYH4MlhdTn2_gM` | "Uygulamada" kısımları: laboratuvar pratiği, ölçüm, gerçek devre davranışı (bütün dersler) |
+| B. Razavi, *Fundamentals of Microelectronics* | `1y8AnQmDrf0Ql5Q-eqvXeb7LugD1U_hW1` | Diyot, transistör ve elemanların gerçek davranışı; uygulama örnekleri ve ileri derslerde (Bileşen Shorts için de) |
+| A. V. Oppenheim, A. S. Willsky, S. H. Nawab, *Signals and Systems*, 2. baskı (Prentice Hall, 1996/97) | `11tY6w87r-lwD4M4LoaiHsOxiJdaqIbgN` | Geçici hal, sinüzoidal işaretler, sistem bakışı gereken bölümler (ileri dersler) |
+| Oppenheim, *Signals and Systems* 2. baskı çözüm kılavuzu | `1w37tFay9hgKhzP39i5zvtPBAYNLOIcDp` | Yalnızca doğrulama; çözüm ve soru kullanılmaz |
+| H. P. Hsu, *Schaum's Outline: Signals and Systems* (1995) | `1mC5LmhMWbUk6d4UcaF1rGwVQNi16gysu` | Kavram kontrolü ve doğrulama (ileri dersler) |
