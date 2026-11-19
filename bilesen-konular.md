@@ -1,4 +1,4 @@
-# Bileşen Shorts testi (kanal sahibinin onayı, 16.11.2026 — Büyüme Ajanı önerisi buyume-20261116-2; 4 hafta, Pazar slotu)
+# Bileşen Shorts testi (kanal sahibinin onayı, 16.11.2026 — Büyüme Ajanı önerisi buyume-20261116-2; 4 hafta; 19.11.2026 kararıyla Cuma slotu: 27.11, 04.12, 11.12, 18.12)
 
 Üniversite düzeyinde, ≤ 60 sn, her video bir bileşenle ilgili **bilinen bir yanlış** (AGENT.md 2b, 2d, 2f, 2g aynen geçerli; devre şeması, i(t)/v(t), gerçek sayılar). **KAYNAK: kanal sahibinin onayı bekleniyor (AGENT.md bölüm 2i).** Kaynak `kaynaklar.md`'de onaylanana kadar bu seriden video üretilmez; Pazar slotuna Razavi serisi üretilir. 4 hafta sonra (Büyüme Ajanı raporunda) izlenme ve abone kazanımı Razavi Shorts'larıyla karşılaştırılır; devam kararı kanal sahibinindir.
 

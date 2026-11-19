@@ -29,7 +29,7 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 5. **Kurgu doğru olmalı.** Sahneler mantıklı sırayla ilerler; her yazı ekrandaki görüntüyle aynı anda aynı şeyi anlatır. Bir kavram gösterilmeden ondan bahsedilmez.
 6. **Yazıların boyutu, rengi ve konumu doğru olmalı.** Telefonda rahat okunur, nesnelerin üstüne binmez, bir anda ekranda en fazla 2 satır.
 7. **Konu anlaşılır anlatılmalı.** Konuyu hiç bilmeyen bir lise öğrencisi videoyu izleyince anlamalı.
-8. **Türkçe seslendirme yeterince doğal değildi.** Kanal sahibinin kararı: videolarda **insan sesi / seslendirme kullanılmaz.** Anlatımı ekranda akan yazılar yapar (bölüm 6).
+8. ~~Türkçe seslendirme yeterince doğal değildi; seslendirme kullanılmaz.~~ **19.11.2026'dan itibaren geçersiz:** kanal sahibinin ElevenLabs klon sesiyle seslendirme yapılır (2a-V). Piper ve başka TTS yine kullanılmaz.
 
 9. **Yazılar çok yukarıdaydı;** telefonun üstteki sabit ikonlarının (geri, arama, menü) altına denk geldi. Üst %10'a hiçbir şey konmaz (bölüm 4).
 9a. **Yazılar YouTube arayüzüyle çakıştı ve taştı (Gerilim, 09.11.2026):** alttaki etiketler kanal adı/başlık alanına düştü, uzun üst yazı ekran kenarından taştı. Bölüm 4'teki güvenli alan ve otomatik kontrol zorunlu.
@@ -65,6 +65,14 @@ Genel müdürün yaptığı ilk deneme videosu (`scenes/deneme-faraday.js`) kana
 14. **Analoji ilhamı:** Kanal sahibi bir kaynak verdiyse benzetmeler için de o kaynaktan ilham al (ör. Wikipedia "Resistor" sayfasındaki hidrolik benzetme ve direnç yapısı görselleri); kaynaktaki görselleri kopyalama, fikri kodla çizilmiş 3D animasyona çevir.
 15. **Sahne geçişi: aynı ekranda, hemen (kanal sahibinin emri, 08–09.11.2026).** Bir görüntüden diğerine (ör. devre → analoji → günlük hayat örnekleri) geçiş aynı ekranda, aynı kadrajda ve **hemen** olur: eski görüntü kaybolur, yenisi aynı yerde belirir; toplam geçiş en fazla 0,3 sn (doğrudan kesme veya çok kısa çapraz solma). Yasak olanlar: ekranı/kamerayı sağa-sola veya yukarı-aşağı kaydırmak, yeni sahnenin yandan/alttan kayarak gelmesi (Direnç 2. sürümündeki hata), eski görüntünün **uzaklaşarak/küçülerek yok olması**, yeni görüntünün **yakınlaşarak/büyüyerek gelmesi** (Akım videosundaki hata), kamera uçuşu, dönüşerek geçiş. Kamera yalnızca sahne içinde, yerinde çok yavaş yaşar (kural 13); kadraj sahneden sahneye taşınmaz. Kalite kontrolünde her sahne geçişinin ±0,5 sn çevresinden kare alıp kayma, uzaklaşma/yakınlaşma olmadığını ve geçişin ≤ 0,3 sn sürdüğünü kontrol et. Not: hemen geçiş "durağan an" sayılmaz; yeni sahne açılır açılmaz kendi animasyonu başlar.
 16. **Anlatımın bütünlüğü (kanal sahibinin emri, 08.11.2026).** Birbiriyle ilişkili bilgi yazıları mümkün olduğunca aynı ekranda birlikte kalır: yeni satır öncekinin altına eklenir, önceki satırlar kaybolmaz; bir düşünce (ör. sebep-sonuç zinciri, bir kuralın parçaları) bitene kadar yazılar ekranda birikir, sonra birlikte yerinde silinir. Yazılar animasyonun önüne geçmez: ana nesnenin üstüne binmez, onu kapatmaz; yer gerekiyorsa nesne yerinde hafifçe küçülür veya yazı bandı (y %12–26) en fazla y %34'e kadar genişler (bölüm 4 güvenli alan). Bir yazı gösterilip hemen silinip ilgili yazı başka bir anda tekrar gelmez; akışı bölen ara sahne/ara yazı yoktur.
+
+## 2a-V. Sesli Short'lar (kanal sahibinin kararı, 19.11.2026 — bütün yeni Short'lar)
+Bundan sonra **bütün Short'lar kanal sahibinin ElevenLabs klon sesiyle seslendirilir** (eski "seslendirme yok" kuralları kalktı; hatalar listesindeki 8. madde artık geçerli değil). Örnek: 009 sesli test (`wip/009-sesli-test/`, kanal sahibi onayladı).
+1. **Metin:** 60–90 sn video için ~110–170 kelime, doğal ve sıcak Türkçe (UZUN.md 2 "Doğal dil" ve TTS kuralları: sayılar, birimler ve semboller okunduğu gibi yazılır; kısaltma okunmaz). Önce `metin.md` + `dogrula.py` + `dogruluk.md`, sonra Agent aracıyla bağımsız doğruluk denetimi.
+2. **Metin onayı (kanal sahibinin kuralı, uzun videodaki gibi):** Denetimden geçen metin, Shorts panelinde (https://claude.ai/artifact/X7gzN2huBZ6m2y2uWBCbLx) `onaylar/metin-<video-id>` isteğiyle onaya sunulur (metnin tamamı, ekran yazıları, yayın günü). **`onayla` gelmeden ses üretilmez.** Onay beklerken bir sonraki Short'un metnini hazırlayabilirsin (en fazla 2 metin önde). Onay gecikirse yayın bir sonraki uygun güne kayar; planlı başka gönderiye dokunma.
+3. **Ses:** ElevenLabs `creative_generate_speech`, voice_id `sLFd2sFq5fDrVDNCuUfI` ("Nuray"), model `eleven_v4`, **generations_count 1**. Sesi önce `curl` ile indir; inmezse panelde kanal sahibinden Drive'daki "Uzun Video Sesleri" klasörüne (`shorts-<video-id>` alt klasörü) yüklemesini iste. Krediyi `account_get_usage` ile kontrol et; 10.000'in altındaysa panelde uyar.
+4. **Zamanlama:** `silencedetect` ile cümle zamanları (`zamanlama.json`), sahneler ve ekran yazıları sese bağlanır (2a-S); yazı sesle aynı şeyi söyler. Efekt sesleri konuşmanın 12–16 dB altında, konuşmayı bastırmaz. Son ses −16 LUFS, tepe ≤ −1,5 dBTP.
+5. Sesli Short'larda da 2b-7 (her sayının hesabı), 2f-0 (en sık yapılan hata + doğrusu) ve elektron boyutu kuralı geçerlidir.
 
 ## 2a-S. Sesli Short istisnası (kanal sahibi, 17.11.2026)
 Seslendirmeli (kanal sahibinin ElevenLabs klon sesi) Short'larda denklemler ve kısa etiketler **sesle eşzamanlı** yazılabilir; 2a-2 (yazı animasyondan sonra) ve 2a-3 (formül en sonda) kuralları sesli Short'larda uygulanmaz. Ekrandaki yazı yine sesle aynı şeyi söyler (2d-6). Diğer bütün kurallar geçerlidir. YouTube'da `isAiGeneratedContent: false` kalır (kendi sesinin klonuyla seslendirme YouTube'un beyan gerektirmeyen örnekleri arasında).
@@ -144,7 +152,7 @@ Haftalık çalışan bir **Büyüme Ajanı** (`BUYUME.md`) kanal verisini ve paz
 | Ortak yapı taşları | `tools/lib/stage.js`: stüdyo, masa, malzemeler, `coil`, `wire`, `charges`, `magnet`, `led`, `pcb`, `orbit`, `text` |
 | Kare kare çalıştırma | `tools/render.mjs`: başsız Chromium (Playwright), her kare PNG, ffmpeg ile 1080×1920 H.264 |
 | Müzik ve efekt | `tools/audio.py`: numpy ile sentez; efektler sahnenin `meta.cues` zamanlarına yerleşir |
-| Seslendirme | **Yok.** Kanal sahibinin kararı; Piper ve başka TTS kullanılmaz (bkz. 6) |
+| Seslendirme | **Kanal sahibinin ElevenLabs klon sesi** (2a-V, 19.11.2026); Piper ve başka TTS kullanılmaz |
 
 Ekran kartı yok; WebGL işlemcide çalışır. **Denemeler düşük çözünürlükte, son render bir kez:**
 - Kare kontrolü: `node tools/render.mjs <sahne> --scale 0.4 --stills 1,4,8,... --out /tmp/k.png`, sonra görseli Read ile incele. Görsellere bakmak pahalıdır: bir kontak sayfasında 6–8 an, render öncesi en fazla 2 sayfa.
@@ -221,15 +229,15 @@ Bu sayfaların **tarzından** öğren; logolarını, karakterlerini, başlıklar
 1. **Senaryoyu önce yaz:** `wip/<id>/senaryo.md`. Her sahne için: süre, ekranda ne görünüyor, ekrandaki yazı (anlatım), efekt.
 2. Yapı: **Kanca** (0–3 sn, ilk karede görünür bir soru veya şaşırtıcı görüntü) → **Gerçek hayat** (mini modeller) → **Animasyonla gösterim** (değiştir → sonucu göster → kısa etiket) → **Kural/yasa** (en sonda yazıyla) → **Kapanış** (döngüye uygun son kare). Hedef 30–60 sn.
 3. Her yeni kavram önce görselle tanıtılır, sonra adı söylenir. Bir sahnede tek fikir.
-4. Seslendirme yok ve anlatıyı yazı değil animasyon taşır: senaryoda her sahne için önce "animasyon ne gösteriyor" (değişen şey ve sonucu), sonra "doğrulama etiketi" yazılır. Yazılar kapatılsa da konu animasyondan anlaşılmalı.
+4. Anlatıyı ses ve animasyon birlikte taşır (2a-V); yazılar sesi tekrarlar, animasyon gösterir: senaryoda her sahne için önce "animasyon ne gösteriyor" (değişen şey ve sonucu), sonra "doğrulama etiketi" yazılır. Yazılar kapatılsa da konu animasyondan anlaşılmalı.
 5. Konunun "gerekli bilgi" listesini senaryonun başına yaz ve videoda her maddenin geçtiğini işaretle.
 
 ## 6. Ses ve ekran yazıları (anlatım)
 
-**Ses:** Kanal sahibinin kararı: **yalnızca animasyon sesleri.** Seslendirme (insan sesi, TTS) ve arka plan müziği yok.
+**Ses:** Kanal sahibinin klon sesiyle seslendirme (2a-V) + olaylara bağlı animasyon sesleri. Arka plan müziği yok.
 - Efektler ekrandaki olaylara bağlıdır (anahtar kapanır → yumuşak tık, yük akmaya başlar → hafif uğultu, değer değişir → yumuşak pop, nesne yerine oturur → alçak "thud"). Olay yoksa ses yok; boş yerlere efekt serpiştirme.
 - Efektlerde 4 kHz üstü keskin tonlar yok (ding, bip, sparkle, zap, tick kullanma; gerekiyorsa alçak geçiren filtreyle yumuşat). Ani yüksek ses yok. Son ses: -16 LUFS civarı, tepe -1,5 dBTP altında (render aracı `loudnorm` uygular; sessiz anların yükseltilmemesine dikkat et).
-- Sahne `meta`: `music: { off: true }`, `voice` alanı yok.
+- Sahne `meta`: `music: { off: true }`, `voice`: ses dosyası ve `zamanlama.json` (2a-V).
 
 **Ekran yazıları — yalnızca doğrulama (bölüm 2a).** Anlatıyı animasyon yapar; yazı, animasyonun gösterdiğini doğrulayan kısa etikettir:
 - Her etiket, ilgili animasyon olayı gösterildikten **sonra** belirir: 1–4 kelime, bir anda tek etiket. Önceki satır yukarı kayarak/solarak yer açar; yeni satır aşağıdan akarak gelir (yumuşak geçiş, 0,3–0,4 sn).
@@ -268,7 +276,7 @@ Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama;
 **C. Ses**
 - `ffmpeg -af ebur128` ile ölç: entegre ses yaklaşık -16 LUFS, tepe -1,5 dBTP altında.
 - `astats` ile ani tepe ara; 4 kHz üstü bant enerjisini kontrol et (`highpass=f=4000,volumedetect`); keskin tepe varsa efekti düzelt.
-- Videoda seslendirme veya müzik yok; yalnızca olaylara bağlı efektler var mı?
+- Seslendirme anlaşılır mı, efektler konuşmayı bastırıyor mu, müzik yok mu? Ekran yazıları sesle eşzamanlı mı?
 - Her ekran yazısı okuma süresi kuralına uyuyor mu (karelerden zamanla kontrol et)?
 
 **D. Teknik**
@@ -287,8 +295,12 @@ Kontrollerin sonucunu `wip/<id>/kalite.md`'ye yaz; panelde de özetle.
 ## 9. Yayın takvimi ve stok kuralı
 
 Kanal sahibinin kararı:
-- **Haftada 5 video (kanal sahibinin kararı, 11.11.2026): Pazartesi, Salı, Çarşamba, Perşembe ve Pazar, saat 16:00'da (Europe/London; Türkiye 19:00).** Cuma ve Cumartesi yayın yok (kanal verisinde en zayıf günler).
-- **Seri dağılımı (kanal sahibinin kararı, 16.11.2026):** **Pazartesi ve Çarşamba: Razavi serisi** (`konular.md`) · **Salı ve Perşembe: Sayısal Elektronik serisi** (`sayisal-konular.md`) · **Pazar: Bileşen serisi** (`bilesen-konular.md`, 4 haftalık test: 22.11, 29.11, 06.12, 13.12; sonrasında kanal sahibi karar verene kadar Pazar Razavi'ye döner). 17.11 Salı'ya önceden planlanmış 008a (Razavi) olduğu gibi kalır; yeni dağılım 18.11'den başlar.
+- **Yayın günleri (kanal sahibinin kararı, 19.11.2026; 11.11 ve 16.11 kararlarının yerine):** **Hafta sonu Short yok. Uzun video olan günlerde Short yok.** Saat 16:00 Europe/London (TR 19:00).
+  - **23.11.2026 – 11.12.2026:** Pazartesi, Salı, Perşembe, Cuma (Çarşamba uzun video günü). Seri dağılımı: **Pazartesi Razavi** (`konular.md`) · **Salı ve Perşembe Sayısal Elektronik** (`sayisal-konular.md`) · **Cuma Bileşen** (`bilesen-konular.md`; 4 haftalık test Cuma günlerine taşındı: 27.11, 04.12, 11.12, sonra 18.12; ardından kanal sahibi karar verir).
+  - **14.12.2026'dan itibaren** (uzun video Pazartesi + Perşembe, UZUN.md 1a şartı tutarsa): Salı Sayısal, Çarşamba Razavi, Cuma Bileşen (test bitince Sayısal). Şart tutmazsa genel müdür bu satırı günceller.
+  - Hedef (ileride): haftada 3 uzun video (Pzt, Çar, Cuma) + 2 Short (Salı, Perşembe). Genel müdür değiştirene kadar uygulanmaz.
+  - Uzun video günlerini `uzun/seri/durum.json` `takvim`den de kontrol et; o güne Short planlama.
+  - 23.11 Pazartesi: konu 9 sesli test (Kirchhoff) planlı (Metricool uuid 7579668722131748285; kanal sahibinin kararıyla 22.11'den taşındı).
 - **Hangi konuyu üreteceğini seçme:** Planlanacak ilk boş yayın gününü bul; o günün serisinin sıradaki `bekliyor` konusunu üret. Her serinin kendi dosyasındaki sıra korunur. `yeniden düzenle` işleri her zaman önce gelir. Sayısal ve Bileşen serilerinin kaynak ve açıklama kuralları kendi dosyalarının başındadır.
 - Ajan **günde iki kez** çalışır: **08:00** ve **12:00** (Londra).
 - **Stok kuralı:** Planlanmış ve henüz yayınlanmamış YouTube Short sayısı
