@@ -1,52 +1,94 @@
 # Devre Teorisi I: Ders 1 - Bölüm 2/3 — Akımın yönü, açık devre ve akım grafiğinden geçen yük
 
-Kaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA) [17:01–27:52]. Referanstır, çeviri değildir: anlatım ve bütün örnekler özgündür (`../plan.md`, `dogruluk.md`). Sürüm 2 (19.11.2026, bağımsız denetimden sonra).
+Kaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA) [17:01–27:52]; "Uygulamada" parçası İçerik Ajanı'nın paketi (`icerik.md` bölüm 5; üretici datasheet'leri). Referanstır, çeviri değildir: anlatım ve bütün örnekler özgündür (`../plan.md`, `dogruluk.md`).
+**Sürüm 3 (19.11.2026):** `inceleme.md` uygulandı: yeni Parça 2 "Uygulamada: datasheet'teki akımlar" (eski 2–7 → 3–8), kanca vaadine datasheet/pil maddesi, buton + çekme direnci örneği (eski tek pil paragrafının yerine), "de te" okunuşları, birim kolaylığı ve "pil = alan" köprüleri, kapanışa uygulama cümlesi; süre için üç kısaltma (eski Parça 5 integral kontrolü, eski Parça 5 q(t) grafiği, eski Parça 6 alternatif çözüm). Selam (UZUN.md 4a) ve yeni tahta düzeni (UZUN.md 4, 19.11.2026) eklendi. Abone kartları sözlü çağrılarla eşzamanlı (Bölüm 1 iş emri C düzeni): 1. kart Parça 2 sonundaki çağrıda (~4. dk), 2. kart kapanıştaki "Kanala abone olursan…" cümlesinde.
 
-**En sık yapılan hata:** "Açık devrede akım sıfır olduğuna göre gerilim de sıfırdır." Doğrusu: açık devre yalnızca akımın sıfır olduğunu garanti eder; uçlarındaki gerilimi çevresindeki devre belirler (Razavi bu noktayı açıkça uyarır [19:08–19:32]). Örnekte açık anahtarın uçlarında 9 V var.
-Az bilinen nokta: doğrusal artan akımda sürenin ilk yarısında toplam yükün yarısı değil, dörtte biri geçer (Örnek 2).
+**En sık yapılan hata:** "Açık devrede akım sıfır olduğuna göre gerilim de sıfırdır." Doğrusu: açık devre yalnızca akımın sıfır olduğunu garanti eder; uçlarındaki gerilimi çevresindeki devre belirler (Razavi bu noktayı açıkça uyarır [19:08–19:32]). Örnekte açık anahtarın uçlarında 9 V var. Bölümde tek "En sık yapılan hata" budur; Parça 2'deki tepe/ortalama karışıklığı "tasarımda pahalıya patlayan hata" diye düz anlatılır, ayrı kart almaz.
+Az bilinen nokta: doğrusal artan akımda sürenin ilk yarısında toplam yükün yarısı değil, dörtte biri geçer (Parça 6).
 
-Ön bilgi (açıklamaya): Bölüm 1 (i = dq / dt); Ohm yasası (v = R × i); integral kavramı.
+Ön bilgi (açıklamaya): Bölüm 1 (i = dq / dt, ortalama akım); Ohm yasası (v = R × i); integral kavramı.
 
-Gösterim: anlık akım küçük i; yük küçük q. Büyük harf I, Q kullanılmaz. Çarpma yalnızca "×". Ondalık virgül. Ekranda "·" hiç kullanılmaz. Referans oku her akımın yanında. Anahtarlar şemada "S1", "S2" yerine "1. anahtar", "2. anahtar" (alt simge motorda küçük rakam; gerekirse yalnızca kodda S₁).
+Gösterim: anlık akım küçük i; yük küçük q. Büyük harf I, Q kullanılmaz; **tek istisna** Parça 2'deki datasheet tablosu: sembol datasheet'te yazdığı gibi (I_F(AV), I_FSM, I_D, I_DM; alt simge küçük ve aşağı kaydırılmış), öğrenci sayfada aynısını arayacağı için. Çarpma yalnızca "×". Ondalık virgül. Ekranda "·" hiç kullanılmaz. Referans oku her akımın yanında. Anahtarlar şemada "1. anahtar", "2. anahtar".
 
-Seslendirme: her parça ayrı üretilir (ElevenLabs, voice_id sLFd2sFq5fDrVDNCuUfI, eleven_v4, generations_count 1). Metinde rakam, simge, parantez yok. "q" sesle "kü", "t" sesle "te", "i" sesle "i". "de te" ve "de kü" yalnızca "eşittir/bölü" sonrasında veya cümle başında geçer. Parça 6'daki "nasıl kurardın?" sonrasına üretimden sonra 1,5 sn sessizlik eklenir (görüntüde kalem hareket eder).
+Seslendirme: her parça ayrı üretilir (ElevenLabs, voice_id sLFd2sFq5fDrVDNCuUfI, eleven_v4, generations_count 1); selam ayrı dosya (`ses/selam.mp3`). Metinde rakam, simge, parantez yok. "q" sesle "kü", "t" sesle "te", "i" sesle "i". **"de te" yalnızca cümle başında veya bir işlem sözcüğünden ("eşittir", "bölü", "çarpı") sonra geçer, hiçbir zaman bir isimden sonra** (isimden sonra "de" bağlaç gibi duyulur: inceleme B5). Parça numaraları (1N4007, 2N7002E, TLHR540x, CR2032) ve datasheet sembolleri seste okunmaz: seste "çok kullanılan bir doğrultucu diyot", "elektronik bir anahtar", "bir led", "düğme pil", "ortalama ileri akım", "ani darbe akımı". "mAh" seste "miliamper saat". "datasheet" seste bir kez geçer, ardından "veri sayfası" (okunuş riski: ses QC'de dinlenir). Parça 7'deki "nasıl kurardın?" sonrasına üretimden sonra 1,5 sn sessizlik eklenir (görüntüde kalem hareket eder).
 
-Zaman bütçesi (2,6 kelime/sn: Bölüm 1'in gerçek ölçümü, 2050 kelime → 788 sn ses; 2,35 ile hesap ~15,6 dk, ikisi de 13–17 dk aralığında): `dogrula.py` çıktısı. Intro kartı (4 sn, sessiz) parça 1'deki işarette; bitiş ekranı alanı (son 20 sn) parça 7'nin sonunda sessiz.
+Zaman bütçesi (2,6 kelime/sn: Bölüm 1'in gerçek ölçümü): `dogrula.py` çıktısı. Intro kartı selamla birlikte (~8,4 sn); bitiş ekranı alanı (son 20 sn) Parça 8'in sonunda sessiz.
+
+> **Tahta düzeni (UZUN.md 4 "Tahta düzeni ve yazım", kanal sahibi 19.11.2026; Bölüm 1 iş emri D ile aynı motor):** Bütün parçalarda sol üstte kırmızı köşe başlığı **"Ders 1 - Bölüm 2: Akımın yönü, açık devre ve yük"** (Parça 1'de intro kartından sonra kalemle yazılır; sonraki parçalarda sabit; bitiş ekranında silinir). Sahne başlıkları kırmızı, sola hizalı, gövdeden büyük. Listeler "- " ile ve büyük harfle başlar; uzun tire yok; TDK imla. İki sütun (sol x ≈ 120: başlık + maddeler; sağ x ≈ 1000: denklem, grafik, devre), kenar payı ~120 px. Yardımcı etiketler, tablo başlıkları, kaynak satırları ve ara bilgiler **koyu yeşil (#1E7B4A)**; soluk gri yazı yok (gri yalnızca grafikteki kesikli yardımcı çizgiler). Renk anahtarı: siyah ana metin; mavi değişkenler, denklemler, akımlar; kırmızı başlıklar ve "En sık yapılan hata" çerçevesi; koyu yeşil etiketler. Yanıp sönen açık fon vurgusu kalır. Alt %24'lük bant yalnızca abone kartı ve kapanış için.
 
 ---
 
-## [PARÇA 1] Kanca, intro kartı (~0:55)
+## [PARÇA 1] Kanca, selam, intro kartı (~1:05)
 
 ```
 Açık bir anahtarın iki ucu arasında kaç volt vardır? İlk akla gelen cevap sıfır. Ne de olsa anahtardan akım geçmiyor.
 
 Ama birazdan çizeceğimiz devrede, açık anahtarın uçları arasında tam dokuz volt var. Akım sıfır, gerilim sıfır değil. Bu konudaki en sık yapılan hata da tam olarak bu ikisini karıştırmak.
 
-Bu bölümün sonunda açık bir anahtarın gerilimini bulabileceksin. Ayrıca bir akımı yönüyle birlikte doğru yazacaksın. Bir akım grafiğinden, geçen yükü bulacaksın. Bir de istediğin biçimde akım veren basit bir devre kuracaksın.
+Bu bölümün sonunda açık bir anahtarın gerilimini bulacaksın. Akımı yönüyle yazacak, akım grafiğinden geçen yükü bulacaksın. Bir veri sayfasında sürekli akımı darbe akımından ayıracak, bir pilin ömrünü de ortalama akımdan hesaplayacaksın.
 
-Birinci bölümde akımı, yükün kesitten geçme hızı olarak tanımlamıştık. Şimdi bu tanımın üstüne, akımla ilgili üç önemli noktayı koyuyoruz.
+[SELAM — intro kartıyla birlikte; ayrı ses dosyası ses/selam.mp3]
+Merhaba arkadaşlar, Devre Teorisi Bir serisine hoş geldiniz. Bugün Ders Bir'in ikinci bölümünde akımın yönünü, açık devreyi ve akımdan yüke geçişi konuşacağız.
+
+Birinci bölümde akımı, yükün kesitten geçme hızı olarak tanımlamıştık. Konuya girmeden önce, oradaki ortalama ve anlık akımın gerçek bir tasarımda nereye karşılık geldiğine bakalım.
 ```
 
 Sahne planı:
-- 0:00 (ilk kare) kalem ortada açık bir anahtar sembolü çizer (iki bağlantı noktası, kalkık kol). İki ucuna küçük siyah daireler. Uçların arasına mavi "v = ?".
-- "İlk akla gelen cevap sıfır": sağa kırmızı "v = 0 V ?" (soru işareti kırmızı); altına küçük "i = 0".
-- "tam dokuz volt": "v = 0 V ?" kırmızıyla üstü çizilir, yanına mavi "v = 9 V".
-- "Bu bölümün sonunda": sol altta (y ≤ %72) madde işaretli üç satır (numarasız): "• açık anahtarın gerilimi", "• akım grafiğinden yük", "• istenen akımı veren devre". Tahta silinir (≤0,3 sn).
-- **[INTRO KARTI — 4 sn, sessiz; üretimden sonra parça 1 sesine 4 sn sessizlik eklenir]** Ortada: "Devre Teorisi I: Ders 1 - Bölüm 2/3" (siyah), altına "Akımın yönü, açık devre ve akım grafiğinden yük" (mavi). Silinir.
-- "Birinci bölümde": sol üstte "Bölüm 1'de i = dq / dt" (mavi), altında numaralı üç başlık sırayla: "1. değer ve yön", "2. açık devre", "3. akımdan yük".
+- 0:00 (ilk kare) kalem sağ sütunda açık bir anahtar sembolü çizer (iki bağlantı noktası, kalkık kol; uçlarda küçük siyah daireler). Uçların arasına mavi "v = ?". Solda kırmızı başlık "Açık anahtar".
+- "İlk akla gelen cevap sıfır": sol sütuna kırmızı "v = 0 V ?"; altına mavi "i = 0".
+- "tam dokuz volt": "v = 0 V ?" kırmızıyla üstü çizilir, yanına mavi "v = 9 V" (yanıp sönen fon).
+- "Bu bölümün sonunda": sol sütunda kırmızı başlık "Bu bölümde", altında sırayla dört madde: "- Açık anahtarın gerilimi", "- Akımın yönü ve akım grafiğinden yük", "- Datasheet'te sürekli ve darbe akımı", "- Pil ömrü ortalama akımdan". Tahta silinir (≤0,3 sn).
+- **[INTRO KARTI + SELAM — ~8,4 sn]** Ortada: "Devre Teorisi I: Ders 1 - Bölüm 2/3" (siyah, kırmızı alt çizgi), altına "Akımın yönü, açık devre ve akım grafiğinden yük" (mavi); kart selam cümlesiyle eşzamanlı yazılır, selam bitince silinir.
+- "Birinci bölümde": sol üstte kırmızı köşe başlığı yazılır; altında kırmızı başlık "Bölüm 1'den"; sol sütunda "- Akım: i = dq / dt" (i ve denklem mavi), "- Ortalama akım: Δq / Δt"; sağ sütunda koyu yeşil "Şimdi: tasarımda karşılığı".
 
-## [PARÇA 2] Akımın değeri ve yönü, referans oku (~2:00)
+## [PARÇA 2] Uygulamada: datasheet'teki akımlar + abone çağrısı 1 (~3:05)
 
 ```
-İlk nokta: bir akımı anlatmak için tek bir sayı yetmez. Her akımın bir değeri, bir de yönü vardır.
+Bir elemanın datasheet'ini, yani üreticinin verdiği veri sayfasını açtığında, akım için çoğu zaman tek bir satır değil, iki satır görürsün. Birincisi sürekli akım: elemanın uzun süre dayanabildiği akım. İkincisi darbe akımı: yalnızca çok kısa bir süre dayanabildiği akım.
+
+Çok kullanılan bir doğrultucu diyotla bakalım. Veri sayfasında ortalama ileri akım bir amper yazıyor. Bu satırın adında ortalama sözcüğü açıkça geçiyor. Hemen yanında ani darbe akımı otuz amper yazıyor, ama yalnızca sekiz virgül üç milisaniyelik tek bir darbe için. Yani bu diyot kısa bir zorlanmaya dayanır, ama sürekli otuz amper taşıyamaz.
+
+Elektronik bir anahtarda ve bir ledde de aynı iki satırı görürsün. Bu değerler aşılmaması gereken sınırlardır, çalışma noktası değil. Sürekli akım değeri çoğunlukla ısınmayla sınırlıdır ve sıcaklık arttıkça düşer.
+
+Bu yüzden bir akım satırını okurken kendine üç soru sor. Bu değer sürekli mi, darbe mi? Hangi süre için verilmiş? Hangi sıcaklıkta ve nasıl monte edilmiş? Koşulunu okumadığın bir değeri, aslında okumamışsın demektir.
+
+Şimdi küçük bir tasarım yapalım. Bir sıcaklık sensörü her saniyede bir uyanıyor ve iki milisaniye boyunca on miliamper çekiyor. Kalan dokuz yüz doksan sekiz milisaniyede uyuyor ve beş mikroamper çekiyor. Onu bir düğme pil besliyor. Pilin üstünde iki yüz yirmi beş miliamper saat yazıyor.
+
+Miliamper saat aslında bir yük birimi. Bir saat üç bin altı yüz saniye. Bir miliamper çarpı üç bin altı yüz saniye, üç virgül altı kulon eder. Yani pil bize, verebileceği toplam yükü söylüyor.
+
+Bir saniyede ne kadar yük çekiliyor? Sabit akımda yük, akım çarpı süre. Uyanıkken on miliamper çarpı iki milisaniye, yirmi mikrokulon. Miliamperi milisaniyeyle çarparsan doğrudan mikrokulon bulursun. Uykuda beş mikroamper çarpı dokuz yüz doksan sekiz milisaniye. Beş çarpı dokuz yüz doksan sekiz, dört bin dokuz yüz doksan. Mikroamperi milisaniyeyle çarpınca nanokulon bulursun. Yani dört bin dokuz yüz doksan nanokulon, bu da dört virgül doksan dokuz mikrokulon. Toplam, yirmi artı dört virgül doksan dokuz, yirmi dört virgül doksan dokuz mikrokulon. Bunu bir saniyeye bölünce ortalama akım yaklaşık yirmi beş mikroamper.
+
+Pilin ömrü, kapasite bölü ortalama akım. Yirmi beş mikroamper, sıfır virgül sıfır yirmi beş miliamper. İki yüz yirmi beş bölü sıfır virgül sıfır yirmi beş, dokuz bin saat. Dokuz bini yirmi dörde bölünce üç yüz yetmiş beş gün, yani yaklaşık bir yıl.
+
+Tasarımda pahalıya patlayan bir hata da şu: sensörün on miliamper çektiğini görüp ömrü bu tepe değerle hesaplamak. İki yüz yirmi beş bölü on, yirmi iki virgül beş saat. Bir gün bile etmiyor. Dokuz bin bölü yirmi iki virgül beş, dört yüz. Yani doğru sonuçtan tam dört yüz kat kısa. Kısacası pilin ömrünü ortalama akım belirler, kısa tepeleri ise veri sayfasındaki darbe satırı sınırlar.
+
+Bu serinin devamı için kanala abone olabilirsin.
+```
+
+Sahne planı:
+- Kırmızı başlık "Uygulamada: datasheet'teki akımlar" (sol, alt çizgili).
+- "iki satır görürsün": sol sütunda "- Sürekli akım: uzun süre dayanılan" , "- Darbe akımı: yalnızca çok kısa süre" (siyah; "sürekli" ve "darbe" mavi).
+- "doğrultucu diyotla": sağ sütunda kendi çizdiğimiz iki sütunlu tablo (datasheet tablosu kopyalanmaz). Tablo başlıkları koyu yeşil, büyük harfle: "Parça" | "Sürekli" | "Kısa darbe". 1. satır: "1N4007 diyot" | "I_F(AV) = 1 A" altında küçük koyu yeşil "Ortalama, T_A = 75 °C" | "I_FSM = 30 A" altında "Tek darbe, 8,3 ms". "ortalama sözcüğü" anında "(AV)" kısmı yanıp sönen fonla vurgulanır.
+- "Elektronik bir anahtarda ve bir ledde": tabloya iki satır daha, sırayla: "2N7002E anahtar" | "I_D = 260 mA (25 °C)", altında "190 mA (85 °C)" | "I_DM = 1,2 A", altında "tp = 10 µs"; "TLHR540x LED" | "I_F = 30 mA (≤ 65 °C)" | "I_FSM = 1 A", altında "tp ≤ 10 µs". Tablonun altında koyu yeşil küçük kaynak satırı: "Kaynak: Vishay 1N4001–1N4007 (2020), onsemi 2N7002E (2023), Vishay TLHR540x (2024) datasheet'leri". **Render öncesi:** 2N7002E I_DM koşulu (tp = 10 µs) PDF s. 1'de gözle doğrulanır (`icerik.md` 5b notu).
+- "aşılmaması gereken sınırlardır": tablonun üstüne kırmızı küçük "Sınır, çalışma noktası değil". "ısınmayla sınırlıdır": "190 mA (85 °C)" yanıp söner.
+- "üç soru sor": tablo silinir (≤0,3 sn); sağ sütunda kırmızı başlık "Üç soru", altında "1. Sürekli mi, darbe mi?", "2. Hangi süre için?", "3. Hangi sıcaklıkta, nasıl monte edilmiş?".
+- "küçük bir tasarım": sahne silinir; köşe başlığı kalır. Kırmızı başlık "Mini tasarım: sensör + düğme pil". Sol sütun: "- Her 1 s'de bir uyanır", "- Uyanık: 2 ms boyunca 10 mA", "- Uyku: 998 ms boyunca 5 µA", "- Pil: CR2032, 225 mAh" (koyu yeşil küçük: "Kaynak: Panasonic CR2032 datasheet (2026)"). Sağ sütunda akım grafiği: yatay eksen "t (ms)" işaretler 0, 2, 1000, 1002; dikey eksen "i"; 0–2 ms ve 1000–1002 ms'de dar mavi darbe "10 mA", aralarda tabana çok yakın ince mavi çizgi "5 µA"; koyu yeşil "Ölçekli değil".
+- "Miliamper saat aslında bir yük birimi": sol sütunda maddelerin altına "1 saat = 3600 s", "1 mAh = 1 mA × 3600 s = 3,6 C" (mavi), "- mAh bir yük birimidir" (yanıp sönen fon).
+- "Bir saniyede ne kadar yük": sol sütun silinir; sağ grafik kalır. Sol sütunda sırayla (mavi): "Uyanık: q = 10 mA × 2 ms = 20 µC", koyu yeşil "mA × ms = µC", "Uyku: q = 5 µA × 998 ms", "5 × 998 = 4990", koyu yeşil "µA × ms = nC", "= 4990 nC = 4,99 µC", "Toplam: q = 20 + 4,99 = 24,99 µC", "Ortalama: i = 24,99 µC / 1 s ≈ 25 µA" (daire).
+- "Pilin ömrü": sağ grafik silinir; sağ sütunda "Ömür = kapasite / ortalama akım", "25 µA = 0,025 mA", "225 mAh / 0,025 mA = 9000 saat", "9000 / 24 = 375 gün ≈ 1 yıl" (mavi, daire).
+- "pahalıya patlayan bir hata": sağ sütunun altına kırmızı başlık yerine siyah düz yazı "Tepe değerle hesap (yanlış):" ve kırmızı "225 mAh / 10 mA = 22,5 saat"; altına "9000 / 22,5 = 400 kat kısa" (kırmızı alt çizgi). En alta mavi kutu: "Ömür: ortalama akım. Kısa tepe: darbe satırı."
+- "Bu serinin devamı için kanala abone olabilirsin": **abone kartı 1** bu cümlenin başladığı anda (±0,2 sn) alt banttan girer; iki tık cümle bitmeden (UZUN.md 4b; Bölüm 1 iş emri C). Kalem bu sırada mavi kutunun altını yavaşça çizer.
+
+## [PARÇA 3] Akımın değeri ve yönü, referans oku (~1:45)
+
+```
+Şimdi akımla ilgili üç önemli noktaya geçelim. İlk nokta: bir akımı anlatmak için tek bir sayı yetmez. Her akımın bir değeri, bir de yönü vardır.
 
 Yönü şemada bir okla gösteriyoruz. Bu oka referans yönü diyoruz. Oku hangi yöne çizeceğimize biz karar veririz. Kuralımız şu: okun gösterdiği yönde geçen artı yük, artı sayılır. Okun tersine geçen artı yük ise eksi sayılır.
 
 Bir örnekle bakalım. Bir telde, her milisaniyede üç mikrokulonluk artı yük soldan sağa geçiyor. Üç mikrokulon bölü bir milisaniye, üç miliamper. Oku sağa çizersek akım, artı üç miliamper. Oku sola çizersek yük okun tersine gidiyor, akım eksi üç miliamper olur.
 
-Peki hangisi doğru? İkisi de. İki cevap da aynı fiziksel durumu anlatıyor. Eksi işaret, yanlış yön seçtin demek değil. Sadece, yük okun tersine gidiyor demek.
-
-Bir sınavda sen oku sağa çizip artı üç miliamper bulursun, sıra arkadaşın oku sola çizip eksi üç miliamper bulur. İkiniz de haklısınız. Yeter ki okunuzu şemaya çizmiş olun. Ok yoksa, artı üç ile eksi üçün ne anlattığı anlaşılmaz.
+Peki hangisi doğru? İkisi de. İki cevap da aynı fiziksel durumu anlatıyor. Eksi işaret, yanlış yön seçtin demek değil. Sadece, yük okun tersine gidiyor demek. Yeter ki ok şemada çizili olsun.
 
 Peki gerçekte ne oluyor? Metal bir telde hareket eden aslında elektronlardır ve elektronun yükü eksidir. Elektronlar sağa doğru gidiyor ve her milisaniyede sağa eksi dört mikrokulon taşıyor olsun. Oku sağa çizelim. Eksi dört mikrokulon bölü bir milisaniye, eksi dört miliamper. Oku sola çevirirsek artı dört miliamper. Yani sağa giden elektronlar, sola doğru dört miliamperlik bir akım demektir. Akımın yönü, artı yükün gittiği yön olarak tanımlanır. Bu yüzden elektronların hareketine ters düşer.
 
@@ -56,19 +98,16 @@ Kısacası, şemada her akımın yanına bir ok çiz. Oku olmayan bir akım değ
 ```
 
 Sahne planı:
-- Üstte kalın yatay tel; iki ucu küçük "devre" kutularına bağlı (kapalı yol). Kesit dik kesik çizgi. Mavi noktalar yalnızca telin içinde soldan sağa hareket eder ("+" işaretli; yanında küçük "artı yük varsayalım").
-- "referans yönü": telin üstüne mavi ok (sağa), yanında "i"; altına "referans yönü" (siyah). Kural iki satır: "okun yönünde geçen artı yük artı sayılır", "okun tersine geçen artı yük eksi sayılır".
-- "Bir örnekle bakalım": sol (y %35–72) "her 1 ms'de 3 µC sağa", "i = 3 µC / 1 ms = 3 mA". İki küçük tel kopyası alt alta: üstte ok sağa, "i = 3 mA" (mavi); altta ok sola, "i = −3 mA" (kırmızı). Yanlarına "aynı durum" (siyah) ve iki satırı birleştiren ince çizgi.
-- Silme. "elektronlar": tel yeniden; mavi noktalar "−" işaretli, sağa hareket eder. "her 1 ms'de sağa −4 µC". Ok sağa: "i = −4 µC / 1 ms = −4 mA" (kırmızı). Ok sola: "i = 4 mA" (mavi). Altına "akımın yönü, artı yükün yönüdür" (siyah), "elektronların hareketine terstir" (kırmızı alt çizgi).
-- "birinci bölümün son örneği": sağ üstte küçük "Bölüm 1: i(4 s) = 6 − 2 × 4 = −2 mA" (gri), yanına "yük ters yönde".
-- "her akımın yanına bir ok çiz": son satır "her akımın yanına ok" (mavi, kutu içinde).
-- Abone animasyonu 1 parça 3'ün başında.
+- Kırmızı başlık "1. Değer ve yön". Sağ sütunda kalın yatay tel; iki ucu küçük "Devre" kutularına bağlı (kapalı yol). Kesit dik kesik çizgi. Mavi "+" işaretli noktalar yalnızca telin içinde soldan sağa hareket eder; yanında koyu yeşil "Artı yük varsayalım".
+- "referans yönü": telin üstüne mavi ok (sağa), yanında "i"; altına koyu yeşil "Referans yönü". Sol sütunda iki madde: "- Okun yönünde geçen artı yük artı sayılır", "- Okun tersine geçen artı yük eksi sayılır".
+- "Bir örnekle bakalım": sol sütun maddelerin altına "Her 1 ms'de 3 µC sağa", "i = 3 µC / 1 ms = 3 mA" (mavi). Sağda iki küçük tel kopyası alt alta: üstte ok sağa, "i = 3 mA" (mavi); altta ok sola, "i = −3 mA" (kırmızı). Yanlarına koyu yeşil "Aynı durum" ve iki satırı birleştiren ince çizgi.
+- Silme. "elektronlar": kırmızı başlık "Elektronlar"; tel yeniden; mavi noktalar "−" işaretli, sağa hareket eder. Sol: "Her 1 ms'de sağa −4 µC". Ok sağa: "i = −4 µC / 1 ms = −4 mA" (kırmızı). Ok sola: "i = 4 mA" (mavi). Altına "- Akımın yönü, artı yükün yönüdür" (siyah), "- Elektronların hareketine terstir" (kırmızı alt çizgi).
+- "birinci bölümün son örneği": sağ altta koyu yeşil "Bölüm 1: i(4 s) = 6 − 2 × 4 = −2 mA", yanına "Yük ters yönde".
+- "her akımın yanına bir ok çiz": son satır "Her akımın yanına ok" (mavi, kutu içinde).
 
-## [PARÇA 3] Abone çağrısı, açık devre: en sık yapılan hata (~2:40)
+## [PARÇA 4] Açık devre: en sık yapılan hata, buton örneği (~2:20)
 
 ```
-Bu serinin devamı için kanala abone olabilirsin.
-
 İkinci nokta açık devre. Şimdi şu devreyi kuralım. Dokuz voltluk bir batarya, üç kiloohmluk bir direnç ve bir anahtar, tek bir halka oluşturacak biçimde bağlı.
 
 Önce anahtar kapalı olsun. Kapalı ideal bir anahtar, bir tel parçası gibidir. Bataryanın dokuz voltu doğrudan direncin uçlarına gelir. Ohm yasasına göre akım, gerilim bölü direnç. Dokuz volt bölü üç kiloohm, üç miliamper. Volt bölü kiloohm, miliamper eder.
@@ -79,32 +118,28 @@ Peki açık anahtarın uçları arasındaki gerilim ne? İşte en sık yapılan 
 
 Doğrusu şu. Direncin içinden akım geçmiyor. Ohm yasasına göre direncin gerilimi, üç kiloohm çarpı sıfır miliamper, yani sıfır volt. Demek ki direncin iki ucu aynı gerilimde. Anahtarın alt ucu, bir telle bataryanın eksi ucuna bağlı. Üst ucu ise direnç üzerinden bataryanın artı ucuna bağlı ve direnç hiçbir gerilim farkı eklemiyor. Böylece anahtarın uçları arasında, bataryanın tam dokuz voltu kalıyor. Bir voltmetreyle ölçsen dokuz volt okursun.
 
-İki durumu yan yana koyalım. Anahtar kapalıyken akım üç miliamper. Direncin gerilimi, üç kiloohm çarpı üç miliamper, dokuz volt. Bataryanın bütün gerilimi dirençte, tel gibi davranan anahtarın uçları arasında ise sıfır volt. Anahtar açıkken akım sıfır, anahtarın uçları arasındaki gerilim dokuz volt. Yani akım sıfıra inerken, anahtarın gerilimi sıfırdan dokuz volta çıktı.
+Bunu neredeyse her elektronik kartta görürsün. Bir mikrodenetleyicinin girişi, on kiloohmluk bir direnç üzerinden üç virgül üç volta bağlı. Buton ise girişle toprak arasında. Girişin kendisi neredeyse hiç akım çekmez. Buton açıkken bir açık devredir, dirençten akım geçmez. Direncin gerilimi, on kiloohm çarpı sıfır, sıfır volt. Yani giriş üç virgül üç voltta ve butonun uçları arasında da üç virgül üç volt var. Butona basınca akım, üç virgül üç volt bölü on kiloohm, sıfır virgül otuz üç miliamper olur ve giriş sıfır volta iner.
 
-Aynı şey tek bir pilde de geçerli. Dokuz voltluk bir pilin uçlarına yalnızca açık bir anahtar bağlı olsun. Anahtar açık, yani pilin uçları arasında bir açık devre var. Pilden akım çekilmiyor. Ama uçları arasında dokuz volt duruyor.
-
-Yani açık devre bize yalnızca bir şeyi garanti eder: içinden geçen akım sıfırdır. Uçları arasındaki gerilim hakkında tek başına hiçbir şey söylemez. O gerilim, açık devreye bağlı olan elemanlardan çıkar. Bunun gündelik bir karşılığı da var. Bir devrede bir bağlantı kopmuşsa, oradan akım geçmez. Ama kopuk noktanın iki ucu arasında yine bir gerilim olabilir. Bu ayrım şu an basit görünüyor. Ama ileride karmaşık devrelerde çok işimize yarayacak.
+Yani açık devre bize yalnızca bir şeyi garanti eder: içinden geçen akım sıfırdır. Uçları arasındaki gerilim hakkında tek başına hiçbir şey söylemez. O gerilim, açık devreye bağlı olan elemanlardan çıkar.
 ```
 
 Sahne planı:
-- 0:00–0:06 **abone animasyonu 1** (UZUN.md 4b; alt bant). Üstte kalem başlık yazar: "2. açık devre".
-- Devre (sol, y %15–72): dikdörtgen halka. Sol kolda batarya (uzun/kısa çizgi, "+" üstte, "9 V"); üst kolda direnç (zikzak, "3 kΩ"); sağ kolda anahtar (önce **kapalı** çizilir); alt kol düz tel. Tel kesintisiz, köşeler bağlı.
-- "Kapalı ideal bir anahtar": anahtarın yanına "kapalı anahtar tel gibidir" (siyah). Üst kolda mavi referans oku "i". Sağda (x ≥ %55) "i = 9 V / 3 kΩ = 3 mA" (mavi), altına küçük "V / kΩ = mA".
-- "anahtarı açalım": kalem anahtarın kolunu kaldırır (kapalı çizim silinir, açık konum çizilir; anahtar uçlarında iki küçük daire). Sağa "açık devrede i = 0" (mavi, kutu). Halkadaki mavi ok gri olur, yanına "i = 0".
-- "en sık yapılan hata": sağda kırmızı başlık "En sık yapılan hata", altında kırmızı "i = 0 olduğuna göre v = 0 V". Anahtar uçları arasında kırmızı "0 V ?".
-- "Doğrusu": yeşil başlık "Doğrusu", altında sırayla: "direncin gerilimi = 3 kΩ × 0 mA = 0 V" (siyah), "direncin iki ucu aynı gerilimde" (siyah). Devrede anahtarın alt ucundan alt kol üzerinden bataryanın "−" ucuna giden tel mavi kalınlaşır; üst ucundan üst koldaki direnç üzerinden "+" ucuna giden yol da mavi kalınlaşır (sırayla, tek kalem). Anahtarın üst ucuna "+", alt ucuna "−", aralarına mavi "9 V" (kırmızı "0 V ?" üstü çizili). Yanına küçük voltmetre dairesi ("V"), iki ucu anahtar uçlarına bağlı, içinde "9 V".
-- "İki durumu yan yana koyalım": sağ altta (y ≤ %72) önce "kapalıyken direnç: 3 kΩ × 3 mA = 9 V", sonra iki satırlık tablo, sütunlar "anahtar", "i", "anahtarın gerilimi": "kapalı", "3 mA", "0 V"; "açık", "0", "9 V".
-- "Dokuz voltluk bir pilin": tahtanın sağ üstünde küçük pil, iki ucu kesintisiz tellerle açık bir anahtarın iki ucuna bağlı; anahtarın yanına "i = 0", uçları arasına "9 V" (mavi).
-- "yalnızca bir şeyi garanti eder": alta kutu "açık devre yalnızca i = 0'ı garanti eder" ve altında "gerilim, bağlı elemanlardan çıkar" (mavi alt çizgi).
+- Kırmızı başlık "2. Açık devre". Devre (sol sütun, y %15–72): dikdörtgen halka. Sol kolda batarya (uzun/kısa çizgi, "+" üstte, "9 V"); üst kolda direnç (zikzak, "3 kΩ"); sağ kolda anahtar (önce **kapalı** çizilir); alt kol düz tel. Tel kesintisiz, köşeler bağlı.
+- "Kapalı ideal bir anahtar": anahtarın yanına koyu yeşil "Kapalı anahtar tel gibidir". Üst kolda mavi referans oku "i". Sağ sütunda "i = 9 V / 3 kΩ = 3 mA" (mavi), altına koyu yeşil "V / kΩ = mA".
+- "anahtarı açalım": kalem anahtarın kolunu kaldırır (kapalı çizim silinir, açık konum çizilir; uçlarda iki küçük daire). Sağa mavi kutu "Açık devrede i = 0". Halkadaki ok yanına "i = 0".
+- "en sık yapılan hata": sağ sütunda kırmızı çerçeve, başlık "En sık yapılan hata", altında kırmızı "i = 0 olduğuna göre v = 0 V". Anahtar uçları arasında kırmızı "0 V ?".
+- "Doğrusu": kırmızı çerçevenin altına koyu yeşil başlık "Doğrusu", altında sırayla: "Direncin gerilimi = 3 kΩ × 0 mA = 0 V" (siyah), "- Direncin iki ucu aynı gerilimde" (siyah). Devrede anahtarın alt ucundan alt kol üzerinden bataryanın "−" ucuna giden tel mavi kalınlaşır; üst ucundan direnç üzerinden "+" ucuna giden yol da mavi kalınlaşır (sırayla, tek kalem). Anahtarın üst ucuna "+", alt ucuna "−", aralarına mavi "9 V" (kırmızı "0 V ?" üstü çizili). Yanına küçük voltmetre dairesi ("V"), iki ucu anahtar uçlarına bağlı, içinde "9 V".
+- "her elektronik kartta": sahne silinir (köşe başlığı kalır). Kırmızı başlık "Uygulamada: buton". Sağ sütunda devre: üstte "3,3 V" ucu; 10 kΩ direnç aşağı; direncin alt ucu bağlantı noktası → sağa "Giriş" oku (mikrodenetleyici kutusu, koyu yeşil "Mikrodenetleyici"); bağlantı noktasından aşağı buton (açık çizilir), butonun altı toprak sembolü. Direnç yanında mavi ok "i". Sol sütunda: "- Giriş akım çekmez (neredeyse)", "Buton açık: i = 0", "Direncin gerilimi = 10 kΩ × 0 = 0 V", "Giriş = 3,3 V", "Butonun uçları: 3,3 V" (mavi). "Butona basınca": buton kapalı çizilir; "Buton kapalı: i = 3,3 V / 10 kΩ = 0,33 mA", "Giriş = 0 V" (mavi).
+- "yalnızca bir şeyi garanti eder": sol altta mavi kutu "Açık devre yalnızca i = 0'ı garanti eder", altında "- Gerilim, bağlı elemanlardan çıkar" (mavi alt çizgi).
 
-## [PARÇA 4] Akımdan yüke: integral ve alan (~2:00)
+## [PARÇA 5] Akımdan yüke: integral ve alan (~1:55)
 
 ```
 Üçüncü nokta, birinci bölümde yaptığımızın tersi. Orada yükten akıma gitmiştik: yükün zamana göre türevini aldık. Şimdi elimizde akım var. Belli bir sürede ne kadar yük geçtiğini nasıl buluruz?
 
-Kısacık bir süre düşün. Bu kısa süreye de te adını verelim. Bu kadar kısa bir sürede akım hemen hemen sabit kalır. O sürede geçen yük, akım çarpı de te olur. Grafikte bu, ince bir şerittir. Yüksekliği i. Genişliği, de te. Sıfır anından te bir anına kadar bütün bu şeritleri toplarsak, geçen toplam yükü buluruz. Bu toplamın adı integral. Kü eşittir, sıfırdan te bire, i çarpı de te ifadesinin integrali.
+Kısacık bir zaman aralığı düşün. De te, işte bu çok kısa zaman aralığının adı. Bu kadar kısa bir sürede akım hemen hemen sabit kalır. O aralıkta geçen yük eşittir i çarpı de te. Grafikte bu, ince bir şerittir. Yüksekliği i. Genişliği ise o kısacık süre, yani de te. Sıfır anından te bir anına kadar bütün bu şeritleri toplarsak, geçen toplam yükü buluruz. Bu toplamın adı integral. Kü eşittir, sıfırdan te bire, i çarpı de te ifadesinin integrali.
 
-Bunun grafikteki anlamı çok net. Geçen yük, akım grafiğinin altında kalan alandır.
+Bunun grafikteki anlamı çok net. Geçen yük, akım grafiğinin altında kalan alandır. Hatırla: pil hesabında akım çarpı süre diye bulduğumuz yükler de aslında dar dikdörtgenlerin alanıydı. Pilin miliamper saati de tam böyle bir alan.
 
 En basit durumla deneyelim. Dört miliamperlik sabit bir akım, üç saniye boyunca akıyor. Grafik bir dikdörtgen. Yüksekliği dört miliamper, genişliği üç saniye. Alan, yükseklik çarpı genişlik. Dört çarpı üç, on iki. Miliamper çarpı saniye, milikulon eder. Yani üç saniyede on iki milikulon geçmiş.
 
@@ -112,27 +147,25 @@ Bu yöntemi birinci bölümdeki örnekle de sınayalım. Orada yük, iki te kare
 
 Bir de işaret meselesi var. Akım eksiyse grafiğin eğrisi yatay eksenin altına iner. Eksenin altındaki alan eksi sayılır. Çünkü o sürede yük, referans okunun tersine geçiyor. Örneğin eksi iki miliamperlik bir akım iki saniye akarsa, iki çarpı eksi iki, eksi dört milikulon. Yani dört milikulonluk yük, okun tersine geçmiş demektir.
 
-Bir de küçük bir birim kolaylığı. Miliamperi milisaniyeyle çarparsan, doğrudan mikrokulon bulursun. Bunu hemen şimdi kullanacağız.
+Pil hesabında gördüğümüz birim kolaylığını da hatırla: miliamperi milisaniyeyle çarparsan doğrudan mikrokulon bulursun. Bunu hemen şimdi yine kullanacağız.
 ```
 
 Sahne planı:
-- Üstte "3. akımdan yük" (siyah). Sol üstte küçük "Bölüm 1'de yükten akıma (i = dq / dt)" (gri); altına "şimdi akımdan yüke" (mavi).
-- Grafik (sol, y %25–72): yatay eksen "t", dikey eksen "i"; mavi düzgün bir eğri (genel). "ince bir şerit": eğrinin altında tek ince dikdörtgen, yüksekliği "i", genişliği "dt"; yanına "dq = i × dt". Ardından aynı aralıkta birkaç şerit sırayla (kalem her birini tek tek çizer; en fazla 6).
-- "Bu toplamın adı integral": sağda büyük "q = ∫₀^t₁ i dt" (mavi; alt ve üst sınır küçük yazı).
-- "altında kalan alandır": eğrinin altı 0 ile t₁ arası açık mavi taranır (kalem yatay taramayı soldan sağa çizer); yanına "yük = alan".
-- Silme. "En basit durum": grafik: yatay eksen "t (s)" işaretler 0, 1, 2, 3; dikey eksen "i (mA)" işaretler 0, 2, 4 (eksen 0–5). Mavi yatay çizgi 0–3 s arası 4 mA; altı taranır. Sağda "q = 4 mA × 3 s = 12 mC" (mavi), altına küçük "mA × s = mC".
-- "birinci bölümdeki örnekle": sağ sütun silinir; "Bölüm 1'de q = 2t² mC, i = 4t mA" (gri), "∫ 4t dt = 4t² / 2 = 2t²", "∫₀³ 4t dt = 2 × 3² − 2 × 0² = 18 − 0 = 18 mC" (mavi), "türev ve integral birbirinin tersi" (mavi alt çizgi).
-- "işaret meselesi": sağ altta küçük kroki: eksen altında bir dikdörtgen, içinde kırmızı "−", yanında "eksen altındaki alan eksi sayılır". Altına "(−2 mA) × 2 s = −4 mC" (kırmızı).
-- "birim kolaylığı": sağ alt "mA × ms = µC" (kutu).
+- Kırmızı başlık "3. Akımdan yük". Sol sütunda koyu yeşil "Bölüm 1'de yükten akıma: i = dq / dt"; altına mavi "Şimdi akımdan yüke".
+- Grafik (sağ sütun, y %25–72): yatay eksen "t", dikey eksen "i"; mavi düzgün bir eğri (genel). "ince bir şerit": eğrinin altında tek ince dikdörtgen, yüksekliği "i", genişliği "dt"; sol sütuna "dq = i × dt" (mavi). Ardından aynı aralıkta birkaç şerit sırayla (kalem her birini tek tek çizer; en fazla 6).
+- "Bu toplamın adı integral": sol sütunda büyük "q = ∫₀^t₁ i dt" (mavi; alt ve üst sınır küçük yazı).
+- "altında kalan alandır": eğrinin altı 0 ile t₁ arası açık mavi taranır (soldan sağa); sol sütuna "- Yük = alan" (yanıp sönen fon). "Hatırla: pil hesabında": koyu yeşil "Pilin mAh'i de bir alan (akım × süre)".
+- Silme. "En basit durum": kırmızı başlık "Sabit akım". Sağ sütunda grafik: yatay eksen "t (s)" işaretler 0, 1, 2, 3; dikey eksen "i (mA)" işaretler 0, 2, 4 (eksen 0–5). Mavi yatay çizgi 0–3 s arası 4 mA; altı taranır. Sol sütunda "q = 4 mA × 3 s = 12 mC" (mavi), altına koyu yeşil "mA × s = mC".
+- "birinci bölümdeki örnekle": sol sütun silinir; koyu yeşil "Bölüm 1: q = 2t² mC, i = 4t mA"; mavi "∫ 4t dt = 4t² / 2 = 2t²", "∫₀³ 4t dt = 2 × 3² − 2 × 0² = 18 − 0 = 18 mC"; siyah "- Türev ve integral birbirinin tersi" (mavi alt çizgi).
+- "işaret meselesi": sağ altta küçük kroki: eksen altında bir dikdörtgen, içinde kırmızı "−", yanında koyu yeşil "Eksen altındaki alan eksi sayılır". Altına kırmızı "(−2 mA) × 2 s = −4 mC".
+- "birim kolaylığını": sol alt kutu "mA × ms = µC".
 
-## [PARÇA 5] Örnek: rampa, sabit ve ters yönlü akım (~3:10)
+## [PARÇA 6] Örnek: rampa, sabit ve ters yönlü akım (~2:05)
 
 ```
 Şimdi daha ilginç bir akım grafiği. Akım, sıfır anında sıfırdan başlıyor ve iki milisaniyede doğrusal olarak altı miliampere çıkıyor. İki ile beş milisaniye arasında altı miliamperde sabit kalıyor. Beş milisaniyede yön değiştiriyor ve sekiz milisaniyeye kadar eksi iki miliamper oluyor. Soru şu: sıfır ile sekiz milisaniye arasında, ok yönünde net ne kadar yük geçti?
 
 Alanı parçalara bölelim. İlk parça bir üçgen. Üçgenin alanı, taban çarpı yükseklik bölü iki. Taban iki milisaniye, yükseklik altı miliamper. İki çarpı altı on iki, on ikinin yarısı altı. Yani ilk iki milisaniyede altı mikrokulon geçmiş.
-
-Bunu integralle de kontrol edelim. Bu aralıkta akım, iki milisaniyede altı miliamper artıyor. Altıyı ikiye bölünce, her milisaniyede üç miliamper. Yani akım, üç te miliamper. Burada te, milisaniye cinsinden. İki milisaniyede üç çarpı iki, altı miliamper ediyor, grafikle uyumlu. Üç te ifadesinin integrali, te karenin üç katının yarısı. Te yerine iki yazalım. İkinin karesi dört, üç çarpı dört on iki, on ikinin yarısı altı. Aynı sonuç: altı mikrokulon.
 
 İkinci parça bir dikdörtgen. Genişliği beş eksi iki, üç milisaniye. Yüksekliği altı miliamper. Üç çarpı altı, on sekiz mikrokulon.
 
@@ -140,30 +173,25 @@ Bunu integralle de kontrol edelim. Bu aralıkta akım, iki milisaniyede altı mi
 
 Şimdi toplayalım. Altı artı on sekiz, yirmi dört. Yirmi dörtten altıyı çıkarınca on sekiz mikrokulon. Yani beşinci milisaniyede geçen yük yirmi dört mikrokulona ulaşmıştı. Sonraki üç milisaniyede bunun altı mikrokulonu geri döndü ve net on sekiz mikrokulon kaldı.
 
-Birinci bölümü hatırla: net yükü süreye bölersen ortalama akımı bulursun. On sekiz mikrokulon bölü sekiz milisaniye, iki virgül yirmi beş miliamper. Grafiğe bak: akım hiçbir aralıkta bu değerde kalmıyor, rampada yalnızca bir an bu değerden geçiyor. Bu yine yalnızca bir ortalama.
+Birinci bölümü hatırla: net yükü süreye bölersen ortalama akımı bulursun. On sekiz mikrokulon bölü sekiz milisaniye, iki virgül yirmi beş miliamper. Grafiğe bak: akım hiçbir aralıkta bu değerde kalmıyor, rampada yalnızca bir an bu değerden geçiyor. Bu yine yalnızca bir ortalama. Pil ömrü hesabında işimize yarayan da tam bu ortalamaydı.
 
-Bir de şuna bakalım. Bir milisaniye anında, yani rampanın tam ortasında, ne kadar yük geçmiş? O anda akım, üç çarpı bir, üç miliamper. Küçük üçgenin alanı, bir çarpı üç bölü iki, bir virgül beş mikrokulon. Bu, ilk üçgendeki altı mikrokulonun yarısı mı? Hayır. Bir virgül beşi altıya bölünce sıfır virgül yirmi beş çıkıyor. Yani dörtte biri.
+Bir de şuna bakalım. Bir milisaniye anında, yani rampanın tam ortasında, ne kadar yük geçmiş? Akım iki milisaniyede altı miliamper artıyor. Altı bölü iki, her milisaniyede üç miliamper. O anda akım, üç çarpı bir, üç miliamper. Küçük üçgenin alanı, bir çarpı üç bölü iki, bir virgül beş mikrokulon. Bu, ilk üçgendeki altı mikrokulonun yarısı mı? Hayır. Bir virgül beşi altıya bölünce sıfır virgül yirmi beş çıkıyor. Yani dörtte biri.
 
 Neden dörtte bir? Çünkü rampanın ilk yarısında akım hâlâ küçük. Yükün çoğu, akımın büyüdüğü ikinci yarıda geçiyor. Zamanın yarısı, yükün yarısı demek değil.
-
-Geçen yükü zamana göre çizersek ne görürüz? İlk iki milisaniyede yük, gittikçe dikleşen bir eğriyle altı mikrokulona çıkar. İki ile beş milisaniye arasında düz bir çizgiyle artar. Bu aralıkta geçen yük, yirmi dört eksi altı, on sekiz mikrokulon. Süre, beş eksi iki, üç milisaniye. Çizginin eğimi, on sekiz bölü üç, altı miliamper. Bu da o aralıktaki akımın ta kendisi. Beşinci milisaniyeden sonra ise yük azalır. Birinci bölümdeki eğim fikri burada da geçerli: yük grafiğinin eğimi akımdır.
 ```
 
 Sahne planı:
-- Üstte soru: "0–2 ms: 0'dan 6 mA'e doğrusal", "2–5 ms: 6 mA", "5–8 ms: −2 mA", "0–8 ms net q = ?" (mavi).
-- Grafik (sol, y %25–72): yatay eksen "t (ms)" işaretler 0, 1, 2, 3, 4, 5, 6, 7, 8; dikey eksen "i (mA)" işaretler −2, 0, 2, 4, 6 (eksen −3…7). Mavi: 0–2 ms rampa (0 → 6), 2–5 ms 6 mA, 5–8 ms −2 mA (5 ms'deki dikey geçiş ince kesik). Değerler kodda `console.assert` (i(1) = 3, i(2) = 6, i(6) = −2). Mavi referans oku grafiğin üstünde küçük tel çiziminde (sağa).
-- "Alanı parçalara bölelim": üçgen taranır (açık mavi), içinde "1"; sağda (x ≥ %55) "1. üçgen: (2 ms × 6 mA) / 2 = 12 / 2 = 6 µC".
-- "integralle de kontrol": altına "eğim = 6 mA / 2 ms = 3 mA / ms", "her milisaniyede 3 mA artış", "i = 3t mA, t milisaniye cinsinden", "i(2) = 3 × 2 = 6 mA", "∫ 3t dt = 3t² / 2", "∫₀² 3t dt = 3 × 2² / 2 = 3 × 4 / 2 = 6 µC" (mavi, "aynı sonuç" yanında).
-- Silme yok; sağ sütun dolarsa sağ sütun silinir (≤0,3 sn), grafik kalır.
-- "İkinci parça": dikdörtgen taranır ("2"); "2. dikdörtgen: (5 − 2) ms × 6 mA = 3 × 6 = 18 µC".
-- "Üçüncü parça": eksen altı dikdörtgen kırmızı taranır ("3"); "3. dikdörtgen: (8 − 5) ms × (−2 mA) = 3 × (−2) = −6 µC" (kırmızı).
+- Kırmızı başlık "Örnek". Sol sütunda soru (mavi): "- 0–2 ms: 0'dan 6 mA'e doğrusal", "- 2–5 ms: 6 mA", "- 5–8 ms: −2 mA", "0–8 ms net q = ?".
+- Grafik (sağ sütun, y %25–72): yatay eksen "t (ms)" işaretler 0, 1, 2, 3, 4, 5, 6, 7, 8; dikey eksen "i (mA)" işaretler −2, 0, 2, 4, 6 (eksen −3…7). Mavi: 0–2 ms rampa (0 → 6), 2–5 ms 6 mA, 5–8 ms −2 mA (5 ms'deki dikey geçiş ince gri kesik). Değerler kodda `console.assert` (i(1) = 3, i(2) = 6, i(6) = −2). Grafiğin üstünde küçük tel çiziminde mavi referans oku (sağa).
+- "Alanı parçalara bölelim": soru satırları silinir (sol sütun). Üçgen taranır (açık mavi), içinde "1"; sol sütunda "1. Üçgen: (2 ms × 6 mA) / 2 = 12 / 2 = 6 µC".
+- "İkinci parça": dikdörtgen taranır ("2"); "2. Dikdörtgen: (5 − 2) ms × 6 mA = 3 × 6 = 18 µC".
+- "Üçüncü parça": eksen altı dikdörtgen kırmızı taranır ("3"); kırmızı "3. Dikdörtgen: (8 − 5) ms × (−2 mA) = 3 × (−2) = −6 µC".
 - "toplayalım": "q(5 ms) = 6 + 18 = 24 µC", "q(8 ms) = 24 − 6 = 18 µC" (mavi, daire).
-- "ortalama akımı": "ortalama = 18 µC / 8 ms = 2,25 mA" (siyah); grafikte 2,25 mA'de gri kesikli yatay çizgi, ucunda "ortalama".
-- "Bir milisaniye anında": grafikte 0–1 ms küçük üçgen koyu mavi; t = 1 ms'de nokta "3 mA". Sağda "i(1 ms) = 3 × 1 = 3 mA", "q(1 ms) = (1 ms × 3 mA) / 2 = 1,5 µC", "1,5 / 6 = 0,25 = dörtte bir" (kırmızı alt çizgi).
-- "Neden dörtte bir? … Zamanın yarısı": alta kutu "zamanın yarısında yükün dörtte biri".
-- "zamana göre çizersek": sağ sütun silinir; küçük q(t) grafiği (sağ, y %25–72): yatay eksen "t (ms)" 0, 2, 5, 8; dikey eksen "q (µC)" 0, 6, 18, 24 (eksen 0–26). Mavi eğri: 0–2 ms parabol (ekranda formül yazılmaz), 2–5 ms doğru (6 → 24), 5–8 ms azalan doğru (24 → 18). `console.assert` q(2) = 6, q(5) = 24, q(8) = 18. Yanına "eğim = (24 − 6) µC / (5 − 2) ms = 18 µC / 3 ms = 6 mA".
+- "ortalama akımı": sol sütun silinir; "Ortalama = 18 µC / 8 ms = 2,25 mA" (siyah); grafikte 2,25 mA'de gri kesikli yatay çizgi, ucunda koyu yeşil "Ortalama". "Pil ömrü hesabında": koyu yeşil "Pil ömrü de ortalamayla".
+- "Bir milisaniye anında": grafikte 0–1 ms küçük üçgen koyu mavi; t = 1 ms'de nokta "3 mA". Sol sütunda "Artış = 6 mA / 2 ms = 3 mA / ms", "i(1 ms) = 3 × 1 = 3 mA", "q(1 ms) = (1 ms × 3 mA) / 2 = 1,5 µC", "1,5 / 6 = 0,25 = dörtte bir" (kırmızı alt çizgi).
+- "Neden dörtte bir? … Zamanın yarısı": alta mavi kutu "Zamanın yarısında yükün dörtte biri".
 
-## [PARÇA 6] Abone 2, devre kurmak: istenen akımı veren devre (~2:50)
+## [PARÇA 7] Devre kurmak: istenen akımı veren devre (~2:05)
 
 ```
 Son olarak işi tersine çevirelim. Bu kez bize bir akım dalga biçimi veriliyor. Bizden de bu akımı üreten bir devre kurmamız isteniyor.
@@ -184,30 +212,26 @@ Bir saniye anında birinci anahtar kapanıyor. Altı kiloohmluk direncin uçlar�
 
 Dört saniye anında ikinci anahtar da açılıyor. Akım yeniden sıfır. Ama dikkat et: iki dirençten de akım geçmediği için, iki açık anahtarın uçlarında da on iki volt var. Az önceki dokuz voltluk devrenin aynısı.
 
-Bu arada, tasarımın tek bir doğru cevabı yok. Örneğin tek bir iki kiloohmluk direnci, bir seçici anahtarla önce dört voltluk, sonra on iki voltluk bir bataryaya bağlayabilirdik. Dört bölü iki, iki miliamper. On iki bölü iki, altı miliamper. İstenen akımı veren her devre doğru bir cevaptır.
-
 Son olarak bu akımın taşıdığı toplam yükü alandan bulalım. İlk dikdörtgen: üç eksi bir, iki saniye. İki saniye çarpı iki miliamper, dört milikulon. İkinci dikdörtgen: dört eksi üç, bir saniye. Bir saniye çarpı altı miliamper, altı milikulon. Toplam, dört artı altı, on milikulon.
 ```
 
 Sahne planı:
-- 0:00–0:06 **abone animasyonu 2** (alt bant; son çözümlü sorudan önce). Kart bir katmandır; tahtadaki kalem yazmaya devam eder (başlık "istenen akımı veren devre").
-- İstenen grafik (sağ üst, y %15–45): yatay eksen "t (s)" işaretler 0, 1, 2, 3, 4, 5; dikey eksen "i (mA)" işaretler 0, 2, 4, 6 (eksen 0–7). Mavi basamak: 0–1 s 0; 1–3 s 2 mA; 3–4 s 6 mA; 4 s sonrası 0 (geçişler ince kesik). `console.assert`.
-- "Bir an dur ve düşün": kalem "elimizde: 12 V batarya, 2 direnç, 2 anahtar" satırının etrafına yavaşça daire çizer (1,5 sn sessizlik boyunca hareket sürer).
-- Devre (sol, y %15–72): solda batarya ("+" üstte, "12 V"); üst ve alt ana teller; aralarında iki dikey kol: 1. kol 1. anahtar ve 6 kΩ; 2. kol 2. anahtar ve 2 kΩ (yazı: "1. anahtar", "6 kΩ", "2. anahtar", "2 kΩ"). İki anahtar başlangıçta açık çizilir. Bataryanın üst telinde mavi referans oku "i" (bataryadan çekilen akım). Tel kesintisiz, bağlantı noktaları dolu siyah nokta.
-- "direnç değerlerini nereden bulduk": sağ altta "R = v / i", "R = 12 V / 2 mA = 6 kΩ", "R = 12 V / 6 mA = 2 kΩ" (mavi), küçük "V / mA = kΩ". Sonra bu üç satır silinir (≤0,3 sn).
-- Anahtar zamanları devrenin altına (y ≤ %72): "1. anahtar: 1 s'de kapanır, 3 s'de açılır", "2. anahtar: 3 s'de kapanır, 4 s'de açılır".
-- "Bir saniye anında": 1. anahtar kapalı çizilir; sağ altta "1 ile 3 s arası: i = 12 V / 6 kΩ = 2 mA" (mavi); 2. kolun yanına "2. kol açık, i = 0".
+- Kırmızı başlık "İstenen akımı veren devre". İstenen grafik (sağ sütun üst, y %15–45): yatay eksen "t (s)" işaretler 0, 1, 2, 3, 4, 5; dikey eksen "i (mA)" işaretler 0, 2, 4, 6 (eksen 0–7). Mavi basamak: 0–1 s 0; 1–3 s 2 mA; 3–4 s 6 mA; 4 s sonrası 0 (geçişler ince gri kesik). `console.assert`.
+- "Elinde": sol sütunda "- 12 V batarya", "- 2 direnç", "- 2 anahtar". "Bir an dur ve düşün": kalem bu üç maddenin etrafına yavaşça daire çizer (1,5 sn sessizlik boyunca hareket sürer).
+- Devre (sol sütun, maddeler silindikten sonra, y %15–72): solda batarya ("+" üstte, "12 V"); üst ve alt ana teller; aralarında iki dikey kol: 1. kol "1. anahtar" ve "6 kΩ"; 2. kol "2. anahtar" ve "2 kΩ". İki anahtar başlangıçta açık çizilir. Bataryanın üst telinde mavi referans oku "i" (bataryadan çekilen akım). Tel kesintisiz, bağlantı noktaları dolu siyah nokta.
+- "direnç değerlerini nereden bulduk": sağ alt "R = v / i", "R = 12 V / 2 mA = 6 kΩ", "R = 12 V / 6 mA = 2 kΩ" (mavi), koyu yeşil "V / mA = kΩ". Sonra bu satırlar silinir (≤0,3 sn).
+- Anahtar zamanları devrenin altına (y ≤ %72), koyu yeşil: "1. anahtar: 1 s'de kapanır, 3 s'de açılır", "2. anahtar: 3 s'de kapanır, 4 s'de açılır".
+- "Bir saniye anında": 1. anahtar kapalı çizilir; sağ altta "1 ile 3 s arası: i = 12 V / 6 kΩ = 2 mA" (mavi); 2. kolun yanına koyu yeşil "2. kol açık, i = 0".
 - "Üç saniye anında": 1. anahtar açılır, 2. anahtar kapanır; "3 ile 4 s arası: i = 12 V / 2 kΩ = 6 mA" (mavi).
-- "Dört saniye anında": 2. anahtar açılır; "4 s'den sonra: i = 0"; iki anahtar ucuna küçük mavi "12 V" (kırmızı daire yok; mavi).
-- "tek bir doğru cevabı yok": sağ altta küçük not "başka bir çözüm: tek 2 kΩ direnç, seçici anahtar, 4 V ve 12 V batarya", "4 V / 2 kΩ = 2 mA", "12 V / 2 kΩ = 6 mA" (gri); sonra silinir.
-- "toplam yükü": grafikteki iki dikdörtgen taranır; sağ altta "q = (3 − 1) s × 2 mA = 2 × 2 = 4 mC", "q = (4 − 3) s × 6 mA = 1 × 6 = 6 mC", "toplam yük = 4 + 6 = 10 mC" (mavi, daire).
+- "Dört saniye anında": 2. anahtar açılır; "4 s'den sonra: i = 0"; iki anahtar ucuna küçük mavi "12 V".
+- "toplam yükü": grafikteki iki dikdörtgen taranır; sağ altta "q = (3 − 1) s × 2 mA = 2 × 2 = 4 mC", "q = (4 − 3) s × 6 mA = 1 × 6 = 6 mC", "Toplam yük = 4 + 6 = 10 mC" (mavi, daire).
 
-## [PARÇA 7] Kapanış (~1:05 + 20 sn bitiş ekranı)
+## [PARÇA 8] Kapanış, abone çağrısı 2 (~1:10 + 20 sn bitiş ekranı)
 
 ```
-Toparlayalım. Her akımın bir değeri, bir de yönü var. Yönü referans okuyla gösteriyoruz ve yük okun tersine gidiyorsa akım eksi çıkıyor. Açık devre yalnızca akımın sıfır olduğunu garanti eder. Uçlarındaki gerilimi çevresindeki devre belirler. Akımdan yüke gitmek için integral alırız. Geçen yük, akım grafiğinin altındaki alandır ve eksenin altındaki alan eksi sayılır. Şunu da unutma: akım doğrusal artarken, sürenin ilk yarısında yükün yalnızca dörtte biri geçer.
+Toparlayalım. Her akımın bir değeri, bir de yönü var. Yönü referans okuyla gösteriyoruz ve yük okun tersine gidiyorsa akım eksi çıkıyor. Açık devre yalnızca akımın sıfır olduğunu garanti eder. Uçlarındaki gerilimi çevresindeki devre belirler. Akımdan yüke gitmek için integral alırız. Geçen yük, akım grafiğinin altındaki alandır ve eksenin altındaki alan eksi sayılır. Veri sayfasında da bu iki büyüklükle karşılaştık: pilin ömrünü ortalama akım, kısa zorlanmayı darbe akımı belirler.
 
-Bugün kurduğumuz iki devrede de aynı şeyi gördük. Açık anahtardan akım geçmedi, ama uçlarında bataryanın gerilimi vardı.
+Bugün kurduğumuz devrelerde de aynı şeyi gördük. Açık anahtardan ya da açık butondan akım geçmedi, ama uçlarında kaynağın gerilimi vardı.
 
 Sana da bir soru bırakayım. Bir telden iki saniye boyunca beş miliamper, sonraki bir saniye boyunca da eksi üç miliamper akım geçiyor. Üç saniyenin sonunda, ok yönünde net ne kadar yük geçmiştir? Cevabını yorumlara yaz.
 
@@ -217,7 +241,8 @@ Bu ders işine yaradıysa videoyu beğenip sınıf arkadaşlarınla paylaşır m
 ```
 
 Sahne planı:
-- **"Bilmen gerekenler" kartı** (tahtanın ortası, y %15–65; ≥4 sn okunur): başlık "Bilmen gerekenler"; maddeler: "• Her akımın değeri ve yönü var (referans okuyla)", "• Açık devre yalnızca i = 0'ı garanti eder", "• Yük, akım grafiğinin altındaki alandır".
-- "Sana da bir soru": kart silinir; ortada küçük grafik krokisi (0–2 s 5 mA, 2–3 s −3 mA), altına "3 s'de net q = ?" (mavi), "cevabını yorumlara yaz".
+- **"Bilmen gerekenler" kartı** (sol sütun, y %15–65; ≥4 sn okunur): kırmızı başlık "Bilmen gerekenler"; maddeler: "- Her akımın değeri ve yönü var (referans okuyla)", "- Açık devre yalnızca i = 0'ı garanti eder", "- Yük, akım grafiğinin altındaki alandır". (Kart 3 maddede kalır; 4. madde "Datasheet'te sürekli ve darbe akımı ayrı; koşulu oku" yalnızca açıklamadaki listede.) Sağ sütunda "Veri sayfasında": koyu yeşil "Pil ömrü: ortalama akım", "Kısa zorlanma: darbe akımı".
+- "Sana da bir soru": kart silinir; kırmızı başlık "Sana bir soru"; sağda küçük grafik krokisi (0–2 s 5 mA, 2–3 s −3 mA), solda "3 s'de net q = ?" (mavi), "Cevabını yorumlara yaz" (siyah).
 - "beğenip paylaşır mısın": kalem sorunun altını mavi çizer.
-- "Üçüncü bölümde": silme; son 20 sn **bitiş ekranı**: yalnızca sol üstte koyu "Sıradaki: Bölüm 3 — Gerilim, kısa devre ve ideal kaynak" ve altında küçük gri "Oynatma listesi: Devre Teorisi I". Orta ve alt boş (YouTube bitiş ekranı kutuları). Kalem sol üstteki yazının altını yavaşça çizerek hareketi sürdürür (≥2 sn durağan an yok). Ses yok.
+- "Kanala abone olursan": **abone kartı 2** bu cümlenin başladığı anda (±0,2 sn) alt banttan girer; iki tık cümle bitmeden (Bölüm 1 iş emri C düzeni).
+- "Üçüncü bölümde": silme (köşe başlığı da silinir); son 20 sn **bitiş ekranı**: yalnızca sol üstte koyu "Sıradaki: Bölüm 3 — Gerilim, kısa devre ve ideal kaynak" ve altında küçük koyu yeşil "Oynatma listesi: Devre Teorisi I". Orta ve alt boş (YouTube bitiş ekranı kutuları). Kalem sol üstteki yazının altını yavaşça çizerek hareketi sürdürür (≥2 sn durağan an yok). Ses yok.

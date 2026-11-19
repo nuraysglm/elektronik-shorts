@@ -1,11 +1,29 @@
-"""Ders 1 Bolum 2 dogrulama: butun sayisal sonuclar (kesirli tam aritmetik),
+"""Ders 1 Bolum 2 dogrulama (surum 3, 19.11.2026: Uygulamada parcasi + buton + kisaltmalar): butun sayisal sonuclar (kesirli tam aritmetik),
 bagimsiz kontroller (sayisal integral, KVL/Ohm) ve seslendirme metni kontrolleri.
 Hiz: 2,6 kelime/sn (Bolum 1 olcumu: 2050 kelime -> 788 sn ses); +125 sn kart, abone, sessizlik, bitis (Bolum 1: 913 - 788).
 Birimler: uC / ms = mA ; mA x ms = uC ; mA x s = mC ; V / kOhm = mA."""
 from fractions import Fraction as F
 import re, pathlib
 
-# --- Parca 2: referans yonu
+# --- Parca 2 (Uygulamada): datasheet degerleri + mini tasarim (icerik.md 5d)
+assert F(30) / 1 == 30                                      # 1N4007: 30 A darbe / 1 A ortalama (ekrana oran konmaz)
+assert 1 * 3600 == 3600 and F(1, 1000) * 3600 == F(36, 10)  # 1 mAh = 1 mA x 3600 s = 3,6 C
+q_uyanik = 10 * 2;            assert q_uyanik == 20         # 10 mA x 2 ms = 20 uC
+assert 5 * 998 == 4990;       q_uyku = F(4990, 1000)        # 5 uA x 998 ms = 4990 nC = 4,99 uC
+assert q_uyku == F(499, 100)
+q_top = q_uyanik + q_uyku;    assert q_top == F(2499, 100)  # 24,99 uC
+i_ort = q_top / 1;            assert abs(i_ort - 25) < F(2, 100)   # ~25 uA (24,99 uC / 1 s)
+assert 1000 - 2 == 998                                      # periyot 1 s = 1000 ms
+assert F(25, 1000) == F(25, 1000) and F(225) / F(25, 1000) == 9000   # 225 mAh / 0,025 mA = 9000 h
+assert F(9000, 24) == 375
+assert F(225, 10) == F(225, 10) and F(225) / 10 == F(45, 2)          # tepe ile: 22,5 h
+assert F(9000) / F(45, 2) == 400 and F(45, 2) < 24
+# kesin deger ile (24,99 uA): 225 / 0,02499 = 9003,6 h -> "yaklasik" 375 gun
+assert 9000 < F(225) / (q_top / 1000) < 9010
+# bagimsiz: 1 s periyotta sayisal integral (orta nokta, 1 us adim), uA x ms = nC
+def i_sensor(t_ms):                                          # uA
+    return F(10000) if t_ms < 2 else F(5)
+# --- Parca 3: referans yonu
 assert F(3) / 1 == 3                       # 3 uC / 1 ms = 3 mA (ok saga)
 assert -(F(3) / 1) == -3                   # ok sola: -3 mA
 assert F(-4) / 1 == -4 and -F(-4) == 4     # elektronlar: saga -4 uC/ms -> ok saga -4 mA, ok sola +4 mA
@@ -60,32 +78,42 @@ assert Vb - 6 * 0 == 12 and Vb - 2 * 0 == 12
 assert (3 - 1) * 2 == 4 and (4 - 3) * 6 == 6 and 4 + 6 == 10
 assert sayisal(i6, 0, 5, 5000) == 10
 assert F(12, 2) == 6 and F(12, 6) == 2          # R = v / i: 12 V / 2 mA = 6 kOhm; 12 V / 6 mA = 2 kOhm
-# Parca 3 pil: acik uclar, i = 0, 9 V; Parca 4 Bolum 1 baglantisi: int_0^3 4t dt = 4 x 9 / 2 = 18 mC
+# Parca 5 Bolum 1 baglantisi: int_0^3 4t dt = 4 x 9 / 2 = 18 mC
 assert F(4 * 3**2, 2) == 18 == 2 * 9
 assert sayisal(lambda t: 4 * t, 0, 3, 3000) == 18
 # Parca 5 ortalama: 18 uC / 8 ms = 2,25 mA (hicbir aralikta sabit degil)
 assert F(18, 8) == F(225, 100) and all(i5(F(k, 10)) != F(225, 100) or k < 20 for k in range(80))
 
-assert 2 * (-2) == -4 and F(4, 2) == 2 and F(12, 2) == 6       # P4 negatif alan; P6 alternatif cozum
-# Parca 5 q(t) grafigi: 2-5 ms egimi 18 uC / 3 ms = 6 mA; q = 1,5 t^2 (0-2 ms)
-assert F(18, 3) == 6 and F(3, 2) * 2**2 == 6 and sayisal(i5, 0, 2, 4) == F(3,2)*4
+assert 2 * (-2) == -4                                        # P5 negatif alan (-2 mA x 2 s)
+# Parca 2 bagimsiz: sensor akiminin 1 s'deki sayisal integrali (nC) = 24 990 nC
+assert sayisal(i_sensor, 0, 1000, 1000) == 24990
+# Parca 6 artis: 6 mA / 2 ms = 3 mA/ms
+assert F(6, 2) == 3
+# Parca 4 buton + 10 kOhm cekme direnci, 3,3 V (icerik.md 7-3)
+Vdd, Rp = F(33, 10), F(10)
+assert Rp * 0 == 0 and Vdd - Rp * 0 == Vdd                  # buton acik: direnc 0 V, giris 3,3 V, buton uclari 3,3 V
+assert Vdd / Rp == F(33, 100)                               # buton kapali: 0,33 mA, giris 0 V
 
 # --- Yorum sorusu: 2 s x 5 mA + 1 s x (-3 mA) = 7 mC
 assert 2 * 5 + 1 * (-3) == 7
-print("Sayisal kontroller: tamam (q(5 ms)=24 uC, q(8 ms)=18 uC, q(1 ms)=1,5 uC; devre 2 ve 6 mA, 10 mC; yorum sorusu 7 mC)")
+print("Sayisal kontroller: tamam (P2: 24,99 uC -> ~25 uA, 9000 h = 375 gun, tepe ile 22,5 h = 400 kat; buton 0,33 mA; q(5 ms)=24 uC, q(8 ms)=18 uC, q(1 ms)=1,5 uC; devre 2 ve 6 mA, 10 mC; yorum sorusu 7 mC)")
 
 # --- Seslendirme metni
 md = pathlib.Path(__file__).with_name("metin.md").read_text()
 parcalar = re.findall(r"## \[PARÇA (\d)\].*?```\n(.*?)```", md, re.S)
-assert len(parcalar) == 7
+assert len(parcalar) == 8
 toplam = 0
 for n, metin in parcalar:
     k = len(metin.split()); toplam += k
-    kotu = re.findall(r"[0-9=+/()\[\]%·×Δµ<>*'’-]", metin)
+    metin = re.sub(r"\[SELAM[^\n]*\]\n", "", metin)          # selam etiketi seslendirilmez
+    kotu = re.findall(r"[0-9=+/()\[\]%·×Δµ<>*-]", metin)     # kesme isareti serbest (Ders Bir'in)
     print(f"Parca {n}: {k} kelime, ~{k/2.6/60:.2f} dk, yasak karakter: {kotu}")
     assert not kotu, n
     assert not re.search(r"(^|[.!?]\s+)İ\b", metin)
+    # "de te" yalniz cumle basinda veya islem sozcugunden sonra (inceleme B5)
+    for m in re.finditer(r"(\S+)\s+de te\b", metin):
+        assert m.group(1).lower().strip(",") in ("eşittir", "bölü", "çarpı", "yani"), (n, m.group(0))
 print("Toplam", toplam, "kelime, konusma ~", round(toplam / 2.6 / 60, 2), "dk; +125 sn (Bolum 1 olcumu: kart, abone, sessizlik, bitis) ->",
       round((toplam / 2.6 + 125) / 60, 2), "dk")
-assert 1800 <= toplam <= 2200 and 13 <= (toplam / 2.6 + 125) / 60 <= 17
+assert 1800 <= toplam <= 2330 and 13 <= (toplam / 2.6 + 125) / 60 <= 17
 print("TAMAM")

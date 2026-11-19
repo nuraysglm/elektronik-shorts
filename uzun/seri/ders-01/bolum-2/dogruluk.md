@@ -1,6 +1,6 @@
 # Doğruluk kaydı — Devre Teorisi I: Ders 1 - Bölüm 2/3
 
-Tarih: 19.11.2026. Aşama: metin sürüm 2 (bağımsız denetim 2 tur, bölüm 6). Ses ve görüntü yok.
+Tarih: 19.11.2026. Aşama: metin **sürüm 3** (`inceleme.md` uygulandı; bölüm 7–8). Sürüm 2 kaydı aşağıda korunuyor; parça numaraları sürüm 3'te birer kaydı (eski 2–7 → 3–8). Ses ve görüntü yok.
 
 ## 1. Kaynaklar (onaylı, `kaynaklar.md`)
 - B. Razavi, Basic Circuit Theory, **Ders 1** (videoId `U_4q0sfChOk`) [17:01–27:52]. Transkript kanal sahibinin özel Drive klasöründen (`1-smnUzmnSn-evJiD7ypgqm93scvD-e80`) okundu; depoya konmadı. Aşağıda yalnızca zaman damgası ve kısa özet var.
@@ -45,3 +45,36 @@ Tam liste `metin.md` sahne planlarında. Gösterim: küçük i, q; çarpma "×";
 ## 6. Bağımsız denetim (19.11.2026)
 Denetim 1 (alt ajan, transkriptle karşılaştırmalı): sayılar doğru, seviye üniversite 1. sınıf, kopya riski düşük (darbe örneği ve R1 sentezi kullanılmamış; iki kollu devre özgün). KRİTİK 1: parça 3'te anahtarın bağlantı tarifi çizimle tersti → ses ve sahne düzeltildi. ÖNEMLİ: hesabı gösterilmeyen sayılar (3 mA/ms, eğim 24 − 6, kapalı anahtarda 0 V, i(4 s) = 6 − 2 × 4, ters türev satırı), gruplama belirsizliği ("üç te kare bölü iki" → "te karenin üç katının yarısı"), "de te" okunuşu, ekranda kelime yerine ":" (tam cümlelere çevrildi), kaynaksız arıza arama iddiası (çıkarıldı), "hiçbir an bu değeri" (düzeltildi: rampada bir an geçiyor), uçları boşta pil çizimi (açık anahtarlı pile çevrildi). KÜÇÜK bulguların hepsi uygulandı.
 Denetim 2 (değişen kısımlar): yeni KRİTİK/ÖNEMLİ yok. 5 küçük not (3 mA/ms birimi, alt sınır adımı, ses–ekran ifade birliği, pil girişi, uzun eğim cümlesi) uygulandı.
+
+## 7. Sürüm 3 (19.11.2026): `inceleme.md` ↔ uygulama
+
+| İnceleme | Uygulama |
+|---|---|
+| A1 "Uygulamada" parçası | Yeni Parça 2 (428 kelime ≤ 540): iki satır fikri (1N4007), "üç soru" kuralı, anahtar ve LED yalnızca tabloda + tek cümle, mini tasarım (CR2032, 25 µA → 375 gün), tepeyle yanlış hesap (22,5 saat, 400 kat). İç direnç ve 50 µA varyantı yok (paket 10). Isınma cümlesi paketin doğru ifadesiyle ("çoğunlukla ısınmayla sınırlıdır ve sıcaklık arttıkça düşer"); "ortalama" yalnızca diyot ve pil için. |
+| A2 kanca vaadi | Parça 1'e "veri sayfasında sürekli/darbe akımı, pil ömrü ortalama akımdan" cümlesi + ekranda madde. |
+| A3 birim kolaylığı ve köprü | mA × ms = µC ilk kez Parça 2'de; Parça 5 sonunda "pil hesabında gördüğümüz birim kolaylığını hatırla". mAh = yük Parça 2'de; Parça 5'te "Hatırla: … dar dikdörtgenlerin alanıydı. Pilin miliamper saati de tam böyle bir alan." |
+| A4 buton + çekme direnci | Parça 4'te eski tek pil paragrafının ve "kopuk bağlantı" cümlelerinin yerine (süre). |
+| B5 "de te" | "De te, işte bu çok kısa zaman aralığının adı." (cümle başı); "Genişliği ise o kısacık süre, yani de te."; kural: yalnızca cümle başı veya işlem sözcüğü ("eşittir/bölü/çarpı") ya da "yani" sonrasında; `dogrula.py` otomatik denetliyor. |
+| B6 ısınma | Bkz. A1. |
+| C7 voltmetre iç direnci | Uygulanmadı (isteğe bağlı; süre). |
+| C8 ortalama köprüsü | Parça 6: "Pil ömrü hesabında işimize yarayan da tam bu ortalamaydı." |
+| C9 kart | Kart 3 maddede; 4. madde yalnızca açıklamada. |
+| C10 toparlayalım | Parça 8'e "Veri sayfasında da bu iki büyüklükle karşılaştık: …" |
+| D kısaltmalar | Üçü de yapıldı: eski P5 integral kontrolü, eski P5 q(t) grafiği, eski P6 alternatif çözüm. Ek kısaltma (süre): eski P2 "Bir sınavda…" paragrafı (tek cümleyle özetlendi), eski P3 "İki durumu yan yana" paragrafı ve tablosu. Eski P5'teki "her milisaniyede üç miliamper" adımı Parça 6'ya tek satır olarak taşındı (i(1 ms) = 3 mA'in hesabı gösterilsin diye). |
+| F telif | Parça 7 (eski 6) bilgi olarak metin onayı açıklamasında. |
+
+Diğer: selam (UZUN.md 4a) Parça 1'de ayrı dosya; yeni tahta düzeni (UZUN.md 4) sahne planlarında; abone kartları sözlü çağrılarla eşzamanlı: 1. kart Parça 2 sonu (~4. dk; ilk önemli sonuç 375 gün'den hemen sonra), 2. kart Parça 8 "Kanala abone olursan…" (Bölüm 1 iş emri C düzeni; eski P6 başındaki sessiz kart kaldırıldı). Süre: 2.211 kelime → konuşma ~14,2 dk, video ~16,3 dk (`dogrula.py`).
+
+## 8. Sürüm 3 yeni iddialar → dayanak
+
+| # | İddia | Dayanak |
+|---|---|---|
+| 18 | Datasheet'te akım için iki satır: sürekli ve darbe; sürekli değer çoğunlukla ısınmayla sınırlı, sıcaklıkla düşer; sınırlar çalışma noktası değil | `icerik.md` 4, 5a, 5b (İçerik Ajanı + bağımsız denetim; datasheet'ler) |
+| 19 | 1N4007: I_F(AV) = 1,0 A (ortalama, 9,5 mm bacak, T_A = 75 °C); I_FSM = 30 A (8,3 ms tek yarım sinüs) | Vishay doc 88503 rev. 29-Apr-2020 s. 1 (`icerik.md` 5b, 11) |
+| 20 | 2N7002E: I_D = 260 mA (25 °C), 190 mA (85 °C); I_DM = 1,2 A (tp = 10 µs) | onsemi 2N7002E/D Rev. 8 s. 1 (`icerik.md` 5b). **tp = 10 µs PDF s. 1'de render öncesi gözle doğrulanacak** (paket notu). |
+| 21 | TLHR540x: I_F = 30 mA (≤ 65 °C); I_FSM = 1 A (tp ≤ 10 µs) | Vishay doc 83012 Rev. 2.7 s. 2 |
+| 22 | CR2032 225 mAh; mAh bir yük birimi, 1 mAh = 3,6 C | Panasonic CR2032 datasheet (Şubat 2026); hesap `dogrula.py` |
+| 23 | Mini tasarım: 10 mA × 2 ms = 20 µC; 5 µA × 998 ms = 4990 nC = 4,99 µC; toplam 24,99 µC; ortalama ≈ 25 µA; 225 / 0,025 = 9000 saat; 9000 / 24 = 375 gün; tepeyle 225 / 10 = 22,5 saat; 9000 / 22,5 = 400 | `dogrula.py` (kesirli tam aritmetik + 1 s periyodun sayısal integrali 24 990 nC); `icerik_dogrula.py` |
+| 24 | Pil ömrünü ortalama akım belirler; kısa tepeleri darbe satırı sınırlar | `icerik.md` 5c, 5d "öğrencinin çıkaracağı kural" |
+| 25 | Buton + 10 kΩ çekme direnci (3,3 V): buton açık → i = 0, direnç 0 V, giriş 3,3 V, buton uçları 3,3 V; kapalı → 3,3 V / 10 kΩ = 0,33 mA, giriş 0 V; giriş neredeyse hiç akım çekmez | `icerik.md` 7-3; `dogrula.py`; #6 ile aynı ilke |
+| 26 | Parça 6: rampa eğimi 6 mA / 2 ms = 3 mA/ms → i(1 ms) = 3 mA | `dogrula.py` |
