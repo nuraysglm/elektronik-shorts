@@ -104,13 +104,17 @@
     {
       "tarih": "2026-11-19T12:00Z",
       "not": "uzun-1-1 video onayı hâlâ bekliyor (Perşembe; planlama yok). Bölüm 2 adım 1: transkript [17:01–27:52] okundu; metin.md (7 parça, 1.953 kelime, ~14,5 dk), dogrula.py geçti, dogruluk.md; bağımsız denetim 2 tur (1 kritik + 7 önemli düzeltildi). Dal claude/uzun-1-2-20261119. Panelde onaylar/metin-1-2 açıldı. Onay yok → B2 sesi üretilmez."
+    },
+    {
+      "tarih": "2026-11-19T14:40Z",
+      "not": "İş emri C uygulandı (ses kaydı değişmedi, kredi yok): abone kartı sözlü çağrının başında girer (parça 3 0,05 sn = cümle başı; ikinci an parça 6'dan parça 7 49,35 sn'deki 'Kanala abone olursan…' cümlesine taşındı, çünkü parça 6'da sözlü çağrı yok); animasyon 4,5 sn'ye sıkıştırıldı, iki tık cümle bitmeden (1,0 ve 1,9 sn); numpy fare tıkı + tık/zil (≤1 sn, konuşmanın ~12 dB altında); birleşik video −16,0 LUFS, tepe −1,5 dBTP; 15:13,6, 29,5 MB. 12 abone karesi gözle kontrol. onaylar/uzun-1-1 güncellendi (bağlantı main dalına). B2: içerik paketi henüz yok → metin güncellenmedi."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.23,
   "acik_sorular": [],
-  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: Cuma akşamı görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar; 'düzelt' gelirse notu uygula. onaylar/metin-1-2 'onayla' gelirse: Bölüm 2 sesleri (7 parça, generations_count 1) → indirme → zamanlama → render.",
+  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: Cuma akşamı görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar (medya: main dalı raw URL); 'düzelt' gelirse notu uygula. B2: İçerik Ajanı paketi (uzun/seri/ders-01/bolum-2/icerik.md) gelince metne 'Uygulamada' parçası eklenir → doğrulama + denetim → onaylar/metin-1-2 yeniden onaya.",
   "not": "18.11 19:20 genel müdür: Kanal sahibi parçaları izledi. Birleştirmeden önce iş emrini uygula (parça 5: hesaplar adım adım + grafik renkleri). Metin değişikliği kanal sahibinin onayına gider; onaydan sonra yalnızca parça 5 sesi + render.",
   "metin_onayi": {
     "durum": "onaylandi",
@@ -158,12 +162,14 @@
     "onay_istegi": "onaylar/metin-1-2 (19.11.2026)",
     "not": "Metin onayı 28.11'e kadar gelmezse yayın kayabilir (UZUN.md 1b)."
   },
-  "is_emri_c": "uzun/seri/ders-01/bolum-1/is-emri-20261119-c.md",
+  "is_emri_c": "uzun/seri/ders-01/bolum-1/is-emri-20261119-c.md — UYGULANDI 19.11 14:40Z",
   "icerik": {
     "1-2": {
       "durum": "bekleniyor",
       "not": "İçerik Ajanı ilk işi: paket + inceleme.md; 'Uygulamada: datasheet'teki akımlar' parçası başa eklenecek (kanal sahibi 19.11)."
     }
   },
-  "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar."
+  "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar.",
+  "ses_duzeyi": "−16,0 LUFS, tepe −1,5 dBTP (iş emri C, 19.11)",
+  "abone_anlari": "3:36,9 (parça 3, 'Bu serinin devamı için…') ve 14:40,9 (parça 7, 'Kanala abone olursan…')"
 }

@@ -27,9 +27,10 @@ function drawCursor(x, y, k) {
   ctx.beginPath(); p.forEach(([a, b], i) => (i ? ctx.lineTo(a, b) : ctx.moveTo(a, b))); ctx.closePath();
   ctx.fillStyle = '#ffffff'; ctx.fill(); ctx.lineWidth = 1.8; ctx.strokeStyle = '#111'; ctx.lineJoin = 'round'; ctx.stroke(); ctx.restore();
 }
-export const ABONE = { klik1: 1.55, klik2: 3.05 }; // kart girisinden itibaren tik zamanlari (ses karisimi icin)
-function drawAbone(u) { // u: kartin ekranda kaldigi sure icindeki saniye (0-6)
-  const inn = ease(u / 0.5), out = ease((u - 5.45) / 0.5), off = (1 - inn) * (CH + 40) + out * (CH + 40);
+// Sesle eszamanli (kanal sahibi 19.11.2026): kart cagri cumlesinin basinda girer, iki tik ve zil cumle (~2,5 sn) bitmeden tamamlanir.
+export const ABONE = { klik1: 1.0, klik2: 1.9, zil: 1.0, sure: 4.5 }; // kart girisinden itibaren tik zamanlari (ses karisimi icin)
+function drawAbone(u) { // u: kartin ekranda kaldigi sure icindeki saniye (0-4,5)
+  const inn = ease(u / 0.4), out = ease((u - 3.9) / 0.5), off = (1 - inn) * (CH + 40) + out * (CH + 40);
   const x0 = CX0, y0 = CY0 + off;
   ctx.save();
   ctx.shadowColor = 'rgba(0,0,0,0.22)'; ctx.shadowBlur = 22; ctx.shadowOffsetY = 6;
@@ -59,7 +60,7 @@ function drawAbone(u) { // u: kartin ekranda kaldigi sure icindeki saniye (0-6)
   ctx.fillStyle = done ? '#6e737a' : '#ffffff'; ctx.font = (done ? '21px' : '31px') + ' DJC'; ctx.textAlign = 'center';
   ctx.fillText(done ? 'ABONE OLUNDU' : 'ABONE OL', (bx0 + 14 + wcx - wr) / 2 + 4, pcy + (done ? 10 : 12));
   ctx.restore();
-  const ring_ = u >= c2 && u < c2 + 1.5, ang = ring_ ? 0.42 * Math.sin((u - c2) * 2 * Math.PI * 3.2) * (1 - (u - c2) / 1.5) : 0;
+  const ring_ = u >= c2 && u < c2 + ABONE.zil, ang = ring_ ? 0.42 * Math.sin((u - c2) * 2 * Math.PI * 3.2) * (1 - (u - c2) / ABONE.zil) : 0;
   drawBell(wcx, pcy + 3, 40, done ? '#111111' : '#8b9096', ang);
   if (ring_) { ctx.strokeStyle = '#111'; ctx.lineWidth = 3.5; ctx.lineCap = 'round'; const a = 0.6 + 0.4 * Math.sin((u - c2) * 18);
     for (const sg of [-1, 1]) for (const k of [0, 1]) { const rr_ = 26 + k * 9; ctx.globalAlpha = a; ctx.beginPath(); ctx.arc(wcx, pcy - 4, rr_, sg < 0 ? Math.PI * 1.05 : -Math.PI * 0.32, sg < 0 ? Math.PI * 1.32 : -Math.PI * 0.05); ctx.stroke(); }
@@ -68,11 +69,11 @@ function drawAbone(u) { // u: kartin ekranda kaldigi sure icindeki saniye (0-6)
   // imlec: sag alttan girer -> ABONE OL -> zil -> cikar
   const pA = [1960, 1110], pB = [bx0 + bw * 0.36, pcy + 6], pC = [wcx + 2, pcy + 8], pD = [1990, 1000];
   let cp = null;
-  if (u >= 0.55 && u < 1.45) { const k = ease((u - 0.55) / 0.9); cp = [pA[0] + (pB[0] - pA[0]) * k, pA[1] + (pB[1] - pA[1]) * k]; }
-  else if (u >= 1.45 && u < 2.25) cp = pB;
-  else if (u >= 2.25 && u < 2.95) { const k = ease((u - 2.25) / 0.7); cp = [pB[0] + (pC[0] - pB[0]) * k, pB[1] + (pC[1] - pB[1]) * k]; }
-  else if (u >= 2.95 && u < 4.4) cp = pC;
-  else if (u >= 4.4 && u < 5.2) { const k = ease((u - 4.4) / 0.8); cp = [pC[0] + (pD[0] - pC[0]) * k, pC[1] + (pD[1] - pC[1]) * k]; }
+  if (u >= 0.35 && u < 0.95) { const k = ease((u - 0.35) / 0.6); cp = [pA[0] + (pB[0] - pA[0]) * k, pA[1] + (pB[1] - pA[1]) * k]; }
+  else if (u >= 0.95 && u < 1.35) cp = pB;
+  else if (u >= 1.35 && u < 1.8) { const k = ease((u - 1.35) / 0.45); cp = [pB[0] + (pC[0] - pB[0]) * k, pB[1] + (pC[1] - pB[1]) * k]; }
+  else if (u >= 1.8 && u < 3.0) cp = pC;
+  else if (u >= 3.0 && u < 3.6) { const k = ease((u - 3.0) / 0.6); cp = [pC[0] + (pD[0] - pC[0]) * k, pC[1] + (pD[1] - pC[1]) * k]; }
   if (cp) { const kk = (Math.abs(u - c1 - 0.05) < 0.08 || Math.abs(u - c2 - 0.05) < 0.08) ? 1.45 : 1.6; drawCursor(cp[0], cp[1] + off * 0, kk); }
 }
 
@@ -81,5 +82,5 @@ export async function init(canvas) {
   canvas.width = 1920; canvas.height = 1080; ctx = canvas.getContext('2d');
   const f2 = new FontFace('DJC', 'url(/_ozel/kalin.ttf)'); await f2.load(); document.fonts.add(f2);
   FOTO = new Image(); FOTO.src = '/_ozel/profil-daire.png'; await FOTO.decode();
-  return { duration: 6.0, ABONE };
+  return { duration: ABONE.sure, ABONE };
 }
