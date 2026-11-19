@@ -218,6 +218,15 @@
       "dal": "claude/icerik-2-1-20261119",
       "denetim": "bağımsız denetim: kritik yok, 4 önemli + küçükler düzeltildi",
       "not": "Metin ve ders-02/plan.md henüz yok (inceleme.md yok). Önerilen bölümleme B1 [1:26–15:12], B2 [15:12–31:33], B3 [31:35–50:59]. 'Uygulamada: gerçek tel, gerçek buton, gerçek pil' (Energizer E91 iç direnç 150–300 mΩ; C&K PTS645 50 mA/12 V DC, ≤100 mΩ; Alpha Wire 3071 22 AWG 16,2 Ω/1000 ft), ~3:30."
+    },
+    "2-2": {
+      "durum": "hazir",
+      "tarih": "2026-11-19",
+      "dosya": "uzun/seri/ders-02/bolum-2/icerik.md",
+      "dogrulama": "uzun/seri/ders-02/bolum-2/icerik_dogrula.py",
+      "dal": "claude/icerik-2-2-20261119",
+      "denetim": "bağımsız denetim 2 tur: kritik yok, 5 önemli + küçükler düzeltildi",
+      "not": "Metin ve ders-02/plan.md henüz yok (inceleme.md yok). Razavi [15:12–31:33]: bağımsız/bağımlı gerilim kaynağı, kuvvetlendirici modeli. 'Uygulamada: gerçek bir kuvvetlendirici bağımlı kaynağın hangi sözünü tutar?' (TI INA180A2 G=50 V/V ±%1, çıkış V_S−0,03 V; TI LM358 A_OL en az 25 / tipik 100 V/mV), şönt seçimi mini tasarımı (25 mΩ), ~3:30."
     }
   },
   "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar.",
