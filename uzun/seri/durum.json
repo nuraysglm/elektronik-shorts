@@ -134,6 +134,10 @@
     {
       "tarih": "2026-11-20T00:10Z",
       "not": "Gece çalışması: B1 onaylar/uzun-1-1 ONAYLANDI (19.11 22:27Z, kanal sahibi: 21.11 11:00 TR planlansın) — bu çalışmada planlama yapılmadı (görev gereği), akşam görevi/genel müdür planlar. B2: 8 sahne (parca-1..8.js; motor üst simge), otomatik QC 8/8 temiz, 8 parça render, abone kartları (4:32, 16:22), müzik; birleşik 16:52,6, −16,1 LUFS / −1,8 dBTP; 49 kare QC; kapak (şablon B), yayin.json; panelde onaylar/uzun-1-2 açıldı. 2N7002E t_p = 10 µs yalnızca dolaylı doğrulandı. B3: metin sürüm 1 (7 parça, 1.994 kelime, ~14,9 dk), dogrula.py TAMAM, bağımsız denetim (kritik yok, 10 önemli düzeltildi); dal claude/uzun-1-3-20261119; panelde onaylar/metin-1-3. Ses üretilmedi, kredi harcanmadı."
+    },
+    {
+      "tarih": "2026-11-19T23:35Z",
+      "not": "Gece çalışması 2 — iş emri F: B1 müziği yeniden karıştırıldı (açılışta 3 sn tek başına müzik, bitiş ekranının tamamında müzik, sessiz an yok); 15:21, −16,1 LUFS / −1,9 dBTP; 14 kare + müzikli anlar ölçüldü; yayin.json +3 sn. Onay (uzun-1-1) geçerli; planlama yapılmadı."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
@@ -148,7 +152,7 @@
     "kaynak": "kanal sahibi (sohbette, genel müdür panele işledi)"
   },
   "intro_karti": "Devre Teorisi I: Ders 1 - Bölüm 1/3",
-  "toplam_video_sn": 918.0,
+  "toplam_video_sn": 921.0,
   "tahta": "uzun/seri/ders-01/bolum-1/tahta/ (NOTLAR.md)",
   "is_emri": "uzun/seri/ders-01/bolum-1/is-emri-20261118.md",
   "hizli_mod": "18.11.2026 20:42 kanal sahibi: 'Bir an önce ilk videoyu yayınlamak istiyorum.' Bu bölüm için gün sırası (Pzt–Cuma tablosu) BEKLENMEZ: her çalışmada sıradaki adımı bitir ve süre kaldıkça hemen sonrakine geç. Sıra: (1) iş emri: parça 5 metin düzeltmesi + doğrulama + değişen kısımlar için bağımsız denetim → panelde onaylar/metin-1-1-p5 (eski/yeni yan yana) → ONAY YOKSA DUR. (2) metin onayı geldiyse: parça 5 sesi (generations_count 1) → zamanlama → parça 5 render (yeni renkler) → parça QC. (3) birleştirme (profil-kucuk.jpg Drive 1XNF7lgiaE9FQA-0dYfG8tWOz_xj9VR6h) → tam QC → kapak → yayin.json (başlık, açıklama, zaman damgaları, etiketler, ilk yorum) → panelde onaylar/uzun-1-1 onay isteği. Yayın tarihini/saatini kanal sahibi belirler; planlamayı genel müdür ya da Cuma akşamı görevi yapar. Onaysız planlama yok.",
@@ -231,10 +235,10 @@
     }
   },
   "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar.",
-  "ses_duzeyi": "−16,1 LUFS, tepe −1,8 dBTP (iş emri E, 19.11)",
-  "abone_anlari": "3:41,3 (parça 3, 'Bu serinin devamı için…') ve 14:45,3 (parça 7, 'Kanala abone olursan…')",
+  "ses_duzeyi": "−16,1 LUFS, tepe −1,9 dBTP (iş emri F, 19.11)",
+  "abone_anlari": "3:44,3 (parça 3) ve 14:48,3 (parça 7) — iş emri F ile +3 sn",
   "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
-  "muzik": "İş emri E UYGULANDI (19.11 22:30Z): Pawn – The Grey Room / Golden Palms; açılış kesiti 0:32,96 (intro kartı) tam düzey, 0:33,26 selam başlayınca konuşmanın ~14 dB altına iner, 0:41 biter; kapanış kesiti 15:08–15:18 kısık (~−24 LUFS), son 2 sn ekran ve ses kararır. Dosyalar depoda yok (Drive).",
+  "muzik": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
   "is_emri_e": "UZUN.md 4 — UYGULANDI 19.11 22:30Z (tahta/muzik_ekle.sh; görüntü ve konuşma değişmedi, kredi yok)",
   "kilit": {
     "baslangic": "2026-11-19T23:12Z",
@@ -250,5 +254,6 @@
     "surum": 1,
     "onay_istegi": "onaylar/metin-1-3 bekliyor (20.11 gece)",
     "not": "Metin + dogrula.py + dogruluk.md + bağımsız denetim (kritik yok, 10 önemli düzeltildi). Ses ÜRETİLMEDİ: metin onayı bekleniyor."
-  }
+  },
+  "is_emri_f": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn."
 }
