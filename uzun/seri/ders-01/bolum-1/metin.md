@@ -24,6 +24,9 @@ Peki telde akım bir an bile durmadan akarken, bu bölme işlemi sana sıfır di
 
 Bu bölümün sonunda akımın asıl tanımını kurmuş olacağız. Üç örnekle de ortalama akımı anlık akımdan ayırmayı öğreneceğiz. Sonuncusunda şaşırtıcı bir şey göreceğiz: telden geçen yük en büyük değerindeyken akım sıfır olabiliyor.
 
+[SELAM — intro kartıyla birlikte; kanal sahibinin önerisi, 19.11.2026, iş emri D; ayrı ses dosyası ses/selam.mp3]
+Merhaba arkadaşlar, Devre Teorisi Bir serisine hoş geldiniz. Bugün Ders Bir'in ilk bölümünde akımı konuşacağız.
+
 Devre teorisinde ne tasarlarsan tasarla, işe büyüklükleri doğru tanımlayarak başlarsın. Bu seriye de tam buradan giriyoruz. Bugünün konusu yük ve akım. Gerilimi bu dersin üçüncü bölümünde ele alacağız.
 ```
 
@@ -32,8 +35,10 @@ Sahne planı:
 - "geçen yükü geçen süreye bölmek": telin altına "akım = geçen yük / süre ?" (soru işareti kırmızı).
 - "sana sıfır diyebilir mi": sağa kırmızı "ortalama = 0 ?" yazılır; kesitin iki yanına zıt yönlü iki küçük mavi ok.
 - "Bu bölümün sonunda": "i = ?" altı mavi çizilir. Kanca biter, tahta silinir (≤0,3 sn).
-- **[INTRO KARTI — 4 sn, sessiz]** Ortada: "Devre Teorisi I – Ders 1, Bölüm 1/3" (siyah), altına "Akım nedir? Ortalama akım ile anlık akım" (mavi). Silinir.
-- "büyüklükleri doğru tanımlayarak": ortaya iki başlık sırayla: "yük", "akım"; sağda küçük gri "gerilim Bölüm 3'te".
+- **[INTRO KARTI + SELAM — 8,4 sn]** Ortada: "Devre Teorisi I: Ders 1 - Bölüm 1/3" (siyah, kırmızı alt çizgi), altına "Akım nedir? Ortalama akım ile anlık akım" (mavi); kart selam cümlesiyle birlikte yazılır, selam bitince silinir. (Eski: 4 sn sessiz kart.)
+- "büyüklükleri doğru tanımlayarak": sol üstte kırmızı köşe başlığı "Ders 1 - Bölüm 1: Akım nedir?", altında kırmızı başlık "Temel büyüklükler"; solda maddeler "- Yük", "- Akım"; sağda koyu yeşil "Gerilim: bu dersin üçüncü bölümünde".
+
+> **Tahta düzeni (iş emri D, 19.11.2026; UZUN.md 4 "Tahta düzeni ve yazım"):** Bütün parçalarda sol üstte kırmızı "Ders 1 - Bölüm 1: Akım nedir?" (bitiş ekranında silinir); sahne başlıkları kırmızı ve sola hizalı ("Örnek 1", "Bilmen gerekenler" …); listeler "- " ile ve büyük harfle başlar; iki sütun (sol x ≈ 120, sağ x ≈ 1000); soluk gri yazılar koyu yeşil (#1E7B4A); gri yalnızca kesen çizgileri. Aşağıdaki sahne planlarındaki küçük harfli/gri ifadeler ekranda bu kurallarla yazılır.
 
 ## [PARÇA 2] Yük, ilk tanım, pencere sorunu, i = dq/dt (~3:00)
 

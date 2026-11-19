@@ -24,3 +24,10 @@ Parça videoları: `wip/uzun-d01-b1/parca-N.mp4` (abone kartı yok; birleştirme
 - `abone.js`: animasyon 4,5 sn; kart 0,4 sn'de girer, tık 1,0 sn (ABONE OL), 1,9 sn (zil), zil sallanması 1,0 sn. Kart sözlü çağrı cümlesinin başında girer.
 - `abone_ses.py`: fare tıkı + tık/zil sesi (numpy, telifsiz) → `abone.wav` (scratchpad).
 - `birlestir.sh PARCA_KLASORU abone.mov abone.wav CIKTI.mp4`: abone anları parça 3 0,05 sn ve parça 7 49,35 sn (parça 6'daki eski an kaldırıldı: orada sözlü çağrı yok); tepe sınırlama + iki geçişli doğrusal loudnorm → −16 LUFS, ≤ −1,5 dBTP; efektler −7,3 dB (anlık en yüksek ≈ −28 LUFS, konuşmanın ~12 dB altı).
+
+## İş emri D (19.11.2026)
+- `motor.js`: `G` (#1E7B4A koyu yeşil), `L` = 120 / `RX` = 1000 sütun hizaları, `kose()` sol üst kırmızı "Ders 1 - Bölüm 1: Akım nedir?" (parça 1'de kalemle yazılır; parça 2–7'de `sabit: true` = önceki parçadan sürüyor, kalem sırasına girmez), `baslik()` kırmızı sola hizalı başlık (+ alt çizgi). Köşe başlığı durağan-vurgu adayı değildir.
+- Parça 1: intro aralığı 8,4 sn (`parcalar.json`); ses = `parca-1.wav` 0–32,96 + 0,3 sn sessizlik + `selam.wav` (8,1 sn'ye doldurulmuş) + kalan. Selam −19,5 LUFS'e normalize edilir (ses_hazirla.sh ile aynı loudnorm).
+- Parça 7: bitiş ekranından önce köşe başlığı silinir; "Oynatma listesi" koyu yeşil.
+- Abone anları birleşik videoda: 3:41,3 ve 14:45,3 (parça yerel zamanları değişmedi: 3 → 0,05 sn; 7 → 49,35 sn).
+- Müzik yok (Drive'da `seri-muzik` bulunmadı).
