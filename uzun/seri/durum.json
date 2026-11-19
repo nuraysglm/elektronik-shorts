@@ -158,5 +158,12 @@
     "onay_istegi": "onaylar/metin-1-2 (19.11.2026)",
     "not": "Metin onayı 28.11'e kadar gelmezse yayın kayabilir (UZUN.md 1b)."
   },
-  "is_emri_c": "uzun/seri/ders-01/bolum-1/is-emri-20261119-c.md"
+  "is_emri_c": "uzun/seri/ders-01/bolum-1/is-emri-20261119-c.md",
+  "icerik": {
+    "1-2": {
+      "durum": "bekleniyor",
+      "not": "İçerik Ajanı ilk işi: paket + inceleme.md; 'Uygulamada: datasheet'teki akımlar' parçası başa eklenecek (kanal sahibi 19.11)."
+    }
+  },
+  "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar."
 }
