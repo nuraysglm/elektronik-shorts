@@ -236,10 +236,7 @@
   "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
   "muzik": "İş emri E UYGULANDI (19.11 22:30Z): Pawn – The Grey Room / Golden Palms; açılış kesiti 0:32,96 (intro kartı) tam düzey, 0:33,26 selam başlayınca konuşmanın ~14 dB altına iner, 0:41 biter; kapanış kesiti 15:08–15:18 kısık (~−24 LUFS), son 2 sn ekran ve ses kararır. Dosyalar depoda yok (Drive).",
   "is_emri_e": "UZUN.md 4 — UYGULANDI 19.11 22:30Z (tahta/muzik_ekle.sh; görüntü ve konuşma değişmedi, kredi yok)",
-  "kilit": {
-    "baslangic": "2026-11-19T22:29Z",
-    "oturum": "gece-uzun-1-2"
-  },
+  "kilit": null,
   "bolum_3": {
     "adim": "metin_onayi",
     "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
