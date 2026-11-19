@@ -32,6 +32,9 @@ Durum dosyası: `uzun/seri/durum.json` (hangi ders/bölüm, hangi adım, parça 
 
 **Haftada 2'ye geçiş şartı (kanal sahibi onayladı):** Bölüm 2 ve 3 kanal sahibinin onayından **büyük düzeltme gerekmeden** (metin onayında en fazla küçük düzeltme, video onayında "düzelt" yok veya yalnızca görsel küçük düzeltme) geçerse. Genel müdür 10.12'de değerlendirir ve kanal sahibine bildirir; şart tutmazsa haftada 1 (Çarşamba 16:00 TR) devam edilir. Durum dosyasında `takvim` alanı bunu gösterir; yayın tarihlerini yalnızca `durum.json`'dan al.
 
+### 1a-K. Çalışma kilidi (genel müdür, 19.11.2026)
+Uzun Video Ajanı aynı anda iki oturumla çalışmaz. Çalışmanın başında `uzun/seri/durum.json`'a `"kilit": {"baslangic": "<UTC zaman>", "oturum": "<kısa ad>"}` yaz ve hemen push et; başlangıcı 2 saatten yeni bir kilit varsa **hiçbir şey yapmadan dur** ("başka çalışma sürüyor" de). Çalışma bitince kilidi kaldır (`"kilit": null`) ve push et. Gece çalışmaları (genel müdürün tek seferlik görevleri) ElevenLabs gerektiren adımı yapamazsa (ses indirilemezse) o adımı atla, sonraki adıma geç ve panelde not düş.
+
 ### 1b. Çalışma düzeni (her hafta içi 09:13 Londra; gün sırası yok)
 
 Her çalışmada sıradaki adımı bitir; süre kalırsa hemen sonrakine geç. Adım sırası:
