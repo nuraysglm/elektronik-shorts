@@ -31,3 +31,7 @@ Parça videoları: `wip/uzun-d01-b1/parca-N.mp4` (abone kartı yok; birleştirme
 - Parça 7: bitiş ekranından önce köşe başlığı silinir; "Oynatma listesi" koyu yeşil.
 - Abone anları birleşik videoda: 3:41,3 ve 14:45,3 (parça yerel zamanları değişmedi: 3 → 0,05 sn; 7 → 49,35 sn).
 - Müzik yok (Drive'da `seri-muzik` bulunmadı).
+
+## İş emri E (19.11.2026)
+- `muzik_ekle.sh GIRIS.mp4 acilis.mp3 kapanis.mp3 CIKTI.mp4`: birleşik videoya (iş emri D çıktısı) seri müziği. Açılış kesiti 32,96 sn'de (intro kartı) girer, 33,26 sn'de (selam) 0,25 sn içinde −7,3 dB → −19,3 dB'e iner (konuşmanın ~14 dB altı), 8 sn sonunda yumuşak biter; kapanış kesiti son 10 sn −7,6 dB (~−24 LUFS); son 2 sn `fade` (görüntü) + `afade` (ses); `alimiter` 0,78. Sonuç −16,1 LUFS, tepe −1,8 dBTP.
+- Müzik dosyaları Drive'dan scratchpad'e indirildi, depoya girmez.
