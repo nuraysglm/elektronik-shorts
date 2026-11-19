@@ -16,7 +16,13 @@ Metin sürüm 3, kanal sahibi onayı 19.11.2026 21:13Z (`onaylar/metin-1-2`).
 
 Tahmini birleşik süre: 16:53 (13–17 dk içinde).
 
-## Sıradaki
-1. Render öncesi: 2N7002E I_DM koşulu (tp = 10 µs) PDF s. 1'de gözle doğrula (`icerik.md` 5b).
-2. `motor.js`, `tahta.html`, `render.mjs`, `kontrol.mjs`, `abone.*` Bölüm 1'den kopyalanır (köşe başlığı "Ders 1 - Bölüm 2: Akımın yönü, açık devre ve yük"); `parca-1.js … parca-8.js` sahne planlarına göre yazılır → otomatik QC → render.
-3. Birleştirme: Bölüm 1 `birlestir.sh` + `muzik_ekle.sh` (açılış kesiti intro kartıyla 37,5 sn'de, selam 37,8 sn'de).
+## Render ve birleştirme (gece çalışması 19/20.11.2026)
+- 2N7002E I_DM koşulu: PDF metninde µ işareti düşüyor ("tp = 10 s"); görsel doğrulama bu ortamda yapılamadı (onsemi sitesi curl'e kapalı, WebFetch yalnızca metin). Dolaylı kanıt: aynı belgede bütün µ'lar düşüyor (pulse width ≤ 300 s = 300 µs; I_D = 250 A = 250 µA) ve SOA grafiğinin eksen dizisi "10 s, 100 s, 1 ms, 10 ms…" → 10 µs. Ekranda "t_p = 10 μs".
+- `motor.js`: Bölüm 1 motoru + `^` üst simge ve `` ` `` (üst simgenin alt simgesi; ∫ sınırları) + `shade`, `strike`, `subBox`, `kutu` yardımcıları. Köşe başlığı "Ders 1 - Bölüm 2: Akımın yönü, açık devre ve yük".
+- `parca-1.js … parca-8.js`: metin.md sahne planları. Değişiklikler: "Mini tasarım: sensör + düğme pil" → "sensör ve düğme pil" (2d-5: "+" kelime yerine yok); Parça 5'e "Bölüm 1 ile sınama" ve "İşaret" başlıkları; Parça 6 x işaret etiketleri 18 px sağa (5 ms kesikli çizgisiyle çakışmasın).
+- `qc.sh N`: otomatik QC özeti (kontrol.mjs). 8/8: tek kalem çakışması 0, taşma 0, yazı–yazı çakışması 0, ≥1 sn durağan 0; yazı–çizgi yalnızca bilerek üstü çizilen "v = 0 V ?" ve "0 V ?".
+- Render: `node render.mjs N --out wip/uzun-d01-b2/parca-N.mp4 --ses SES` (ses: ses_hazirla.sh çıktısı; parça 1 = parca-1.wav 0–37,5 + 0,3 sn sessizlik + selam.wav 11,1 sn'ye doldurulmuş + kalan). Süreler: 60,56 / 216,8 / 112,2 / 132,2 / 139,32 / 134,76 / 139,77 / 77,07 sn.
+- Abone katmanı: `abone.mjs` (OZEL: profil-kucuk.jpg'den yuvarlak profil-daire.png + DejaVuSansCondensed-Bold → kalin.ttf; scratchpad, depoda yok), `abone_ses.py`.
+- `birlestir.sh` (8 parça; abone 272,18 sn ve 982,50 sn) → `muzik_ekle.sh` (T0 37,5, selam 37,8) → `media/uzun/devre-teorisi-1-ders-01-bolum-2.mp4`: 16:52,6, 1920×1080, 30 fps, 33,4 MB, −16,1 LUFS, tepe −1,8 dBTP.
+- Tam QC: 49 kare gözle kontrol (kanca, intro, her sahne, abone 1 ve 2'nin 4 anı, bitiş ekranı, kararma); zaman damgaları 6:29, 8:41, 13:15, 15:35 karelerle doğrulandı.
+- Bilinen: 1. abone kartı 4:32'de (UZUN.md 4a "en geç 4. dk"; onaylı metinde çağrı Parça 2'nin sonunda, Parça 2 "Uygulamada" eklemesiyle uzadı). Panelde not edildi.
