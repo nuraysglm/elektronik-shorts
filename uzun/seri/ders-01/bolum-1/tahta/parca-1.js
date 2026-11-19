@@ -1,41 +1,43 @@
-// Parca 1: kanca + intro karti + giris (metin.md [PARCA 1])
-import { K, B, R, GR, S, E, Wt, text, path, line, dashed, arrow, frame, under, erase, oval, mark, pulse, pad } from './motor.js';
-export function build({ ses }) {
+// Parca 1: kanca + intro karti (selam sesiyle) + giris (metin.md [PARCA 1])
+// Is emri D (19.11.2026): yeni tahta duzeni (sol ust kirmizi baslik, kirmizi basliklar, '- ' maddeler, iki sutun, koyu yesil etiketler);
+// intro karti artik sessiz degil: 32,96 sn'ye 8,4 sn aralik (0,3 sn bosluk + selam 7,71 sn + 0,4 sn), selam kartla birlikte.
+import { K, B, R, G, L, RX, S, E, Wt, text, path, line, dashed, arrow, frame, under, erase, oval, mark, pulse, pad, kose, baslik } from './motor.js';
+export const INTRO = 32.96, ARA = 8.4;
+export function build() {
   const g = 'kanca';
-  // --- ilk kare: devre kutusu + kapali tel halkasi + kesit
-  const bx = [200, 330, 440, 480];
-  frame(bx, K, 0.04, 0.7, { g, lw: 5 });
-  text('devre', 320, 418, 48, K, 0.8, { g, align: 'c', dur: 0.4 });
-  path([[[320, 330], [320, 230], [1180, 230], [1180, 580], [320, 580], [320, 480]]], K, 5, 1.3, 1.5, { g });
-  dashed([750, 180], [750, 282], K, 4, 2.9, 0.35, { g, dash: 12, gap: 9 });
-  const iq = text('i = ?', 790, 150, 52, B, 3.4, { g, dur: 0.5 });
+  kose(0.04, { g, dur: 0.7 });
+  // --- devre kutusu + kapali tel halkasi + kesit (sol sutun)
+  const bx = [L, 300, L + 240, 450];
+  frame(bx, K, 0.8, 0.5, { g, lw: 5 });
+  text('Devre', L + 120, 388, 46, K, 1.35, { g, align: 'c', dur: 0.3 });
+  path([[[L + 120, 300], [L + 120, 210], [1100, 210], [1100, 560], [L + 120, 560], [L + 120, 450]]], K, 5, 1.7, 1.1, { g });
+  dashed([670, 160], [670, 262], K, 4, 2.85, 0.3, { g, dash: 12, gap: 9 });
+  const iq = text('i = ?', 710, 150, 52, B, 3.2, { g, dur: 0.45 });
   // --- "gecen yuku gecen sureye bolmek"
-  const t1 = Wt(1, 'geçen');
-  const f1 = text('akım = geçen yük / süre', 200, 700, 52, K, t1, { g, dur: 1.5 });
+  const f1 = text('Akım = geçen yük / süre', L, 700, 52, K, Wt(1, 'geçen'), { g, dur: 1.5 });
   text('?', f1.box[2] + 12, 700, 52, R, Wt(1, 'bölmek'), { g, dur: 0.2 });
   // --- "sifir diyebilir mi": zit yonlu iki ok + kirmizi soru
-  arrow(780, 202, 880, 202, B, Wt(2, 'akım'), 0.35, { g, lw: 5, head: 14 });
-  arrow(720, 258, 620, 258, B, Wt(2, 'durmadan'), 0.35, { g, lw: 5, head: 14 });
-  const oq = text('ortalama = 0 ?', 1290, 380, 56, R, Wt(2, 'sıfır'), { g, dur: 0.8 });
+  arrow(700, 182, 800, 182, B, Wt(2, 'akım'), 0.35, { g, lw: 5, head: 14 });
+  arrow(640, 238, 540, 238, B, Wt(2, 'durmadan'), 0.35, { g, lw: 5, head: 14 });
+  const oq = text('Ortalama = 0 ?', 1260, 330, 56, R, Wt(2, 'sıfır'), { g, dur: 0.8 });
   oval(oq.box, R, Wt(3, 'hesap'), 0.6, { g });
   pulse(pad(f1.box, 4), B, Wt(3, 'hesap') + 0.7, E(4) + 0.3, { g });
-  // --- vaat
+  // --- vaat (sag sutun)
   under(iq, B, Wt(6, 'sonunda'), 0.35, { g });
-  const v1 = text('ortalama akım', 1290, 520, 44, K, Wt(7, 'ortalama'), { g, dur: 0.6 });
-  const v2 = text('anlık akım', 1290, 590, 44, B, Wt(7, 'anlık'), { g, dur: 0.5 });
-  line([v1.box[0] - 30, 498], [v1.box[0] - 30, 612], K, 3, E(7) - 0.4, 0.3, { g });
-  text('yük en büyükken akım sıfır?', 1290, 700, 44, R, Wt(8, 'yük'), { g, dur: 1.3 });
-  // --- intro karti (4 sn, sessiz)
-  const ti = 32.96 + 0.1; erase(g, 32.96);
-  const c1 = text('Devre Teorisi I: Ders 1 - Bölüm 1/3', 960, 460, 84, K, ti, { g: 'intro', align: 'c', dur: 1.6 });
-  path([[[c1.box[0] + 10, 492], [c1.box[2] - 10, 492]]], R, 5, ti + 1.75, 0.35, { g: 'intro' });
-  text('Akım nedir? Ortalama akım ile anlık akım', 960, 590, 58, B, ti + 2.2, { g: 'intro', align: 'c', dur: 1.25 });
-  erase('intro', 32.96 + 4.0); mark('intro', [32.96, 4.0]);
-  // --- giris: buyuklukler
-  const h = text('temel büyüklükler', 960, 300, 64, K, Wt(9, 'büyüklükleri'), { g: 'g', align: 'c', dur: 1.0 });
-  under(h, K, Wt(9, 'tanımlayarak'), 0.4, { g: 'g' });
-  const ty = text('Devre Teorisi I', 960, 140, 44, GR, S(9) + 0.1, { g: 'g', align: 'c', dur: 0.7 });
-  const y1 = text('yük', 640, 480, 88, B, Wt(11, 'yük'), { g: 'g', align: 'c', dur: 0.4 });
-  const a1 = text('akım', 1020, 480, 88, B, Wt(11, 'akım'), { g: 'g', align: 'c', dur: 0.45 });
-  text('gerilim üçüncü bölümde', 1340, 478, 46, GR, Wt(12, 'gerilimi'), { g: 'g', dur: 0.8 });
+  const v1 = text('- Ortalama akım', 1260, 470, 50, K, Wt(7, 'ortalama'), { g, dur: 0.6 });
+  text('- Anlık akım', 1260, 545, 50, B, Wt(7, 'anlık'), { g, dur: 0.5 });
+  text('Yük en büyükken akım sıfır?', 1260, 650, 48, R, Wt(8, 'yük'), { g, dur: 1.3 });
+  // --- intro karti + selam (8,4 sn)
+  const ti = INTRO + 0.1; erase(g, INTRO);
+  const c1 = text('Devre Teorisi I: Ders 1 - Bölüm 1/3', 960, 460, 84, K, ti, { g: 'intro', align: 'c', dur: 2.4 });
+  path([[[c1.box[0] + 10, 492], [c1.box[2] - 10, 492]]], R, 5, ti + 2.55, 0.4, { g: 'intro' });
+  text('Akım nedir? Ortalama akım ile anlık akım', 960, 590, 58, B, ti + 3.2, { g: 'intro', align: 'c', dur: 2.2 });
+  erase('intro', INTRO + ARA); mark('intro', [INTRO, ARA]);
+  // --- giris: temel buyuklukler
+  const g2 = 'g';
+  kose(S(9) + 0.05, { g: g2, dur: 0.9 });
+  baslik('Temel büyüklükler', 210, Wt(9, 'büyüklükleri'), { g: g2, size: 62, dur: 1.0, alt: Wt(9, 'tanımlayarak') });
+  text('- Yük', L, 340, 72, B, Wt(11, 'yük'), { g: g2, dur: 0.4 });
+  text('- Akım', L, 440, 72, B, Wt(11, 'akım'), { g: g2, dur: 0.45 });
+  text('Gerilim: bu dersin üçüncü bölümünde', RX, 340, 46, G, Wt(12, 'gerilimi'), { g: g2, dur: 1.2 });
 }

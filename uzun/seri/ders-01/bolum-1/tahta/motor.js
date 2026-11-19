@@ -5,7 +5,9 @@
 // bir hareketle gider. Istenen zamandan kayma (gecikme) kontrol.mjs'de raporlanir.
 // Abone karti bu motorda CIZILMEZ: ayri saydam katman olarak (abone.html) render edilip birlestirmede bindirilir
 // (profil fotografi depoya girmez).
-export const K = '#1c1c1c', B = '#1a56c4', R = '#d1242a', GR = '#8a8f96', BG = '#fbfaf6';
+export const K = '#1c1c1c', B = '#1a56c4', R = '#d1242a', GR = '#8a8f96', G = '#1E7B4A', BG = '#fbfaf6';
+// Tahta duzeni (UZUN.md 4, kanal sahibi 19.11.2026): sol ust kirmizi ders/konu basligi, kenar payi ~120 px, iki sutun
+export const KOSE = 'Ders 1 - Bölüm 1: Akım nedir?', L = 120, RX = 1000;
 export const W = 1920, H = 1080, ALT = 821; // alt %24 bant (y > 821) yalnizca abone/kapanis kartlari
 let ctx, items = [], Z, DUR = 0, seq = [], erases = [], marks = {};
 const used = new Set();
@@ -51,7 +53,7 @@ export function add(o) { o.t1 ??= Infinity; o.req = o.t0; items.push(o); return 
 export function erase(g, t) { erases.push([g, t]); }
 export function text(s, x, y, size, color, t0, o = {}) {
   const w = mw(s, size); const x0 = o.align === 'c' ? x - w / 2 : o.align === 'r' ? x - w : x;
-  const it = add({ k: 'text', s, x: x0, y, size, color, w, t0, dur: o.dur ?? Math.min(2.4, Math.max(0.3, s.length * 0.045)), g: o.g, pen: true, kart: o.kart });
+  const it = add({ k: 'text', s, x: x0, y, size, color, w, t0, dur: o.sabit ? 0 : (o.dur ?? Math.min(2.4, Math.max(0.3, s.length * 0.045))), g: o.g, pen: !o.sabit, kart: o.kart, sabit: !!o.sabit });
   it.box = [x0 - 6, y - size * 0.95, x0 + w + 6, y + size * 0.3];
   return it;
 }
@@ -70,6 +72,10 @@ export function dashRect(box, color, lw, t0, dur, o = {}) {
   for (const [p0, p1] of [[[a, b], [c, b]], [[c, b], [c, d]], [[c, d], [a, d]], [[a, d], [a, b]]]) { const L = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]), dd = 16, gp = 11; for (let s = 0; s < L; s += dd + gp) { const u = s / L, v = Math.min(1, (s + dd) / L); segs.push([[p0[0] + (p1[0] - p0[0]) * u, p0[1] + (p1[1] - p0[1]) * u], [p0[0] + (p1[0] - p0[0]) * v, p0[1] + (p1[1] - p0[1]) * v]]); } }
   return path(segs, color, lw, t0, dur, o);
 }
+// sol ust kose basligi: yazilarak (kalemle) ya da bir onceki parcadan surdugu icin hazir (sabit)
+export function kose(t0, o = {}) { return text(KOSE, L, 78, 42, R, t0, { g: o.g ?? 'kose', dur: o.dur ?? 1.0, sabit: o.sabit }); }
+// kirmizi sola hizali baslik (+ istege bagli alt cizgi)
+export function baslik(s, y, t0, o = {}) { const it = text(s, o.x ?? L, y, o.size ?? 58, R, t0, { g: o.g, dur: o.dur }); if (o.alt) under(it, R, o.alt, 0.35, { g: o.g }); return it; }
 export function fx(fn, t0, t1, o = {}) { return add({ k: 'fx', fn, t0, t1, g: o.g, dur: 0 }); }
 export function pulse(box, color, t0, t1, o = {}) { return add({ k: 'pulse', box, color, t0, t1, g: o.g, dur: 0 }); }
 export function dot(c, r, color, t0, o = {}) { return add({ k: 'dot', c, r, color, t0, dur: 0.15, g: o.g, pen: true }); }
@@ -183,7 +189,7 @@ export function draw(t) {
   // durağan an kalmasin: kalem durur ve nabiz yoksa en son yazilan gorunur yazi hafifce vurgulanir
   const pen = penAt(t);
   if (!anyPulse && !busyAt(t)) {
-    const last = act.filter((it) => it.k === 'text' && t >= it.t0 + it.dur && !it.kart).sort((a, b) => b.t0 - a.t0)[0];
+    const last = act.filter((it) => it.k === 'text' && t >= it.t0 + it.dur && !it.kart && !it.sabit && it.s !== KOSE).sort((a, b) => b.t0 - a.t0)[0];
     if (last) { const u = t - (last.t0 + last.dur); ctx.globalAlpha = Math.min(1, u / 0.4) * (0.08 + 0.05 * Math.sin(u * 2 * Math.PI * 0.9)); ctx.fillStyle = last.color === R ? R : B; rr(...last.box, 12); ctx.fill(); ctx.globalAlpha = 1; }
   }
   for (const it of act) {
