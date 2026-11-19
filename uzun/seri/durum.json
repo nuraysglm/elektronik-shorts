@@ -118,14 +118,18 @@
     {
       "tarih": "2026-11-19T20:00Z",
       "not": "İş emri D: 7 parça yeni tahta düzeniyle yeniden yazıldı (sol üst kırmızı 'Ders 1 - Bölüm 1: Akım nedir?', kırmızı başlıklar, '- ' maddeler, büyük harf/imla, iki sütun, koyu yeşil etiketler); selam sesi (eleven_v4, 1 take, 111 kredi, curl ile indirildi) intro kartıyla; müzik yok (Drive'da dosya yok). Otomatik QC 7/7 temiz, render, birleştirme 15:18, 30,3 MB, −16,0 LUFS / −1,6 dBTP; 48 kare gözle kontrol; zaman damgaları +4,4 sn (yayin.json). onaylar/uzun-1-1 güncellendi."
+    },
+    {
+      "tarih": "2026-11-19T21:45Z",
+      "not": "uzun-1-1 video onayı hâlâ bekliyor (Perşembe; planlama yok). B2 metin sürüm 3: inceleme.md uygulandı (yeni Parça 2 'Uygulamada: datasheet'teki akımlar', 8 parça; buton örneği; de te; köprüler; üç kısaltma + ek kısaltmalar), selam ve yeni tahta düzeni sahne planlarında, abone kartları sözlü çağrılarla eşzamanlı. dogrula.py güncellendi (TAMAM). Bağımsız denetim: kritik yok, 8 önemli + küçükler düzeltildi. 2.248 kelime, ~16,5 dk. onaylar/metin-1-2 yeniden 'bekliyor'. Ses üretilmedi."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.3,
   "acik_sorular": [],
-  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: Cuma akşamı görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar (medya: main dalı raw URL); 'düzelt' gelirse notu uygula. B2: inceleme.md uygula → doğrulama + denetim → onaylar/metin-1-2 yeniden onaya.",
-  "not": "İş emri D uygulandı; onaylar/uzun-1-1 güncel video ile yeniden 'bekliyor'. B2: inceleme.md sıradaki çalışmada (yeni düzen kurallarıyla).",
+  "sonraki_is": "onaylar/uzun-1-1 'onayla' gelirse: Cuma akşamı görevi/genel müdür 21.11 08:00 Londra'ya Metricool'da planlar; 'düzelt' gelirse notu uygula. B2: metin-1-2 'onayla' gelirse ses (8 parça + selam) → zamanlama → render (önce 2N7002E tp = 10 µs PDF'de gözle doğrula). Onay yoksa B3 adım 1 (icerik.md hazır) başlanabilir.",
+  "not": "B1: onaylar/uzun-1-1 bekliyor. B2: metin sürüm 3 onaylar/metin-1-2'de bekliyor; onay gelmeden ses yok.",
   "metin_onayi": {
     "durum": "onaylandi",
     "zaman": "2026-11-18T08:31:00Z",
@@ -167,15 +171,16 @@
     "yayin": "2026-12-02T13:00:00 Europe/London (16:00 TR)",
     "metin": "uzun/seri/ders-01/bolum-2/metin.md",
     "dal": "claude/uzun-1-2-20261119",
-    "kelime": 1953,
-    "tahmini_dk": 14.6,
-    "onay_istegi": "onaylar/metin-1-2 (19.11.2026)",
-    "not": "Metin onayı 28.11'e kadar gelmezse yayın kayabilir (UZUN.md 1b)."
+    "kelime": 2248,
+    "tahmini_dk": 16.5,
+    "onay_istegi": "onaylar/metin-1-2 (sürüm 3, 19.11.2026 21:45Z, bekliyor)",
+    "not": "Sürüm 3: inceleme.md uygulandı, bağımsız denetim (kritik yok, 8 önemli düzeltildi). Metin onayı 28.11'e kadar gelmezse yayın kayabilir (UZUN.md 1b).",
+    "surum": 3
   },
   "is_emri_c": "uzun/seri/ders-01/bolum-1/is-emri-20261119-c.md — UYGULANDI 19.11 14:40Z",
   "icerik": {
     "1-2": {
-      "durum": "inceleme_hazir",
+      "durum": "uygulandi",
       "tarih": "2026-11-19",
       "dosya": "uzun/seri/ders-01/bolum-2/icerik.md",
       "inceleme": "uzun/seri/ders-01/bolum-2/inceleme.md",

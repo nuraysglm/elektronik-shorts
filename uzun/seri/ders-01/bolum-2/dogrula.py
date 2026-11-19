@@ -112,7 +112,7 @@ for n, metin in parcalar:
     assert not re.search(r"(^|[.!?]\s+)İ\b", metin)
     # "de te" yalniz cumle basinda veya islem sozcugunden sonra (inceleme B5)
     for m in re.finditer(r"(\S+)\s+de te\b", metin):
-        assert m.group(1).lower().strip(",") in ("eşittir", "bölü", "çarpı", "yani"), (n, m.group(0))
+        assert m.group(1).lower().strip(",") in ("eşittir", "bölü", "çarpı"), (n, m.group(0))
 print("Toplam", toplam, "kelime, konusma ~", round(toplam / 2.6 / 60, 2), "dk; +125 sn (Bolum 1 olcumu: kart, abone, sessizlik, bitis) ->",
       round((toplam / 2.6 + 125) / 60, 2), "dk")
 assert 1800 <= toplam <= 2330 and 13 <= (toplam / 2.6 + 125) / 60 <= 17
