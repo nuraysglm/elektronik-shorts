@@ -1,6 +1,6 @@
 # Doğruluk kaydı — Devre Teorisi I: Ders 1 - Bölüm 2/3
 
-Tarih: 19.11.2026. Aşama: metin sürüm 1 (bağımsız denetim öncesi/sonrası notu bölüm 6'da). Ses ve görüntü yok.
+Tarih: 19.11.2026. Aşama: metin sürüm 2 (bağımsız denetim 2 tur, bölüm 6). Ses ve görüntü yok.
 
 ## 1. Kaynaklar (onaylı, `kaynaklar.md`)
 - B. Razavi, Basic Circuit Theory, **Ders 1** (videoId `U_4q0sfChOk`) [17:01–27:52]. Transkript kanal sahibinin özel Drive klasöründen (`1-smnUzmnSn-evJiD7ypgqm93scvD-e80`) okundu; depoya konmadı. Aşağıda yalnızca zaman damgası ve kısa özet var.
@@ -18,7 +18,7 @@ Tarih: 19.11.2026. Aşama: metin sürüm 1 (bağımsız denetim öncesi/sonrası
 | 6 | **En sık yapılan hata:** "akım sıfır ⇒ gerilim sıfır". Doğrusu: açık devre yalnızca i = 0'ı garanti eder, uçlardaki gerilimi çevresindeki devre belirler | Razavi'nin açık uyarısı [19:08–19:32] ("an open circuit only guarantees a zero current but it knows nothing about the voltage… given by the circuitry surrounding") → "kaynağın kendisi uyarıyor" şartı (UZUN.md 2) sağlanıyor |
 | 7 | 9 V, 3 kΩ, anahtar halkası: kapalı ideal anahtar tel gibi → i = 9 V / 3 kΩ = 3 mA; açıkken i = 0, direnç gerilimi 3 kΩ × 0 = 0 V → anahtar uçlarında 9 V | Ohm yasası [10:43–10:59]; kapalı anahtar = iletken, açık = iletmiyor [26:19–27:00]; bağımsız kontrol: KVL (`dogrula.py`; KVL videoda adı geçmeden kullanılmaz, yalnızca doğrulama) |
 | 8 | Tek başına duran pilin uçları açık devredir: akım yok, uçlar arasında gerilim var | #6 ile aynı ilke; ideal pilin gerilimi bağlanan şeyden bağımsız [42:54–43:19] |
-| 9 | Kopuk bağlantıdan akım geçmez ama iki ucu arasında gerilim ölçülebilir (arıza arama) | #6'nın uygulaması; "ölçebilirsin" (her durumda sıfırdan farklı olduğu iddia edilmiyor) |
+| 9 | Kopuk bağlantıdan akım geçmez ama iki ucu arasında yine bir gerilim olabilir | #6'nın uygulaması ("olabilir"; her durumda sıfırdan farklı olduğu iddia edilmiyor) |
 | 10 | Akımdan yüke: q = ∫₀^t₁ i dt; yük = akım grafiğinin altındaki alan; ince şerit dq = i dt | [19:48–21:02], [23:08–23:31] |
 | 11 | Eksen altındaki alan eksi yük (okun tersine geçiş) | #2 ve #10'un birleşimi; `dogrula.py` sayısal integral |
 | 12 | Türev ve integral birbirinin tersi (Bölüm 1 örneği: ∫₀³ 4t dt = 18 mC = q(3)) | [21:02] ("we can go back and forth"); `dogrula.py` |
@@ -42,5 +42,6 @@ Razavi Ders 1'in bu aralıktaki örnekleri — 0 → i1 → 0 darbe akımının 
 ## 5. Ekrandaki yazılar
 Tam liste `metin.md` sahne planlarında. Gösterim: küçük i, q; çarpma "×"; ondalık virgül; ekranda "·" yok; integral sınırları yazılı (∫₀^t₁, ∫₀², ∫₀³); birimler mA, µC, mC, kΩ, V.
 
-## 6. Bağımsız denetim
-(denetim sonrası doldurulur)
+## 6. Bağımsız denetim (19.11.2026)
+Denetim 1 (alt ajan, transkriptle karşılaştırmalı): sayılar doğru, seviye üniversite 1. sınıf, kopya riski düşük (darbe örneği ve R1 sentezi kullanılmamış; iki kollu devre özgün). KRİTİK 1: parça 3'te anahtarın bağlantı tarifi çizimle tersti → ses ve sahne düzeltildi. ÖNEMLİ: hesabı gösterilmeyen sayılar (3 mA/ms, eğim 24 − 6, kapalı anahtarda 0 V, i(4 s) = 6 − 2 × 4, ters türev satırı), gruplama belirsizliği ("üç te kare bölü iki" → "te karenin üç katının yarısı"), "de te" okunuşu, ekranda kelime yerine ":" (tam cümlelere çevrildi), kaynaksız arıza arama iddiası (çıkarıldı), "hiçbir an bu değeri" (düzeltildi: rampada bir an geçiyor), uçları boşta pil çizimi (açık anahtarlı pile çevrildi). KÜÇÜK bulguların hepsi uygulandı.
+Denetim 2 (değişen kısımlar): yeni KRİTİK/ÖNEMLİ yok. 5 küçük not (3 mA/ms birimi, alt sınır adımı, ses–ekran ifade birliği, pil girişi, uzun eğim cümlesi) uygulandı.

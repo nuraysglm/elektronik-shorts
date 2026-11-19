@@ -1,6 +1,6 @@
 # Devre Teorisi I: Ders 1 - Bölüm 2/3 — Akımın yönü, açık devre ve akım grafiğinden geçen yük
 
-Kaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA) [17:01–27:52]. Referanstır, çeviri değildir: anlatım ve bütün örnekler özgündür (`../plan.md`, `dogruluk.md`). Sürüm 1 (19.11.2026).
+Kaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA) [17:01–27:52]. Referanstır, çeviri değildir: anlatım ve bütün örnekler özgündür (`../plan.md`, `dogruluk.md`). Sürüm 2 (19.11.2026, bağımsız denetimden sonra).
 
 **En sık yapılan hata:** "Açık devrede akım sıfır olduğuna göre gerilim de sıfırdır." Doğrusu: açık devre yalnızca akımın sıfır olduğunu garanti eder; uçlarındaki gerilimi çevresindeki devre belirler (Razavi bu noktayı açıkça uyarır [19:08–19:32]). Örnekte açık anahtarın uçlarında 9 V var.
 Az bilinen nokta: doğrusal artan akımda sürenin ilk yarısında toplam yükün yarısı değil, dörtte biri geçer (Örnek 2).
@@ -81,7 +81,7 @@ Doğrusu şu. Direncin içinden akım geçmiyor. Ohm yasasına göre direncin ge
 
 İki durumu yan yana koyalım. Anahtar kapalıyken akım üç miliamper. Direncin gerilimi, üç kiloohm çarpı üç miliamper, dokuz volt. Bataryanın bütün gerilimi dirençte, tel gibi davranan anahtarın uçları arasında ise sıfır volt. Anahtar açıkken akım sıfır, anahtarın uçları arasındaki gerilim dokuz volt. Yani akım sıfıra inerken, anahtarın gerilimi sıfırdan dokuz volta çıktı.
 
-Aslında bunu her gün görüyorsun. Dokuz voltluk bir pilin uçlarına yalnızca açık bir anahtar bağlı olsun. Anahtar açık, yani pilin uçları arasında bir açık devre var. Pilden akım çekilmiyor. Ama uçları arasında dokuz volt duruyor.
+Aynı şey tek bir pilde de geçerli. Dokuz voltluk bir pilin uçlarına yalnızca açık bir anahtar bağlı olsun. Anahtar açık, yani pilin uçları arasında bir açık devre var. Pilden akım çekilmiyor. Ama uçları arasında dokuz volt duruyor.
 
 Yani açık devre bize yalnızca bir şeyi garanti eder: içinden geçen akım sıfırdır. Uçları arasındaki gerilim hakkında tek başına hiçbir şey söylemez. O gerilim, açık devreye bağlı olan elemanlardan çıkar. Bunun gündelik bir karşılığı da var. Bir devrede bir bağlantı kopmuşsa, oradan akım geçmez. Ama kopuk noktanın iki ucu arasında yine bir gerilim olabilir. Bu ayrım şu an basit görünüyor. Ama ileride karmaşık devrelerde çok işimize yarayacak.
 ```
@@ -95,7 +95,7 @@ Sahne planı:
 - "Doğrusu": yeşil başlık "Doğrusu", altında sırayla: "direncin gerilimi = 3 kΩ × 0 mA = 0 V" (siyah), "direncin iki ucu aynı gerilimde" (siyah). Devrede anahtarın alt ucundan alt kol üzerinden bataryanın "−" ucuna giden tel mavi kalınlaşır; üst ucundan üst koldaki direnç üzerinden "+" ucuna giden yol da mavi kalınlaşır (sırayla, tek kalem). Anahtarın üst ucuna "+", alt ucuna "−", aralarına mavi "9 V" (kırmızı "0 V ?" üstü çizili). Yanına küçük voltmetre dairesi ("V"), iki ucu anahtar uçlarına bağlı, içinde "9 V".
 - "İki durumu yan yana koyalım": sağ altta (y ≤ %72) önce "kapalıyken direnç: 3 kΩ × 3 mA = 9 V", sonra iki satırlık tablo, sütunlar "anahtar", "i", "anahtarın gerilimi": "kapalı", "3 mA", "0 V"; "açık", "0", "9 V".
 - "Dokuz voltluk bir pilin": tahtanın sağ üstünde küçük pil, iki ucu kesintisiz tellerle açık bir anahtarın iki ucuna bağlı; anahtarın yanına "i = 0", uçları arasına "9 V" (mavi).
-- "yalnızca bir şeyi garanti eder": alta kutu "açık devre yalnızca i = 0'ı garanti eder" ve altında "gerilimi çevresindeki devre belirler" (mavi alt çizgi).
+- "yalnızca bir şeyi garanti eder": alta kutu "açık devre yalnızca i = 0'ı garanti eder" ve altında "gerilim, bağlı elemanlardan çıkar" (mavi alt çizgi).
 
 ## [PARÇA 4] Akımdan yüke: integral ve alan (~2:00)
 
@@ -121,7 +121,7 @@ Sahne planı:
 - "Bu toplamın adı integral": sağda büyük "q = ∫₀^t₁ i dt" (mavi; alt ve üst sınır küçük yazı).
 - "altında kalan alandır": eğrinin altı 0 ile t₁ arası açık mavi taranır (kalem yatay taramayı soldan sağa çizer); yanına "yük = alan".
 - Silme. "En basit durum": grafik: yatay eksen "t (s)" işaretler 0, 1, 2, 3; dikey eksen "i (mA)" işaretler 0, 2, 4 (eksen 0–5). Mavi yatay çizgi 0–3 s arası 4 mA; altı taranır. Sağda "q = 4 mA × 3 s = 12 mC" (mavi), altına küçük "mA × s = mC".
-- "birinci bölümdeki örnekle": sağ sütun silinir; "Bölüm 1'de q = 2t² mC, i = 4t mA" (gri), "∫ 4t dt = 4t² / 2 = 2t²", "∫₀³ 4t dt = 2 × 3² = 2 × 9 = 18 mC" (mavi), "türev ve integral birbirinin tersi" (mavi alt çizgi).
+- "birinci bölümdeki örnekle": sağ sütun silinir; "Bölüm 1'de q = 2t² mC, i = 4t mA" (gri), "∫ 4t dt = 4t² / 2 = 2t²", "∫₀³ 4t dt = 2 × 3² − 2 × 0² = 18 − 0 = 18 mC" (mavi), "türev ve integral birbirinin tersi" (mavi alt çizgi).
 - "işaret meselesi": sağ altta küçük kroki: eksen altında bir dikdörtgen, içinde kırmızı "−", yanında "eksen altındaki alan eksi sayılır". Altına "(−2 mA) × 2 s = −4 mC" (kırmızı).
 - "birim kolaylığı": sağ alt "mA × ms = µC" (kutu).
 
@@ -146,14 +146,14 @@ Bir de şuna bakalım. Bir milisaniye anında, yani rampanın tam ortasında, ne
 
 Neden dörtte bir? Çünkü rampanın ilk yarısında akım hâlâ küçük. Yükün çoğu, akımın büyüdüğü ikinci yarıda geçiyor. Zamanın yarısı, yükün yarısı demek değil.
 
-Geçen yükü zamana göre çizersek ne görürüz? İlk iki milisaniyede yük, gittikçe dikleşen bir eğriyle altı mikrokulona çıkar. İki ile beş milisaniye arasında düz bir çizgiyle artar. Bu çizginin eğimi, yirmi dört eksi altı, yani on sekiz mikrokulon, bölü beş eksi iki, yani üç milisaniye. Sonuç altı miliamper. Bu da o aralıktaki akımın ta kendisi. Beşinci milisaniyeden sonra ise yük azalır. Birinci bölümdeki eğim fikri burada da geçerli: yük grafiğinin eğimi akımdır.
+Geçen yükü zamana göre çizersek ne görürüz? İlk iki milisaniyede yük, gittikçe dikleşen bir eğriyle altı mikrokulona çıkar. İki ile beş milisaniye arasında düz bir çizgiyle artar. Bu aralıkta geçen yük, yirmi dört eksi altı, on sekiz mikrokulon. Süre, beş eksi iki, üç milisaniye. Çizginin eğimi, on sekiz bölü üç, altı miliamper. Bu da o aralıktaki akımın ta kendisi. Beşinci milisaniyeden sonra ise yük azalır. Birinci bölümdeki eğim fikri burada da geçerli: yük grafiğinin eğimi akımdır.
 ```
 
 Sahne planı:
 - Üstte soru: "0–2 ms: 0'dan 6 mA'e doğrusal", "2–5 ms: 6 mA", "5–8 ms: −2 mA", "0–8 ms net q = ?" (mavi).
 - Grafik (sol, y %25–72): yatay eksen "t (ms)" işaretler 0, 1, 2, 3, 4, 5, 6, 7, 8; dikey eksen "i (mA)" işaretler −2, 0, 2, 4, 6 (eksen −3…7). Mavi: 0–2 ms rampa (0 → 6), 2–5 ms 6 mA, 5–8 ms −2 mA (5 ms'deki dikey geçiş ince kesik). Değerler kodda `console.assert` (i(1) = 3, i(2) = 6, i(6) = −2). Mavi referans oku grafiğin üstünde küçük tel çiziminde (sağa).
 - "Alanı parçalara bölelim": üçgen taranır (açık mavi), içinde "1"; sağda (x ≥ %55) "1. üçgen: (2 ms × 6 mA) / 2 = 12 / 2 = 6 µC".
-- "integralle de kontrol": altına "6 mA / 2 ms = 3 mA her ms'de", "i = 3t mA, t milisaniye cinsinden", "i(2) = 3 × 2 = 6 mA", "∫ 3t dt = 3t² / 2", "∫₀² 3t dt = 3 × 2² / 2 = 3 × 4 / 2 = 6 µC" (mavi, "aynı sonuç" yanında).
+- "integralle de kontrol": altına "eğim = 6 mA / 2 ms = 3 mA / ms", "her milisaniyede 3 mA artış", "i = 3t mA, t milisaniye cinsinden", "i(2) = 3 × 2 = 6 mA", "∫ 3t dt = 3t² / 2", "∫₀² 3t dt = 3 × 2² / 2 = 3 × 4 / 2 = 6 µC" (mavi, "aynı sonuç" yanında).
 - Silme yok; sağ sütun dolarsa sağ sütun silinir (≤0,3 sn), grafik kalır.
 - "İkinci parça": dikdörtgen taranır ("2"); "2. dikdörtgen: (5 − 2) ms × 6 mA = 3 × 6 = 18 µC".
 - "Üçüncü parça": eksen altı dikdörtgen kırmızı taranır ("3"); "3. dikdörtgen: (8 − 5) ms × (−2 mA) = 3 × (−2) = −6 µC" (kırmızı).
