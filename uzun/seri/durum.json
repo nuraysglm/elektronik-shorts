@@ -173,6 +173,15 @@
       "dal": "claude/icerik-1-2-20261119",
       "denetim": "bağımsız denetim: 1 kritik + 5 önemli düzeltildi",
       "not": "'Uygulamada: datasheet'teki akımlar' yeni Parça 2 olarak; ≤ ~540 kelime + inceleme D'deki üç kısaltma (17 dk sınırı)."
+    },
+    "1-3": {
+      "durum": "hazir",
+      "tarih": "2026-11-19",
+      "dosya": "uzun/seri/ders-01/bolum-3/icerik.md",
+      "dogrulama": "uzun/seri/ders-01/bolum-3/icerik_dogrula.py",
+      "dal": "claude/icerik-1-3-20261119",
+      "denetim": "bağımsız denetim: 1 kritik + 6 önemli düzeltildi",
+      "not": "Metin henüz yazılmadı (inceleme.md yok). 'Uygulamada: datasheet'teki gerilimler ve gerçek bir gerilim kaynağı' (TI TLV75533P 3,3 V regülatör; 2N7002E, 1N4007 gerilim satırları), ~3:30."
     }
   },
   "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar.",
