@@ -255,5 +255,13 @@
     "onay_istegi": "onaylar/metin-1-3 bekliyor (20.11 gece)",
     "not": "Metin + dogrula.py + dogruluk.md + bağımsız denetim (kritik yok, 10 önemli düzeltildi). Ses ÜRETİLMEDİ: metin onayı bekleniyor."
   },
-  "is_emri_f": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn."
+  "is_emri_f": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
+  "intro": {
+    "durum": "onay bekliyor",
+    "video": "media/uzun/devre-teorisi-1-intro.mp4",
+    "kareler": "uzun/intro/kareler/",
+    "onay_istegi": "onaylar/intro-1",
+    "not": "6,0 sn sessiz; onaylanınca B2'den itibaren kancadan hemen sonra eklenir (müzik açılış kesiti intro boyunca tek başına)."
+  },
+  "is_emri_g": "ÜRETİLDİ 19.11 23:40Z: uzun/intro/ (intro.js, render.mjs, NOTLAR.md); panelde onaylar/intro-1 bekliyor."
 }
