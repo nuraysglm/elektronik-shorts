@@ -1,1 +1,32 @@
-{"konu_no": "8b", "baslik": "Ohm Kanunu Grafiği Düz Çizgi mi? i–R Hiperbolü", "aciklama": "Devre Analizi 1 dersinde Ohm kanunu grafiği: omik direncin akım–gerilim (i–V) grafiği orijinden geçen düz çizgidir ve eğimi 1/R'dir. Ama gerilim sabitken direnci değiştirirsen akım–direnç (i–R) grafiği düz çizgi değil, hiperboldür (i = V/R). Animasyonda her direncin i–V doğrusunu, V = 6 V çizgisiyle kesişimlerinin hiperbolü nasıl verdiğini görüyoruz.\n\nBilmen gerekenler:\n• Omik dirençte i–V grafiği orijinden geçen düz çizgidir\n• Doğrunun eğimi 1/R'dir; R büyüdükçe eğim azalır\n• Gerilim sabitken i ∝ 1/R olur; i–R grafiği hiperboldür, düz çizgi değildir\n• Örnek: 6 V'ta 1, 2 ve 3 kΩ için akım 6, 3 ve 2 mA olur\n\nÖnce bilmen gereken: Ohm kanunu (V = i·R); ideal gerilim kaynağı (gerilimi yükten bağımsız sabit tutar)\n\nKaynak: B. Razavi, Basic Circuits, Ders 3\n\n#elektronik #ohmkanunu #devreanalizi", "etiketler": ["elektronik", "ohm kanunu", "ohm kanunu grafiği", "akım gerilim grafiği", "i-v karakteristiği", "devre analizi", "devre analizi 1", "devre teorisi", "direnç"], "hashtagler": ["#elektronik", "#ohmkanunu", "#devreanalizi"], "sure_sn": 56.2, "youtube_tarih": "2026-11-18 16:00 (Europe/London)", "youtube_url": null, "metricool_uuid": "5936940515449914811", "ilgili_video": "008a Bağımlı Kaynak Nedir? (17.11 16:00 yayınından sonra adresi belli olur)", "instagram": {"durum": "bekliyor", "aciklama": null}, "surum": 2, "not": "v2 (17.11.2026): direnç gövdesindeki renk bantları kaldırıldı (iş emri)"}
+{
+  "konu_no": "8b",
+  "baslik": "Ohm Kanunu Grafiği Düz Çizgi mi? i–R Hiperbolü",
+  "aciklama": "Devre Analizi 1 dersinde Ohm kanunu grafiği: omik direncin akım–gerilim (i–V) grafiği orijinden geçen düz çizgidir ve eğimi 1/R'dir. Ama gerilim sabitken direnci değiştirirsen akım–direnç (i–R) grafiği düz çizgi değil, hiperboldür (i = V/R). Animasyonda her direncin i–V doğrusunu, V = 6 V çizgisiyle kesişimlerinin hiperbolü nasıl verdiğini görüyoruz.\n\nBilmen gerekenler:\n• Omik dirençte i–V grafiği orijinden geçen düz çizgidir\n• Doğrunun eğimi 1/R'dir; R büyüdükçe eğim azalır\n• Gerilim sabitken i ∝ 1/R olur; i–R grafiği hiperboldür, düz çizgi değildir\n• Örnek: 6 V'ta 1, 2 ve 3 kΩ için akım 6, 3 ve 2 mA olur\n\nÖnce bilmen gereken: Ohm kanunu (V = i·R); ideal gerilim kaynağı (gerilimi yükten bağımsız sabit tutar)\n\nKaynak: B. Razavi, Basic Circuits, Ders 3\n\n#elektronik #ohmkanunu #devreanalizi",
+  "etiketler": [
+    "elektronik",
+    "ohm kanunu",
+    "ohm kanunu grafiği",
+    "akım gerilim grafiği",
+    "i-v karakteristiği",
+    "devre analizi",
+    "devre analizi 1",
+    "devre teorisi",
+    "direnç"
+  ],
+  "hashtagler": [
+    "#elektronik",
+    "#ohmkanunu",
+    "#devreanalizi"
+  ],
+  "sure_sn": 56.2,
+  "youtube_tarih": "2026-11-18 16:00 (Europe/London)",
+  "youtube_url": "https://www.youtube.com/shorts/tpXMntyP8TQ",
+  "metricool_uuid": "5936940515449914811",
+  "ilgili_video": "008a Bağımlı Kaynak Nedir? (17.11 16:00 yayınından sonra adresi belli olur)",
+  "instagram": {
+    "durum": "bekliyor",
+    "aciklama": null
+  },
+  "surum": 2,
+  "not": "v2 (17.11.2026): direnç gövdesindeki renk bantları kaldırıldı (iş emri)"
+}
