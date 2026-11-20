@@ -409,11 +409,36 @@ TGT = [(0.0, (-12.0, -6.0, 1.6)), (2.0, (-5.0, -2.5, 1.8)), (4.0, (-0.8, -0.8, 2
 FOC = [(0.0, (-17.5, -13.0, 2.0)), (1.0, (-15.0, -10.0, 2.0)), (2.2, (-3.0, -4.0, 2.2)), (4.0, (0.0, -1.5, 3.0)), (6.0, (0.0, -0.5, 3.1))]
 FST = [(0.0, (5.0,)), (2.0, (5.6,)), (3.6, (8.0,)), (4.4, (22.0,)), (6.0, (22.0,))]
 
+# Is emri K2 (20.11.2026 14:25): kamera 3,0 sn'den itibaren cipe yaklasirken tepeye yukselir ve 5,0 sn'de cipe
+#  TAM USTTEN (dik) bakar; 5,0 sn'den sonra kamera sabit (yalnizca isik degisir). Odak cip yuzeyinde.
+CHIP_TOP = (0.0, 0.0, ZB + 0.1 + 1.4)          # cip ust yuzeyi (yazi duzlemi)
+TOP_R = float(os.environ.get("TEPE_R", "36.0"))  # tepeden bakista cip yuzeyine uzaklik (mm)
+K2_T0, K2_T1 = 3.0, 5.0
+def smoother(u):
+    u = min(max(u, 0.0), 1.0); return u * u * u * (u * (u * 6 - 15) + 10)
+def k2_camera(t):
+    c0 = Vector(spline(CAM, min(t, 6.0))); g0 = Vector(spline(TGT, min(t, 6.0))); f0 = Vector(spline(FOC, min(t, 6.0)))
+    w = smoother((t - K2_T0) / (K2_T1 - K2_T0))
+    if w <= 0: return c0, g0, f0
+    top = Vector(CHIP_TOP)
+    g = g0.lerp(top, w); f = f0.lerp(top, w)
+    v = c0 - g0; r0 = v.length; el0 = math.asin(v.z / r0); az0 = math.atan2(v.y, v.x)
+    r = r0 + (TOP_R - r0) * w; el = el0 + (math.radians(90.0) - el0) * w
+    az = az0 + (math.radians(-90.0) - az0) * w
+    off = Vector((math.cos(el) * math.cos(az), math.cos(el) * math.sin(az), math.sin(el))) * r
+    if w >= 1.0: off = Vector((0.0, 0.0, r))
+    return g + off, g, f
+STATIC_T = K2_T1                                 # bu andan sonra kamera ve sahne geometrisi sabit
+
 def set_frame(f):
     t = f / 30.0
-    cam.location = spline(CAM, t); tgt.location = spline(TGT, t); foc.location = spline(FOC, t)
-    cd.dof.aperture_fstop = spline(FST, t)[0] * float(os.environ.get("FOLCEK", "0.005"))
+    cl, gl, fl = k2_camera(t)
+    cam.location = cl; tgt.location = gl; foc.location = fl
+    cd.dof.aperture_fstop = spline(FST, min(t, 6.0))[0] * float(os.environ.get("FOLCEK", "0.005"))
     KART.node_tree.nodes["ZAMAN"].outputs[0].default_value = t
+    # sabit bolumde yollarda yavas "nefes" eden isik (anahtar kareler capraz gecisle birlesir)
+    br = 1.0 + 0.9 * ss((t - 5.3) / 0.8) * (0.5 - 0.5 * math.cos(2 * math.pi * max(t - 5.3, 0) / 2.4)) if t > 5.3 else 1.0
+    KART.node_tree.nodes["DARBE"].outputs[0].default_value = float(os.environ.get("DARBE", "5.0")) * br
     led = ss((t - 4.0) / 0.25)
     flick = 1.0
     LED_DIE.node_tree.nodes["Principled BSDF"].inputs["Emission Strength"].default_value = 60.0 * led
