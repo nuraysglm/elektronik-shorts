@@ -5,7 +5,7 @@
 | # | Ders | İlgili video (videoId; kaynak değil) | Önerilen nokta (onaylı kaynakla doğrulanır) | Durum | Tarih |
 |---|------|------------------------|--------------------------------------------------------|-------|-------|
 | S1 | Ders 1 — Analog ve Sayısal Kavramlar | I4o4vBcORSo | Sayısal sinyal "0 ve 1" değil, iki gerilim **aralığıdır** (gürültü payı) — Yapıldı (17.11.2026; 59,6 sn, kalite kontrolü geçti; Floyd Böl. 1 s. 18/20/21; Metricool uuid -8337519003133392254) | yayında | 2026-11-19 16:00 (Londra) |
-| S2 | Ders 2 — Sayı Sistemleri | bIOWChqPS1E | Taban (radix) ve basamak ağırlığı; 10 neden her tabanda "taban"dır | bekliyor | |
+| S2 | Ders 2 — Sayı Sistemleri | bIOWChqPS1E | Taban (radix) ve basamak ağırlığı; 10 neden her tabanda "taban"dır — Metin sürüm 3 hazır (20.11.2026; virgülün sağındaki ağırlıklar, (0,1)₂ = 0,5; bağımsız denetim 2 tur, seviye üniversite); panelde metin onayı bekleniyor (onaylar/metin-s02-taban-basamak) | onay bekliyor | 2026-11-24 16:00 (Londra, hedef) |
 | S3 | Ders 3–4 — Sayı Sistemlerinde Dönüşümler | 9LQ9Ta4gS28, OKkRXfIW4FI | Kesirli sayı dönüşümünde neden sonsuz basamak çıkabilir (0,1₁₀ ikilide) | bekliyor | |
 | S4 | Ders 5 — Tümleyen Aritmetiği | B5vTYyhi4fM | 2'ye tümleyende neden 1 eklenir; tek sıfır | bekliyor | |
 | S5 | Ders 6 — İşaretli İkili Sayılar ve Kodlama | p37sGV9ioaM | Taşma (overflow) ile elde (carry) aynı şey değil | bekliyor | |
