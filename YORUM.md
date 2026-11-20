@@ -34,6 +34,10 @@ Sen kanal sahibinin adına öğrenci yorumlarına cevap taslağı hazırlarsın.
 - **Gönderme yok:** Bu modda ajan yorum GÖNDERMEZ. Kanal sahibi onayladığı cevabı panelden kopyalayıp YouTube Studio'da kendisi yapıştırır. (Tam mod ileride kanal sahibi isterse açılır.)
 - Atla: kanalın kendi yazdığı yorumlar (`authorChannelId` = UCAvE1cKeoIbIXCyIks-U81w; ör. sabitlenmiş ilk yorum soruları) ve kanal sahibinin zaten cevapladığı thread'ler (replies içinde kanal sahibi var).
 
+## 2c. Hangi yorumlar (kanal sahibi, 20.11.2026 22:55)
+
+**Yalnızca 20.11.2026 23:00 (Londra) ve sonrasında yazılan yorumlar** ele alınır (`publishedAt` ≥ 2026-11-20T23:00:00Z). Daha eski yorumlar (birikmiş ~434 yorum) için taslak açılmaz, kuyruk tutulmaz, hatırlatma yapılmaz.
+
 ## 2b. Kanal sahibinin düzeltmesi (20.11.2026 22:53) — ZORUNLU
 
 Kanal sahibi: *"'Buna çok sevindim!' — bu AI cevabı. Ben sadece 'Çok sevindim' derim. 'Birlikte bakalım' gibi sözler verme. 12 binden fazla takipçi var, asla yetişemem. Tutamayacağım sözler vermeyelim."*
