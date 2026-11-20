@@ -32,8 +32,13 @@ def body(kind, Lb):
         if kind == 'DI':  # yerel eksen yönünde ok (akım kaynağı)
             s += '<line x1="-14" y1="0" x2="12" y2="0"/><polyline points="4,-7 13,0 4,7"/>'
         return s
+    if kind == 'DC':  # batarya: uzun plaka a tarafı (+)
+        return '<line x1="-6" y1="-24" x2="-6" y2="24"/><line x1="6" y1="-12" x2="6" y2="12" style="stroke-width:6"/>'
+    if kind == 'SW':  # açık anahtar
+        return ('<circle cx="-24" cy="0" r="5" class="src"/><circle cx="24" cy="0" r="5" class="src"/>'
+                '<line x1="-20" y1="-3" x2="22" y2="-26"/>')
     return ''
-HALF = {'R': 32, 'L': 34, 'C': 7, 'AC': 28, 'DV': 30, 'DI': 30, 'W': 0}
+HALF = {'R': 32, 'L': 34, 'C': 7, 'AC': 28, 'DV': 30, 'DI': 30, 'W': 0, 'DC': 6, 'SW': 29}
 
 def el(kind, a, b, val=None, v=None, flip=False, vsub=None):
     """a->b yatay veya dikey eleman. val: değer etiketi (siyah). v: gerilim etiketi alt simgesi
@@ -121,10 +126,63 @@ def devre_a():
     arr((X[0] + 140, B), 'l', '5', side=-1)
     arr((X[2] + 140, B), 'r', '6', side=-1)
 
-DEVRELER = {'a': devre_a}
+def kur(X, Y, H, V, oklar):
+    """Genel ağ: X sütunları, Y satırları; H[(j,i)] yatay kenar (Y[j], X[i]->X[i+1]),
+    V[(j,i)] dikey kenar (X[i], Y[j]->Y[j+1]); değer (tür, değer, v_alt, ters_yön)."""
+    deg = {}
+    def add(p): deg[p] = deg.get(p, 0) + 1
+    for (j, i), e in H.items():
+        a, b = (X[i], Y[j]), (X[i + 1], Y[j])
+        if len(e) > 3 and e[3]: a, b = b, a
+        el(e[0], a, b, (e[1],) if isinstance(e[1], str) else e[1], e[2] if len(e) > 2 else None); add(a); add(b)
+    for (j, i), e in V.items():
+        a, b = (X[i], Y[j]), (X[i], Y[j + 1])
+        if len(e) > 3 and e[3]: a, b = b, a
+        el(e[0], a, b, (e[1],) if isinstance(e[1], str) else e[1], e[2] if len(e) > 2 else None); add(a); add(b)
+    for p, n in deg.items():
+        if n >= 3: dot(p)
+    for o in oklar: arr(*o)
+
+def devre_b():
+    """Bölüm 2 kapak A: açık anahtarlı kol + 9 V batarya, sinüs kaynak, VCCS 0,5·v2 (mS), CCVS 200·i3."""
+    X = [80, 400, 720, 1150]; T, M, B = 128, 492, 662
+    H = {(0,0): ('R','3 kΩ','1'), (0,1): ('SW','S'), (0,2): ('L','10 mH','2'),
+         (1,0): ('C','47 µF','3'), (1,1): ('R','1,2 kΩ','4'), (1,2): ('W',None),
+         (2,0): ('R','5,6 kΩ','5'), (2,1): ('L','3,3 mH'), (2,2): ('R','330 Ω','6')}
+    V = {(0,0): ('DC','9 V',None,True), (0,1): ('DI',('0,5·v','2'),None,True), (0,2): ('R','2 kΩ','7'), (0,3): ('C','220 nF','8'),
+         (1,0): ('AC','6 sin ωt V',None,True), (1,1): ('R','750 Ω','9'), (1,2): ('DV',('200·i','3')), (1,3): ('L','1 mH')}
+    kur(X, [T, M, B], H, V, [((X[0]+48,T),'r','1'), ((X[2]+345,T),'r','2'), ((X[1]+250,M),'r','3'),
+                             ((X[3]-60,M),'r','4'), ((X[0]+45,B),'l','5',-1), ((X[2]+345,B),'r','6',-1)])
+
+def devre_c():
+    """Bölüm 2 kapak B: 5 sütunlu merdiven-ağ; sinüs kaynak, VCVS 3·v1, CCCS 2·i4."""
+    X = [80, 330, 580, 830, 1150]; T, M, B = 128, 492, 662
+    H = {(0,0): ('L','2 mH','1'), (0,1): ('R','1,8 kΩ','2'), (0,2): ('C','33 µF','3'), (0,3): ('R','390 Ω','4'),
+         (1,0): ('W',None), (1,1): ('R','2,7 kΩ','5'), (1,2): ('L','6,8 mH'), (1,3): ('R','100 Ω','6'),
+         (2,0): ('R','1 kΩ'), (2,1): ('W',None), (2,2): ('R','4,7 kΩ','7'), (2,3): ('W',None)}
+    V = {(0,0): ('AC','12 sin ωt V',None,True), (0,1): ('C','4,7 µF','8'), (0,2): ('R','560 Ω'), (0,3): ('DV',('3·v','1')), (0,4): ('L','15 mH'),
+         (1,0): ('R','8,2 kΩ','9'), (1,1): ('DI',('2·i','4'),None,True), (1,2): ('C','1 µF'), (1,3): ('R','1,5 kΩ'), (1,4): ('R','220 Ω')}
+    kur(X, [T, M, B], H, V, [((X[0]+40,T),'r','1'), ((X[1]+200,T),'r','2'), ((X[3]+270,T),'r','4'),
+                             ((X[2]+45,M),'r','3'), ((X[1]+120,B),'l','5',-1), ((X[3]+180,B),'r','6',-1)])
+
+def devre_d():
+    """Bölüm 2 kapak C: köprülü ağ; sinüs kaynak, CCVS 100·i2, VCCS 0,2·v5 (mS), batarya."""
+    X = [80, 360, 640, 920, 1150]; T, M, B = 128, 492, 662
+    H = {(0,0): ('R','2,2 kΩ','1'), (0,1): ('C','10 µF','2'), (0,2): ('L','4,7 mH'), (0,3): ('R','680 Ω','3'),
+         (1,0): ('L','1 mH','4'), (1,1): ('W',None), (1,2): ('R','1 kΩ','5'), (1,3): ('C','68 µF'),
+         (2,0): ('W',None), (2,1): ('R','3,9 kΩ','6'), (2,2): ('W',None), (2,3): ('R','270 Ω','7')}
+    V = {(0,0): ('AC','8 sin ωt V',None,True), (0,1): ('R','470 Ω','8'), (0,2): ('DV',('100·i','2')), (0,3): ('C','2,2 µF'), (0,4): ('R','1,2 kΩ'),
+         (1,0): ('DC','3 V',None,True), (1,1): ('L','22 mH'), (1,2): ('DI',('0,2·v','5'),None,True), (1,3): ('R','5,6 kΩ','9'), (1,4): ('C','470 nF')}
+    kur(X, [T, M, B], H, V, [((X[0]+48,T),'r','1'), ((X[2]+230,T),'r','2'), ((X[4],M-90+0),'d','3'),
+                             ((X[1]+140,M),'r','4'), ((X[0]+140,B),'l','5',-1), ((X[2]+140,B),'r','6',-1)])
+
+DEVRELER = {'a': devre_a, 'b': devre_b, 'c': devre_c, 'd': devre_d}
 KAPAKLAR = [
     # ad, devre, satır1, satır2 (vurgu <em>), şerit
     ('1-1-a', 'a', 'Akım akıyor ama', 'ortalaması <em>sıfır?</em>', 'DEVRE TEORİSİ I: DERS 1 - BÖLÜM 1/3'),
+    ('1-2-a', 'b', 'Akım sıfır…', 'gerilim neden <em>9 V?</em>', 'DEVRE TEORİSİ I: DERS 1 - BÖLÜM 2/3'),
+    ('1-2-b', 'c', 'Zamanın yarısı,', 'yükün <em>dörtte biri?</em>', 'DEVRE TEORİSİ I: DERS 1 - BÖLÜM 2/3'),
+    ('1-2-c', 'd', 'Pil 1 gün mü,', '<em>1 yıl mı?</em>', 'DEVRE TEORİSİ I: DERS 1 - BÖLÜM 2/3'),
 ]
 
 def izgara():

@@ -8,7 +8,9 @@
    "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-1-kapak-a.jpg",
    "devre": "direnç ızgarası (5×2, batarya, kondansatör)",
    "videoda": "0:00 kanca ve 1:49 pencere sorunu: akım hiç durmadan akarken Δq/Δt = 0 çıkıyor",
-   "baslik_uzunluk": 72
+   "baslik_uzunluk": 72,
+   "dosya_6d": "media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg",
+   "devre_6d": "6-D: kareli zemin, 8 çevreli özgün ağ, 10 sin ωt V, VCVS 2·v₁, CCCS 4·i₁, v₁…v₉, i₁…i₆"
   },
   "B": {
    "kapak_yazisi": "Yük en büyük, akım sıfır?",
@@ -34,7 +36,9 @@
    "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-2-kapak-a.jpg",
    "devre": "videodaki 9 V – 3 kΩ – açık anahtar halkası (v = ?) + direnç ızgarası",
    "videoda": "0:00 kanca ve 6:32 açık devre: anahtarın uçlarında tam 9 V",
-   "baslik_uzunluk": 62
+   "baslik_uzunluk": 62,
+   "dosya_6d": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-2-kapak-a-6d.jpg",
+   "devre_6d": "açık anahtar + 9 V batarya, 6 sin ωt V, VCCS 0,5·v₂, CCVS 200·i₃ (6 çevre)"
   },
   "B": {
    "kapak_yazisi": "Zamanın yarısı, yükün dörtte biri?",
@@ -42,7 +46,9 @@
    "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-2-kapak-b.jpg",
    "devre": "direnç ızgarası (5×2)",
    "videoda": "12:38 rampanın ilk yarısında 1,5 µC / 6 µC = dörtte bir",
-   "baslik_uzunluk": 69
+   "baslik_uzunluk": 69,
+   "dosya_6d": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-2-kapak-b-6d.jpg",
+   "devre_6d": "8 çevreli merdiven-ağ, 12 sin ωt V, VCVS 3·v₁, CCCS 2·i₄"
   },
   "C": {
    "kapak_yazisi": "Pil 1 gün mü, 1 yıl mı?",
@@ -50,8 +56,12 @@
    "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-2-kapak-c.jpg",
    "devre": "Wheatstone köprüsü + direnç ızgarası",
    "videoda": "2:24 mini tasarım: ortalama akımla ~375 gün (yaklaşık 1 yıl), tepe değerle 22,5 saat (1 gün bile değil)",
-   "baslik_uzunluk": 72
+   "baslik_uzunluk": 72,
+   "dosya_6d": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-2-kapak-c-6d.jpg",
+   "devre_6d": "8 çevreli ağ, 8 sin ωt V + 3 V batarya, CCVS 100·i₂, VCCS 0,2·v₅"
   }
  },
- "kucuk_boyut_testi": "media/uzun/kapak-secenek/kucuk-boyut-320.png, kucuk-boyut-168.png: 6 kapakta yazı 168×94'te de okunuyor; devre arka planda soluk, çizgi yığını gibi durmuyor."
+ "kucuk_boyut_testi": "media/uzun/kapak-secenek/kucuk-boyut-320.png, kucuk-boyut-168.png: 6 kapakta yazı 168×94'te de okunuyor; devre arka planda soluk, çizgi yığını gibi durmuyor.",
+ "kucuk_boyut_testi_6d": "B1: devre-teorisi-1-ders-01-bolum-1-kapak-a-6d-kucuk-test.jpg; B2: devre-teorisi-1-ders-01-bolum-2-kapak-6d-kucuk-test.jpg — 320×180 ve 168×94'te yazı okunuyor, devre düzenli şema olarak görünüyor.",
+ "uretim_6d": "uzun/kapak-6-d/devre.py + kapak.mjs (iş emri J, 20.11.2026)"
 }
