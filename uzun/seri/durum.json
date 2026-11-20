@@ -2,7 +2,7 @@
   "seri": "Devre Teorisi I",
   "ders": 1,
   "bolum": 1,
-  "adim": "video_onayi",
+  "adim": "planli",
   "yayin": "2026-11-21",
   "yayin_saati": "Cumartesi 21.11.2026 11:00 TR = 08:00 Europe/London (kanal sahibinin kararı, 18.11 20:50). Cuma akşamı görevi panelde 'onayla' varsa bu saate planlar.",
   "parcalar": {
@@ -158,13 +158,17 @@
     {
       "tarih": "2026-11-20T15:50Z",
       "not": "Cuma 15:15 çalışması: metin-1-3 onaylı (14:38Z) → B3 7 parça + selam sesi (eleven_v4, 1 take, 13.158 kredi, curl), normalize, zamanlama 7/7; 7 sahne (parça 3–6 paralel alt ajanlarla), otomatik QC 7/7 temiz, render; abone katmanı + birleştirme + iş emri F müziği: 14:49,0, −16,1 LUFS / −1,7 dBTP; 50 kare gözle kontrol; yayin.json (19 zaman damgası, 4'ü karelerle doğrulandı); 3 kapak + başlık (6-D, küçük boyut testi). Panelde onaylar/uzun-1-3 ve kapak-1-3. B1 planlaması bu çalışmada yapılmadı (akşam 20:43 görevi). Dal claude/uzun-1-3-20261120."
+    },
+    {
+      "tarih": "2026-11-20T20:45Z",
+      "not": "Cuma akşamı: onaylar/uzun-1-1 'onayla' → B1 Metricool'da planlandı (id 436070416, 21.11 08:00 Londra / 11:00 TR; intro'lu video, kapak A, yayin.json başlık/açıklama/etiket/ilk yorum). Önce getScheduledPosts kontrolü: kopya yok. Panel seri/ders-01-bolum-1 'planlı', durum/ozet güncellendi. Sıradaki: B2 25.11 (takvim)."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.3,
   "acik_sorular": [],
-  "sonraki_is": "Akşam (20:43): B1 planlama (onaylı; intro'lu sürüm/intro-3 kararı genel müdürde). B2 25.11 planlaması (23.11 genel müdür). B3: uzun-1-3 + kapak-1-3 kararları; onaylı intro gelirse ekle. D2B1: ses (metin onaylı; B3 sesi bitti, kural 1b-4: B1 yayınlandıktan sonra 2 bölüm önde olur → 21.11 sonrası üretilebilir).",
+  "sonraki_is": "B1 yayın sonrası Studio hatırlatmaları (liste sıra 1, bitiş ekranı, bilgi kartı, ilk yorum sabitle). B2 25.11 planlaması (23.11, uzun-1-2 onayı). B3 iş emri M sesi (Drive). D2B1 sesi 21.11 sonrası (kural 1b-4).",
   "not": "B1 onaylı (planlama akşam). B2 onaylı (25.11). B3 video + kapak onayı bekliyor. D2B1 metin onaylı, ses sırası bekliyor.",
   "metin_onayi": {
     "durum": "onaylandi",
@@ -176,7 +180,7 @@
   "tahta": "uzun/seri/ders-01/bolum-1/tahta/ (NOTLAR.md)",
   "is_emri": "uzun/seri/ders-01/bolum-1/is-emri-20261118.md",
   "hizli_mod": "18.11.2026 20:42 kanal sahibi: 'Bir an önce ilk videoyu yayınlamak istiyorum.' Bu bölüm için gün sırası (Pzt–Cuma tablosu) BEKLENMEZ: her çalışmada sıradaki adımı bitir ve süre kaldıkça hemen sonrakine geç. Sıra: (1) iş emri: parça 5 metin düzeltmesi + doğrulama + değişen kısımlar için bağımsız denetim → panelde onaylar/metin-1-1-p5 (eski/yeni yan yana) → ONAY YOKSA DUR. (2) metin onayı geldiyse: parça 5 sesi (generations_count 1) → zamanlama → parça 5 render (yeni renkler) → parça QC. (3) birleştirme (profil-kucuk.jpg Drive 1XNF7lgiaE9FQA-0dYfG8tWOz_xj9VR6h) → tam QC → kapak → yayin.json (başlık, açıklama, zaman damgaları, etiketler, ilk yorum) → panelde onaylar/uzun-1-1 onay isteği. Yayın tarihini/saatini kanal sahibi belirler; planlamayı genel müdür ya da Cuma akşamı görevi yapar. Onaysız planlama yok.",
-  "sonraki_yayin": "2026-11-21",
+  "sonraki_yayin": "2026-11-25",
   "eksik_hesaplar": "uzun/seri/ders-01/bolum-1/eksik-hesaplar.md; panel onaylar/eksik-hesaplar-1-1 (A/B/C) bekliyor",
   "takvim": {
     "karar": "kanal sahibi 18.11.2026 21:08",
@@ -206,7 +210,7 @@
   "yayin_json": "uzun/seri/ders-01/bolum-1/yayin.json",
   "bolum_2": {
     "adim": "video_onayi",
-    "yayin": "2026-12-02T13:00:00 Europe/London (16:00 TR)",
+    "yayin": "2026-11-25T13:00:00 Europe/London (16:00 TR)",
     "metin": "uzun/seri/ders-01/bolum-2/metin.md",
     "dal": "claude/uzun-1-2-20261119",
     "kelime": 2248,
@@ -341,5 +345,17 @@
     ],
     "bekleyen": "Yeni cümle sesi (ElevenLabs generation pBjbSn4ea44AuH4YeMqm, 41 kredi) indirilemedi (403); kanal sahibi Drive 'Uzun Video Sesleri/ders-01-bolum-3' (1WBB9OGtZ0H7Yrhfc4Rg2mNbTEBlIz_xN) klasörüne cumle-5-14.mp3 yükleyince: parça 4+5 render, birleştir, tam QC, mp4 güncelle (NOTLAR.md).",
     "drive_klasoru": "1WBB9OGtZ0H7Yrhfc4Rg2mNbTEBlIz_xN"
+  },
+  "metricool_b1": {
+    "id": 436070416,
+    "tarih": "2026-11-21T08:00:00 Europe/London (11:00 TR)",
+    "video": "media/uzun/devre-teorisi-1-ders-01-bolum-1-introlu.mp4",
+    "planlama": "2026-11-20T20:45Z (Cuma akşamı görevi; onaylar/uzun-1-1 'onayla')"
+  },
+  "sonraki_bolum": {
+    "ders": 1,
+    "bolum": 2,
+    "yayin": "2026-11-25T13:00:00 Europe/London (16:00 TR)",
+    "not": "Takvim önceliği (UZUN.md 7): +7 gün (28.11) yerine kanal sahibinin takvimindeki 25.11 geçerli. Planlama 23.11 genel müdür; uzun-1-2 onayı gerekli."
   }
 }
