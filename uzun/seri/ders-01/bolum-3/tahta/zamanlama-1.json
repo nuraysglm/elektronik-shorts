@@ -1,0 +1,1006 @@
+{
+ "yontem": "RMS enerji (10 ms, esik -38 dBFS, en az 0,10 sn) duraklamalari + hece sayisina gore dinamik programlama; kelime zamanlari cumle icinde hece sayisiyla orantili tahmindir; konusma tanima yok, ses dinlenmedi",
+ "ses_suresi": 58.48,
+ "ortalama_hece_suresi": 0.1342,
+ "belirsiz_sinirlar": [],
+ "kontroller": [
+  "11 cumle sinirinin 11 tanesinde: duraklama enerjisi < -38 dBFS ve onceki/sonraki 0,3 sn en az 8 dB daha yuksek",
+  "noktalama cumle 0 'bağlarsan,' tahmin 3.06 sn; en yakin ic duraklama (3.21, 3.5); fark 0.29 sn",
+  "noktalama cumle 1 'olabilir:' tahmin 8.22 sn; en yakin ic duraklama (7.81, 8.17); fark 0.23 sn",
+  "noktalama cumle 1 'sıfırdır,' tahmin 10.12 sn; en yakin ic duraklama (9.73, 9.99); fark 0.26 sn",
+  "noktalama cumle 2 'devrede,' tahmin 13.45 sn; en yakin ic duraklama (13.57, 13.73); fark 0.20 sn",
+  "noktalama cumle 2 'geçiyor,' tahmin 15.95 sn; en yakin ic duraklama (16.15, 16.41); fark 0.33 sn",
+  "noktalama cumle 3 'değil,' tahmin 21.17 sn; en yakin ic duraklama (20.91, 21.07); fark 0.18 sn",
+  "noktalama cumle 4 'karıştırmak,' tahmin 24.17 sn; en yakin ic duraklama (24.29, 24.4); fark 0.17 sn",
+  "noktalama cumle 5 'hesaplayacak,' tahmin 29.54 sn; en yakin ic duraklama (29.54, 29.87); fark 0.16 sn",
+  "noktalama cumle 7 'bulacak,' tahmin 36.93 sn; en yakin ic duraklama (36.94, 37.19); fark 0.13 sn",
+  "noktalama cumle 9 'olduğunu,' tahmin 49.33 sn; en yakin ic duraklama (49.63, 49.87); fark 0.42 sn",
+  "noktalama cumle 10 'geçiyoruz:' tahmin 57.97 sn; en yakin ic duraklama (57.54, 57.89); fark 0.25 sn",
+  "hece hizi (sesli sure uzerinden): ortalama 7.50, std 0.50, en dusuk 6.93 (cumle 0), en yuksek 8.31 (cumle 10)"
+ ],
+ "cumleler": [
+  {
+   "p": 1,
+   "text": "Bir direncin iki ucunu bir telle birbirine bağlarsan, o dirençten ne kadar akım geçer?",
+   "last": false,
+   "shorts": false,
+   "syl": 30,
+   "no": 0,
+   "start": 0.03,
+   "end": 5.21,
+   "pause_after": 0.58,
+   "voiced": 4.33,
+   "syl_per_s": 6.93,
+   "inner_pauses": [
+    [
+     3.21,
+     3.5
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 0.03,
+     "t1": 0.18
+    },
+    {
+     "w": "direncin",
+     "t0": 0.18,
+     "t1": 0.63
+    },
+    {
+     "w": "iki",
+     "t0": 0.63,
+     "t1": 1.05
+    },
+    {
+     "w": "ucunu",
+     "t0": 1.05,
+     "t1": 1.48
+    },
+    {
+     "w": "bir",
+     "t0": 1.48,
+     "t1": 1.63
+    },
+    {
+     "w": "telle",
+     "t0": 1.63,
+     "t1": 2.01
+    },
+    {
+     "w": "birbirine",
+     "t0": 2.01,
+     "t1": 2.58
+    },
+    {
+     "w": "bağlarsan,",
+     "t0": 2.58,
+     "t1": 3.06
+    },
+    {
+     "w": "o",
+     "t0": 3.06,
+     "t1": 3.2
+    },
+    {
+     "w": "dirençten",
+     "t0": 3.2,
+     "t1": 3.99
+    },
+    {
+     "w": "ne",
+     "t0": 3.99,
+     "t1": 4.14
+    },
+    {
+     "w": "kadar",
+     "t0": 4.14,
+     "t1": 4.5
+    },
+    {
+     "w": "akım",
+     "t0": 4.5,
+     "t1": 4.88
+    },
+    {
+     "w": "geçer?",
+     "t0": 4.88,
+     "t1": 5.21
+    }
+   ],
+   "sinir_db": {
+    "once": -32.5,
+    "duraklama": -76.9,
+    "sonra": -26.2
+   }
+  },
+  {
+   "p": 1,
+   "text": "Akla gelen ilk düşünce şu olabilir: kısa devrede akım sıfırdır, telden akım geçmez.",
+   "last": true,
+   "shorts": false,
+   "syl": 29,
+   "no": 1,
+   "start": 5.79,
+   "end": 11.11,
+   "pause_after": 0.38,
+   "voiced": 4.18,
+   "syl_per_s": 6.94,
+   "inner_pauses": [
+    [
+     6.58,
+     6.7
+    ],
+    [
+     7.81,
+     8.17
+    ],
+    [
+     9.73,
+     9.99
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akla",
+     "t0": 5.79,
+     "t1": 6.15
+    },
+    {
+     "w": "gelen",
+     "t0": 6.15,
+     "t1": 6.44
+    },
+    {
+     "w": "ilk",
+     "t0": 6.44,
+     "t1": 6.71
+    },
+    {
+     "w": "düşünce",
+     "t0": 6.71,
+     "t1": 7.14
+    },
+    {
+     "w": "şu",
+     "t0": 7.14,
+     "t1": 7.28
+    },
+    {
+     "w": "olabilir:",
+     "t0": 7.28,
+     "t1": 8.22
+    },
+    {
+     "w": "kısa",
+     "t0": 8.22,
+     "t1": 8.51
+    },
+    {
+     "w": "devrede",
+     "t0": 8.51,
+     "t1": 9.01
+    },
+    {
+     "w": "akım",
+     "t0": 9.01,
+     "t1": 9.38
+    },
+    {
+     "w": "sıfırdır,",
+     "t0": 9.38,
+     "t1": 10.12
+    },
+    {
+     "w": "telden",
+     "t0": 10.12,
+     "t1": 10.47
+    },
+    {
+     "w": "akım",
+     "t0": 10.47,
+     "t1": 10.79
+    },
+    {
+     "w": "geçmez.",
+     "t0": 10.79,
+     "t1": 11.11
+    }
+   ],
+   "sinir_db": {
+    "once": -32.8,
+    "duraklama": -82.1,
+    "sonra": -24.2
+   }
+  },
+  {
+   "p": 2,
+   "text": "Oysa birazdan kuracağımız devrede, telin içinden tam üç miliamper geçiyor, direncin içinden ise hiç akım geçmiyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 41,
+   "no": 2,
+   "start": 11.49,
+   "end": 18.63,
+   "pause_after": 0.39,
+   "voiced": 5.87,
+   "syl_per_s": 6.98,
+   "inner_pauses": [
+    [
+     13.57,
+     13.73
+    ],
+    [
+     16.15,
+     16.41
+    ],
+    [
+     17.51,
+     17.62
+    ]
+   ],
+   "words": [
+    {
+     "w": "Oysa",
+     "t0": 11.49,
+     "t1": 11.79
+    },
+    {
+     "w": "birazdan",
+     "t0": 11.79,
+     "t1": 12.22
+    },
+    {
+     "w": "kuracağımız",
+     "t0": 12.22,
+     "t1": 13.0
+    },
+    {
+     "w": "devrede,",
+     "t0": 13.0,
+     "t1": 13.45
+    },
+    {
+     "w": "telin",
+     "t0": 13.45,
+     "t1": 13.9
+    },
+    {
+     "w": "içinden",
+     "t0": 13.9,
+     "t1": 14.37
+    },
+    {
+     "w": "tam",
+     "t0": 14.37,
+     "t1": 14.56
+    },
+    {
+     "w": "üç",
+     "t0": 14.56,
+     "t1": 14.72
+    },
+    {
+     "w": "miliamper",
+     "t0": 14.72,
+     "t1": 15.46
+    },
+    {
+     "w": "geçiyor,",
+     "t0": 15.46,
+     "t1": 15.95
+    },
+    {
+     "w": "direncin",
+     "t0": 15.95,
+     "t1": 16.64
+    },
+    {
+     "w": "içinden",
+     "t0": 16.64,
+     "t1": 17.1
+    },
+    {
+     "w": "ise",
+     "t0": 17.1,
+     "t1": 17.45
+    },
+    {
+     "w": "hiç",
+     "t0": 17.45,
+     "t1": 17.7
+    },
+    {
+     "w": "akım",
+     "t0": 17.7,
+     "t1": 18.1
+    },
+    {
+     "w": "geçmiyor.",
+     "t0": 18.1,
+     "t1": 18.63
+    }
+   ],
+   "sinir_db": {
+    "once": -35.0,
+    "duraklama": -82.7,
+    "sonra": -21.9
+   }
+  },
+  {
+   "p": 2,
+   "text": "Kısa devrede sıfır olan akım değil, gerilimdir.",
+   "last": false,
+   "shorts": false,
+   "syl": 17,
+   "no": 3,
+   "start": 19.02,
+   "end": 21.77,
+   "pause_after": 0.36,
+   "voiced": 2.41,
+   "syl_per_s": 7.05,
+   "inner_pauses": [
+    [
+     20.91,
+     21.07
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kısa",
+     "t0": 19.02,
+     "t1": 19.32
+    },
+    {
+     "w": "devrede",
+     "t0": 19.32,
+     "t1": 19.74
+    },
+    {
+     "w": "sıfır",
+     "t0": 19.74,
+     "t1": 20.09
+    },
+    {
+     "w": "olan",
+     "t0": 20.09,
+     "t1": 20.44
+    },
+    {
+     "w": "akım",
+     "t0": 20.44,
+     "t1": 20.72
+    },
+    {
+     "w": "değil,",
+     "t0": 20.72,
+     "t1": 21.17
+    },
+    {
+     "w": "gerilimdir.",
+     "t0": 21.17,
+     "t1": 21.77
+    }
+   ],
+   "sinir_db": {
+    "once": -35.8,
+    "duraklama": -82.0,
+    "sonra": -35.4
+   }
+  },
+  {
+   "p": 2,
+   "text": "Açık devreyle kısa devreyi karıştırmak, bu konudaki en sık yapılan hata.",
+   "last": true,
+   "shorts": false,
+   "syl": 26,
+   "no": 4,
+   "start": 22.13,
+   "end": 26.31,
+   "pause_after": 0.39,
+   "voiced": 3.18,
+   "syl_per_s": 8.18,
+   "inner_pauses": [
+    [
+     24.29,
+     24.4
+    ],
+    [
+     25.02,
+     25.12
+    ]
+   ],
+   "words": [
+    {
+     "w": "Açık",
+     "t0": 22.13,
+     "t1": 22.51
+    },
+    {
+     "w": "devreyle",
+     "t0": 22.51,
+     "t1": 22.88
+    },
+    {
+     "w": "kısa",
+     "t0": 22.88,
+     "t1": 23.18
+    },
+    {
+     "w": "devreyi",
+     "t0": 23.18,
+     "t1": 23.63
+    },
+    {
+     "w": "karıştırmak,",
+     "t0": 23.63,
+     "t1": 24.17
+    },
+    {
+     "w": "bu",
+     "t0": 24.17,
+     "t1": 24.48
+    },
+    {
+     "w": "konudaki",
+     "t0": 24.48,
+     "t1": 25.21
+    },
+    {
+     "w": "en",
+     "t0": 25.21,
+     "t1": 25.33
+    },
+    {
+     "w": "sık",
+     "t0": 25.33,
+     "t1": 25.46
+    },
+    {
+     "w": "yapılan",
+     "t0": 25.46,
+     "t1": 25.97
+    },
+    {
+     "w": "hata.",
+     "t0": 25.97,
+     "t1": 26.31
+    }
+   ],
+   "sinir_db": {
+    "once": -34.3,
+    "duraklama": -81.9,
+    "sonra": -17.7
+   }
+  },
+  {
+   "p": 3,
+   "text": "Bu bölümün sonunda gerilimi enerjiden hesaplayacak, her gerilimi işaretiyle yazacaksın.",
+   "last": false,
+   "shorts": false,
+   "syl": 34,
+   "no": 5,
+   "start": 26.7,
+   "end": 31.82,
+   "pause_after": 0.27,
+   "voiced": 4.36,
+   "syl_per_s": 7.8,
+   "inner_pauses": [
+    [
+     29.11,
+     29.23
+    ],
+    [
+     29.54,
+     29.87
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 26.7,
+     "t1": 26.83
+    },
+    {
+     "w": "bölümün",
+     "t0": 26.83,
+     "t1": 27.31
+    },
+    {
+     "w": "sonunda",
+     "t0": 27.31,
+     "t1": 27.69
+    },
+    {
+     "w": "gerilimi",
+     "t0": 27.69,
+     "t1": 28.21
+    },
+    {
+     "w": "enerjiden",
+     "t0": 28.21,
+     "t1": 28.73
+    },
+    {
+     "w": "hesaplayacak,",
+     "t0": 28.73,
+     "t1": 29.54
+    },
+    {
+     "w": "her",
+     "t0": 29.54,
+     "t1": 30.0
+    },
+    {
+     "w": "gerilimi",
+     "t0": 30.0,
+     "t1": 30.51
+    },
+    {
+     "w": "işaretiyle",
+     "t0": 30.51,
+     "t1": 31.21
+    },
+    {
+     "w": "yazacaksın.",
+     "t0": 31.21,
+     "t1": 31.82
+    }
+   ],
+   "sinir_db": {
+    "once": -37.6,
+    "duraklama": -82.7,
+    "sonra": -17.0
+   }
+  },
+  {
+   "p": 3,
+   "text": "Bir noktanın geriliminin neye göre ölçüldüğünü bileceksin.",
+   "last": false,
+   "shorts": false,
+   "syl": 22,
+   "no": 6,
+   "start": 32.09,
+   "end": 35.12,
+   "pause_after": 0.28,
+   "voiced": 2.83,
+   "syl_per_s": 7.77,
+   "inner_pauses": [
+    [
+     32.4,
+     32.5
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 32.09,
+     "t1": 32.22
+    },
+    {
+     "w": "noktanın",
+     "t0": 32.22,
+     "t1": 32.71
+    },
+    {
+     "w": "geriliminin",
+     "t0": 32.71,
+     "t1": 33.35
+    },
+    {
+     "w": "neye",
+     "t0": 33.35,
+     "t1": 33.61
+    },
+    {
+     "w": "göre",
+     "t0": 33.61,
+     "t1": 33.87
+    },
+    {
+     "w": "ölçüldüğünü",
+     "t0": 33.87,
+     "t1": 34.54
+    },
+    {
+     "w": "bileceksin.",
+     "t0": 34.54,
+     "t1": 35.12
+    }
+   ],
+   "sinir_db": {
+    "once": -36.2,
+    "duraklama": -83.3,
+    "sonra": -23.9
+   }
+  },
+  {
+   "p": 3,
+   "text": "Kısa devrede akımı bulacak, ideal bir gerilim kaynağının neyi garanti ettiğini göreceksin.",
+   "last": false,
+   "shorts": false,
+   "syl": 35,
+   "no": 7,
+   "start": 35.4,
+   "end": 40.48,
+   "pause_after": 0.24,
+   "voiced": 4.35,
+   "syl_per_s": 8.05,
+   "inner_pauses": [
+    [
+     36.94,
+     37.19
+    ],
+    [
+     39.53,
+     39.64
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kısa",
+     "t0": 35.4,
+     "t1": 35.66
+    },
+    {
+     "w": "devrede",
+     "t0": 35.66,
+     "t1": 36.04
+    },
+    {
+     "w": "akımı",
+     "t0": 36.04,
+     "t1": 36.47
+    },
+    {
+     "w": "bulacak,",
+     "t0": 36.47,
+     "t1": 36.93
+    },
+    {
+     "w": "ideal",
+     "t0": 36.93,
+     "t1": 37.55
+    },
+    {
+     "w": "bir",
+     "t0": 37.55,
+     "t1": 37.68
+    },
+    {
+     "w": "gerilim",
+     "t0": 37.68,
+     "t1": 38.05
+    },
+    {
+     "w": "kaynağının",
+     "t0": 38.05,
+     "t1": 38.59
+    },
+    {
+     "w": "neyi",
+     "t0": 38.59,
+     "t1": 38.84
+    },
+    {
+     "w": "garanti",
+     "t0": 38.84,
+     "t1": 39.21
+    },
+    {
+     "w": "ettiğini",
+     "t0": 39.21,
+     "t1": 39.89
+    },
+    {
+     "w": "göreceksin.",
+     "t0": 39.89,
+     "t1": 40.48
+    }
+   ],
+   "sinir_db": {
+    "once": -38.4,
+    "duraklama": -84.6,
+    "sonra": -17.7
+   }
+  },
+  {
+   "p": 3,
+   "text": "Bir veri sayfasında da gerçek bir kaynağın nerede ideal olmaktan çıktığını öğreneceksin.",
+   "last": true,
+   "shorts": false,
+   "syl": 32,
+   "no": 8,
+   "start": 40.72,
+   "end": 45.79,
+   "pause_after": 0.44,
+   "voiced": 4.42,
+   "syl_per_s": 7.24,
+   "inner_pauses": [
+    [
+     42.53,
+     42.63
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 40.72,
+     "t1": 40.86
+    },
+    {
+     "w": "veri",
+     "t0": 40.86,
+     "t1": 41.14
+    },
+    {
+     "w": "sayfasında",
+     "t0": 41.14,
+     "t1": 41.76
+    },
+    {
+     "w": "da",
+     "t0": 41.76,
+     "t1": 41.9
+    },
+    {
+     "w": "gerçek",
+     "t0": 41.9,
+     "t1": 42.21
+    },
+    {
+     "w": "bir",
+     "t0": 42.21,
+     "t1": 42.34
+    },
+    {
+     "w": "kaynağın",
+     "t0": 42.34,
+     "t1": 42.95
+    },
+    {
+     "w": "nerede",
+     "t0": 42.95,
+     "t1": 43.36
+    },
+    {
+     "w": "ideal",
+     "t0": 43.36,
+     "t1": 43.78
+    },
+    {
+     "w": "olmaktan",
+     "t0": 43.78,
+     "t1": 44.19
+    },
+    {
+     "w": "çıktığını",
+     "t0": 44.19,
+     "t1": 44.96
+    },
+    {
+     "w": "öğreneceksin.",
+     "t0": 44.96,
+     "t1": 45.79
+    }
+   ],
+   "sinir_db": {
+    "once": -38.0,
+    "duraklama": -84.3,
+    "sonra": -27.8
+   }
+  },
+  {
+   "p": 4,
+   "text": "İkinci bölümde akımın bir değeri ve bir yönü olduğunu, açık devrenin de yalnızca akımın sıfır olduğunu garanti ettiğini görmüştük.",
+   "last": false,
+   "shorts": false,
+   "syl": 49,
+   "no": 9,
+   "start": 46.23,
+   "end": 54.05,
+   "pause_after": 0.29,
+   "voiced": 6.71,
+   "syl_per_s": 7.3,
+   "inner_pauses": [
+    [
+     49.63,
+     49.87
+    ],
+    [
+     50.07,
+     50.18
+    ],
+    [
+     53.13,
+     53.24
+    ],
+    [
+     53.93,
+     54.04
+    ]
+   ],
+   "words": [
+    {
+     "w": "İkinci",
+     "t0": 46.23,
+     "t1": 46.7
+    },
+    {
+     "w": "bölümde",
+     "t0": 46.7,
+     "t1": 47.11
+    },
+    {
+     "w": "akımın",
+     "t0": 47.11,
+     "t1": 47.66
+    },
+    {
+     "w": "bir",
+     "t0": 47.66,
+     "t1": 47.79
+    },
+    {
+     "w": "değeri",
+     "t0": 47.79,
+     "t1": 48.21
+    },
+    {
+     "w": "ve",
+     "t0": 48.21,
+     "t1": 48.34
+    },
+    {
+     "w": "bir",
+     "t0": 48.34,
+     "t1": 48.48
+    },
+    {
+     "w": "yönü",
+     "t0": 48.48,
+     "t1": 48.75
+    },
+    {
+     "w": "olduğunu,",
+     "t0": 48.75,
+     "t1": 49.33
+    },
+    {
+     "w": "açık",
+     "t0": 49.33,
+     "t1": 49.6
+    },
+    {
+     "w": "devrenin",
+     "t0": 49.6,
+     "t1": 50.41
+    },
+    {
+     "w": "de",
+     "t0": 50.41,
+     "t1": 50.54
+    },
+    {
+     "w": "yalnızca",
+     "t0": 50.54,
+     "t1": 50.95
+    },
+    {
+     "w": "akımın",
+     "t0": 50.95,
+     "t1": 51.36
+    },
+    {
+     "w": "sıfır",
+     "t0": 51.36,
+     "t1": 51.75
+    },
+    {
+     "w": "olduğunu",
+     "t0": 51.75,
+     "t1": 52.36
+    },
+    {
+     "w": "garanti",
+     "t0": 52.36,
+     "t1": 52.77
+    },
+    {
+     "w": "ettiğini",
+     "t0": 52.77,
+     "t1": 53.46
+    },
+    {
+     "w": "görmüştük.",
+     "t0": 53.46,
+     "t1": 54.05
+    }
+   ],
+   "sinir_db": {
+    "once": -44.5,
+    "duraklama": -80.5,
+    "sonra": -22.6
+   }
+  },
+  {
+   "p": 4,
+   "text": "Şimdi devre teorisinin ikinci temel büyüklüğüne geçiyoruz: gerilim.",
+   "last": true,
+   "shorts": false,
+   "syl": 26,
+   "no": 10,
+   "start": 54.34,
+   "end": 58.33,
+   "pause_after": 0.15,
+   "voiced": 3.13,
+   "syl_per_s": 8.31,
+   "inner_pauses": [
+    [
+     55.74,
+     55.84
+    ],
+    [
+     56.72,
+     56.83
+    ],
+    [
+     57.54,
+     57.89
+    ],
+    [
+     58.33,
+     58.48
+    ]
+   ],
+   "words": [
+    {
+     "w": "Şimdi",
+     "t0": 54.34,
+     "t1": 54.59
+    },
+    {
+     "w": "devre",
+     "t0": 54.59,
+     "t1": 54.83
+    },
+    {
+     "w": "teorisinin",
+     "t0": 54.83,
+     "t1": 55.51
+    },
+    {
+     "w": "ikinci",
+     "t0": 55.51,
+     "t1": 56.03
+    },
+    {
+     "w": "temel",
+     "t0": 56.03,
+     "t1": 56.3
+    },
+    {
+     "w": "büyüklüğüne",
+     "t0": 56.3,
+     "t1": 57.01
+    },
+    {
+     "w": "geçiyoruz:",
+     "t0": 57.01,
+     "t1": 57.97
+    },
+    {
+     "w": "gerilim.",
+     "t0": 57.97,
+     "t1": 58.33
+    }
+   ],
+   "sinir_db": {
+    "once": -18.9,
+    "duraklama": -73.2,
+    "sonra": null
+   }
+  }
+ ]
+}

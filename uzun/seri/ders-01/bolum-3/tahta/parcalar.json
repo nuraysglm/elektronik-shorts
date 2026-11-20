@@ -1,0 +1,10 @@
+{
+ "1": {"ara": [[46.0, 11.4]], "kuyruk": 0.6,
+       "not": "45,79 sn: kanca biter ('... öğreneceksin.') -> 46,0 sn'de 11,4 sn intro kartı + selam (ses/selam.mp3 10,45 sn, aralığın 0,3 sn'sinden itibaren); 57,4 sn'de 'İkinci bölümde...' ile devam"},
+ "2": {"kuyruk": 2.4, "abone": 109.51, "not": "abone kartı 1: 'Bu serinin devamı için kanala abone olabilirsin.' 109,51–112,19 sn; kart 4,5 sn -> kuyruk 2,4 sn"},
+ "3": {"kuyruk": 0.6},
+ "4": {"kuyruk": 0.6},
+ "5": {"kuyruk": 0.6},
+ "6": {"kuyruk": 0.6},
+ "7": {"kuyruk": 20.6, "abone": 52.71, "not": "abone kartı 2: 'Kanala abone olursan…' 52,71–55,31 sn; son 20 sn bitiş ekranı (sessiz) + müzik"}
+}

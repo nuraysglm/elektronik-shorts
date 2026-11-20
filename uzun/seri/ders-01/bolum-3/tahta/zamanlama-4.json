@@ -1,0 +1,2071 @@
+{
+ "yontem": "RMS enerji (10 ms, esik -38 dBFS, en az 0,10 sn) duraklamalari + hece sayisina gore dinamik programlama; kelime zamanlari cumle icinde hece sayisiyla orantili tahmindir; konusma tanima yok, ses dinlenmedi",
+ "ses_suresi": 104.96,
+ "ortalama_hece_suresi": 0.1357,
+ "belirsiz_sinirlar": [],
+ "kontroller": [
+  "28 cumle sinirinin 28 tanesinde: duraklama enerjisi < -38 dBFS ve onceki/sonraki 0,3 sn en az 8 dB daha yuksek",
+  "noktalama cumle 0 'noktaya:' tahmin 2.18 sn; en yakin ic duraklama (1.78, 2.13); fark 0.23 sn",
+  "noktalama cumle 1 'dese,' tahmin 8.93 sn; en yakin ic duraklama (8.51, 8.62); fark 0.37 sn",
+  "noktalama cumle 1 'şu:' tahmin 10.22 sn; en yakin ic duraklama (9.27, 9.5); fark 0.84 sn",
+  "noktalama cumle 2 'volt,' tahmin 12.22 sn; en yakin ic duraklama (11.73, 12.17); fark 0.27 sn",
+  "noktalama cumle 3 'değilse,' tahmin 17.56 sn; en yakin ic duraklama (17.67, 17.9); fark 0.23 sn",
+  "noktalama cumle 5 'Toprak,' tahmin 23.93 sn; en yakin ic duraklama (23.93, 24.08); fark 0.07 sn",
+  "noktalama cumle 7 'dediğimizde,' tahmin 31.04 sn; en yakin ic duraklama (31.22, 31.4); fark 0.27 sn",
+  "noktalama cumle 10 'yerine,' tahmin 41.65 sn; en yakin ic duraklama (41.34, 41.44); fark 0.26 sn",
+  "noktalama cumle 13 'volt,' tahmin 53.20 sn; en yakin ic duraklama (52.88, 53.18); fark 0.17 sn",
+  "noktalama cumle 14 'gerilim,' tahmin 57.53 sn; en yakin ic duraklama (57.15, 57.44); fark 0.23 sn",
+  "noktalama cumle 15 'üç,' tahmin 61.57 sn; en yakin ic duraklama (61.64, 61.89); fark 0.20 sn",
+  "noktalama cumle 16 'Tersinden,' tahmin 63.87 sn; en yakin ic duraklama (64.03, 64.23); fark 0.26 sn",
+  "noktalama cumle 20 'ise,' tahmin 75.66 sn; en yakin ic duraklama (75.25, 75.44); fark 0.31 sn",
+  "noktalama cumle 20 'üç,' tahmin 77.07 sn; en yakin ic duraklama (77.07, 77.28); fark 0.11 sn",
+  "noktalama cumle 21 'üç,' tahmin 82.55 sn; en yakin ic duraklama (82.24, 82.46); fark 0.20 sn",
+  "noktalama cumle 22 'değişti,' tahmin 86.10 sn; en yakin ic duraklama (85.82, 86.05); fark 0.16 sn",
+  "noktalama cumle 24 'sıfır,' tahmin 91.73 sn; en yakin ic duraklama (91.55, 91.65); fark 0.13 sn",
+  "noktalama cumle 25 'gerilim,' tahmin 95.66 sn; en yakin ic duraklama (95.33, 95.48); fark 0.25 sn",
+  "hece hizi (sesli sure uzerinden): ortalama 7.49, std 0.97, en dusuk 5.44 (cumle 15), en yuksek 10.00 (cumle 12)"
+ ],
+ "cumleler": [
+  {
+   "p": 1,
+   "text": "Gelelim çok önemli bir noktaya: gerilim yalnızca iki nokta arasında anlamlıdır.",
+   "last": false,
+   "shorts": false,
+   "syl": 29,
+   "no": 0,
+   "start": 0.02,
+   "end": 5.09,
+   "pause_after": 0.42,
+   "voiced": 4.05,
+   "syl_per_s": 7.16,
+   "inner_pauses": [
+    [
+     1.38,
+     1.51
+    ],
+    [
+     1.78,
+     2.13
+    ],
+    [
+     3.38,
+     3.48
+    ]
+   ],
+   "words": [
+    {
+     "w": "Gelelim",
+     "t0": 0.02,
+     "t1": 0.44
+    },
+    {
+     "w": "çok",
+     "t0": 0.44,
+     "t1": 0.65
+    },
+    {
+     "w": "önemli",
+     "t0": 0.65,
+     "t1": 1.11
+    },
+    {
+     "w": "bir",
+     "t0": 1.11,
+     "t1": 1.25
+    },
+    {
+     "w": "noktaya:",
+     "t0": 1.25,
+     "t1": 2.18
+    },
+    {
+     "w": "gerilim",
+     "t0": 2.18,
+     "t1": 2.6
+    },
+    {
+     "w": "yalnızca",
+     "t0": 2.6,
+     "t1": 3.02
+    },
+    {
+     "w": "iki",
+     "t0": 3.02,
+     "t1": 3.3
+    },
+    {
+     "w": "nokta",
+     "t0": 3.3,
+     "t1": 3.76
+    },
+    {
+     "w": "arasında",
+     "t0": 3.76,
+     "t1": 4.42
+    },
+    {
+     "w": "anlamlıdır.",
+     "t0": 4.42,
+     "t1": 5.09
+    }
+   ],
+   "sinir_db": {
+    "once": -36.6,
+    "duraklama": -71.9,
+    "sonra": -21.1
+   }
+  },
+  {
+   "p": 1,
+   "text": "Bir arkadaşın ölçüm yapıp şu noktada on iki volt var dese, ilk sorman gereken şu: neye göre?",
+   "last": false,
+   "shorts": false,
+   "syl": 31,
+   "no": 1,
+   "start": 5.51,
+   "end": 10.82,
+   "pause_after": 0.35,
+   "voiced": 4.23,
+   "syl_per_s": 7.33,
+   "inner_pauses": [
+    [
+     6.96,
+     7.22
+    ],
+    [
+     7.55,
+     7.65
+    ],
+    [
+     8.51,
+     8.62
+    ],
+    [
+     9.27,
+     9.5
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 5.51,
+     "t1": 5.65
+    },
+    {
+     "w": "arkadaşın",
+     "t0": 5.65,
+     "t1": 6.24
+    },
+    {
+     "w": "ölçüm",
+     "t0": 6.24,
+     "t1": 6.56
+    },
+    {
+     "w": "yapıp",
+     "t0": 6.56,
+     "t1": 6.87
+    },
+    {
+     "w": "şu",
+     "t0": 6.87,
+     "t1": 7.27
+    },
+    {
+     "w": "noktada",
+     "t0": 7.27,
+     "t1": 7.78
+    },
+    {
+     "w": "on",
+     "t0": 7.78,
+     "t1": 7.99
+    },
+    {
+     "w": "iki",
+     "t0": 7.99,
+     "t1": 8.28
+    },
+    {
+     "w": "volt",
+     "t0": 8.28,
+     "t1": 8.41
+    },
+    {
+     "w": "var",
+     "t0": 8.41,
+     "t1": 8.66
+    },
+    {
+     "w": "dese,",
+     "t0": 8.66,
+     "t1": 8.93
+    },
+    {
+     "w": "ilk",
+     "t0": 8.93,
+     "t1": 9.09
+    },
+    {
+     "w": "sorman",
+     "t0": 9.09,
+     "t1": 9.59
+    },
+    {
+     "w": "gereken",
+     "t0": 9.59,
+     "t1": 10.08
+    },
+    {
+     "w": "şu:",
+     "t0": 10.08,
+     "t1": 10.22
+    },
+    {
+     "w": "neye",
+     "t0": 10.22,
+     "t1": 10.55
+    },
+    {
+     "w": "göre?",
+     "t0": 10.55,
+     "t1": 10.82
+    }
+   ],
+   "sinir_db": {
+    "once": -25.0,
+    "duraklama": -80.8,
+    "sonra": -13.8
+   }
+  },
+  {
+   "p": 1,
+   "text": "On iki volt, o noktayla başka bir nokta arasındaki farktır.",
+   "last": false,
+   "shorts": false,
+   "syl": 20,
+   "no": 2,
+   "start": 11.17,
+   "end": 15.67,
+   "pause_after": 0.36,
+   "voiced": 3.0,
+   "syl_per_s": 6.67,
+   "inner_pauses": [
+    [
+     11.73,
+     12.17
+    ],
+    [
+     12.83,
+     12.94
+    ],
+    [
+     12.95,
+     13.08
+    ],
+    [
+     14.43,
+     14.53
+    ],
+    [
+     15.14,
+     15.24
+    ],
+    [
+     15.39,
+     15.54
+    ]
+   ],
+   "words": [
+    {
+     "w": "On",
+     "t0": 11.17,
+     "t1": 11.32
+    },
+    {
+     "w": "iki",
+     "t0": 11.32,
+     "t1": 11.62
+    },
+    {
+     "w": "volt,",
+     "t0": 11.62,
+     "t1": 12.22
+    },
+    {
+     "w": "o",
+     "t0": 12.22,
+     "t1": 12.37
+    },
+    {
+     "w": "noktayla",
+     "t0": 12.37,
+     "t1": 13.15
+    },
+    {
+     "w": "başka",
+     "t0": 13.15,
+     "t1": 13.56
+    },
+    {
+     "w": "bir",
+     "t0": 13.56,
+     "t1": 13.71
+    },
+    {
+     "w": "nokta",
+     "t0": 13.71,
+     "t1": 14.02
+    },
+    {
+     "w": "arasındaki",
+     "t0": 14.02,
+     "t1": 14.96
+    },
+    {
+     "w": "farktır.",
+     "t0": 14.96,
+     "t1": 15.67
+    }
+   ],
+   "sinir_db": {
+    "once": -48.5,
+    "duraklama": -76.4,
+    "sonra": -19.4
+   }
+  },
+  {
+   "p": 1,
+   "text": "O başka nokta belli değilse, söylenen sayı eksik kalır.",
+   "last": true,
+   "shorts": false,
+   "syl": 19,
+   "no": 3,
+   "start": 16.03,
+   "end": 19.25,
+   "pause_after": 0.43,
+   "voiced": 2.51,
+   "syl_per_s": 7.57,
+   "inner_pauses": [
+    [
+     17.67,
+     17.9
+    ],
+    [
+     18.87,
+     18.97
+    ]
+   ],
+   "words": [
+    {
+     "w": "O",
+     "t0": 16.03,
+     "t1": 16.17
+    },
+    {
+     "w": "başka",
+     "t0": 16.17,
+     "t1": 16.48
+    },
+    {
+     "w": "nokta",
+     "t0": 16.48,
+     "t1": 16.84
+    },
+    {
+     "w": "belli",
+     "t0": 16.84,
+     "t1": 17.1
+    },
+    {
+     "w": "değilse,",
+     "t0": 17.1,
+     "t1": 17.56
+    },
+    {
+     "w": "söylenen",
+     "t0": 17.56,
+     "t1": 18.18
+    },
+    {
+     "w": "sayı",
+     "t0": 18.18,
+     "t1": 18.47
+    },
+    {
+     "w": "eksik",
+     "t0": 18.47,
+     "t1": 18.78
+    },
+    {
+     "w": "kalır.",
+     "t0": 18.78,
+     "t1": 19.25
+    }
+   ],
+   "sinir_db": {
+    "once": -35.9,
+    "duraklama": -74.6,
+    "sonra": -30.2
+   }
+  },
+  {
+   "p": 2,
+   "text": "Pratikte o başka nokta çoğu zaman devrenin toprağıdır.",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 4,
+   "start": 19.68,
+   "end": 23.13,
+   "pause_after": 0.38,
+   "voiced": 2.65,
+   "syl_per_s": 7.17,
+   "inner_pauses": [
+    [
+     21.29,
+     21.4
+    ],
+    [
+     22.64,
+     22.74
+    ]
+   ],
+   "words": [
+    {
+     "w": "Pratikte",
+     "t0": 19.68,
+     "t1": 20.3
+    },
+    {
+     "w": "o",
+     "t0": 20.3,
+     "t1": 20.44
+    },
+    {
+     "w": "başka",
+     "t0": 20.44,
+     "t1": 20.79
+    },
+    {
+     "w": "nokta",
+     "t0": 20.79,
+     "t1": 21.19
+    },
+    {
+     "w": "çoğu",
+     "t0": 21.19,
+     "t1": 21.6
+    },
+    {
+     "w": "zaman",
+     "t0": 21.6,
+     "t1": 21.88
+    },
+    {
+     "w": "devrenin",
+     "t0": 21.88,
+     "t1": 22.3
+    },
+    {
+     "w": "toprağıdır.",
+     "t0": 22.3,
+     "t1": 23.13
+    }
+   ],
+   "sinir_db": {
+    "once": -35.0,
+    "duraklama": -74.2,
+    "sonra": -26.1
+   }
+  },
+  {
+   "p": 2,
+   "text": "Toprak, devrede referans olarak seçtiğimiz ortak bir uç.",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 5,
+   "start": 23.51,
+   "end": 26.92,
+   "pause_after": 0.32,
+   "voiced": 2.35,
+   "syl_per_s": 8.09,
+   "inner_pauses": [
+    [
+     23.61,
+     23.71
+    ],
+    [
+     23.93,
+     24.08
+    ],
+    [
+     25.31,
+     25.44
+    ],
+    [
+     26.41,
+     26.56
+    ],
+    [
+     26.72,
+     26.82
+    ]
+   ],
+   "words": [
+    {
+     "w": "Toprak,",
+     "t0": 23.51,
+     "t1": 23.93
+    },
+    {
+     "w": "devrede",
+     "t0": 23.93,
+     "t1": 24.45
+    },
+    {
+     "w": "referans",
+     "t0": 24.45,
+     "t1": 24.89
+    },
+    {
+     "w": "olarak",
+     "t0": 24.89,
+     "t1": 25.45
+    },
+    {
+     "w": "seçtiğimiz",
+     "t0": 25.45,
+     "t1": 26.11
+    },
+    {
+     "w": "ortak",
+     "t0": 26.11,
+     "t1": 26.57
+    },
+    {
+     "w": "bir",
+     "t0": 26.57,
+     "t1": 26.7
+    },
+    {
+     "w": "uç.",
+     "t0": 26.7,
+     "t1": 26.92
+    }
+   ],
+   "sinir_db": {
+    "once": -42.9,
+    "duraklama": -79.2,
+    "sonra": -19.7
+   }
+  },
+  {
+   "p": 2,
+   "text": "Şemada bu sembolle gösterilir.",
+   "last": false,
+   "shorts": false,
+   "syl": 11,
+   "no": 6,
+   "start": 27.24,
+   "end": 28.93,
+   "pause_after": 0.45,
+   "voiced": 1.48,
+   "syl_per_s": 7.43,
+   "inner_pauses": [
+    [
+     28.58,
+     28.68
+    ]
+   ],
+   "words": [
+    {
+     "w": "Şemada",
+     "t0": 27.24,
+     "t1": 27.65
+    },
+    {
+     "w": "bu",
+     "t0": 27.65,
+     "t1": 27.78
+    },
+    {
+     "w": "sembolle",
+     "t0": 27.78,
+     "t1": 28.24
+    },
+    {
+     "w": "gösterilir.",
+     "t0": 28.24,
+     "t1": 28.93
+    }
+   ],
+   "sinir_db": {
+    "once": -34.8,
+    "duraklama": -69.1,
+    "sonra": -23.2
+   }
+  },
+  {
+   "p": 2,
+   "text": "Bir noktanın gerilimi dediğimizde, o noktayla toprak arasındaki gerilimi kastederiz.",
+   "last": false,
+   "shorts": false,
+   "syl": 32,
+   "no": 7,
+   "start": 29.38,
+   "end": 34.14,
+   "pause_after": 0.37,
+   "voiced": 3.67,
+   "syl_per_s": 8.72,
+   "inner_pauses": [
+    [
+     31.22,
+     31.4
+    ],
+    [
+     32.07,
+     32.19
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 29.38,
+     "t1": 29.5
+    },
+    {
+     "w": "noktanın",
+     "t0": 29.5,
+     "t1": 29.92
+    },
+    {
+     "w": "gerilimi",
+     "t0": 29.92,
+     "t1": 30.38
+    },
+    {
+     "w": "dediğimizde,",
+     "t0": 30.38,
+     "t1": 31.04
+    },
+    {
+     "w": "o",
+     "t0": 31.04,
+     "t1": 31.15
+    },
+    {
+     "w": "noktayla",
+     "t0": 31.15,
+     "t1": 31.8
+    },
+    {
+     "w": "toprak",
+     "t0": 31.8,
+     "t1": 32.03
+    },
+    {
+     "w": "arasındaki",
+     "t0": 32.03,
+     "t1": 32.89
+    },
+    {
+     "w": "gerilimi",
+     "t0": 32.89,
+     "t1": 33.42
+    },
+    {
+     "w": "kastederiz.",
+     "t0": 33.42,
+     "t1": 34.14
+    }
+   ],
+   "sinir_db": {
+    "once": -35.9,
+    "duraklama": -74.0,
+    "sonra": -16.4
+   }
+  },
+  {
+   "p": 2,
+   "text": "Neden böyle yaparız?",
+   "last": false,
+   "shorts": false,
+   "syl": 7,
+   "no": 8,
+   "start": 34.51,
+   "end": 35.57,
+   "pause_after": 0.34,
+   "voiced": 0.91,
+   "syl_per_s": 7.69,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Neden",
+     "t0": 34.51,
+     "t1": 34.78
+    },
+    {
+     "w": "böyle",
+     "t0": 34.78,
+     "t1": 35.03
+    },
+    {
+     "w": "yaparız?",
+     "t0": 35.03,
+     "t1": 35.57
+    }
+   ],
+   "sinir_db": {
+    "once": -30.3,
+    "duraklama": -78.2,
+    "sonra": -18.2
+   }
+  },
+  {
+   "p": 2,
+   "text": "Bir devrede onlarca nokta olabilir.",
+   "last": false,
+   "shorts": false,
+   "syl": 13,
+   "no": 9,
+   "start": 35.91,
+   "end": 37.98,
+   "pause_after": 0.35,
+   "voiced": 1.8,
+   "syl_per_s": 7.22,
+   "inner_pauses": [
+    [
+     37.3,
+     37.42
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 35.91,
+     "t1": 36.05
+    },
+    {
+     "w": "devrede",
+     "t0": 36.05,
+     "t1": 36.47
+    },
+    {
+     "w": "onlarca",
+     "t0": 36.47,
+     "t1": 36.97
+    },
+    {
+     "w": "nokta",
+     "t0": 36.97,
+     "t1": 37.25
+    },
+    {
+     "w": "olabilir.",
+     "t0": 37.25,
+     "t1": 37.98
+    }
+   ],
+   "sinir_db": {
+    "once": -32.4,
+    "duraklama": -73.1,
+    "sonra": -16.8
+   }
+  },
+  {
+   "p": 2,
+   "text": "Her biri için ayrı ayrı neye göre olduğunu söylemek yerine, hepsini aynı uca göre veririz.",
+   "last": false,
+   "shorts": false,
+   "syl": 35,
+   "no": 10,
+   "start": 38.33,
+   "end": 43.71,
+   "pause_after": 0.37,
+   "voiced": 4.55,
+   "syl_per_s": 7.69,
+   "inner_pauses": [
+    [
+     40.88,
+     40.98
+    ],
+    [
+     41.34,
+     41.44
+    ],
+    [
+     41.81,
+     42.06
+    ]
+   ],
+   "words": [
+    {
+     "w": "Her",
+     "t0": 38.33,
+     "t1": 38.46
+    },
+    {
+     "w": "biri",
+     "t0": 38.46,
+     "t1": 38.73
+    },
+    {
+     "w": "için",
+     "t0": 38.73,
+     "t1": 39.03
+    },
+    {
+     "w": "ayrı",
+     "t0": 39.03,
+     "t1": 39.37
+    },
+    {
+     "w": "ayrı",
+     "t0": 39.37,
+     "t1": 39.63
+    },
+    {
+     "w": "neye",
+     "t0": 39.63,
+     "t1": 39.89
+    },
+    {
+     "w": "göre",
+     "t0": 39.89,
+     "t1": 40.15
+    },
+    {
+     "w": "olduğunu",
+     "t0": 40.15,
+     "t1": 40.67
+    },
+    {
+     "w": "söylemek",
+     "t0": 40.67,
+     "t1": 41.16
+    },
+    {
+     "w": "yerine,",
+     "t0": 41.16,
+     "t1": 41.65
+    },
+    {
+     "w": "hepsini",
+     "t0": 41.65,
+     "t1": 42.35
+    },
+    {
+     "w": "aynı",
+     "t0": 42.35,
+     "t1": 42.68
+    },
+    {
+     "w": "uca",
+     "t0": 42.68,
+     "t1": 42.94
+    },
+    {
+     "w": "göre",
+     "t0": 42.94,
+     "t1": 43.22
+    },
+    {
+     "w": "veririz.",
+     "t0": 43.22,
+     "t1": 43.71
+    }
+   ],
+   "sinir_db": {
+    "once": -36.0,
+    "duraklama": -65.8,
+    "sonra": -16.8
+   }
+  },
+  {
+   "p": 2,
+   "text": "Böylece iki noktanın gerilimini birbirinden çıkararak aralarındaki gerilimi hemen buluruz.",
+   "last": true,
+   "shorts": false,
+   "syl": 36,
+   "no": 11,
+   "start": 44.08,
+   "end": 49.19,
+   "pause_after": 0.52,
+   "voiced": 4.32,
+   "syl_per_s": 8.33,
+   "inner_pauses": [
+    [
+     47.2,
+     47.39
+    ],
+    [
+     48.5,
+     48.61
+    ]
+   ],
+   "words": [
+    {
+     "w": "Böylece",
+     "t0": 44.08,
+     "t1": 44.44
+    },
+    {
+     "w": "iki",
+     "t0": 44.44,
+     "t1": 44.77
+    },
+    {
+     "w": "noktanın",
+     "t0": 44.77,
+     "t1": 45.27
+    },
+    {
+     "w": "gerilimini",
+     "t0": 45.27,
+     "t1": 45.87
+    },
+    {
+     "w": "birbirinden",
+     "t0": 45.87,
+     "t1": 46.35
+    },
+    {
+     "w": "çıkararak",
+     "t0": 46.35,
+     "t1": 46.95
+    },
+    {
+     "w": "aralarındaki",
+     "t0": 46.95,
+     "t1": 47.98
+    },
+    {
+     "w": "gerilimi",
+     "t0": 47.98,
+     "t1": 48.45
+    },
+    {
+     "w": "hemen",
+     "t0": 48.45,
+     "t1": 48.8
+    },
+    {
+     "w": "buluruz.",
+     "t0": 48.8,
+     "t1": 49.19
+    }
+   ],
+   "sinir_db": {
+    "once": -26.2,
+    "duraklama": -68.1,
+    "sonra": -15.8
+   }
+  },
+  {
+   "p": 3,
+   "text": "Bir örnek yapalım.",
+   "last": false,
+   "shorts": false,
+   "syl": 6,
+   "no": 12,
+   "start": 49.71,
+   "end": 50.46,
+   "pause_after": 0.31,
+   "voiced": 0.6,
+   "syl_per_s": 10.0,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 49.71,
+     "t1": 49.82
+    },
+    {
+     "w": "örnek",
+     "t0": 49.82,
+     "t1": 50.01
+    },
+    {
+     "w": "yapalım.",
+     "t0": 50.01,
+     "t1": 50.46
+    }
+   ],
+   "sinir_db": {
+    "once": -32.5,
+    "duraklama": -78.0,
+    "sonra": -25.3
+   }
+  },
+  {
+   "p": 3,
+   "text": "Toprağa göre a noktası beş volt, be noktası üç virgül üç volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 20,
+   "no": 13,
+   "start": 50.77,
+   "end": 55.0,
+   "pause_after": 0.45,
+   "voiced": 3.01,
+   "syl_per_s": 6.64,
+   "inner_pauses": [
+    [
+     51.54,
+     51.67
+    ],
+    [
+     52.0,
+     52.12
+    ],
+    [
+     52.88,
+     53.18
+    ],
+    [
+     53.55,
+     53.67
+    ],
+    [
+     53.96,
+     54.07
+    ]
+   ],
+   "words": [
+    {
+     "w": "Toprağa",
+     "t0": 50.77,
+     "t1": 51.31
+    },
+    {
+     "w": "göre",
+     "t0": 51.31,
+     "t1": 51.74
+    },
+    {
+     "w": "a",
+     "t0": 51.74,
+     "t1": 51.89
+    },
+    {
+     "w": "noktası",
+     "t0": 51.89,
+     "t1": 52.55
+    },
+    {
+     "w": "beş",
+     "t0": 52.55,
+     "t1": 52.75
+    },
+    {
+     "w": "volt,",
+     "t0": 52.75,
+     "t1": 53.2
+    },
+    {
+     "w": "be",
+     "t0": 53.2,
+     "t1": 53.35
+    },
+    {
+     "w": "noktası",
+     "t0": 53.35,
+     "t1": 53.94
+    },
+    {
+     "w": "üç",
+     "t0": 53.94,
+     "t1": 54.24
+    },
+    {
+     "w": "virgül",
+     "t0": 54.24,
+     "t1": 54.57
+    },
+    {
+     "w": "üç",
+     "t0": 54.57,
+     "t1": 54.79
+    },
+    {
+     "w": "volt.",
+     "t0": 54.79,
+     "t1": 55.0
+    }
+   ],
+   "sinir_db": {
+    "once": -34.2,
+    "duraklama": -73.0,
+    "sonra": -16.2
+   }
+  },
+  {
+   "p": 3,
+   "text": "a ile be arasındaki gerilim, a'nın gerilimi eksi be'nin gerilimi.",
+   "last": false,
+   "shorts": false,
+   "syl": 26,
+   "no": 14,
+   "start": 55.45,
+   "end": 59.73,
+   "pause_after": 0.26,
+   "voiced": 3.59,
+   "syl_per_s": 7.24,
+   "inner_pauses": [
+    [
+     57.15,
+     57.44
+    ],
+    [
+     58.36,
+     58.53
+    ]
+   ],
+   "words": [
+    {
+     "w": "a",
+     "t0": 55.45,
+     "t1": 55.59
+    },
+    {
+     "w": "ile",
+     "t0": 55.59,
+     "t1": 55.87
+    },
+    {
+     "w": "be",
+     "t0": 55.87,
+     "t1": 56.01
+    },
+    {
+     "w": "arasındaki",
+     "t0": 56.01,
+     "t1": 56.82
+    },
+    {
+     "w": "gerilim,",
+     "t0": 56.82,
+     "t1": 57.53
+    },
+    {
+     "w": "a'nın",
+     "t0": 57.53,
+     "t1": 57.81
+    },
+    {
+     "w": "gerilimi",
+     "t0": 57.81,
+     "t1": 58.36
+    },
+    {
+     "w": "eksi",
+     "t0": 58.36,
+     "t1": 58.89
+    },
+    {
+     "w": "be'nin",
+     "t0": 58.89,
+     "t1": 59.16
+    },
+    {
+     "w": "gerilimi.",
+     "t0": 59.16,
+     "t1": 59.73
+    }
+   ],
+   "sinir_db": {
+    "once": -32.0,
+    "duraklama": -82.5,
+    "sonra": -20.6
+   }
+  },
+  {
+   "p": 3,
+   "text": "Beş eksi üç virgül üç, bir virgül yedi volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 13,
+   "no": 15,
+   "start": 59.99,
+   "end": 62.93,
+   "pause_after": 0.47,
+   "voiced": 2.39,
+   "syl_per_s": 5.44,
+   "inner_pauses": [
+    [
+     61.64,
+     61.89
+    ]
+   ],
+   "words": [
+    {
+     "w": "Beş",
+     "t0": 59.99,
+     "t1": 60.18
+    },
+    {
+     "w": "eksi",
+     "t0": 60.18,
+     "t1": 60.62
+    },
+    {
+     "w": "üç",
+     "t0": 60.62,
+     "t1": 60.86
+    },
+    {
+     "w": "virgül",
+     "t0": 60.86,
+     "t1": 61.27
+    },
+    {
+     "w": "üç,",
+     "t0": 61.27,
+     "t1": 61.57
+    },
+    {
+     "w": "bir",
+     "t0": 61.57,
+     "t1": 62.01
+    },
+    {
+     "w": "virgül",
+     "t0": 62.01,
+     "t1": 62.38
+    },
+    {
+     "w": "yedi",
+     "t0": 62.38,
+     "t1": 62.75
+    },
+    {
+     "w": "volt.",
+     "t0": 62.75,
+     "t1": 62.93
+    }
+   ],
+   "sinir_db": {
+    "once": -25.5,
+    "duraklama": -70.8,
+    "sonra": -22.8
+   }
+  },
+  {
+   "p": 3,
+   "text": "Tersinden, be ile a arasındaki gerilim eksi bir virgül yedi volt.",
+   "last": true,
+   "shorts": false,
+   "syl": 23,
+   "no": 16,
+   "start": 63.4,
+   "end": 67.64,
+   "pause_after": 0.49,
+   "voiced": 3.55,
+   "syl_per_s": 6.48,
+   "inner_pauses": [
+    [
+     64.03,
+     64.23
+    ],
+    [
+     66.06,
+     66.3
+    ]
+   ],
+   "words": [
+    {
+     "w": "Tersinden,",
+     "t0": 63.4,
+     "t1": 63.87
+    },
+    {
+     "w": "be",
+     "t0": 63.87,
+     "t1": 64.02
+    },
+    {
+     "w": "ile",
+     "t0": 64.02,
+     "t1": 64.53
+    },
+    {
+     "w": "a",
+     "t0": 64.53,
+     "t1": 64.69
+    },
+    {
+     "w": "arasındaki",
+     "t0": 64.69,
+     "t1": 65.64
+    },
+    {
+     "w": "gerilim",
+     "t0": 65.64,
+     "t1": 66.34
+    },
+    {
+     "w": "eksi",
+     "t0": 66.34,
+     "t1": 66.71
+    },
+    {
+     "w": "bir",
+     "t0": 66.71,
+     "t1": 66.86
+    },
+    {
+     "w": "virgül",
+     "t0": 66.86,
+     "t1": 67.18
+    },
+    {
+     "w": "yedi",
+     "t0": 67.18,
+     "t1": 67.49
+    },
+    {
+     "w": "volt.",
+     "t0": 67.49,
+     "t1": 67.64
+    }
+   ],
+   "sinir_db": {
+    "once": -24.9,
+    "duraklama": -71.4,
+    "sonra": -23.6
+   }
+  },
+  {
+   "p": 4,
+   "text": "Şimdi referansı değiştirelim.",
+   "last": false,
+   "shorts": false,
+   "syl": 11,
+   "no": 17,
+   "start": 68.13,
+   "end": 69.55,
+   "pause_after": 0.28,
+   "voiced": 1.3,
+   "syl_per_s": 8.46,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Şimdi",
+     "t0": 68.13,
+     "t1": 68.37
+    },
+    {
+     "w": "referansı",
+     "t0": 68.37,
+     "t1": 68.89
+    },
+    {
+     "w": "değiştirelim.",
+     "t0": 68.89,
+     "t1": 69.55
+    }
+   ],
+   "sinir_db": {
+    "once": -30.4,
+    "duraklama": -78.7,
+    "sonra": -29.1
+   }
+  },
+  {
+   "p": 4,
+   "text": "Toprağı be noktasına taşıyalım.",
+   "last": false,
+   "shorts": false,
+   "syl": 12,
+   "no": 18,
+   "start": 69.83,
+   "end": 71.51,
+   "pause_after": 0.24,
+   "voiced": 1.31,
+   "syl_per_s": 9.16,
+   "inner_pauses": [
+    [
+     69.93,
+     70.03
+    ],
+    [
+     70.61,
+     70.72
+    ]
+   ],
+   "words": [
+    {
+     "w": "Toprağı",
+     "t0": 69.83,
+     "t1": 70.26
+    },
+    {
+     "w": "be",
+     "t0": 70.26,
+     "t1": 70.37
+    },
+    {
+     "w": "noktasına",
+     "t0": 70.37,
+     "t1": 70.98
+    },
+    {
+     "w": "taşıyalım.",
+     "t0": 70.98,
+     "t1": 71.51
+    }
+   ],
+   "sinir_db": {
+    "once": -29.6,
+    "duraklama": -81.8,
+    "sonra": -17.5
+   }
+  },
+  {
+   "p": 4,
+   "text": "be'nin gerilimi artık sıfır volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 11,
+   "no": 19,
+   "start": 71.75,
+   "end": 73.63,
+   "pause_after": 0.46,
+   "voiced": 1.59,
+   "syl_per_s": 6.92,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "be'nin",
+     "t0": 71.75,
+     "t1": 72.04
+    },
+    {
+     "w": "gerilimi",
+     "t0": 72.04,
+     "t1": 72.62
+    },
+    {
+     "w": "artık",
+     "t0": 72.62,
+     "t1": 73.04
+    },
+    {
+     "w": "sıfır",
+     "t0": 73.04,
+     "t1": 73.48
+    },
+    {
+     "w": "volt.",
+     "t0": 73.48,
+     "t1": 73.63
+    }
+   ],
+   "sinir_db": {
+    "once": -28.4,
+    "duraklama": -70.8,
+    "sonra": -16.4
+   }
+  },
+  {
+   "p": 4,
+   "text": "a'nın gerilimi ise, beş eksi üç virgül üç, bir virgül yedi volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 21,
+   "no": 20,
+   "start": 74.09,
+   "end": 78.26,
+   "pause_after": 0.45,
+   "voiced": 3.38,
+   "syl_per_s": 6.21,
+   "inner_pauses": [
+    [
+     75.25,
+     75.44
+    ],
+    [
+     77.07,
+     77.28
+    ]
+   ],
+   "words": [
+    {
+     "w": "a'nın",
+     "t0": 74.09,
+     "t1": 74.42
+    },
+    {
+     "w": "gerilimi",
+     "t0": 74.42,
+     "t1": 75.15
+    },
+    {
+     "w": "ise,",
+     "t0": 75.15,
+     "t1": 75.66
+    },
+    {
+     "w": "beş",
+     "t0": 75.66,
+     "t1": 75.83
+    },
+    {
+     "w": "eksi",
+     "t0": 75.83,
+     "t1": 76.28
+    },
+    {
+     "w": "üç",
+     "t0": 76.28,
+     "t1": 76.45
+    },
+    {
+     "w": "virgül",
+     "t0": 76.45,
+     "t1": 76.83
+    },
+    {
+     "w": "üç,",
+     "t0": 76.83,
+     "t1": 77.07
+    },
+    {
+     "w": "bir",
+     "t0": 77.07,
+     "t1": 77.44
+    },
+    {
+     "w": "virgül",
+     "t0": 77.44,
+     "t1": 77.78
+    },
+    {
+     "w": "yedi",
+     "t0": 77.78,
+     "t1": 78.1
+    },
+    {
+     "w": "volt.",
+     "t0": 78.1,
+     "t1": 78.26
+    }
+   ],
+   "sinir_db": {
+    "once": -24.3,
+    "duraklama": -73.1,
+    "sonra": -29.2
+   }
+  },
+  {
+   "p": 4,
+   "text": "Eski toprağın gerilimi de artık sıfır eksi üç virgül üç, eksi üç virgül üç volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 27,
+   "no": 21,
+   "start": 78.71,
+   "end": 83.76,
+   "pause_after": 0.43,
+   "voiced": 3.82,
+   "syl_per_s": 7.07,
+   "inner_pauses": [
+    [
+     80.14,
+     80.26
+    ],
+    [
+     82.24,
+     82.46
+    ]
+   ],
+   "words": [
+    {
+     "w": "Eski",
+     "t0": 78.71,
+     "t1": 79.11
+    },
+    {
+     "w": "toprağın",
+     "t0": 79.11,
+     "t1": 79.59
+    },
+    {
+     "w": "gerilimi",
+     "t0": 79.59,
+     "t1": 80.28
+    },
+    {
+     "w": "de",
+     "t0": 80.28,
+     "t1": 80.42
+    },
+    {
+     "w": "artık",
+     "t0": 80.42,
+     "t1": 80.84
+    },
+    {
+     "w": "sıfır",
+     "t0": 80.84,
+     "t1": 81.28
+    },
+    {
+     "w": "eksi",
+     "t0": 81.28,
+     "t1": 81.62
+    },
+    {
+     "w": "üç",
+     "t0": 81.62,
+     "t1": 81.76
+    },
+    {
+     "w": "virgül",
+     "t0": 81.76,
+     "t1": 82.19
+    },
+    {
+     "w": "üç,",
+     "t0": 82.19,
+     "t1": 82.55
+    },
+    {
+     "w": "eksi",
+     "t0": 82.55,
+     "t1": 82.88
+    },
+    {
+     "w": "üç",
+     "t0": 82.88,
+     "t1": 83.07
+    },
+    {
+     "w": "virgül",
+     "t0": 83.07,
+     "t1": 83.38
+    },
+    {
+     "w": "üç",
+     "t0": 83.38,
+     "t1": 83.56
+    },
+    {
+     "w": "volt.",
+     "t0": 83.56,
+     "t1": 83.76
+    }
+   ],
+   "sinir_db": {
+    "once": -35.1,
+    "duraklama": -72.2,
+    "sonra": -27.6
+   }
+  },
+  {
+   "p": 4,
+   "text": "Noktaların gerilimleri değişti, çünkü referans değişti.",
+   "last": false,
+   "shorts": false,
+   "syl": 20,
+   "no": 22,
+   "start": 84.19,
+   "end": 87.35,
+   "pause_after": 0.28,
+   "voiced": 2.57,
+   "syl_per_s": 7.78,
+   "inner_pauses": [
+    [
+     85.82,
+     86.05
+    ]
+   ],
+   "words": [
+    {
+     "w": "Noktaların",
+     "t0": 84.19,
+     "t1": 84.79
+    },
+    {
+     "w": "gerilimleri",
+     "t0": 84.79,
+     "t1": 85.43
+    },
+    {
+     "w": "değişti,",
+     "t0": 85.43,
+     "t1": 86.1
+    },
+    {
+     "w": "çünkü",
+     "t0": 86.1,
+     "t1": 86.39
+    },
+    {
+     "w": "referans",
+     "t0": 86.39,
+     "t1": 86.84
+    },
+    {
+     "w": "değişti.",
+     "t0": 86.84,
+     "t1": 87.35
+    }
+   ],
+   "sinir_db": {
+    "once": -38.0,
+    "duraklama": -80.2,
+    "sonra": -27.9
+   }
+  },
+  {
+   "p": 4,
+   "text": "Peki a ile be arasındaki gerilim?",
+   "last": false,
+   "shorts": false,
+   "syl": 14,
+   "no": 23,
+   "start": 87.63,
+   "end": 89.68,
+   "pause_after": 0.25,
+   "voiced": 1.72,
+   "syl_per_s": 8.14,
+   "inner_pauses": [
+    [
+     88.0,
+     88.13
+    ]
+   ],
+   "words": [
+    {
+     "w": "Peki",
+     "t0": 87.63,
+     "t1": 87.94
+    },
+    {
+     "w": "a",
+     "t0": 87.94,
+     "t1": 88.19
+    },
+    {
+     "w": "ile",
+     "t0": 88.19,
+     "t1": 88.44
+    },
+    {
+     "w": "be",
+     "t0": 88.44,
+     "t1": 88.56
+    },
+    {
+     "w": "arasındaki",
+     "t0": 88.56,
+     "t1": 89.31
+    },
+    {
+     "w": "gerilim?",
+     "t0": 89.31,
+     "t1": 89.68
+    }
+   ],
+   "sinir_db": {
+    "once": -24.8,
+    "duraklama": -80.6,
+    "sonra": -18.9
+   }
+  },
+  {
+   "p": 4,
+   "text": "Bir virgül yedi eksi sıfır, yine bir virgül yedi volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 17,
+   "no": 24,
+   "start": 89.93,
+   "end": 93.34,
+   "pause_after": 0.47,
+   "voiced": 2.91,
+   "syl_per_s": 5.84,
+   "inner_pauses": [
+    [
+     91.55,
+     91.65
+    ],
+    [
+     91.84,
+     92.07
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 89.93,
+     "t1": 90.11
+    },
+    {
+     "w": "virgül",
+     "t0": 90.11,
+     "t1": 90.45
+    },
+    {
+     "w": "yedi",
+     "t0": 90.45,
+     "t1": 90.79
+    },
+    {
+     "w": "eksi",
+     "t0": 90.79,
+     "t1": 91.28
+    },
+    {
+     "w": "sıfır,",
+     "t0": 91.28,
+     "t1": 91.73
+    },
+    {
+     "w": "yine",
+     "t0": 91.73,
+     "t1": 92.32
+    },
+    {
+     "w": "bir",
+     "t0": 92.32,
+     "t1": 92.49
+    },
+    {
+     "w": "virgül",
+     "t0": 92.49,
+     "t1": 92.83
+    },
+    {
+     "w": "yedi",
+     "t0": 92.83,
+     "t1": 93.17
+    },
+    {
+     "w": "volt.",
+     "t0": 93.17,
+     "t1": 93.34
+    }
+   ],
+   "sinir_db": {
+    "once": -25.8,
+    "duraklama": -73.0,
+    "sonra": -27.0
+   }
+  },
+  {
+   "p": 4,
+   "text": "İki nokta arasındaki gerilim, referansa bağlı değildir.",
+   "last": true,
+   "shorts": false,
+   "syl": 21,
+   "no": 25,
+   "start": 93.81,
+   "end": 96.85,
+   "pause_after": 0.33,
+   "voiced": 2.5,
+   "syl_per_s": 8.4,
+   "inner_pauses": [
+    [
+     95.33,
+     95.48
+    ]
+   ],
+   "words": [
+    {
+     "w": "İki",
+     "t0": 93.81,
+     "t1": 94.1
+    },
+    {
+     "w": "nokta",
+     "t0": 94.1,
+     "t1": 94.43
+    },
+    {
+     "w": "arasındaki",
+     "t0": 94.43,
+     "t1": 95.13
+    },
+    {
+     "w": "gerilim,",
+     "t0": 95.13,
+     "t1": 95.66
+    },
+    {
+     "w": "referansa",
+     "t0": 95.66,
+     "t1": 96.17
+    },
+    {
+     "w": "bağlı",
+     "t0": 96.17,
+     "t1": 96.41
+    },
+    {
+     "w": "değildir.",
+     "t0": 96.41,
+     "t1": 96.85
+    }
+   ],
+   "sinir_db": {
+    "once": -35.1,
+    "duraklama": -72.9,
+    "sonra": -25.0
+   }
+  },
+  {
+   "p": 5,
+   "text": "Bu bir virgül yedi volt sayısını aklında tut.",
+   "last": false,
+   "shorts": false,
+   "syl": 15,
+   "no": 26,
+   "start": 97.18,
+   "end": 99.55,
+   "pause_after": 0.39,
+   "voiced": 2.13,
+   "syl_per_s": 7.04,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 97.18,
+     "t1": 97.33
+    },
+    {
+     "w": "bir",
+     "t0": 97.33,
+     "t1": 97.48
+    },
+    {
+     "w": "virgül",
+     "t0": 97.48,
+     "t1": 97.76
+    },
+    {
+     "w": "yedi",
+     "t0": 97.76,
+     "t1": 98.05
+    },
+    {
+     "w": "volt",
+     "t0": 98.05,
+     "t1": 98.19
+    },
+    {
+     "w": "sayısını",
+     "t0": 98.19,
+     "t1": 98.81
+    },
+    {
+     "w": "aklında",
+     "t0": 98.81,
+     "t1": 99.32
+    },
+    {
+     "w": "tut.",
+     "t0": 99.32,
+     "t1": 99.55
+    }
+   ],
+   "sinir_db": {
+    "once": -32.2,
+    "duraklama": -72.1,
+    "sonra": -16.7
+   }
+  },
+  {
+   "p": 5,
+   "text": "Birazdan gerçek bir regülatörün giriş ve çıkışı arasında aynı sayıyla karşılaşacağız.",
+   "last": true,
+   "shorts": false,
+   "syl": 32,
+   "no": 27,
+   "start": 99.94,
+   "end": 104.66,
+   "pause_after": 0.3,
+   "voiced": 4.12,
+   "syl_per_s": 7.77,
+   "inner_pauses": [
+    [
+     100.86,
+     100.97
+    ],
+    [
+     103.11,
+     103.22
+    ],
+    [
+     104.66,
+     104.96
+    ]
+   ],
+   "words": [
+    {
+     "w": "Birazdan",
+     "t0": 99.94,
+     "t1": 100.33
+    },
+    {
+     "w": "gerçek",
+     "t0": 100.33,
+     "t1": 100.59
+    },
+    {
+     "w": "bir",
+     "t0": 100.59,
+     "t1": 100.75
+    },
+    {
+     "w": "regülatörün",
+     "t0": 100.75,
+     "t1": 101.58
+    },
+    {
+     "w": "giriş",
+     "t0": 101.58,
+     "t1": 101.84
+    },
+    {
+     "w": "ve",
+     "t0": 101.84,
+     "t1": 101.97
+    },
+    {
+     "w": "çıkışı",
+     "t0": 101.97,
+     "t1": 102.48
+    },
+    {
+     "w": "arasında",
+     "t0": 102.48,
+     "t1": 103.02
+    },
+    {
+     "w": "aynı",
+     "t0": 103.02,
+     "t1": 103.39
+    },
+    {
+     "w": "sayıyla",
+     "t0": 103.39,
+     "t1": 103.77
+    },
+    {
+     "w": "karşılaşacağız.",
+     "t0": 103.77,
+     "t1": 104.66
+    }
+   ],
+   "sinir_db": {
+    "once": -31.0,
+    "duraklama": -55.9,
+    "sonra": null
+   }
+  }
+ ]
+}
