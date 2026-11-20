@@ -1,4 +1,4 @@
-// Ders 1 Bolum 3 - Parca 5: kisa devre, acik/kisa devre tablosu, kancadaki devre + en sik yapilan hata, ideal gerilim kaynagi ve siniri (metin.md [PARCA 5])
+// Ders 1 Bolum 3 - Parca 5: kisa devre, acik/kisa devre tablosu, dersin girisindeki devre + en sik yapilan hata, ideal gerilim kaynagi ve siniri (metin.md [PARCA 5])
 // Devre ajanin kendi kurgusudur (Razavi'nin R1/R2 dizisi kullanilmadi). Sayilar dogrula.py ile ayni: 6 V / 3 kΩ = 2 mA; 6 V / 2 kΩ = 3 mA; 6/1 = 6 A, 6/0,1 = 60 A, 6/0,01 = 600 A.
 import { K, B, R, G, L, RX, S, E, Wt, text, row, path, line, arrow, frame, erase, dot, kose, baslik, under, pulse, pad, zig, ellipsePts, kutu, strike } from './motor.js';
 export function build() {
@@ -32,9 +32,9 @@ export function build() {
   text('i: çevre belirler', C2, 690, 40, K, Wt(13, 'akımı'), { g, dur: 0.8 });
   erase(g, S(14) - 0.1);
 
-  // ---------------- B: kancadaki devre (14-31)
+  // ---------------- B: dersin girisindeki devre (14-31; is emri M: ekranda/seste 'kanca' yok)
   g = 'b';
-  baslik('Kancadaki devre', 200, S(14) + 0.05, { g, dur: 0.7 });
+  baslik('Dersin girişindeki devre', 200, S(14) + 0.05, { g, dur: 0.7 });
   const g2 = 'dv';
   // halka: sol kolda kaynak, ust kolda 2 kΩ, sag kolda 1 kΩ, alt kol tel
   let t = S(14) + 0.9;

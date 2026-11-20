@@ -120,7 +120,7 @@ Bunu Ohm yasasından görebiliriz. Gerilim, direnç çarpı akım. Telin direnci
 
 İkinci bölümle yan yana koyalım. Açık devre akımın sıfır olduğunu garanti eder, gerilimi çevre belirler. Kısa devre gerilimin sıfır olduğunu garanti eder, akımı çevre belirler.
 
-Şimdi kancadaki devreyi kuralım. Altı voltluk bir gerilim kaynağı, iki kiloohmluk ve bir kiloohmluk iki direnç, seri bağlanıp tek bir halka oluşturuyor. Seri bağlı iki dirençten aynı akım geçer ve gerilimleri toplanır; bu yüzden akıma toplam iki artı bir, üç kiloohmluk bir direnç gösterirler. Bunu ileride ayrıntılı göreceğiz. Tel yokken akım, altı volt bölü üç kiloohm, iki miliamper. Şimdi bir kiloohmluk direncin iki ucunu bir telle birbirine bağlıyoruz.
+Şimdi dersin girişindeki devreyi kuralım. Altı voltluk bir gerilim kaynağı, iki kiloohmluk ve bir kiloohmluk iki direnç, seri bağlanıp tek bir halka oluşturuyor. Seri bağlı iki dirençten aynı akım geçer ve gerilimleri toplanır; bu yüzden akıma toplam iki artı bir, üç kiloohmluk bir direnç gösterirler. Bunu ileride ayrıntılı göreceğiz. Tel yokken akım, altı volt bölü üç kiloohm, iki miliamper. Şimdi bir kiloohmluk direncin iki ucunu bir telle birbirine bağlıyoruz.
 
 En sık yapılan hata burada yapılıyor. Kısa devrede akım sıfırdır deyip, telden akım geçmediğini ve akımın yine iki dirençten geçtiğini sanmak. Bu hatayla akım yine iki miliamper bulunur.
 
@@ -134,7 +134,7 @@ Bu modelin bir sınırı var. İdeal kaynağın uçlarını doğrudan bir telle 
 Sahne planı:
 - Kırmızı başlık "Kısa devre". Sağda iki nokta a ve b, aralarına kırmızı kalın tel; koyu yeşil "Direnç = 0". Sol: "- Kısa devre: v = 0", "v = R × i = 0 × i = 0" (mavi), koyu yeşil "i sonlu olduğu sürece", "Örnek: 0 Ω × 10 mA = 0 V", "- Akımı çevre belirler".
 - "yan yana koyalım": sağ alt iki sütunlu tablo (koyu yeşil başlıklar "Açık devre" | "Kısa devre"): "i = 0" | "v = 0" (mavi), "v: çevre belirler" | "i: çevre belirler".
-- Silme. "kancadaki devre" (sol sütun, y %15–72): dikdörtgen halka; sol kolda ideal gerilim kaynağı (daire, "+" üstte, "6 V"); üst kolda "2 kΩ"; sağ kolda "1 kΩ"; alt kol tel. Üst kolda mavi referans oku "i". Sağ: "Seri: 2 kΩ + 1 kΩ = 3 kΩ", "Tel yokken i = 6 V / 3 kΩ = 2 mA" (mavi). "telle bağlıyoruz": 1 kΩ'un iki ucuna paralel kırmızı tel çizilir.
+- Silme. "Dersin girişindeki devre" başlığı (sol sütun, y %15–72): dikdörtgen halka; sol kolda ideal gerilim kaynağı (daire, "+" üstte, "6 V"); üst kolda "2 kΩ"; sağ kolda "1 kΩ"; alt kol tel. Üst kolda mavi referans oku "i". Sağ: "Seri: 2 kΩ + 1 kΩ = 3 kΩ", "Tel yokken i = 6 V / 3 kΩ = 2 mA" (mavi). "telle bağlıyoruz": 1 kΩ'un iki ucuna paralel kırmızı tel çizilir.
 - "En sık yapılan hata": sağ sütunda kırmızı çerçeve "En sık yapılan hata", içinde "Telden akım geçmez, akım yine iki dirençten geçer", "i = 6 V / (2 kΩ + 1 kΩ) = 2 mA" (yanlış sonuç).
 - "Doğrusu": koyu yeşil "Doğrusu", altında: "1 kΩ'un gerilimi = 0 V", "1 kΩ'un akımı = 0 V / 1 kΩ = 0 mA", "i = 6 V / 2 kΩ = 3 mA" (mavi), "- 3 mA telden geçer" (mavi alt çizgi). Devrede telin üstüne mavi ok "3 mA", 1 kΩ yanına "0". Kırmızı kart: "Kısa devrede sıfır olan gerilimdir".
 - Silme. Kırmızı başlık "İdeal gerilim kaynağı". Sağ: daire sembolü "+ / −", "6 V"; uçlara sırayla farklı dirençler (kroki). Sol: "- Uç gerilimi sabit", "- Akımı yük belirler: i = v / R" (mavi).

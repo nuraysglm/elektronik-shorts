@@ -279,11 +279,7 @@
   "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
   "muzik": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
   "is_emri_e": "UZUN.md 4 — UYGULANDI 19.11 22:30Z (tahta/muzik_ekle.sh; görüntü ve konuşma değişmedi, kredi yok)",
-  "kilit": {
-    "baslangic": "2026-11-20T16:33Z",
-    "oturum": "is-emri-M (yalnızca Ders 1 - Bölüm 3)",
-    "kapsam": "ders-01/bolum-3"
-  },
+  "kilit": null,
   "bolum_3": {
     "adim": "video_onayi",
     "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
@@ -331,5 +327,18 @@
   "is_emri_h": "UYGULANDI 20.11 09:25Z: B1 ve B2 için 3'er fotoğrafsız kapak + başlık (uzun/kapak-6-0/, media/uzun/kapak-secenek/secenekler.json); panelde onaylar/kapak-1-1 ve kapak-1-2. Canva birleştirmesi yapılmadı (edit-design kaydı kanal sahibinin önizleme onayını ister; gözetimsiz çalışma). Karar gelmezse B1 eski kapak/başlıkla planlanır.",
   "is_emri_i": "ÜRETİLDİ 20.11: uzun/intro-pcb/; panelde onaylar/intro-2.",
   "kaynak_2_3": "kanal sahibi 20.11 08:28Z 'düzelt': Razavi'nin evirici hikâyesi yerine KENDİ kurgumuzla kısa bir ara hikâye (not boş). D2B3 metni yazılırken uygulanır.",
-  "is_emri_j": "UYGULANDI 20.11 ~11:10Z: B1 kapak A 6-D tarzıyla yeniden çizildi (uzun/kapak-6-d/), media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg (eski: -kapak-eski.jpg), yayin.json başlık A; küçük boyut testi geçti; onaylar/kapak-1-1 güncellendi. B2'nin 3 kapağı da 6-D tarzıyla (kapak-secenek/*-6d.jpg), onaylar/kapak-1-2 güncellendi. Dal: claude/uzun-1-1-20261120."
+  "is_emri_j": "UYGULANDI 20.11 ~11:10Z: B1 kapak A 6-D tarzıyla yeniden çizildi (uzun/kapak-6-d/), media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg (eski: -kapak-eski.jpg), yayin.json başlık A; küçük boyut testi geçti; onaylar/kapak-1-1 güncellendi. B2'nin 3 kapağı da 6-D tarzıyla (kapak-secenek/*-6d.jpg), onaylar/kapak-1-2 güncellendi. Dal: claude/uzun-1-1-20261120.",
+  "is_emri_m": {
+    "durum": "kısmen (ses bekleniyor)",
+    "tarih": "2026-11-20T16:40Z",
+    "yapildi": [
+      "parça 4 gerilim ekseni kesikli gri (kod + QC, render yok)",
+      "parça 5 başlığı 'Dersin girişindeki devre' (kod)",
+      "metin.md cümlesi güncellendi",
+      "yayin.json açıklamasında 'Kanca' bölüm adları düzeltildi; başlık A, kapak A zaten yerinde",
+      "Ders 2 - Bölüm 1 metni: 'dersin başında' (ses yok)"
+    ],
+    "bekleyen": "Yeni cümle sesi (ElevenLabs generation pBjbSn4ea44AuH4YeMqm, 41 kredi) indirilemedi (403); kanal sahibi Drive 'Uzun Video Sesleri/ders-01-bolum-3' (1WBB9OGtZ0H7Yrhfc4Rg2mNbTEBlIz_xN) klasörüne cumle-5-14.mp3 yükleyince: parça 4+5 render, birleştir, tam QC, mp4 güncelle (NOTLAR.md).",
+    "drive_klasoru": "1WBB9OGtZ0H7Yrhfc4Rg2mNbTEBlIz_xN"
+  }
 }

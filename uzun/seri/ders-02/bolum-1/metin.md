@@ -109,7 +109,7 @@ Dikkat et, grafik kaynağın hangi akımda çalışacağını söylemiyor. Onu k
 
 Doğrusu şu. Gerilim kaynağı gerilimi sabit tutar, akımı bağlanan yük belirler. Yüz elli ohmda akım, bir buçuk volt bölü yüz elli ohm, sıfır virgül sıfır bir amper, yani on miliamper. Bir buçuk ohmda, bir buçuk volt bölü bir buçuk ohm, bir amper. Bir amper bin miliamper eder; bin bölü on, yüz. Akım yüz kat değişti. İki durumda da ideal kaynağın uçlarında bir buçuk volt var. Bu iki çalışma noktası, aynı yatay doğrunun üzerinde iki ayrı nokta.
 
-Ama kancada bir şey daha söylemiştik: bir amper civarında gerçek bir pilin gerilimi belirgin biçimde düşüyor. Yani gerçek pil ideal bir kaynak değil. Nedenine şimdi bakalım.
+Ama dersin başında bir şey daha söylemiştik: bir amper civarında gerçek bir pilin gerilimi belirgin biçimde düşüyor. Yani gerçek pil ideal bir kaynak değil. Nedenine şimdi bakalım.
 ```
 
 Sahne planı:
