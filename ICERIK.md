@@ -39,7 +39,14 @@ Başlıklar (sırasıyla):
    - 3–4 dakikalık video süresine sığacak kadar; dağıtma.
 6. **En sık yapılan hata** ve **Doğrusu** (AGENT.md 2f-0: yalnızca gerçekten yaygın, bilinen bir hata).
 7. **Sayısal örnekler** (2–3, özgün): her sayının hesabı adım adım (formül → yerine koyma → ara işlem → sonuç; AGENT.md 2b-7). Hepsi `icerik_dogrula.py` ile Python'da doğrulanır (çalıştır, çıktısını pakete özetle).
-8. **Yorum sorusu** (cevabıyla).
+8. **Yorum sorusu** (cevabıyla) — **kanal sahibinin kararı (20.11.2026): bu sorular "Soru Çözümü" videolarında çözülecek; kanalın gücünü artıracak kalitede olmalı.** Kurallar:
+   - **Özgün** (kitaptan, Razavi'den, sınav arşivinden kopya veya küçük değişiklikli kopya değil).
+   - **Orta–üst zorluk:** tek formüle sayı koymak yetmez; en az iki kavramı birleştirir ya da bir tuzak/ince nokta içerir (işaret, referans yönü, geçerlilik sınırı, gerçek parça sınırı vb.), 2–4 adımda çözülür. Yine de yalnızca o bölüme kadar anlatılanlarla çözülebilir; ileri konu gerektirmez.
+   - Tek ve doğrulanabilir cevap (sayısal ise birimiyle); Python ile doğrulanır (`icerik_dogrula.py`).
+   - Mümkünse "Uygulamada" kısmına bağlı (gerçek bir tasarım kararı).
+   - Pakette: soru metni (seslendirmeye uygun), tahtaya yazılacak kısa hâli, tam çözüm (adım adım, AGENT.md 2b-7), zorluk gerekçesi (neden orta–üst), sık yapılacak yanlış.
+   - Bağımsız denetçi zorluk düzeyini de değerlendirir ("çok kolay" bulgusu = önemli bulgu, düzeltilir).
+   - Soruyu `uzun/seri/soru-bankasi.md`'ye ekle (yalnızca soru, bölüm, zorluk, durum); **çözümü depoya değil**, kanal sahibinin özel Drive klasöründeki "Soru Bankası – Çözümler" dokümanına yaz (çözüm videosu yayınlanana kadar gizli kalsın).
 9. **Kapsam dışı / sonraya bırakılan:** öğrenciyi karıştırmamak için bu bölümde anılmayacak veya yalnızca adı geçecek konular (ör. "etkin değer (RMS) ileride").
 10. **Uzun Video Ajanı'na notlar:** sadeleştirme önerileri, tahtada nasıl gösterileceği, dikkat edilecek ifadeler.
 11. **Kaynaklar:** her kaynağın bağlantısı/künyesi.
@@ -65,6 +72,8 @@ Bir bölümün metni (`metin.md`) zaten yazılmışsa: paketi hazırladıktan so
 - **Her gün** (hafta sonu dahil) 07:37 (Londra) çalışırsın (kanal sahibi, 19.11.2026). Sıra: `durum.json` `takvim`ine göre **yayın sırası en yakın olup içerik paketi olmayan** bölüm. Uzun Video Ajanı'nın en az 1, **en fazla 3 bölüm** önünde ol (haftada 2 bölüme geçiş için önden biriktir). Süre kalırsa bir çalışmada 2 paket hazırlayabilirsin. Yapacak iş yoksa kısa kayıt yaz ve dur.
 - İlk iş (19.11.2026): **Ders 1 - Bölüm 2** (metni yazılmış, onaya sunulmuş): içerik paketi + `inceleme.md`. Kanal sahibinin kararı: Bölüm 2'nin başına **3–4 dakikalık "Uygulamada: datasheet'teki akımlar"** parçası eklenecek (Bölüm 1'deki ortalama ve anlık akımın tasarımda ve datasheet'te karşılığı: hangisi ne zaman kullanılır, datasheet'teki akım türleri ve ne işe yaradıkları). Sonra Ders 1 - Bölüm 3.
 
+**İlk iş (21.11.2026 çalışması, sıradaki pakete ek):** `uzun/seri/soru-bankasi.md`'yi oluştur; şimdiye kadar videolarda sorulan 4 soruyu ekle (Ders 1 - Bölüm 1, 2, 3; Ders 2 - Bölüm 1 — metin.md'lerdeki "Sana da bir soru" cümleleri), her birinin zorluğunu dürüstçe değerlendir. Drive'da "Soru Bankası – Çözümler" dokümanını aç (İçerik Kaynakları klasörünün yanına, kanal sahibinin özel alanı) ve dört sorunun tam çözümünü yaz; çözüm videosunda her kolay soruya bir "bir adım öteye" (orta–üst) uzantısı öner. Ders 2 - Bölüm 1'in sorusu henüz seslendirilmediyse yeni kurala göre daha güçlü bir soru öner (`inceleme.md`'ye; metni Uzun Video Ajanı günceller ve kanal sahibinin onayına sunar).
+
 ## 7a. Kanal sahibinden öğrenilenler (her geri bildirimde genel müdür ekler; her çalışmada oku)
 
 1. (19.11) Ders 1 - Bölüm 1'de ortalama ve anlık akım anlatıldı ama **hangisinin ne zaman kullanıldığı, devre tasarımında hangisine dikkat edileceği ve datasheet'teki akım türleri** anlatılmadı. Her kavram için "mühendis bunu nerede kullanır?" sorusu cevaplanmalı.
@@ -73,6 +82,7 @@ Bir bölümün metni (`metin.md`) zaten yazılmışsa: paketi hazırladıktan so
 4. (18.11) Grafiklerde karışabilecek çizgiler farklı renk ve etiketle ayrılır (ör. eğri mavi, teğet kırmızı, kesen gri kesikli).
 5. (18.11) Ekranda kelime yerine matematik işareti kullanılmaz; işaretler yalnızca denklemde.
 6. (20.11) "Kanca" kelimesi öğrenciye yönelik hiçbir yerde (ses, ekran, Uzun Video Ajanı'na önerilen ifadeler) kullanılmaz; "dersin girişindeki devre / soru" denir.
+8. (20.11) Videoların sonundaki sorular özgün ve orta–üst zorlukta olur; Soru Çözümü videolarında çözülür (bkz. 3/8).
 7. (20.11) Gerilim seviyeleri gösterilirken noktalar düz çizgiyle birbirine bağlanmaz (kısa devre gibi görünür); kesikli eksen kullanılır. Bir kavramın hemen ardından gelen kavramla karışabilecek her çizimi önceden düşün.
 
 ## 8. Asla
