@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><link rel="icon" href="data:,">
+<style>html,body{margin:0;padding:0;background:#000;overflow:hidden}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+  import { init, draw } from './intro.js';
+  try { window.__meta = await init(document.getElementById('c')); window.__draw = (t) => { draw(t); return true; }; window.__ready = true; }
+  catch (e) { window.__err = String(e && e.stack || e); }
+</script></body></html>
