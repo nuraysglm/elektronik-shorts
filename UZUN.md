@@ -6,6 +6,21 @@ Panelin: **https://claude.ai/artifact/2Kz4oqz43CzXp6vDobpFZ7** ("Uzun Video Ajan
 
 > **Panel bağlantıları (genel müdür, 20.11.2026):** `claude/*` dalları otomatik birleştirmeden sonra silinir; panele ve mesajlara yazılan GitHub bağlantıları **her zaman `main`** üzerinden verilir (ör. `https://raw.githubusercontent.com/nuraysglm/elektronik-shorts/main/<yol>`), dal adıyla değil. Dal bağlantısı 404 verir.
 
+## KREDİ SPRİNTİ (kanal sahibinin kararı, 20.11.2026 23:54) — bu bölüm geçerliyken önceliklidir
+
+Kanal sahibinin ElevenLabs hesabında sorun var; kalan kredi (~76.000) birkaç gün içinde kaybolabilir. Karar: **kalan kredinin tamamı uzun video sesine** harcanır. Hedef bölümler (bu sırayla): **Ders 2 - Bölüm 1, 3, 2; Ders 3 - Bölüm 1, 2.**
+
+- **Metin onayı kuralı AYNEN geçerli** (kanal sahibi "hızlı onay"ı seçti): ses yalnızca panelde `onaylar/metin-<d>-<b>` kararı `onayla` olan metinden üretilir. Kanal sahibi onayları hızlı verecek; metin hazır olunca kartı hemen aç.
+- **Öncelik sesi üretmek ve İNDİRMEKTİR.** Tahta, zamanlama, render, kapak sonra (kredi gerektirmez) — ses dosyası depoya (`uzun/seri/ders-NN/bolum-k/ses/`) indirilip push edilmeden iş bitmiş sayılmaz. curl ile indirilemezse panelde kanal sahibinden Drive "Uzun Video Sesleri" klasörüne yüklemesini iste (bölüm 3).
+- Ses ayarları bölüm 3 ile aynı (voice_id sLFd2sFq5fDrVDNCuUfI, eleven_v4, generations_count 1). **Bir üretim çağrısını asla tekrarlama** (yeniden çağrı ikinci kez kredi harcar); başarısız görünüyorsa önce generation durumunu kontrol et.
+- Her üretimden önce `account_get_usage` ile kalan krediyi kontrol et. Bir parçanın karakter sayısı kalan krediden fazlaysa o parçayı üretme; parçalar sırayla üretilir (eksik bölüm kalırsa panelde belirt). Shorts için ~1.000 kredi pay bırak.
+- **Ders 2 - Bölüm 1:** metin onaylı (metin-2-1, 20.11 08:29). Parça 1–6 ve selam hemen seslendirilir. **Parça 7 (kapanış + soru) bekler:** soru bankası kuralı (orta–üst zorluk) yüzünden İçerik Ajanı 21.11'de daha güçlü bir soru önerebilir; öneri gelirse parça 7'yi güncelleyip kanal sahibine `metin-2-1-p7` kartıyla sun, onaylanınca seslendir. 21.11 18:00'e kadar öneri yoksa mevcut onaylı parça 7'yi seslendir.
+- **Ders 2 - Bölüm 3:** içerik paketi hazır; kaynak-2-3 kararı "düzelt": evirici hikâyesi Razavi'ninki değil, **kendi kurgumuzla kısa** (≤1 dk) bir ara hikâye olarak kalır. Metni yaz, dogrula.py, bağımsız denetim, panelde `metin-2-3`.
+- **Ders 2 - Bölüm 2 ve Ders 3 - Bölüm 1, 2:** İçerik Ajanı paketleri hazırlıyor; `icerik.md` main'e gelince metni yaz (aynı akış).
+- Sprint çalışmaları `durum.json`'a **dokunmaz** (normal Ders 1 akışı onu kullanıyor); sprint durumu panelde `durum/sprint` belgesinde (`isler` alanı: iş adı → {durum, sahip_oturum, zaman}). Bir işe başlamadan önce `durum/sprint`'i oku, işi `if_version` ile sahiplen; 120 dk'dan eski "sürüyor" sahiplenmesi sahipsiz sayılır.
+- Ders 1 - Bölüm 2/3 işleri (iş emri M, altyazılar, yayın) normal akışta devam eder; sprint onları geciktirmez, onlar da sprinti.
+- Tüm kalite kuralları (6-S akışı, onaylı Blender intro, müzik ≥ 18 dB altında, "kanca" kelimesi yok, vurgu süresi, zorunlu QC (a)–(f), altyazı) sprint bölümlerinde de geçerlidir; hız için atlanmaz.
+
 ## 0. Görev: Razavi "Basic Circuit Theory" serisini Türkçe ders serisine dönüştürmek (kanal sahibinin kararı, 17.11.2026)
 
 - Seri adı: **Devre Teorisi I** (arama için "devre analizi" de kullanılır). Prof. Behzad Razavi'nin "Basic Circuit Theory" ders serisi **ders 1'den başlayarak sırayla** referans alınır (`kaynaklar.md` ders tablosu).
