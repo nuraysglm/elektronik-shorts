@@ -95,7 +95,7 @@ export function build() {
   e('Toplam q = 20 + 4,99 = 24,99 μC', 760, B, S(38) + 0.1, 1.6);
   erase('d0', S(39) - 0.1);
   const av = text('Ortalama i = 24,99 μC / 1 s ≈ 25 μA', RX, 200, 46, B, S(39), { g: 'e2', dur: 1.8 });
-  oval(av.box, R, E(39) - 0.4, 0.6, { g: 'e2' });
+  oval(av.box, R, E(39) - 0.6, 0.6, { g: 'e2' }); // is emri N: vurgu bitisi -> silme >= 1,0 sn (parcalar.json ara 0,85 sn)
   erase(g, S(40) - 0.1); erase('gr', S(40) - 0.1); erase('e2', S(40) - 0.1);
   // ---------------- F: pil omru (cumle 40-46)
   g = 'f';

@@ -23,7 +23,7 @@ export function build() {
   const m1 = text('- 12 V batarya', L, 300, 48, K, Wt(9, 'on'), { g, dur: 0.7 });
   text('- 2 direnç', L, 380, 48, K, Wt(9, 'direnç'), { g, dur: 0.5 });
   const m3 = text('- 2 anahtar', L, 460, 48, K, Wt(9, 'anahtar'), { g, dur: 0.5 });
-  oval(union(m1.box, m3.box), R, Wt(10, 'nasıl'), 3.4, { g });
+  oval(union(m1.box, m3.box), R, Wt(10, 'nasıl'), Math.max(1.0, S(11) - 1.15 - Wt(10, 'nasıl')), { g }); // is emri N: cember silmeden >= 1,15 sn once biter
   erase(g, S(11)); erase('gr2', S(11));
   // devre: batarya x 200 (y 320..680), ust tel y 320, alt tel y 680, kollar x 520 ve 820
   g = 'dv';
@@ -83,5 +83,5 @@ export function build() {
   qq('q = (3 − 1) s × 2 mA = 2 × 2 = 4 mC', 560, K, S(39) + 0.4, 1.8);
   qq('q = (4 − 3) s × 6 mA = 1 × 6 = 6 mC', 630, K, S(41) + 0.3, 1.8);
   const tq = text('Toplam yük = 4 + 6 = 10 mC', 1180, 720, 46, B, S(43), { g, dur: 1.3 });
-  oval(tq.box, R, E(43) - 0.1, 0.6, { g });
+  oval(tq.box, R, E(43) - 0.5, 0.6, { g }); // is emri N: parca sonundan >= 1,0 sn once biter (kuyruk)
 }

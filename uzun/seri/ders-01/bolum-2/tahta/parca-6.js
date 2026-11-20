@@ -39,7 +39,7 @@ export function build() {
   text('Yük okun tersine', L, 500, 34, G, S(19), { g, dur: 0.7 });
   e('q(5 ms) = 6 + 18 = 24 μC', 580, B, S(21), 1.2);
   const q8 = text('q(8 ms) = 24 − 6 = 18 μC', L, 660, 46, B, S(22), { g, dur: 1.2 });
-  oval(q8.box, R, E(22) - 0.2, 0.6, { g });
+  oval(q8.box, R, E(22) - 0.55, 0.6, { g }); // is emri N: cember tamamlanir, sonuc >= 1,0 sn gorunur (parcalar.json ara 1,0 sn)
   erase(g, S(23) - 0.1);
   // ortalama
   g = 'o';

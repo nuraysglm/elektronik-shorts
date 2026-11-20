@@ -211,7 +211,7 @@
     "dal": "claude/uzun-1-2-20261119",
     "kelime": 2248,
     "tahmini_dk": 16.5,
-    "onay_istegi": "onaylar/uzun-1-2 bekliyor (20.11 gece)",
+    "onay_istegi": "onaylar/uzun-1-2 bekliyor (iş emri N sonrası, 20.11 20:25Z)",
     "not": "Video hazır (müzik F kuralıyla yeniden karıştırıldı); onaylar/uzun-1-2 bekliyor. İntro (onaylar/intro-1) onaylanırsa kancadan sonra eklenip yeniden birleştirilir. Planlama yok.",
     "surum": 3,
     "metin_onayi": "onaylandı 2026-11-19T21:13Z (onaylar/metin-1-2, 'Onaylıyorum (ses üretilsin)')",
@@ -222,9 +222,10 @@
     "video": "media/uzun/devre-teorisi-1-ders-01-bolum-2.mp4",
     "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-2-kapak.jpg",
     "yayin_json": "uzun/seri/ders-01/bolum-2/yayin.json",
-    "sure": "16:55,6; −16,1 LUFS; tepe −1,9 dBTP; 33,9 MB (iş emri F müzik kuralı)",
-    "abone_anlari": "4:35,2 ve 16:25,5",
-    "muzik": "İş emri F kuralı uygulandı 19.11 23:55Z (tahta/muzik_f.sh, T0 37,5): 0:37,5–0:40,5 müzik tek başına −17,8 LUFS, selam 0:40,8; bitiş ekranı 16:35–16:55,6 müzikli −20,2 LUFS, sessiz an yok. yayin.json +3 sn."
+    "sure": "17:03,8; −16,1 LUFS; tepe −1,8 dBTP; 37,4 MB (iş emri N + onaylı Blender intro)",
+    "abone_anlari": "4:42,5 ve 16:33,7",
+    "muzik": "İş emri F kuralı uygulandı 19.11 23:55Z (tahta/muzik_f.sh, T0 37,5): 0:37,5–0:40,5 müzik tek başına −17,8 LUFS, selam 0:40,8; bitiş ekranı 16:35–16:55,6 müzikli −20,2 LUFS, sessiz an yok. yayin.json +3 sn.",
+    "is_emri_n": "UYGULANDI 20.11 20:25Z: abone sonrası bekleme −1,0 sn; vurgu kuralı 6 ihlal düzeltildi (12:15 → 12:23,7 çember biter / 12:24,8 silme; 13:49 → 13:56,8 / 13:57,9); onaylı Blender intro 6-S akışıyla (37,5 sn); yayin.json zaman damgaları güncellendi; onaylar/uzun-1-2 yeniden 'bekliyor'. B1 (intro'lu) ve B3 taraması yalnızca rapor (panel bolumler)."
   },
   "is_emri_c": "uzun/seri/ders-01/bolum-1/is-emri-20261119-c.md — UYGULANDI 19.11 14:40Z",
   "icerik": {
@@ -279,11 +280,7 @@
   "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
   "muzik": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
   "is_emri_e": "UZUN.md 4 — UYGULANDI 19.11 22:30Z (tahta/muzik_ekle.sh; görüntü ve konuşma değişmedi, kredi yok)",
-  "kilit": {
-    "baslangic": "2026-11-20T19:25Z",
-    "oturum": "is-emri-N-b2",
-    "kapsam": "yalnızca Ders 1 - Bölüm 2"
-  },
+  "kilit": null,
   "bolum_3": {
     "adim": "video_onayi",
     "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
