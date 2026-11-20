@@ -251,6 +251,8 @@ Bu sayfaların **tarzından** öğren; logolarını, karakterlerini, başlıklar
 
 ## 7. Kalite kontrolü (yayından önce zorunlu)
 
+> **Ek zorunlu kontroller (kanal sahibi, 20.11.2026):** (a) Her vurgu (çember, altı çizme, kutu, yanıp sönen fon) tamamen bitmeden ekran değişmez; bitişten sonra en az 1,0 sn görünür kalır (seslendirme hızla geçiyorsa kısa sessizlik eklenir). (b) Abone/takip çağrısından sonra bekleme ≤ 0,5 sn. (c) "Kanca" kelimesi seste ve ekranda kullanılmaz. (d) Gerilim seviyeleri düz çizgiyle birbirine bağlı noktalar olarak çizilmez (kısa devre gibi görünür).
+
 Bir madde geçmezse düzelt ve kontrolü tekrarla. 3 turda geçmezse yayınlama; panelde kanal sahibine onay isteği aç (bölüm 13).
 
 **A. İçerik doğruluğu ve eksiksizlik**
