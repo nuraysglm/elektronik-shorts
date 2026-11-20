@@ -1,0 +1,70 @@
+{
+ "_not": "Uzun videodan türetilmiş Short'lar (UZUN.md 4, DENEME 20.11.2026). Ses: Ders 1 - Bölüm 1 parça seslerinden kesit (yeni seslendirme yok). Kesitler cümle sınırlarında; aralar 'ara' sn sessizlik.",
+ "uzun_ofset": {
+  "_not": "parça başlangıcının intro'lu yayın sürümündeki zamanı (yayin.json zaman_damgasi_kaynagi: p1 0; p2 54,76+9,3; p6 687,29+9,3)",
+  "1": 0.0,
+  "2": 64.06,
+  "6": 696.59
+ },
+ "1": {
+  "bas": 0.3,
+  "ara": 0.4,
+  "parcalar": [
+   [
+    1,
+    0,
+    2
+   ],
+   [
+    1,
+    4,
+    4
+   ],
+   [
+    2,
+    17,
+    23
+   ],
+   [
+    2,
+    25,
+    27
+   ],
+   [
+    2,
+    29,
+    29
+   ]
+  ],
+  "bekle": 0.5,
+  "kart": 3.0
+ },
+ "2": {
+  "bas": 0.3,
+  "ara": 0.4,
+  "parcalar": [
+   [
+    6,
+    1,
+    1
+   ],
+   [
+    6,
+    4,
+    10
+   ],
+   [
+    6,
+    15,
+    20
+   ],
+   [
+    6,
+    22,
+    24
+   ]
+  ],
+  "bekle": 0.5,
+  "kart": 3.0
+ }
+}

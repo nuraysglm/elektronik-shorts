@@ -1,0 +1,91 @@
+{
+ "id": "d1b1-2",
+ "video": "media/shorts-turev/d1b1-2.mp4",
+ "sure_sn": 58.89,
+ "baslik": "Yük En Büyükken Akım Kaç? Cevap Şaşırtıyor #shorts",
+ "aciklama": "Devre teorisinde (Devre Analizi 1) q(t) = (6t − t²) mC iken t = 3 s'de yük en büyük: 9 mC. Akım ise tam o anda sıfır.\nAkım yükün ne kadar olduğuna değil, ne kadar hızlı değiştiğine bakar: i = dq / dt, yani yük grafiğinin eğimi.\nDersin tamamı kanalda: Devre Teorisi I – Ders 1, Bölüm 1\n\n#elektronik #devreanalizi #akım",
+ "ilk_yorum": "Yük q(t) = (4t − t²) mC olsaydı akım hangi anda sıfır olurdu? İpucu: tepe noktası 👇",
+ "etiketler": [
+  "akım nedir",
+  "anlık akım",
+  "türev ile akım",
+  "i = dq/dt",
+  "devre analizi 1",
+  "devre teorisi"
+ ],
+ "secilen_an": "Örnek 3: yük en büyükken akım sıfır (11:38,7–12:55,8; 'sayılarla kontrol' ve 'eğim yorumu' cümleleri süre için çıkarıldı)",
+ "neden": "Bölümün 'az bilinen nokta'sı ve sezgiye ters tek sonuç; sayıyla (9 mC, 0 mA) ve grafikle (tepede yatay teğet) kendi içinde kapanıyor.",
+ "kesitler": [
+  {
+   "parca": 6,
+   "cumleler": [
+    1,
+    1
+   ],
+   "short_sn": [
+    0.3,
+    7.03
+   ],
+   "uzun_video_sn": [
+    698.68,
+    705.41
+   ],
+   "uzun_video": "11:38,7–11:45,4"
+  },
+  {
+   "parca": 6,
+   "cumleler": [
+    4,
+    10
+   ],
+   "short_sn": [
+    7.43,
+    24.78
+   ],
+   "uzun_video_sn": [
+    711.18,
+    728.53
+   ],
+   "uzun_video": "11:51,2–12:08,5"
+  },
+  {
+   "parca": 6,
+   "cumleler": [
+    15,
+    20
+   ],
+   "short_sn": [
+    25.18,
+    45.27
+   ],
+   "uzun_video_sn": [
+    742.25,
+    762.34
+   ],
+   "uzun_video": "12:22,2–12:42,3"
+  },
+  {
+   "parca": 6,
+   "cumleler": [
+    22,
+    24
+   ],
+   "short_sn": [
+    45.67,
+    55.34
+   ],
+   "uzun_video_sn": [
+    766.09,
+    775.76
+   ],
+   "uzun_video": "12:46,1–12:55,8"
+  }
+ ],
+ "kaynak_video": "media/uzun/devre-teorisi-1-ders-01-bolum-1-introlu.mp4",
+ "uzun_video": "Devre Teorisi I – Ders 1, Bölüm 1 (yayın 21.11.2026 08:00 Londra)",
+ "studio_notu": "Studio'da İlgili video: Ders 1 - Bölüm 1 (YouTube Studio → Short → Ayrıntılar → İlgili video). Uzun video yayınlanınca açıklamaya bağlantısı eklenir.",
+ "muzik": "yok (Shorts kuralı)",
+ "ses": "Ders 1 - Bölüm 1 seslendirmesinden kesit; yeni seslendirme yok, ElevenLabs kredisi 0",
+ "kategori": "EDUCATION",
+ "durum": "deneme — planlama yok"
+}

@@ -1,0 +1,107 @@
+{
+ "id": "d1b1-1",
+ "video": "media/shorts-turev/d1b1-1.mp4",
+ "sure_sn": 57.39,
+ "baslik": "Akım Hiç Durmuyor, Ortalama Sıfır Çıkıyor! Nasıl? #shorts",
+ "aciklama": "Devre teorisinde (Devre Analizi 1) akımı yük bölü süre ile hesaplarsan, akım hiç durmadan akarken bile sonuç sıfır çıkabilir.\nSebep: Δq / Δt yalnızca seçtiğin penceredeki ortalamayı verir; akım anlık bir büyüklüktür (i = dq / dt).\nDersin tamamı kanalda: Devre Teorisi I – Ders 1, Bölüm 1\n\n#elektronik #devreanalizi #akım",
+ "ilk_yorum": "Aynı telde pencereyi 0,25 s ile 0,75 s arası seçseydin Δq / Δt kaç çıkardı? Cevabını yaz 👇",
+ "etiketler": [
+  "akım nedir",
+  "ortalama akım",
+  "anlık akım",
+  "i = dq/dt",
+  "devre analizi 1",
+  "devre teorisi"
+ ],
+ "secilen_an": "Dersin girişindeki soru (0:00–0:16,6) + 1 saniyelik pencere örneği (1:55,5–2:42,7)",
+ "neden": "Kanalın en güçlü giriş sorusu ('akım akarken bölme işlemi sıfır diyebilir mi?') ve cevabı aynı Short'ta: soru → somut sayılar (+5 / −5 mC) → sıfır → 'akım hiç sıfır olmadı' kapanışı. Tek başına anlaşılır; türev bilgisi gerekmez.",
+ "kesitler": [
+  {
+   "parca": 1,
+   "cumleler": [
+    0,
+    2
+   ],
+   "short_sn": [
+    0.3,
+    13.03
+   ],
+   "uzun_video_sn": [
+    0.0,
+    12.73
+   ],
+   "uzun_video": "0:00,0–0:12,7"
+  },
+  {
+   "parca": 1,
+   "cumleler": [
+    4,
+    4
+   ],
+   "short_sn": [
+    13.43,
+    14.78
+   ],
+   "uzun_video_sn": [
+    15.2,
+    16.55
+   ],
+   "uzun_video": "0:15,2–0:16,6"
+  },
+  {
+   "parca": 2,
+   "cumleler": [
+    17,
+    23
+   ],
+   "short_sn": [
+    15.18,
+    39.21
+   ],
+   "uzun_video_sn": [
+    115.48,
+    139.51
+   ],
+   "uzun_video": "1:55,5–2:19,5"
+  },
+  {
+   "parca": 2,
+   "cumleler": [
+    25,
+    27
+   ],
+   "short_sn": [
+    39.61,
+    48.75
+   ],
+   "uzun_video_sn": [
+    145.7,
+    154.84
+   ],
+   "uzun_video": "2:25,7–2:34,8"
+  },
+  {
+   "parca": 2,
+   "cumleler": [
+    29,
+    29
+   ],
+   "short_sn": [
+    49.15,
+    53.84
+   ],
+   "uzun_video_sn": [
+    158.01,
+    162.7
+   ],
+   "uzun_video": "2:38,0–2:42,7"
+  }
+ ],
+ "kaynak_video": "media/uzun/devre-teorisi-1-ders-01-bolum-1-introlu.mp4",
+ "uzun_video": "Devre Teorisi I – Ders 1, Bölüm 1 (yayın 21.11.2026 08:00 Londra)",
+ "studio_notu": "Studio'da İlgili video: Ders 1 - Bölüm 1 (YouTube Studio → Short → Ayrıntılar → İlgili video). Uzun video yayınlanınca açıklamaya bağlantısı eklenir.",
+ "muzik": "yok (Shorts kuralı)",
+ "ses": "Ders 1 - Bölüm 1 seslendirmesinden kesit; yeni seslendirme yok, ElevenLabs kredisi 0",
+ "kategori": "EDUCATION",
+ "durum": "deneme — planlama yok"
+}
