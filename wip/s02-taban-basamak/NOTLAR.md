@@ -5,3 +5,5 @@
 - 08:16 UTC: panelde onaylar/metin-s02-taban-basamak açıldı. ONAY GELMEDEN SES ÜRETİLMEZ.
 - Sıradaki: denetim düzeltmeleri → panel onaylar/metin-s02-taban-basamak → onay gelince ElevenLabs ses (bu oturumda ElevenLabs bağlantısı YOK) → zamanlama → sahne → render → kalite → Metricool 24.11 16:00.
 - 08:31 UTC: 15 dk içinde karar gelmedi → DUR. Sonraki çalışma: önce onaylar/metin-s02-taban-basamak'ı oku; onaylandıysa ses (ElevenLabs bağlantısı gerekli) → zamanlama → sahne → render → kalite → Metricool (24.11 16:00 hâlâ uygunsa; değilse sıradaki uygun Sayısal günü).
+- 20.11 12:1x UTC: metin ONAYLANDI (panel 10:47 UTC). Ses yok: bu oturumda ElevenLabs bağlantısı yok, Drive 'Uzun Video Sesleri' içinde shorts-s02-taban-basamak/ses.mp3 yok. Rutin görev metni 'seslendirme yok' diyor, AGENT.md 2a-V seslendirme istiyor → panelde karar istendi: onaylar/s02-taban-basamak-202611201215 (bekle / sessiz / kaydır).
+- Sonraki çalışma: önce bu onayı oku. 'bekle' + ses Drive'daysa → zamanlama → sahne → render → kalite → Metricool 24.11 16:00 (hâlâ uygunsa). 'sessiz' → efekt sesli sessiz sürüm. 'kaydir' → hedef Per 26.11 16:00.
