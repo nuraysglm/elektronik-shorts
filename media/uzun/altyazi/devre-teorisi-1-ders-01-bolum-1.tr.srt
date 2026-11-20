@@ -1,0 +1,1238 @@
+1
+00:00:00,040 --> 00:00:02,720
+Bir telden geçen akımı nasıl hesaplarsın?
+
+2
+00:00:02,800 --> 00:00:07,020
+İlk akla gelen cevap şu:
+geçen yükü, geçen süreye bölmek.
+
+3
+00:00:07,230 --> 00:00:09,980
+Peki telde akım bir an bile
+durmadan akarken,
+
+4
+00:00:10,060 --> 00:00:12,790
+bu bölme işlemi sana sıfır diyebilir mi?
+
+5
+00:00:12,870 --> 00:00:15,180
+Hem de hiçbir hesap hatası yapmadan?
+
+6
+00:00:15,320 --> 00:00:16,670
+Evet, diyebilir.
+
+7
+00:00:16,750 --> 00:00:18,670
+Birazdan nasıl olduğunu göreceğiz.
+
+8
+00:00:18,800 --> 00:00:22,110
+Bu bölümün sonunda akımın
+asıl tanımını kurmuş olacağız.
+
+9
+00:00:22,190 --> 00:00:26,300
+Üç örnekle de ortalama akımı
+anlık akımdan ayırmayı öğreneceğiz.
+
+10
+00:00:26,380 --> 00:00:28,930
+Sonuncusunda şaşırtıcı bir şey göreceğiz:
+
+11
+00:00:29,010 --> 00:00:32,950
+telden geçen yük en büyük
+değerindeyken akım sıfır olabiliyor.
+
+12
+00:00:42,658 --> 00:00:46,808
+Merhaba arkadaşlar,
+Devre Teorisi I serisine hoş geldiniz.
+
+13
+00:00:46,888 --> 00:00:50,318
+Bugün Ders 1'in ilk
+bölümünde akımı konuşacağız.
+
+14
+00:00:50,840 --> 00:00:53,050
+Devre teorisinde ne tasarlarsan tasarla,
+
+15
+00:00:53,130 --> 00:00:56,220
+işe büyüklükleri doğru
+tanımlayarak başlarsın.
+
+16
+00:00:56,300 --> 00:00:58,390
+Bu seriye de tam buradan giriyoruz.
+
+17
+00:00:58,470 --> 00:01:00,530
+Bugünün konusu yük ve akım.
+
+18
+00:01:00,610 --> 00:01:03,630
+Gerilimi bu dersin üçüncü
+bölümünde ele alacağız.
+
+19
+00:01:04,080 --> 00:01:05,130
+Önce yük.
+
+20
+00:01:05,210 --> 00:01:08,470
+Yükü q harfiyle gösteriyoruz,
+birimi kulon.
+
+21
+00:01:08,550 --> 00:01:11,150
+Devre teorisinde yükü,
+sayabildiğimiz ve toplayıp
+
+22
+00:01:11,230 --> 00:01:14,310
+çıkarabildiğimiz bir miktar
+olarak kullanırız.
+
+23
+00:01:14,390 --> 00:01:18,060
+Elektronun yükü eksi,
+protonunki artı işaretlidir.
+
+24
+00:01:18,140 --> 00:01:21,830
+Yükün derindeki doğası ise bir fizik
+sorusu, bizim işimiz değil.
+
+25
+00:01:21,910 --> 00:01:26,390
+Bizim sorumuz başka: bu miktar
+nereden nereye, ne hızla gidiyor?
+
+26
+00:01:26,470 --> 00:01:29,710
+Yük yerinden oynadığı anda
+işin içine akım giriyor.
+
+27
+00:01:29,790 --> 00:01:31,620
+Peki akımı nasıl ölçeriz?
+
+28
+00:01:31,700 --> 00:01:34,380
+Telin içinden geçen
+hayalî bir kesit düşün.
+
+29
+00:01:34,460 --> 00:01:36,020
+Bu kesite bir sayaç koyalım.
+
+30
+00:01:36,100 --> 00:01:40,330
+Sayaç, sağa geçen yükü artı,
+sola geçen yükü eksi sayıyor.
+
+31
+00:01:40,410 --> 00:01:41,530
+Bir süre bekleyelim.
+
+32
+00:01:41,610 --> 00:01:46,220
+Bu süreye Δt, sayacın gösterdiği
+net yüke de Δq diyelim.
+
+33
+00:01:46,300 --> 00:01:50,570
+İlk akla gelen tanım: akım = Δq / Δt.
+
+34
+00:01:50,650 --> 00:01:52,020
+Mantıklı görünüyor, değil mi?
+
+35
+00:01:52,100 --> 00:01:53,210
+Ama bir sorun var.
+
+36
+00:01:53,290 --> 00:01:55,450
+Δt değerini nasıl seçeceğiz?
+
+37
+00:01:55,580 --> 00:01:56,910
+Şöyle bir tel düşünelim.
+
+38
+00:01:56,990 --> 00:02:02,030
+İlk yarım saniyede kesitten sağa doğru,
+düzgün biçimde 5 mC geçiyor.
+
+39
+00:02:02,110 --> 00:02:07,270
+Sonraki yarım saniyede bu kez sola doğru,
+yine düzgün biçimde 5 mC geçiyor.
+
+40
+00:02:07,350 --> 00:02:12,920
+Pencereyi 1 saniye seçersek sayaç
++5 ile −5'i toplar ve sıfır gösterir.
+
+41
+00:02:13,000 --> 00:02:15,590
+Δq / Δt sıfır çıkar.
+
+42
+00:02:15,670 --> 00:02:17,580
+Peki telde hiç akım yok mu?
+
+43
+00:02:17,660 --> 00:02:19,530
+Var, hem de hiç durmadan.
+
+44
+00:02:19,610 --> 00:02:21,116
+İlk yarım saniyede yük,
+
+45
+00:02:21,196 --> 00:02:25,720
+saniyede 10 mC'luk bir hızla sağa
+gidiyor, sonra aynı hızla sola.
+
+46
+00:02:25,800 --> 00:02:30,080
+Yani akım önce +10 mA, sonra −10 mA.
+
+47
+00:02:30,160 --> 00:02:31,620
+Hiçbir anda sıfır değil.
+
+48
+00:02:31,700 --> 00:02:34,980
+Hesap hatası yapmadık,
+sadece pencereyi kötü seçtik.
+
+49
+00:02:35,060 --> 00:02:38,020
+O bir saniye boyunca kesitten
+hiç durmadan yük geçti.
+
+50
+00:02:38,100 --> 00:02:42,770
+Ama net olarak taşınan yük sıfır
+olduğu için ortalama sıfır çıktı.
+
+51
+00:02:42,850 --> 00:02:43,980
+Pencere ne kadar genişse,
+
+52
+00:02:44,060 --> 00:02:47,960
+içinde olup bitenler o kadar
+çok tek bir sayıya sıkışıyor.
+
+53
+00:02:48,040 --> 00:02:49,850
+Pencereyi daraltırsak ne olur?
+
+54
+00:02:49,930 --> 00:02:53,710
+İlk yarım saniyenin içine
+yerleştirirsek 10 mA buluruz.
+
+55
+00:02:53,790 --> 00:02:56,770
+Ama aynı genişlikteki
+pencereyi kaydırıp tam ortaya,
+
+56
+00:02:56,850 --> 00:03:00,910
+yükün yön değiştirdiği ana
+oturtursak sonuç yine sıfır olur.
+
+57
+00:03:00,990 --> 00:03:03,460
+Burada yön değişiminin ani
+olduğunu kabul ediyoruz,
+
+58
+00:03:03,540 --> 00:03:06,310
+tam o anın kendisini bir kenara bırakalım.
+
+59
+00:03:06,390 --> 00:03:11,050
+Sorun şu: geniş bir pencere, iki farklı
+davranışı tek bir sayıya karıştırıyor.
+
+60
+00:03:11,130 --> 00:03:13,790
+Oysa iyi bir tanım tek bir anı anlatmalı.
+
+61
+00:03:13,870 --> 00:03:16,320
+Çözüm, pencereyi sınırsız küçültmek.
+
+62
+00:03:16,400 --> 00:03:19,290
+dt, sıfıra yaklaşan kısacık bir süre.
+
+63
+00:03:19,370 --> 00:03:23,590
+dq ise bu kısacık sürede
+kesitten geçen çok küçük yük.
+
+64
+00:03:23,680 --> 00:03:28,270
+İşte akımın asıl tanımı: akım,
+yükün kesitten geçme hızıdır.
+
+65
+00:03:28,350 --> 00:03:30,820
+Yani i = dq / dt.
+
+66
+00:03:30,900 --> 00:03:32,020
+Birimi amper.
+
+67
+00:03:32,100 --> 00:03:35,610
+Saniyede bir kulon yük
+geçiyorsa akım bir amperdir.
+
+68
+00:03:35,690 --> 00:03:40,570
+Örneğin her milisaniyede 2 µC
+geçiyorsa akım 2 mA eder.
+
+69
+00:03:40,650 --> 00:03:42,940
+Bu, saniyede 2 mC demek.
+
+70
+00:03:43,020 --> 00:03:47,050
+Bu tanımla akım artık tek bir sayı
+değil, zamanın bir fonksiyonu.
+
+71
+00:03:47,130 --> 00:03:50,180
+Grafiğini çizebilir, türevini alabiliriz.
+
+72
+00:03:50,600 --> 00:03:53,740
+Bu serinin devamı için
+kanala abone olabilirsin.
+
+73
+00:03:53,820 --> 00:03:56,880
+Fark ettin mi?
+Artık akım bir ortalama değil.
+
+74
+00:03:56,960 --> 00:04:00,670
+Her an için ayrı bir değeri olan,
+zamana bağlı bir büyüklük.
+
+75
+00:04:00,820 --> 00:04:03,540
+Bu seride nereye
+gideceğimize de kısaca bakalım.
+
+76
+00:04:03,620 --> 00:04:06,210
+Yük ve akımdan sonra gerilimi tanıyacağız.
+
+77
+00:04:06,290 --> 00:04:10,280
+Ardından kaynakları, direnci
+ve kondansatörü inceleyeceğiz.
+
+78
+00:04:10,360 --> 00:04:11,851
+Sonra Kirchhoff yasalarını,
+
+79
+00:04:11,931 --> 00:04:16,490
+onların üstüne kurulan analiz yöntemlerini
+ve devre teoremlerini göreceğiz.
+
+80
+00:04:16,570 --> 00:04:19,950
+Daha sonra önce direnç
+ile kondansatörden oluşan devrelere,
+
+81
+00:04:20,030 --> 00:04:22,570
+ardından direnç ile bobinden
+oluşan devrelere,
+
+82
+00:04:22,650 --> 00:04:26,550
+sonra da üçünün bir arada
+olduğu devrelere geçeceğiz.
+
+83
+00:04:26,650 --> 00:04:29,530
+Son durağımız da
+işlemsel kuvvetlendiriciler.
+
+84
+00:04:29,610 --> 00:04:33,110
+Her dersi 15 dakika civarında
+üç bölümde işliyoruz.
+
+85
+00:04:33,190 --> 00:04:36,410
+Bütün bu yolda akımı bugünkü
+tanımla kullanacağız.
+
+86
+00:04:36,490 --> 00:04:38,990
+Şimdi bunu üç örnekle pekiştirelim.
+
+87
+00:04:39,410 --> 00:04:40,850
+İlk örneğimize geçelim.
+
+88
+00:04:40,930 --> 00:04:44,060
+Bir telden 4 ms boyunca yük geçiyor.
+
+89
+00:04:44,140 --> 00:04:47,120
+İlk 1 ms'de 5 µC geçiyor.
+
+90
+00:04:47,200 --> 00:04:50,730
+Sonraki 3 ms'de ise yalnızca 3 µC.
+
+91
+00:04:50,810 --> 00:04:53,760
+Her aralığın içinde yük
+düzgün biçimde akıyor.
+
+92
+00:04:53,840 --> 00:04:56,300
+Soru şu: bu teldeki akım nedir?
+
+93
+00:04:56,390 --> 00:04:59,580
+İlk refleks, toplam yükü
+toplam süreye bölmek.
+
+94
+00:04:59,660 --> 00:05:03,210
+8 µC / 4 ms = 2 mA.
+
+95
+00:05:03,290 --> 00:05:08,820
+Hesap doğru. Peki teldeki akım herhangi
+bir anda gerçekten 2 mA oldu mu?
+
+96
+00:05:08,900 --> 00:05:09,900
+Hadi bakalım.
+
+97
+00:05:09,980 --> 00:05:14,960
+İlk aralıkta 5 µC 1 ms'de
+geçti, bu da 5 mA eder.
+
+98
+00:05:15,040 --> 00:05:16,930
+Burada küçük bir kolaylık var:
+
+99
+00:05:17,010 --> 00:05:20,730
+mikrokulonu milisaniyeye bölünce
+doğrudan miliamper buluyoruz.
+
+100
+00:05:20,860 --> 00:05:25,920
+İkinci aralıkta 3 µC
+3 ms'de geçti, bu da 1 mA.
+
+101
+00:05:26,000 --> 00:05:27,290
+Şimdi grafiği çizelim.
+
+102
+00:05:27,370 --> 00:05:30,110
+Yatay eksen zaman, milisaniye cinsinden.
+
+103
+00:05:30,190 --> 00:05:32,900
+Dikey eksen akım, miliamper cinsinden.
+
+104
+00:05:32,980 --> 00:05:36,490
+0 ile 1 ms arasında akım 5 mA.
+
+105
+00:05:36,570 --> 00:05:39,760
+1 ile 4 ms arasında 1 mA.
+
+106
+00:05:39,840 --> 00:05:42,150
+Buradan iki soruyu hemen cevaplayabiliriz.
+
+107
+00:05:42,230 --> 00:05:44,530
+0,5 ms anında akım nedir?
+
+108
+00:05:44,610 --> 00:05:45,620
+5 mA.
+
+109
+00:05:45,700 --> 00:05:47,830
+3 ms anında akım nedir?
+
+110
+00:05:47,910 --> 00:05:50,910
+1 mA. Her an için tek bir cevap var.
+
+111
+00:05:50,990 --> 00:05:54,470
+Bir de 0 ile 0,5 ms arasında
+bir pencere seçelim.
+
+112
+00:05:54,550 --> 00:06:00,000
+Bu sürede 2,5 µC geçer,
+0,5 ms'ye bölünce yine 5 mA.
+
+113
+00:06:00,080 --> 00:06:02,800
+Pencere akımın sabit
+olduğu aralıkta kaldıkça,
+
+114
+00:06:02,880 --> 00:06:06,140
+genişliği ne olursa
+olsun aynı cevabı alırız.
+
+115
+00:06:06,220 --> 00:06:09,880
+Şimdi de pencereyi
+0 ile 2 ms arasında seçelim.
+
+116
+00:06:09,960 --> 00:06:15,960
+İlk milisaniyede 5, sonraki
+milisaniyede 1 µC geçiyor, toplam 6 µC.
+
+117
+00:06:16,050 --> 00:06:18,760
+2 ms'ye bölünce 3 mA.
+
+118
+00:06:18,840 --> 00:06:20,680
+Bu da hiçbir anın değeri değil.
+
+119
+00:06:20,760 --> 00:06:23,570
+Pencereyi değiştirdikçe
+ortalama da değişiyor.
+
+120
+00:06:23,650 --> 00:06:25,500
+Peki 2 mA nerede?
+
+121
+00:06:25,580 --> 00:06:29,060
+Grafikte 2 mA'lik çizgiyi
+kesik çizgiyle çizelim.
+
+122
+00:06:29,140 --> 00:06:32,100
+Gördüğün gibi, akım hiçbir
+an bu değeri almıyor.
+
+123
+00:06:32,180 --> 00:06:35,610
+2 mA, bu 4 ms'deki ortalama akım.
+
+124
+00:06:35,690 --> 00:06:39,190
+Ortalama yanlış değil, sadece
+başka bir soruya cevap veriyor.
+
+125
+00:06:39,270 --> 00:06:44,200
+4 ms'de toplam ne kadar yük geçti
+diye soruyorsan ortalama işini görür.
+
+126
+00:06:44,280 --> 00:06:47,290
+Ama şu anda telden ne kadar
+akım geçiyor diye soruyorsan,
+
+127
+00:06:47,370 --> 00:06:49,360
+ortalama sana cevap vermez.
+
+128
+00:06:49,440 --> 00:06:54,530
+Buradaki tuzak, sorunun ne
+istediğine bakmadan Δq / Δt yazmak.
+
+129
+00:06:54,610 --> 00:06:58,140
+Soru ortalamayı mı soruyor,
+yoksa belirli bir andaki akımı mı?
+
+130
+00:06:58,220 --> 00:07:02,467
+Bir de şunu fark et: her aralığın
+içinde yük düzgün aktığı için,
+
+131
+00:07:02,547 --> 00:07:06,527
+pencereyi akımın sabit kaldığı
+bir aralığın içinde seçersen,
+
+132
+00:07:06,607 --> 00:07:09,470
+Δq / Δt zaten anlık akıma eşit çıkar.
+
+133
+00:07:10,020 --> 00:07:12,150
+Şimdi biraz daha zor bir örnek.
+
+134
+00:07:12,300 --> 00:07:14,490
+Burada akım her an değişiyor.
+
+135
+00:07:14,570 --> 00:07:17,805
+Bir telin kesitinden geçen toplam yük,
+
+136
+00:07:17,885 --> 00:07:22,270
+sıfır anından itibaren
+şöyle artıyor: q = 2t² mC.
+
+137
+00:07:22,350 --> 00:07:24,480
+Burada t, saniye cinsinden.
+
+138
+00:07:24,560 --> 00:07:28,810
+Soru şu: t = 3 s anında akım ne kadar?
+
+139
+00:07:28,890 --> 00:07:30,680
+Önce ortalama yoldan gidelim.
+
+140
+00:07:30,760 --> 00:07:33,530
+3 saniyede ne kadar yük
+geçmiş, onu bulalım.
+
+141
+00:07:33,610 --> 00:07:35,860
+Formülde t yerine 3 yazıyoruz.
+
+142
+00:07:35,940 --> 00:07:39,240
+3² = 9, 9'un iki katı 18.
+
+143
+00:07:39,320 --> 00:07:42,480
+Yani 3 saniyede 18 mC geçmiş.
+
+144
+00:07:42,560 --> 00:07:45,640
+Ortalama akım, geçen yük bölü geçen süre.
+
+145
+00:07:45,720 --> 00:07:49,560
+18 mC'u 3 saniyeye bölünce 6 mA.
+
+146
+00:07:49,640 --> 00:07:55,140
+Bir an dur ve tahmin et: 3 saniyedeki
+akım bu ortalamadan büyük mü, küçük mü?
+
+147
+00:07:56,560 --> 00:07:58,000
+Şimdi tanımı kullanalım.
+
+148
+00:07:58,080 --> 00:08:00,410
+Akım, yükün zamana göre türevi.
+
+149
+00:08:00,490 --> 00:08:02,160
+t²'nin türevi 2t.
+
+150
+00:08:02,240 --> 00:08:04,980
+Bunu da 2 ile çarpınca 4t buluyoruz.
+
+151
+00:08:05,060 --> 00:08:07,360
+Yani akım, 4t mA.
+
+152
+00:08:07,440 --> 00:08:10,100
+3 saniye anında t yerine 3 yazalım.
+
+153
+00:08:10,180 --> 00:08:12,580
+4 × 3 = 12 mA.
+
+154
+00:08:12,660 --> 00:08:17,510
+Bu, ortalamanın tam iki katı,
+çünkü 12'yi 6'ya bölünce 2 çıkıyor.
+
+155
+00:08:17,590 --> 00:08:21,250
+Birime de bakalım: mC / s, mA eder.
+
+156
+00:08:21,330 --> 00:08:23,270
+Bu iki kat bir tesadüf değil.
+
+157
+00:08:23,350 --> 00:08:26,390
+Yük sıfırdan başlayıp
+zamanın karesiyle artıyorsa,
+
+158
+00:08:26,470 --> 00:08:31,820
+sıfırdan o ana kadarki ortalama akım,
+o andaki akımın tam yarısıdır.
+
+159
+00:08:31,900 --> 00:08:36,040
+Çünkü akım sıfırdan başlıyor
+ve zamanla doğrusal olarak artıyor.
+
+160
+00:08:36,120 --> 00:08:39,860
+Ortalama da başlangıç ile son
+değerin tam ortasında kalıyor.
+
+161
+00:08:39,940 --> 00:08:42,500
+0 ile 12'nin tam ortası da 6.
+
+162
+00:08:42,580 --> 00:08:44,640
+Bunu türev almadan da görebiliriz.
+
+163
+00:08:44,720 --> 00:08:49,390
+3 saniye anından başlayan bir pencere
+açalım ve onu adım adım daraltalım.
+
+164
+00:08:49,470 --> 00:08:52,040
+Her pencerede aynı üç adımı izleyeceğiz.
+
+165
+00:08:52,120 --> 00:08:55,480
+Önce pencerenin sonundaki
+yükü formülden bulacağız.
+
+166
+00:08:55,560 --> 00:08:59,310
+Sonra bundan, 3 saniyedeki
+18 mC'u çıkaracağız.
+
+167
+00:08:59,390 --> 00:09:01,430
+Bu fark, pencerede geçen yük.
+
+168
+00:09:01,510 --> 00:09:04,670
+En son bu farkı pencerenin
+genişliğine böleceğiz.
+
+169
+00:09:04,750 --> 00:09:08,650
+Pencere 1 saniye olsun,
+yani 3 ile 4 saniye arası.
+
+170
+00:09:08,730 --> 00:09:12,180
+4² = 16, iki katı 32 mC.
+
+171
+00:09:12,260 --> 00:09:15,770
+32'den 18'i çıkarınca 14 mC kalıyor.
+
+172
+00:09:15,850 --> 00:09:18,950
+Bunu 1 saniyeye bölünce 14 mA.
+
+173
+00:09:19,030 --> 00:09:22,050
+Şimdi pencereyi saniyenin
+onda birine indirelim.
+
+174
+00:09:22,130 --> 00:09:24,700
+Pencerenin sonu 3,1 saniye.
+
+175
+00:09:24,780 --> 00:09:27,790
+3,1² = 9,61.
+
+176
+00:09:27,870 --> 00:09:31,020
+Bunun iki katı, 19,22 mC.
+
+177
+00:09:31,100 --> 00:09:34,600
+18'i çıkarınca 1,22 mC kalıyor.
+
+178
+00:09:34,680 --> 00:09:39,010
+Bunu 0,1 saniyeye bölünce 12,2 mA.
+
+179
+00:09:39,090 --> 00:09:41,170
+Bir de pencereyi yüzde birine indirelim.
+
+180
+00:09:41,250 --> 00:09:44,140
+Pencerenin sonu 3,01 saniye.
+
+181
+00:09:44,220 --> 00:09:48,240
+3,01² = 9,0601.
+
+182
+00:09:48,320 --> 00:09:52,210
+Bunun iki katı, 18,1202 mC.
+
+183
+00:09:52,290 --> 00:09:56,650
+18'i çıkarınca 0,1202 mC kalıyor.
+
+184
+00:09:56,730 --> 00:10:02,010
+Bunu 0,01 saniyeye bölünce 12,02 mA.
+
+185
+00:10:02,090 --> 00:10:07,880
+Gördün mü? Önce 14,
+sonra 12,2, sonra 12,02.
+
+186
+00:10:07,960 --> 00:10:11,840
+Pencere küçüldükçe sonuç
+12 mA'e yaklaşıyor.
+
+187
+00:10:11,920 --> 00:10:14,720
+dq / dt tam olarak bu sınır değer.
+
+188
+00:10:14,800 --> 00:10:16,140
+Bunu grafikte de görelim.
+
+189
+00:10:16,220 --> 00:10:20,430
+Yükü zamana göre çizdiğimizde,
+iki nokta arasındaki ortalama akım,
+
+190
+00:10:20,510 --> 00:10:23,210
+o iki noktayı birleştiren
+doğrunun eğimidir.
+
+191
+00:10:23,290 --> 00:10:24,940
+Bu doğruya kesen diyoruz.
+
+192
+00:10:25,060 --> 00:10:26,629
+Pencere daraldıkça kesen,
+
+193
+00:10:26,709 --> 00:10:30,480
+3 saniyedeki noktada eğriye
+teğet olan doğruya yaklaşır.
+
+194
+00:10:30,560 --> 00:10:32,830
+Bu teğetin eğimi 12 mA.
+
+195
+00:10:32,910 --> 00:10:36,550
+Yani anlık akım,
+yük grafiğinin o andaki eğimidir.
+
+196
+00:10:36,670 --> 00:10:37,830
+Bir soru daha soralım.
+
+197
+00:10:37,910 --> 00:10:42,160
+Akım hangi anda ortalama değere,
+yani 6 mA'e eşit oluyor?
+
+198
+00:10:42,240 --> 00:10:46,210
+Akım 4t olduğuna göre, 4t = 6 yazıyoruz.
+
+199
+00:10:46,290 --> 00:10:49,520
+6'yı 4'e bölünce t, 1,5 saniye çıkıyor.
+
+200
+00:10:49,600 --> 00:10:53,650
+Demek ki ortalama değer de aslında
+akımın bir anda aldığı bir değer.
+
+201
+00:10:53,730 --> 00:10:57,870
+Ama o an, bizim sorduğumuz
+3 saniye değil, 1,5 saniye.
+
+202
+00:10:57,950 --> 00:11:02,365
+Grafikte de bunu görebilirsin:
+0'dan 3'e uzanan kesene paralel teğet,
+
+203
+00:11:02,445 --> 00:11:04,800
+tam 1,5 saniyede eğriye değiyor.
+
+204
+00:11:04,880 --> 00:11:08,300
+Bu akım 2 kΩ'luk bir dirençten
+geçseydi ne olurdu?
+
+205
+00:11:08,380 --> 00:11:13,120
+Ohm yasasına göre direncin uçlarındaki
+gerilim, direnç ile akımın çarpımıdır.
+
+206
+00:11:13,200 --> 00:11:17,110
+3 saniye anında 2 kΩ × 12 mA.
+
+207
+00:11:17,190 --> 00:11:19,390
+2 × 12 = 24.
+
+208
+00:11:19,470 --> 00:11:22,000
+Kiloohm ile miliamperin
+çarpımı da volt verir.
+
+209
+00:11:22,080 --> 00:11:23,590
+Yani 24 V.
+
+210
+00:11:23,670 --> 00:11:29,310
+Ortalama akımı kullansaydık
+2 kΩ × 6 mA, yani 12 V bulurduk.
+
+211
+00:11:29,390 --> 00:11:31,470
+Bu, o andaki gerilimin yarısı.
+
+212
+00:11:31,550 --> 00:11:36,160
+Yani bu örnekte akımda yapılan hata,
+gerilime de aynen taşınıyor.
+
+213
+00:11:36,650 --> 00:11:38,670
+Son örneğimiz biraz düşündürücü.
+
+214
+00:11:38,750 --> 00:11:43,392
+Bu kez kesitten geçen
+net yük şöyle değişiyor:
+
+215
+00:11:43,472 --> 00:11:45,490
+q = (6t − t²) mC.
+
+216
+00:11:45,570 --> 00:11:49,820
+t yine saniye cinsinden
+ve 0 ile 4 saniye arasına bakıyoruz.
+
+217
+00:11:49,970 --> 00:11:51,170
+Önce sana bir soru.
+
+218
+00:11:51,250 --> 00:11:55,380
+3 saniye anında yük kaç mC, akım kaç mA?
+
+219
+00:11:55,460 --> 00:11:57,340
+Bir an durup kendin bulmaya çalış.
+
+220
+00:11:57,420 --> 00:11:58,600
+Yükten başlayalım.
+
+221
+00:11:58,680 --> 00:12:01,580
+3 saniyede 6t, 18 eder.
+
+222
+00:12:01,660 --> 00:12:03,020
+t² ise 9.
+
+223
+00:12:03,130 --> 00:12:06,420
+18'den 9'u çıkarınca yük 9 mC.
+
+224
+00:12:06,500 --> 00:12:08,590
+Bu aralıktaki en büyük değer bu.
+
+225
+00:12:08,670 --> 00:12:10,430
+Bunu sayılarla da kontrol edelim.
+
+226
+00:12:10,510 --> 00:12:15,710
+2,5 saniyede de
+3,5 saniyede de yük 8,75 mC.
+
+227
+00:12:15,790 --> 00:12:21,230
+3 saniyenin iki yanında yük daha küçük,
+yani 3 saniye gerçekten tepe noktası.
+
+228
+00:12:21,310 --> 00:12:23,120
+Şimdi akım. Türevi alalım.
+
+229
+00:12:23,200 --> 00:12:27,160
+6t teriminin türevi 6, t²'nin türevi 2t.
+
+230
+00:12:27,240 --> 00:12:32,980
+Yani akım, 6'dan 2t çıkarılarak
+bulunuyor: (6 − 2t) mA.
+
+231
+00:12:33,060 --> 00:12:38,740
+3 saniye anında 2t 6 eder,
+6'dan 6'yı çıkarınca 0 mA.
+
+232
+00:12:38,820 --> 00:12:42,510
+İlginç değil mi? Yük en büyük
+değerindeyken akım sıfır.
+
+233
+00:12:42,590 --> 00:12:46,080
+Aslında bir önceki örnekteki
+eğim yorumu bunu hemen söylüyor.
+
+234
+00:12:46,160 --> 00:12:48,850
+Yük grafiği 3 saniyede tepe noktasında.
+
+235
+00:12:48,930 --> 00:12:51,710
+Tepede teğet yatay, yani eğim sıfır.
+
+236
+00:12:51,790 --> 00:12:55,860
+Akım yükün ne kadar olduğuna değil,
+ne kadar hızlı değiştiğine bakar.
+
+237
+00:12:55,940 --> 00:12:57,310
+Bir de başka anlara bakalım.
+
+238
+00:12:57,390 --> 00:13:02,690
+1 saniyede 2t 2 eder,
+6'dan 2'yi çıkarınca akım 4 mA.
+
+239
+00:13:02,770 --> 00:13:08,720
+4 saniyede 2t 8 eder,
+6'dan 8'i çıkarınca akım −2 mA.
+
+240
+00:13:08,800 --> 00:13:10,220
+Eksi işaret ne demek?
+
+241
+00:13:10,300 --> 00:13:12,930
+3 saniyeden sonra yük azalmaya başlıyor.
+
+242
+00:13:13,010 --> 00:13:15,800
+Yani yük kesitten artık
+ters yönde geçiyor.
+
+243
+00:13:15,880 --> 00:13:18,640
+Akımın yönünü ve işaretin
+bu yönü nasıl taşıdığını
+
+244
+00:13:18,720 --> 00:13:21,090
+ikinci bölümde ayrıntılı göreceğiz.
+
+245
+00:13:21,170 --> 00:13:23,060
+Peki akım hangi anda en büyük?
+
+246
+00:13:23,140 --> 00:13:26,510
+6 − 2t ifadesi t büyüdükçe küçülüyor.
+
+247
+00:13:26,590 --> 00:13:31,030
+Yani en büyük değer başlangıçta,
+t sıfırken: 6 mA.
+
+248
+00:13:31,110 --> 00:13:32,790
+O anda yük ise sıfır.
+
+249
+00:13:32,870 --> 00:13:34,250
+Tablo tam ters döndü.
+
+250
+00:13:34,330 --> 00:13:38,410
+Yük sıfırken akım en büyük,
+yük en büyükken akım sıfır.
+
+251
+00:13:38,490 --> 00:13:41,540
+Bir de 0 ile 4 saniye
+arasındaki ortalamaya bakalım.
+
+252
+00:13:41,620 --> 00:13:45,890
+4 saniyede yük,
+24'ten 16'yı çıkarınca 8 mC.
+
+253
+00:13:45,970 --> 00:13:48,350
+8'i 4'e bölünce 2 mA.
+
+254
+00:13:48,430 --> 00:13:53,660
+Oysa bu aralıkta akım 4, 0, −2
+gibi çok farklı değerler aldı.
+
+255
+00:13:53,740 --> 00:13:57,420
+Ortalama, bu hikâyenin tamamını
+tek bir sayıya sıkıştırıyor.
+
+256
+00:13:57,500 --> 00:14:01,380
+Buradaki tuzak, yük büyükse
+akımın da büyük olacağını sanmak.
+
+257
+00:14:01,460 --> 00:14:04,940
+Az önce gördük:
+yük en büyükken akım sıfırdı.
+
+258
+00:14:05,380 --> 00:14:06,980
+Toparlayalım.
+
+259
+00:14:07,060 --> 00:14:11,760
+Akım, yükün kesitten geçme
+hızıdır: i = dq / dt.
+
+260
+00:14:11,840 --> 00:14:15,989
+Δq / Δt ise yalnızca seçtiğin
+penceredeki ortalamayı verir,
+
+261
+00:14:16,069 --> 00:14:19,430
+pencere küçüldükçe de
+anlık akıma yaklaşır.
+
+262
+00:14:19,510 --> 00:14:23,620
+Akımı belirleyen, geçen yükün
+miktarı değil, değişme hızıdır.
+
+263
+00:14:23,810 --> 00:14:25,680
+Üç örnekte de aynı şeyi gördük.
+
+264
+00:14:25,760 --> 00:14:29,200
+Basamaklı akımda ortalama
+hiçbir anın değeri değildi.
+
+265
+00:14:29,280 --> 00:14:33,030
+Sürekli artan akımda anlık değer
+ortalamanın iki katıydı.
+
+266
+00:14:33,110 --> 00:14:36,310
+Son örnekte de yük
+en büyükken akım sıfırdı.
+
+267
+00:14:36,390 --> 00:14:39,850
+Ohm yasasıyla gerilimi
+bulurken de anlık akımı kullandık.
+
+268
+00:14:39,970 --> 00:14:41,780
+Sana da bir soru bırakayım.
+
+269
+00:14:41,860 --> 00:14:46,550
+Yük, (4t − t²) mC olsaydı,
+akım hangi anda sıfır olurdu?
+
+270
+00:14:46,630 --> 00:14:48,640
+İpucu: tepe noktasını düşün.
+
+271
+00:14:48,720 --> 00:14:50,230
+Cevabını yorumlara yaz.
+
+272
+00:14:50,380 --> 00:14:54,550
+Bu ders işine yaradıysa videoyu beğenip
+sınıf arkadaşlarınla paylaşır mısın?
+
+273
+00:14:54,630 --> 00:14:57,320
+Kanala abone olursan
+ikinci bölümü kaçırmazsın.
+
+274
+00:14:57,400 --> 00:14:59,030
+İkinci bölümde akımın yönünü,
+
+275
+00:14:59,110 --> 00:15:03,390
+açık devrenin bize neyi garanti
+ettiğini ve bugün yaptığımızın tersini,
+
+276
+00:15:03,470 --> 00:15:06,800
+yani akım grafiğinden geçen
+yükü bulmayı göreceğiz.
+
