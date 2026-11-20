@@ -72,6 +72,8 @@ Bir bölümün metni (`metin.md`) zaten yazılmışsa: paketi hazırladıktan so
 3. (18.11) Bilinen yanlış **"En sık yapılan hata"** adıyla, hemen ardından **"Doğrusu"** ile verilir; yalnızca gerçekten yaygın hatalar.
 4. (18.11) Grafiklerde karışabilecek çizgiler farklı renk ve etiketle ayrılır (ör. eğri mavi, teğet kırmızı, kesen gri kesikli).
 5. (18.11) Ekranda kelime yerine matematik işareti kullanılmaz; işaretler yalnızca denklemde.
+6. (20.11) "Kanca" kelimesi öğrenciye yönelik hiçbir yerde (ses, ekran, Uzun Video Ajanı'na önerilen ifadeler) kullanılmaz; "dersin girişindeki devre / soru" denir.
+7. (20.11) Gerilim seviyeleri gösterilirken noktalar düz çizgiyle birbirine bağlanmaz (kısa devre gibi görünür); kesikli eksen kullanılır. Bir kavramın hemen ardından gelen kavramla karışabilecek her çizimi önceden düşün.
 
 ## 8. Asla
 
