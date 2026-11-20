@@ -1,0 +1,1356 @@
+1
+00:00:00,040 --> 00:00:02,720
+How do you calculate
+the current through a wire?
+
+2
+00:00:02,800 --> 00:00:04,345
+The first answer that comes to mind:
+
+3
+00:00:04,425 --> 00:00:07,020
+divide the charge that passed
+by the time it took.
+
+4
+00:00:07,230 --> 00:00:10,535
+But even though current flows
+through the wire nonstop,
+
+5
+00:00:10,615 --> 00:00:12,790
+can this division give you zero?
+
+6
+00:00:12,870 --> 00:00:15,180
+And without a single calculation error?
+
+7
+00:00:15,320 --> 00:00:16,670
+Yes, it can.
+
+8
+00:00:16,750 --> 00:00:18,670
+We'll see how in a moment.
+
+9
+00:00:18,800 --> 00:00:22,110
+By the end of this part, we'll have built
+the real definition of current.
+
+10
+00:00:22,190 --> 00:00:24,007
+And with three examples,
+we'll learn to tell
+
+11
+00:00:24,087 --> 00:00:26,300
+average current
+from instantaneous current.
+
+12
+00:00:26,380 --> 00:00:28,735
+In the last one,
+we'll see something surprising:
+
+13
+00:00:28,815 --> 00:00:30,971
+the current can be zero
+just when the charge
+
+14
+00:00:31,051 --> 00:00:32,950
+through the wire is at its maximum.
+
+15
+00:00:42,658 --> 00:00:46,808
+Hello everyone, welcome
+to the Circuit Theory I series.
+
+16
+00:00:46,888 --> 00:00:50,318
+Today, in the first part of Lecture 1,
+we'll talk about current.
+
+17
+00:00:50,840 --> 00:00:53,086
+Whatever you design in circuit theory,
+
+18
+00:00:53,166 --> 00:00:56,220
+you start by defining
+the quantities correctly.
+
+19
+00:00:56,300 --> 00:00:58,390
+That's exactly where this series begins.
+
+20
+00:00:58,470 --> 00:01:00,530
+Today's topic is charge and current.
+
+21
+00:01:00,610 --> 00:01:03,630
+We'll cover voltage in the third
+part of this lecture.
+
+22
+00:01:04,080 --> 00:01:05,130
+First, charge.
+
+23
+00:01:05,210 --> 00:01:08,470
+We denote charge by the letter q;
+its unit is the coulomb.
+
+24
+00:01:08,550 --> 00:01:09,772
+In circuit theory,
+
+25
+00:01:09,852 --> 00:01:14,310
+we treat charge as a quantity
+we can count, add and subtract.
+
+26
+00:01:14,390 --> 00:01:18,060
+The electron's charge is negative,
+the proton's is positive.
+
+27
+00:01:18,140 --> 00:01:21,830
+The deeper nature of charge
+is a physics question, not our job.
+
+28
+00:01:21,910 --> 00:01:26,390
+Our question is different:
+where does this quantity go, and how fast?
+
+29
+00:01:26,470 --> 00:01:29,710
+The moment charge moves,
+current comes into play.
+
+30
+00:01:29,790 --> 00:01:31,620
+So how do we measure current?
+
+31
+00:01:31,700 --> 00:01:34,380
+Picture an imaginary
+cross-section through the wire.
+
+32
+00:01:34,460 --> 00:01:36,020
+Let's put a counter on this cross-section.
+
+33
+00:01:36,100 --> 00:01:37,859
+The counter counts charge
+passing to the right
+
+34
+00:01:37,939 --> 00:01:40,330
+as positive and charge passing
+to the left as negative.
+
+35
+00:01:40,410 --> 00:01:41,530
+Let's wait for a while.
+
+36
+00:01:41,610 --> 00:01:46,220
+Let's call this time Δt, and the net
+charge shown on the counter Δq.
+
+37
+00:01:46,300 --> 00:01:50,570
+The first definition that comes
+to mind: current = Δq / Δt.
+
+38
+00:01:50,650 --> 00:01:52,020
+Seems reasonable, right?
+
+39
+00:01:52,100 --> 00:01:53,210
+But there's a problem.
+
+40
+00:01:53,290 --> 00:01:55,450
+How do we choose Δt?
+
+41
+00:01:55,580 --> 00:01:56,910
+Consider a wire like this.
+
+42
+00:01:56,990 --> 00:01:58,333
+In the first half second,
+
+43
+00:01:58,413 --> 00:02:02,030
+5 mC passes the cross-section
+to the right, at a steady rate.
+
+44
+00:02:02,110 --> 00:02:05,587
+In the next half second,
+5 mC passes to the left this time,
+
+45
+00:02:05,667 --> 00:02:07,270
+again at a steady rate.
+
+46
+00:02:07,350 --> 00:02:12,920
+If we choose a 1-second window,
+the counter adds +5 and −5 and shows zero.
+
+47
+00:02:13,000 --> 00:02:15,590
+Δq / Δt comes out zero.
+
+48
+00:02:15,670 --> 00:02:17,580
+So is there no current in the wire at all?
+
+49
+00:02:17,660 --> 00:02:19,530
+There is, and it never stops.
+
+50
+00:02:19,610 --> 00:02:23,869
+In the first half second, charge moves
+right at a rate of 10 mC per second,
+
+51
+00:02:23,949 --> 00:02:25,720
+then left at the same rate.
+
+52
+00:02:25,800 --> 00:02:30,080
+So the current is first
++10 mA, then −10 mA.
+
+53
+00:02:30,160 --> 00:02:31,620
+It's never zero at any instant.
+
+54
+00:02:31,700 --> 00:02:34,980
+We made no calculation error;
+we just chose a bad window.
+
+55
+00:02:35,060 --> 00:02:36,801
+Charge kept passing
+through the cross-section
+
+56
+00:02:36,881 --> 00:02:38,020
+throughout that one second.
+
+57
+00:02:38,100 --> 00:02:42,770
+But because the net charge transferred
+is zero, the average came out zero.
+
+58
+00:02:42,850 --> 00:02:43,971
+The wider the window,
+
+59
+00:02:44,051 --> 00:02:47,960
+the more of what happens inside
+gets squeezed into a single number.
+
+60
+00:02:48,040 --> 00:02:49,850
+What if we narrow the window?
+
+61
+00:02:49,930 --> 00:02:53,710
+If we place it inside the first
+half second, we get 10 mA.
+
+62
+00:02:53,790 --> 00:02:57,194
+But if we slide a window of the same
+width right to the middle,
+
+63
+00:02:57,274 --> 00:03:00,910
+onto the moment the charge reverses,
+the result is zero again.
+
+64
+00:03:00,990 --> 00:03:03,738
+Here we assume the reversal
+is instantaneous;
+
+65
+00:03:03,818 --> 00:03:06,310
+let's set that exact instant aside.
+
+66
+00:03:06,390 --> 00:03:08,644
+The problem is this:
+a wide window mixes two
+
+67
+00:03:08,724 --> 00:03:11,050
+different behaviors into a single number.
+
+68
+00:03:11,130 --> 00:03:13,790
+But a good definition should
+describe a single instant.
+
+69
+00:03:13,870 --> 00:03:16,320
+The solution is to shrink
+the window without limit.
+
+70
+00:03:16,400 --> 00:03:19,290
+dt is a tiny time
+interval approaching zero.
+
+71
+00:03:19,370 --> 00:03:23,590
+And dq is the tiny charge passing
+the cross-section in that tiny time.
+
+72
+00:03:23,680 --> 00:03:25,278
+Here's the real definition of current:
+
+73
+00:03:25,358 --> 00:03:28,270
+current is the rate at which charge
+passes through a cross-section.
+
+74
+00:03:28,350 --> 00:03:30,820
+So i = dq / dt.
+
+75
+00:03:30,900 --> 00:03:32,020
+Its unit is the ampere.
+
+76
+00:03:32,100 --> 00:03:35,610
+If one coulomb of charge passes
+per second, the current is one ampere.
+
+77
+00:03:35,690 --> 00:03:40,570
+For example, if 2 µC passes every
+millisecond, the current is 2 mA.
+
+78
+00:03:40,650 --> 00:03:42,940
+That means 2 mC per second.
+
+79
+00:03:43,020 --> 00:03:47,050
+With this definition, current is no longer
+a single number but a function of time.
+
+80
+00:03:47,130 --> 00:03:50,180
+We can plot it and take its derivative.
+
+81
+00:03:50,600 --> 00:03:53,740
+Subscribe to the channel
+to follow the rest of this series.
+
+82
+00:03:53,820 --> 00:03:56,880
+Did you notice? Current
+is no longer an average.
+
+83
+00:03:56,960 --> 00:04:00,670
+It's a time-dependent quantity
+with its own value at every instant.
+
+84
+00:04:00,820 --> 00:04:03,540
+Let's also take a quick look
+at where this series is heading.
+
+85
+00:04:03,620 --> 00:04:06,210
+After charge and current,
+we'll get to know voltage.
+
+86
+00:04:06,290 --> 00:04:10,280
+Then we'll study sources,
+resistors and capacitors.
+
+87
+00:04:10,360 --> 00:04:12,425
+Next, we'll cover Kirchhoff's laws,
+
+88
+00:04:12,505 --> 00:04:16,490
+the analysis methods built on them,
+and the circuit theorems.
+
+89
+00:04:16,570 --> 00:04:21,643
+After that, we'll move to circuits
+made of a resistor and a capacitor,
+
+90
+00:04:21,723 --> 00:04:26,550
+then a resistor and an inductor,
+and then all three together.
+
+91
+00:04:26,650 --> 00:04:29,530
+Our last stop is operational amplifiers.
+
+92
+00:04:29,610 --> 00:04:33,110
+We cover each lecture in three
+parts of about 15 minutes each.
+
+93
+00:04:33,190 --> 00:04:36,410
+All along the way, we'll use
+current as we defined it today.
+
+94
+00:04:36,490 --> 00:04:38,990
+Now let's reinforce this
+with three examples.
+
+95
+00:04:39,410 --> 00:04:40,850
+Let's move on to our first example.
+
+96
+00:04:40,930 --> 00:04:44,060
+Charge flows through a wire for 4 ms.
+
+97
+00:04:44,140 --> 00:04:47,120
+In the first 1 ms, 5 µC passes.
+
+98
+00:04:47,200 --> 00:04:50,730
+In the next 3 ms, only 3 µC.
+
+99
+00:04:50,810 --> 00:04:53,760
+Within each interval,
+the charge flows at a steady rate.
+
+100
+00:04:53,840 --> 00:04:56,300
+The question:
+what is the current in this wire?
+
+101
+00:04:56,390 --> 00:04:59,580
+The first instinct is to divide
+the total charge by the total time.
+
+102
+00:04:59,660 --> 00:05:04,250
+8 µC / 4 ms = 2 mA.
+The calculation is correct.
+
+103
+00:05:04,330 --> 00:05:09,660
+But was the current in the wire
+actually 2 mA at any instant? Let's see.
+
+104
+00:05:09,740 --> 00:05:14,960
+In the first interval,
+5 µC passed in 1 ms, which makes 5 mA.
+
+105
+00:05:15,040 --> 00:05:16,633
+There's a handy shortcut here:
+
+106
+00:05:16,713 --> 00:05:20,730
+dividing microcoulombs by milliseconds
+gives milliamperes directly.
+
+107
+00:05:20,860 --> 00:05:25,920
+In the second interval,
+3 µC passed in 3 ms, which is 1 mA.
+
+108
+00:05:26,000 --> 00:05:27,290
+Now let's draw the graph.
+
+109
+00:05:27,370 --> 00:05:30,110
+The horizontal axis is time,
+in milliseconds.
+
+110
+00:05:30,190 --> 00:05:32,900
+The vertical axis is current,
+in milliamperes.
+
+111
+00:05:32,980 --> 00:05:36,490
+Between 0 and 1 ms, the current is 5 mA.
+
+112
+00:05:36,570 --> 00:05:39,760
+Between 1 and 4 ms, it's 1 mA.
+
+113
+00:05:39,840 --> 00:05:42,150
+From this, we can answer
+two questions right away.
+
+114
+00:05:42,230 --> 00:05:44,530
+What is the current at 0.5 ms?
+
+115
+00:05:44,610 --> 00:05:45,620
+5 mA.
+
+116
+00:05:45,700 --> 00:05:47,830
+What is the current at 3 ms?
+
+117
+00:05:47,910 --> 00:05:50,910
+1 mA. There's a single
+answer for every instant.
+
+118
+00:05:50,990 --> 00:05:54,470
+Now let's pick a window
+between 0 and 0.5 ms.
+
+119
+00:05:54,550 --> 00:06:00,000
+In this time, 2.5 µC passes;
+dividing by 0.5 ms gives 5 mA again.
+
+120
+00:06:00,080 --> 00:06:03,744
+As long as the window stays within
+an interval where the current is constant,
+
+121
+00:06:03,824 --> 00:06:06,140
+we get the same answer whatever its width.
+
+122
+00:06:06,220 --> 00:06:09,880
+Now let's choose the window
+between 0 and 2 ms.
+
+123
+00:06:09,960 --> 00:06:15,960
+5 µC passes in the first millisecond
+and 1 µC in the next, 6 µC in total.
+
+124
+00:06:16,050 --> 00:06:18,760
+Dividing by 2 ms gives 3 mA.
+
+125
+00:06:18,840 --> 00:06:20,680
+That isn't the value
+at any instant either.
+
+126
+00:06:20,760 --> 00:06:23,570
+As we change the window,
+the average changes too.
+
+127
+00:06:23,650 --> 00:06:25,500
+So where is 2 mA?
+
+128
+00:06:25,580 --> 00:06:29,060
+Let's draw the 2 mA level
+on the graph as a dashed line.
+
+129
+00:06:29,140 --> 00:06:32,100
+As you can see, the current never
+takes this value at any instant.
+
+130
+00:06:32,180 --> 00:06:35,610
+2 mA is the average
+current over these 4 ms.
+
+131
+00:06:35,690 --> 00:06:39,190
+The average isn't wrong;
+it just answers a different question.
+
+132
+00:06:39,270 --> 00:06:44,200
+If you're asking how much total charge
+passed in 4 ms, the average does the job.
+
+133
+00:06:44,280 --> 00:06:47,672
+But if you're asking how much current
+is flowing through the wire right now,
+
+134
+00:06:47,752 --> 00:06:49,360
+the average won't answer you.
+
+135
+00:06:49,440 --> 00:06:54,530
+The trap here is writing Δq / Δt without
+checking what the question asks for.
+
+136
+00:06:54,610 --> 00:06:58,140
+Is the question asking for the average,
+or for the current at a specific instant?
+
+137
+00:06:58,220 --> 00:07:02,066
+Also notice this: since the charge
+flows steadily within each interval,
+
+138
+00:07:02,146 --> 00:07:05,446
+if you choose the window inside
+an interval where the current
+
+139
+00:07:05,526 --> 00:07:09,470
+stays constant, Δq / Δt already
+equals the instantaneous current.
+
+140
+00:07:10,020 --> 00:07:12,150
+Now a slightly harder example.
+
+141
+00:07:12,300 --> 00:07:14,490
+Here the current changes at every instant.
+
+142
+00:07:14,570 --> 00:07:18,083
+The total charge passing
+a wire's cross-section,
+
+143
+00:07:18,163 --> 00:07:22,270
+starting from time zero,
+grows like this: q = 2t² mC.
+
+144
+00:07:22,350 --> 00:07:24,480
+Here t is in seconds.
+
+145
+00:07:24,560 --> 00:07:28,810
+The question:
+what is the current at t = 3 s?
+
+146
+00:07:28,890 --> 00:07:30,680
+Let's try the average approach first.
+
+147
+00:07:30,760 --> 00:07:33,530
+Let's find how much charge
+has passed in 3 seconds.
+
+148
+00:07:33,610 --> 00:07:35,860
+We substitute 3 for t in the formula.
+
+149
+00:07:35,940 --> 00:07:39,240
+3² = 9, and twice 9 is 18.
+
+150
+00:07:39,320 --> 00:07:42,480
+So 18 mC has passed in 3 seconds.
+
+151
+00:07:42,560 --> 00:07:45,640
+Average current is the charge
+that passed divided by the time it took.
+
+152
+00:07:45,720 --> 00:07:49,560
+Dividing 18 mC by 3 seconds gives 6 mA.
+
+153
+00:07:49,640 --> 00:07:51,223
+Pause for a moment and guess:
+
+154
+00:07:51,303 --> 00:07:55,140
+is the current at 3 seconds
+greater or less than this average?
+
+155
+00:07:56,560 --> 00:07:58,000
+Now let's use the definition.
+
+156
+00:07:58,080 --> 00:08:00,410
+Current is the derivative
+of charge with respect to time.
+
+157
+00:08:00,490 --> 00:08:02,160
+The derivative of t² is 2t.
+
+158
+00:08:02,240 --> 00:08:04,980
+Multiplying that by 2, we get 4t.
+
+159
+00:08:05,060 --> 00:08:07,360
+So the current is 4t mA.
+
+160
+00:08:07,440 --> 00:08:10,100
+At 3 seconds, let's substitute 3 for t.
+
+161
+00:08:10,180 --> 00:08:12,580
+4 × 3 = 12 mA.
+
+162
+00:08:12,660 --> 00:08:17,510
+That's exactly twice the average,
+because 12 divided by 6 is 2.
+
+163
+00:08:17,590 --> 00:08:21,250
+Let's check the unit too: mC / s gives mA.
+
+164
+00:08:21,330 --> 00:08:23,270
+This factor of two is no coincidence.
+
+165
+00:08:23,350 --> 00:08:26,536
+If charge starts at zero
+and grows with the square of time,
+
+166
+00:08:26,616 --> 00:08:29,095
+the average current
+from zero up to an instant
+
+167
+00:08:29,175 --> 00:08:31,820
+is exactly half the current
+at that instant.
+
+168
+00:08:31,900 --> 00:08:36,040
+Because the current starts at zero
+and rises linearly with time.
+
+169
+00:08:36,120 --> 00:08:39,860
+So the average sits exactly halfway
+between the initial and final values.
+
+170
+00:08:39,940 --> 00:08:42,500
+And halfway between 0 and 12 is 6.
+
+171
+00:08:42,580 --> 00:08:44,640
+We can see this without
+taking a derivative, too.
+
+172
+00:08:44,720 --> 00:08:49,390
+Let's open a window starting
+at 3 seconds and narrow it step by step.
+
+173
+00:08:49,470 --> 00:08:52,040
+In each window,
+we'll follow the same three steps.
+
+174
+00:08:52,120 --> 00:08:55,480
+First, we'll find the charge at the end
+of the window from the formula.
+
+175
+00:08:55,560 --> 00:08:59,310
+Then we'll subtract the 18 mC
+at 3 seconds from it.
+
+176
+00:08:59,390 --> 00:09:01,430
+This difference is the charge
+that passed in the window.
+
+177
+00:09:01,510 --> 00:09:04,670
+Finally, we'll divide this
+difference by the window width.
+
+178
+00:09:04,750 --> 00:09:08,650
+Let the window be 1 second,
+from 3 to 4 seconds.
+
+179
+00:09:08,730 --> 00:09:12,180
+4² = 16, twice that is 32 mC.
+
+180
+00:09:12,260 --> 00:09:15,770
+Subtracting 18 from 32 leaves 14 mC.
+
+181
+00:09:15,850 --> 00:09:18,950
+Dividing by 1 second gives 14 mA.
+
+182
+00:09:19,030 --> 00:09:22,050
+Now let's shrink the window
+to a tenth of a second.
+
+183
+00:09:22,130 --> 00:09:24,700
+The window ends at 3.1 seconds.
+
+184
+00:09:24,780 --> 00:09:27,790
+3.1² = 9.61.
+
+185
+00:09:27,870 --> 00:09:31,020
+Twice that is 19.22 mC.
+
+186
+00:09:31,100 --> 00:09:34,600
+Subtracting 18 leaves 1.22 mC.
+
+187
+00:09:34,680 --> 00:09:39,010
+Dividing by 0.1 seconds gives 12.2 mA.
+
+188
+00:09:39,090 --> 00:09:41,170
+Now let's shrink the window
+to a hundredth of a second.
+
+189
+00:09:41,250 --> 00:09:44,140
+The window ends at 3.01 seconds.
+
+190
+00:09:44,220 --> 00:09:48,240
+3.01² = 9.0601.
+
+191
+00:09:48,320 --> 00:09:52,210
+Twice that is 18.1202 mC.
+
+192
+00:09:52,290 --> 00:09:56,650
+Subtracting 18 leaves 0.1202 mC.
+
+193
+00:09:56,730 --> 00:10:02,010
+Dividing by 0.01 seconds gives 12.02 mA.
+
+194
+00:10:02,090 --> 00:10:07,880
+See? First 14, then 12.2, then 12.02.
+
+195
+00:10:07,960 --> 00:10:11,840
+As the window shrinks,
+the result approaches 12 mA.
+
+196
+00:10:11,920 --> 00:10:14,720
+dq / dt is exactly this limiting value.
+
+197
+00:10:14,800 --> 00:10:16,140
+Let's see this on the graph too.
+
+198
+00:10:16,220 --> 00:10:18,205
+When we plot charge against time,
+
+199
+00:10:18,285 --> 00:10:23,210
+the average current between two points
+is the slope of the line joining them.
+
+200
+00:10:23,290 --> 00:10:24,940
+We call this line a secant.
+
+201
+00:10:25,060 --> 00:10:26,280
+As the window narrows,
+
+202
+00:10:26,360 --> 00:10:30,480
+the secant approaches the tangent
+to the curve at the 3-second point.
+
+203
+00:10:30,560 --> 00:10:32,830
+The slope of this tangent is 12 mA.
+
+204
+00:10:32,910 --> 00:10:36,550
+So the instantaneous current is the slope
+of the charge graph at that instant.
+
+205
+00:10:36,670 --> 00:10:37,830
+Let's ask one more question.
+
+206
+00:10:37,910 --> 00:10:42,160
+At what instant does the current
+equal the average value, 6 mA?
+
+207
+00:10:42,240 --> 00:10:46,210
+Since the current is 4t, we write 4t = 6.
+
+208
+00:10:46,290 --> 00:10:49,520
+Dividing 6 by 4 gives t = 1.5 seconds.
+
+209
+00:10:49,600 --> 00:10:53,650
+So the average value is actually a value
+the current takes at some instant.
+
+210
+00:10:53,730 --> 00:10:57,870
+But that instant isn't the 3 seconds
+we asked about; it's 1.5 seconds.
+
+211
+00:10:57,950 --> 00:10:59,656
+You can see it on the graph too:
+
+212
+00:10:59,736 --> 00:11:02,201
+the tangent parallel
+to the secant from 0 to 3
+
+213
+00:11:02,281 --> 00:11:04,800
+touches the curve exactly at 1.5 seconds.
+
+214
+00:11:04,880 --> 00:11:08,300
+What if this current flowed
+through a 2 kΩ resistor?
+
+215
+00:11:08,380 --> 00:11:10,669
+By Ohm's law,
+the voltage across the resistor
+
+216
+00:11:10,749 --> 00:11:13,120
+is the product of resistance and current.
+
+217
+00:11:13,200 --> 00:11:17,110
+At 3 seconds: 2 kΩ × 12 mA.
+
+218
+00:11:17,190 --> 00:11:19,390
+2 × 12 = 24.
+
+219
+00:11:19,470 --> 00:11:22,000
+And kilohms times
+milliamperes gives volts.
+
+220
+00:11:22,080 --> 00:11:23,590
+So 24 V.
+
+221
+00:11:23,670 --> 00:11:25,874
+Had we used the average current,
+
+222
+00:11:25,954 --> 00:11:29,310
+we'd have gotten 2 kΩ × 6 mA,
+that is, 12 V.
+
+223
+00:11:29,390 --> 00:11:31,470
+That's half the actual
+voltage at that instant.
+
+224
+00:11:31,550 --> 00:11:33,780
+So in this example,
+the error in the current
+
+225
+00:11:33,860 --> 00:11:36,160
+carries straight over to the voltage.
+
+226
+00:11:36,650 --> 00:11:38,670
+Our last example is a bit
+thought-provoking.
+
+227
+00:11:38,750 --> 00:11:43,858
+This time, the net charge through
+the cross-section changes like this:
+
+228
+00:11:43,938 --> 00:11:45,490
+q = (6t − t²) mC.
+
+229
+00:11:45,570 --> 00:11:49,820
+t is again in seconds, and we look
+at the interval from 0 to 4 seconds.
+
+230
+00:11:49,970 --> 00:11:51,170
+First, a question for you.
+
+231
+00:11:51,250 --> 00:11:55,380
+At 3 seconds, what is the charge
+in mC, and the current in mA?
+
+232
+00:11:55,460 --> 00:11:57,340
+Pause and try to find it yourself.
+
+233
+00:11:57,420 --> 00:11:58,600
+Let's start with the charge.
+
+234
+00:11:58,680 --> 00:12:01,580
+At 3 seconds, 6t is 18.
+
+235
+00:12:01,660 --> 00:12:03,020
+And t² is 9.
+
+236
+00:12:03,130 --> 00:12:06,420
+Subtracting 9 from 18, the charge is 9 mC.
+
+237
+00:12:06,500 --> 00:12:08,590
+That's the maximum value in this interval.
+
+238
+00:12:08,670 --> 00:12:10,430
+Let's check this with numbers too.
+
+239
+00:12:10,510 --> 00:12:15,710
+At both 2.5 seconds and 3.5 seconds,
+the charge is 8.75 mC.
+
+240
+00:12:15,790 --> 00:12:21,230
+On both sides of 3 seconds the charge is
+smaller, so 3 seconds really is the peak.
+
+241
+00:12:21,310 --> 00:12:23,120
+Now the current.
+Let's take the derivative.
+
+242
+00:12:23,200 --> 00:12:27,160
+The derivative of the 6t term is 6,
+and the derivative of t² is 2t.
+
+243
+00:12:27,240 --> 00:12:32,980
+So the current is found
+by subtracting 2t from 6: (6 − 2t) mA.
+
+244
+00:12:33,060 --> 00:12:38,740
+At 3 seconds, 2t is 6;
+subtracting 6 from 6 gives 0 mA.
+
+245
+00:12:38,820 --> 00:12:42,510
+Interesting, isn't it? When the charge
+is at its maximum, the current is zero.
+
+246
+00:12:42,590 --> 00:12:44,529
+In fact, the slope
+interpretation from the previous
+
+247
+00:12:44,609 --> 00:12:46,080
+example tells us this right away.
+
+248
+00:12:46,160 --> 00:12:48,850
+The charge graph peaks at 3 seconds.
+
+249
+00:12:48,930 --> 00:12:51,710
+At the peak, the tangent is horizontal,
+so the slope is zero.
+
+250
+00:12:51,790 --> 00:12:55,860
+Current depends not on how much charge
+there is, but on how fast it changes.
+
+251
+00:12:55,940 --> 00:12:57,310
+Let's look at other instants too.
+
+252
+00:12:57,390 --> 00:13:02,690
+At 1 second, 2t is 2; subtracting
+2 from 6, the current is 4 mA.
+
+253
+00:13:02,770 --> 00:13:08,720
+At 4 seconds, 2t is 8; subtracting
+8 from 6, the current is −2 mA.
+
+254
+00:13:08,800 --> 00:13:10,220
+What does the minus sign mean?
+
+255
+00:13:10,300 --> 00:13:12,930
+After 3 seconds,
+the charge starts to decrease.
+
+256
+00:13:13,010 --> 00:13:14,174
+That means charge is now passing through
+
+257
+00:13:14,254 --> 00:13:15,800
+the cross-section
+in the opposite direction.
+
+258
+00:13:15,880 --> 00:13:17,585
+We'll see the direction of current,
+
+259
+00:13:17,665 --> 00:13:21,090
+and how the sign encodes that direction,
+in detail in Part 2.
+
+260
+00:13:21,170 --> 00:13:23,060
+So when is the current largest?
+
+261
+00:13:23,140 --> 00:13:26,510
+The expression 6 − 2t
+gets smaller as t grows.
+
+262
+00:13:26,590 --> 00:13:31,030
+So the maximum is at the start,
+when t is zero: 6 mA.
+
+263
+00:13:31,110 --> 00:13:32,790
+And at that instant, the charge is zero.
+
+264
+00:13:32,870 --> 00:13:34,250
+The picture has completely flipped.
+
+265
+00:13:34,330 --> 00:13:36,137
+When the charge is zero,
+the current is at its maximum;
+
+266
+00:13:36,217 --> 00:13:38,410
+when the charge is at its maximum,
+the current is zero.
+
+267
+00:13:38,490 --> 00:13:41,540
+Now let's look at the average
+between 0 and 4 seconds.
+
+268
+00:13:41,620 --> 00:13:45,890
+At 4 seconds, the charge
+is 24 minus 16, which is 8 mC.
+
+269
+00:13:45,970 --> 00:13:48,350
+Dividing 8 by 4 gives 2 mA.
+
+270
+00:13:48,430 --> 00:13:49,702
+Yet in this interval,
+
+271
+00:13:49,782 --> 00:13:53,660
+the current took very different
+values, such as 4, 0 and −2.
+
+272
+00:13:53,740 --> 00:13:57,420
+The average squeezes this whole
+story into a single number.
+
+273
+00:13:57,500 --> 00:13:59,730
+The trap here is assuming
+that if the charge is large,
+
+274
+00:13:59,810 --> 00:14:01,380
+the current must be large too.
+
+275
+00:14:01,460 --> 00:14:04,940
+We just saw it: when the charge was
+at its maximum, the current was zero.
+
+276
+00:14:05,380 --> 00:14:06,980
+Let's sum up.
+
+277
+00:14:07,060 --> 00:14:11,760
+Current is the rate at which charge passes
+through a cross-section: i = dq / dt.
+
+278
+00:14:11,840 --> 00:14:15,799
+Δq / Δt, on the other hand, only gives
+the average over the window you choose,
+
+279
+00:14:15,879 --> 00:14:19,430
+and approaches the instantaneous
+current as the window shrinks.
+
+280
+00:14:19,510 --> 00:14:21,201
+What determines current is not the amount
+
+281
+00:14:21,281 --> 00:14:23,620
+of charge that passes,
+but its rate of change.
+
+282
+00:14:23,810 --> 00:14:25,680
+We saw the same thing
+in all three examples.
+
+283
+00:14:25,760 --> 00:14:29,200
+With the step current, the average
+wasn't the value at any instant.
+
+284
+00:14:29,280 --> 00:14:30,645
+With the steadily rising current,
+
+285
+00:14:30,725 --> 00:14:33,030
+the instantaneous value
+was twice the average.
+
+286
+00:14:33,110 --> 00:14:36,310
+And in the last example, the current was
+zero when the charge was at its maximum.
+
+287
+00:14:36,390 --> 00:14:39,850
+When finding the voltage with Ohm's law,
+we also used the instantaneous current.
+
+288
+00:14:39,970 --> 00:14:41,780
+Let me leave you with a question.
+
+289
+00:14:41,860 --> 00:14:46,550
+If the charge were (4t − t²) mC,
+at what instant would the current be zero?
+
+290
+00:14:46,630 --> 00:14:48,640
+Hint: think about the peak.
+
+291
+00:14:48,720 --> 00:14:50,230
+Write your answer in the comments.
+
+292
+00:14:50,380 --> 00:14:51,620
+If this lecture helped you,
+
+293
+00:14:51,700 --> 00:14:54,550
+please like the video
+and share it with your classmates.
+
+294
+00:14:54,630 --> 00:14:57,320
+Subscribe to the channel
+so you don't miss Part 2.
+
+295
+00:14:57,400 --> 00:14:59,928
+In Part 2, we'll look
+at the direction of current,
+
+296
+00:15:00,008 --> 00:15:03,559
+what an open circuit guarantees,
+and the reverse of what we did today:
+
+297
+00:15:03,639 --> 00:15:06,800
+finding the charge that passed
+from the current graph.
+
