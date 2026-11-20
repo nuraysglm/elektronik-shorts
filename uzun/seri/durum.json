@@ -146,6 +146,10 @@
   {
    "tarih": "2026-11-20T02:40Z",
    "not": "Gece çalışması 3: panelde yeni karar yok (uzun-1-2, intro-1, metin-1-3 bekliyor) → B3 sesi üretilmedi. Ders 2 planı (uzun/seri/ders-02/plan.md) ve D2B1 metin sürüm 1 (7 parça, 1.916 kelime, ~14,4 dk); dogrula.py TAMAM; bağımsız denetim 2 tur (1 kritik: kancada gerçek pilden 'tam 1 A' → 'ideal pilde'; 10 önemli düzeltildi: eksik birim dönüşümleri, Razavi'ye yakın cümleler ve yorum sorusu, Ders 1-B3 tekrarı, 'dokunmatik buton' vb.). Dal claude/uzun-2-1-20261120. Panelde onaylar/metin-2-1. Kredi harcanmadı, planlama yapılmadı."
+  },
+  {
+   "tarih": "2026-11-20T04:40Z",
+   "not": "Gece çalışması 4: panelde yeni karar yok (uzun-1-2, intro-1, metin-1-3, metin-2-1 bekliyor). Onaysız adım yapılmadı; D2B2'ye geçilmedi. Kilit kaldırıldı."
   }
  ],
  "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
@@ -249,10 +253,7 @@
  "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
  "muzik": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
  "is_emri_e": "UZUN.md 4 — UYGULANDI 19.11 22:30Z (tahta/muzik_ekle.sh; görüntü ve konuşma değişmedi, kredi yok)",
- "kilit": {
-  "baslangic": "2026-11-20T04:33Z",
-  "oturum": "gece çalışması 4"
- },
+ "kilit": null,
  "bolum_3": {
   "adim": "metin_onayi",
   "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
