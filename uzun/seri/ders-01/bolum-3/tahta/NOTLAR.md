@@ -20,3 +20,8 @@ Metin sürüm 1, kanal sahibi onayı 20.11.2026 14:38Z (`onaylar/metin-1-3`).
 
 Render: `node render.mjs N --out wip/uzun-d01-b3/parca-N.mp4 --ses SES` (parça 1 sesi: parca-1.wav 0–46,0 + 0,3 sn sessizlik + selam.wav 11,1 sn'ye doldurulmuş + kalan).
 Abone katmanı: `abone.mjs` (OZEL: profil-kucuk.jpg'den yuvarlak profil-daire.png + kalin.ttf = DejaVuSans-Bold (Condensed bu ortamda yok; kart içine sığdığı karelerle doğrulandı); scratchpad, depoda yok), `abone_ses.py`.
+
+## İş emri M (20.11.2026 ~16:35Z) — kısmen
+- (1) Parça 4 "Örnek" (5:38): düz siyah cetvel çizgileri + toprak sembolleri kaldırıldı → kesikli gri gerilim ekseni (`dashed`, GR), üstte "Gerilim (V)", her seviyede gri çentik, "0 V (toprak)" / "b: 0 V (toprak)". `qc.sh 4` temiz (kalem 0, taşma/çakışma/durağan 0); kare 103 sn gözle kontrol edildi. Ses değişmedi. **Henüz render edilip birleşik videoya konmadı.**
+- (2) Parça 5 başlığı "Dersin girişindeki devre" (kodda). Yeni cümle sesi üretildi: ElevenLabs flow Fz7URx4Jqm7gKH0LZDfT, generation pBjbSn4ea44AuH4YeMqm ("Şimdi dersin girişindeki devreyi kuralım.", 2,8 sn, 41 kredi). **İndirme engellendi (elevenlabsusercontent.com 403)** → Drive `Uzun Video Sesleri/ders-01-bolum-3/cumle-5-14.mp3` bekleniyor (panel `onaylar/ses-1-3`).
+- Sonraki çalışma: Drive'dan `cumle-5-14.mp3` al → `ses_hazirla.sh` düzeyine (−19,5 LUFS) getir → parca-5.wav'da 48,40–50,10 sn aralığını (cümle 14) yenisiyle değiştir (sonrası Δ kadar kayar) → zamanlama-5.json cümle 14 metni/kelimeleri + 15'ten sonrası +Δ → parça 4 ve 5'i render et → diğer parçaları birleşik videodan değil, yeniden render ile al (parça mp4'leri yok) veya birleşik videodan kes → birlestir.sh + muzik_f.sh → tam QC → yayin.json 7:20 sonrası zaman damgalarını +Δ güncelle.

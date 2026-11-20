@@ -1,5 +1,5 @@
 // Ders 1 Bolum 3 - Parca 4: gerilim iki nokta arasinda, toprak ve referans (metin.md [PARCA 4])
-import { K, B, R, G, L, RX, S, E, Wt, text, row, path, line, dot, arrow, erase, pulse, pad, kose, baslik, under, kutu } from './motor.js';
+import { K, B, R, G, GR, L, RX, S, E, Wt, text, row, path, line, dashed, dot, arrow, erase, pulse, pad, kose, baslik, under, kutu } from './motor.js';
 // toprak sembolu: (x, y) noktasindan asagi kisa tel + uc yatay cizgi
 function toprak(x, y, t, g, s = 1) {
   line([x, y], [x, y + 30 * s], K, 5, t, 0.2, { g });
@@ -25,13 +25,17 @@ export function build() {
   g = 'c';
   baslik('Örnek', 200, S(12) + 0.05, { g, dur: 0.5 });
   const Y = (v) => 760 - v * 92, X1 = 1100, X2 = 1520;
-  line([X1, Y(0)], [X1, Y(5.4)], K, 5, S(13), 0.5, { g });
-  line([X1 - 30, Y(0)], [X1 + 30, Y(0)], K, 5, S(13) + 0.6, 0.12, { g });
-  line([X1 - 20, Y(0) + 14], [X1 + 20, Y(0) + 14], K, 5, S(13) + 0.85, 0.1, { g });
-  line([X1 - 10, Y(0) + 28], [X1 + 10, Y(0) + 28], K, 5, S(13) + 1.05, 0.08, { g });
-  text('0 V', X1 + 45, Y(0) + 12, 36, G, S(13) + 1.25, { g, dur: 0.3 });
+  // is emri M (kanal sahibi 20.11): noktalari baglayan duz siyah cizgi yok (tel/kisa devre sanilir);
+  // kesikli gri gerilim ekseni + her seviyede kisa yatay centik; eksende toprak sembolu yok, "0 V (toprak)" yazisi
+  const cent = (x, v, t) => line([x - 16, Y(v)], [x + 16, Y(v)], GR, 4, t, 0.1, { g });
+  text('Gerilim (V)', X1, Y(5.4) - 18, 32, G, S(12) + 0.65, { g, dur: 0.45, align: 'c' });
+  dashed([X1, Y(0)], [X1, Y(5.4)], GR, 4, S(13), 0.5, { g });
+  cent(X1, 0, S(13) + 0.6);
+  text('0 V (toprak)', X1 + 30, Y(0) + 12, 36, G, S(13) + 0.75, { g, dur: 0.5 });
+  cent(X1, 5, Wt(13, 'a') - 0.12);
   dot([X1, Y(5)], 10, B, Wt(13, 'a'), { g });
   text('a: 5 V', X1 + 30, Y(5) + 12, 40, B, Wt(13, 'a') + 0.2, { g, dur: 0.4 });
+  cent(X1, 3.3, Wt(13, 'be') - 0.12);
   dot([X1, Y(3.3)], 10, B, Wt(13, 'be'), { g });
   text('b: 3,3 V', X1 + 30, Y(3.3) + 12, 40, B, Wt(13, 'be') + 0.2, { g, dur: 0.5 });
   text('v_a_b = v_a − v_b', L, 310, 52, B, S(14) + 0.1, { g, dur: 0.9 });
@@ -40,13 +44,15 @@ export function build() {
   const a17 = text('1,7 V', X1 - 55, (Y(5) + Y(3.3)) / 2 + 14, 40, B, E(15) + 0.15, { g, dur: 0.35, align: 'r' });
   text('v_b_a = −1,7 V', L, 480, 52, R, Wt(16, 'eksi'), { g, dur: 0.8 });
   // ikinci cetvel: toprak b'de
-  line([X2, Y(0)], [X2, Y(5.4)], K, 5, S(17) + 0.1, 0.5, { g });
-  line([X2, Y(3.3)], [X2 - 50, Y(3.3)], K, 5, S(18) + 0.1, 0.2, { g });
-  toprak(X2 - 50, Y(3.3), S(18) + 0.4, g, 0.7);
-  text('b: 0 V', X2 + 30, Y(3.3) + 12, 40, B, S(19) + 0.1, { g, dur: 0.4 });
+  text('Gerilim (V)', X2, Y(5.4) - 18, 32, G, S(17) + 0.1, { g, dur: 0.45, align: 'c' });
+  dashed([X2, Y(0)], [X2, Y(5.4)], GR, 4, S(17) + 0.65, 0.5, { g });
+  cent(X2, 3.3, S(18) + 0.1);
+  text('b: 0 V (toprak)', X2 + 30, Y(3.3) + 12, 40, B, S(18) + 0.3, { g, dur: 0.7 });
   dot([X2, Y(3.3)], 10, B, S(19) + 0.6, { g });
+  cent(X2, 5, S(20) - 0.15);
   dot([X2, Y(5)], 10, B, S(20), { g });
   text('a: 5 − 3,3 = 1,7 V', X2 + 30, Y(5) + 12, 36, B, S(20) + 0.2, { g, dur: 1.0 });
+  cent(X2, 0, S(21) - 0.15);
   dot([X2, Y(0)], 10, G, S(21), { g });
   text('Eski toprak:', X2 + 30, Y(0) - 40, 34, G, S(21) + 0.2, { g, dur: 0.5 });
   text('0 − 3,3 = −3,3 V', X2 + 30, Y(0) + 12, 34, G, Wt(21, 'sıfır'), { g, dur: 0.9 });
