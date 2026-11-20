@@ -1,32 +1,32 @@
 {
- "ders": 1,
- "bolum": 1,
- "video": "media/uzun/devre-teorisi-1-ders-01-bolum-1-introlu.mp4",
- "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg",
- "baslik": "Ortalama Akım Neden Yanıltır: Akım Nedir? | Devre Teorisi I Ders 1 (1/3)",
- "aciklama": "Akım nedir? Devre Teorisi I (Devre Analizi 1) dersinin ilk bölümünde akımın asıl tanımını (i = dq/dt) kuruyor, ortalama akımı anlık akımdan ayırmayı üç özgün çözümlü örnekle öğreniyoruz.\nTelde akım hiç durmadan akarken yük bölü süre neden sıfır çıkabilir? Yük en büyükken akım neden sıfır olabilir?\n\nBölümler\n0:00 Kanca: akım akarken ortalama sıfır olabilir mi?\n0:50 Bu bölümün konusu: yük ve akım\n1:31 Akımı ölçmek: kesit ve Δq / Δt\n1:55 Pencere sorunu: ortalama neden yanıltır?\n3:13 Akımın asıl tanımı: i = dq / dt\n4:00 Seri haritası\n4:39 Örnek 1: basamaklı akım ve ortalama akım\n7:09 Örnek 2: q = 2t², anlık akım ve türev\n8:42 Pencereyi daraltmak: 14, 12,2, 12,02 mA\n10:14 Grafikte kesen ve teğet: akım = eğim\n11:04 Ohm yasası: hata gerilime taşınır\n11:36 Örnek 3: yük en büyükken akım sıfır\n14:05 Bilmen gerekenler\n14:39 Sana bir soru\n\nBilmen gerekenler\n• Akım, yükün kesitten geçme hızıdır: i = dq / dt.\n• Yük bölü süre (Δq / Δt) yalnızca seçilen penceredeki ortalama akımdır.\n• Yük en büyükken akım sıfır olabilir.\nÖnce bilmen gereken: türev kavramı, Ohm yasası (v = R × i).\n\nSıradaki: Ders 1 - Bölüm 2/3: Akımın yönü, açık devre ve akım grafiğinden geçen yük.\nOynatma listesi: Devre Teorisi I — Türkçe Ders Serisi\n\nKaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA). Anlatım ve bütün örnekler özgündür.\nMüzik: Pawn – The Grey Room / Golden Palms (YouTube Ses Kitaplığı)\n\n#devreteorisi #devreanalizi #elektronik #akım",
- "etiketler": [
-  "akım nedir",
-  "anlık akım",
-  "ortalama akım",
-  "i = dq/dt",
-  "devre analizi 1",
-  "devre teorisi",
-  "doğru akım devre analizi",
-  "devre analizi ders",
-  "elektrik yükü",
-  "türev ile akım",
-  "Ohm yasası"
- ],
- "ilk_yorum": "Kısa bir soru: bir telden geçen yük q(t) = (4t − t²) mC olsaydı, akım hangi anda sıfır olurdu? İpucu: tepe noktasını düşün. Cevabını yaz 👇",
- "kategori": "EDUCATION",
- "yayin": "2026-11-21T08:00:00 Europe/London (11:00 TR)",
- "oynatma_listesi": "Devre Teorisi I — Türkçe Ders Serisi (ilk video: listeyi YouTube Studio'da oluşturun, sıra 1)",
- "studio_hatirlatma": [
-  "Oynatma listesi oluştur: 'Devre Teorisi I — Türkçe Ders Serisi', bu video sıra 1.",
-  "Bitiş ekranı (son 20 sn, 15:07–15:27 arası; orta ve alt boş): sonraki bölüm (yayınlanınca) + oynatma listesi + abone.",
-  "Bilgi kartı: 7:09 'Örnek 2' civarına ilgili Short '004 Akım nedir?' (yayındaysa)."
- ],
- "zaman_damgasi_kaynagi": "parça başlangıçları (p1 0; p2 54,76; p3 221,28; p4 270,11; p5 420,71; p6 687,29; p7 836,05 sn; iş emri D: parça 1'e selam için +4,4 sn) + zamanlama-N.json cümle başları; iş emri F (19.11): intro kartının başına 3 sn müzik eklendi, 0:33'ten sonraki her şey +3 sn; 20.11: Blender intro (+6,3 sn) eklendi; selam altında müzik −18 dB (intro'lu sürüm 927,32 sn; kanca 0–32,97 sn değişmez, sonrası +6,3 sn; damgalar +6 sn; kareyle doğrulandı: 4:33→4:39, 7:03→7:09, 13:59→14:05; selamda konuşma/müzik farkı 18,9 LU)",
- "kapak_notu": "İş emri J (20.11.2026): kapak A, 6-D tarzı arka plan devresi (uzun/kapak-6-d/). Eski fotoğraflı kapak: media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak-eski.jpg"
+  "ders": 1,
+  "bolum": 1,
+  "video": "media/uzun/devre-teorisi-1-ders-01-bolum-1-introlu.mp4",
+  "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg",
+  "baslik": "Ortalama Akım Neden Yanıltır: Akım Nedir? | Devre Teorisi I Ders 1 (1/3)",
+  "aciklama": "Akım nedir? Devre Teorisi I (Devre Analizi 1) dersinin ilk bölümünde akımın asıl tanımını (i = dq/dt) kuruyor, ortalama akımı anlık akımdan ayırmayı üç özgün çözümlü örnekle öğreniyoruz.\nTelde akım hiç durmadan akarken yük bölü süre neden sıfır çıkabilir? Yük en büyükken akım neden sıfır olabilir?\n\nBölümler\n0:00 Giriş: akım akarken ortalama sıfır olabilir mi?\n0:50 Bu bölümün konusu: yük ve akım\n1:31 Akımı ölçmek: kesit ve Δq / Δt\n1:55 Pencere sorunu: ortalama neden yanıltır?\n3:13 Akımın asıl tanımı: i = dq / dt\n4:00 Seri haritası\n4:39 Örnek 1: basamaklı akım ve ortalama akım\n7:09 Örnek 2: q = 2t², anlık akım ve türev\n8:42 Pencereyi daraltmak: 14, 12,2, 12,02 mA\n10:14 Grafikte kesen ve teğet: akım = eğim\n11:04 Ohm yasası: hata gerilime taşınır\n11:36 Örnek 3: yük en büyükken akım sıfır\n14:05 Bilmen gerekenler\n14:39 Sana bir soru\n\nBilmen gerekenler\n• Akım, yükün kesitten geçme hızıdır: i = dq / dt.\n• Yük bölü süre (Δq / Δt) yalnızca seçilen penceredeki ortalama akımdır.\n• Yük en büyükken akım sıfır olabilir.\nÖnce bilmen gereken: türev kavramı, Ohm yasası (v = R × i).\n\nSıradaki: Ders 1 - Bölüm 2/3: Akımın yönü, açık devre ve akım grafiğinden geçen yük.\nOynatma listesi: Devre Teorisi I — Türkçe Ders Serisi\n\nKaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA). Anlatım ve bütün örnekler özgündür.\nMüzik: Pawn – The Grey Room / Golden Palms (YouTube Ses Kitaplığı)\n\n#devreteorisi #devreanalizi #elektronik #akım",
+  "etiketler": [
+    "akım nedir",
+    "anlık akım",
+    "ortalama akım",
+    "i = dq/dt",
+    "devre analizi 1",
+    "devre teorisi",
+    "doğru akım devre analizi",
+    "devre analizi ders",
+    "elektrik yükü",
+    "türev ile akım",
+    "Ohm yasası"
+  ],
+  "ilk_yorum": "Kısa bir soru: bir telden geçen yük q(t) = (4t − t²) mC olsaydı, akım hangi anda sıfır olurdu? İpucu: tepe noktasını düşün. Cevabını yaz 👇",
+  "kategori": "EDUCATION",
+  "yayin": "2026-11-21T08:00:00 Europe/London (11:00 TR)",
+  "oynatma_listesi": "Devre Teorisi I — Türkçe Ders Serisi (ilk video: listeyi YouTube Studio'da oluşturun, sıra 1)",
+  "studio_hatirlatma": [
+    "Oynatma listesi oluştur: 'Devre Teorisi I — Türkçe Ders Serisi', bu video sıra 1.",
+    "Bitiş ekranı (son 20 sn, 15:07–15:27 arası; orta ve alt boş): sonraki bölüm (yayınlanınca) + oynatma listesi + abone.",
+    "Bilgi kartı: 7:09 'Örnek 2' civarına ilgili Short '004 Akım nedir?' (yayındaysa)."
+  ],
+  "zaman_damgasi_kaynagi": "parça başlangıçları (p1 0; p2 54,76; p3 221,28; p4 270,11; p5 420,71; p6 687,29; p7 836,05 sn; iş emri D: parça 1'e selam için +4,4 sn) + zamanlama-N.json cümle başları; iş emri F (19.11): intro kartının başına 3 sn müzik eklendi, 0:33'ten sonraki her şey +3 sn; 20.11: Blender intro (+6,3 sn) eklendi; selam altında müzik −18 dB (intro'lu sürüm 927,32 sn; kanca 0–32,97 sn değişmez, sonrası +6,3 sn; damgalar +6 sn; kareyle doğrulandı: 4:33→4:39, 7:03→7:09, 13:59→14:05; selamda konuşma/müzik farkı 18,9 LU)",
+  "kapak_notu": "İş emri J (20.11.2026): kapak A, 6-D tarzı arka plan devresi (uzun/kapak-6-d/). Eski fotoğraflı kapak: media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak-eski.jpg"
 }
