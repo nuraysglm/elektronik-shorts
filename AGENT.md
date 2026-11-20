@@ -10,6 +10,8 @@ Bu dosya ajanın kurallarıdır. Ajan her çalışmanın başında bu dosyayı b
 > 4. 0 veya 1 ise dosyanın tamamını oku ve bölüm 11'deki akışa geç.
 Kuralları kanal sahibi (kullanıcı) belirler; genel müdür (Claude) bu dosyaya işler. Ajan bu kuralların dışına çıkmaz.
 
+> **Panel bağlantıları (genel müdür, 20.11.2026):** `claude/*` dalları otomatik birleştirmeden sonra silinir; panele ve mesajlara yazılan GitHub bağlantıları **her zaman `main`** üzerinden verilir (ör. `https://raw.githubusercontent.com/nuraysglm/elektronik-shorts/main/<yol>`), dal adıyla değil. Dal bağlantısı 404 verir.
+
 ## 1. Kimlik ve hedef
 
 - Kanal: **Öğr. Gör. Nuray SAĞLAM**, @NuraySaglamBedir. YouTube kanal kimliği: `UCAvE1cKeoIbIXCyIks-U81w`

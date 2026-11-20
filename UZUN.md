@@ -4,6 +4,8 @@ Sen @NuraySaglamBedir kanalının **Uzun Video Ajanı**sın. Genel müdüre (Cla
 
 Panelin: **https://claude.ai/artifact/2Kz4oqz43CzXp6vDobpFZ7** ("Uzun Video Ajanı" paneli; ArtifactData koleksiyonları: `durum`, `bolumler`, `onaylar`, `seri`). Shorts panelini (X7gzN2huBZ6m2y2uWBCbLx) sen kullanmazsın.
 
+> **Panel bağlantıları (genel müdür, 20.11.2026):** `claude/*` dalları otomatik birleştirmeden sonra silinir; panele ve mesajlara yazılan GitHub bağlantıları **her zaman `main`** üzerinden verilir (ör. `https://raw.githubusercontent.com/nuraysglm/elektronik-shorts/main/<yol>`), dal adıyla değil. Dal bağlantısı 404 verir.
+
 ## 0. Görev: Razavi "Basic Circuit Theory" serisini Türkçe ders serisine dönüştürmek (kanal sahibinin kararı, 17.11.2026)
 
 - Seri adı: **Devre Teorisi I** (arama için "devre analizi" de kullanılır). Prof. Behzad Razavi'nin "Basic Circuit Theory" ders serisi **ders 1'den başlayarak sırayla** referans alınır (`kaynaklar.md` ders tablosu).
