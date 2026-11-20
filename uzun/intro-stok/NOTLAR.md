@@ -1,4 +1,24 @@
-# İş emri L — stok klipli intro (20.11.2026)
+# İş emri L3 — stok intro 8 sn (20.11.2026, güncel)
+
+Kanal sahibi: "çok hızlı bitiyor, önünde ve sonunda hemen ders sesi var" → intro 6 sn'den 8 sn'ye.
+- `kurgu.py` (8 sn, 240 kare): 0–2,2 klip 1 · 2,2–3,5 klip 2 · 3,5–4,5 klip 3 · 4,5–8,0 klip 4 (4,6–6,6 bulanıklaşma, çip 5,05'te parlar);
+  "Devre Teorisi I" 5,20'de belirir (5,50'de tam), alt yazı 5,40 (5,70'te tam) → 7,30'a kadar tam okunur (≥ 1,6 sn); 7,30–8,00 beyaz tahtaya geçiş.
+  Müzik intro'nun 0,12 sn'sinde başlar; böylece kesimler vuruşlara denk gelir (2,19 / 3,49 / 4,54; çip 5,05).
+- `birlestir.py`: Bölüm 1'e yerleştirme (görüntü + ses, tarif docstring'de). Kanca konuşması 32,81'de biter → 32,967 intro, müzik 33,09'da tek başına
+  (−18,0 LUFS) → geçiş 40,967'de biter → 0,2 sn boş tahta (kartın ilk karesi) → **intro kartı baştan** yazılır (asıl videodaki 2× yavaş ilk 3 sn
+  doğal hıza döndü) → selam konuşması 41,56'da (geçişten ~0,6 sn sonra). Asıl videoya göre +5,2 sn (15:26).
+  Müzik kesintisiz: açılış kesiti 4,174 sn (2 ölçü) aralıkla 3 kez, 0,3 sn eşit güçlü çapraz geçişle; selamda 41,25–41,55'te konuşmanın 8 dB altına
+  iner (−7,4 → −13,5 dB), son kopya kendi sonunda (~49,4) biter; ders 49,7'de başlar. Kapanış kesiti kullanılmadı.
+- Drive: yeni `intro-stok-kurgu.mp4` (id `1bsB5p9zHaX1rltWYgIJe-29iQdOzJ8wN`, 8 sn, 2,95 MB, 2,75 Mbit/sn iki geçiş; bağlantı aracı çağrı başına ~3,1 MB
+  sınırı; SSIM 0,994). Eski 6 sn'lik dosya `intro-stok-kurgu-6sn-eski.mp4` olarak adlandırıldı (silinmedi).
+- Depo: `media/uzun/intro-stok/onizleme.mp4` (29,0–45,5 sn, 720p, iş emrindeki kontrol önizlemesi), `kare-1..3.jpg` (1,0 / 4,0 / 6,33 sn).
+- Kontroller: toplam −16,2 LUFS, tepe −2,0 dBFS, LRA 3,0; intro tek başına −18,0 LUFS; selam bölgesi −16,5 LUFS; silencedetect (−45 dB, 1 sn) yalnızca
+  473,7'de 1,8 sn (parça 5'teki bilinçli duraklama, asılda da var); freezedetect 28–60 sn: kanca 28,0–30,2 (asılda da var) ve selamdan sonra tam yazılmış
+  kart üzerinde 46,9 / 50,4 / 54,0 (asıl videoyla aynı kareler; yalnızca vurgu yanıp sönmesi var). Kare eşlemesi (yeni = asıl + 156 kare) MSE < 1,2.
+
+---
+
+# İş emri L — stok klipli intro (20.11.2026, 6 sn, eski)
 
 Ham klipler (Drive "Uzun Video Sesleri": klip-1…4.mp4) ve tek başına intro **depoda yok** (Canva lisansı).
 Drive: `intro-stok-kurgu.mp4` (id `17OCLUvWZij80MXMz_k2dv32KH-rrywgi`, 2,8 MB, müzikli; bağlantı aracı çağrı başına ~3 MB sınırı nedeniyle 3,6 Mbit/sn).
