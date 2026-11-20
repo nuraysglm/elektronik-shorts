@@ -1,0 +1,54 @@
+{
+ "ders": 1,
+ "bolum": 3,
+ "video": "media/uzun/devre-teorisi-1-ders-01-bolum-3.mp4",
+ "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-3-kapak.jpg",
+ "kapak_secenekleri": {
+  "A": {
+   "kapak_yazisi": "Kısa devrede akım sıfır mı?",
+   "baslik": "Kısa Devre Hatası: Gerilim Nedir? | Devre Teorisi I Ders 1 (3/3)",
+   "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-a-6d.jpg",
+   "videoda": "0:00 kanca ve 7:49: telden 3 mA, dirençten 0"
+  },
+  "B": {
+   "kapak_yazisi": "3,3 V yazıyor… neden 3,3 V değil?",
+   "baslik": "İdeal Gerilim Kaynağı ve Sınırı | Devre Teorisi I Ders 1 (3/3)",
+   "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-b-6d.jpg",
+   "videoda": "12:26: 3,3 Ω'da ideal model 1 A der, akım sınırı en çok 865 mA; çıkış 3,3 V'ta kalamaz"
+  },
+  "C": {
+   "kapak_yazisi": "Bu nokta 12 V… neye göre?",
+   "baslik": "Gerilim Neye Göre: Toprak ve Referans | Devre Teorisi I Ders 1 (3/3)",
+   "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-c-6d.jpg",
+   "videoda": "4:46 ve 5:55: referans değişince nokta gerilimleri değişir, v_ab değişmez"
+  }
+ },
+ "baslik": "Kısa Devre Hatası: Gerilim Nedir? | Devre Teorisi I Ders 1 (3/3)",
+ "aciklama": "Kısa devrede akım sıfır mı? Devre Teorisi I (Devre Analizi 1) dersinin üçüncü bölümünde gerilimi enerjiden tanımlıyor (v = W / q), her gerilimi işaretiyle yazıyor, bir noktanın geriliminin neye (toprağa) göre ölçüldüğünü ve kısa devrenin neyi garanti ettiğini özgün çözümlü örneklerle öğreniyoruz.\nAyrıca ideal gerilim kaynağını ve bir 3,3 V regülatörün veri sayfasında (datasheet) ideal olmaktan nerede çıktığını görüyoruz.\n\nBölümler\n0:00 Kanca: kısa devrede akım sıfır mı?\n1:00 Bölüm 2'den: akımın yönü ve açık devre\n1:13 Gerilim nedir? Enerji bölü yük\n2:08 Örnek: 18 µJ / 4 µC = 4,5 V\n2:45 Ters yönde: gerilimin işareti\n3:08 Tepe ve vadi benzetmesi\n3:33 Gerilimin değeri ve işareti\n4:46 Gerilim neye göre? Toprak ve referans\n5:55 Referans değişince ne değişir?\n6:32 Kısa devre: yalnızca v = 0\n7:20 Kancadaki devre\n7:49 En sık yapılan hata: kısa devrede akım\n8:31 İdeal gerilim kaynağı ve sınırı\n9:25 Uygulamada: veri sayfasındaki gerilimler\n10:27 Mini tasarım: 3,3 V regülatör\n11:34 Model ne kadar iyi?\n12:26 Akım sınırı ve kısa devre\n13:25 Bilmen gerekenler\n13:58 Sana bir soru\n\nBilmen gerekenler\n• Gerilim iki nokta arasında, işaretiyle yazılır: v_ab = W / q (1 V = 1 J / 1 C); v_ba = −v_ab.\n• Bir noktanın gerilimi bir referansa (çoğu zaman toprağa) göredir; iki nokta arasındaki gerilim referansa bağlı değildir.\n• Kısa devre yalnızca v = 0'ı, açık devre yalnızca i = 0'ı garanti eder; diğer büyüklüğü çevre belirler.\n• İdeal gerilim kaynağı gerilimi sabit tutar, akımı yük belirler; gerçek kaynak bunu yalnızca veri sayfasındaki akım ve ısınma sınırları içinde yapar.\nÖnce bilmen gereken: Bölüm 1 (yük, akım), Bölüm 2 (referans oku, açık devre), Ohm yasası (v = R × i), fizikten iş ve enerji.\n\nÖnceki: Ders 1 - Bölüm 2/3: Akımın yönü, açık devre ve akım grafiğinden yük.\nSıradaki: Ders 2 - Bölüm 1/3: İdeal tel, ideal anahtar ve gerçek pil.\nOynatma listesi: Devre Teorisi I — Türkçe Ders Serisi\n\nKaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA). Anlatım ve bütün örnekler özgündür.\nDatasheet değerleri: onsemi 2N7002E (2023), Vishay 1N4001–1N4007 (2020), TI TLV755P (SBVS320D, 2024).\nMüzik: Pawn – The Grey Room / Golden Palms (YouTube Ses Kitaplığı)\n\n#devreteorisi #devreanalizi #elektronik #kısadevre",
+ "etiketler": [
+  "gerilim nedir",
+  "kısa devre",
+  "açık devre ve kısa devre",
+  "ideal gerilim kaynağı",
+  "toprak referans",
+  "gerilimin işareti",
+  "devre analizi 1",
+  "devre teorisi",
+  "doğru akım devre analizi",
+  "devre analizi ders",
+  "datasheet okuma",
+  "regülatör"
+ ],
+ "ilk_yorum": "Kısa bir soru: 3,3 V'luk bir regülatörün çıkışına 22 Ω'luk bir direnç bağlıyoruz; regülatörün en büyük çıkış akımı 500 mA. Direncin uçlarındaki gerilim ve içinden geçen akım ne olur? Cevabını yaz 👇",
+ "kategori": "EDUCATION",
+ "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
+ "oynatma_listesi": "Devre Teorisi I — Türkçe Ders Serisi (sıra 3)",
+ "studio_hatirlatma": [
+  "Oynatma listesi 'Devre Teorisi I — Türkçe Ders Serisi'ne ekle, sıra 3 (Ders 1 Bölüm 3).",
+  "Bitiş ekranı (son 20 sn, 14:29–14:49; orta ve alt boş): sonraki bölüm (yayınlanınca) + oynatma listesi + abone.",
+  "Bilgi kartı: 1:00 'Bölüm 2'den' anına Ders 1 - Bölüm 2/3 videosu.",
+  "Bölüm 2 videosunun bitiş ekranına bu videoyu 'sonraki bölüm' olarak ekle."
+ ],
+ "zaman_damgasi_kaynagi": "parça süreleri (render): p1 70.48, p2 114.8, p3 98.6, p4 105.56, p5 173.07, p6 240.2, p7 83.32; başlangıçlar [0, 70.48, 185.28, 283.88, 389.44, 562.51, 802.71]; parça 1'de 46,0 sn'de 11,4 sn intro kartı + selam; iş emri F müzik kuralı: 0:46'dan sonraki her şey +3 sn. QC'de 6:32 (7:00 karesi 'Kısa devre'), 7:20 ('Kancadaki devre'), 10:27 ('Mini tasarım'), 13:25 ('Bilmen gerekenler') karelerle doğrulandı.",
+ "intro": "Onaylı kanal intro'su yok (intro-3 bekliyor); 6-S gereği atlandı. Onaylanırsa kancadan sonra eklenip yeniden birleştirilir."
+}

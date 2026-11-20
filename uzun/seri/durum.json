@@ -154,14 +154,18 @@
     {
       "tarih": "2026-11-20T09:35Z",
       "not": "Cuma sabah: iş emri H — B1/B2 için 3'er fotoğrafsız kapak + başlık (kodla devre, küçük boyut testi), panelde kapak-1-1/kapak-1-2. İş emri I — PCB intro (three.js, 6 sn) üretildi, panelde intro-2; intro-1 iptal. metin-2-1 onaylı (ses sırası bekliyor), kaynak-2-3 'düzelt' kaydedildi. Kredi harcanmadı, planlama yapılmadı. PCB intro render edildi (6,0 sn, 1920×1080, 2,9 MB), 10 kare gözle kontrol; onaylar/intro-2 açıldı. Kilit kaldırıldı."
+    },
+    {
+      "tarih": "2026-11-20T15:50Z",
+      "not": "Cuma 15:15 çalışması: metin-1-3 onaylı (14:38Z) → B3 7 parça + selam sesi (eleven_v4, 1 take, 13.158 kredi, curl), normalize, zamanlama 7/7; 7 sahne (parça 3–6 paralel alt ajanlarla), otomatik QC 7/7 temiz, render; abone katmanı + birleştirme + iş emri F müziği: 14:49,0, −16,1 LUFS / −1,7 dBTP; 50 kare gözle kontrol; yayin.json (19 zaman damgası, 4'ü karelerle doğrulandı); 3 kapak + başlık (6-D, küçük boyut testi). Panelde onaylar/uzun-1-3 ve kapak-1-3. B1 planlaması bu çalışmada yapılmadı (akşam 20:43 görevi). Dal claude/uzun-1-3-20261120."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.3,
   "acik_sorular": [],
-  "sonraki_is": "Akşam (20:43): B1 planlama (onaylı) — kapak-1-1 seçimi varsa o kapak/başlık yayin.json'a. intro-2 onaylanırsa B2'ye intro ekle → yeniden birleştir → uzun-1-2 güncelle. B3: metin-1-3 onayı → ses → render. D2B1: B3 sesinden sonra ses. D2B3: evirici kendi kurgumuzla kısa.",
-  "not": "B1 onaylı (planlama akşam görevi/genel müdür). B2 video onayı, intro onayı, B3 metin onayı, D2B1 metin onayı bekliyor.",
+  "sonraki_is": "Akşam (20:43): B1 planlama (onaylı; intro'lu sürüm/intro-3 kararı genel müdürde). B2 25.11 planlaması (23.11 genel müdür). B3: uzun-1-3 + kapak-1-3 kararları; onaylı intro gelirse ekle. D2B1: ses (metin onaylı; B3 sesi bitti, kural 1b-4: B1 yayınlandıktan sonra 2 bölüm önde olur → 21.11 sonrası üretilebilir).",
+  "not": "B1 onaylı (planlama akşam). B2 onaylı (25.11). B3 video + kapak onayı bekliyor. D2B1 metin onaylı, ses sırası bekliyor.",
   "metin_onayi": {
     "durum": "onaylandi",
     "zaman": "2026-11-18T08:31:00Z",
@@ -275,20 +279,27 @@
   "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
   "muzik": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
   "is_emri_e": "UZUN.md 4 — UYGULANDI 19.11 22:30Z (tahta/muzik_ekle.sh; görüntü ve konuşma değişmedi, kredi yok)",
-  "kilit": {
-    "baslangic": "2026-11-20T15:20:00Z",
-    "oturum": "uzun-cuma-1515"
-  },
+  "kilit": null,
   "bolum_3": {
-    "adim": "metin_onayi",
+    "adim": "video_onayi",
     "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
     "metin": "uzun/seri/ders-01/bolum-3/metin.md",
     "dal": "claude/uzun-1-3-20261119",
     "kelime": 1994,
     "tahmini_dk": 14.9,
     "surum": 1,
-    "onay_istegi": "onaylar/metin-1-3 bekliyor (20.11 gece)",
-    "not": "Metin + dogrula.py + dogruluk.md + bağımsız denetim (kritik yok, 10 önemli düzeltildi). Ses ÜRETİLMEDİ: metin onayı bekleniyor."
+    "onay_istegi": "onaylar/uzun-1-3 ve onaylar/kapak-1-3 bekliyor (20.11 ~15:50Z)",
+    "not": "Video hazır; video ve kapak onayı bekleniyor. Onaylı intro gelirse kancadan (0:46) sonra eklenip yeniden birleştirilir. Planlama yok.",
+    "metin_onayi": "onaylandı 2026-11-20T14:38:57Z (onaylar/metin-1-3)",
+    "ses": "tamam 20.11 ~15:20Z: 7 parça + selam, eleven_v4, 1 take, 13.158 kredi, curl ile indirildi (uzun/seri/ders-01/bolum-3/ses/)",
+    "zamanlama": "tamam: tahta/zamanlama-1..7.json, parcalar.json",
+    "tahta": "uzun/seri/ders-01/bolum-3/tahta/ (NOTLAR.md)",
+    "render": "tamam 20.11: 7 parça render + otomatik QC 7/7 temiz (wip/uzun-d01-b3/)",
+    "video": "media/uzun/devre-teorisi-1-ders-01-bolum-3.mp4",
+    "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-3-kapak.jpg (varsayılan A; seçim onaylar/kapak-1-3)",
+    "yayin_json": "uzun/seri/ders-01/bolum-3/yayin.json",
+    "sure": "14:49,0; −16,1 LUFS; tepe −1,7 dBTP; 30,1 MB (iş emri F müzik kuralı; intro yok: onaylı intro bekleniyor)",
+    "abone_anlari": "3:03 ve 14:18"
   },
   "is_emri_f": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
   "intro": {
