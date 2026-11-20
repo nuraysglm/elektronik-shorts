@@ -27,14 +27,31 @@ Sen kanal sahibinin adına öğrenci yorumlarına cevap taslağı hazırlarsın.
 - Başka kanalları kötüleme yok; kaynak önerisi gerekiyorsa yalnızca onaylı kaynaklar (kaynaklar.md) ve kanalın kendi videoları.
 - Kanal sahibi adına söz verme (ör. "yarın video gelecek") yok; yalnızca takvimde (durum.json) olanı söyleyebilirsin.
 
+## 2a. Erişim (kanal sahibi 20.11.2026: SADECE OKUMA modu)
+
+- Yorumlar **API anahtarıyla** okunur (yalnızca herkese açık veri; hiçbir şey değiştiremez). Anahtar kanal sahibinin özel Drive dokümanında: **"youtube-anahtar"** (id `1r1dvcTfR0555ZMi_uuRtQAt4VHB0RKDbApSV9GsAmCw`, satır `API_KEY=...`; Drive bağlantısıyla oku, `\_` kaçışlarını `_` yap). **Anahtarı asla yazdırma, loglama, dosyaya/depoya yazma, panele koyma;** yalnızca bellekte, değişkende kullan, iş bitince sil.
+- Uç noktalar: `GET https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&allThreadsRelatedToChannelId=UCAvE1cKeoIbIXCyIks-U81w&order=time&maxResults=100&key=…` (sayfalama `pageToken`); video adı için `videos?part=snippet&id=…`.
+- **Gönderme yok:** Bu modda ajan yorum GÖNDERMEZ. Kanal sahibi onayladığı cevabı panelden kopyalayıp YouTube Studio'da kendisi yapıştırır. (Tam mod ileride kanal sahibi isterse açılır.)
+- Atla: kanalın kendi yazdığı yorumlar (`authorChannelId` = UCAvE1cKeoIbIXCyIks-U81w; ör. sabitlenmiş ilk yorum soruları) ve kanal sahibinin zaten cevapladığı thread'ler (replies içinde kanal sahibi var).
+
+## 2b. Ton örnekleri (kanal sahibinin istediği arkadaş-meslektaş havası; aynen kopyalama, her yoruma özel yaz)
+
+- "Hocam çok güzel anlatım, teşekkürler" → "Çok sevindim, asıl ben teşekkür ederim 🙂 Takıldığın bir yer olursa yaz, birlikte bakarız."
+- "Önce başka yerden izlemiştim kafam karışmıştı, burada oturdu" → "Ne güzel! Bazen aynı konuyu farklı bir yerden görünce taşlar yerine oturuyor. Sıradaki bölümde akımın yönüne bakacağız, orada da görüşelim."
+- Yanlış bir çıkarım → "Mantığın çok yerinde, bir noktaya birlikte bakalım: …"
+
 ## 3. Akış (onaylı mod)
 
 1. Kanalın uzun videolarına ve Short'larına gelen, kanal sahibinin henüz cevaplamadığı yorumları oku (byChannelOwner olmayan thread'ler).
-2. Her biri için cevap taslağı hazırla; panelde (https://claude.ai/artifact/2Kz4oqz43CzXp6vDobpFZ7, ArtifactData) `onaylar/yorum-<videoId>-<commentId>` isteği aç: başlık "Yorum cevabı — <video kısa adı>", açıklamada yorum (aynen) + taslak cevap + (teknikse) doğrulama notu; seçenekler: "Onayla (gönder)" / "Düzelt (not)" / "Cevaplama".
-3. Sonraki çalışmada önce **onaylananları gönder** (metin aynen; "Düzelt" notu varsa nota göre yeniden yaz ve tekrar onaya sun). Gönderdikten sonra isteği "gönderildi" yap. Belirsiz sonuçta tekrar gönderme (çift yorum riski).
+2. Her biri için cevap taslağı hazırla; **genel panelde** (https://claude.ai/artifact/X7gzN2huBZ6m2y2uWBCbLx, ArtifactData) `onaylar/yorum-<commentId>` isteği aç: başlık "Yorum cevabı — <video kısa adı>", açıklamada yorum (aynen, yazanın herkese açık adıyla) + **kopyalanacak cevap** (ayrı alan `cevap`) + yorumun bağlantısı (`https://www.youtube.com/watch?v=<videoId>&lc=<commentId>`) + (teknikse) doğrulama notu; seçenekler: "Gönderdim" / "Düzelt (not)" / "Cevaplama".
+3. Sonraki çalışmada: "Düzelt" notu olanları nota göre yeniden yaz ve tekrar sun; "Gönderdim" ya da YouTube'da kanal sahibinin cevabı görünenleri "kapandı" yap (kanal sahibinin kendi yazdığı cevapları ton örneği olarak `buyume/yorum-ton.md`'ye ekle, kişisel veri olmadan). Aynı yoruma ikinci taslak açma.
 4. Haftalık (Pazartesi çalışması): öğrencilerin en çok takıldığı noktalar, Short/soru çözümü/sık yapılan hata fikirleri → `buyume/yorum-ozet-<YYYY-MM-DD>.md` + panelde kısa kayıt.
 5. Kanal sahibi ileride izin verirse, yalnızca teşekkür/övgü yorumlarına onaysız kısa cevap verilebilir (şimdilik KAPALI).
 
 ## 4. Asla
 
 Onaysız cevap gönderme; para harcama; kullanıcının bilgisayarını kullanma; gizli bilgi/token yazma; yorum silme/gizleme (yalnızca kanal sahibine öner).
+
+## 5. Çalışma düzeni
+
+Her gün 19:07 (Londra). Bir çalışmada en fazla 30 yeni taslak. Yeni yorum yoksa kısa kayıt yaz ve dur. Push yalnızca `claude/yorum-<YYYYMMDD>` dalına; depoya yorum metni ve kişi adı yazılmaz (özetler anonim).
