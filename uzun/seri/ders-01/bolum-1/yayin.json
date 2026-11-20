@@ -27,6 +27,6 @@
   "Bitiş ekranı (son 20 sn, 15:07–15:27 arası; orta ve alt boş): sonraki bölüm (yayınlanınca) + oynatma listesi + abone.",
   "Bilgi kartı: 7:09 'Örnek 2' civarına ilgili Short '004 Akım nedir?' (yayındaysa)."
  ],
- "zaman_damgasi_kaynagi": "parça başlangıçları (p1 0; p2 54,76; p3 221,28; p4 270,11; p5 420,71; p6 687,29; p7 836,05 sn; iş emri D: parça 1'e selam için +4,4 sn) + zamanlama-N.json cümle başları; iş emri F (19.11): intro kartının başına 3 sn müzik eklendi, 0:33'ten sonraki her şey +3 sn; 20.11: Blender intro (+6,3 sn) eklendi (intro'lu sürüm 927,32 sn; kanca 0–32,97 sn değişmez, sonrası +6,3 sn; damgalar +6 sn)",
+ "zaman_damgasi_kaynagi": "parça başlangıçları (p1 0; p2 54,76; p3 221,28; p4 270,11; p5 420,71; p6 687,29; p7 836,05 sn; iş emri D: parça 1'e selam için +4,4 sn) + zamanlama-N.json cümle başları; iş emri F (19.11): intro kartının başına 3 sn müzik eklendi, 0:33'ten sonraki her şey +3 sn; 20.11: Blender intro (+6,3 sn) eklendi; selam altında müzik −18 dB (intro'lu sürüm 927,32 sn; kanca 0–32,97 sn değişmez, sonrası +6,3 sn; damgalar +6 sn; kareyle doğrulandı: 4:33→4:39, 7:03→7:09, 13:59→14:05; selamda konuşma/müzik farkı 18,9 LU)",
  "kapak_notu": "İş emri J (20.11.2026): kapak A, 6-D tarzı arka plan devresi (uzun/kapak-6-d/). Eski fotoğraflı kapak: media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak-eski.jpg"
 }
