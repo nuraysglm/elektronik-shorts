@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Kapak arka plan devresi, UZUN.md 6-D tarzı (kanal sahibi 20.11.2026):
-kareli açık zemin, ders kitabı şeması (sinüs kaynak, bağımlı kaynaklar, R/L/C değerleri),
+düz beyaz zemin (kareli doku yok, iş emri J2), ders kitabı şeması (sinüs kaynak, bağımlı kaynaklar, R/L/C değerleri),
 kırmızı + / − ve v1…v9, mavi akım okları i1…i6, düğüm noktaları. Topolojiler özgündür.
 Kullanım: python3 devre.py  -> uzun/kapak-6-d/html/<ad>.html   (render: node kapak.mjs CIKTI)"""
 import math, os
@@ -185,15 +185,8 @@ KAPAKLAR = [
     ('1-2-c', 'd', 'Pil 1 gün mü,', '<em>1 yıl mı?</em>', 'DEVRE TEORİSİ I: DERS 1 - BÖLÜM 2/3'),
 ]
 
-def izgara():
-    return ('<defs><pattern id="mm" width="10" height="10" patternUnits="userSpaceOnUse">'
-            '<path d="M10,0 L0,0 0,10" class="g1"/></pattern>'
-            '<pattern id="cm" width="50" height="50" patternUnits="userSpaceOnUse">'
-            '<rect width="50" height="50" fill="url(#mm)"/><path d="M50,0 L0,0 0,50" class="g2"/></pattern></defs>'
-            '<rect width="1280" height="720" fill="url(#cm)"/>')
-
 def svg():
-    o = '<svg class="devre" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">' + izgara() + '<g class="sema">' + ''.join(S) + '</g></svg>'
+    o = '<svg class="devre" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">' + '<g class="sema">' + ''.join(S) + '</g></svg>'
     S.clear(); return o
 
 if __name__ == '__main__':

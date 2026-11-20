@@ -10,7 +10,7 @@
    "videoda": "0:00 kanca ve 1:49 pencere sorunu: akım hiç durmadan akarken Δq/Δt = 0 çıkıyor",
    "baslik_uzunluk": 72,
    "dosya_6d": "media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg",
-   "devre_6d": "6-D: kareli zemin, 8 çevreli özgün ağ, 10 sin ωt V, VCVS 2·v₁, CCCS 4·i₁, v₁…v₉, i₁…i₆"
+   "devre_6d": "6-D: düz beyaz zemin (J2), 8 çevreli özgün ağ, 10 sin ωt V, VCVS 2·v₁, CCCS 4·i₁, v₁…v₉, i₁…i₆"
   },
   "B": {
    "kapak_yazisi": "Yük en büyük, akım sıfır?",
@@ -62,6 +62,7 @@
   }
  },
  "kucuk_boyut_testi": "media/uzun/kapak-secenek/kucuk-boyut-320.png, kucuk-boyut-168.png: 6 kapakta yazı 168×94'te de okunuyor; devre arka planda soluk, çizgi yığını gibi durmuyor.",
- "kucuk_boyut_testi_6d": "B1: devre-teorisi-1-ders-01-bolum-1-kapak-a-6d-kucuk-test.jpg; B2: devre-teorisi-1-ders-01-bolum-2-kapak-6d-kucuk-test.jpg — 320×180 ve 168×94'te yazı okunuyor, devre düzenli şema olarak görünüyor.",
- "uretim_6d": "uzun/kapak-6-d/devre.py + kapak.mjs (iş emri J, 20.11.2026)"
+ "kucuk_boyut_testi_6d": "B1: devre-teorisi-1-ders-01-bolum-1-kapak-a-6d-kucuk-test.jpg; B2: devre-teorisi-1-ders-01-bolum-2-kapak-6d-kucuk-test.jpg — 320×180 ve 168×94'te yazı okunuyor, devre düzenli şema olarak görünüyor. J2 (beyaz zemin) sonrası yeniden test edildi: yazı 168×94'te okunuyor, devre beyaz zeminde net ve dengeli.",
+ "uretim_6d": "uzun/kapak-6-d/devre.py + kapak.mjs (iş emri J, 20.11.2026)",
+ "zemin_j2": "İş emri J2 (20.11.2026): kareli doku kaldırıldı; katman sırası düz beyaz zemin → devre → yazı. Devre ve yazı aynı."
 }
