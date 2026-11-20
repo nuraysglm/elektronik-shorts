@@ -62,10 +62,19 @@ R_sinir = 10 * F(3, 10); assert R_sinir == 3
 i_s = V / R_sinir; assert i_s == F(1, 2)
 d_s = F(3, 10) * i_s; assert d_s == F(15, 100) and d_s / V == F(1, 10)  # %10
 assert 150 >= R_sinir and F(3, 2) < R_sinir
-# --- Parca 7: yorum sorusu
-for R_, i_ in ((30000, F(3, 10000)), (300, F(3, 100)), (3, F(3))):
-    assert F(9) / R_ == i_                                               # 0,3 mA; 30 mA; 3 A
-print("Sayisal kontroller: tamam (10 mA / 1 A, 100 kat; 3 mA, 4,5 V; 1,5 / 1,35 / 1,2 V; 0,0531 Ohm/m, 10,6 mOhm; 3 + 1 + 0,11 = 4,1 mV, %0,27; 20 kat, 0,3 V, %20; 3 Ohm, 0,15 V, %10; 0,3 mA / 30 mA / 3 A)")
+# birim donusumleri (Parca 4, 6)
+assert F(1000) / 10 == 100 and F(3048, 10000) * 1000 == F(3048, 10)     # 1 A = 1000 mA; 1000 x 0,3048 = 304,8 m
+assert F(100, 1000) == F(1, 10) and F(20, 100) == F(2, 10)               # 100 mOhm = 0,1 Ohm; 20 cm = 0,20 m
+assert abs(F(531, 10) * F(2, 10) - F(106, 10)) <= F(5, 100)               # 53,1 mOhm/m x 0,2 m ~ 10,6 mOhm
+assert abs(F(41, 10) / 1500 - F(27, 10000)) < F(1, 10000)               # 0,0027
+assert F(9, 2) - 0 == F(9, 2)                                            # v_anahtar = 4,5 - v_R
+# --- Parca 7: yorum sorusu (cevap: 900 Ohm -> 10 mA, 20 mV, %0,22: yeter; 9 Ohm -> 1 A, 2 V, %22: yetmez; kural 20 Ohm)
+Ri9 = F(2)
+i900 = F(9) / 900; assert i900 == F(1, 100); assert Ri9 * i900 == F(2, 100)
+i9 = F(9) / 9; assert i9 == 1; assert Ri9 * i9 == 2
+assert abs(F(2, 100) / 9 * 100 - F(22, 100)) < F(1, 100) and abs(F(2) / 9 * 100 - 22) < 1
+assert 10 * Ri9 == 20 and 900 >= 20 and 9 < 20
+print("Sayisal kontroller: tamam (10 mA / 1 A, 100 kat; 3 mA, 4,5 V; 1,5 / 1,35 / 1,2 V; 0,0531 Ohm/m, 10,6 mOhm; 3 + 1 + 0,11 = 4,1 mV, %0,27; 20 kat, 0,3 V, %20; 3 Ohm, 0,15 V, %10; yorum: 20 mV / 2 V)")
 
 # --- Seslendirme metni
 md = pathlib.Path(__file__).with_name("metin.md").read_text()
@@ -79,7 +88,7 @@ for n, metin in parcalar:
     print(f"Parca {n}: {k} kelime, ~{k/2.6/60:.2f} dk, yasak karakter: {kotu}")
     assert not kotu, n
     assert not re.search(r"(^|[.!?]\s+)İ\b", metin)
-    assert not re.search(r"\b(AWG|AA|datasheet|PTS|E91|USB|ft|mA|mV|Ω)\b", metin), n
+    assert not re.search(r"\b(AWG|AA|datasheet|PTS|E91|USB|ft|mA|mV|Ω|dokunmatik)\b", metin), n
     assert "her zaman" not in metin.lower(), n
 print("Toplam", toplam, "kelime, konusma ~", round(toplam / 2.6 / 60, 2), "dk; +125 sn ->", round((toplam / 2.6 + 125) / 60, 2), "dk")
 assert 1800 <= toplam <= 2330 and 13 <= (toplam / 2.6 + 125) / 60 <= 17

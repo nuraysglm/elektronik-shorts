@@ -142,14 +142,18 @@
     {
       "tarih": "2026-11-19T23:58Z",
       "not": "Gece çalışması 2: iş emri G — kanal intro'su üretildi (media/uzun/devre-teorisi-1-intro.mp4, 6 sn; uzun/intro/), 9 kare gözle kontrol; panelde onaylar/intro-1. B2: F müzik kuralıyla yeniden karıştırıldı (müziksiz kaynak wip parçalarından yeniden birleştirildi): 16:55,6, −16,1 LUFS / −1,9 dBTP, 10 kare + müzikli anlar ölçüldü, yayin.json +3 sn; onaylar/uzun-1-2 güncellendi. B1 yayin.json '14:30 Sana bir soru' → 14:33 düzeltildi. B3: metin onayı yok → ses üretilmedi. Kredi harcanmadı, planlama yapılmadı."
+    },
+    {
+      "tarih": "2026-11-20T02:40Z",
+      "not": "Gece çalışması 3: panelde yeni karar yok (uzun-1-2, intro-1, metin-1-3 bekliyor) → B3 sesi üretilmedi. Ders 2 planı (uzun/seri/ders-02/plan.md) ve D2B1 metin sürüm 1 (7 parça, 1.916 kelime, ~14,4 dk); dogrula.py TAMAM; bağımsız denetim 2 tur (1 kritik: kancada gerçek pilden 'tam 1 A' → 'ideal pilde'; 10 önemli düzeltildi: eksik birim dönüşümleri, Razavi'ye yakın cümleler ve yorum sorusu, Ders 1-B3 tekrarı, 'dokunmatik buton' vb.). Dal claude/uzun-2-1-20261120. Panelde onaylar/metin-2-1. Kredi harcanmadı, planlama yapılmadı."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.3,
   "acik_sorular": [],
-  "sonraki_is": "B1: onaylı — planlama 21.11 08:00 Londra (akşam görevi/genel müdür; F'li video main'e birleşince). intro-1 onaylanırsa: B2'ye intro ekle (kancadan sonra, müzik intro boyunca tek başına) → yeniden birleştir → uzun-1-2 güncelle. B3: metin-1-3 onayı gelirse ses → zamanlama → render.",
-  "not": "B1 onaylı, müzik F ile düzeltildi (planlama akşam görevi/genel müdür). B2 video onayı bekliyor (müzik F). İntro onayı bekliyor. B3 metin onayı bekliyor.",
+  "sonraki_is": "B1: onaylı — planlama 21.11 08:00 Londra (akşam görevi/genel müdür). intro-1 onaylanırsa: B2'ye intro ekle → yeniden birleştir → uzun-1-2 güncelle. B3: metin-1-3 onayı gelirse ses → zamanlama → render. D2B1: metin-2-1 onayı gelirse (B3'ten sonra) ses. Ders 3 planına not: ideal kaynağın v–i yatay doğrusu D2B1'de anlatıldı.",
+  "not": "B1 onaylı (planlama akşam görevi/genel müdür). B2 video onayı, intro onayı, B3 metin onayı, D2B1 metin onayı bekliyor.",
   "metin_onayi": {
     "durum": "onaylandi",
     "zaman": "2026-11-18T08:31:00Z",
@@ -230,7 +234,7 @@
       "not": "Metin henüz yazılmadı (inceleme.md yok). 'Uygulamada: datasheet'teki gerilimler ve gerçek bir gerilim kaynağı' (TI TLV75533P 3,3 V regülatör; 2N7002E, 1N4007 gerilim satırları), ~3:30."
     },
     "2-1": {
-      "durum": "hazir",
+      "durum": "uygulandi",
       "tarih": "2026-11-19",
       "dosya": "uzun/seri/ders-02/bolum-1/icerik.md",
       "dogrulama": "uzun/seri/ders-02/bolum-1/icerik_dogrula.py",
@@ -245,10 +249,7 @@
   "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
   "muzik": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
   "is_emri_e": "UZUN.md 4 — UYGULANDI 19.11 22:30Z (tahta/muzik_ekle.sh; görüntü ve konuşma değişmedi, kredi yok)",
-  "kilit": {
-    "baslangic": "2026-11-20T01:32Z",
-    "oturum": "gece-3 (20.11)"
-  },
+  "kilit": null,
   "bolum_3": {
     "adim": "metin_onayi",
     "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
@@ -268,5 +269,17 @@
     "onay_istegi": "onaylar/intro-1",
     "not": "6,0 sn sessiz; onaylanınca B2'den itibaren kancadan hemen sonra eklenir (müzik açılış kesiti intro boyunca tek başına)."
   },
-  "is_emri_g": "ÜRETİLDİ 19.11 23:40Z: uzun/intro/ (intro.js, render.mjs, NOTLAR.md); panelde onaylar/intro-1 bekliyor."
+  "is_emri_g": "ÜRETİLDİ 19.11 23:40Z: uzun/intro/ (intro.js, render.mjs, NOTLAR.md); panelde onaylar/intro-1 bekliyor.",
+  "ders_2_bolum_1": {
+    "adim": "metin_onayi",
+    "yayin": "takvim: henüz slot yok (Ders 1'den sonraki ilk slot; 14.12.2026 haftası şartlı Pzt/Per, değilse Çarşamba)",
+    "plan": "uzun/seri/ders-02/plan.md",
+    "metin": "uzun/seri/ders-02/bolum-1/metin.md",
+    "dal": "claude/uzun-2-1-20261120",
+    "kelime": 1916,
+    "tahmini_dk": 14.4,
+    "surum": 1,
+    "onay_istegi": "onaylar/metin-2-1 bekliyor (20.11 gece 3)",
+    "not": "İçerik paketi (icerik 2-1) + Razavi Ders 2 [1:26–15:12]. dogrula.py TAMAM; bağımsız denetim 2 tur (1 kritik + 10 önemli + küçükler düzeltildi). Ses ÜRETİLMEDİ: metin onayı bekleniyor. PTS645 yalıtım direnci (üssü doğrulanmadı) videoya konmadı."
+  }
 }
