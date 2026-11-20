@@ -245,6 +245,22 @@
    "dal": "claude/icerik-2-1-20261119",
    "denetim": "bağımsız denetim: kritik yok, 4 önemli + küçükler düzeltildi",
    "not": "Metin ve ders-02/plan.md henüz yok (inceleme.md yok). Önerilen bölümleme B1 [1:26–15:12], B2 [15:12–31:33], B3 [31:35–50:59]. 'Uygulamada: gerçek tel, gerçek buton, gerçek pil' (Energizer E91 iç direnç 150–300 mΩ; C&K PTS645 50 mA/12 V DC, ≤100 mΩ; Alpha Wire 3071 22 AWG 16,2 Ω/1000 ft), ~3:30."
+  },
+  "2-3": {
+   "durum": "hazir",
+   "tarih": "2026-11-20",
+   "dosya": "uzun/seri/ders-02/bolum-3/icerik.md",
+   "dogrulama": "uzun/seri/ders-02/bolum-3/icerik_dogrula.py",
+   "dal": "claude/icerik-2-3-20261120",
+   "denetim": "bağımsız denetim 2 tur: 1 kritik + 10 önemli + küçükler düzeltildi",
+   "not": "Metin henüz yok (inceleme.md yok). 'Uygulamada: Akım kaynağı dükkânda satılmaz mı?' (Microchip MCP73831 R_PROG = 1000 V / I_REG → 400 mAh için 2,7 kΩ ≈ 370 mA; onsemi NSI45025A 25 mA CCR: akım 7,5 V'ta garanti, 1,8 V'ta ~%80, 45 V yalnızca kısa süreli; TLHR5400), ~3:30. Razavi'nin evirici hikâyesi önerilmez (plan.md yasağı; panelde onaylar/kaynak-2-3)."
+  },
+  "2-2": {
+   "durum": "hazir",
+   "tarih": "2026-11-19",
+   "dosya": "uzun/seri/ders-02/bolum-2/icerik.md",
+   "dal": "claude/icerik-2-2-20261119",
+   "not": "Paket yalnızca bu dalda; main'e birleşmedi (20.11 İçerik Ajanı notu). Uygulamada: TI INA180, LM358."
   }
  },
  "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar.",
