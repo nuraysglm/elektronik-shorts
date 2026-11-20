@@ -132,6 +132,17 @@ Görünüm: alt ortada beyaz yuvarlak kart (ince gri kenar + gölge), solda yuva
 
 ## 6. Kapak, başlık, açıklama, SEO, oynatma listesi
 
+### 6-S. Video açılış sıralaması (kanal sahibinin kararı, 20.11.2026 — her bölüm)
+1. **0:00–~0:30 Kanca** (çelişkili soru/şaşırtıcı sonuç; yalnızca konuşma, müzik yok).
+2. **Intro** (≤ 6 sn; onaylı kanal intro'su; seri müziği tam düzeyde).
+3. **Selam + konu** ("Merhaba arkadaşlar, Devre Teorisi I serisine hoş geldiniz…" + bölümün konusu; beyaz tahtada intro kartı; müzik konuşmanın ~8 dB altında, kesitin sonunda biter).
+4. **Ders**; ilk önemli bilgiden sonra (en geç ~4. dk) abone çağrısı + animasyon.
+5. **Kapanış + bitiş ekranı** (son 20 sn müzik; son 2 sn kararma).
+Onaylı intro yokken 2. adım atlanır.
+
+### 6-D. Kapak arka plan devresi (kanal sahibinin kararı, 20.11.2026)
+Kanal sahibinin örnek gösterdiği tarzda: **kareli (milimetrik) açık zemin üzerinde, çok elemanlı, ders kitabı şeması**: sinüs kaynakları, **bağımlı kaynaklar** (eşkenar dörtgen sembol: akım kontrollü gerilim kaynağı, gerilim kontrollü akım kaynağı vb.), dirençler, kondansatörler, bobinler; her elemanda değer etiketi (1 kΩ, 100 µF, 1 mH, 2·v₁ gibi), **kırmızı + / − kutup işaretleri ve v₁…v₉ gerilim etiketleri**, **mavi akım okları ve i₁…i₆ etiketleri**, birkaç düğüm noktası. Kanal sahibinin örnek devresi **aynen kopyalanmaz**; özgün bir topoloji (≥ 3 çevre, ≥ 1 bağımlı kaynak) kodla çizilir. Kapak yazısı devrenin üstünde yarı saydam açık bir bant üzerinde, okunaklı kalır; küçük boyut testi yine zorunlu.
+
 ### 6-0. Merak uyandıran kapak ve başlık (kanal sahibinin kararı, 20.11.2026 — her bölüm)
 - **Amaç tıklanma oranı:** kapak yazısı ve başlık izleyiciyi "bunu öğrenmeden geçemem" noktasına getirir: bir **çelişki, şaşırtıcı sonuç veya cevabı merak edilen soru** (ör. "Akım durmadan akıyor ama ortalaması SIFIR?", "Akım sıfır… gerilim neden 9 V?"). "Akım nedir" gibi düz konu adı kapakta tek başına kullanılmaz.
 - **Dürüst merak:** kapak ve başlıktaki iddia videoda **gerçekten** gösterilir ve cevaplanır; abartı, yanlış veya yanıltıcı ifade, büyük harfle bağırma, "ŞOK" gibi ucuz kalıplar yok (kanal kuralı: yanlış/yanıltıcı bilgi yok).
@@ -139,6 +150,7 @@ Görünüm: alt ortada beyaz yuvarlak kart (ince gri kenar + gölge), solda yuva
 - **Her bölüm için 3 kapak + başlık çifti** hazırlanır (farklı merak açıları), panelde kanal sahibi seçer; seçilmeyenler saklanır (ileride A/B testi için).
 - **Kapak görseli: fotoğrafsız** (kanal sahibinin 20.11 kararı). Fotoğraf yerine bölümün konusuna ait **karmaşık ama estetik bir devre şeması** (ör. çok katlı direnç merdiveni, Wheatstone köprüsü, çok kaynaklı düğüm/çevre devresi, RLC ağı): kodla temiz vektör (SVG/PNG) çizilir, **Canva**'da (kanal sahibinin Pro hesabı: şablon, yazı tipi, renk paleti; Canva yapay zekâ üreticileri yasak, UZUN.md 6 Canva kuralı) arka plan + yazı + renk düzeniyle birleştirilir. Devre arka planda ince/yarı saydam, yazı önde büyük ve yüksek kontrastlı; şerit "DEVRE TEORİSİ I: DERS N - BÖLÜM k/3" kalır.
 - **Küçük boyut testi:** her kapak 320×180 ve 168×94'e küçültülüp kontrol edilir: yazı okunuyor mu, devre "çizgi yığını" gibi mi duruyor (öyleyse sadeleştir).
+- **İş emri J (20.11.2026 10:45) — HEMEN, Bölüm 1 için:** Kanal sahibi **kapak A + başlık A**'yı seçti, ama arka plan devresi 6-D tarzında (kareli zemin, bağımlı kaynaklı karmaşık devre, kırmızı kutuplar, mavi akım okları) yeniden çizilecek. Yeni A kapağını üret → küçük boyut testi → `media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg` olarak koy (eski fotoğraflı kapak `-kapak-eski.jpg` olarak saklanır) → `yayin.json` başlığını A yap ("Ortalama Akım Neden Yanıltır: Akım Nedir? | Devre Teorisi I Ders 1 (1/3)") → panelde `onaylar/kapak-1-1`'e yeni kapak bağlantısını ekle. **En geç 14:00.** Bölüm 2'nin 3 kapağı da 6-D tarzıyla yeniden çizilir (sonra).
 - **İş emri H (20.11.2026 09:05) — bugün ÖNCELİKLİ:** Ders 1 - Bölüm 1 ve Bölüm 2 için 3'er fotoğrafsız kapak + başlık çifti (yukarıdaki kurallarla). **Bölüm 1'inkiler en geç 15:00'te** panelde `onaylar/kapak-1-1` isteğiyle (seçenekler: kapak A/B/C + "eski fotoğraflı kalsın"); seçilen kapak ve başlık `yayin.json`'a yazılır, planlama (20:43) onunla yapılır. Karar gelmezse Bölüm 1 eski kapak ve başlıkla planlanır. Bölüm 2'ninkiler `onaylar/kapak-1-2`.
 
 **Canva kuralı (kanal sahibi, 17.11.2026):** Canva, kodla üretmekten **daha iyi sonuç verdiği** işlerde kullanılır — özellikle **kapak**, seri kimliği kartı ve bitiş ekranı arka planı gibi durağan grafikler. Kurallar:
