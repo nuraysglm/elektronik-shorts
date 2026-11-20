@@ -1,0 +1,18 @@
+@font-face{font-family:IDB;src:url(../../../tools/vendor/fonts/InterDisplay-Black.otf)}
+@font-face{font-family:ISB;src:url(../../../tools/vendor/fonts/Inter-SemiBold.otf)}
+html,body{margin:0}
+.k{position:relative;width:1280px;height:720px;overflow:hidden;background:radial-gradient(ellipse at 40% 45%,#ffffff 0%,#f4f2ec 75%,#e9e6dd 100%)}
+.devre{position:absolute;inset:0;width:1280px;height:720px}
+.devre line,.devre polyline,.devre circle{stroke:#3a5f8f;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.42}
+.devre .k{stroke-width:7}
+.devre circle.d{fill:#3a5f8f;stroke:none}
+.devre circle.o{fill:#fff}
+.devre polygon.a{fill:#c62828;opacity:.45;stroke:none}
+.devre text{font-family:ISB;font-size:26px;fill:#3a5f8f;opacity:.5}
+.devre text.a{fill:#c62828;opacity:.5}
+.devre text.s{font-size:30px}
+.sis{position:absolute;left:30px;top:170px;width:1040px;height:290px;background:radial-gradient(ellipse at 42% 50%,rgba(250,249,245,.95) 40%,rgba(250,249,245,0) 70%)}
+.yazi{position:absolute;left:70px;top:178px;width:1140px}
+.s1,.s2{font-family:IDB;color:#15191f;font-size:112px;line-height:1.08;letter-spacing:-1.5px;white-space:nowrap}
+.s2 em{font-style:normal;color:#d32f2f}
+.serit{position:absolute;left:0;top:44px;background:#d32f2f;color:#fff;font-family:ISB;font-size:30px;letter-spacing:1px;padding:10px 30px 10px 70px}
