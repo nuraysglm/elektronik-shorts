@@ -53,6 +53,7 @@
   },
   "toplam_kredi": 11677,
   "toplam_sure_sn": 750.24,
-  "durum": "üretildi; Drive yüklemesi bekliyor; normalize edilmedi",
-  "indirme": "creative_get_flow_run_status(flow_id='o1NxGtQkGrn67vii9T3A', session_ids=[...]) → content_url (geçici imzalı) → curl. Yeniden ÜRETME."
+  "durum": "üretildi; selam + parça 1–6 curl ile indirildi (21.11 15:40Z, düzenli çalışma; Drive yüklemesine gerek kalmadı); normalize edilmedi (zamanlama adımında ses_hazirla); parça 7 metin-2-1-p7 kararını bekliyor",
+  "indirme": "creative_get_flow_run_status(flow_id='o1NxGtQkGrn67vii9T3A', session_ids=[...]) → content_url (geçici imzalı) → curl. Yeniden ÜRETME.",
+  "indirildi": "2026-11-21T15:40Z"
 }
