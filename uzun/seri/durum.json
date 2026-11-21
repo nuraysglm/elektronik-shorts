@@ -2,7 +2,7 @@
   "seri": "Devre Teorisi I",
   "ders": 1,
   "bolum": 1,
-  "adim": "planli",
+  "adim": "yayinda",
   "yayin": "2026-11-21",
   "yayin_saati": "Cumartesi 21.11.2026 11:00 TR = 08:00 Europe/London (kanal sahibinin kararı, 18.11 20:50). Cuma akşamı görevi panelde 'onayla' varsa bu saate planlar.",
   "parcalar": {
@@ -162,13 +162,17 @@
     {
       "tarih": "2026-11-20T20:45Z",
       "not": "Cuma akşamı: onaylar/uzun-1-1 'onayla' → B1 Metricool'da planlandı (id 436070416, 21.11 08:00 Londra / 11:00 TR; intro'lu video, kapak A, yayin.json başlık/açıklama/etiket/ilk yorum). Önce getScheduledPosts kontrolü: kopya yok. Panel seri/ders-01-bolum-1 'planlı', durum/ozet güncellendi. Sıradaki: B2 25.11 (takvim)."
+    },
+    {
+      "tarih": "2026-11-21T09:50Z",
+      "not": "Cumartesi düzenli çalışma: B1 yayında (https://www.youtube.com/watch?v=-WUmNv5spAU; Metricool PUBLISHED); panel seri + soru bankası güncellendi. B3 iş emri M tamamlandı: dünkü cümle üretimi (pBjbSn4ea44AuH4YeMqm) curl ile indirildi, parça 5'e eklendi (+0,94 sn, ses_m.py), zamanlama-5 yeniden; vurgu taraması 4 ihlal → düzeltildi (p1 kuyruk 0,95; p5 89,40'ta 1,1 sn duraklama + üstü çizme E(22)'ye; kutu fd 0,5), 32 işaret ≥1,06 sn; p2 kuyruk 1,9 (abone sonrası bekleme 0,34 sn); p4/p5 render + QC; birleştirme + onaylı intro (introlu.py, T0 46,0): 14:57,2, −16,0 LUFS; 51 kare; yayin.json zaman damgaları (zaman_m.py) + EN; TR/EN altyazı (alt ajan + bağımsız denetim). onaylar/uzun-1-3 yeniden bekliyor. Kredi harcanmadı, planlama yok."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.3,
   "acik_sorular": [],
-  "sonraki_is": "B1 yayın sonrası Studio hatırlatmaları (liste sıra 1, bitiş ekranı, bilgi kartı, ilk yorum sabitle). B2 25.11 planlaması (23.11, uzun-1-2 onayı). B3 iş emri M sesi (Drive). D2B1 sesi 21.11 sonrası (kural 1b-4).",
+  "sonraki_is": "B2 altyazı (bu çalışma sürüyor) → B2 planlaması 23.11 (genel müdür). B3 video onayı. B1 Studio hatırlatmaları (liste, bitiş ekranı, bilgi kartı, ilk yorum sabitle, altyazı yükleme). D2B1 sesi sprintte.",
   "not": "B1 onaylı (planlama akşam). B2 onaylı (25.11). B3 video + kapak onayı bekliyor. D2B1 metin onaylı, ses sırası bekliyor.",
   "metin_onayi": {
     "durum": "onaylandi",
@@ -309,12 +313,12 @@
     "adim": "video_onayi",
     "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
     "metin": "uzun/seri/ders-01/bolum-3/metin.md",
-    "dal": "claude/uzun-1-3-20261119",
+    "dal": "claude/uzun-1-3-20261121",
     "kelime": 1994,
     "tahmini_dk": 14.9,
     "surum": 1,
-    "onay_istegi": "onaylar/uzun-1-3 ve onaylar/kapak-1-3 bekliyor (20.11 ~15:50Z)",
-    "not": "Video hazır; video ve kapak onayı bekleniyor. Onaylı intro gelirse kancadan (0:46) sonra eklenip yeniden birleştirilir. Planlama yok.",
+    "onay_istegi": "onaylar/uzun-1-3 yeniden bekliyor (iş emri M sonrası, 21.11 ~09:50Z)",
+    "not": "İş emri M tamam (21.11): yeni cümle (gen. pBjbSn4ea44AuH4YeMqm curl ile indirildi, kredi yok), kesikli eksen, 4 vurgu düzeltmesi, intro, abone sonrası bekleme 0,34 sn, TR+EN altyazı. Video onayı bekleniyor; planlama yok.",
     "metin_onayi": "onaylandı 2026-11-20T14:38:57Z (onaylar/metin-1-3)",
     "ses": "tamam 20.11 ~15:20Z: 7 parça + selam, eleven_v4, 1 take, 13.158 kredi, curl ile indirildi (uzun/seri/ders-01/bolum-3/ses/)",
     "zamanlama": "tamam: tahta/zamanlama-1..7.json, parcalar.json",
@@ -323,8 +327,12 @@
     "video": "media/uzun/devre-teorisi-1-ders-01-bolum-3.mp4",
     "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-3-kapak.jpg (varsayılan A; seçim onaylar/kapak-1-3)",
     "yayin_json": "uzun/seri/ders-01/bolum-3/yayin.json",
-    "sure": "14:49,0; −16,1 LUFS; tepe −1,7 dBTP; 30,1 MB (iş emri F müzik kuralı; intro yok: onaylı intro bekleniyor)",
-    "abone_anlari": "3:03 ve 14:18"
+    "sure": "14:57,2; −16,0 LUFS; tepe −1,9 dBFS; 33,6 MB (iş emri M + onaylı Blender intro, 6-S)",
+    "abone_anlari": "3:09,6 ve 14:26,6",
+    "altyazi": {
+      "tr": "media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-3.tr.srt",
+      "en": "media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-3.en.srt"
+    }
   },
   "is_emri_f": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
   "intro": {
@@ -354,7 +362,7 @@
   "kaynak_2_3": "kanal sahibi 20.11 08:28Z 'düzelt': Razavi'nin evirici hikâyesi yerine KENDİ kurgumuzla kısa bir ara hikâye (not boş). D2B3 metni yazılırken uygulanır.",
   "is_emri_j": "UYGULANDI 20.11 ~11:10Z: B1 kapak A 6-D tarzıyla yeniden çizildi (uzun/kapak-6-d/), media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg (eski: -kapak-eski.jpg), yayin.json başlık A; küçük boyut testi geçti; onaylar/kapak-1-1 güncellendi. B2'nin 3 kapağı da 6-D tarzıyla (kapak-secenek/*-6d.jpg), onaylar/kapak-1-2 güncellendi. Dal: claude/uzun-1-1-20261120.",
   "is_emri_m": {
-    "durum": "kısmen (ses bekleniyor)",
+    "durum": "TAMAM 21.11 ~09:50Z (düzenli çalışma)",
     "tarih": "2026-11-20T16:40Z",
     "yapildi": [
       "parça 4 gerilim ekseni kesikli gri (kod + QC, render yok)",
@@ -363,14 +371,15 @@
       "yayin.json açıklamasında 'Kanca' bölüm adları düzeltildi; başlık A, kapak A zaten yerinde",
       "Ders 2 - Bölüm 1 metni: 'dersin başında' (ses yok)"
     ],
-    "bekleyen": "Yeni cümle sesi (ElevenLabs generation pBjbSn4ea44AuH4YeMqm, 41 kredi) indirilemedi (403); kanal sahibi Drive 'Uzun Video Sesleri/ders-01-bolum-3' (1WBB9OGtZ0H7Yrhfc4Rg2mNbTEBlIz_xN) klasörüne cumle-5-14.mp3 yükleyince: parça 4+5 render, birleştir, tam QC, mp4 güncelle (NOTLAR.md).",
+    "bekleyen": null,
     "drive_klasoru": "1WBB9OGtZ0H7Yrhfc4Rg2mNbTEBlIz_xN"
   },
   "metricool_b1": {
     "id": 436070416,
     "tarih": "2026-11-21T08:00:00 Europe/London (11:00 TR)",
     "video": "media/uzun/devre-teorisi-1-ders-01-bolum-1-introlu.mp4",
-    "planlama": "2026-11-20T20:45Z (Cuma akşamı görevi; onaylar/uzun-1-1 'onayla')"
+    "planlama": "2026-11-20T20:45Z (Cuma akşamı görevi; onaylar/uzun-1-1 'onayla')",
+    "youtube": "https://www.youtube.com/watch?v=-WUmNv5spAU"
   },
   "sonraki_bolum": {
     "ders": 1,
