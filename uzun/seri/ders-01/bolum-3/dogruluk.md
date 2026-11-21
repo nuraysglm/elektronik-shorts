@@ -13,7 +13,7 @@ Onaylı kaynaklar: Razavi, Basic Circuit Theory, Ders 1 transkripti (kanal sahib
 | 3 | Tepe–vadi benzetmesi | Kendi benzetmemiz (Razavi'nin levha örneği kullanılmadı; fikir [33:00–33:23] "as if I'm lifting it" ile tutarlı); ekranda "yalnızca bir benzetme" |
 | 3 | Gerilimin değeri ve işareti; + uç − uçtan v volt yüksek | [34:29–35:51] |
 | 3 | v_ba = −v_ab; işaret ters → sayı eksi | v_ab = v_a − v_b tanımından; icerik.md bölüm 4 |
-| 3 | Hesapta −2 V bulunması: sağ uç 2 V yüksek | İşaret kuralı (aynı) |
+| 3 | Hesapta −3 V bulunması: sağ uç 3 V yüksek | İşaret kuralı (aynı) |
 | 4 | Gerilim yalnızca iki nokta arasında anlamlıdır; "bu noktanın gerilimi" = başka bir noktaya göre | [35:51–36:52] |
 | 4 | Toprak = devrede seçilmiş ortak referans ucu | icerik.md bölüm 4 (Razavi [41:31] "resistor from here to ground"); şebeke toprağıyla karıştırılmaz |
 | 4 | 5 − 3,3 = 1,7 V; referans b'ye: v_a = 1,7 V, v_b = 0, fark yine 1,7 V | `dogrula.py` (icerik.md 7-2) |

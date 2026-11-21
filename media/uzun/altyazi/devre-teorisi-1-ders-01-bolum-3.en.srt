@@ -221,7 +221,7 @@ This time, carrying it takes 36 µJ.
 
 48
 00:02:39,233 --> 00:02:42,413
-36 / 8, again 4.5 V.
+36 / 8 is again 4.5 V.
 
 49
 00:02:42,493 --> 00:02:46,883
@@ -249,7 +249,7 @@ energy; we get it back.
 
 54
 00:02:58,723 --> 00:03:01,663
-The energy spent becomes −18 µJ.
+The energy spent is then −18 µJ.
 
 55
 00:03:01,743 --> 00:03:05,153
@@ -382,8 +382,8 @@ correctly from the start;
 
 82
 00:04:30,412 --> 00:04:33,383
-the result, together with its
-sign, tells you the truth.
+the result, together with its sign,
+tells you the truth.
 
 83
 00:04:33,463 --> 00:04:34,543
@@ -391,7 +391,7 @@ Let's go back to our example.
 
 84
 00:04:34,623 --> 00:04:37,683
-There were 4.5 V between a and b.
+We had 4.5 V between a and b.
 
 85
 00:04:37,763 --> 00:04:40,503
@@ -696,17 +696,17 @@ This is where the most
 common mistake is made.
 
 150
-00:07:58,537 --> 00:08:00,358
-Saying the current
+00:07:58,537 --> 00:08:00,494
+It's saying the current
 in a short circuit is zero,
 
 151
-00:08:00,438 --> 00:08:02,461
+00:08:00,574 --> 00:08:02,532
 and assuming that no current
 flows through the wire
 
 152
-00:08:02,541 --> 00:08:05,107
+00:08:02,612 --> 00:08:05,107
 and that the current still
 flows through both resistors.
 
@@ -833,8 +833,8 @@ its meaning in a short circuit.
 
 179
 00:09:28,997 --> 00:09:33,247
-Next, we'll see in a datasheet
-what happens in a real source.
+Now we'll see in a datasheet
+what happens with a real source.
 
 180
 00:09:33,717 --> 00:09:36,507
@@ -847,12 +847,12 @@ There, every voltage is given
 between two terminals.
 
 182
-00:09:39,567 --> 00:09:42,014
-In most rows, the name tells
-you those two terminals;
+00:09:39,567 --> 00:09:42,140
+In most rows, the row's name
+tells you those two terminals;
 
 183
-00:09:42,094 --> 00:09:44,787
+00:09:42,220 --> 00:09:44,787
 if it doesn't, the voltage
 is relative to ground.
 
@@ -887,19 +887,19 @@ because the part is rated for 60 V,
 you can damage the control terminal.
 
 190
-00:10:08,797 --> 00:10:11,901
+00:10:08,797 --> 00:10:11,883
 The diode also has two separate
 rows for the same two terminals:
 
 191
-00:10:11,981 --> 00:10:14,694
+00:10:11,963 --> 00:10:14,659
 in the forward direction,
 at most 1.1 V drops across it;
 
 192
-00:10:14,774 --> 00:10:17,417
+00:10:14,739 --> 00:10:17,417
 in the reverse direction,
-it withstands 1000 V.
+it withstands 1,000 V.
 
 193
 00:10:17,497 --> 00:10:21,047
@@ -1018,8 +1018,8 @@ According to the datasheet,
 
 218
 00:11:45,091 --> 00:11:48,847
-the output changes by about 60
-mV for every ampere of current.
+the output changes by about 60 mV
+for every ampere of current.
 
 219
 00:11:48,927 --> 00:11:53,107
@@ -1044,8 +1044,8 @@ Even over the entire recommended range,
 
 224
 00:12:07,320 --> 00:12:11,227
-the change is 60
-mV/A × about 0.5 A ≈ 30 mV.
+the change is 60 mV/A × about
+0.5 A ≈ 30 mV.
 
 225
 00:12:11,307 --> 00:12:14,717
@@ -1118,16 +1118,16 @@ Here, the rest of the circuit means
 the regulator's own current limit.
 
 240
-00:13:05,017 --> 00:13:06,476
-When the output drops too low,
+00:13:05,017 --> 00:13:06,515
+When the output drops very low,
 
 241
-00:13:06,556 --> 00:13:09,506
+00:13:06,595 --> 00:13:09,525
 the regulator cuts the current
 back even further on its own;
 
 242
-00:13:09,586 --> 00:13:12,797
+00:13:09,605 --> 00:13:12,797
 in a short circuit, the current
 typically falls to 355 mA.
 
@@ -1155,8 +1155,8 @@ what you connect to it.
 
 248
 00:13:26,607 --> 00:13:29,849
-A real source keeps its
-ideal behavior only within
+A real source keeps its ideal
+behavior only within
 
 249
 00:13:29,929 --> 00:13:33,457

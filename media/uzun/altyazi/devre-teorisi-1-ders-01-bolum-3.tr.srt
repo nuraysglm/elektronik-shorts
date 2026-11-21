@@ -912,8 +912,8 @@ Model ne kadar iyi?
 
 201
 00:11:43,477 --> 00:11:48,847
-Veri sayfasına göre çıkış, akımın her
-amperi için yaklaşık 60 mV değişiyor.
+Veri sayfasına göre çıkış, akımın
+her amperi için yaklaşık 60 mV değişiyor.
 
 202
 00:11:48,927 --> 00:11:53,107

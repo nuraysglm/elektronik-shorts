@@ -43,10 +43,10 @@ def wrap(s):
 def fits(s):
     l = wrap(s); return l is not None and len(l) <= MAXC
 NB = '\u00a0'
-UNIT = re.compile(r"^(mC|µC|mA|ms|kΩ|V|s|A|C|saniye\w*|seconds?|milisaniye\w*|(mC|mA|kΩ|ms)'\w+)[,.;:?]?$")
+UNIT = re.compile(r"^(mC|µC|µJ|µA|mV/A|mV|mA|ms|kΩ|Ω|V|s|A|C|J|W|saniye\w*|seconds?|milisaniye\w*|(mC|µC|µJ|µA|mV|mA|kΩ|Ω|ms|V|C|A)'\w+)[,.;:?]?$")
 OPS = {'×', '/', '=', '−', '+'}
 KOTU_SON = {'the', 'a', 'an', 'at', 'to', 'of', 'and', 'from', 'in', 'on', 'by', 'is', 'for', 'with', 'that', 'as',
-            'between', 'than', 've', 'bir', 'ile', 'nasıl'}
+            'between', 'than', 've', 'bir', 'ile', 'nasıl', 'its', 'their', 'his', 'her'}
 def yapistir(w, times):
     """sayi+birim ve islem isaretlerini bolunmez yap (NBSP)"""
     W, Tm = [], []
