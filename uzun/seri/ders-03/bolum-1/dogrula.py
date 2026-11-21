@@ -101,6 +101,12 @@ assert Is_v == F(2, 3) * m and Is_i == F(7, 12) * m
 assert min(Is_v, Is_i) == Is_i and round(float(Is_i * 1000), 3) == 0.583
 assert RL7 * g7 * Rx7 * Is_i == F(105, 10)         # o akimda |v| = 10,5 V < 12 V
 
+# --- 2. bagimsiz denetim (21.11.2026) eklemeleri
+assert F(2, 3) * 1000 == F(2000, 3)                 # 2/3 kOhm = 2000/3 Ohm ~ 666,7 Ohm
+assert 100 * 40 == 4000 and F(4000) / 1000 == 4     # 100 x 40 uA = 4000 uA = 4 mA
+assert 100 * 200 == 20000 and F(20000) / 1000 == 20 # 100 x 200 uA = 20 000 uA = 20 mA
+assert VSP - 2 == 22                                # veri sayfasi: cikis beslemenin 2 V altina kadar
+
 # --- Metin kontrolleri
 p = pathlib.Path(__file__).with_name("metin.md")
 t = p.read_text(encoding="utf-8")
