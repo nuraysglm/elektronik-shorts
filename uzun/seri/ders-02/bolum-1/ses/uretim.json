@@ -1,15 +1,58 @@
 {
   "aciklama": "Ders 2 - Bölüm 1 ses üretimi (kredi sprinti, 21.11.2026 13:20Z). Metin: metin.md (onaylar/metin-2-1 onaylı, 20.11 08:29). voice_id sLFd2sFq5fDrVDNCuUfI, eleven_v4, generations_count 1. Flow o1NxGtQkGrn67vii9T3A. Kredi = karakter sayısı (metinle birebir). İndirme bu oturumda engelli (403) → Drive 'Uzun Video Sesleri/ders-02-bolum-1' (1wvd6iPH7UguhA406TzFi6ShgLcmocT3o), onaylar/ses-2-1. Parça 7 bekliyor (sprint kuralı + inceleme.md yorum sorusu önerisi).",
   "parcalar": {
-    "selam":   {"generation_id": "tkNqtcD7H81L5f89nxtY", "history_item": "aCZiUQhQifGUbC2dqfxr", "kredi": 153,  "sure_sn": 10.72},
-    "parca-1": {"generation_id": "XAAvr40Odb26mcCynu1O", "history_item": "X1AzmeKDT356e9pSJeoQ", "kredi": 674,  "sure_sn": 43.76},
-    "parca-2": {"generation_id": "SGAg50WKSnwwgNxhFo6T", "history_item": "mciss59kP8ZafFDeJ3p7", "kredi": 907,  "sure_sn": 58.64},
-    "parca-3": {"generation_id": "N9vcNdrxd5laQkZ8M81z", "history_item": "Op6pX5xwS4KkKbJJynpB", "kredi": 2549, "sure_sn": 159.52},
-    "parca-4": {"generation_id": "Xf51dSpIKELcq5lmvEGQ", "history_item": "THNAbGi7i96h3vFvSRTQ", "kredi": 2215, "sure_sn": 141.68},
-    "parca-5": {"generation_id": "IhRj2BYDrUHEq12opOe7", "history_item": "j6lcF55KeLKKZWwMzh9U", "kredi": 1707, "sure_sn": 112.24},
-    "parca-6": {"generation_id": "zc8l3SpzVQJHC6k4DuPb", "history_item": "0cIlMLKIuZnOMvIXQYlJ", "kredi": 3472, "sure_sn": 223.68}
+    "selam": {
+      "generation_id": "tkNqtcD7H81L5f89nxtY",
+      "history_item": "aCZiUQhQifGUbC2dqfxr",
+      "kredi": 153,
+      "sure_sn": 10.72,
+      "session_id": "QcEqckQA6pOPcTc8L0XP"
+    },
+    "parca-1": {
+      "generation_id": "XAAvr40Odb26mcCynu1O",
+      "history_item": "X1AzmeKDT356e9pSJeoQ",
+      "kredi": 674,
+      "sure_sn": 43.76,
+      "session_id": "3foFEUCQSOJ8zqqAGApL"
+    },
+    "parca-2": {
+      "generation_id": "SGAg50WKSnwwgNxhFo6T",
+      "history_item": "mciss59kP8ZafFDeJ3p7",
+      "kredi": 907,
+      "sure_sn": 58.64,
+      "session_id": "pCmwqYVdYb1bPSYI3hFi"
+    },
+    "parca-3": {
+      "generation_id": "N9vcNdrxd5laQkZ8M81z",
+      "history_item": "Op6pX5xwS4KkKbJJynpB",
+      "kredi": 2549,
+      "sure_sn": 159.52,
+      "session_id": "fvkjxpzqZ682QFRUBlcL"
+    },
+    "parca-4": {
+      "generation_id": "Xf51dSpIKELcq5lmvEGQ",
+      "history_item": "THNAbGi7i96h3vFvSRTQ",
+      "kredi": 2215,
+      "sure_sn": 141.68,
+      "session_id": "HBoYBI5Ue1GaoFx90rvj"
+    },
+    "parca-5": {
+      "generation_id": "IhRj2BYDrUHEq12opOe7",
+      "history_item": "j6lcF55KeLKKZWwMzh9U",
+      "kredi": 1707,
+      "sure_sn": 112.24,
+      "session_id": "jRyC8jCuVSsn46WKtyWE"
+    },
+    "parca-6": {
+      "generation_id": "zc8l3SpzVQJHC6k4DuPb",
+      "history_item": "0cIlMLKIuZnOMvIXQYlJ",
+      "kredi": 3472,
+      "sure_sn": 223.68,
+      "session_id": "geQSKB4JwYVDuwQjK6ZX"
+    }
   },
   "toplam_kredi": 11677,
   "toplam_sure_sn": 750.24,
-  "durum": "üretildi; Drive yüklemesi bekliyor; normalize edilmedi"
+  "durum": "üretildi; Drive yüklemesi bekliyor; normalize edilmedi",
+  "indirme": "creative_get_flow_run_status(flow_id='o1NxGtQkGrn67vii9T3A', session_ids=[...]) → content_url (geçici imzalı) → curl. Yeniden ÜRETME."
 }
