@@ -14,12 +14,12 @@ After all, no current
 flows through the switch.
 
 4
-00:00:08,210 --> 00:00:10,228
+00:00:08,210 --> 00:00:10,270
 But in the circuit we're about to draw,
 
 5
-00:00:10,308 --> 00:00:13,930
-there are exactly 9 V across
+00:00:10,350 --> 00:00:13,930
+there's exactly 9 V across
 the terminals of the open switch.
 
 6
@@ -30,22 +30,22 @@ but the voltage is not.
 7
 00:00:16,450 --> 00:00:20,660
 And the most common mistake on this
-topic is exactly confusing these two.
+topic is confusing exactly these two.
 
 8
 00:00:20,820 --> 00:00:24,210
-By the end of this part, you'll find
-the voltage across an open switch.
+By the end of this part, you'll be able
+to find the voltage across an open switch.
 
 9
-00:00:24,290 --> 00:00:26,144
-You'll write current
-with its direction and find
+00:00:24,290 --> 00:00:25,961
+You'll write a current
+together with its direction,
 
 10
-00:00:26,224 --> 00:00:28,180
-the charge that passed
-from a current graph.
+00:00:26,041 --> 00:00:28,180
+and find the charge that has
+passed from a current graph.
 
 11
 00:00:28,260 --> 00:00:30,630
@@ -87,18 +87,18 @@ at which charge passes
 through a cross-section.
 
 19
-00:01:03,000 --> 00:01:04,386
+00:01:03,000 --> 00:01:04,435
 Before we get into the topic,
 
 20
-00:01:04,466 --> 00:01:06,586
-let's see what the average
+00:01:04,515 --> 00:01:06,758
+let's see where the average
 and instantaneous
 
 21
-00:01:06,666 --> 00:01:09,510
-current from there correspond
-to in a real design.
+00:01:06,838 --> 00:01:09,510
+current from Part 1 show
+up in a real design.
 
 22
 00:01:10,150 --> 00:01:12,240
@@ -171,8 +171,8 @@ but it can't carry 30 A continuously.
 
 37
 00:01:52,820 --> 00:01:56,390
-You'll also see two rows
-for an electronic switch and for an LED.
+You'll also see two rows in the datasheets
+of an electronic switch and an LED.
 
 38
 00:01:56,470 --> 00:01:59,920
@@ -320,8 +320,8 @@ The total is 20 + 4.99 = 24.99 µC.
 
 70
 00:03:44,190 --> 00:03:48,810
-Dividing this by 1 second,
-the average current is about 25 µA.
+Dividing this by 1 second gives
+an average current of about 25 µA.
 
 71
 00:03:49,570 --> 00:03:52,650
@@ -347,16 +347,16 @@ Dividing by 0.025 means multiplying by 40.
 
 76
 00:04:07,050 --> 00:04:11,910
-Dividing 9000 by 24 gives 375
-days, that is, about a year.
+Dividing 9000 by 24 gives 375 days,
+that is, about a year.
 
 77
-00:04:11,990 --> 00:04:15,640
-The real life may be somewhat shorter
+00:04:11,990 --> 00:04:15,668
+The actual life may be somewhat shorter
 because of temperature and the pulses,
 
 78
-00:04:15,720 --> 00:04:17,500
+00:04:15,748 --> 00:04:17,500
 so the designer leaves a margin.
 
 79
@@ -491,7 +491,7 @@ is moving against the arrow.
 
 107
 00:05:42,333 --> 00:05:44,833
-As long as the arrow
+All that matters is that the arrow
 is drawn on the schematic.
 
 108
@@ -526,7 +526,8 @@ Let's draw the arrow to the right.
 
 115
 00:06:03,343 --> 00:06:06,153
-If we flip the arrow to the left, +4 mA.
+If we flip the arrow
+to the left, it's +4 mA.
 
 116
 00:06:06,233 --> 00:06:11,453
@@ -657,11 +658,11 @@ This is where the most
 common mistake is made.
 
 144
-00:07:26,423 --> 00:07:28,053
-Saying that since the current is zero
+00:07:26,423 --> 00:07:28,078
+Saying that since the current is zero,
 
 145
-00:07:28,133 --> 00:07:30,603
+00:07:28,158 --> 00:07:30,603
 the voltage must be zero too,
 and writing 0 V.
 
@@ -738,7 +739,7 @@ The resistor's voltage is 10 kΩ × 0 = 0 V.
 
 161
 00:08:19,413 --> 00:08:24,973
-So the input is at 3.3 V, and there are
+So the input is at 3.3 V, and there's
 also 3.3 V across the button's terminals.
 
 162
@@ -835,7 +836,7 @@ we find the total charge that passed.
 
 182
 00:09:28,523 --> 00:09:30,323
-The name of this sum is the integral.
+This sum is called the integral.
 
 183
 00:09:30,403 --> 00:09:35,493
@@ -862,8 +863,8 @@ areas of narrow rectangles too.
 
 188
 00:09:47,553 --> 00:09:51,123
-And the battery's milliampere-hours are
-the largest area the battery can deliver.
+And the battery's milliampere-hour rating
+is the largest area it can deliver.
 
 189
 00:09:51,203 --> 00:09:52,603
@@ -936,8 +937,8 @@ The very same 18 mC we found in Part 1.
 
 205
 00:10:36,733 --> 00:10:39,213
-Derivative and integral are
-the inverse of each other.
+The derivative and the integral
+are inverses of each other.
 
 206
 00:10:39,293 --> 00:10:40,913
@@ -1147,7 +1148,7 @@ The current rises by 6 mA in 2 ms.
 
 253
 00:12:55,483 --> 00:12:58,743
-6 / 2, that's 3 mA every millisecond.
+6 / 2, that's 3 mA per millisecond.
 
 254
 00:12:58,823 --> 00:13:01,963
@@ -1354,19 +1355,19 @@ At 4 seconds, the second switch opens too.
 The current is zero again.
 
 300
-00:15:15,937 --> 00:15:19,076
+00:15:15,937 --> 00:15:19,135
 But notice: since no current
 flows through either resistor,
 
 301
-00:15:19,156 --> 00:15:22,197
-there are 12 V across each
+00:15:19,215 --> 00:15:22,197
+there's 12 V across each
 of the two open switches.
 
 302
 00:15:22,277 --> 00:15:25,827
 Just like the 9 V circuit
-in the open circuit example.
+in the open-circuit example.
 
 303
 00:15:25,907 --> 00:15:29,447
@@ -1479,11 +1480,11 @@ If you subscribe to the channel,
 you won't miss Part 3.
 
 327
-00:16:36,623 --> 00:16:39,063
+00:16:36,623 --> 00:16:38,890
 In Part 3, we'll see what voltage is,
 
 328
-00:16:39,143 --> 00:16:43,323
+00:16:38,970 --> 00:16:43,323
 what a short circuit guarantees us,
-and the ideal source.
+and what an ideal source is.
 

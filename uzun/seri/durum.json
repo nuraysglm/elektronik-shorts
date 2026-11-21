@@ -166,13 +166,17 @@
     {
       "tarih": "2026-11-21T09:50Z",
       "not": "Cumartesi düzenli çalışma: B1 yayında (https://www.youtube.com/watch?v=-WUmNv5spAU; Metricool PUBLISHED); panel seri + soru bankası güncellendi. B3 iş emri M tamamlandı: dünkü cümle üretimi (pBjbSn4ea44AuH4YeMqm) curl ile indirildi, parça 5'e eklendi (+0,94 sn, ses_m.py), zamanlama-5 yeniden; vurgu taraması 4 ihlal → düzeltildi (p1 kuyruk 0,95; p5 89,40'ta 1,1 sn duraklama + üstü çizme E(22)'ye; kutu fd 0,5), 32 işaret ≥1,06 sn; p2 kuyruk 1,9 (abone sonrası bekleme 0,34 sn); p4/p5 render + QC; birleştirme + onaylı intro (introlu.py, T0 46,0): 14:57,2, −16,0 LUFS; 51 kare; yayin.json zaman damgaları (zaman_m.py) + EN; TR/EN altyazı (alt ajan + bağımsız denetim). onaylar/uzun-1-3 yeniden bekliyor. Kredi harcanmadı, planlama yok."
+    },
+    {
+      "tarih": "2026-11-21T10:10Z",
+      "not": "B2 TR+EN altyazı + İngilizce başlık/açıklama (iş emri P: B2 standart son adım) — bağımsız denetimden geçti. B3 altyazısı da denetlendi. Kilit kaldırıldı."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
   "toplam_ses_sn": 788.64,
   "tahmini_video_dk": 15.3,
   "acik_sorular": [],
-  "sonraki_is": "B2 altyazı (bu çalışma sürüyor) → B2 planlaması 23.11 (genel müdür). B3 video onayı. B1 Studio hatırlatmaları (liste, bitiş ekranı, bilgi kartı, ilk yorum sabitle, altyazı yükleme). D2B1 sesi sprintte.",
+  "sonraki_is": "B2 planlaması 23.11 (genel müdür; altyazılar Studio'da kanal sahibince yüklenir). B3 video onayı (onaylar/uzun-1-3). B1 Studio hatırlatmaları (liste, bitiş ekranı, bilgi kartı, ilk yorum sabitle, altyazı yükleme). D2B1 sesi sprintte.",
   "not": "B1 onaylı (planlama akşam). B2 onaylı (25.11). B3 video + kapak onayı bekliyor. D2B1 metin onaylı, ses sırası bekliyor.",
   "metin_onayi": {
     "durum": "onaylandi",
@@ -233,7 +237,12 @@
     "sure": "17:03,8; −16,1 LUFS; tepe −1,8 dBTP; 37,4 MB (iş emri N + onaylı Blender intro)",
     "abone_anlari": "4:42,5 ve 16:33,7",
     "muzik": "İş emri F kuralı uygulandı 19.11 23:55Z (tahta/muzik_f.sh, T0 37,5): 0:37,5–0:40,5 müzik tek başına −17,8 LUFS, selam 0:40,8; bitiş ekranı 16:35–16:55,6 müzikli −20,2 LUFS, sessiz an yok. yayin.json +3 sn.",
-    "is_emri_n": "UYGULANDI 20.11 20:25Z: abone sonrası bekleme −1,0 sn; vurgu kuralı 6 ihlal düzeltildi (12:15 → 12:23,7 çember biter / 12:24,8 silme; 13:49 → 13:56,8 / 13:57,9); onaylı Blender intro 6-S akışıyla (37,5 sn); yayin.json zaman damgaları güncellendi; onaylar/uzun-1-2 yeniden 'bekliyor'. B1 (intro'lu) ve B3 taraması yalnızca rapor (panel bolumler)."
+    "is_emri_n": "UYGULANDI 20.11 20:25Z: abone sonrası bekleme −1,0 sn; vurgu kuralı 6 ihlal düzeltildi (12:15 → 12:23,7 çember biter / 12:24,8 silme; 13:49 → 13:56,8 / 13:57,9); onaylı Blender intro 6-S akışıyla (37,5 sn); yayin.json zaman damgaları güncellendi; onaylar/uzun-1-2 yeniden 'bekliyor'. B1 (intro'lu) ve B3 taraması yalnızca rapor (panel bolumler).",
+    "altyazi": {
+      "tr": "media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-2.tr.srt",
+      "en": "media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-2.en.srt",
+      "not": "21.11: 299/328 kart, bağımsız denetim (kritik yok; 1 önemli birim bölünmesi + 19 EN ifade düzeltildi); 44/45 konuşma başlangıcı ≤0,2 sn; yayin.json en"
+    }
   },
   "is_emri_c": "uzun/seri/ders-01/bolum-1/is-emri-20261119-c.md — UYGULANDI 19.11 14:40Z",
   "icerik": {
@@ -305,10 +314,7 @@
   "is_emri_d": "uzun/seri/ders-01/bolum-1/is-emri-20261119-d.md — UYGULANDI 19.11 20:00Z",
   "muzik": "UYGULANDI 19.11 23:35Z (tahta/muzik_f.sh; muziksiz kaynak 920a14d): intro kartının başına 3 sn eklendi (kart ilk 3 sn'de 2 kat yavaş yazılır), müzik 0:33–0:36 tek başına −17,8 LUFS; selam 0:36,26'da başlar, müzik ~8 dB altına iner, 0:41'de biter. Bitiş ekranı 15:00,4–15:21 boyunca müzik (açılış 8 sn → kapanış 10 sn → açılış başı), −20,2 LUFS, ≥1 sn sessizlik yok; son 2 sn kararma. Birleşik 15:21,0, −16,1 LUFS, tepe −1,9 dBTP, 30,9 MB. yayin.json zaman damgaları +3 sn.",
   "is_emri_e": "UZUN.md 4 — UYGULANDI 19.11 22:30Z (tahta/muzik_ekle.sh; görüntü ve konuşma değişmedi, kredi yok)",
-  "kilit": {
-    "baslangic": "2026-11-21T09:25Z",
-    "oturum": "duzenli-cmt-0913"
-  },
+  "kilit": null,
   "bolum_3": {
     "adim": "video_onayi",
     "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
