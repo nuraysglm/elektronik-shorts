@@ -33,6 +33,19 @@ for c in d['cizgiler']:
     b = c['bb']
     if b[2] > X1 or b[3] > NY1 or b[1] < Y0 or b[0] < X0 - 10: hata.append(f"nesne güvenli alan: grup {c['g']} {b}")
 rap.append(f"güvenli alan: {len(d['yazilar'])} yazı x {X0}-{X1}, y {Y0}-{Y1}; {len(d['cizgiler'])} çizgi y <= {NY1}")
+# sabit ders etiketi (kanal sahibi 21.11.2026): 0 sn'den sona kadar, üst güvenli alanın içinde, içerikle arasında >= 15 px
+et = [y for y in d['yazilar'] if y['g'] == 'etiket']
+if len(et) != 1 or et[0]['t0'] != 0 or et[0]['t1'] is not None: hata.append(f'etiket: 0 sn - son sabit değil {et}')
+else:
+    eb = et[0]['box']; mg = 9e9
+    for y in d['yazilar']:
+        if y['g'] == 'etiket': continue
+        b = y['box']
+        if b[0] < eb[2] and eb[0] < b[2]: mg = min(mg, b[1] - eb[3])
+    for c in d['cizgiler']:
+        b = c['bb']
+        if b[0] < eb[2] + 20 and eb[0] - 20 < b[2]: mg = min(mg, b[1] - eb[3])
+    (hata if mg < 15 or eb[1] < Y0 else rap).append(f"etiket '{et[0]['s']}' kutu {eb}, 0 sn - son ({DUR:.2f}); içeriğe en yakın dikey boşluk {mg} px (>= 15)")
 # yazı-yazı çakışma (aynı anda görünenler)
 ys = d['yazilar']
 def vis(y): return (y['t0'], y['t1'] if y['t1'] is not None else DUR)

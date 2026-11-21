@@ -103,5 +103,9 @@
  "muzik": "yok (Shorts kuralı)",
  "ses": "Ders 1 - Bölüm 1 seslendirmesinden kesit; yeni seslendirme yok, ElevenLabs kredisi 0",
  "kategori": "EDUCATION",
- "durum": "deneme — planlama yok"
+ "durum": "onaylandı — yayın planlamasını genel müdür yapar",
+ "etiket": {
+  "metin": "Devre Teorisi I · Ders 1, Bölüm 1",
+  "not": "Kanal sahibi 21.11.2026 08:50: beğendi, yayınlansın; tek düzeltme olarak 0. saniyeden sona kadar üstte sabit ders etiketi eklendi (Patrick Hand 38 px, koyu gri #4a4f57, kutu y 220–267, üst güvenli alanın içinde). Tahta içeriği etiketin altına kaydırıldı; ses birebir aynı (yeniden kodlanmadı), süre değişmedi. Bu iki Short için AGENT.md 4a-6 'ders etiketi yok' kuralının kanal sahibi kararıyla istisnası."
+ }
 }

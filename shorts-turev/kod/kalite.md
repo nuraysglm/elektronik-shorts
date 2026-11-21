@@ -49,3 +49,47 @@ format|duration=58.901000
 - Son kart 3,0 sn (kanal sahibinin 2–3 sn kuralı); okuma süresi formülü 9 kelime için 4,35 sn verir — kart başlık niteliğinde, kural önceliği kanal sahibinin özel kuralında.
 - İçerik: bütün sayılar uzun videonun doğrulanmış metninden (uzun/seri/ders-01/bolum-1/dogruluk.md); yeni iddia yok. İlk yorum sorusu (d1b1-1): 0,25–0,75 s penceresi → +2,5 − 2,5 = 0 mC → 0.
 - Ses: Ders 1 - Bölüm 1 parça 1, 2, 6 mp3'lerinden cümle sınırlarında kesit (ses_kur.py), kesit arası 0,4 sn; kesit zamanları intro'lu yayın sürümüyle çapraz korelasyonla doğrulandı (sapma ≤ 0,05 sn). Yeni seslendirme yok, kredi 0. Müzik yok.
+
+## Etiket düzeltmesi — 21.11.2026 (kanal sahibi 08:50: beğendi, yayınlansın)
+```
+süre 57.39 sn (50-60, kesin üst sınır 60,0)
+(a) vurgu -> silme: 3 vurgu, en kısa 1.28 sn
+(b) abone kartı/çağrısı yok (Short) -> uygulanmaz
+(c) "kanca" kelimesi: 0 (ekranda 30 yazı, seste 15 cümle tarandı)
+(d) gerilim seviyesi çizimi yok (yalnızca akım/yük grafikleri) -> geçti
+(e) intro: Short'ta intro yok (türev Short kuralı; müzik yok) -> uygulanmaz
+güvenli alan: 30 yazı x 65-929, y 211-1306; 19 çizgi y <= 1382
+etiket 'Devre Teorisi I · Ders 1, Bölüm 1' kutu [109, 220, 555, 267], 0 sn - son (57.39); içeriğe en yakın dikey boşluk 21 px (>= 15)
+okuma süresi: 30 yazı kontrol edildi (1,2 + 0,35 x kelime)
+tek kalem çakışması 0, gecikme > 0,6 sn: 0
+QC otomatik: GEÇTİ
+
+stream|codec_name=h264|width=1080|height=1920|r_frame_rate=30/1
+stream|codec_name=aac|r_frame_rate=0/0
+format|duration=57.408000
+    I:         -15.9 LUFS
+    Peak:       -1.8 dBFS
+
+süre 58.89 sn (50-60, kesin üst sınır 60,0)
+(a) vurgu -> silme: 4 vurgu, en kısa 1.43 sn
+(b) abone kartı/çağrısı yok (Short) -> uygulanmaz
+(c) "kanca" kelimesi: 0 (ekranda 27 yazı, seste 17 cümle tarandı)
+(d) gerilim seviyesi çizimi yok (yalnızca akım/yük grafikleri) -> geçti
+(e) intro: Short'ta intro yok (türev Short kuralı; müzik yok) -> uygulanmaz
+güvenli alan: 27 yazı x 65-929, y 211-1306; 13 çizgi y <= 1382
+etiket 'Devre Teorisi I · Ders 1, Bölüm 1' kutu [109, 220, 555, 267], 0 sn - son (58.89); içeriğe en yakın dikey boşluk 21 px (>= 15)
+okuma süresi: 27 yazı kontrol edildi (1,2 + 0,35 x kelime)
+tek kalem çakışması 0, gecikme > 0,6 sn: 0
+QC otomatik: GEÇTİ
+
+stream|codec_name=h264|width=1080|height=1920|r_frame_rate=30/1
+stream|codec_name=aac|r_frame_rate=0/0
+format|duration=58.901000
+    I:         -15.9 LUFS
+    Peak:       -1.7 dBFS
+
+```
+- Etiket "Devre Teorisi I · Ders 1, Bölüm 1": 0 sn'den sona kadar sabit (yazılmaz/silinmez), Patrick Hand 38 px, koyu gri, kutu y 220–267 (üst %11 = 211 px'in altında). Tahta içeriği aşağı kaydırıldı (d1b1-1: A +30 px, B +60 px ve grafik kutusu 1000–1215; d1b1-2: A satır aralıkları sıkıştırıldı, B +45 px). Etiket ile içerik arası en az 21 px.
+- Ses: eski dosyadaki AAC akışı birebir kopyalandı (bayt düzeyinde aynı); süre değişmedi. Giriş sorusu ve "Dersin tamamı" kartı aynen.
+- Gözle: ilk (0 sn), orta ve son kareler YouTube maskesiyle ve tam çözünürlük kırpıntısıyla incelendi; etiket okunur, "·" yazı tipinde var, çakışma/taşma yok.
+- Not: AGENT.md 4a-6 ("ders etiketi yok") kuralına bu iki türev Short için kanal sahibinin 21.11 kararıyla istisna.
