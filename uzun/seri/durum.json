@@ -259,7 +259,8 @@
       "dogrulama": "uzun/seri/ders-02/bolum-1/icerik_dogrula.py",
       "dal": "claude/icerik-2-1-20261119",
       "denetim": "bağımsız denetim: kritik yok, 4 önemli + küçükler düzeltildi",
-      "not": "Metin ve ders-02/plan.md henüz yok (inceleme.md yok). Önerilen bölümleme B1 [1:26–15:12], B2 [15:12–31:33], B3 [31:35–50:59]. 'Uygulamada: gerçek tel, gerçek buton, gerçek pil' (Energizer E91 iç direnç 150–300 mΩ; C&K PTS645 50 mA/12 V DC, ≤100 mΩ; Alpha Wire 3071 22 AWG 16,2 Ω/1000 ft), ~3:30."
+      "not": "Metin ve ders-02/plan.md henüz yok (inceleme.md yok). Önerilen bölümleme B1 [1:26–15:12], B2 [15:12–31:33], B3 [31:35–50:59]. 'Uygulamada: gerçek tel, gerçek buton, gerçek pil' (Energizer E91 iç direnç 150–300 mΩ; C&K PTS645 50 mA/12 V DC, ≤100 mΩ; Alpha Wire 3071 22 AWG 16,2 Ω/1000 ft), ~3:30.",
+      "inceleme": "uzun/seri/ders-02/bolum-1/inceleme.md (21.11.2026: Parça 7 için daha güçlü yorum sorusu önerisi)"
     },
     "2-3": {
       "durum": "hazir",
@@ -276,6 +277,22 @@
       "dosya": "uzun/seri/ders-02/bolum-2/icerik.md",
       "dal": "claude/icerik-2-2-20261119",
       "not": "Paket yalnızca bu dalda; main'e birleşmedi (20.11 İçerik Ajanı notu). Uygulamada: TI INA180, LM358."
+    },
+    "3-3": {
+      "durum": "hazir",
+      "tarih": "2026-11-21",
+      "dosya": "uzun/seri/ders-03/bolum-3/icerik.md",
+      "dogrulama": "uzun/seri/ders-03/bolum-3/icerik_dogrula.py",
+      "dal": "claude/icerik-3-3-20261121",
+      "denetim": "bağımsız denetim 2 tur: kritik yok; 1. tur 6 önemli + 11 küçük, 2. tur 2 önemli + 1 küçük düzeltildi",
+      "not": "Metin henüz yok (inceleme.md yok). 'Uygulamada: Multimetre bir test kaynağıdır; yüzlerce voltluk hatta seri direnç zinciri' (Fluke 87 V ohm kademesi: açık devre < 7,9 V, tipik kısa devre akımı 1 mA…0,5 µA, 'paralel yollar' uyarısı; Vishay D/CRCW0603 e3 U_max 75 V: 200 V için 3 × 330 kΩ, her biri 66,7 V), ~3:30. En sık yapılan hata: art arda çizilen dirençleri seri sanmak (Engelhardt & Beichner 2004)."
+    },
+    "soru-bankasi": {
+      "durum": "hazir",
+      "tarih": "2026-11-21",
+      "dosya": "uzun/seri/soru-bankasi.md",
+      "cozumler": "Drive: 'Soru Bankası – Çözümler' (D3B1) + 'Soru Bankası – Çözümler (2)' 1rZ49TX7D2ED_pluekBVA7ucrTlbWanTbxLIdRMuubrM (D1B1–D2B3, D3B2, D3B3)",
+      "not": "Drive bağlantısı var olan Google dokümanına yazı ekleyemediği için ikinci doküman açıldı."
     }
   },
   "b2_not": "19.11 kanal sahibi: B2 metin onayı bekletiliyor; İçerik Ajanı'nın paketi ve incelemesi gelince Uzun Video Ajanı metni günceller ve onaya yeniden sunar.",
