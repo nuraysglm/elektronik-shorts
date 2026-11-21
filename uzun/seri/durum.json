@@ -170,6 +170,10 @@
     {
       "tarih": "2026-11-21T10:10Z",
       "not": "B2 TR+EN altyazı + İngilizce başlık/açıklama (iş emri P: B2 standart son adım) — bağımsız denetimden geçti. B3 altyazısı da denetlendi. Kilit kaldırıldı."
+    },
+    {
+      "tarih": "2026-11-21T15:50Z",
+      "not": "Cumartesi 15:13 düzenli çalışma: D2B1 selam + parça 1–6 sesleri (sprintte üretilmiş) curl ile indirildi — Drive yüklemesi gerekmedi, onaylar/ses-2-1 kapatıldı; normalize (−19,5 LUFS) + zamanlama 1–6 (183/183 güçlü sınır). Kredi harcanmadı, planlama yok. Dal claude/uzun-2-1-20261121."
     }
   ],
   "elevenlabs_flow": "Fz7URx4Jqm7gKH0LZDfT",
@@ -375,8 +379,8 @@
   },
   "is_emri_g": "ÜRETİLDİ 19.11 23:40Z: uzun/intro/ (intro.js, render.mjs, NOTLAR.md); panelde onaylar/intro-1 bekliyor.",
   "ders_2_bolum_1": {
-    "adim": "metin_onayi",
-    "yayin": "takvim: henüz slot yok (Ders 1'den sonraki ilk slot; 14.12.2026 haftası şartlı Pzt/Per, değilse Çarşamba)",
+    "adim": "ses_zamanlama",
+    "yayin": "2026-11-28T13:00:00 Europe/London (16:00 TR)",
     "plan": "uzun/seri/ders-02/plan.md",
     "metin": "uzun/seri/ders-02/bolum-1/metin.md",
     "dal": "claude/uzun-2-1-20261120",
@@ -384,8 +388,11 @@
     "tahmini_dk": 14.4,
     "surum": 1,
     "onay_istegi": "onaylar/metin-2-1 bekliyor (20.11 gece 3)",
-    "not": "Metin onaylı. Ses henüz ÜRETİLMEDİ: kural 1b-4 (en fazla iki bölüm önde) — D2B1, B1 yayınlanmadan ve B3 sesi olmadan 3 bölüm önde olur. Sıra: B3 metin onayı → B3 ses → D2B1 ses.",
-    "metin_onayi": "onaylandı 2026-11-20T08:29:47Z (onaylar/metin-2-1)"
+    "not": "Sıradaki: parça 7 sesi → tahta/render → birleştirme → onaylar/uzun-2-1 (en geç 26.11 13:00 Londra).",
+    "metin_onayi": "onaylandı 2026-11-20T08:29:47Z (onaylar/metin-2-1)",
+    "dal_ses": "claude/uzun-2-1-20261121",
+    "ses": "selam + parça 1–6 tamam 21.11 15:40Z (11.677 kredi, sprintte üretildi; curl ile indirildi, uzun/seri/ders-02/bolum-1/ses/); parça 7 metin-2-1-p7 kararını bekliyor",
+    "zamanlama": "parça 1–6 tamam (tahta/zamanlama-1..6.json; 183/183 güçlü sınır); abone 1: parça 3 42,43 sn"
   },
   "is_emri_h": "UYGULANDI 20.11 09:25Z: B1 ve B2 için 3'er fotoğrafsız kapak + başlık (uzun/kapak-6-0/, media/uzun/kapak-secenek/secenekler.json); panelde onaylar/kapak-1-1 ve kapak-1-2. Canva birleştirmesi yapılmadı (edit-design kaydı kanal sahibinin önizleme onayını ister; gözetimsiz çalışma). Karar gelmezse B1 eski kapak/başlıkla planlanır.",
   "is_emri_i": "ÜRETİLDİ 20.11: uzun/intro-pcb/; panelde onaylar/intro-2.",
