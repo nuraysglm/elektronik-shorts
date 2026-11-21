@@ -8,11 +8,11 @@
 | 4 | Minterm/maxterm, kanonik biçimler | 4 | 4 | Evet (Python + bağımsız denetçi) | 19.11.2026 |
 | 5 | Karnaugh haritaları, NAND/NOR gerçekleme | 6 | 6 | Evet (Python + bağımsız denetçi) | 20.11.2026 |
 | 6 | Kombinezonal tasarım, toplayıcı/çıkarıcı | 5 | 5 | Evet (Python + bağımsız denetçi) | 20.11.2026 |
-| 7 | Kod çözücü/kodlayıcı, MUX/DEMUX | 6 | 0 | — | — |
-| 8 | Latch ve flip-flop'lar, zamanlama | 6 | 0 | — | — |
+| 7 | Kod çözücü/kodlayıcı, MUX/DEMUX | 6 | 6 | Evet (Python + bağımsız denetçi) | 21.11.2026 |
+| 8 | Latch ve flip-flop'lar, zamanlama | 6 | 6 | Evet (Python + bağımsız denetçi) | 21.11.2026 |
 | 9 | Basit ardışıl devre analizi | 4 | 0 | — | — |
 | 10 | Karma deneme | 6 | 0 | — | — |
 
-**Toplam: 28 / 50** · Kanal sahibi kontrolü: bekliyor (Bölüm 1–6)
+**Toplam: 40 / 50** · Kanal sahibi kontrolü: bekliyor (Bölüm 1–8)
 
-Doğrulama özeti: `urun/dogrulama/2026-11-18.md`, `urun/dogrulama/2026-11-19.md`, `urun/dogrulama/2026-11-20.md`
+Doğrulama özeti: `urun/dogrulama/2026-11-18.md`, `urun/dogrulama/2026-11-19.md`, `urun/dogrulama/2026-11-20.md`, `urun/dogrulama/2026-11-21.md`
