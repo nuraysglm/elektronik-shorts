@@ -1,0 +1,3184 @@
+{
+ "yontem": "RMS enerji (10 ms, esik -38 dBFS, en az 0,10 sn) duraklamalari + hece sayisina gore dinamik programlama; kelime zamanlari cumle icinde hece sayisiyla orantili tahmindir; konusma tanima yok, ses dinlenmedi",
+ "ses_suresi": 159.52,
+ "ortalama_hece_suresi": 0.1239,
+ "belirsiz_sinirlar": [],
+ "kontroller": [
+  "42 cumle sinirinin 42 tanesinde: duraklama enerjisi < -38 dBFS ve onceki/sonraki 0,3 sn en az 8 dB daha yuksek",
+  "noktalama cumle 2 'ederiz:' tahmin 7.25 sn; en yakin ic duraklama (7.29, 7.53); fark 0.16 sn",
+  "noktalama cumle 3 'sayılır;' tahmin 10.76 sn; en yakin ic duraklama (10.95, 11.21); fark 0.32 sn",
+  "noktalama cumle 5 'gibi,' tahmin 18.89 sn; en yakin ic duraklama (19.02, 19.16); fark 0.20 sn",
+  "noktalama cumle 7 'gibi,' tahmin 29.36 sn; en yakin ic duraklama (29.04, 29.26); fark 0.21 sn",
+  "noktalama cumle 7 'sonluysa,' tahmin 31.29 sn; en yakin ic duraklama (31.17, 31.27); fark 0.07 sn",
+  "noktalama cumle 9 'bu:' tahmin 39.31 sn; en yakin ic duraklama (39.48, 39.73); fark 0.29 sn",
+  "noktalama cumle 13 'açmak,' tahmin 51.61 sn; en yakin ic duraklama (51.86, 51.96); fark 0.30 sn",
+  "noktalama cumle 15 'anahtar,' tahmin 56.41 sn; en yakin ic duraklama (56.14, 56.36); fark 0.16 sn",
+  "noktalama cumle 15 'anahtardır;' tahmin 59.28 sn; en yakin ic duraklama (58.84, 59.11); fark 0.30 sn",
+  "noktalama cumle 16 'anahtar,' tahmin 61.06 sn; en yakin ic duraklama (61.07, 61.29); fark 0.12 sn",
+  "noktalama cumle 16 'anahtardır;' tahmin 62.99 sn; en yakin ic duraklama (62.76, 62.86); fark 0.18 sn",
+  "noktalama cumle 18 'şey,' tahmin 69.24 sn; en yakin ic duraklama (69.04, 69.23); fark 0.10 sn",
+  "noktalama cumle 19 'sıfırdır,' tahmin 72.24 sn; en yakin ic duraklama (72.36, 72.58); fark 0.23 sn",
+  "noktalama cumle 19 'davranır;' tahmin 73.75 sn; en yakin ic duraklama (73.91, 74.25); fark 0.33 sn",
+  "noktalama cumle 20 'şey,' tahmin 76.70 sn; en yakin ic duraklama (76.76, 76.9); fark 0.13 sn",
+  "noktalama cumle 22 'akımı,' tahmin 84.74 sn; en yakin ic duraklama (84.44, 84.63); fark 0.20 sn",
+  "noktalama cumle 25 'kaynağı,' tahmin 93.03 sn; en yakin ic duraklama (93.06, 93.29); fark 0.15 sn",
+  "noktalama cumle 25 'anahtar,' tahmin 95.68 sn; en yakin ic duraklama (95.47, 95.57); fark 0.16 sn",
+  "noktalama cumle 27 'gibidir,' tahmin 101.98 sn; en yakin ic duraklama (101.57, 101.86); fark 0.27 sn",
+  "noktalama cumle 29 'Akım,' tahmin 108.81 sn; en yakin ic duraklama (108.84, 109.06); fark 0.14 sn",
+  "noktalama cumle 29 'kiloohm,' tahmin 111.26 sn; en yakin ic duraklama (111.02, 111.25); fark 0.13 sn",
+  "noktalama cumle 31 'devredir,' tahmin 115.44 sn; en yakin ic duraklama (115.49, 115.73); fark 0.17 sn",
+  "noktalama cumle 32 'gerilim,' tahmin 118.20 sn; en yakin ic duraklama (118.23, 118.44); fark 0.14 sn",
+  "noktalama cumle 32 'akım:' tahmin 119.42 sn; en yakin ic duraklama (119.44, 119.69); fark 0.14 sn",
+  "noktalama cumle 32 'sıfır,' tahmin 121.65 sn; en yakin ic duraklama (121.28, 121.6); fark 0.21 sn",
+  "noktalama cumle 33 'gerilimde,' tahmin 125.26 sn; en yakin ic duraklama (125.31, 125.53); fark 0.16 sn",
+  "noktalama cumle 35 'kalır;' tahmin 132.07 sn; en yakin ic duraklama (132.08, 132.43); fark 0.19 sn",
+  "noktalama cumle 37 'etti:' tahmin 141.09 sn; en yakin ic duraklama (141.09, 141.37); fark 0.14 sn",
+  "noktalama cumle 37 'gerilimi,' tahmin 142.45 sn; en yakin ic duraklama (142.59, 142.83); fark 0.26 sn",
+  "noktalama cumle 40 'devre,' tahmin 152.37 sn; en yakin ic duraklama (152.69, 152.91); fark 0.43 sn",
+  "noktalama cumle 41 'devre,' tahmin 155.52 sn; en yakin ic duraklama (155.69, 155.95); fark 0.30 sn",
+  "noktalama cumle 41 'tel,' tahmin 156.37 sn; en yakin ic duraklama (155.69, 155.95); fark 0.55 sn",
+  "hece hizi (sesli sure uzerinden): ortalama 8.11, std 0.74, en dusuk 5.62 (cumle 0), en yuksek 9.52 (cumle 26)"
+ ],
+ "cumleler": [
+  {
+   "p": 1,
+   "text": "İlk eleman tel.",
+   "last": false,
+   "shorts": false,
+   "syl": 5,
+   "no": 0,
+   "start": 0.04,
+   "end": 1.07,
+   "pause_after": 0.46,
+   "voiced": 0.89,
+   "syl_per_s": 5.62,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "İlk",
+     "t0": 0.04,
+     "t1": 0.28
+    },
+    {
+     "w": "eleman",
+     "t0": 0.28,
+     "t1": 0.9
+    },
+    {
+     "w": "tel.",
+     "t0": 0.9,
+     "t1": 1.07
+    }
+   ],
+   "sinir_db": {
+    "once": -34.7,
+    "duraklama": -75.8,
+    "sonra": -23.1
+   }
+  },
+  {
+   "p": 1,
+   "text": "Gerçek bir telin küçük de olsa bir direnci var.",
+   "last": false,
+   "shorts": false,
+   "syl": 15,
+   "no": 1,
+   "start": 1.53,
+   "end": 4.17,
+   "pause_after": 0.39,
+   "voiced": 2.01,
+   "syl_per_s": 7.46,
+   "inner_pauses": [
+    [
+     1.91,
+     2.02
+    ],
+    [
+     2.53,
+     2.7
+    ],
+    [
+     2.87,
+     3.0
+    ]
+   ],
+   "words": [
+    {
+     "w": "Gerçek",
+     "t0": 1.53,
+     "t1": 1.84
+    },
+    {
+     "w": "bir",
+     "t0": 1.84,
+     "t1": 2.09
+    },
+    {
+     "w": "telin",
+     "t0": 2.09,
+     "t1": 2.43
+    },
+    {
+     "w": "küçük",
+     "t0": 2.43,
+     "t1": 3.03
+    },
+    {
+     "w": "de",
+     "t0": 3.03,
+     "t1": 3.17
+    },
+    {
+     "w": "olsa",
+     "t0": 3.17,
+     "t1": 3.47
+    },
+    {
+     "w": "bir",
+     "t0": 3.47,
+     "t1": 3.61
+    },
+    {
+     "w": "direnci",
+     "t0": 3.61,
+     "t1": 4.02
+    },
+    {
+     "w": "var.",
+     "t0": 4.02,
+     "t1": 4.17
+    }
+   ],
+   "sinir_db": {
+    "once": -29.6,
+    "duraklama": -71.3,
+    "sonra": -18.6
+   }
+  },
+  {
+   "p": 1,
+   "text": "Devre çözerken ise teli ideal kabul ederiz: direnci sıfır.",
+   "last": false,
+   "shorts": false,
+   "syl": 22,
+   "no": 2,
+   "start": 4.56,
+   "end": 8.2,
+   "pause_after": 0.44,
+   "voiced": 2.77,
+   "syl_per_s": 7.94,
+   "inner_pauses": [
+    [
+     5.73,
+     5.86
+    ],
+    [
+     7.29,
+     7.53
+    ]
+   ],
+   "words": [
+    {
+     "w": "Devre",
+     "t0": 4.56,
+     "t1": 4.82
+    },
+    {
+     "w": "çözerken",
+     "t0": 4.82,
+     "t1": 5.3
+    },
+    {
+     "w": "ise",
+     "t0": 5.3,
+     "t1": 5.58
+    },
+    {
+     "w": "teli",
+     "t0": 5.58,
+     "t1": 5.97
+    },
+    {
+     "w": "ideal",
+     "t0": 5.97,
+     "t1": 6.43
+    },
+    {
+     "w": "kabul",
+     "t0": 6.43,
+     "t1": 6.74
+    },
+    {
+     "w": "ederiz:",
+     "t0": 6.74,
+     "t1": 7.25
+    },
+    {
+     "w": "direnci",
+     "t0": 7.25,
+     "t1": 7.87
+    },
+    {
+     "w": "sıfır.",
+     "t0": 7.87,
+     "t1": 8.2
+    }
+   ],
+   "sinir_db": {
+    "once": -35.1,
+    "duraklama": -68.7,
+    "sonra": -29.4
+   }
+  },
+  {
+   "p": 1,
+   "text": "Kapasitansı ve endüktansı da sıfır sayılır; bu iki büyüklüğü ilerideki derslerde tanıyacağız.",
+   "last": false,
+   "shorts": false,
+   "syl": 36,
+   "no": 3,
+   "start": 8.64,
+   "end": 13.67,
+   "pause_after": 0.4,
+   "voiced": 3.93,
+   "syl_per_s": 9.16,
+   "inner_pauses": [
+    [
+     9.67,
+     9.78
+    ],
+    [
+     10.95,
+     11.21
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kapasitansı",
+     "t0": 8.64,
+     "t1": 9.34
+    },
+    {
+     "w": "ve",
+     "t0": 9.34,
+     "t1": 9.45
+    },
+    {
+     "w": "endüktansı",
+     "t0": 9.45,
+     "t1": 10.0
+    },
+    {
+     "w": "da",
+     "t0": 10.0,
+     "t1": 10.11
+    },
+    {
+     "w": "sıfır",
+     "t0": 10.11,
+     "t1": 10.32
+    },
+    {
+     "w": "sayılır;",
+     "t0": 10.32,
+     "t1": 10.76
+    },
+    {
+     "w": "bu",
+     "t0": 10.76,
+     "t1": 10.89
+    },
+    {
+     "w": "iki",
+     "t0": 10.89,
+     "t1": 11.37
+    },
+    {
+     "w": "büyüklüğü",
+     "t0": 11.37,
+     "t1": 11.97
+    },
+    {
+     "w": "ilerideki",
+     "t0": 11.97,
+     "t1": 12.59
+    },
+    {
+     "w": "derslerde",
+     "t0": 12.59,
+     "t1": 12.96
+    },
+    {
+     "w": "tanıyacağız.",
+     "t0": 12.96,
+     "t1": 13.67
+    }
+   ],
+   "sinir_db": {
+    "once": -33.3,
+    "duraklama": -72.1,
+    "sonra": -16.1
+   }
+  },
+  {
+   "p": 1,
+   "text": "Bu varsayım hesaplarımızı çok sadeleştirir.",
+   "last": false,
+   "shorts": false,
+   "syl": 16,
+   "no": 4,
+   "start": 14.07,
+   "end": 16.49,
+   "pause_after": 0.34,
+   "voiced": 2.02,
+   "syl_per_s": 7.92,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 14.07,
+     "t1": 14.2
+    },
+    {
+     "w": "varsayım",
+     "t0": 14.2,
+     "t1": 14.6
+    },
+    {
+     "w": "hesaplarımızı",
+     "t0": 14.6,
+     "t1": 15.52
+    },
+    {
+     "w": "çok",
+     "t0": 15.52,
+     "t1": 15.7
+    },
+    {
+     "w": "sadeleştirir.",
+     "t0": 15.7,
+     "t1": 16.49
+    }
+   ],
+   "sinir_db": {
+    "once": -37.6,
+    "duraklama": -71.1,
+    "sonra": -22.3
+   }
+  },
+  {
+   "p": 1,
+   "text": "Birazdan veri sayfasında göreceğimiz gibi, masa üstündeki küçük devrelerde gerçeğe de çok yakındır.",
+   "last": true,
+   "shorts": false,
+   "syl": 36,
+   "no": 5,
+   "start": 16.83,
+   "end": 22.22,
+   "pause_after": 0.28,
+   "voiced": 4.32,
+   "syl_per_s": 8.33,
+   "inner_pauses": [
+    [
+     19.02,
+     19.16
+    ],
+    [
+     19.49,
+     19.62
+    ],
+    [
+     20.2,
+     20.31
+    ]
+   ],
+   "words": [
+    {
+     "w": "Birazdan",
+     "t0": 16.83,
+     "t1": 17.22
+    },
+    {
+     "w": "veri",
+     "t0": 17.22,
+     "t1": 17.46
+    },
+    {
+     "w": "sayfasında",
+     "t0": 17.46,
+     "t1": 18.01
+    },
+    {
+     "w": "göreceğimiz",
+     "t0": 18.01,
+     "t1": 18.61
+    },
+    {
+     "w": "gibi,",
+     "t0": 18.61,
+     "t1": 18.89
+    },
+    {
+     "w": "masa",
+     "t0": 18.89,
+     "t1": 19.27
+    },
+    {
+     "w": "üstündeki",
+     "t0": 19.27,
+     "t1": 19.95
+    },
+    {
+     "w": "küçük",
+     "t0": 19.95,
+     "t1": 20.41
+    },
+    {
+     "w": "devrelerde",
+     "t0": 20.41,
+     "t1": 20.91
+    },
+    {
+     "w": "gerçeğe",
+     "t0": 20.91,
+     "t1": 21.3
+    },
+    {
+     "w": "de",
+     "t0": 21.3,
+     "t1": 21.42
+    },
+    {
+     "w": "çok",
+     "t0": 21.42,
+     "t1": 21.58
+    },
+    {
+     "w": "yakındır.",
+     "t0": 21.58,
+     "t1": 22.22
+    }
+   ],
+   "sinir_db": {
+    "once": -36.3,
+    "duraklama": -72.8,
+    "sonra": -18.7
+   }
+  },
+  {
+   "p": 2,
+   "text": "Direnci sıfır olan bir bağlantıyı aslında tanıyoruz.",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 6,
+   "start": 22.5,
+   "end": 25.08,
+   "pause_after": 0.46,
+   "voiced": 2.31,
+   "syl_per_s": 8.23,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Direnci",
+     "t0": 22.5,
+     "t1": 22.87
+    },
+    {
+     "w": "sıfır",
+     "t0": 22.87,
+     "t1": 23.19
+    },
+    {
+     "w": "olan",
+     "t0": 23.19,
+     "t1": 23.44
+    },
+    {
+     "w": "bir",
+     "t0": 23.44,
+     "t1": 23.56
+    },
+    {
+     "w": "bağlantıyı",
+     "t0": 23.56,
+     "t1": 24.11
+    },
+    {
+     "w": "aslında",
+     "t0": 24.11,
+     "t1": 24.53
+    },
+    {
+     "w": "tanıyoruz.",
+     "t0": 24.53,
+     "t1": 25.08
+    }
+   ],
+   "sinir_db": {
+    "once": -22.7,
+    "duraklama": -64.0,
+    "sonra": -23.3
+   }
+  },
+  {
+   "p": 2,
+   "text": "Birinci dersin üçüncü bölümünde kısa devre için gördüğümüz gibi, direnç sıfırsa ve akım sonluysa, gerilim de sıfırdır.",
+   "last": false,
+   "shorts": false,
+   "syl": 42,
+   "no": 7,
+   "start": 25.54,
+   "end": 32.63,
+   "pause_after": 0.23,
+   "voiced": 5.66,
+   "syl_per_s": 7.42,
+   "inner_pauses": [
+    [
+     27.23,
+     27.36
+    ],
+    [
+     29.04,
+     29.26
+    ],
+    [
+     31.17,
+     31.27
+    ],
+    [
+     31.44,
+     31.64
+    ]
+   ],
+   "words": [
+    {
+     "w": "Birinci",
+     "t0": 25.54,
+     "t1": 25.97
+    },
+    {
+     "w": "dersin",
+     "t0": 25.97,
+     "t1": 26.24
+    },
+    {
+     "w": "üçüncü",
+     "t0": 26.24,
+     "t1": 26.69
+    },
+    {
+     "w": "bölümünde",
+     "t0": 26.69,
+     "t1": 27.37
+    },
+    {
+     "w": "kısa",
+     "t0": 27.37,
+     "t1": 27.67
+    },
+    {
+     "w": "devre",
+     "t0": 27.67,
+     "t1": 27.94
+    },
+    {
+     "w": "için",
+     "t0": 27.94,
+     "t1": 28.25
+    },
+    {
+     "w": "gördüğümüz",
+     "t0": 28.25,
+     "t1": 28.82
+    },
+    {
+     "w": "gibi,",
+     "t0": 28.82,
+     "t1": 29.36
+    },
+    {
+     "w": "direnç",
+     "t0": 29.36,
+     "t1": 29.66
+    },
+    {
+     "w": "sıfırsa",
+     "t0": 29.66,
+     "t1": 30.15
+    },
+    {
+     "w": "ve",
+     "t0": 30.15,
+     "t1": 30.29
+    },
+    {
+     "w": "akım",
+     "t0": 30.29,
+     "t1": 30.69
+    },
+    {
+     "w": "sonluysa,",
+     "t0": 30.69,
+     "t1": 31.29
+    },
+    {
+     "w": "gerilim",
+     "t0": 31.29,
+     "t1": 31.91
+    },
+    {
+     "w": "de",
+     "t0": 31.91,
+     "t1": 32.04
+    },
+    {
+     "w": "sıfırdır.",
+     "t0": 32.04,
+     "t1": 32.63
+    }
+   ],
+   "sinir_db": {
+    "once": -35.7,
+    "duraklama": -72.4,
+    "sonra": -14.2
+   }
+  },
+  {
+   "p": 2,
+   "text": "Yani ideal tel bir kısa devredir.",
+   "last": false,
+   "shorts": false,
+   "syl": 12,
+   "no": 8,
+   "start": 32.86,
+   "end": 35.05,
+   "pause_after": 0.42,
+   "voiced": 1.63,
+   "syl_per_s": 7.36,
+   "inner_pauses": [
+    [
+     33.19,
+     33.29
+    ],
+    [
+     33.99,
+     34.17
+    ],
+    [
+     34.27,
+     34.38
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yani",
+     "t0": 32.86,
+     "t1": 33.14
+    },
+    {
+     "w": "ideal",
+     "t0": 33.14,
+     "t1": 33.64
+    },
+    {
+     "w": "tel",
+     "t0": 33.64,
+     "t1": 33.86
+    },
+    {
+     "w": "bir",
+     "t0": 33.86,
+     "t1": 34.18
+    },
+    {
+     "w": "kısa",
+     "t0": 34.18,
+     "t1": 34.59
+    },
+    {
+     "w": "devredir.",
+     "t0": 34.59,
+     "t1": 35.05
+    }
+   ],
+   "sinir_db": {
+    "once": -32.8,
+    "duraklama": -66.0,
+    "sonra": -21.6
+   }
+  },
+  {
+   "p": 2,
+   "text": "Bir şemada gördüğün her tel parçası için ilk düşünmen gereken şey bu: bu telin bütün noktaları aynı gerilimde.",
+   "last": true,
+   "shorts": false,
+   "syl": 38,
+   "no": 9,
+   "start": 35.47,
+   "end": 42.09,
+   "pause_after": 0.34,
+   "voiced": 5.34,
+   "syl_per_s": 7.12,
+   "inner_pauses": [
+    [
+     37.77,
+     37.9
+    ],
+    [
+     38.02,
+     38.14
+    ],
+    [
+     39.48,
+     39.73
+    ],
+    [
+     40.67,
+     40.8
+    ],
+    [
+     41.14,
+     41.27
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 35.47,
+     "t1": 35.62
+    },
+    {
+     "w": "şemada",
+     "t0": 35.62,
+     "t1": 36.04
+    },
+    {
+     "w": "gördüğün",
+     "t0": 36.04,
+     "t1": 36.46
+    },
+    {
+     "w": "her",
+     "t0": 36.46,
+     "t1": 36.6
+    },
+    {
+     "w": "tel",
+     "t0": 36.6,
+     "t1": 36.74
+    },
+    {
+     "w": "parçası",
+     "t0": 36.74,
+     "t1": 37.33
+    },
+    {
+     "w": "için",
+     "t0": 37.33,
+     "t1": 37.73
+    },
+    {
+     "w": "ilk",
+     "t0": 37.73,
+     "t1": 38.0
+    },
+    {
+     "w": "düşünmen",
+     "t0": 38.0,
+     "t1": 38.54
+    },
+    {
+     "w": "gereken",
+     "t0": 38.54,
+     "t1": 39.03
+    },
+    {
+     "w": "şey",
+     "t0": 39.03,
+     "t1": 39.17
+    },
+    {
+     "w": "bu:",
+     "t0": 39.17,
+     "t1": 39.31
+    },
+    {
+     "w": "bu",
+     "t0": 39.31,
+     "t1": 39.45
+    },
+    {
+     "w": "telin",
+     "t0": 39.45,
+     "t1": 40.01
+    },
+    {
+     "w": "bütün",
+     "t0": 40.01,
+     "t1": 40.29
+    },
+    {
+     "w": "noktaları",
+     "t0": 40.29,
+     "t1": 41.04
+    },
+    {
+     "w": "aynı",
+     "t0": 41.04,
+     "t1": 41.45
+    },
+    {
+     "w": "gerilimde.",
+     "t0": 41.45,
+     "t1": 42.09
+    }
+   ],
+   "sinir_db": {
+    "once": -34.4,
+    "duraklama": -79.1,
+    "sonra": -22.5
+   }
+  },
+  {
+   "p": 3,
+   "text": "Bu serinin devamı için kanala abone olabilirsin.",
+   "last": true,
+   "shorts": false,
+   "syl": 20,
+   "no": 10,
+   "start": 42.43,
+   "end": 45.09,
+   "pause_after": 0.54,
+   "voiced": 2.43,
+   "syl_per_s": 8.23,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 42.43,
+     "t1": 42.56
+    },
+    {
+     "w": "serinin",
+     "t0": 42.56,
+     "t1": 42.92
+    },
+    {
+     "w": "devamı",
+     "t0": 42.92,
+     "t1": 43.29
+    },
+    {
+     "w": "için",
+     "t0": 43.29,
+     "t1": 43.57
+    },
+    {
+     "w": "kanala",
+     "t0": 43.57,
+     "t1": 44.04
+    },
+    {
+     "w": "abone",
+     "t0": 44.04,
+     "t1": 44.41
+    },
+    {
+     "w": "olabilirsin.",
+     "t0": 44.41,
+     "t1": 45.09
+    }
+   ],
+   "sinir_db": {
+    "once": -33.6,
+    "duraklama": -84.0,
+    "sonra": -27.1
+   }
+  },
+  {
+   "p": 4,
+   "text": "İkinci eleman anahtar.",
+   "last": false,
+   "shorts": false,
+   "syl": 9,
+   "no": 11,
+   "start": 45.63,
+   "end": 47.11,
+   "pause_after": 0.42,
+   "voiced": 1.2,
+   "syl_per_s": 7.5,
+   "inner_pauses": [
+    [
+     46.47,
+     46.6
+    ]
+   ],
+   "words": [
+    {
+     "w": "İkinci",
+     "t0": 45.63,
+     "t1": 46.08
+    },
+    {
+     "w": "eleman",
+     "t0": 46.08,
+     "t1": 46.61
+    },
+    {
+     "w": "anahtar.",
+     "t0": 46.61,
+     "t1": 47.11
+    }
+   ],
+   "sinir_db": {
+    "once": -37.2,
+    "duraklama": -73.4,
+    "sonra": -18.1
+   }
+  },
+  {
+   "p": 4,
+   "text": "Burada önce bir dil tuzağını aradan çıkaralım.",
+   "last": false,
+   "shorts": false,
+   "syl": 18,
+   "no": 12,
+   "start": 47.53,
+   "end": 49.83,
+   "pause_after": 0.3,
+   "voiced": 2.03,
+   "syl_per_s": 8.87,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Burada",
+     "t0": 47.53,
+     "t1": 47.87
+    },
+    {
+     "w": "önce",
+     "t0": 47.87,
+     "t1": 48.16
+    },
+    {
+     "w": "bir",
+     "t0": 48.16,
+     "t1": 48.27
+    },
+    {
+     "w": "dil",
+     "t0": 48.27,
+     "t1": 48.38
+    },
+    {
+     "w": "tuzağını",
+     "t0": 48.38,
+     "t1": 48.92
+    },
+    {
+     "w": "aradan",
+     "t0": 48.92,
+     "t1": 49.25
+    },
+    {
+     "w": "çıkaralım.",
+     "t0": 49.25,
+     "t1": 49.83
+    }
+   ],
+   "sinir_db": {
+    "once": -26.9,
+    "duraklama": -80.8,
+    "sonra": -28.6
+   }
+  },
+  {
+   "p": 4,
+   "text": "Günlük hayatta ışığı açmak, akımı geçirmek demektir.",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 13,
+   "start": 50.13,
+   "end": 53.25,
+   "pause_after": 0.29,
+   "voiced": 2.15,
+   "syl_per_s": 8.84,
+   "inner_pauses": [
+    [
+     50.62,
+     50.77
+    ],
+    [
+     51.86,
+     51.96
+    ],
+    [
+     52.7,
+     52.82
+    ],
+    [
+     53.0,
+     53.14
+    ]
+   ],
+   "words": [
+    {
+     "w": "Günlük",
+     "t0": 50.13,
+     "t1": 50.4
+    },
+    {
+     "w": "hayatta",
+     "t0": 50.4,
+     "t1": 50.89
+    },
+    {
+     "w": "ışığı",
+     "t0": 50.89,
+     "t1": 51.29
+    },
+    {
+     "w": "açmak,",
+     "t0": 51.29,
+     "t1": 51.61
+    },
+    {
+     "w": "akımı",
+     "t0": 51.61,
+     "t1": 52.22
+    },
+    {
+     "w": "geçirmek",
+     "t0": 52.22,
+     "t1": 52.6
+    },
+    {
+     "w": "demektir.",
+     "t0": 52.6,
+     "t1": 53.25
+    }
+   ],
+   "sinir_db": {
+    "once": -47.1,
+    "duraklama": -72.2,
+    "sonra": -20.4
+   }
+  },
+  {
+   "p": 4,
+   "text": "Devre teorisinde ise tersi.",
+   "last": false,
+   "shorts": false,
+   "syl": 11,
+   "no": 14,
+   "start": 53.54,
+   "end": 55.12,
+   "pause_after": 0.27,
+   "voiced": 1.43,
+   "syl_per_s": 7.69,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Devre",
+     "t0": 53.54,
+     "t1": 53.8
+    },
+    {
+     "w": "teorisinde",
+     "t0": 53.8,
+     "t1": 54.48
+    },
+    {
+     "w": "ise",
+     "t0": 54.48,
+     "t1": 54.85
+    },
+    {
+     "w": "tersi.",
+     "t0": 54.85,
+     "t1": 55.12
+    }
+   ],
+   "sinir_db": {
+    "once": -28.0,
+    "duraklama": -81.1,
+    "sonra": -28.1
+   }
+  },
+  {
+   "p": 4,
+   "text": "Açık anahtar, kontakları birbirinden ayrık olan anahtardır; akım geçmez.",
+   "last": false,
+   "shorts": false,
+   "syl": 25,
+   "no": 15,
+   "start": 55.39,
+   "end": 59.89,
+   "pause_after": 0.35,
+   "voiced": 3.2,
+   "syl_per_s": 7.81,
+   "inner_pauses": [
+    [
+     56.14,
+     56.36
+    ],
+    [
+     58.4,
+     58.5
+    ],
+    [
+     58.84,
+     59.11
+    ]
+   ],
+   "words": [
+    {
+     "w": "Açık",
+     "t0": 55.39,
+     "t1": 55.74
+    },
+    {
+     "w": "anahtar,",
+     "t0": 55.74,
+     "t1": 56.41
+    },
+    {
+     "w": "kontakları",
+     "t0": 56.41,
+     "t1": 57.03
+    },
+    {
+     "w": "birbirinden",
+     "t0": 57.03,
+     "t1": 57.55
+    },
+    {
+     "w": "ayrık",
+     "t0": 57.55,
+     "t1": 57.86
+    },
+    {
+     "w": "olan",
+     "t0": 57.86,
+     "t1": 58.16
+    },
+    {
+     "w": "anahtardır;",
+     "t0": 58.16,
+     "t1": 59.28
+    },
+    {
+     "w": "akım",
+     "t0": 59.28,
+     "t1": 59.58
+    },
+    {
+     "w": "geçmez.",
+     "t0": 59.58,
+     "t1": 59.89
+    }
+   ],
+   "sinir_db": {
+    "once": -33.1,
+    "duraklama": -69.5,
+    "sonra": -23.4
+   }
+  },
+  {
+   "p": 4,
+   "text": "Kapalı anahtar, kontakları birleşik olan anahtardır; akımı iletir.",
+   "last": true,
+   "shorts": false,
+   "syl": 25,
+   "no": 16,
+   "start": 60.24,
+   "end": 64.28,
+   "pause_after": 0.29,
+   "voiced": 2.75,
+   "syl_per_s": 9.09,
+   "inner_pauses": [
+    [
+     60.81,
+     60.91
+    ],
+    [
+     61.07,
+     61.29
+    ],
+    [
+     62.76,
+     62.86
+    ],
+    [
+     63.2,
+     63.47
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kapalı",
+     "t0": 60.24,
+     "t1": 60.63
+    },
+    {
+     "w": "anahtar,",
+     "t0": 60.63,
+     "t1": 61.06
+    },
+    {
+     "w": "kontakları",
+     "t0": 61.06,
+     "t1": 61.84
+    },
+    {
+     "w": "birleşik",
+     "t0": 61.84,
+     "t1": 62.17
+    },
+    {
+     "w": "olan",
+     "t0": 62.17,
+     "t1": 62.45
+    },
+    {
+     "w": "anahtardır;",
+     "t0": 62.45,
+     "t1": 62.99
+    },
+    {
+     "w": "akımı",
+     "t0": 62.99,
+     "t1": 63.8
+    },
+    {
+     "w": "iletir.",
+     "t0": 63.8,
+     "t1": 64.28
+    }
+   ],
+   "sinir_db": {
+    "once": -38.4,
+    "duraklama": -75.4,
+    "sonra": -15.7
+   }
+  },
+  {
+   "p": 5,
+   "text": "İdeal anahtar açıkken açık devre gibi davranır.",
+   "last": false,
+   "shorts": false,
+   "syl": 18,
+   "no": 17,
+   "start": 64.57,
+   "end": 67.41,
+   "pause_after": 0.36,
+   "voiced": 2.07,
+   "syl_per_s": 8.7,
+   "inner_pauses": [
+    [
+     65.49,
+     65.62
+    ],
+    [
+     65.83,
+     65.99
+    ],
+    [
+     66.46,
+     66.57
+    ]
+   ],
+   "words": [
+    {
+     "w": "İdeal",
+     "t0": 64.57,
+     "t1": 64.92
+    },
+    {
+     "w": "anahtar",
+     "t0": 64.92,
+     "t1": 65.34
+    },
+    {
+     "w": "açıkken",
+     "t0": 65.34,
+     "t1": 66.1
+    },
+    {
+     "w": "açık",
+     "t0": 66.1,
+     "t1": 66.46
+    },
+    {
+     "w": "devre",
+     "t0": 66.46,
+     "t1": 66.8
+    },
+    {
+     "w": "gibi",
+     "t0": 66.8,
+     "t1": 67.06
+    },
+    {
+     "w": "davranır.",
+     "t0": 67.06,
+     "t1": 67.41
+    }
+   ],
+   "sinir_db": {
+    "once": -28.9,
+    "duraklama": -63.7,
+    "sonra": -15.1
+   }
+  },
+  {
+   "p": 5,
+   "text": "Garanti ettiği tek şey, akımın sıfır olması.",
+   "last": false,
+   "shorts": false,
+   "syl": 16,
+   "no": 18,
+   "start": 67.77,
+   "end": 70.42,
+   "pause_after": 0.26,
+   "voiced": 1.92,
+   "syl_per_s": 8.33,
+   "inner_pauses": [
+    [
+     68.25,
+     68.38
+    ],
+    [
+     69.04,
+     69.23
+    ]
+   ],
+   "words": [
+    {
+     "w": "Garanti",
+     "t0": 67.77,
+     "t1": 68.15
+    },
+    {
+     "w": "ettiği",
+     "t0": 68.15,
+     "t1": 68.81
+    },
+    {
+     "w": "tek",
+     "t0": 68.81,
+     "t1": 68.93
+    },
+    {
+     "w": "şey,",
+     "t0": 68.93,
+     "t1": 69.24
+    },
+    {
+     "w": "akımın",
+     "t0": 69.24,
+     "t1": 69.7
+    },
+    {
+     "w": "sıfır",
+     "t0": 69.7,
+     "t1": 70.01
+    },
+    {
+     "w": "olması.",
+     "t0": 70.01,
+     "t1": 70.42
+    }
+   ],
+   "sinir_db": {
+    "once": -35.1,
+    "duraklama": -82.4,
+    "sonra": -23.8
+   }
+  },
+  {
+   "p": 5,
+   "text": "Kapalıyken direnci sıfırdır, yani bir tel gibi davranır; bir kısa devredir.",
+   "last": false,
+   "shorts": false,
+   "syl": 25,
+   "no": 19,
+   "start": 70.68,
+   "end": 75.05,
+   "pause_after": 0.36,
+   "voiced": 3.22,
+   "syl_per_s": 7.76,
+   "inner_pauses": [
+    [
+     72.36,
+     72.58
+    ],
+    [
+     73.91,
+     74.25
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kapalıyken",
+     "t0": 70.68,
+     "t1": 71.35
+    },
+    {
+     "w": "direnci",
+     "t0": 71.35,
+     "t1": 71.74
+    },
+    {
+     "w": "sıfırdır,",
+     "t0": 71.74,
+     "t1": 72.24
+    },
+    {
+     "w": "yani",
+     "t0": 72.24,
+     "t1": 72.77
+    },
+    {
+     "w": "bir",
+     "t0": 72.77,
+     "t1": 72.9
+    },
+    {
+     "w": "tel",
+     "t0": 72.9,
+     "t1": 73.11
+    },
+    {
+     "w": "gibi",
+     "t0": 73.11,
+     "t1": 73.37
+    },
+    {
+     "w": "davranır;",
+     "t0": 73.37,
+     "t1": 73.75
+    },
+    {
+     "w": "bir",
+     "t0": 73.75,
+     "t1": 73.88
+    },
+    {
+     "w": "kısa",
+     "t0": 73.88,
+     "t1": 74.6
+    },
+    {
+     "w": "devredir.",
+     "t0": 74.6,
+     "t1": 75.05
+    }
+   ],
+   "sinir_db": {
+    "once": -33.0,
+    "duraklama": -64.1,
+    "sonra": -16.0
+   }
+  },
+  {
+   "p": 5,
+   "text": "Garanti ettiği tek şey, uçları arasındaki gerilimin sıfır olması.",
+   "last": true,
+   "shorts": false,
+   "syl": 25,
+   "no": 20,
+   "start": 75.41,
+   "end": 79.18,
+   "pause_after": 0.29,
+   "voiced": 2.97,
+   "syl_per_s": 8.42,
+   "inner_pauses": [
+    [
+     75.89,
+     76.02
+    ],
+    [
+     76.14,
+     76.24
+    ],
+    [
+     76.76,
+     76.9
+    ]
+   ],
+   "words": [
+    {
+     "w": "Garanti",
+     "t0": 75.41,
+     "t1": 75.8
+    },
+    {
+     "w": "ettiği",
+     "t0": 75.8,
+     "t1": 76.45
+    },
+    {
+     "w": "tek",
+     "t0": 76.45,
+     "t1": 76.58
+    },
+    {
+     "w": "şey,",
+     "t0": 76.58,
+     "t1": 76.7
+    },
+    {
+     "w": "uçları",
+     "t0": 76.7,
+     "t1": 77.29
+    },
+    {
+     "w": "arasındaki",
+     "t0": 77.29,
+     "t1": 77.98
+    },
+    {
+     "w": "gerilimin",
+     "t0": 77.98,
+     "t1": 78.47
+    },
+    {
+     "w": "sıfır",
+     "t0": 78.47,
+     "t1": 78.78
+    },
+    {
+     "w": "olması.",
+     "t0": 78.78,
+     "t1": 79.18
+    }
+   ],
+   "sinir_db": {
+    "once": -35.3,
+    "duraklama": -79.8,
+    "sonra": -34.4
+   }
+  },
+  {
+   "p": 6,
+   "text": "Peki öbür büyüklük ne olacak?",
+   "last": false,
+   "shorts": false,
+   "syl": 11,
+   "no": 21,
+   "start": 79.47,
+   "end": 81.0,
+   "pause_after": 0.35,
+   "voiced": 1.18,
+   "syl_per_s": 9.32,
+   "inner_pauses": [
+    [
+     80.43,
+     80.53
+    ]
+   ],
+   "words": [
+    {
+     "w": "Peki",
+     "t0": 79.47,
+     "t1": 79.83
+    },
+    {
+     "w": "öbür",
+     "t0": 79.83,
+     "t1": 80.04
+    },
+    {
+     "w": "büyüklük",
+     "t0": 80.04,
+     "t1": 80.55
+    },
+    {
+     "w": "ne",
+     "t0": 80.55,
+     "t1": 80.65
+    },
+    {
+     "w": "olacak?",
+     "t0": 80.65,
+     "t1": 81.0
+    }
+   ],
+   "sinir_db": {
+    "once": -29.7,
+    "duraklama": -75.6,
+    "sonra": -27.9
+   }
+  },
+  {
+   "p": 6,
+   "text": "Açık anahtarın gerilimi ya da kapalı anahtarın akımı, anahtarın kendisinden okunamaz.",
+   "last": false,
+   "shorts": false,
+   "syl": 34,
+   "no": 22,
+   "start": 81.35,
+   "end": 86.38,
+   "pause_after": 0.25,
+   "voiced": 3.93,
+   "syl_per_s": 8.65,
+   "inner_pauses": [
+    [
+     82.7,
+     82.81
+    ],
+    [
+     84.44,
+     84.63
+    ]
+   ],
+   "words": [
+    {
+     "w": "Açık",
+     "t0": 81.35,
+     "t1": 81.66
+    },
+    {
+     "w": "anahtarın",
+     "t0": 81.66,
+     "t1": 82.18
+    },
+    {
+     "w": "gerilimi",
+     "t0": 82.18,
+     "t1": 82.64
+    },
+    {
+     "w": "ya",
+     "t0": 82.64,
+     "t1": 82.87
+    },
+    {
+     "w": "da",
+     "t0": 82.87,
+     "t1": 82.98
+    },
+    {
+     "w": "kapalı",
+     "t0": 82.98,
+     "t1": 83.48
+    },
+    {
+     "w": "anahtarın",
+     "t0": 83.48,
+     "t1": 84.2
+    },
+    {
+     "w": "akımı,",
+     "t0": 84.2,
+     "t1": 84.74
+    },
+    {
+     "w": "anahtarın",
+     "t0": 84.74,
+     "t1": 85.32
+    },
+    {
+     "w": "kendisinden",
+     "t0": 85.32,
+     "t1": 85.78
+    },
+    {
+     "w": "okunamaz.",
+     "t0": 85.78,
+     "t1": 86.38
+    }
+   ],
+   "sinir_db": {
+    "once": -31.6,
+    "duraklama": -74.1,
+    "sonra": -32.3
+   }
+  },
+  {
+   "p": 6,
+   "text": "İkisini de anahtara bağlı olan devre belirler.",
+   "last": true,
+   "shorts": false,
+   "syl": 18,
+   "no": 23,
+   "start": 86.63,
+   "end": 89.19,
+   "pause_after": 0.39,
+   "voiced": 2.35,
+   "syl_per_s": 7.66,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "İkisini",
+     "t0": 86.63,
+     "t1": 87.2
+    },
+    {
+     "w": "de",
+     "t0": 87.2,
+     "t1": 87.37
+    },
+    {
+     "w": "anahtara",
+     "t0": 87.37,
+     "t1": 87.97
+    },
+    {
+     "w": "bağlı",
+     "t0": 87.97,
+     "t1": 88.23
+    },
+    {
+     "w": "olan",
+     "t0": 88.23,
+     "t1": 88.49
+    },
+    {
+     "w": "devre",
+     "t0": 88.49,
+     "t1": 88.75
+    },
+    {
+     "w": "belirler.",
+     "t0": 88.75,
+     "t1": 89.19
+    }
+   ],
+   "sinir_db": {
+    "once": -30.4,
+    "duraklama": -68.7,
+    "sonra": -14.9
+   }
+  },
+  {
+   "p": 7,
+   "text": "Bir örnekle görelim.",
+   "last": false,
+   "shorts": false,
+   "syl": 7,
+   "no": 24,
+   "start": 89.58,
+   "end": 90.43,
+   "pause_after": 0.29,
+   "voiced": 0.79,
+   "syl_per_s": 8.86,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 89.58,
+     "t1": 89.7
+    },
+    {
+     "w": "örnekle",
+     "t0": 89.7,
+     "t1": 90.1
+    },
+    {
+     "w": "görelim.",
+     "t0": 90.1,
+     "t1": 90.43
+    }
+   ],
+   "sinir_db": {
+    "once": -23.7,
+    "duraklama": -77.7,
+    "sonra": -32.7
+   }
+  },
+  {
+   "p": 7,
+   "text": "Dört buçuk voltluk ideal bir gerilim kaynağı, bir buçuk kiloohmluk bir direnç ve bir anahtar, seri bağlanıp tek bir halka oluşturuyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 44,
+   "no": 25,
+   "start": 90.72,
+   "end": 98.1,
+   "pause_after": 0.25,
+   "voiced": 5.41,
+   "syl_per_s": 8.13,
+   "inner_pauses": [
+    [
+     90.86,
+     90.96
+    ],
+    [
+     91.38,
+     91.48
+    ],
+    [
+     93.06,
+     93.29
+    ],
+    [
+     93.66,
+     93.79
+    ],
+    [
+     94.17,
+     94.29
+    ],
+    [
+     94.85,
+     94.96
+    ],
+    [
+     95.47,
+     95.57
+    ],
+    [
+     95.73,
+     95.96
+    ],
+    [
+     96.7,
+     96.86
+    ],
+    [
+     96.98,
+     97.1
+    ]
+   ],
+   "words": [
+    {
+     "w": "Dört",
+     "t0": 90.72,
+     "t1": 90.85
+    },
+    {
+     "w": "buçuk",
+     "t0": 90.85,
+     "t1": 91.3
+    },
+    {
+     "w": "voltluk",
+     "t0": 91.3,
+     "t1": 91.75
+    },
+    {
+     "w": "ideal",
+     "t0": 91.75,
+     "t1": 92.12
+    },
+    {
+     "w": "bir",
+     "t0": 92.12,
+     "t1": 92.24
+    },
+    {
+     "w": "gerilim",
+     "t0": 92.24,
+     "t1": 92.66
+    },
+    {
+     "w": "kaynağı,",
+     "t0": 92.66,
+     "t1": 93.03
+    },
+    {
+     "w": "bir",
+     "t0": 93.03,
+     "t1": 93.38
+    },
+    {
+     "w": "buçuk",
+     "t0": 93.38,
+     "t1": 93.81
+    },
+    {
+     "w": "kiloohmluk",
+     "t0": 93.81,
+     "t1": 94.44
+    },
+    {
+     "w": "bir",
+     "t0": 94.44,
+     "t1": 94.56
+    },
+    {
+     "w": "direnç",
+     "t0": 94.56,
+     "t1": 94.97
+    },
+    {
+     "w": "ve",
+     "t0": 94.97,
+     "t1": 95.09
+    },
+    {
+     "w": "bir",
+     "t0": 95.09,
+     "t1": 95.21
+    },
+    {
+     "w": "anahtar,",
+     "t0": 95.21,
+     "t1": 95.68
+    },
+    {
+     "w": "seri",
+     "t0": 95.68,
+     "t1": 96.16
+    },
+    {
+     "w": "bağlanıp",
+     "t0": 96.16,
+     "t1": 96.53
+    },
+    {
+     "w": "tek",
+     "t0": 96.53,
+     "t1": 96.65
+    },
+    {
+     "w": "bir",
+     "t0": 96.65,
+     "t1": 96.93
+    },
+    {
+     "w": "halka",
+     "t0": 96.93,
+     "t1": 97.3
+    },
+    {
+     "w": "oluşturuyor.",
+     "t0": 97.3,
+     "t1": 98.1
+    }
+   ],
+   "sinir_db": {
+    "once": -34.2,
+    "duraklama": -79.9,
+    "sonra": -19.9
+   }
+  },
+  {
+   "p": 7,
+   "text": "Önce anahtarı kapatalım.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 26,
+   "start": 98.35,
+   "end": 99.65,
+   "pause_after": 0.25,
+   "voiced": 1.05,
+   "syl_per_s": 9.52,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Önce",
+     "t0": 98.35,
+     "t1": 98.56
+    },
+    {
+     "w": "anahtarı",
+     "t0": 98.56,
+     "t1": 99.05
+    },
+    {
+     "w": "kapatalım.",
+     "t0": 99.05,
+     "t1": 99.65
+    }
+   ],
+   "sinir_db": {
+    "once": -31.1,
+    "duraklama": -80.3,
+    "sonra": -23.9
+   }
+  },
+  {
+   "p": 7,
+   "text": "Kapalı anahtar bir tel gibidir, uçlarında sıfır volt var.",
+   "last": false,
+   "shorts": false,
+   "syl": 19,
+   "no": 27,
+   "start": 99.9,
+   "end": 103.19,
+   "pause_after": 0.32,
+   "voiced": 2.34,
+   "syl_per_s": 8.12,
+   "inner_pauses": [
+    [
+     101.57,
+     101.86
+    ],
+    [
+     102.92,
+     103.05
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kapalı",
+     "t0": 99.9,
+     "t1": 100.33
+    },
+    {
+     "w": "anahtar",
+     "t0": 100.33,
+     "t1": 100.79
+    },
+    {
+     "w": "bir",
+     "t0": 100.79,
+     "t1": 101.02
+    },
+    {
+     "w": "tel",
+     "t0": 101.02,
+     "t1": 101.14
+    },
+    {
+     "w": "gibidir,",
+     "t0": 101.14,
+     "t1": 101.98
+    },
+    {
+     "w": "uçlarında",
+     "t0": 101.98,
+     "t1": 102.5
+    },
+    {
+     "w": "sıfır",
+     "t0": 102.5,
+     "t1": 102.82
+    },
+    {
+     "w": "volt",
+     "t0": 102.82,
+     "t1": 103.07
+    },
+    {
+     "w": "var.",
+     "t0": 103.07,
+     "t1": 103.19
+    }
+   ],
+   "sinir_db": {
+    "once": -41.0,
+    "duraklama": -71.2,
+    "sonra": -18.1
+   }
+  },
+  {
+   "p": 7,
+   "text": "O zaman direnç doğrudan kaynağa bağlanmış olur ve uçlarında dört buçuk volt görür.",
+   "last": false,
+   "shorts": false,
+   "syl": 27,
+   "no": 28,
+   "start": 103.51,
+   "end": 108.17,
+   "pause_after": 0.31,
+   "voiced": 3.69,
+   "syl_per_s": 7.32,
+   "inner_pauses": [
+    [
+     106.13,
+     106.33
+    ],
+    [
+     107.29,
+     107.39
+    ],
+    [
+     107.55,
+     107.65
+    ],
+    [
+     107.8,
+     107.94
+    ]
+   ],
+   "words": [
+    {
+     "w": "O",
+     "t0": 103.51,
+     "t1": 103.65
+    },
+    {
+     "w": "zaman",
+     "t0": 103.65,
+     "t1": 103.92
+    },
+    {
+     "w": "direnç",
+     "t0": 103.92,
+     "t1": 104.2
+    },
+    {
+     "w": "doğrudan",
+     "t0": 104.2,
+     "t1": 104.71
+    },
+    {
+     "w": "kaynağa",
+     "t0": 104.71,
+     "t1": 105.19
+    },
+    {
+     "w": "bağlanmış",
+     "t0": 105.19,
+     "t1": 105.6
+    },
+    {
+     "w": "olur",
+     "t0": 105.6,
+     "t1": 105.87
+    },
+    {
+     "w": "ve",
+     "t0": 105.87,
+     "t1": 106.02
+    },
+    {
+     "w": "uçlarında",
+     "t0": 106.02,
+     "t1": 106.85
+    },
+    {
+     "w": "dört",
+     "t0": 106.85,
+     "t1": 106.99
+    },
+    {
+     "w": "buçuk",
+     "t0": 106.99,
+     "t1": 107.4
+    },
+    {
+     "w": "volt",
+     "t0": 107.4,
+     "t1": 107.69
+    },
+    {
+     "w": "görür.",
+     "t0": 107.69,
+     "t1": 108.17
+    }
+   ],
+   "sinir_db": {
+    "once": -40.5,
+    "duraklama": -69.6,
+    "sonra": -31.5
+   }
+  },
+  {
+   "p": 7,
+   "text": "Akım, dört buçuk volt bölü bir buçuk kiloohm, üç miliamper.",
+   "last": true,
+   "shorts": false,
+   "syl": 19,
+   "no": 29,
+   "start": 108.48,
+   "end": 111.99,
+   "pause_after": 0.34,
+   "voiced": 2.27,
+   "syl_per_s": 8.37,
+   "inner_pauses": [
+    [
+     108.84,
+     109.06
+    ],
+    [
+     109.2,
+     109.31
+    ],
+    [
+     109.75,
+     109.89
+    ],
+    [
+     110.53,
+     110.68
+    ],
+    [
+     111.02,
+     111.25
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akım,",
+     "t0": 108.48,
+     "t1": 108.81
+    },
+    {
+     "w": "dört",
+     "t0": 108.81,
+     "t1": 109.15
+    },
+    {
+     "w": "buçuk",
+     "t0": 109.15,
+     "t1": 109.61
+    },
+    {
+     "w": "volt",
+     "t0": 109.61,
+     "t1": 109.73
+    },
+    {
+     "w": "bölü",
+     "t0": 109.73,
+     "t1": 110.11
+    },
+    {
+     "w": "bir",
+     "t0": 110.11,
+     "t1": 110.23
+    },
+    {
+     "w": "buçuk",
+     "t0": 110.23,
+     "t1": 110.52
+    },
+    {
+     "w": "kiloohm,",
+     "t0": 110.52,
+     "t1": 111.26
+    },
+    {
+     "w": "üç",
+     "t0": 111.26,
+     "t1": 111.41
+    },
+    {
+     "w": "miliamper.",
+     "t0": 111.41,
+     "t1": 111.99
+    }
+   ],
+   "sinir_db": {
+    "once": -37.4,
+    "duraklama": -70.2,
+    "sonra": -23.1
+   }
+  },
+  {
+   "p": 8,
+   "text": "Şimdi anahtarı açalım.",
+   "last": false,
+   "shorts": false,
+   "syl": 9,
+   "no": 30,
+   "start": 112.33,
+   "end": 113.57,
+   "pause_after": 0.24,
+   "voiced": 1.13,
+   "syl_per_s": 7.96,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Şimdi",
+     "t0": 112.33,
+     "t1": 112.59
+    },
+    {
+     "w": "anahtarı",
+     "t0": 112.59,
+     "t1": 113.16
+    },
+    {
+     "w": "açalım.",
+     "t0": 113.16,
+     "t1": 113.57
+    }
+   ],
+   "sinir_db": {
+    "once": -29.9,
+    "duraklama": -77.9,
+    "sonra": -26.8
+   }
+  },
+  {
+   "p": 8,
+   "text": "Açık anahtar açık devredir, akım sıfır.",
+   "last": false,
+   "shorts": false,
+   "syl": 14,
+   "no": 31,
+   "start": 113.81,
+   "end": 116.34,
+   "pause_after": 0.38,
+   "voiced": 1.59,
+   "syl_per_s": 8.81,
+   "inner_pauses": [
+    [
+     115.49,
+     115.73
+    ]
+   ],
+   "words": [
+    {
+     "w": "Açık",
+     "t0": 113.81,
+     "t1": 114.1
+    },
+    {
+     "w": "anahtar",
+     "t0": 114.1,
+     "t1": 114.5
+    },
+    {
+     "w": "açık",
+     "t0": 114.5,
+     "t1": 114.89
+    },
+    {
+     "w": "devredir,",
+     "t0": 114.89,
+     "t1": 115.44
+    },
+    {
+     "w": "akım",
+     "t0": 115.44,
+     "t1": 116.03
+    },
+    {
+     "w": "sıfır.",
+     "t0": 116.03,
+     "t1": 116.34
+    }
+   ],
+   "sinir_db": {
+    "once": -32.3,
+    "duraklama": -66.3,
+    "sonra": -16.8
+   }
+  },
+  {
+   "p": 8,
+   "text": "Direncin uçlarındaki gerilim, direnç çarpı akım: bir buçuk kiloohm çarpı sıfır, sıfır volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 30,
+   "no": 32,
+   "start": 116.72,
+   "end": 122.1,
+   "pause_after": 0.38,
+   "voiced": 3.7,
+   "syl_per_s": 8.11,
+   "inner_pauses": [
+    [
+     118.23,
+     118.44
+    ],
+    [
+     119.44,
+     119.69
+    ],
+    [
+     120.05,
+     120.2
+    ],
+    [
+     121.05,
+     121.15
+    ],
+    [
+     121.28,
+     121.6
+    ]
+   ],
+   "words": [
+    {
+     "w": "Direncin",
+     "t0": 116.72,
+     "t1": 117.09
+    },
+    {
+     "w": "uçlarındaki",
+     "t0": 117.09,
+     "t1": 117.83
+    },
+    {
+     "w": "gerilim,",
+     "t0": 117.83,
+     "t1": 118.2
+    },
+    {
+     "w": "direnç",
+     "t0": 118.2,
+     "t1": 118.66
+    },
+    {
+     "w": "çarpı",
+     "t0": 118.66,
+     "t1": 119.0
+    },
+    {
+     "w": "akım:",
+     "t0": 119.0,
+     "t1": 119.42
+    },
+    {
+     "w": "bir",
+     "t0": 119.42,
+     "t1": 119.79
+    },
+    {
+     "w": "buçuk",
+     "t0": 119.79,
+     "t1": 120.24
+    },
+    {
+     "w": "kiloohm",
+     "t0": 120.24,
+     "t1": 120.66
+    },
+    {
+     "w": "çarpı",
+     "t0": 120.66,
+     "t1": 120.99
+    },
+    {
+     "w": "sıfır,",
+     "t0": 120.99,
+     "t1": 121.65
+    },
+    {
+     "w": "sıfır",
+     "t0": 121.65,
+     "t1": 121.96
+    },
+    {
+     "w": "volt.",
+     "t0": 121.96,
+     "t1": 122.1
+    }
+   ],
+   "sinir_db": {
+    "once": -28.8,
+    "duraklama": -70.5,
+    "sonra": -34.7
+   }
+  },
+  {
+   "p": 8,
+   "text": "Akım taşımayan direncin iki ucu aynı gerilimde, tıpkı bir tel gibi.",
+   "last": false,
+   "shorts": false,
+   "syl": 25,
+   "no": 33,
+   "start": 122.48,
+   "end": 126.53,
+   "pause_after": 0.24,
+   "voiced": 3.18,
+   "syl_per_s": 7.86,
+   "inner_pauses": [
+    [
+     123.78,
+     123.89
+    ],
+    [
+     125.31,
+     125.53
+    ],
+    [
+     125.63,
+     125.74
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akım",
+     "t0": 122.48,
+     "t1": 122.83
+    },
+    {
+     "w": "taşımayan",
+     "t0": 122.83,
+     "t1": 123.34
+    },
+    {
+     "w": "direncin",
+     "t0": 123.34,
+     "t1": 123.72
+    },
+    {
+     "w": "iki",
+     "t0": 123.72,
+     "t1": 124.17
+    },
+    {
+     "w": "ucu",
+     "t0": 124.17,
+     "t1": 124.45
+    },
+    {
+     "w": "aynı",
+     "t0": 124.45,
+     "t1": 124.7
+    },
+    {
+     "w": "gerilimde,",
+     "t0": 124.7,
+     "t1": 125.26
+    },
+    {
+     "w": "tıpkı",
+     "t0": 125.26,
+     "t1": 125.87
+    },
+    {
+     "w": "bir",
+     "t0": 125.87,
+     "t1": 126.08
+    },
+    {
+     "w": "tel",
+     "t0": 126.08,
+     "t1": 126.21
+    },
+    {
+     "w": "gibi.",
+     "t0": 126.21,
+     "t1": 126.53
+    }
+   ],
+   "sinir_db": {
+    "once": -33.5,
+    "duraklama": -81.3,
+    "sonra": -24.5
+   }
+  },
+  {
+   "p": 8,
+   "text": "Direnç sıfır volt alıyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 8,
+   "no": 34,
+   "start": 126.77,
+   "end": 128.06,
+   "pause_after": 0.28,
+   "voiced": 1.12,
+   "syl_per_s": 7.14,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Direnç",
+     "t0": 126.77,
+     "t1": 127.1
+    },
+    {
+     "w": "sıfır",
+     "t0": 127.1,
+     "t1": 127.4
+    },
+    {
+     "w": "volt",
+     "t0": 127.4,
+     "t1": 127.54
+    },
+    {
+     "w": "alıyor.",
+     "t0": 127.54,
+     "t1": 128.06
+    }
+   ],
+   "sinir_db": {
+    "once": -30.0,
+    "duraklama": -75.7,
+    "sonra": -15.1
+   }
+  },
+  {
+   "p": 8,
+   "text": "Kaynağın dört buçuk voltundan sıfırı çıkarınca dört buçuk volt kalır; bu gerilim anahtarın uçlarında görünür.",
+   "last": false,
+   "shorts": false,
+   "syl": 37,
+   "no": 35,
+   "start": 128.34,
+   "end": 134.5,
+   "pause_after": 0.38,
+   "voiced": 4.51,
+   "syl_per_s": 8.2,
+   "inner_pauses": [
+    [
+     128.95,
+     129.06
+    ],
+    [
+     130.97,
+     131.12
+    ],
+    [
+     131.26,
+     131.36
+    ],
+    [
+     131.77,
+     131.93
+    ],
+    [
+     132.08,
+     132.43
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kaynağın",
+     "t0": 128.34,
+     "t1": 128.71
+    },
+    {
+     "w": "dört",
+     "t0": 128.71,
+     "t1": 128.83
+    },
+    {
+     "w": "buçuk",
+     "t0": 128.83,
+     "t1": 129.23
+    },
+    {
+     "w": "voltundan",
+     "t0": 129.23,
+     "t1": 129.73
+    },
+    {
+     "w": "sıfırı",
+     "t0": 129.73,
+     "t1": 130.17
+    },
+    {
+     "w": "çıkarınca",
+     "t0": 130.17,
+     "t1": 130.79
+    },
+    {
+     "w": "dört",
+     "t0": 130.79,
+     "t1": 130.91
+    },
+    {
+     "w": "buçuk",
+     "t0": 130.91,
+     "t1": 131.4
+    },
+    {
+     "w": "volt",
+     "t0": 131.4,
+     "t1": 131.66
+    },
+    {
+     "w": "kalır;",
+     "t0": 131.66,
+     "t1": 132.07
+    },
+    {
+     "w": "bu",
+     "t0": 132.07,
+     "t1": 132.54
+    },
+    {
+     "w": "gerilim",
+     "t0": 132.54,
+     "t1": 132.9
+    },
+    {
+     "w": "anahtarın",
+     "t0": 132.9,
+     "t1": 133.55
+    },
+    {
+     "w": "uçlarında",
+     "t0": 133.55,
+     "t1": 134.13
+    },
+    {
+     "w": "görünür.",
+     "t0": 134.13,
+     "t1": 134.5
+    }
+   ],
+   "sinir_db": {
+    "once": -29.0,
+    "duraklama": -65.6,
+    "sonra": -21.7
+   }
+  },
+  {
+   "p": 8,
+   "text": "Birinci dersin ikinci bölümündeki açık devre örneğini hatırla.",
+   "last": true,
+   "shorts": false,
+   "syl": 24,
+   "no": 36,
+   "start": 134.88,
+   "end": 138.05,
+   "pause_after": 0.24,
+   "voiced": 2.78,
+   "syl_per_s": 8.63,
+   "inner_pauses": [
+    [
+     136.84,
+     136.94
+    ]
+   ],
+   "words": [
+    {
+     "w": "Birinci",
+     "t0": 134.88,
+     "t1": 135.24
+    },
+    {
+     "w": "dersin",
+     "t0": 135.24,
+     "t1": 135.47
+    },
+    {
+     "w": "ikinci",
+     "t0": 135.47,
+     "t1": 135.88
+    },
+    {
+     "w": "bölümündeki",
+     "t0": 135.88,
+     "t1": 136.53
+    },
+    {
+     "w": "açık",
+     "t0": 136.53,
+     "t1": 136.95
+    },
+    {
+     "w": "devre",
+     "t0": 136.95,
+     "t1": 137.18
+    },
+    {
+     "w": "örneğini",
+     "t0": 137.18,
+     "t1": 137.65
+    },
+    {
+     "w": "hatırla.",
+     "t0": 137.65,
+     "t1": 138.05
+    }
+   ],
+   "sinir_db": {
+    "once": -26.0,
+    "duraklama": -79.5,
+    "sonra": -29.6
+   }
+  },
+  {
+   "p": 9,
+   "text": "İki durumda da anahtar bir büyüklüğü garanti etti: kapalıyken gerilimi, açıkken akımı.",
+   "last": false,
+   "shorts": false,
+   "syl": 33,
+   "no": 37,
+   "start": 138.29,
+   "end": 143.77,
+   "pause_after": 0.23,
+   "voiced": 4.0,
+   "syl_per_s": 8.25,
+   "inner_pauses": [
+    [
+     140.05,
+     140.16
+    ],
+    [
+     140.83,
+     141.01
+    ],
+    [
+     141.09,
+     141.37
+    ],
+    [
+     142.59,
+     142.83
+    ],
+    [
+     143.03,
+     143.18
+    ]
+   ],
+   "words": [
+    {
+     "w": "İki",
+     "t0": 138.29,
+     "t1": 138.6
+    },
+    {
+     "w": "durumda",
+     "t0": 138.6,
+     "t1": 138.96
+    },
+    {
+     "w": "da",
+     "t0": 138.96,
+     "t1": 139.08
+    },
+    {
+     "w": "anahtar",
+     "t0": 139.08,
+     "t1": 139.55
+    },
+    {
+     "w": "bir",
+     "t0": 139.55,
+     "t1": 139.67
+    },
+    {
+     "w": "büyüklüğü",
+     "t0": 139.67,
+     "t1": 140.26
+    },
+    {
+     "w": "garanti",
+     "t0": 140.26,
+     "t1": 140.63
+    },
+    {
+     "w": "etti:",
+     "t0": 140.63,
+     "t1": 141.09
+    },
+    {
+     "w": "kapalıyken",
+     "t0": 141.09,
+     "t1": 141.95
+    },
+    {
+     "w": "gerilimi,",
+     "t0": 141.95,
+     "t1": 142.45
+    },
+    {
+     "w": "açıkken",
+     "t0": 142.45,
+     "t1": 143.24
+    },
+    {
+     "w": "akımı.",
+     "t0": 143.24,
+     "t1": 143.77
+    }
+   ],
+   "sinir_db": {
+    "once": -36.3,
+    "duraklama": -81.2,
+    "sonra": -14.4
+   }
+  },
+  {
+   "p": 9,
+   "text": "Diğer büyüklüğü devre belirledi.",
+   "last": true,
+   "shorts": false,
+   "syl": 12,
+   "no": 38,
+   "start": 144.0,
+   "end": 145.73,
+   "pause_after": 0.24,
+   "voiced": 1.52,
+   "syl_per_s": 7.89,
+   "inner_pauses": [
+    [
+     144.49,
+     144.6
+    ]
+   ],
+   "words": [
+    {
+     "w": "Diğer",
+     "t0": 144.0,
+     "t1": 144.26
+    },
+    {
+     "w": "büyüklüğü",
+     "t0": 144.26,
+     "t1": 144.9
+    },
+    {
+     "w": "devre",
+     "t0": 144.9,
+     "t1": 145.16
+    },
+    {
+     "w": "belirledi.",
+     "t0": 145.16,
+     "t1": 145.73
+    }
+   ],
+   "sinir_db": {
+    "once": -36.7,
+    "duraklama": -80.5,
+    "sonra": -17.3
+   }
+  },
+  {
+   "p": 10,
+   "text": "Buradan iki eşdeğerlik çıkıyor ve ileride bunları sürekli kullanacağız.",
+   "last": false,
+   "shorts": false,
+   "syl": 28,
+   "no": 39,
+   "start": 145.97,
+   "end": 151.68,
+   "pause_after": 0.11,
+   "voiced": 4.08,
+   "syl_per_s": 6.86,
+   "inner_pauses": [
+    [
+     147.17,
+     147.27
+    ],
+    [
+     147.34,
+     147.46
+    ],
+    [
+     147.71,
+     147.82
+    ],
+    [
+     148.73,
+     148.86
+    ],
+    [
+     149.87,
+     150.15
+    ]
+   ],
+   "words": [
+    {
+     "w": "Buradan",
+     "t0": 145.97,
+     "t1": 146.56
+    },
+    {
+     "w": "iki",
+     "t0": 146.56,
+     "t1": 146.88
+    },
+    {
+     "w": "eşdeğerlik",
+     "t0": 146.88,
+     "t1": 147.69
+    },
+    {
+     "w": "çıkıyor",
+     "t0": 147.69,
+     "t1": 148.29
+    },
+    {
+     "w": "ve",
+     "t0": 148.29,
+     "t1": 148.44
+    },
+    {
+     "w": "ileride",
+     "t0": 148.44,
+     "t1": 149.33
+    },
+    {
+     "w": "bunları",
+     "t0": 149.33,
+     "t1": 149.86
+    },
+    {
+     "w": "sürekli",
+     "t0": 149.86,
+     "t1": 150.74
+    },
+    {
+     "w": "kullanacağız.",
+     "t0": 150.74,
+     "t1": 151.68
+    }
+   ],
+   "sinir_db": {
+    "once": -36.5,
+    "duraklama": -78.6,
+    "sonra": -31.7
+   }
+  },
+  {
+   "p": 10,
+   "text": "Açık devre, sıfır akım ve açık anahtar aynı şeydir.",
+   "last": false,
+   "shorts": false,
+   "syl": 18,
+   "no": 40,
+   "start": 151.79,
+   "end": 154.7,
+   "pause_after": 0.23,
+   "voiced": 1.98,
+   "syl_per_s": 9.09,
+   "inner_pauses": [
+    [
+     152.69,
+     152.91
+    ],
+    [
+     153.5,
+     153.89
+    ]
+   ],
+   "words": [
+    {
+     "w": "Açık",
+     "t0": 151.79,
+     "t1": 152.1
+    },
+    {
+     "w": "devre,",
+     "t0": 152.1,
+     "t1": 152.37
+    },
+    {
+     "w": "sıfır",
+     "t0": 152.37,
+     "t1": 152.66
+    },
+    {
+     "w": "akım",
+     "t0": 152.66,
+     "t1": 153.1
+    },
+    {
+     "w": "ve",
+     "t0": 153.1,
+     "t1": 153.22
+    },
+    {
+     "w": "açık",
+     "t0": 153.22,
+     "t1": 153.94
+    },
+    {
+     "w": "anahtar",
+     "t0": 153.94,
+     "t1": 154.27
+    },
+    {
+     "w": "aynı",
+     "t0": 154.27,
+     "t1": 154.49
+    },
+    {
+     "w": "şeydir.",
+     "t0": 154.49,
+     "t1": 154.7
+    }
+   ],
+   "sinir_db": {
+    "once": -20.5,
+    "duraklama": -84.2,
+    "sonra": -15.0
+   }
+  },
+  {
+   "p": 10,
+   "text": "Kısa devre, ideal tel, kapalı anahtar ve sıfır gerilim farkı da aynı şeydir.",
+   "last": true,
+   "shorts": false,
+   "syl": 27,
+   "no": 41,
+   "start": 154.93,
+   "end": 159.26,
+   "pause_after": 0.26,
+   "voiced": 3.39,
+   "syl_per_s": 7.96,
+   "inner_pauses": [
+    [
+     155.69,
+     155.95
+    ],
+    [
+     159.26,
+     159.52
+    ]
+   ],
+   "words": [
+    {
+     "w": "Kısa",
+     "t0": 154.93,
+     "t1": 155.19
+    },
+    {
+     "w": "devre,",
+     "t0": 155.19,
+     "t1": 155.52
+    },
+    {
+     "w": "ideal",
+     "t0": 155.52,
+     "t1": 156.24
+    },
+    {
+     "w": "tel,",
+     "t0": 156.24,
+     "t1": 156.37
+    },
+    {
+     "w": "kapalı",
+     "t0": 156.37,
+     "t1": 156.84
+    },
+    {
+     "w": "anahtar",
+     "t0": 156.84,
+     "t1": 157.26
+    },
+    {
+     "w": "ve",
+     "t0": 157.26,
+     "t1": 157.47
+    },
+    {
+     "w": "sıfır",
+     "t0": 157.47,
+     "t1": 157.72
+    },
+    {
+     "w": "gerilim",
+     "t0": 157.72,
+     "t1": 158.24
+    },
+    {
+     "w": "farkı",
+     "t0": 158.24,
+     "t1": 158.5
+    },
+    {
+     "w": "da",
+     "t0": 158.5,
+     "t1": 158.68
+    },
+    {
+     "w": "aynı",
+     "t0": 158.68,
+     "t1": 158.93
+    },
+    {
+     "w": "şeydir.",
+     "t0": 158.93,
+     "t1": 159.26
+    }
+   ],
+   "sinir_db": {
+    "once": -33.2,
+    "duraklama": -54.1,
+    "sonra": null
+   }
+  }
+ ]
+}

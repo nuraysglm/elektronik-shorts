@@ -1,0 +1,2192 @@
+{
+ "yontem": "RMS enerji (10 ms, esik -38 dBFS, en az 0,10 sn) duraklamalari + hece sayisina gore dinamik programlama; kelime zamanlari cumle icinde hece sayisiyla orantili tahmindir; konusma tanima yok, ses dinlenmedi",
+ "ses_suresi": 112.24,
+ "ortalama_hece_suresi": 0.1387,
+ "belirsiz_sinirlar": [],
+ "kontroller": [
+  "26 cumle sinirinin 26 tanesinde: duraklama enerjisi < -38 dBFS ve onceki/sonraki 0,3 sn en az 8 dB daha yuksek",
+  "noktalama cumle 0 'sayfası,' tahmin 1.72 sn; en yakin ic duraklama (1.82, 2.01); fark 0.20 sn",
+  "noktalama cumle 0 'verir:' tahmin 4.91 sn; en yakin ic duraklama (4.5, 4.87); fark 0.22 sn",
+  "noktalama cumle 1 'sayı,' tahmin 6.41 sn; en yakin ic duraklama (6.5, 6.64); fark 0.16 sn",
+  "noktalama cumle 2 'pil,' tahmin 9.90 sn; en yakin ic duraklama (9.65, 9.79); fark 0.18 sn",
+  "noktalama cumle 4 'yok;' tahmin 20.34 sn; en yakin ic duraklama (19.82, 20.3); fark 0.28 sn",
+  "noktalama cumle 4 'pil,' tahmin 20.50 sn; en yakin ic duraklama (20.54, 20.74); fark 0.14 sn",
+  "noktalama cumle 5 'geçince,' tahmin 24.72 sn; en yakin ic duraklama (24.89, 25.02); fark 0.23 sn",
+  "noktalama cumle 7 'küçük,' tahmin 33.01 sn; en yakin ic duraklama (33.05, 33.41); fark 0.22 sn",
+  "noktalama cumle 9 'göre,' tahmin 38.90 sn; en yakin ic duraklama (38.49, 38.64); fark 0.34 sn",
+  "noktalama cumle 10 'alalım:' tahmin 45.90 sn; en yakin ic duraklama (45.43, 45.71); fark 0.33 sn",
+  "noktalama cumle 11 'kaynak,' tahmin 49.05 sn; en yakin ic duraklama (48.83, 49.0); fark 0.13 sn",
+  "noktalama cumle 12 'gerilimi,' tahmin 52.38 sn; en yakin ic duraklama (52.1, 52.32); fark 0.17 sn",
+  "noktalama cumle 13 'sıfırken,' tahmin 56.65 sn; en yakin ic duraklama (56.46, 56.64); fark 0.10 sn",
+  "noktalama cumle 13 'sıfır,' tahmin 58.25 sn; en yakin ic duraklama (58.32, 58.56); fark 0.19 sn",
+  "noktalama cumle 15 'amperde,' tahmin 62.09 sn; en yakin ic duraklama (62.15, 62.28); fark 0.12 sn",
+  "noktalama cumle 15 'beş,' tahmin 64.65 sn; en yakin ic duraklama (64.71, 64.87); fark 0.14 sn",
+  "noktalama cumle 16 'beş,' tahmin 69.27 sn; en yakin ic duraklama (69.35, 69.53); fark 0.17 sn",
+  "noktalama cumle 17 'amperde,' tahmin 71.96 sn; en yakin ic duraklama (73.08, 73.19); fark 1.17 sn",
+  "noktalama cumle 17 'bir,' tahmin 73.70 sn; en yakin ic duraklama (73.85, 74.04); fark 0.24 sn",
+  "noktalama cumle 18 'üç,' tahmin 78.03 sn; en yakin ic duraklama (78.11, 78.31); fark 0.18 sn",
+  "noktalama cumle 19 'koyarsak,' tahmin 82.04 sn; en yakin ic duraklama (81.67, 81.92); fark 0.25 sn",
+  "noktalama cumle 20 'kendisi:' tahmin 88.21 sn; en yakin ic duraklama (87.73, 88.09); fark 0.30 sn",
+  "noktalama cumle 24 'çözümünü,' tahmin 103.20 sn; en yakin ic duraklama (103.31, 103.41); fark 0.16 sn",
+  "noktalama cumle 25 'yeter:' tahmin 107.58 sn; en yakin ic duraklama (107.82, 108.21); fark 0.43 sn",
+  "noktalama cumle 25 'gerilim,' tahmin 109.36 sn; en yakin ic duraklama (109.55, 109.75); fark 0.29 sn",
+  "hece hizi (sesli sure uzerinden): ortalama 7.44, std 0.85, en dusuk 5.86 (cumle 15), en yuksek 8.81 (cumle 10)"
+ ],
+ "cumleler": [
+  {
+   "p": 1,
+   "text": "Bir kalem pilin veri sayfası, anma geriliminin yanında bir sayı daha verir: iç direnç.",
+   "last": false,
+   "shorts": false,
+   "syl": 30,
+   "no": 0,
+   "start": 0.05,
+   "end": 5.54,
+   "pause_after": 0.44,
+   "voiced": 4.32,
+   "syl_per_s": 6.94,
+   "inner_pauses": [
+    [
+     1.82,
+     2.01
+    ],
+    [
+     3.42,
+     3.52
+    ],
+    [
+     4.5,
+     4.87
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 0.05,
+     "t1": 0.2
+    },
+    {
+     "w": "kalem",
+     "t0": 0.2,
+     "t1": 0.57
+    },
+    {
+     "w": "pilin",
+     "t0": 0.57,
+     "t1": 0.9
+    },
+    {
+     "w": "veri",
+     "t0": 0.9,
+     "t1": 1.19
+    },
+    {
+     "w": "sayfası,",
+     "t0": 1.19,
+     "t1": 1.72
+    },
+    {
+     "w": "anma",
+     "t0": 1.72,
+     "t1": 2.2
+    },
+    {
+     "w": "geriliminin",
+     "t0": 2.2,
+     "t1": 2.92
+    },
+    {
+     "w": "yanında",
+     "t0": 2.92,
+     "t1": 3.35
+    },
+    {
+     "w": "bir",
+     "t0": 3.35,
+     "t1": 3.6
+    },
+    {
+     "w": "sayı",
+     "t0": 3.6,
+     "t1": 3.91
+    },
+    {
+     "w": "daha",
+     "t0": 3.91,
+     "t1": 4.2
+    },
+    {
+     "w": "verir:",
+     "t0": 4.2,
+     "t1": 4.91
+    },
+    {
+     "w": "iç",
+     "t0": 4.91,
+     "t1": 5.17
+    },
+    {
+     "w": "direnç.",
+     "t0": 5.17,
+     "t1": 5.54
+    }
+   ],
+   "sinir_db": {
+    "once": -40.0,
+    "duraklama": -82.4,
+    "sonra": -25.8
+   }
+  },
+  {
+   "p": 1,
+   "text": "Bu sayı, pilin neden ideal olmadığını anlatıyor.",
+   "last": true,
+   "shorts": false,
+   "syl": 19,
+   "no": 1,
+   "start": 5.98,
+   "end": 8.79,
+   "pause_after": 0.51,
+   "voiced": 2.44,
+   "syl_per_s": 7.79,
+   "inner_pauses": [
+    [
+     6.5,
+     6.64
+    ],
+    [
+     8.53,
+     8.67
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 5.98,
+     "t1": 6.15
+    },
+    {
+     "w": "sayı,",
+     "t0": 6.15,
+     "t1": 6.41
+    },
+    {
+     "w": "pilin",
+     "t0": 6.41,
+     "t1": 6.83
+    },
+    {
+     "w": "neden",
+     "t0": 6.83,
+     "t1": 7.08
+    },
+    {
+     "w": "ideal",
+     "t0": 7.08,
+     "t1": 7.49
+    },
+    {
+     "w": "olmadığını",
+     "t0": 7.49,
+     "t1": 8.13
+    },
+    {
+     "w": "anlatıyor.",
+     "t0": 8.13,
+     "t1": 8.79
+    }
+   ],
+   "sinir_db": {
+    "once": -44.0,
+    "duraklama": -79.9,
+    "sonra": -21.4
+   }
+  },
+  {
+   "p": 2,
+   "text": "Gerçek pil, ideal bir gerilim kaynağı ile ona seri bağlı küçük bir direnç gibi davranır.",
+   "last": false,
+   "shorts": false,
+   "syl": 31,
+   "no": 2,
+   "start": 9.3,
+   "end": 14.48,
+   "pause_after": 0.45,
+   "voiced": 4.26,
+   "syl_per_s": 7.28,
+   "inner_pauses": [
+    [
+     9.65,
+     9.79
+    ],
+    [
+     10.01,
+     10.16
+    ],
+    [
+     12.87,
+     12.98
+    ],
+    [
+     13.18,
+     13.3
+    ]
+   ],
+   "words": [
+    {
+     "w": "Gerçek",
+     "t0": 9.3,
+     "t1": 9.62
+    },
+    {
+     "w": "pil,",
+     "t0": 9.62,
+     "t1": 9.9
+    },
+    {
+     "w": "ideal",
+     "t0": 9.9,
+     "t1": 10.51
+    },
+    {
+     "w": "bir",
+     "t0": 10.51,
+     "t1": 10.65
+    },
+    {
+     "w": "gerilim",
+     "t0": 10.65,
+     "t1": 11.06
+    },
+    {
+     "w": "kaynağı",
+     "t0": 11.06,
+     "t1": 11.53
+    },
+    {
+     "w": "ile",
+     "t0": 11.53,
+     "t1": 11.81
+    },
+    {
+     "w": "ona",
+     "t0": 11.81,
+     "t1": 12.14
+    },
+    {
+     "w": "seri",
+     "t0": 12.14,
+     "t1": 12.45
+    },
+    {
+     "w": "bağlı",
+     "t0": 12.45,
+     "t1": 12.72
+    },
+    {
+     "w": "küçük",
+     "t0": 12.72,
+     "t1": 13.16
+    },
+    {
+     "w": "bir",
+     "t0": 13.16,
+     "t1": 13.41
+    },
+    {
+     "w": "direnç",
+     "t0": 13.41,
+     "t1": 13.69
+    },
+    {
+     "w": "gibi",
+     "t0": 13.69,
+     "t1": 14.04
+    },
+    {
+     "w": "davranır.",
+     "t0": 14.04,
+     "t1": 14.48
+    }
+   ],
+   "sinir_db": {
+    "once": -33.3,
+    "duraklama": -76.6,
+    "sonra": -18.0
+   }
+  },
+  {
+   "p": 2,
+   "text": "Bu dirence iç direnç diyoruz.",
+   "last": false,
+   "shorts": false,
+   "syl": 10,
+   "no": 3,
+   "start": 14.93,
+   "end": 16.53,
+   "pause_after": 0.58,
+   "voiced": 1.22,
+   "syl_per_s": 8.2,
+   "inner_pauses": [
+    [
+     15.55,
+     15.7
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 14.93,
+     "t1": 15.06
+    },
+    {
+     "w": "dirence",
+     "t0": 15.06,
+     "t1": 15.42
+    },
+    {
+     "w": "iç",
+     "t0": 15.42,
+     "t1": 15.54
+    },
+    {
+     "w": "direnç",
+     "t0": 15.54,
+     "t1": 16.04
+    },
+    {
+     "w": "diyoruz.",
+     "t0": 16.04,
+     "t1": 16.53
+    }
+   ],
+   "sinir_db": {
+    "once": -35.9,
+    "duraklama": -71.6,
+    "sonra": -24.5
+   }
+  },
+  {
+   "p": 2,
+   "text": "Pilin içinde gerçekten ayrı bir direnç parçası yok; pil, böyle bir direnç varmış gibi davranıyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 31,
+   "no": 4,
+   "start": 17.11,
+   "end": 22.75,
+   "pause_after": 0.46,
+   "voiced": 4.43,
+   "syl_per_s": 7.0,
+   "inner_pauses": [
+    [
+     19.82,
+     20.3
+    ],
+    [
+     20.54,
+     20.74
+    ]
+   ],
+   "words": [
+    {
+     "w": "Pilin",
+     "t0": 17.11,
+     "t1": 17.44
+    },
+    {
+     "w": "içinde",
+     "t0": 17.44,
+     "t1": 17.87
+    },
+    {
+     "w": "gerçekten",
+     "t0": 17.87,
+     "t1": 18.45
+    },
+    {
+     "w": "ayrı",
+     "t0": 18.45,
+     "t1": 18.73
+    },
+    {
+     "w": "bir",
+     "t0": 18.73,
+     "t1": 18.88
+    },
+    {
+     "w": "direnç",
+     "t0": 18.88,
+     "t1": 19.25
+    },
+    {
+     "w": "parçası",
+     "t0": 19.25,
+     "t1": 19.72
+    },
+    {
+     "w": "yok;",
+     "t0": 19.72,
+     "t1": 20.34
+    },
+    {
+     "w": "pil,",
+     "t0": 20.34,
+     "t1": 20.5
+    },
+    {
+     "w": "böyle",
+     "t0": 20.5,
+     "t1": 20.98
+    },
+    {
+     "w": "bir",
+     "t0": 20.98,
+     "t1": 21.13
+    },
+    {
+     "w": "direnç",
+     "t0": 21.13,
+     "t1": 21.41
+    },
+    {
+     "w": "varmış",
+     "t0": 21.41,
+     "t1": 21.81
+    },
+    {
+     "w": "gibi",
+     "t0": 21.81,
+     "t1": 22.16
+    },
+    {
+     "w": "davranıyor.",
+     "t0": 22.16,
+     "t1": 22.75
+    }
+   ],
+   "sinir_db": {
+    "once": -32.9,
+    "duraklama": -81.4,
+    "sonra": -29.0
+   }
+  },
+  {
+   "p": 2,
+   "text": "İç dirençten akım geçince, onun uçlarında iç direnç çarpı akım kadar gerilim kaybolur.",
+   "last": false,
+   "shorts": false,
+   "syl": 30,
+   "no": 5,
+   "start": 23.21,
+   "end": 28.75,
+   "pause_after": 0.38,
+   "voiced": 4.39,
+   "syl_per_s": 6.83,
+   "inner_pauses": [
+    [
+     24.89,
+     25.02
+    ],
+    [
+     25.98,
+     26.15
+    ]
+   ],
+   "words": [
+    {
+     "w": "İç",
+     "t0": 23.21,
+     "t1": 23.4
+    },
+    {
+     "w": "dirençten",
+     "t0": 23.4,
+     "t1": 23.9
+    },
+    {
+     "w": "akım",
+     "t0": 23.9,
+     "t1": 24.24
+    },
+    {
+     "w": "geçince,",
+     "t0": 24.24,
+     "t1": 24.72
+    },
+    {
+     "w": "onun",
+     "t0": 24.72,
+     "t1": 25.14
+    },
+    {
+     "w": "uçlarında",
+     "t0": 25.14,
+     "t1": 25.79
+    },
+    {
+     "w": "iç",
+     "t0": 25.79,
+     "t1": 25.94
+    },
+    {
+     "w": "direnç",
+     "t0": 25.94,
+     "t1": 26.51
+    },
+    {
+     "w": "çarpı",
+     "t0": 26.51,
+     "t1": 26.89
+    },
+    {
+     "w": "akım",
+     "t0": 26.89,
+     "t1": 27.37
+    },
+    {
+     "w": "kadar",
+     "t0": 27.37,
+     "t1": 27.72
+    },
+    {
+     "w": "gerilim",
+     "t0": 27.72,
+     "t1": 28.2
+    },
+    {
+     "w": "kaybolur.",
+     "t0": 28.2,
+     "t1": 28.75
+    }
+   ],
+   "sinir_db": {
+    "once": -34.9,
+    "duraklama": -81.0,
+    "sonra": -23.5
+   }
+  },
+  {
+   "p": 2,
+   "text": "Pilin uç gerilimi de bu kadar düşer.",
+   "last": false,
+   "shorts": false,
+   "syl": 13,
+   "no": 6,
+   "start": 29.13,
+   "end": 30.94,
+   "pause_after": 0.51,
+   "voiced": 1.59,
+   "syl_per_s": 8.18,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Pilin",
+     "t0": 29.13,
+     "t1": 29.39
+    },
+    {
+     "w": "uç",
+     "t0": 29.39,
+     "t1": 29.52
+    },
+    {
+     "w": "gerilimi",
+     "t0": 29.52,
+     "t1": 30.11
+    },
+    {
+     "w": "de",
+     "t0": 30.11,
+     "t1": 30.24
+    },
+    {
+     "w": "bu",
+     "t0": 30.24,
+     "t1": 30.41
+    },
+    {
+     "w": "kadar",
+     "t0": 30.41,
+     "t1": 30.65
+    },
+    {
+     "w": "düşer.",
+     "t0": 30.65,
+     "t1": 30.94
+    }
+   ],
+   "sinir_db": {
+    "once": -30.8,
+    "duraklama": -74.9,
+    "sonra": -30.9
+   }
+  },
+  {
+   "p": 2,
+   "text": "Akım küçükse kayıp küçük, akım büyüdükçe kayıp da büyür.",
+   "last": true,
+   "shorts": false,
+   "syl": 20,
+   "no": 7,
+   "start": 31.45,
+   "end": 35.13,
+   "pause_after": 0.42,
+   "voiced": 2.41,
+   "syl_per_s": 8.3,
+   "inner_pauses": [
+    [
+     32.67,
+     32.79
+    ],
+    [
+     33.05,
+     33.41
+    ],
+    [
+     34.3,
+     34.4
+    ],
+    [
+     34.59,
+     34.73
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akım",
+     "t0": 31.45,
+     "t1": 31.8
+    },
+    {
+     "w": "küçükse",
+     "t0": 31.8,
+     "t1": 32.22
+    },
+    {
+     "w": "kayıp",
+     "t0": 32.22,
+     "t1": 32.59
+    },
+    {
+     "w": "küçük,",
+     "t0": 32.59,
+     "t1": 33.01
+    },
+    {
+     "w": "akım",
+     "t0": 33.01,
+     "t1": 33.66
+    },
+    {
+     "w": "büyüdükçe",
+     "t0": 33.66,
+     "t1": 34.24
+    },
+    {
+     "w": "kayıp",
+     "t0": 34.24,
+     "t1": 34.74
+    },
+    {
+     "w": "da",
+     "t0": 34.74,
+     "t1": 34.86
+    },
+    {
+     "w": "büyür.",
+     "t0": 34.86,
+     "t1": 35.13
+    }
+   ],
+   "sinir_db": {
+    "once": -28.4,
+    "duraklama": -75.2,
+    "sonra": -16.9
+   }
+  },
+  {
+   "p": 3,
+   "text": "Sayılarla görelim.",
+   "last": false,
+   "shorts": false,
+   "syl": 7,
+   "no": 8,
+   "start": 35.55,
+   "end": 36.38,
+   "pause_after": 0.38,
+   "voiced": 0.8,
+   "syl_per_s": 8.75,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Sayılarla",
+     "t0": 35.55,
+     "t1": 36.02
+    },
+    {
+     "w": "görelim.",
+     "t0": 36.02,
+     "t1": 36.38
+    }
+   ],
+   "sinir_db": {
+    "once": -27.5,
+    "duraklama": -84.3,
+    "sonra": -22.1
+   }
+  },
+  {
+   "p": 3,
+   "text": "Üreticinin veri sayfasına göre, taze bir alkalin kalem pilin iç direnci sıfır virgül on beş ile sıfır virgül üç ohm arasında.",
+   "last": false,
+   "shorts": false,
+   "syl": 45,
+   "no": 9,
+   "start": 36.76,
+   "end": 44.21,
+   "pause_after": 0.4,
+   "voiced": 6.37,
+   "syl_per_s": 7.06,
+   "inner_pauses": [
+    [
+     38.49,
+     38.64
+    ],
+    [
+     40.16,
+     40.26
+    ]
+   ],
+   "words": [
+    {
+     "w": "Üreticinin",
+     "t0": 36.76,
+     "t1": 37.51
+    },
+    {
+     "w": "veri",
+     "t0": 37.51,
+     "t1": 37.87
+    },
+    {
+     "w": "sayfasına",
+     "t0": 37.87,
+     "t1": 38.46
+    },
+    {
+     "w": "göre,",
+     "t0": 38.46,
+     "t1": 38.9
+    },
+    {
+     "w": "taze",
+     "t0": 38.9,
+     "t1": 39.18
+    },
+    {
+     "w": "bir",
+     "t0": 39.18,
+     "t1": 39.32
+    },
+    {
+     "w": "alkalin",
+     "t0": 39.32,
+     "t1": 39.84
+    },
+    {
+     "w": "kalem",
+     "t0": 39.84,
+     "t1": 40.3
+    },
+    {
+     "w": "pilin",
+     "t0": 40.3,
+     "t1": 40.68
+    },
+    {
+     "w": "iç",
+     "t0": 40.68,
+     "t1": 40.83
+    },
+    {
+     "w": "direnci",
+     "t0": 40.83,
+     "t1": 41.35
+    },
+    {
+     "w": "sıfır",
+     "t0": 41.35,
+     "t1": 41.63
+    },
+    {
+     "w": "virgül",
+     "t0": 41.63,
+     "t1": 41.95
+    },
+    {
+     "w": "on",
+     "t0": 41.95,
+     "t1": 42.09
+    },
+    {
+     "w": "beş",
+     "t0": 42.09,
+     "t1": 42.24
+    },
+    {
+     "w": "ile",
+     "t0": 42.24,
+     "t1": 42.64
+    },
+    {
+     "w": "sıfır",
+     "t0": 42.64,
+     "t1": 42.98
+    },
+    {
+     "w": "virgül",
+     "t0": 42.98,
+     "t1": 43.33
+    },
+    {
+     "w": "üç",
+     "t0": 43.33,
+     "t1": 43.5
+    },
+    {
+     "w": "ohm",
+     "t0": 43.5,
+     "t1": 43.64
+    },
+    {
+     "w": "arasında.",
+     "t0": 43.64,
+     "t1": 44.21
+    }
+   ],
+   "sinir_db": {
+    "once": -32.1,
+    "duraklama": -82.8,
+    "sonra": -20.1
+   }
+  },
+  {
+   "p": 3,
+   "text": "Büyük olanı alalım: sıfır virgül üç ohm.",
+   "last": false,
+   "shorts": false,
+   "syl": 14,
+   "no": 10,
+   "start": 44.61,
+   "end": 46.65,
+   "pause_after": 0.41,
+   "voiced": 1.59,
+   "syl_per_s": 8.81,
+   "inner_pauses": [
+    [
+     45.43,
+     45.71
+    ]
+   ],
+   "words": [
+    {
+     "w": "Büyük",
+     "t0": 44.61,
+     "t1": 44.87
+    },
+    {
+     "w": "olanı",
+     "t0": 44.87,
+     "t1": 45.21
+    },
+    {
+     "w": "alalım:",
+     "t0": 45.21,
+     "t1": 45.9
+    },
+    {
+     "w": "sıfır",
+     "t0": 45.9,
+     "t1": 46.13
+    },
+    {
+     "w": "virgül",
+     "t0": 46.13,
+     "t1": 46.36
+    },
+    {
+     "w": "üç",
+     "t0": 46.36,
+     "t1": 46.52
+    },
+    {
+     "w": "ohm.",
+     "t0": 46.52,
+     "t1": 46.65
+    }
+   ],
+   "sinir_db": {
+    "once": -30.2,
+    "duraklama": -83.5,
+    "sonra": -15.3
+   }
+  },
+  {
+   "p": 3,
+   "text": "Modelin içindeki ideal kaynak, pilin bir buçuk voltluk anma gerilimi.",
+   "last": false,
+   "shorts": false,
+   "syl": 25,
+   "no": 11,
+   "start": 47.06,
+   "end": 50.95,
+   "pause_after": 0.38,
+   "voiced": 3.2,
+   "syl_per_s": 7.81,
+   "inner_pauses": [
+    [
+     48.83,
+     49.0
+    ]
+   ],
+   "words": [
+    {
+     "w": "Modelin",
+     "t0": 47.06,
+     "t1": 47.45
+    },
+    {
+     "w": "içindeki",
+     "t0": 47.45,
+     "t1": 48.06
+    },
+    {
+     "w": "ideal",
+     "t0": 48.06,
+     "t1": 48.53
+    },
+    {
+     "w": "kaynak,",
+     "t0": 48.53,
+     "t1": 49.05
+    },
+    {
+     "w": "pilin",
+     "t0": 49.05,
+     "t1": 49.31
+    },
+    {
+     "w": "bir",
+     "t0": 49.31,
+     "t1": 49.43
+    },
+    {
+     "w": "buçuk",
+     "t0": 49.43,
+     "t1": 49.73
+    },
+    {
+     "w": "voltluk",
+     "t0": 49.73,
+     "t1": 50.19
+    },
+    {
+     "w": "anma",
+     "t0": 50.19,
+     "t1": 50.44
+    },
+    {
+     "w": "gerilimi.",
+     "t0": 50.44,
+     "t1": 50.95
+    }
+   ],
+   "sinir_db": {
+    "once": -31.1,
+    "duraklama": -83.2,
+    "sonra": -28.9
+   }
+  },
+  {
+   "p": 3,
+   "text": "Uç gerilimi, bir buçuk eksi sıfır virgül üç çarpı akım.",
+   "last": true,
+   "shorts": false,
+   "syl": 19,
+   "no": 12,
+   "start": 51.33,
+   "end": 55.13,
+   "pause_after": 0.45,
+   "voiced": 2.79,
+   "syl_per_s": 6.81,
+   "inner_pauses": [
+    [
+     52.1,
+     52.32
+    ]
+   ],
+   "words": [
+    {
+     "w": "Uç",
+     "t0": 51.33,
+     "t1": 51.52
+    },
+    {
+     "w": "gerilimi,",
+     "t0": 51.52,
+     "t1": 52.38
+    },
+    {
+     "w": "bir",
+     "t0": 52.38,
+     "t1": 52.53
+    },
+    {
+     "w": "buçuk",
+     "t0": 52.53,
+     "t1": 53.05
+    },
+    {
+     "w": "eksi",
+     "t0": 53.05,
+     "t1": 53.38
+    },
+    {
+     "w": "sıfır",
+     "t0": 53.38,
+     "t1": 53.75
+    },
+    {
+     "w": "virgül",
+     "t0": 53.75,
+     "t1": 54.05
+    },
+    {
+     "w": "üç",
+     "t0": 54.05,
+     "t1": 54.3
+    },
+    {
+     "w": "çarpı",
+     "t0": 54.3,
+     "t1": 54.63
+    },
+    {
+     "w": "akım.",
+     "t0": 54.63,
+     "t1": 55.13
+    }
+   ],
+   "sinir_db": {
+    "once": -38.3,
+    "duraklama": -82.4,
+    "sonra": -28.1
+   }
+  },
+  {
+   "p": 4,
+   "text": "Akım sıfırken, sıfır virgül üç çarpı sıfır, sıfır.",
+   "last": false,
+   "shorts": false,
+   "syl": 16,
+   "no": 13,
+   "start": 55.58,
+   "end": 58.9,
+   "pause_after": 0.43,
+   "voiced": 2.18,
+   "syl_per_s": 7.34,
+   "inner_pauses": [
+    [
+     56.46,
+     56.64
+    ],
+    [
+     57.44,
+     57.54
+    ],
+    [
+     58.32,
+     58.56
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akım",
+     "t0": 55.58,
+     "t1": 55.91
+    },
+    {
+     "w": "sıfırken,",
+     "t0": 55.91,
+     "t1": 56.65
+    },
+    {
+     "w": "sıfır",
+     "t0": 56.65,
+     "t1": 56.98
+    },
+    {
+     "w": "virgül",
+     "t0": 56.98,
+     "t1": 57.25
+    },
+    {
+     "w": "üç",
+     "t0": 57.25,
+     "t1": 57.44
+    },
+    {
+     "w": "çarpı",
+     "t0": 57.44,
+     "t1": 57.89
+    },
+    {
+     "w": "sıfır,",
+     "t0": 57.89,
+     "t1": 58.25
+    },
+    {
+     "w": "sıfır.",
+     "t0": 58.25,
+     "t1": 58.9
+    }
+   ],
+   "sinir_db": {
+    "once": -34.7,
+    "duraklama": -72.8,
+    "sonra": -29.5
+   }
+  },
+  {
+   "p": 4,
+   "text": "Uç gerilimi bir buçuk volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 9,
+   "no": 14,
+   "start": 59.33,
+   "end": 60.72,
+   "pause_after": 0.47,
+   "voiced": 1.05,
+   "syl_per_s": 8.57,
+   "inner_pauses": [
+    [
+     60.46,
+     60.57
+    ]
+   ],
+   "words": [
+    {
+     "w": "Uç",
+     "t0": 59.33,
+     "t1": 59.49
+    },
+    {
+     "w": "gerilimi",
+     "t0": 59.49,
+     "t1": 60.08
+    },
+    {
+     "w": "bir",
+     "t0": 60.08,
+     "t1": 60.19
+    },
+    {
+     "w": "buçuk",
+     "t0": 60.19,
+     "t1": 60.6
+    },
+    {
+     "w": "volt.",
+     "t0": 60.6,
+     "t1": 60.72
+    }
+   ],
+   "sinir_db": {
+    "once": -42.0,
+    "duraklama": -75.1,
+    "sonra": -15.9
+   }
+  },
+  {
+   "p": 4,
+   "text": "Yarım amperde, sıfır virgül üç çarpı sıfır virgül beş, sıfır virgül on beş volt kaybolur.",
+   "last": false,
+   "shorts": false,
+   "syl": 27,
+   "no": 15,
+   "start": 61.19,
+   "end": 66.81,
+   "pause_after": 0.34,
+   "voiced": 4.61,
+   "syl_per_s": 5.86,
+   "inner_pauses": [
+    [
+     62.15,
+     62.28
+    ],
+    [
+     63.18,
+     63.3
+    ],
+    [
+     64.71,
+     64.87
+    ],
+    [
+     66.21,
+     66.33
+    ]
+   ],
+   "words": [
+    {
+     "w": "Yarım",
+     "t0": 61.19,
+     "t1": 61.54
+    },
+    {
+     "w": "amperde,",
+     "t0": 61.54,
+     "t1": 62.09
+    },
+    {
+     "w": "sıfır",
+     "t0": 62.09,
+     "t1": 62.62
+    },
+    {
+     "w": "virgül",
+     "t0": 62.62,
+     "t1": 62.96
+    },
+    {
+     "w": "üç",
+     "t0": 62.96,
+     "t1": 63.18
+    },
+    {
+     "w": "çarpı",
+     "t0": 63.18,
+     "t1": 63.71
+    },
+    {
+     "w": "sıfır",
+     "t0": 63.71,
+     "t1": 64.13
+    },
+    {
+     "w": "virgül",
+     "t0": 64.13,
+     "t1": 64.48
+    },
+    {
+     "w": "beş,",
+     "t0": 64.48,
+     "t1": 64.65
+    },
+    {
+     "w": "sıfır",
+     "t0": 64.65,
+     "t1": 65.21
+    },
+    {
+     "w": "virgül",
+     "t0": 65.21,
+     "t1": 65.55
+    },
+    {
+     "w": "on",
+     "t0": 65.55,
+     "t1": 65.75
+    },
+    {
+     "w": "beş",
+     "t0": 65.75,
+     "t1": 65.92
+    },
+    {
+     "w": "volt",
+     "t0": 65.92,
+     "t1": 66.14
+    },
+    {
+     "w": "kaybolur.",
+     "t0": 66.14,
+     "t1": 66.81
+    }
+   ],
+   "sinir_db": {
+    "once": -33.5,
+    "duraklama": -77.2,
+    "sonra": -20.1
+   }
+  },
+  {
+   "p": 4,
+   "text": "Bir buçuk eksi sıfır virgül on beş, bir virgül otuz beş volt.",
+   "last": false,
+   "shorts": false,
+   "syl": 18,
+   "no": 16,
+   "start": 67.15,
+   "end": 70.75,
+   "pause_after": 0.5,
+   "voiced": 2.98,
+   "syl_per_s": 6.04,
+   "inner_pauses": [
+    [
+     69.35,
+     69.53
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 67.15,
+     "t1": 67.32
+    },
+    {
+     "w": "buçuk",
+     "t0": 67.32,
+     "t1": 67.83
+    },
+    {
+     "w": "eksi",
+     "t0": 67.83,
+     "t1": 68.18
+    },
+    {
+     "w": "sıfır",
+     "t0": 68.18,
+     "t1": 68.57
+    },
+    {
+     "w": "virgül",
+     "t0": 68.57,
+     "t1": 68.93
+    },
+    {
+     "w": "on",
+     "t0": 68.93,
+     "t1": 69.1
+    },
+    {
+     "w": "beş,",
+     "t0": 69.1,
+     "t1": 69.27
+    },
+    {
+     "w": "bir",
+     "t0": 69.27,
+     "t1": 69.61
+    },
+    {
+     "w": "virgül",
+     "t0": 69.61,
+     "t1": 69.94
+    },
+    {
+     "w": "otuz",
+     "t0": 69.94,
+     "t1": 70.36
+    },
+    {
+     "w": "beş",
+     "t0": 70.36,
+     "t1": 70.53
+    },
+    {
+     "w": "volt.",
+     "t0": 70.53,
+     "t1": 70.75
+    }
+   ],
+   "sinir_db": {
+    "once": -30.8,
+    "duraklama": -75.7,
+    "sonra": -14.2
+   }
+  },
+  {
+   "p": 4,
+   "text": "Bir amperde, sıfır virgül üç çarpı bir, sıfır virgül üç volt kaybolur.",
+   "last": false,
+   "shorts": false,
+   "syl": 21,
+   "no": 17,
+   "start": 71.25,
+   "end": 75.75,
+   "pause_after": 0.32,
+   "voiced": 3.56,
+   "syl_per_s": 5.9,
+   "inner_pauses": [
+    [
+     73.08,
+     73.19
+    ],
+    [
+     73.85,
+     74.04
+    ],
+    [
+     75.14,
+     75.25
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 71.25,
+     "t1": 71.42
+    },
+    {
+     "w": "amperde,",
+     "t0": 71.42,
+     "t1": 71.96
+    },
+    {
+     "w": "sıfır",
+     "t0": 71.96,
+     "t1": 72.4
+    },
+    {
+     "w": "virgül",
+     "t0": 72.4,
+     "t1": 72.8
+    },
+    {
+     "w": "üç",
+     "t0": 72.8,
+     "t1": 73.02
+    },
+    {
+     "w": "çarpı",
+     "t0": 73.02,
+     "t1": 73.53
+    },
+    {
+     "w": "bir,",
+     "t0": 73.53,
+     "t1": 73.7
+    },
+    {
+     "w": "sıfır",
+     "t0": 73.7,
+     "t1": 74.23
+    },
+    {
+     "w": "virgül",
+     "t0": 74.23,
+     "t1": 74.62
+    },
+    {
+     "w": "üç",
+     "t0": 74.62,
+     "t1": 74.83
+    },
+    {
+     "w": "volt",
+     "t0": 74.83,
+     "t1": 75.04
+    },
+    {
+     "w": "kaybolur.",
+     "t0": 75.04,
+     "t1": 75.75
+    }
+   ],
+   "sinir_db": {
+    "once": -33.1,
+    "duraklama": -77.9,
+    "sonra": -19.4
+   }
+  },
+  {
+   "p": 4,
+   "text": "Bir buçuk eksi sıfır virgül üç, bir virgül iki volt.",
+   "last": true,
+   "shorts": false,
+   "syl": 16,
+   "no": 18,
+   "start": 76.07,
+   "end": 79.24,
+   "pause_after": 0.5,
+   "voiced": 2.42,
+   "syl_per_s": 6.61,
+   "inner_pauses": [
+    [
+     78.11,
+     78.31
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bir",
+     "t0": 76.07,
+     "t1": 76.23
+    },
+    {
+     "w": "buçuk",
+     "t0": 76.23,
+     "t1": 76.68
+    },
+    {
+     "w": "eksi",
+     "t0": 76.68,
+     "t1": 77.05
+    },
+    {
+     "w": "sıfır",
+     "t0": 77.05,
+     "t1": 77.41
+    },
+    {
+     "w": "virgül",
+     "t0": 77.41,
+     "t1": 77.73
+    },
+    {
+     "w": "üç,",
+     "t0": 77.73,
+     "t1": 78.03
+    },
+    {
+     "w": "bir",
+     "t0": 78.03,
+     "t1": 78.38
+    },
+    {
+     "w": "virgül",
+     "t0": 78.38,
+     "t1": 78.68
+    },
+    {
+     "w": "iki",
+     "t0": 78.68,
+     "t1": 79.09
+    },
+    {
+     "w": "volt.",
+     "t0": 79.09,
+     "t1": 79.24
+    }
+   ],
+   "sinir_db": {
+    "once": -28.1,
+    "duraklama": -74.2,
+    "sonra": -27.3
+   }
+  },
+  {
+   "p": 5,
+   "text": "Bu noktaları aynı grafiğe koyarsak, yatay doğrunun altında aşağı eğimli bir doğru çıkar.",
+   "last": false,
+   "shorts": false,
+   "syl": 32,
+   "no": 19,
+   "start": 79.74,
+   "end": 84.96,
+   "pause_after": 0.41,
+   "voiced": 4.37,
+   "syl_per_s": 7.32,
+   "inner_pauses": [
+    [
+     81.67,
+     81.92
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 79.74,
+     "t1": 79.88
+    },
+    {
+     "w": "noktaları",
+     "t0": 79.88,
+     "t1": 80.55
+    },
+    {
+     "w": "aynı",
+     "t0": 80.55,
+     "t1": 80.82
+    },
+    {
+     "w": "grafiğe",
+     "t0": 80.82,
+     "t1": 81.38
+    },
+    {
+     "w": "koyarsak,",
+     "t0": 81.38,
+     "t1": 82.04
+    },
+    {
+     "w": "yatay",
+     "t0": 82.04,
+     "t1": 82.35
+    },
+    {
+     "w": "doğrunun",
+     "t0": 82.35,
+     "t1": 82.76
+    },
+    {
+     "w": "altında",
+     "t0": 82.76,
+     "t1": 83.25
+    },
+    {
+     "w": "aşağı",
+     "t0": 83.25,
+     "t1": 83.73
+    },
+    {
+     "w": "eğimli",
+     "t0": 83.73,
+     "t1": 84.14
+    },
+    {
+     "w": "bir",
+     "t0": 84.14,
+     "t1": 84.28
+    },
+    {
+     "w": "doğru",
+     "t0": 84.28,
+     "t1": 84.55
+    },
+    {
+     "w": "çıkar.",
+     "t0": 84.55,
+     "t1": 84.96
+    }
+   ],
+   "sinir_db": {
+    "once": -35.7,
+    "duraklama": -72.6,
+    "sonra": -16.1
+   }
+  },
+  {
+   "p": 5,
+   "text": "Eğimin büyüklüğü iç direncin kendisi: her amper için sıfır virgül üç volt düşüş.",
+   "last": false,
+   "shorts": false,
+   "syl": 27,
+   "no": 20,
+   "start": 85.37,
+   "end": 90.71,
+   "pause_after": 0.37,
+   "voiced": 4.08,
+   "syl_per_s": 6.62,
+   "inner_pauses": [
+    [
+     85.96,
+     86.08
+    ],
+    [
+     86.34,
+     86.46
+    ],
+    [
+     87.73,
+     88.09
+    ],
+    [
+     88.89,
+     89.0
+    ],
+    [
+     90.17,
+     90.31
+    ]
+   ],
+   "words": [
+    {
+     "w": "Eğimin",
+     "t0": 85.37,
+     "t1": 85.83
+    },
+    {
+     "w": "büyüklüğü",
+     "t0": 85.83,
+     "t1": 86.75
+    },
+    {
+     "w": "iç",
+     "t0": 86.75,
+     "t1": 86.9
+    },
+    {
+     "w": "direncin",
+     "t0": 86.9,
+     "t1": 87.4
+    },
+    {
+     "w": "kendisi:",
+     "t0": 87.4,
+     "t1": 88.21
+    },
+    {
+     "w": "her",
+     "t0": 88.21,
+     "t1": 88.36
+    },
+    {
+     "w": "amper",
+     "t0": 88.36,
+     "t1": 88.76
+    },
+    {
+     "w": "için",
+     "t0": 88.76,
+     "t1": 89.18
+    },
+    {
+     "w": "sıfır",
+     "t0": 89.18,
+     "t1": 89.55
+    },
+    {
+     "w": "virgül",
+     "t0": 89.55,
+     "t1": 89.93
+    },
+    {
+     "w": "üç",
+     "t0": 89.93,
+     "t1": 90.12
+    },
+    {
+     "w": "volt",
+     "t0": 90.12,
+     "t1": 90.41
+    },
+    {
+     "w": "düşüş.",
+     "t0": 90.41,
+     "t1": 90.71
+    }
+   ],
+   "sinir_db": {
+    "once": -29.5,
+    "duraklama": -79.1,
+    "sonra": -31.4
+   }
+  },
+  {
+   "p": 5,
+   "text": "Akım küçükken iki doğru neredeyse üst üste.",
+   "last": false,
+   "shorts": false,
+   "syl": 16,
+   "no": 21,
+   "start": 91.08,
+   "end": 93.79,
+   "pause_after": 0.33,
+   "voiced": 2.0,
+   "syl_per_s": 8.0,
+   "inner_pauses": [
+    [
+     91.62,
+     91.73
+    ],
+    [
+     91.97,
+     92.12
+    ],
+    [
+     93.35,
+     93.46
+    ],
+    [
+     93.51,
+     93.68
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akım",
+     "t0": 91.08,
+     "t1": 91.42
+    },
+    {
+     "w": "küçükken",
+     "t0": 91.42,
+     "t1": 91.95
+    },
+    {
+     "w": "iki",
+     "t0": 91.95,
+     "t1": 92.39
+    },
+    {
+     "w": "doğru",
+     "t0": 92.39,
+     "t1": 92.64
+    },
+    {
+     "w": "neredeyse",
+     "t0": 92.64,
+     "t1": 93.14
+    },
+    {
+     "w": "üst",
+     "t0": 93.14,
+     "t1": 93.26
+    },
+    {
+     "w": "üste.",
+     "t0": 93.26,
+     "t1": 93.79
+    }
+   ],
+   "sinir_db": {
+    "once": -40.9,
+    "duraklama": -80.1,
+    "sonra": -25.9
+   }
+  },
+  {
+   "p": 5,
+   "text": "Akım büyüdükçe aralarındaki fark açılıyor.",
+   "last": false,
+   "shorts": false,
+   "syl": 17,
+   "no": 22,
+   "start": 94.12,
+   "end": 96.52,
+   "pause_after": 0.34,
+   "voiced": 1.95,
+   "syl_per_s": 8.72,
+   "inner_pauses": [],
+   "words": [
+    {
+     "w": "Akım",
+     "t0": 94.12,
+     "t1": 94.4
+    },
+    {
+     "w": "büyüdükçe",
+     "t0": 94.4,
+     "t1": 94.95
+    },
+    {
+     "w": "aralarındaki",
+     "t0": 94.95,
+     "t1": 95.84
+    },
+    {
+     "w": "fark",
+     "t0": 95.84,
+     "t1": 96.01
+    },
+    {
+     "w": "açılıyor.",
+     "t0": 96.01,
+     "t1": 96.52
+    }
+   ],
+   "sinir_db": {
+    "once": -25.8,
+    "duraklama": -81.0,
+    "sonra": -29.9
+   }
+  },
+  {
+   "p": 5,
+   "text": "Akım küçük kaldıkça gerçek pil ideal modele çok yakın davranır.",
+   "last": true,
+   "shorts": false,
+   "syl": 22,
+   "no": 23,
+   "start": 96.86,
+   "end": 100.88,
+   "pause_after": 0.38,
+   "voiced": 3.03,
+   "syl_per_s": 7.26,
+   "inner_pauses": [
+    [
+     97.39,
+     97.5
+    ],
+    [
+     98.67,
+     98.81
+    ],
+    [
+     99.01,
+     99.12
+    ]
+   ],
+   "words": [
+    {
+     "w": "Akım",
+     "t0": 96.86,
+     "t1": 97.24
+    },
+    {
+     "w": "küçük",
+     "t0": 97.24,
+     "t1": 97.68
+    },
+    {
+     "w": "kaldıkça",
+     "t0": 97.68,
+     "t1": 98.2
+    },
+    {
+     "w": "gerçek",
+     "t0": 98.2,
+     "t1": 98.53
+    },
+    {
+     "w": "pil",
+     "t0": 98.53,
+     "t1": 98.67
+    },
+    {
+     "w": "ideal",
+     "t0": 98.67,
+     "t1": 99.34
+    },
+    {
+     "w": "modele",
+     "t0": 99.34,
+     "t1": 99.75
+    },
+    {
+     "w": "çok",
+     "t0": 99.75,
+     "t1": 99.95
+    },
+    {
+     "w": "yakın",
+     "t0": 99.95,
+     "t1": 100.4
+    },
+    {
+     "w": "davranır.",
+     "t0": 100.4,
+     "t1": 100.88
+    }
+   ],
+   "sinir_db": {
+    "once": -34.7,
+    "duraklama": -77.3,
+    "sonra": -18.5
+   }
+  },
+  {
+   "p": 6,
+   "text": "Bu modelin devre olarak tam çözümünü, seri dirençleri göreceğimiz üçüncü derste yapacağız.",
+   "last": false,
+   "shorts": false,
+   "syl": 34,
+   "no": 24,
+   "start": 101.26,
+   "end": 106.13,
+   "pause_after": 0.34,
+   "voiced": 4.34,
+   "syl_per_s": 7.83,
+   "inner_pauses": [
+    [
+     102.41,
+     102.52
+    ],
+    [
+     103.31,
+     103.41
+    ]
+   ],
+   "words": [
+    {
+     "w": "Bu",
+     "t0": 101.26,
+     "t1": 101.39
+    },
+    {
+     "w": "modelin",
+     "t0": 101.39,
+     "t1": 101.78
+    },
+    {
+     "w": "devre",
+     "t0": 101.78,
+     "t1": 102.03
+    },
+    {
+     "w": "olarak",
+     "t0": 102.03,
+     "t1": 102.41
+    },
+    {
+     "w": "tam",
+     "t0": 102.41,
+     "t1": 102.66
+    },
+    {
+     "w": "çözümünü,",
+     "t0": 102.66,
+     "t1": 103.2
+    },
+    {
+     "w": "seri",
+     "t0": 103.2,
+     "t1": 103.56
+    },
+    {
+     "w": "dirençleri",
+     "t0": 103.56,
+     "t1": 104.08
+    },
+    {
+     "w": "göreceğimiz",
+     "t0": 104.08,
+     "t1": 104.73
+    },
+    {
+     "w": "üçüncü",
+     "t0": 104.73,
+     "t1": 105.22
+    },
+    {
+     "w": "derste",
+     "t0": 105.22,
+     "t1": 105.47
+    },
+    {
+     "w": "yapacağız.",
+     "t0": 105.47,
+     "t1": 106.13
+    }
+   ],
+   "sinir_db": {
+    "once": -30.6,
+    "duraklama": -81.6,
+    "sonra": -21.4
+   }
+  },
+  {
+   "p": 6,
+   "text": "Şimdilik şu tahmin yeter: pilin kaybettiği gerilim, yaklaşık olarak iç direnç çarpı akım.",
+   "last": true,
+   "shorts": false,
+   "syl": 30,
+   "no": 25,
+   "start": 106.47,
+   "end": 112.04,
+   "pause_after": 0.2,
+   "voiced": 3.91,
+   "syl_per_s": 7.67,
+   "inner_pauses": [
+    [
+     107.82,
+     108.21
+    ],
+    [
+     108.86,
+     108.98
+    ],
+    [
+     109.55,
+     109.75
+    ],
+    [
+     109.88,
+     109.98
+    ],
+    [
+     110.56,
+     110.66
+    ],
+    [
+     110.67,
+     110.8
+    ],
+    [
+     111.27,
+     111.37
+    ],
+    [
+     112.04,
+     112.24
+    ]
+   ],
+   "words": [
+    {
+     "w": "Şimdilik",
+     "t0": 106.47,
+     "t1": 106.9
+    },
+    {
+     "w": "şu",
+     "t0": 106.9,
+     "t1": 107.03
+    },
+    {
+     "w": "tahmin",
+     "t0": 107.03,
+     "t1": 107.32
+    },
+    {
+     "w": "yeter:",
+     "t0": 107.32,
+     "t1": 107.58
+    },
+    {
+     "w": "pilin",
+     "t0": 107.58,
+     "t1": 108.31
+    },
+    {
+     "w": "kaybettiği",
+     "t0": 108.31,
+     "t1": 108.85
+    },
+    {
+     "w": "gerilim,",
+     "t0": 108.85,
+     "t1": 109.36
+    },
+    {
+     "w": "yaklaşık",
+     "t0": 109.36,
+     "t1": 110.05
+    },
+    {
+     "w": "olarak",
+     "t0": 110.05,
+     "t1": 110.49
+    },
+    {
+     "w": "iç",
+     "t0": 110.49,
+     "t1": 110.85
+    },
+    {
+     "w": "direnç",
+     "t0": 110.85,
+     "t1": 111.2
+    },
+    {
+     "w": "çarpı",
+     "t0": 111.2,
+     "t1": 111.56
+    },
+    {
+     "w": "akım.",
+     "t0": 111.56,
+     "t1": 112.04
+    }
+   ],
+   "sinir_db": {
+    "once": -39.8,
+    "duraklama": -75.6,
+    "sonra": null
+   }
+  }
+ ]
+}
