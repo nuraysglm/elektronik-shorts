@@ -1,9 +1,10 @@
 // Türev Short d1b1-2: "Yük en büyükken akım ne olur?" (Ders 1 - Bölüm 1, parça 6 cümle 1, 4-10, 15-20, 22-24; uzun videoda Örnek 3)
 // Uzun videodaki tahta (parca-6.js) dikey 1080x1920 düzende yeniden çizildi; grafik bütün Short boyunca kalır, üst bölge bir kez silinir.
 import { K, B, R, G, L, S, E, Wt, text, row, line, dashed, frame, under, erase, oval, pulse, pad, axes, dot, curve } from './motor.js';
-import { kart, etiket } from './ortak.js';
+import { remapY } from './motor.js';
+import { sonAnim, etiket } from './ortak.js';
 export function build(o) {
-  etiket(); // sabit ders etiketi (0 sn - son); tahta içeriği etiketin altına kaydırıldı (A sıkıştırıldı, B +45 px)
+  etiket(); // sabit iki satırlık yönlendirme etiketi (v3) (0 sn - son); tahta içeriği etiketin altına kaydırıldı (A sıkıştırıldı, B +45 px)
   // ---------------- A: soru ve yük (parça 6, cümle 1-10)
   let g = 'a';
   text('Yük en büyükken', L, 360, 76, K, 0, { g, kart: true });
@@ -35,6 +36,8 @@ export function build(o) {
   text('Tepede teğet yatay: eğim = 0', L, 735, 52, R, Wt('6.23', 'eğim'), { g, dur: 1.1 });
   const hz = text('Akım = yükün değişme hızı', L, 830, 56, B, S('6.24') + 0.2, { g, dur: 1.2 });
   under(hz, B, E('6.24') - 1.1, 0.4, { g });
-  erase(g, o.kartBas); erase(gg, o.kartBas);
-  kart(o, 'k');
+  // v3: iki satırlık etiket için içerik aşağı alındı (soru başlığı +32 px, A'nın alt bloğu 487–885 arasına sıkıştırıldı, y >= 885 aynı; B +40 px; grafik aynı)
+  remapY('a', (y) => (y <= 455 ? y + 32 : y <= 885 ? 885 - (885 - y) * (398 / 430) : y));
+  remapY('b', (y) => (y < 900 ? y + 40 : y));
+  sonAnim(o); // tahta silinmez: son kare donar, bulanıklaşır, üstünde Beğen – Paylaş – Abone ol
 }

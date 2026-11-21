@@ -13,7 +13,7 @@ export const KOSE = 'Ders 1 - Bölüm 1: Akım nedir?';
 export const W = 1080, H = 1920; // AGENT.md 4 guvenli alan: yazi x 65-929, y 211-1306; nesne y <= 1382
 export const SAFE = { x0: 65, x1: 929, y0: 211, y1: 1306, ny1: 1382 };
 export const L = 115; // sol hiza (x %10,6; oval vurgular x %6 icinde kalsin)
-let ctx, items = [], Z, DUR = 0, seq = [], erases = [], marks = {};
+let ctx, items = [], Z, DUR = 0, seq = [], erases = [], marks = {}, SON = null, OFF = null;
 const used = new Set();
 const GAP = 0.12, FADE = 0.2;
 
@@ -83,6 +83,17 @@ export function dashRect(box, color, lw, t0, dur, o = {}) {
 export function kose(t0, o = {}) { return text(KOSE, L, 78, 42, R, t0, { g: o.g ?? 'kose', dur: o.dur ?? 1.0, sabit: o.sabit }); }
 // kirmizi sola hizali baslik (+ istege bagli alt cizgi)
 export function baslik(s, y, t0, o = {}) { const it = text(s, o.x ?? L, y, o.size ?? 58, R, t0, { g: o.g, dur: o.dur }); if (o.alt) under(it, R, o.alt, 0.35, { g: o.g }); return it; }
+// v3 (21.11.2026): bir grubun dikey konumlarini yeniden esle (ust etiket iki satir oldu; tahta icerigi asagi/sikistirilir)
+export function remapY(g, fn) {
+  for (const it of items) { if (it.g !== g) continue;
+    if (it.k === 'text') { it.y = fn(it.y); it.box = [it.box[0], it.y - it.size * 0.95, it.box[2], it.y + it.size * 0.3]; }
+    else if (it.k === 'path') { it.segs = it.segs.map((sg) => sg.map(([x, y]) => [x, fn(y)])); it.lens = it.segs.map((p) => { let L = 0; for (let i = 1; i < p.length; i++) L += Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]); return L; }); it.total = it.lens.reduce((a, b) => a + b, 0); }
+    else if (it.k === 'dot') it.c = [it.c[0], fn(it.c[1])];
+    else if (it.k === 'pulse') it.box = [it.box[0], fn(it.box[1]), it.box[2], fn(it.box[3])];
+  }
+}
+// v3: sondaki "Begen - Paylas - Abone ol" animasyonu. t0'dan sonra tahta t0 anindaki haliyle donar, bulaniklasir; fn(ctx, u) ustune cizer.
+export function son(t0, fn) { SON = { t0, fn }; }
 export function fx(fn, t0, t1, o = {}) { return add({ k: 'fx', fn, t0, t1, g: o.g, dur: 0 }); }
 export function pulse(box, color, t0, t1, o = {}) { return add({ k: 'pulse', box, color, t0, t1, g: o.g, dur: 0 }); }
 export function dot(c, r, color, t0, o = {}) { return add({ k: 'dot', c, r, color, t0, dur: 0.15, g: o.g, pen: true }); }
@@ -183,13 +194,25 @@ function penAt(t) {
   if (gap <= 1.2 || t < ce + 0.25) return cur ? a : null;
   return null;
 }
-export function busyAt(t) { // kalem hareket ediyor ya da oge cizilip nabiz atiyor mu
+export function busyAt(t) {
+  if (SON && t >= SON.t0) return true; // kalem hareket ediyor ya da oge cizilip nabiz atiyor mu
   if (items.some((it) => alive(it, t) && (it.k === 'pulse' || it.k === 'fx' || (it.dur > 0 && t < it.t0 + it.dur) || (it.t1 !== Infinity && t > it.t1 - FADE)))) return true;
   const p0 = penAt(t), p1 = penAt(t + 1 / 30); return !!(p0 && p1 && Math.hypot(p0[0] - p1[0], p0[1] - p1[1]) > 0.5);
 }
 export function draw(t) {
+  if (!SON || t < SON.t0) return scene(t, true, true);
+  const u = t - SON.t0, k = ease(u / 0.3);
+  scene(SON.t0 - 1e-3, false, false); // donmus son tahta karesi (kalemsiz, etiketsiz)
+  OFF ??= new OffscreenCanvas(W, H); const o = OFF.getContext('2d'); o.clearRect(0, 0, W, H); o.drawImage(ctx.canvas, 0, 0);
   ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H);
-  const act = items.filter((it) => alive(it, t));
+  ctx.filter = `blur(${(12 * k).toFixed(2)}px)`; ctx.drawImage(OFF, 0, 0); ctx.filter = 'none';
+  ctx.fillStyle = `rgba(20,24,30,${(0.16 * k).toFixed(3)})`; ctx.fillRect(0, 0, W, H);
+  for (const it of items) if (it.g === 'etiket') { drawRich(it.s, it.x, it.y, it.size, it.color); }
+  ctx.save(); SON.fn(ctx, u); ctx.restore();
+}
+function scene(t, withPen, withEtiket) {
+  ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H);
+  const act = items.filter((it) => alive(it, t) && (withEtiket || it.g !== 'etiket'));
   let anyPulse = false;
   for (const it of act) if (it.k === 'pulse') { anyPulse = true;
     const a = Math.min(1, (t - it.t0) / 0.15) * (0.12 + 0.07 * Math.sin((t - it.t0) * 2 * Math.PI * 1.1)) * alpha(it, t);
@@ -208,7 +231,7 @@ export function draw(t) {
     else if (it.k === 'dot') { ctx.fillStyle = it.color; ctx.beginPath(); ctx.arc(it.c[0], it.c[1], it.r * p, 0, 7); ctx.fill(); }
     ctx.globalAlpha = 1;
   }
-  if (pen) { const [x, y] = pen; ctx.save(); ctx.translate(x, y); ctx.rotate(-0.62);
+  if (pen && withPen) { const [x, y] = pen; ctx.save(); ctx.translate(x, y); ctx.rotate(-0.62);
     ctx.fillStyle = '#2b2b2b'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(7, -16); ctx.lineTo(-7, -16); ctx.closePath(); ctx.fill();
     ctx.fillStyle = '#6d7480'; rr(-9, -92, 9, -16, 3); ctx.fill(); ctx.fillStyle = '#3f4650'; rr(-9, -100, 9, -88, 3); ctx.fill(); ctx.restore(); }
 }
@@ -226,7 +249,8 @@ export async function init(canvas, id, build) {
   Z = zj.cumleler; ZI = {}; for (const c of Z) ZI[c.ref] = c;
   const SES = zj.ses_suresi; DUR = +(SES + zj.kuyruk).toFixed(3);
   canvas.width = W; canvas.height = H; ctx = canvas.getContext('2d');
-  items = []; erases = []; marks = {};
+  items = []; erases = []; marks = {}; SON = null;
+  const fi = new FontFace('IS', 'url(/tools/vendor/fonts/Inter-SemiBold.otf)'); await fi.load(); document.fonts.add(fi);
   build({ ses: SES, dur: DUR, kart: zj.kart, kartBas: +(DUR - zj.kart).toFixed(3) });
   sequence();
   return { W, H, duration: DUR, ses: SES, chars: [...used].join(''), n: items.length, marks, ...report() };

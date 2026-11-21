@@ -91,5 +91,14 @@
  "etiket": {
   "metin": "Devre Teorisi I · Ders 1, Bölüm 1",
   "not": "Kanal sahibi 21.11.2026 08:50: beğendi, yayınlansın; tek düzeltme olarak 0. saniyeden sona kadar üstte sabit ders etiketi eklendi (Patrick Hand 38 px, koyu gri #4a4f57, kutu y 220–267, üst güvenli alanın içinde). Tahta içeriği etiketin altına kaydırıldı; ses birebir aynı (yeniden kodlanmadı), süre değişmedi. Bu iki Short için AGENT.md 4a-6 'ders etiketi yok' kuralının kanal sahibi kararıyla istisnası."
+ },
+ "v3": {
+  "video": "media/shorts-turev/d1b1-2-v3.mp4",
+  "sure_sn": 59.39,
+  "tarih": "2026-11-21",
+  "not": "Kanal sahibinin 21.11.2026 08:50 ve 13:14 standardı (UZUN.md türev Short 'ONAYLANDI ve STANDART'): (1) üstteki tek satırlık 'Devre Teorisi I · Ders 1, Bölüm 1' etiketi yerine iki satırlık yönlendirme etiketi 'Dersin tamamı için:' / 'Devre Teorisi I oynatma listesi · Ders 1 - Bölüm 1' (0 sn–son sabit, Patrick Hand 34/36 px, koyu gri, kutu y 215–302); tahta içeriği etiketin altına alındı (en az 18–21 px boşluk). (2) Sondaki 3 sn 'Dersin tamamı' kartı yerine 3,5 sn 'Beğen – Paylaş – Abone ol' animasyonu: son tahta karesi 0,3 sn'de bulanıklaşır (12 px) ve hafif kararır; alt alta başparmak + 'Beğen' (pop, tık, dolma), paylaş oku + 'Paylaş' (pop, whoosh), kırmızı 'ABONE OL' → gri 'ABONE OLUNDU' + zil sallanması; altında 'Dersin tamamı kanalda: Devre Teorisi I'. Simgeler kodla çizilmiş genel simgeler; sesler numpy ile üretildi (pop/tık/whoosh/zil, efekt tepe −4,5 dBTP).",
+  "cikarilan_cumle": "yok (süre sınırı aşılmadı; konuşma kesitleri v2 ile birebir aynı)",
+  "ses": "−15,7 LUFS, tepe −1,3 dBTP",
+  "planli_gonderi": "Metricool'daki planlı gönderi eski dosyayı (v2) kullanıyor; değişikliği genel müdür kanal sahibinin onayıyla yapar."
  }
 }

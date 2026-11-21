@@ -93,3 +93,51 @@ format|duration=58.901000
 - Ses: eski dosyadaki AAC akışı birebir kopyalandı (bayt düzeyinde aynı); süre değişmedi. Giriş sorusu ve "Dersin tamamı" kartı aynen.
 - Gözle: ilk (0 sn), orta ve son kareler YouTube maskesiyle ve tam çözünürlük kırpıntısıyla incelendi; etiket okunur, "·" yazı tipinde var, çakışma/taşma yok.
 - Not: AGENT.md 4a-6 ("ders etiketi yok") kuralına bu iki türev Short için kanal sahibinin 21.11 kararıyla istisna.
+
+## v3 — yönlendirme etiketi + Beğen–Paylaş–Abone ol animasyonu (21.11.2026, kanal sahibi 08:50 ve 13:14)
+```
+süre 57.89 sn (50-60, kesin üst sınır 60,0)
+(a) vurgu -> silme: 2 vurgu, en kısa 1.28 sn
+(b) abone kartı/çağrısı yok (Short) -> uygulanmaz
+(c) "kanca" kelimesi: 0 (ekranda 28 yazı, seste 15 cümle tarandı)
+(d) gerilim seviyesi çizimi yok (yalnızca akım/yük grafikleri) -> geçti
+(e) intro: Short'ta intro yok (türev Short kuralı; müzik yok) -> uygulanmaz
+güvenli alan: 28 yazı x 65-929, y 211-1306; 18 çizgi y <= 1382
+etiket 'Dersin tamamı için:' / 'Devre Teorisi I oynatma listesi · Ders 1 - Bölüm 1' kutu [109, 215, 755, 302], 0 sn - son (57.89); içeriğe en yakın dikey boşluk 21 px (>= 15)
+son animasyon: 54.39-57.89 sn (3.5 sn), 7 kutu x 260-780, y 526-1276; sıra Beğen 0.4 / Paylaş 1 / Abone 1.6 (tık 2.08, zil 2.12)
+okuma süresi: 28 yazı kontrol edildi (1,2 + 0,35 x kelime)
+tek kalem çakışması 0, gecikme > 0,6 sn: 0
+QC otomatik: GEÇTİ
+
+stream|codec_name=h264|width=1080|height=1920|r_frame_rate=30/1
+stream|codec_name=aac|r_frame_rate=0/0
+format|duration=57.890000
+    I:         -15.7 LUFS
+    Peak:       -1.5 dBFS
+
+süre 59.39 sn (50-60, kesin üst sınır 60,0)
+(a) vurgu -> silme: 3 vurgu, en kısa 4.93 sn
+(b) abone kartı/çağrısı yok (Short) -> uygulanmaz
+(c) "kanca" kelimesi: 0 (ekranda 25 yazı, seste 17 cümle tarandı)
+(d) gerilim seviyesi çizimi yok (yalnızca akım/yük grafikleri) -> geçti
+(e) intro: Short'ta intro yok (türev Short kuralı; müzik yok) -> uygulanmaz
+güvenli alan: 25 yazı x 65-929, y 211-1306; 12 çizgi y <= 1382
+etiket 'Dersin tamamı için:' / 'Devre Teorisi I oynatma listesi · Ders 1 - Bölüm 1' kutu [109, 215, 755, 302], 0 sn - son (59.39); içeriğe en yakın dikey boşluk 18 px (>= 15)
+son animasyon: 55.89-59.39 sn (3.5 sn), 7 kutu x 260-780, y 526-1276; sıra Beğen 0.4 / Paylaş 1 / Abone 1.6 (tık 2.08, zil 2.12)
+okuma süresi: 25 yazı kontrol edildi (1,2 + 0,35 x kelime)
+tek kalem çakışması 0, gecikme > 0,6 sn: 0
+QC otomatik: GEÇTİ
+
+stream|codec_name=h264|width=1080|height=1920|r_frame_rate=30/1
+stream|codec_name=aac|r_frame_rate=0/0
+format|duration=59.390000
+    I:         -15.7 LUFS
+    Peak:       -1.3 dBFS
+
+```
+- Süre ≤ 60,0 sn: d1b1-1 57,89 sn, d1b1-2 59,39 sn → cümle çıkarılmadı (konuşma kesitleri v2 ile aynı; ses_kur.py yeniden çalıştırıldı, cümle zamanları birebir aynı).
+- Etiket: iki satır, 0 sn–son sabit, kutu y 215–302 (üst %11 = 211 px'in altında), x 109–755 (≤ 929). İçerik remapY ile aşağı alındı; yazı–yazı çakışması 0, en yakın içerik boşluğu 21 / 18 px.
+- Son animasyon (3,5 sn): kutular x 260–780, y 526–1276 (yazı alanı y ≤ 1306, sağ düğme sütunu x ≥ 929 boş); etiketle ve birbiriyle çakışma yok (qc.py).
+- Gözle: her iki videonun mp4'ünden animasyonun 10 anı (0,15 / 0,35 / 0,55 / 0,85 / 1,2 / 1,75 / 2,15 / 2,6 / 3,1 sn + son kare) ve tahtanın ilk/orta/son kareleri tam çözünürlükte incelendi: bulanıklaşma, boş başparmak → mavi dolu, paylaş whoosh çizgileri, ABONE OL → ABONE OLUNDU + zil sallanması doğru sırada; "Beğen" / "Paylaş" 70 px, alt satır 52/66 px, etiket 34/36 px telefonda okunur.
+- Ses: konuşma −15 LUFS (değişmedi); efektler numpy (pop, tık, whoosh, zil 0,95 sn; 4 kHz üstü alçak geçiren), tepe −4,5 dBTP (≤ −3), efekt bölümü ~−22 LUFS (konuşmadan ~6–7 dB alçak). Toplam −15,7 LUFS, tepe ≤ −1,3 dBTP.
+- Eski dosyalar (d1b1-1.mp4, d1b1-2.mp4; Metricool'da planlı) değiştirilmedi.
