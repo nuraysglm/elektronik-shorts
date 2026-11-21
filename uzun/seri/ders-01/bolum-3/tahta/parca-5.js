@@ -69,7 +69,7 @@ export function build() {
   text('akım yine iki dirençten geçer', RX + 20, 650, 40, K, Wt(21, 'akımın'), { g: g3, dur: 1.1 });
   const yl = text('i = 6 V / (2 kΩ + 1 kΩ) = 2 mA', RX + 20, 715, 42, R, S(22) + 0.1, { g: g3, dur: 1.3 });
   frame([RX - 5, 480, 1800, 745], R, E(22) - 0.9, 0.6, { g: g3, lw: 4 });
-  strike(yl, R, S(23) - 0.55, 0.25, { g: g3 });
+  strike(yl, R, E(22) + 0.05, 0.25, { g: g3 }); // is emri M (ii): vurgu bitince >= 1,0 sn (parcalar.json ara 89,40 / 1,1 sn)
   erase(g3, S(23) - 0.1);
   // dogrusu
   g3 = 'r2';
@@ -84,7 +84,7 @@ export function build() {
   const tg = text('- 3 mA telden geçer', RX, 620, 46, K, Wt(29, 'telin'), { g: g3, dur: 0.8 });
   under(tg, B, E(29) + 0.1, 0.4, { g: g3 });
   text('1 kΩ devrede yokmuş gibi', RX, 690, 38, G, S(30) + 0.3, { g: g3, dur: 1.0 });
-  kutu('Kısa devrede sıfır olan gerilimdir', RX, 780, 46, R, S(31), { g: g3, dur: 1.3 });
+  kutu('Kısa devrede sıfır olan gerilimdir', RX, 780, 46, R, S(31), { g: g3, dur: 1.0, fd: 0.5 }); // is emri M (ii): kutu silmeden >= 1,0 sn once biter
   erase(g, S(32) - 0.1); erase(g2, S(32) - 0.1); erase(g3, S(32) - 0.1);
 
   // ---------------- C: ideal gerilim kaynagi (32-46)

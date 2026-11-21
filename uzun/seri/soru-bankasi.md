@@ -12,7 +12,7 @@ Oluşturan: İçerik Ajanı, 21.11.2026. Bir bölüm yayınlanınca "Durum" "yay
 
 | Kod | Bölüm | Soru (kısa) | Yayın | Zorluk | Durum | Çözüm yeri |
 |---|---|---|---|---|---|---|
-| D1B1 | Ders 1 - Bölüm 1: Akım nedir? | q(t) = (4t − t²) mC ise akım hangi anda sıfır olur? | 21.11.2026 | **kolay** (tek türev, tek denklem) | yayında (21.11 11:00 TR, planlı) | B + "bir adım öteye" |
+| D1B1 | Ders 1 - Bölüm 1: Akım nedir? | q(t) = (4t − t²) mC ise akım hangi anda sıfır olur? | 21.11.2026 | **kolay** (tek türev, tek denklem) | yayında (21.11.2026 11:00 TR, https://www.youtube.com/watch?v=-WUmNv5spAU) | B + "bir adım öteye" |
 | D1B2 | Ders 1 - Bölüm 2: Akımın yönü, açık devre, akım grafiğinden yük | 2 s boyunca 5 mA, sonraki 1 s −3 mA: 3 s sonunda ok yönünde net yük? | 25.11.2026 (takvim) | **kolay–orta** (iki alan, bir işaret) | ses ve video hazır, video onayı bekliyor | B + "bir adım öteye" |
 | D1B3 | Ders 1 - Bölüm 3: Gerilim, kısa devre, ideal kaynak | 3,3 V regülatör (en çok 500 mA) çıkışına 22 Ω: gerilim ve akım? | 09.12.2026 (takvim) | **kolay** (tek Ohm hesabı + bir sınır karşılaştırması) | ses ve video hazır, video onayı bekliyor | B + "bir adım öteye" |
 | D2B1 | Ders 2 - Bölüm 1: İdeal tel, anahtar, gerçek pil | 9 V pil, iç direnç 2 Ω; 900 Ω ve 9 Ω yükte pilin içinde kaybolan gerilim? Hangisinde ideal model yeter? | henüz slot yok | **kolay–orta** (iki aynı hesap; Uygulamada'daki 150 Ω / 1,5 Ω örneğinin tekrarı) | metin onaylı, parça 7 sesi üretilmedi → **daha güçlü soru önerildi** (aşağıda, `ders-02/bolum-1/inceleme.md`) | B |

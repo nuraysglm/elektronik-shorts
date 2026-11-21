@@ -1,7 +1,7 @@
 {
  "yontem": "RMS enerji (10 ms, esik -38 dBFS, en az 0,10 sn) duraklamalari + hece sayisina gore dinamik programlama; kelime zamanlari cumle icinde hece sayisiyla orantili tahmindir; konusma tanima yok, ses dinlenmedi",
- "ses_suresi": 172.48,
- "ortalama_hece_suresi": 0.1308,
+ "ses_suresi": 173.42,
+ "ortalama_hece_suresi": 0.1312,
  "belirsiz_sinirlar": [],
  "kontroller": [
   "47 cumle sinirinin 47 tanesinde: duraklama enerjisi < -38 dBFS ve onceki/sonraki 0,3 sn en az 8 dB daha yuksek",
@@ -14,33 +14,33 @@
   "noktalama cumle 10 'sıfırlar;' tahmin 32.42 sn; en yakin ic duraklama (32.79, 33.16); fark 0.55 sn",
   "noktalama cumle 12 'eder,' tahmin 41.99 sn; en yakin ic duraklama (41.72, 41.97); fark 0.15 sn",
   "noktalama cumle 13 'eder,' tahmin 46.35 sn; en yakin ic duraklama (46.45, 46.76); fark 0.26 sn",
-  "noktalama cumle 15 'kaynağı,' tahmin 52.01 sn; en yakin ic duraklama (52.15, 52.36); fark 0.24 sn",
-  "noktalama cumle 15 'direnç,' tahmin 54.76 sn; en yakin ic duraklama (54.97, 55.09); fark 0.27 sn",
-  "noktalama cumle 16 'toplanır;' tahmin 61.01 sn; en yakin ic duraklama (61.2, 61.5); fark 0.34 sn",
-  "noktalama cumle 16 'bir,' tahmin 63.67 sn; en yakin ic duraklama (63.9, 64.13); fark 0.34 sn",
-  "noktalama cumle 18 'akım,' tahmin 69.16 sn; en yakin ic duraklama (69.38, 69.54); fark 0.30 sn",
-  "noktalama cumle 18 'kiloohm,' tahmin 70.81 sn; en yakin ic duraklama (70.98, 71.17); fark 0.27 sn",
-  "noktalama cumle 21 'deyip,' tahmin 80.94 sn; en yakin ic duraklama (80.99, 81.28); fark 0.19 sn",
-  "noktalama cumle 24 'Tel,' tahmin 89.74 sn; en yakin ic duraklama (90.29, 90.4); fark 0.61 sn",
-  "noktalama cumle 25 'akımı,' tahmin 96.12 sn; en yakin ic duraklama (96.15, 96.27); fark 0.09 sn",
-  "noktalama cumle 25 'kiloohm,' tahmin 97.83 sn; en yakin ic duraklama (97.84, 98.05); fark 0.11 sn",
-  "noktalama cumle 26 'uğramaz,' tahmin 100.70 sn; en yakin ic duraklama (100.36, 100.66); fark 0.19 sn",
-  "noktalama cumle 27 'direnç,' tahmin 103.66 sn; en yakin ic duraklama (103.45, 103.59); fark 0.14 sn",
-  "noktalama cumle 28 'Akım,' tahmin 106.38 sn; en yakin ic duraklama (106.4, 106.58); fark 0.11 sn",
-  "noktalama cumle 28 'kiloohm,' tahmin 108.34 sn; en yakin ic duraklama (108.09, 108.31); fark 0.14 sn",
-  "noktalama cumle 30 'direnç,' tahmin 113.31 sn; en yakin ic duraklama (113.48, 113.6); fark 0.23 sn",
-  "noktalama cumle 31 'gerilimdir,' tahmin 117.97 sn; en yakin ic duraklama (118.14, 118.44); fark 0.32 sn",
-  "noktalama cumle 33 'kaynağı,' tahmin 123.10 sn; en yakin ic duraklama (123.19, 123.3); fark 0.15 sn",
-  "noktalama cumle 33 'gerilimi,' tahmin 125.11 sn; en yakin ic duraklama (124.86, 125.01); fark 0.17 sn",
-  "noktalama cumle 34 'değil,' tahmin 130.01 sn; en yakin ic duraklama (129.41, 129.56); fark 0.52 sn",
-  "noktalama cumle 35 'akım,' tahmin 133.27 sn; en yakin ic duraklama (133.39, 133.61); fark 0.23 sn",
-  "noktalama cumle 38 'Kaynak,' tahmin 141.92 sn; en yakin ic duraklama (141.97, 142.26); fark 0.20 sn",
-  "noktalama cumle 39 'Tel,' tahmin 144.74 sn; en yakin ic duraklama (144.81, 145.04); fark 0.19 sn",
-  "noktalama cumle 41 'akım,' tahmin 150.88 sn; en yakin ic duraklama (150.94, 151.14); fark 0.16 sn",
-  "noktalama cumle 41 'bir,' tahmin 151.83 sn; en yakin ic duraklama (151.86, 152.16); fark 0.18 sn",
-  "noktalama cumle 42 'ohmda,' tahmin 154.35 sn; en yakin ic duraklama (154.6, 154.77); fark 0.34 sn",
-  "noktalama cumle 42 'bir,' tahmin 156.16 sn; en yakin ic duraklama (156.22, 156.52); fark 0.21 sn",
-  "hece hizi (sesli sure uzerinden): ortalama 7.59, std 0.84, en dusuk 5.83 (cumle 43), en yuksek 10.00 (cumle 17)"
+  "noktalama cumle 15 'kaynağı,' tahmin 52.96 sn; en yakin ic duraklama (53.09, 53.3); fark 0.23 sn",
+  "noktalama cumle 15 'direnç,' tahmin 55.71 sn; en yakin ic duraklama (55.91, 56.03); fark 0.26 sn",
+  "noktalama cumle 16 'toplanır;' tahmin 61.96 sn; en yakin ic duraklama (62.14, 62.44); fark 0.33 sn",
+  "noktalama cumle 16 'bir,' tahmin 64.64 sn; en yakin ic duraklama (64.84, 65.07); fark 0.31 sn",
+  "noktalama cumle 18 'akım,' tahmin 70.11 sn; en yakin ic duraklama (70.32, 70.48); fark 0.29 sn",
+  "noktalama cumle 18 'kiloohm,' tahmin 71.75 sn; en yakin ic duraklama (71.92, 72.11); fark 0.27 sn",
+  "noktalama cumle 21 'deyip,' tahmin 81.88 sn; en yakin ic duraklama (81.93, 82.22); fark 0.20 sn",
+  "noktalama cumle 24 'Tel,' tahmin 90.68 sn; en yakin ic duraklama (91.23, 91.34); fark 0.60 sn",
+  "noktalama cumle 25 'akımı,' tahmin 97.06 sn; en yakin ic duraklama (97.1, 97.21); fark 0.09 sn",
+  "noktalama cumle 25 'kiloohm,' tahmin 98.76 sn; en yakin ic duraklama (98.78, 99.0); fark 0.13 sn",
+  "noktalama cumle 26 'uğramaz,' tahmin 101.65 sn; en yakin ic duraklama (101.3, 101.6); fark 0.20 sn",
+  "noktalama cumle 27 'direnç,' tahmin 104.60 sn; en yakin ic duraklama (104.39, 104.53); fark 0.14 sn",
+  "noktalama cumle 28 'Akım,' tahmin 107.31 sn; en yakin ic duraklama (107.34, 107.52); fark 0.12 sn",
+  "noktalama cumle 28 'kiloohm,' tahmin 109.28 sn; en yakin ic duraklama (109.03, 109.25); fark 0.14 sn",
+  "noktalama cumle 30 'direnç,' tahmin 114.25 sn; en yakin ic duraklama (114.42, 114.54); fark 0.23 sn",
+  "noktalama cumle 31 'gerilimdir,' tahmin 118.91 sn; en yakin ic duraklama (119.08, 119.38); fark 0.32 sn",
+  "noktalama cumle 33 'kaynağı,' tahmin 124.03 sn; en yakin ic duraklama (124.13, 124.24); fark 0.16 sn",
+  "noktalama cumle 33 'gerilimi,' tahmin 126.05 sn; en yakin ic duraklama (125.8, 125.95); fark 0.17 sn",
+  "noktalama cumle 34 'değil,' tahmin 130.95 sn; en yakin ic duraklama (130.35, 130.5); fark 0.52 sn",
+  "noktalama cumle 35 'akım,' tahmin 134.22 sn; en yakin ic duraklama (134.32, 134.55); fark 0.22 sn",
+  "noktalama cumle 38 'Kaynak,' tahmin 142.86 sn; en yakin ic duraklama (142.91, 143.2); fark 0.19 sn",
+  "noktalama cumle 39 'Tel,' tahmin 145.67 sn; en yakin ic duraklama (145.75, 145.98); fark 0.20 sn",
+  "noktalama cumle 41 'akım,' tahmin 151.82 sn; en yakin ic duraklama (151.88, 152.08); fark 0.16 sn",
+  "noktalama cumle 41 'bir,' tahmin 152.77 sn; en yakin ic duraklama (152.8, 153.1); fark 0.18 sn",
+  "noktalama cumle 42 'ohmda,' tahmin 155.29 sn; en yakin ic duraklama (155.54, 155.71); fark 0.34 sn",
+  "noktalama cumle 42 'bir,' tahmin 157.10 sn; en yakin ic duraklama (157.16, 157.46); fark 0.21 sn",
+  "hece hizi (sesli sure uzerinden): ortalama 7.56, std 0.82, en dusuk 5.83 (cumle 43), en yuksek 10.00 (cumle 17)"
  ],
  "cumleler": [
   {
@@ -913,7 +913,7 @@
    "no": 13,
    "start": 43.66,
    "end": 47.83,
-   "pause_after": 0.57,
+   "pause_after": 0.61,
    "voiced": 3.44,
    "syl_per_s": 7.85,
    "inner_pauses": [
@@ -980,54 +980,59 @@
    ],
    "sinir_db": {
     "once": -32.3,
-    "duraklama": -72.6,
-    "sonra": -23.2
+    "duraklama": -71.5,
+    "sonra": -24.5
    }
   },
   {
    "p": 4,
-   "text": "Şimdi kancadaki devreyi kuralım.",
+   "text": "Şimdi dersin girişindeki devreyi kuralım.",
    "last": false,
    "shorts": false,
-   "syl": 12,
+   "syl": 15,
    "no": 14,
-   "start": 48.4,
-   "end": 50.1,
-   "pause_after": 0.26,
-   "voiced": 1.38,
-   "syl_per_s": 8.7,
+   "start": 48.44,
+   "end": 50.98,
+   "pause_after": 0.32,
+   "voiced": 2.2,
+   "syl_per_s": 6.82,
    "inner_pauses": [
     [
-     49.74,
-     49.85
+     48.88,
+     49.0
     ]
    ],
    "words": [
     {
      "w": "Şimdi",
-     "t0": 48.4,
-     "t1": 48.63
+     "t0": 48.44,
+     "t1": 48.74
     },
     {
-     "w": "kancadaki",
-     "t0": 48.63,
-     "t1": 49.19
+     "w": "dersin",
+     "t0": 48.74,
+     "t1": 49.15
+    },
+    {
+     "w": "girişindeki",
+     "t0": 49.15,
+     "t1": 49.89
     },
     {
      "w": "devreyi",
-     "t0": 49.19,
-     "t1": 49.61
+     "t0": 49.89,
+     "t1": 50.4
     },
     {
      "w": "kuralım.",
-     "t0": 49.61,
-     "t1": 50.1
+     "t0": 50.4,
+     "t1": 50.98
     }
    ],
    "sinir_db": {
-    "once": -33.7,
-    "duraklama": -84.9,
-    "sonra": -22.3
+    "once": -31.4,
+    "duraklama": -78.8,
+    "sonra": -22.2
    }
   },
   {
@@ -1037,141 +1042,141 @@
    "shorts": false,
    "syl": 41,
    "no": 15,
-   "start": 50.36,
-   "end": 57.17,
+   "start": 51.3,
+   "end": 58.11,
    "pause_after": 0.3,
-   "voiced": 4.92,
-   "syl_per_s": 8.33,
+   "voiced": 4.93,
+   "syl_per_s": 8.32,
    "inner_pauses": [
     [
-     50.98,
-     51.1
+     51.93,
+     52.04
     ],
     [
-     52.15,
-     52.36
+     53.09,
+     53.3
     ],
     [
-     53.14,
-     53.26
+     54.08,
+     54.2
     ],
     [
-     53.67,
-     53.78
+     54.61,
+     54.72
     ],
     [
-     54.19,
-     54.34
+     55.13,
+     55.28
     ],
     [
-     54.97,
-     55.09
+     55.91,
+     56.03
     ],
     [
-     55.83,
-     56.0
+     56.77,
+     56.94
     ],
     [
-     56.11,
-     56.21
+     57.05,
+     57.15
     ]
    ],
    "words": [
     {
      "w": "Altı",
-     "t0": 50.36,
-     "t1": 50.64
+     "t0": 51.3,
+     "t1": 51.6
     },
     {
      "w": "voltluk",
-     "t0": 50.64,
-     "t1": 50.97
+     "t0": 51.6,
+     "t1": 51.93
     },
     {
      "w": "bir",
-     "t0": 50.97,
-     "t1": 51.21
+     "t0": 51.93,
+     "t1": 52.16
     },
     {
      "w": "gerilim",
-     "t0": 51.21,
-     "t1": 51.65
+     "t0": 52.16,
+     "t1": 52.6
     },
     {
      "w": "kaynağı,",
-     "t0": 51.65,
-     "t1": 52.01
+     "t0": 52.6,
+     "t1": 52.96
     },
     {
      "w": "iki",
-     "t0": 52.01,
-     "t1": 52.52
+     "t0": 52.96,
+     "t1": 53.47
     },
     {
      "w": "kiloohmluk",
-     "t0": 52.52,
-     "t1": 53.08
-    },
-    {
-     "w": "ve",
-     "t0": 53.08,
-     "t1": 53.32
-    },
-    {
-     "w": "bir",
-     "t0": 53.32,
-     "t1": 53.44
-    },
-    {
-     "w": "kiloohmluk",
-     "t0": 53.44,
+     "t0": 53.47,
      "t1": 54.03
     },
     {
-     "w": "iki",
+     "w": "ve",
      "t0": 54.03,
-     "t1": 54.5
-    },
-    {
-     "w": "direnç,",
-     "t0": 54.5,
-     "t1": 54.76
-    },
-    {
-     "w": "seri",
-     "t0": 54.76,
-     "t1": 55.21
-    },
-    {
-     "w": "bağlanıp",
-     "t0": 55.21,
-     "t1": 55.57
-    },
-    {
-     "w": "tek",
-     "t0": 55.57,
-     "t1": 55.69
+     "t1": 54.27
     },
     {
      "w": "bir",
-     "t0": 55.69,
-     "t1": 55.81
+     "t0": 54.27,
+     "t1": 54.39
+    },
+    {
+     "w": "kiloohmluk",
+     "t0": 54.39,
+     "t1": 54.98
+    },
+    {
+     "w": "iki",
+     "t0": 54.98,
+     "t1": 55.45
+    },
+    {
+     "w": "direnç,",
+     "t0": 55.45,
+     "t1": 55.71
+    },
+    {
+     "w": "seri",
+     "t0": 55.71,
+     "t1": 56.16
+    },
+    {
+     "w": "bağlanıp",
+     "t0": 56.16,
+     "t1": 56.52
+    },
+    {
+     "w": "tek",
+     "t0": 56.52,
+     "t1": 56.64
+    },
+    {
+     "w": "bir",
+     "t0": 56.64,
+     "t1": 56.76
     },
     {
      "w": "halka",
-     "t0": 55.81,
-     "t1": 56.32
+     "t0": 56.76,
+     "t1": 57.27
     },
     {
      "w": "oluşturuyor.",
-     "t0": 56.32,
-     "t1": 57.17
+     "t0": 57.27,
+     "t1": 58.11
     }
    ],
    "sinir_db": {
-    "once": -37.0,
+    "once": -37.1,
     "duraklama": -75.4,
-    "sonra": -21.5
+    "sonra": -21.8
    }
   },
   {
@@ -1181,153 +1186,153 @@
    "shorts": false,
    "syl": 49,
    "no": 16,
-   "start": 57.47,
-   "end": 66.0,
+   "start": 58.41,
+   "end": 66.94,
    "pause_after": 0.33,
-   "voiced": 6.21,
-   "syl_per_s": 7.89,
+   "voiced": 6.23,
+   "syl_per_s": 7.87,
    "inner_pauses": [
     [
-     61.2,
-     61.5
+     62.14,
+     62.44
     ],
     [
-     62.61,
-     62.71
+     63.55,
+     63.65
     ],
     [
-     62.89,
-     63.01
+     63.83,
+     63.95
     ],
     [
-     63.9,
-     64.13
+     64.84,
+     65.07
     ],
     [
-     64.8,
-     64.91
+     65.74,
+     65.85
     ],
     [
-     65.5,
-     65.62
+     66.44,
+     66.56
     ]
    ],
    "words": [
     {
      "w": "Seri",
-     "t0": 57.47,
-     "t1": 57.74
+     "t0": 58.41,
+     "t1": 58.68
     },
     {
      "w": "bağlı",
-     "t0": 57.74,
-     "t1": 57.99
+     "t0": 58.68,
+     "t1": 58.93
     },
     {
      "w": "iki",
-     "t0": 57.99,
-     "t1": 58.3
+     "t0": 58.93,
+     "t1": 59.24
     },
     {
      "w": "dirençten",
-     "t0": 58.3,
-     "t1": 58.69
+     "t0": 59.24,
+     "t1": 59.63
     },
     {
      "w": "aynı",
-     "t0": 58.69,
-     "t1": 59.04
+     "t0": 59.63,
+     "t1": 59.98
     },
     {
      "w": "akım",
-     "t0": 59.04,
-     "t1": 59.29
+     "t0": 59.98,
+     "t1": 60.24
     },
     {
      "w": "geçer",
-     "t0": 59.29,
-     "t1": 59.64
+     "t0": 60.24,
+     "t1": 60.58
     },
     {
      "w": "ve",
-     "t0": 59.64,
-     "t1": 59.82
+     "t0": 60.58,
+     "t1": 60.77
     },
     {
      "w": "gerilimleri",
-     "t0": 59.82,
-     "t1": 60.46
+     "t0": 60.77,
+     "t1": 61.4
     },
     {
      "w": "toplanır;",
-     "t0": 60.46,
-     "t1": 61.01
+     "t0": 61.4,
+     "t1": 61.96
     },
     {
      "w": "bu",
-     "t0": 61.01,
-     "t1": 61.52
+     "t0": 61.96,
+     "t1": 62.46
     },
     {
      "w": "yüzden",
-     "t0": 61.52,
-     "t1": 61.78
+     "t0": 62.46,
+     "t1": 62.72
     },
     {
      "w": "akıma",
-     "t0": 61.78,
-     "t1": 62.32
+     "t0": 62.72,
+     "t1": 63.26
     },
     {
      "w": "toplam",
-     "t0": 62.32,
-     "t1": 62.75
+     "t0": 63.26,
+     "t1": 63.69
     },
     {
      "w": "iki",
-     "t0": 62.75,
-     "t1": 63.2
+     "t0": 63.69,
+     "t1": 64.15
     },
     {
      "w": "artı",
-     "t0": 63.2,
-     "t1": 63.46
+     "t0": 64.15,
+     "t1": 64.4
     },
     {
      "w": "bir,",
-     "t0": 63.46,
-     "t1": 63.67
+     "t0": 64.4,
+     "t1": 64.64
     },
     {
      "w": "üç",
-     "t0": 63.67,
-     "t1": 63.82
+     "t0": 64.64,
+     "t1": 64.8
     },
     {
      "w": "kiloohmluk",
-     "t0": 63.82,
-     "t1": 64.72
+     "t0": 64.8,
+     "t1": 65.66
     },
     {
      "w": "bir",
-     "t0": 64.72,
-     "t1": 64.95
+     "t0": 65.66,
+     "t1": 65.9
     },
     {
      "w": "direnç",
-     "t0": 64.95,
-     "t1": 65.21
+     "t0": 65.9,
+     "t1": 66.16
     },
     {
      "w": "gösterirler.",
-     "t0": 65.21,
-     "t1": 66.0
+     "t0": 66.16,
+     "t1": 66.94
     }
    ],
    "sinir_db": {
     "once": -31.9,
-    "duraklama": -70.5,
-    "sonra": -22.7
+    "duraklama": -69.7,
+    "sonra": -23.1
    }
   },
   {
@@ -1337,8 +1342,8 @@
    "shorts": false,
    "syl": 14,
    "no": 17,
-   "start": 66.33,
-   "end": 67.83,
+   "start": 67.27,
+   "end": 68.77,
    "pause_after": 0.41,
    "voiced": 1.4,
    "syl_per_s": 10.0,
@@ -1346,29 +1351,29 @@
    "words": [
     {
      "w": "Bunu",
-     "t0": 66.33,
-     "t1": 66.53
+     "t0": 67.27,
+     "t1": 67.48
     },
     {
      "w": "ileride",
-     "t0": 66.53,
-     "t1": 66.94
+     "t0": 67.48,
+     "t1": 67.88
     },
     {
      "w": "ayrıntılı",
-     "t0": 66.94,
-     "t1": 67.38
+     "t0": 67.88,
+     "t1": 68.32
     },
     {
      "w": "göreceğiz.",
-     "t0": 67.38,
-     "t1": 67.83
+     "t0": 68.32,
+     "t1": 68.77
     }
    ],
    "sinir_db": {
-    "once": -30.7,
-    "duraklama": -63.9,
-    "sonra": -17.4
+    "once": -30.3,
+    "duraklama": -64.0,
+    "sonra": -17.3
    }
   },
   {
@@ -1378,83 +1383,83 @@
    "shorts": false,
    "syl": 20,
    "no": 18,
-   "start": 68.24,
-   "end": 71.91,
+   "start": 69.18,
+   "end": 72.85,
    "pause_after": 0.46,
-   "voiced": 2.46,
-   "syl_per_s": 8.13,
+   "voiced": 2.45,
+   "syl_per_s": 8.16,
    "inner_pauses": [
     [
-     68.57,
-     68.71
+     69.51,
+     69.65
     ],
     [
-     69.38,
-     69.54
+     70.32,
+     70.48
     ],
     [
-     70.05,
-     70.18
+     70.99,
+     71.12
     ],
     [
-     70.98,
-     71.17
+     71.92,
+     72.11
     ]
    ],
    "words": [
     {
      "w": "Tel",
-     "t0": 68.24,
-     "t1": 68.37
+     "t0": 69.18,
+     "t1": 69.31
     },
     {
      "w": "yokken",
-     "t0": 68.37,
-     "t1": 68.75
+     "t0": 69.31,
+     "t1": 69.69
     },
     {
      "w": "akım,",
-     "t0": 68.75,
-     "t1": 69.16
+     "t0": 69.69,
+     "t1": 70.11
     },
     {
      "w": "altı",
-     "t0": 69.16,
-     "t1": 69.59
+     "t0": 70.11,
+     "t1": 70.53
     },
     {
      "w": "volt",
-     "t0": 69.59,
-     "t1": 69.71
+     "t0": 70.53,
+     "t1": 70.66
     },
     {
      "w": "bölü",
-     "t0": 69.71,
-     "t1": 70.01
+     "t0": 70.66,
+     "t1": 70.96
     },
     {
      "w": "üç",
-     "t0": 70.01,
-     "t1": 70.27
+     "t0": 70.96,
+     "t1": 71.21
     },
     {
      "w": "kiloohm,",
-     "t0": 70.27,
-     "t1": 70.81
+     "t0": 71.21,
+     "t1": 71.75
     },
     {
      "w": "iki",
-     "t0": 70.81,
-     "t1": 71.3
+     "t0": 71.75,
+     "t1": 72.24
     },
     {
      "w": "miliamper.",
-     "t0": 71.3,
-     "t1": 71.91
+     "t0": 72.24,
+     "t1": 72.85
     }
    ],
    "sinir_db": {
-    "once": -38.7,
+    "once": -38.6,
     "duraklama": -72.8,
     "sonra": -23.0
    }
@@ -1466,81 +1471,81 @@
    "shorts": false,
    "syl": 26,
    "no": 19,
-   "start": 72.37,
-   "end": 76.29,
+   "start": 73.31,
+   "end": 77.23,
    "pause_after": 0.52,
-   "voiced": 3.32,
-   "syl_per_s": 7.83,
+   "voiced": 3.33,
+   "syl_per_s": 7.81,
    "inner_pauses": [
     [
-     73.12,
-     73.23
+     74.06,
+     74.17
     ],
     [
-     73.61,
-     73.73
+     74.55,
+     74.67
     ],
     [
-     74.19,
-     74.32
+     75.13,
+     75.26
     ]
    ],
    "words": [
     {
      "w": "Şimdi",
-     "t0": 72.37,
-     "t1": 72.63
+     "t0": 73.31,
+     "t1": 73.57
     },
     {
      "w": "bir",
-     "t0": 72.63,
-     "t1": 72.76
+     "t0": 73.57,
+     "t1": 73.7
     },
     {
      "w": "kiloohmluk",
-     "t0": 72.76,
-     "t1": 73.44
+     "t0": 73.7,
+     "t1": 74.38
     },
     {
      "w": "direncin",
-     "t0": 73.44,
-     "t1": 73.94
+     "t0": 74.38,
+     "t1": 74.89
     },
     {
      "w": "iki",
-     "t0": 73.94,
-     "t1": 74.33
+     "t0": 74.89,
+     "t1": 75.27
     },
     {
      "w": "ucunu",
-     "t0": 74.33,
-     "t1": 74.79
+     "t0": 75.27,
+     "t1": 75.74
     },
     {
      "w": "bir",
-     "t0": 74.79,
-     "t1": 74.92
+     "t0": 75.74,
+     "t1": 75.86
     },
     {
      "w": "telle",
-     "t0": 74.92,
-     "t1": 75.26
+     "t0": 75.86,
+     "t1": 76.21
     },
     {
      "w": "birbirine",
-     "t0": 75.26,
-     "t1": 75.77
+     "t0": 76.21,
+     "t1": 76.72
     },
     {
      "w": "bağlıyoruz.",
-     "t0": 75.77,
-     "t1": 76.29
+     "t0": 76.72,
+     "t1": 77.23
     }
    ],
    "sinir_db": {
     "once": -27.5,
     "duraklama": -64.4,
-    "sonra": -24.3
+    "sonra": -24.2
    }
   },
   {
@@ -1550,52 +1555,52 @@
    "shorts": false,
    "syl": 14,
    "no": 20,
-   "start": 76.81,
-   "end": 78.78,
+   "start": 77.75,
+   "end": 79.72,
    "pause_after": 0.25,
    "voiced": 1.64,
    "syl_per_s": 8.54,
    "inner_pauses": [
     [
-     78.39,
-     78.5
+     79.33,
+     79.44
     ]
    ],
    "words": [
     {
      "w": "En",
-     "t0": 76.81,
-     "t1": 76.93
+     "t0": 77.75,
+     "t1": 77.87
     },
     {
      "w": "sık",
-     "t0": 76.93,
-     "t1": 77.05
+     "t0": 77.87,
+     "t1": 77.99
     },
     {
      "w": "yapılan",
-     "t0": 77.05,
-     "t1": 77.54
+     "t0": 77.99,
+     "t1": 78.48
     },
     {
      "w": "hata",
-     "t0": 77.54,
-     "t1": 77.84
+     "t0": 78.48,
+     "t1": 78.78
     },
     {
      "w": "burada",
-     "t0": 77.84,
-     "t1": 78.2
+     "t0": 78.78,
+     "t1": 79.14
     },
     {
      "w": "yapılıyor.",
-     "t0": 78.2,
-     "t1": 78.78
+     "t0": 79.14,
+     "t1": 79.72
     }
    ],
    "sinir_db": {
-    "once": -32.5,
-    "duraklama": -81.1,
+    "once": -32.6,
+    "duraklama": -79.4,
     "sonra": -22.3
    }
   },
@@ -1606,98 +1611,98 @@
    "shorts": false,
    "syl": 38,
    "no": 21,
-   "start": 79.03,
-   "end": 85.3,
+   "start": 79.97,
+   "end": 86.24,
    "pause_after": 0.38,
    "voiced": 5.09,
    "syl_per_s": 7.47,
    "inner_pauses": [
     [
-     80.99,
-     81.28
+     81.93,
+     82.22
     ]
    ],
    "words": [
     {
      "w": "Kısa",
-     "t0": 79.03,
-     "t1": 79.33
+     "t0": 79.97,
+     "t1": 80.27
     },
     {
      "w": "devrede",
-     "t0": 79.33,
-     "t1": 79.73
+     "t0": 80.27,
+     "t1": 80.67
     },
     {
      "w": "akım",
-     "t0": 79.73,
-     "t1": 80.17
+     "t0": 80.67,
+     "t1": 81.11
     },
     {
      "w": "sıfırdır",
-     "t0": 80.17,
-     "t1": 80.64
+     "t0": 81.11,
+     "t1": 81.58
     },
     {
      "w": "deyip,",
-     "t0": 80.64,
-     "t1": 80.94
+     "t0": 81.58,
+     "t1": 81.88
     },
     {
      "w": "telden",
-     "t0": 80.94,
-     "t1": 81.5
+     "t0": 81.88,
+     "t1": 82.44
     },
     {
      "w": "akım",
-     "t0": 81.5,
-     "t1": 81.86
+     "t0": 82.44,
+     "t1": 82.8
     },
     {
      "w": "geçmediğini",
-     "t0": 81.86,
-     "t1": 82.58
+     "t0": 82.8,
+     "t1": 83.52
     },
     {
      "w": "ve",
-     "t0": 82.58,
-     "t1": 82.71
+     "t0": 83.52,
+     "t1": 83.65
     },
     {
      "w": "akımın",
-     "t0": 82.71,
-     "t1": 83.29
+     "t0": 83.65,
+     "t1": 84.23
     },
     {
      "w": "yine",
-     "t0": 83.29,
-     "t1": 83.56
+     "t0": 84.23,
+     "t1": 84.5
     },
     {
      "w": "iki",
-     "t0": 83.56,
-     "t1": 83.91
+     "t0": 84.5,
+     "t1": 84.85
     },
     {
      "w": "dirençten",
-     "t0": 83.91,
-     "t1": 84.35
+     "t0": 84.85,
+     "t1": 85.29
     },
     {
      "w": "geçtiğini",
-     "t0": 84.35,
-     "t1": 84.99
+     "t0": 85.29,
+     "t1": 85.93
     },
     {
      "w": "sanmak.",
-     "t0": 84.99,
-     "t1": 85.3
+     "t0": 85.93,
+     "t1": 86.24
     }
    ],
    "sinir_db": {
-    "once": -31.6,
+    "once": -31.7,
     "duraklama": -75.2,
-    "sonra": -23.2
+    "sonra": -23.1
    }
   },
   {
@@ -1707,47 +1712,47 @@
    "shorts": false,
    "syl": 17,
    "no": 22,
-   "start": 85.68,
-   "end": 88.23,
+   "start": 86.62,
+   "end": 89.17,
    "pause_after": 0.41,
-   "voiced": 2.14,
-   "syl_per_s": 7.94,
+   "voiced": 2.13,
+   "syl_per_s": 7.98,
    "inner_pauses": [],
    "words": [
     {
      "w": "Bu",
-     "t0": 85.68,
-     "t1": 85.81
+     "t0": 86.62,
+     "t1": 86.75
     },
     {
      "w": "hatayla",
-     "t0": 85.81,
-     "t1": 86.23
+     "t0": 86.75,
+     "t1": 87.17
     },
     {
      "w": "akım",
-     "t0": 86.23,
-     "t1": 86.53
+     "t0": 87.17,
+     "t1": 87.48
     },
     {
      "w": "yine",
-     "t0": 86.53,
-     "t1": 86.89
+     "t0": 87.48,
+     "t1": 87.84
     },
     {
      "w": "iki",
-     "t0": 86.89,
-     "t1": 87.14
+     "t0": 87.84,
+     "t1": 88.09
     },
     {
      "w": "miliamper",
-     "t0": 87.14,
-     "t1": 87.71
+     "t0": 88.09,
+     "t1": 88.65
     },
     {
      "w": "bulunur.",
-     "t0": 87.71,
-     "t1": 88.23
+     "t0": 88.65,
+     "t1": 89.17
     }
    ],
    "sinir_db": {
@@ -1763,33 +1768,33 @@
    "shorts": false,
    "syl": 4,
    "no": 23,
-   "start": 88.64,
-   "end": 89.36,
+   "start": 89.58,
+   "end": 90.3,
    "pause_after": 0.24,
    "voiced": 0.62,
    "syl_per_s": 6.45,
    "inner_pauses": [
     [
-     88.92,
-     89.02
+     89.86,
+     89.96
     ]
    ],
    "words": [
     {
      "w": "Doğrusu",
-     "t0": 88.64,
-     "t1": 89.21
+     "t0": 89.58,
+     "t1": 90.15
     },
     {
      "w": "şu.",
-     "t0": 89.21,
-     "t1": 89.36
+     "t0": 90.15,
+     "t1": 90.3
     }
    ],
    "sinir_db": {
     "once": -23.8,
     "duraklama": -80.9,
-    "sonra": -19.2
+    "sonra": -18.9
    }
   },
   {
@@ -1799,66 +1804,66 @@
    "shorts": false,
    "syl": 27,
    "no": 24,
-   "start": 89.6,
-   "end": 93.54,
+   "start": 90.54,
+   "end": 94.48,
    "pause_after": 0.39,
    "voiced": 3.25,
    "syl_per_s": 8.31,
    "inner_pauses": [
     [
-     90.29,
-     90.4
+     91.23,
+     91.34
     ],
     [
-     90.78,
-     90.9
+     91.73,
+     91.84
     ]
    ],
    "words": [
     {
      "w": "Tel,",
-     "t0": 89.6,
-     "t1": 89.74
+     "t0": 90.54,
+     "t1": 90.68
     },
     {
      "w": "bir",
-     "t0": 89.74,
-     "t1": 89.86
+     "t0": 90.68,
+     "t1": 90.8
     },
     {
      "w": "kiloohmluk",
-     "t0": 89.86,
-     "t1": 90.54
+     "t0": 90.8,
+     "t1": 91.48
     },
     {
      "w": "direncin",
-     "t0": 90.54,
-     "t1": 91.02
+     "t0": 91.48,
+     "t1": 91.95
     },
     {
      "w": "uçları",
-     "t0": 91.02,
-     "t1": 91.46
+     "t0": 91.95,
+     "t1": 92.34
     },
     {
      "w": "arasındaki",
-     "t0": 91.46,
-     "t1": 92.11
+     "t0": 92.34,
+     "t1": 93.04
     },
     {
      "w": "gerilimi",
-     "t0": 92.11,
-     "t1": 92.66
+     "t0": 93.04,
+     "t1": 93.59
     },
     {
      "w": "sıfıra",
-     "t0": 92.66,
-     "t1": 93.09
+     "t0": 93.59,
+     "t1": 94.02
     },
     {
      "w": "indirir.",
-     "t0": 93.09,
-     "t1": 93.54
+     "t0": 94.02,
+     "t1": 94.48
     }
    ],
    "sinir_db": {
@@ -1874,102 +1879,102 @@
    "shorts": false,
    "syl": 27,
    "no": 25,
-   "start": 93.93,
-   "end": 98.69,
+   "start": 94.87,
+   "end": 99.63,
    "pause_after": 0.39,
    "voiced": 3.8,
    "syl_per_s": 7.11,
    "inner_pauses": [
     [
-     95.79,
-     95.9
+     96.73,
+     96.84
     ],
     [
-     96.15,
-     96.27
+     97.1,
+     97.21
     ],
     [
-     96.87,
-     97.0
+     97.81,
+     97.94
     ],
     [
-     97.4,
-     97.52
+     98.34,
+     98.46
     ],
     [
-     97.84,
-     98.05
+     98.78,
+     99.0
     ]
    ],
    "words": [
     {
      "w": "Ohm",
-     "t0": 93.93,
-     "t1": 94.08
+     "t0": 94.87,
+     "t1": 95.02
     },
     {
      "w": "yasasına",
-     "t0": 94.08,
-     "t1": 94.65
+     "t0": 95.02,
+     "t1": 95.59
     },
     {
      "w": "göre",
-     "t0": 94.65,
-     "t1": 94.95
+     "t0": 95.59,
+     "t1": 95.89
     },
     {
      "w": "bu",
-     "t0": 94.95,
-     "t1": 95.15
+     "t0": 95.89,
+     "t1": 96.09
     },
     {
      "w": "direncin",
-     "t0": 95.15,
-     "t1": 95.57
+     "t0": 96.09,
+     "t1": 96.51
     },
     {
      "w": "akımı,",
-     "t0": 95.57,
-     "t1": 96.12
+     "t0": 96.51,
+     "t1": 97.06
     },
     {
      "w": "sıfır",
-     "t0": 96.12,
-     "t1": 96.6
+     "t0": 97.06,
+     "t1": 97.53
     },
     {
      "w": "volt",
-     "t0": 96.6,
-     "t1": 96.74
+     "t0": 97.53,
+     "t1": 97.67
     },
     {
      "w": "bölü",
-     "t0": 96.74,
-     "t1": 97.15
+     "t0": 97.67,
+     "t1": 98.08
     },
     {
      "w": "bir",
-     "t0": 97.15,
-     "t1": 97.29
+     "t0": 98.08,
+     "t1": 98.22
     },
     {
      "w": "kiloohm,",
-     "t0": 97.29,
-     "t1": 97.83
+     "t0": 98.22,
+     "t1": 98.76
     },
     {
      "w": "yani",
-     "t0": 97.83,
-     "t1": 98.32
+     "t0": 98.76,
+     "t1": 99.26
     },
     {
      "w": "sıfır.",
-     "t0": 98.32,
-     "t1": 98.69
+     "t0": 99.26,
+     "t1": 99.63
     }
    ],
    "sinir_db": {
-    "once": -34.7,
+    "once": -34.8,
     "duraklama": -68.0,
     "sonra": -30.7
    }
@@ -1981,48 +1986,48 @@
    "shorts": false,
    "syl": 12,
    "no": 26,
-   "start": 99.08,
-   "end": 101.41,
+   "start": 100.02,
+   "end": 102.35,
    "pause_after": 0.37,
    "voiced": 1.85,
    "syl_per_s": 6.49,
    "inner_pauses": [
     [
-     100.36,
-     100.66
+     101.3,
+     101.6
     ]
    ],
    "words": [
     {
      "w": "Akım",
-     "t0": 99.08,
-     "t1": 99.46
+     "t0": 100.02,
+     "t1": 100.41
     },
     {
      "w": "dirence",
-     "t0": 99.46,
-     "t1": 99.93
+     "t0": 100.41,
+     "t1": 100.88
     },
     {
      "w": "uğramaz,",
-     "t0": 99.93,
-     "t1": 100.7
+     "t0": 100.88,
+     "t1": 101.65
     },
     {
      "w": "telden",
-     "t0": 100.7,
-     "t1": 101.01
+     "t0": 101.65,
+     "t1": 101.96
     },
     {
      "w": "geçer.",
-     "t0": 101.01,
-     "t1": 101.41
+     "t0": 101.96,
+     "t1": 102.35
     }
    ],
    "sinir_db": {
-    "once": -36.5,
-    "duraklama": -71.3,
-    "sonra": -27.2
+    "once": -36.4,
+    "duraklama": -70.2,
+    "sonra": -27.1
    }
   },
   {
@@ -2032,89 +2037,89 @@
    "shorts": false,
    "syl": 25,
    "no": 27,
-   "start": 101.78,
-   "end": 105.79,
+   "start": 102.72,
+   "end": 106.73,
    "pause_after": 0.26,
    "voiced": 2.89,
    "syl_per_s": 8.65,
    "inner_pauses": [
     [
-     102.07,
-     102.27
+     103.01,
+     103.21
     ],
     [
-     102.46,
-     102.56
+     103.4,
+     103.5
     ],
     [
-     102.93,
-     103.07
+     103.87,
+     104.01
     ],
     [
-     103.45,
-     103.59
+     104.39,
+     104.53
     ],
     [
-     104.99,
-     105.09
+     105.93,
+     106.03
     ]
    ],
    "words": [
     {
      "w": "Artık",
-     "t0": 101.78,
-     "t1": 102.07
+     "t0": 102.72,
+     "t1": 103.01
     },
     {
      "w": "iki",
-     "t0": 102.07,
-     "t1": 102.65
+     "t0": 103.01,
+     "t1": 103.59
     },
     {
      "w": "kiloohmluk",
-     "t0": 102.65,
-     "t1": 103.25
+     "t0": 103.59,
+     "t1": 104.19
     },
     {
      "w": "direnç,",
-     "t0": 103.25,
-     "t1": 103.66
+     "t0": 104.19,
+     "t1": 104.6
     },
     {
      "w": "kaynağın",
-     "t0": 103.66,
-     "t1": 104.01
-    },
-    {
-     "w": "altı",
-     "t0": 104.01,
-     "t1": 104.33
-    },
-    {
-     "w": "voltunu",
-     "t0": 104.33,
-     "t1": 104.76
-    },
-    {
-     "w": "tek",
-     "t0": 104.76,
+     "t0": 104.6,
      "t1": 104.95
     },
     {
-     "w": "başına",
+     "w": "altı",
      "t0": 104.95,
-     "t1": 105.4
+     "t1": 105.27
+    },
+    {
+     "w": "voltunu",
+     "t0": 105.27,
+     "t1": 105.7
+    },
+    {
+     "w": "tek",
+     "t0": 105.7,
+     "t1": 105.89
+    },
+    {
+     "w": "başına",
+     "t0": 105.89,
+     "t1": 106.34
     },
     {
      "w": "görüyor.",
-     "t0": 105.4,
-     "t1": 105.79
+     "t0": 106.34,
+     "t1": 106.73
     }
    ],
    "sinir_db": {
-    "once": -29.4,
+    "once": -29.3,
     "duraklama": -80.9,
-    "sonra": -31.9
+    "sonra": -32.1
    }
   },
   {
@@ -2124,70 +2129,70 @@
    "shorts": false,
    "syl": 17,
    "no": 28,
-   "start": 106.05,
-   "end": 109.08,
+   "start": 106.99,
+   "end": 110.02,
    "pause_after": 0.35,
-   "voiced": 2.05,
-   "syl_per_s": 8.29,
+   "voiced": 2.04,
+   "syl_per_s": 8.33,
    "inner_pauses": [
     [
-     106.4,
-     106.58
+     107.34,
+     107.52
     ],
     [
-     107.1,
-     107.23
+     108.04,
+     108.18
     ],
     [
-     108.09,
-     108.31
+     109.03,
+     109.25
     ]
    ],
    "words": [
     {
      "w": "Akım,",
-     "t0": 106.05,
-     "t1": 106.38
+     "t0": 106.99,
+     "t1": 107.31
     },
     {
      "w": "altı",
-     "t0": 106.38,
-     "t1": 106.85
+     "t0": 107.31,
+     "t1": 107.79
     },
     {
      "w": "volt",
-     "t0": 106.85,
-     "t1": 106.97
+     "t0": 107.79,
+     "t1": 107.9
     },
     {
      "w": "bölü",
-     "t0": 106.97,
-     "t1": 107.34
+     "t0": 107.9,
+     "t1": 108.28
     },
     {
      "w": "iki",
-     "t0": 107.34,
-     "t1": 107.76
+     "t0": 108.28,
+     "t1": 108.7
     },
     {
      "w": "kiloohm,",
-     "t0": 107.76,
-     "t1": 108.34
+     "t0": 108.7,
+     "t1": 109.28
     },
     {
      "w": "üç",
-     "t0": 108.34,
-     "t1": 108.49
+     "t0": 109.28,
+     "t1": 109.43
     },
     {
      "w": "miliamper.",
-     "t0": 108.49,
-     "t1": 109.08
+     "t0": 109.43,
+     "t1": 110.02
     }
    ],
    "sinir_db": {
-    "once": -37.1,
-    "duraklama": -70.8,
+    "once": -37.0,
+    "duraklama": -70.9,
     "sonra": -27.3
    }
   },
@@ -2198,52 +2203,52 @@
    "shorts": false,
    "syl": 14,
    "no": 29,
-   "start": 109.43,
-   "end": 111.79,
-   "pause_after": 0.35,
-   "voiced": 1.89,
-   "syl_per_s": 7.41,
+   "start": 110.37,
+   "end": 112.74,
+   "pause_after": 0.34,
+   "voiced": 1.9,
+   "syl_per_s": 7.37,
    "inner_pauses": [
     [
-     110.42,
-     110.58
+     111.36,
+     111.52
     ]
    ],
    "words": [
     {
      "w": "Bu",
-     "t0": 109.43,
-     "t1": 109.58
+     "t0": 110.37,
+     "t1": 110.52
     },
     {
      "w": "üç",
-     "t0": 109.58,
-     "t1": 109.75
+     "t0": 110.52,
+     "t1": 110.7
     },
     {
      "w": "miliamper",
-     "t0": 109.75,
-     "t1": 110.37
+     "t0": 110.7,
+     "t1": 111.32
     },
     {
      "w": "telin",
-     "t0": 110.37,
-     "t1": 110.81
+     "t0": 111.32,
+     "t1": 111.76
     },
     {
      "w": "içinden",
-     "t0": 110.81,
-     "t1": 111.3
+     "t0": 111.76,
+     "t1": 112.25
     },
     {
      "w": "geçiyor.",
-     "t0": 111.3,
-     "t1": 111.79
+     "t0": 112.25,
+     "t1": 112.74
     }
    ],
    "sinir_db": {
-    "once": -38.3,
-    "duraklama": -71.7,
+    "once": -37.9,
+    "duraklama": -73.8,
     "sonra": -19.8
    }
   },
@@ -2254,77 +2259,77 @@
    "shorts": false,
    "syl": 22,
    "no": 30,
-   "start": 112.14,
-   "end": 115.67,
+   "start": 113.08,
+   "end": 116.61,
    "pause_after": 0.41,
-   "voiced": 2.85,
-   "syl_per_s": 7.72,
+   "voiced": 2.86,
+   "syl_per_s": 7.69,
    "inner_pauses": [
     [
-     113.48,
-     113.6
+     114.42,
+     114.54
     ],
     [
-     113.88,
-     114.0
+     114.82,
+     114.94
     ]
    ],
    "words": [
     {
      "w": "Kısa",
-     "t0": 112.14,
-     "t1": 112.4
+     "t0": 113.08,
+     "t1": 113.34
     },
     {
      "w": "devre",
-     "t0": 112.4,
-     "t1": 112.66
+     "t0": 113.34,
+     "t1": 113.6
     },
     {
      "w": "edilen",
-     "t0": 112.66,
-     "t1": 113.05
+     "t0": 113.6,
+     "t1": 113.99
     },
     {
      "w": "direnç,",
-     "t0": 113.05,
-     "t1": 113.31
+     "t0": 113.99,
+     "t1": 114.25
     },
     {
      "w": "artık",
-     "t0": 113.31,
-     "t1": 113.73
+     "t0": 114.25,
+     "t1": 114.67
     },
     {
      "w": "devrede",
-     "t0": 113.73,
-     "t1": 114.3
+     "t0": 114.67,
+     "t1": 115.24
     },
     {
      "w": "hiç",
-     "t0": 114.3,
-     "t1": 114.52
+     "t0": 115.24,
+     "t1": 115.46
     },
     {
      "w": "yokmuş",
-     "t0": 114.52,
-     "t1": 114.93
+     "t0": 115.46,
+     "t1": 115.87
     },
     {
      "w": "gibi",
-     "t0": 114.93,
-     "t1": 115.25
+     "t0": 115.87,
+     "t1": 116.19
     },
     {
      "w": "davranır.",
-     "t0": 115.25,
-     "t1": 115.67
+     "t0": 116.19,
+     "t1": 116.61
     }
    ],
    "sinir_db": {
     "once": -31.0,
     "duraklama": -64.6,
-    "sonra": -19.7
+    "sonra": -19.8
    }
   },
   {
@@ -2334,52 +2339,52 @@
    "shorts": false,
    "syl": 17,
    "no": 31,
-   "start": 116.08,
-   "end": 119.0,
+   "start": 117.02,
+   "end": 119.94,
    "pause_after": 0.36,
    "voiced": 2.37,
    "syl_per_s": 7.17,
    "inner_pauses": [
     [
-     118.14,
-     118.44
+     119.08,
+     119.38
     ]
    ],
    "words": [
     {
      "w": "Kısa",
-     "t0": 116.08,
-     "t1": 116.36
+     "t0": 117.02,
+     "t1": 117.3
     },
     {
      "w": "devrede",
-     "t0": 116.36,
-     "t1": 116.78
+     "t0": 117.3,
+     "t1": 117.72
     },
     {
      "w": "sıfır",
-     "t0": 116.78,
-     "t1": 117.13
+     "t0": 117.72,
+     "t1": 118.07
     },
     {
      "w": "olan",
-     "t0": 117.13,
-     "t1": 117.41
+     "t0": 118.07,
+     "t1": 118.35
     },
     {
      "w": "gerilimdir,",
-     "t0": 117.41,
-     "t1": 117.97
+     "t0": 118.35,
+     "t1": 118.91
     },
     {
      "w": "akım",
-     "t0": 117.97,
-     "t1": 118.73
+     "t0": 118.91,
+     "t1": 119.67
     },
     {
      "w": "değil.",
-     "t0": 118.73,
-     "t1": 119.0
+     "t0": 119.67,
+     "t1": 119.94
     }
    ],
    "sinir_db": {
@@ -2395,47 +2400,47 @@
    "shorts": false,
    "syl": 14,
    "no": 32,
-   "start": 119.36,
-   "end": 121.45,
+   "start": 120.3,
+   "end": 122.39,
    "pause_after": 0.39,
    "voiced": 1.6,
    "syl_per_s": 8.75,
    "inner_pauses": [
     [
-     121.26,
-     121.43
+     122.2,
+     122.37
     ]
    ],
    "words": [
     {
      "w": "Bu",
-     "t0": 119.36,
-     "t1": 119.48
+     "t0": 120.3,
+     "t1": 120.42
     },
     {
      "w": "örnekte",
-     "t0": 119.48,
-     "t1": 119.94
+     "t0": 120.42,
+     "t1": 120.88
     },
     {
      "w": "kaynağı",
-     "t0": 119.94,
-     "t1": 120.38
+     "t0": 120.88,
+     "t1": 121.32
     },
     {
      "w": "ideal",
-     "t0": 120.38,
-     "t1": 120.73
+     "t0": 121.32,
+     "t1": 121.67
     },
     {
      "w": "kabul",
-     "t0": 120.73,
-     "t1": 121.04
+     "t0": 121.67,
+     "t1": 121.98
     },
     {
      "w": "ettik.",
-     "t0": 121.04,
-     "t1": 121.45
+     "t0": 121.98,
+     "t1": 122.39
     }
    ],
    "sinir_db": {
@@ -2451,100 +2456,100 @@
    "shorts": false,
    "syl": 39,
    "no": 33,
-   "start": 121.84,
-   "end": 127.87,
+   "start": 122.78,
+   "end": 128.81,
    "pause_after": 0.39,
    "voiced": 5.11,
    "syl_per_s": 7.63,
    "inner_pauses": [
     [
-     123.19,
-     123.3
+     124.13,
+     124.24
     ],
     [
-     124.86,
-     125.01
+     125.8,
+     125.95
     ],
     [
-     126.66,
-     126.79
+     127.6,
+     127.73
     ],
     [
-     127.07,
-     127.25
+     128.01,
+     128.19
     ]
    ],
    "words": [
     {
      "w": "İdeal",
-     "t0": 121.84,
-     "t1": 122.24
+     "t0": 122.78,
+     "t1": 123.18
     },
     {
      "w": "gerilim",
-     "t0": 122.24,
-     "t1": 122.71
+     "t0": 123.18,
+     "t1": 123.64
     },
     {
      "w": "kaynağı,",
-     "t0": 122.71,
-     "t1": 123.1
+     "t0": 123.64,
+     "t1": 124.03
     },
     {
      "w": "uçları",
-     "t0": 123.1,
-     "t1": 123.68
+     "t0": 124.03,
+     "t1": 124.61
     },
     {
      "w": "arasındaki",
-     "t0": 123.68,
-     "t1": 124.43
+     "t0": 124.61,
+     "t1": 125.36
     },
     {
      "w": "gerilimi,",
-     "t0": 124.43,
-     "t1": 125.11
-    },
-    {
-     "w": "ona",
-     "t0": 125.11,
-     "t1": 125.37
-    },
-    {
-     "w": "ne",
-     "t0": 125.37,
-     "t1": 125.5
-    },
-    {
-     "w": "bağlanırsa",
-     "t0": 125.5,
+     "t0": 125.36,
      "t1": 126.05
     },
     {
-     "w": "bağlansın",
+     "w": "ona",
      "t0": 126.05,
-     "t1": 126.45
+     "t1": 126.31
+    },
+    {
+     "w": "ne",
+     "t0": 126.31,
+     "t1": 126.44
+    },
+    {
+     "w": "bağlanırsa",
+     "t0": 126.44,
+     "t1": 126.99
+    },
+    {
+     "w": "bağlansın",
+     "t0": 126.99,
+     "t1": 127.39
     },
     {
      "w": "aynı",
-     "t0": 126.45,
-     "t1": 126.84
+     "t0": 127.39,
+     "t1": 127.78
     },
     {
      "w": "tutan",
-     "t0": 126.84,
-     "t1": 127.28
+     "t0": 127.78,
+     "t1": 128.22
     },
     {
      "w": "elemandır.",
-     "t0": 127.28,
-     "t1": 127.87
+     "t0": 128.22,
+     "t1": 128.81
     }
    ],
    "sinir_db": {
     "once": -34.3,
     "duraklama": -65.7,
-    "sonra": -31.1
+    "sonra": -30.6
    }
   },
   {
@@ -2554,57 +2559,57 @@
    "shorts": false,
    "syl": 16,
    "no": 34,
-   "start": 128.26,
-   "end": 131.16,
+   "start": 129.2,
+   "end": 132.1,
    "pause_after": 0.36,
    "voiced": 2.3,
    "syl_per_s": 6.96,
    "inner_pauses": [
     [
-     129.41,
-     129.56
+     130.35,
+     130.5
     ]
    ],
    "words": [
     {
      "w": "Akımı",
-     "t0": 128.26,
-     "t1": 128.79
+     "t0": 129.2,
+     "t1": 129.73
     },
     {
      "w": "ise",
-     "t0": 128.79,
-     "t1": 129.19
+     "t0": 129.73,
+     "t1": 130.13
     },
     {
      "w": "kaynak",
-     "t0": 129.19,
-     "t1": 129.63
+     "t0": 130.13,
+     "t1": 130.57
     },
     {
      "w": "değil,",
-     "t0": 129.63,
-     "t1": 130.01
+     "t0": 130.57,
+     "t1": 130.95
     },
     {
      "w": "bağlanan",
-     "t0": 130.01,
-     "t1": 130.44
+     "t0": 130.95,
+     "t1": 131.38
     },
     {
      "w": "yük",
-     "t0": 130.44,
-     "t1": 130.58
+     "t0": 131.38,
+     "t1": 131.52
     },
     {
      "w": "belirler.",
-     "t0": 130.58,
-     "t1": 131.16
+     "t0": 131.52,
+     "t1": 132.1
     }
    ],
    "sinir_db": {
-    "once": -30.7,
-    "duraklama": -69.4,
+    "once": -30.6,
+    "duraklama": -69.5,
     "sonra": -33.8
    }
   },
@@ -2615,80 +2620,80 @@
    "shorts": false,
    "syl": 19,
    "no": 35,
-   "start": 131.52,
-   "end": 135.13,
+   "start": 132.46,
+   "end": 136.07,
    "pause_after": 0.26,
-   "voiced": 2.7,
-   "syl_per_s": 7.04,
+   "voiced": 2.67,
+   "syl_per_s": 7.12,
    "inner_pauses": [
     [
-     131.64,
-     131.76
+     132.58,
+     132.7
     ],
     [
-     132.91,
-     133.04
+     133.85,
+     133.98
     ],
     [
-     133.39,
-     133.61
+     134.32,
+     134.55
     ],
     [
-     133.9,
-     134.03
+     134.84,
+     134.97
     ]
    ],
    "words": [
     {
      "w": "Tek",
-     "t0": 131.52,
-     "t1": 131.8
-    },
-    {
-     "w": "bir",
-     "t0": 131.8,
-     "t1": 131.94
-    },
-    {
-     "w": "direnç",
-     "t0": 131.94,
-     "t1": 132.3
-    },
-    {
-     "w": "bağlıysa",
-     "t0": 132.3,
+     "t0": 132.46,
      "t1": 132.74
     },
     {
-     "w": "akım,",
+     "w": "bir",
      "t0": 132.74,
-     "t1": 133.27
+     "t1": 132.88
+    },
+    {
+     "w": "direnç",
+     "t0": 132.88,
+     "t1": 133.26
+    },
+    {
+     "w": "bağlıysa",
+     "t0": 133.26,
+     "t1": 133.69
+    },
+    {
+     "w": "akım,",
+     "t0": 133.69,
+     "t1": 134.22
     },
     {
      "w": "kaynak",
-     "t0": 133.27,
-     "t1": 133.78
+     "t0": 134.22,
+     "t1": 134.73
     },
     {
      "w": "gerilimi",
-     "t0": 133.78,
-     "t1": 134.48
+     "t0": 134.73,
+     "t1": 135.42
     },
     {
      "w": "bölü",
-     "t0": 134.48,
-     "t1": 134.76
+     "t0": 135.42,
+     "t1": 135.7
     },
     {
      "w": "direnç.",
-     "t0": 134.76,
-     "t1": 135.13
+     "t0": 135.7,
+     "t1": 136.07
     }
    ],
    "sinir_db": {
     "once": -37.7,
     "duraklama": -81.7,
-    "sonra": -17.6
+    "sonra": -17.5
    }
   },
   {
@@ -2698,8 +2703,8 @@
    "shorts": false,
    "syl": 9,
    "no": 36,
-   "start": 135.39,
-   "end": 136.5,
+   "start": 136.33,
+   "end": 137.44,
    "pause_after": 0.33,
    "voiced": 1.11,
    "syl_per_s": 8.11,
@@ -2707,28 +2712,28 @@
    "words": [
     {
      "w": "Bu",
-     "t0": 135.39,
-     "t1": 135.52
+     "t0": 136.33,
+     "t1": 136.46
     },
     {
      "w": "modelin",
-     "t0": 135.52,
-     "t1": 135.89
+     "t0": 136.46,
+     "t1": 136.83
     },
     {
      "w": "bir",
-     "t0": 135.89,
-     "t1": 136.01
+     "t0": 136.83,
+     "t1": 136.95
     },
     {
      "w": "sınırı",
-     "t0": 136.01,
-     "t1": 136.38
+     "t0": 136.95,
+     "t1": 137.32
     },
     {
      "w": "var.",
-     "t0": 136.38,
-     "t1": 136.5
+     "t0": 137.32,
+     "t1": 137.44
     }
    ],
    "sinir_db": {
@@ -2744,86 +2749,86 @@
    "shorts": false,
    "syl": 29,
    "no": 37,
-   "start": 136.83,
-   "end": 141.25,
+   "start": 137.77,
+   "end": 142.19,
    "pause_after": 0.39,
-   "voiced": 3.66,
-   "syl_per_s": 7.92,
+   "voiced": 3.69,
+   "syl_per_s": 7.86,
    "inner_pauses": [
     [
-     139.24,
-     139.34
+     140.18,
+     140.28
     ],
     [
-     140.29,
-     140.41
+     141.23,
+     141.35
     ]
    ],
    "words": [
     {
      "w": "İdeal",
-     "t0": 136.83,
-     "t1": 137.28
+     "t0": 137.77,
+     "t1": 138.23
     },
     {
      "w": "kaynağın",
-     "t0": 137.28,
-     "t1": 137.66
+     "t0": 138.23,
+     "t1": 138.61
     },
     {
      "w": "uçlarını",
-     "t0": 137.66,
-     "t1": 138.24
+     "t0": 138.61,
+     "t1": 139.19
     },
     {
      "w": "doğrudan",
-     "t0": 138.24,
-     "t1": 138.62
+     "t0": 139.19,
+     "t1": 139.57
     },
     {
      "w": "bir",
-     "t0": 138.62,
-     "t1": 138.74
+     "t0": 139.57,
+     "t1": 139.7
     },
     {
      "w": "telle",
-     "t0": 138.74,
-     "t1": 139.08
+     "t0": 139.7,
+     "t1": 140.04
     },
     {
      "w": "kısa",
-     "t0": 139.08,
-     "t1": 139.44
+     "t0": 140.04,
+     "t1": 140.4
     },
     {
      "w": "devre",
-     "t0": 139.44,
-     "t1": 139.69
+     "t0": 140.4,
+     "t1": 140.65
     },
     {
      "w": "edersek",
-     "t0": 139.69,
-     "t1": 140.07
+     "t0": 140.65,
+     "t1": 141.03
     },
     {
      "w": "bir",
-     "t0": 140.07,
-     "t1": 140.2
+     "t0": 141.03,
+     "t1": 141.18
     },
     {
      "w": "çelişki",
-     "t0": 140.2,
-     "t1": 140.76
+     "t0": 141.18,
+     "t1": 141.73
     },
     {
      "w": "çıkar.",
-     "t0": 140.76,
-     "t1": 141.25
+     "t0": 141.73,
+     "t1": 142.19
     }
    ],
    "sinir_db": {
     "once": -41.1,
-    "duraklama": -69.2,
+    "duraklama": -69.3,
     "sonra": -15.5
    }
   },
@@ -2834,62 +2839,62 @@
    "shorts": false,
    "syl": 14,
    "no": 38,
-   "start": 141.64,
-   "end": 144.16,
+   "start": 142.58,
+   "end": 145.1,
    "pause_after": 0.41,
    "voiced": 1.96,
    "syl_per_s": 7.14,
    "inner_pauses": [
     [
-     141.97,
-     142.26
+     142.91,
+     143.2
     ],
     [
-     143.66,
-     143.77
+     144.6,
+     144.71
     ]
    ],
    "words": [
     {
      "w": "Kaynak,",
-     "t0": 141.64,
-     "t1": 141.92
+     "t0": 142.58,
+     "t1": 142.86
     },
     {
      "w": "uçlarım",
-     "t0": 141.92,
-     "t1": 142.69
+     "t0": 142.86,
+     "t1": 143.63
     },
     {
      "w": "arasında",
-     "t0": 142.69,
-     "t1": 143.26
+     "t0": 143.63,
+     "t1": 144.2
     },
     {
      "w": "altı",
-     "t0": 143.26,
-     "t1": 143.59
+     "t0": 144.2,
+     "t1": 144.53
     },
     {
      "w": "volt",
-     "t0": 143.59,
-     "t1": 143.84
+     "t0": 144.53,
+     "t1": 144.78
     },
     {
      "w": "var",
-     "t0": 143.84,
-     "t1": 143.98
+     "t0": 144.78,
+     "t1": 144.92
     },
     {
      "w": "der.",
-     "t0": 143.98,
-     "t1": 144.16
+     "t0": 144.92,
+     "t1": 145.1
     }
    ],
    "sinir_db": {
     "once": -28.7,
-    "duraklama": -69.1,
-    "sonra": -27.8
+    "duraklama": -69.2,
+    "sonra": -27.7
    }
   },
   {
@@ -2899,45 +2904,45 @@
    "shorts": false,
    "syl": 5,
    "no": 39,
-   "start": 144.57,
-   "end": 145.81,
+   "start": 145.51,
+   "end": 146.75,
    "pause_after": 0.37,
-   "voiced": 0.81,
-   "syl_per_s": 6.17,
+   "voiced": 0.79,
+   "syl_per_s": 6.33,
    "inner_pauses": [
     [
-     144.81,
-     145.04
+     145.75,
+     145.98
     ],
     [
-     145.52,
-     145.67
+     146.46,
+     146.61
     ]
    ],
    "words": [
     {
      "w": "Tel,",
-     "t0": 144.57,
-     "t1": 144.74
+     "t0": 145.51,
+     "t1": 145.67
     },
     {
      "w": "sıfır",
-     "t0": 144.74,
-     "t1": 145.34
+     "t0": 145.67,
+     "t1": 146.27
     },
     {
      "w": "volt",
-     "t0": 145.34,
-     "t1": 145.5
+     "t0": 146.27,
+     "t1": 146.43
     },
     {
      "w": "der.",
-     "t0": 145.5,
-     "t1": 145.81
+     "t0": 146.43,
+     "t1": 146.75
     }
    ],
    "sinir_db": {
-    "once": -52.6,
+    "once": -51.7,
     "duraklama": -71.7,
     "sonra": -20.6
    }
@@ -2949,67 +2954,67 @@
    "shorts": false,
    "syl": 25,
    "no": 40,
-   "start": 146.18,
-   "end": 149.81,
+   "start": 147.12,
+   "end": 150.75,
    "pause_after": 0.25,
    "voiced": 3.08,
    "syl_per_s": 8.12,
    "inner_pauses": [
     [
-     148.67,
-     148.77
+     149.61,
+     149.71
     ]
    ],
    "words": [
     {
      "w": "Bunu",
-     "t0": 146.18,
-     "t1": 146.43
+     "t0": 147.12,
+     "t1": 147.37
     },
     {
      "w": "görmek",
-     "t0": 146.43,
-     "t1": 146.75
+     "t0": 147.37,
+     "t1": 147.69
     },
     {
      "w": "için",
-     "t0": 146.75,
-     "t1": 147.03
+     "t0": 147.69,
+     "t1": 147.97
     },
     {
      "w": "kaynağa",
-     "t0": 147.03,
-     "t1": 147.49
+     "t0": 147.97,
+     "t1": 148.43
     },
     {
      "w": "bağladığımız",
-     "t0": 147.49,
-     "t1": 148.11
+     "t0": 148.43,
+     "t1": 149.05
     },
     {
      "w": "direnci",
-     "t0": 148.11,
-     "t1": 148.53
+     "t0": 149.05,
+     "t1": 149.47
     },
     {
      "w": "adım",
-     "t0": 148.53,
-     "t1": 148.88
+     "t0": 149.47,
+     "t1": 149.82
     },
     {
      "w": "adım",
-     "t0": 148.88,
-     "t1": 149.12
+     "t0": 149.82,
+     "t1": 150.06
     },
     {
      "w": "küçültelim.",
-     "t0": 149.12,
-     "t1": 149.81
+     "t0": 150.06,
+     "t1": 150.75
     }
    ],
    "sinir_db": {
-    "once": -36.7,
-    "duraklama": -79.0,
+    "once": -36.4,
+    "duraklama": -78.5,
     "sonra": -16.0
    }
   },
@@ -3020,65 +3025,65 @@
    "shorts": false,
    "syl": 14,
    "no": 41,
-   "start": 150.06,
-   "end": 152.84,
+   "start": 151.0,
+   "end": 153.78,
    "pause_after": 0.36,
    "voiced": 1.95,
    "syl_per_s": 7.18,
    "inner_pauses": [
     [
-     150.94,
-     151.14
+     151.88,
+     152.08
     ],
     [
-     151.86,
-     152.16
+     152.8,
+     153.1
     ]
    ],
    "words": [
     {
      "w": "Bir",
-     "t0": 150.06,
-     "t1": 150.2
+     "t0": 151.0,
+     "t1": 151.14
     },
     {
      "w": "ohmda",
-     "t0": 150.2,
-     "t1": 150.48
+     "t0": 151.14,
+     "t1": 151.42
     },
     {
      "w": "akım,",
-     "t0": 150.48,
-     "t1": 150.88
+     "t0": 151.42,
+     "t1": 151.82
     },
     {
      "w": "altı",
-     "t0": 150.88,
-     "t1": 151.41
+     "t0": 151.82,
+     "t1": 152.35
     },
     {
      "w": "bölü",
-     "t0": 151.41,
-     "t1": 151.69
+     "t0": 152.35,
+     "t1": 152.63
     },
     {
      "w": "bir,",
-     "t0": 151.69,
-     "t1": 151.83
+     "t0": 152.63,
+     "t1": 152.77
     },
     {
      "w": "altı",
-     "t0": 151.83,
-     "t1": 152.46
+     "t0": 152.77,
+     "t1": 153.4
     },
     {
      "w": "amper.",
-     "t0": 152.46,
-     "t1": 152.84
+     "t0": 153.4,
+     "t1": 153.78
     }
    ],
    "sinir_db": {
-    "once": -37.9,
+    "once": -37.4,
     "duraklama": -68.9,
     "sonra": -27.0
    }
@@ -3090,76 +3095,76 @@
    "shorts": false,
    "syl": 20,
    "no": 42,
-   "start": 153.2,
-   "end": 157.23,
+   "start": 154.14,
+   "end": 158.17,
    "pause_after": 0.39,
    "voiced": 3.13,
    "syl_per_s": 6.39,
    "inner_pauses": [
     [
-     154.6,
-     154.77
+     155.54,
+     155.71
     ],
     [
-     156.22,
-     156.52
+     157.16,
+     157.46
     ]
    ],
    "words": [
     {
      "w": "Sıfır",
-     "t0": 153.2,
-     "t1": 153.57
+     "t0": 154.14,
+     "t1": 154.51
     },
     {
      "w": "virgül",
-     "t0": 153.57,
-     "t1": 153.88
+     "t0": 154.51,
+     "t1": 154.82
     },
     {
      "w": "bir",
-     "t0": 153.88,
-     "t1": 154.04
+     "t0": 154.82,
+     "t1": 154.98
     },
     {
      "w": "ohmda,",
-     "t0": 154.04,
-     "t1": 154.35
+     "t0": 154.98,
+     "t1": 155.29
     },
     {
      "w": "altı",
-     "t0": 154.35,
-     "t1": 154.86
+     "t0": 155.29,
+     "t1": 155.8
     },
     {
      "w": "bölü",
-     "t0": 154.86,
-     "t1": 155.24
+     "t0": 155.8,
+     "t1": 156.18
     },
     {
      "w": "sıfır",
-     "t0": 155.24,
-     "t1": 155.62
+     "t0": 156.18,
+     "t1": 156.56
     },
     {
      "w": "virgül",
-     "t0": 155.62,
-     "t1": 155.97
+     "t0": 156.56,
+     "t1": 156.91
     },
     {
      "w": "bir,",
-     "t0": 155.97,
-     "t1": 156.16
+     "t0": 156.91,
+     "t1": 157.1
     },
     {
      "w": "altmış",
-     "t0": 156.16,
-     "t1": 156.84
+     "t0": 157.1,
+     "t1": 157.78
     },
     {
      "w": "amper.",
-     "t0": 156.84,
-     "t1": 157.23
+     "t0": 157.78,
+     "t1": 158.17
     }
    ],
    "sinir_db": {
@@ -3175,67 +3180,67 @@
    "shorts": false,
    "syl": 14,
    "no": 43,
-   "start": 157.62,
-   "end": 160.6,
+   "start": 158.56,
+   "end": 161.54,
    "pause_after": 0.41,
    "voiced": 2.4,
    "syl_per_s": 5.83,
    "inner_pauses": [
     [
-     159.62,
-     159.73
+     160.56,
+     160.67
     ],
     [
-     159.92,
-     160.02
+     160.86,
+     160.96
     ]
    ],
    "words": [
     {
      "w": "Sıfır",
-     "t0": 157.62,
-     "t1": 158.05
+     "t0": 158.56,
+     "t1": 158.99
     },
     {
      "w": "virgül",
-     "t0": 158.05,
-     "t1": 158.39
+     "t0": 158.99,
+     "t1": 159.33
     },
     {
      "w": "sıfır",
-     "t0": 158.39,
-     "t1": 158.86
+     "t0": 159.33,
+     "t1": 159.8
     },
     {
      "w": "bir",
-     "t0": 158.86,
-     "t1": 159.03
+     "t0": 159.8,
+     "t1": 159.98
     },
     {
      "w": "ohmda",
-     "t0": 159.03,
-     "t1": 159.44
+     "t0": 159.98,
+     "t1": 160.38
     },
     {
      "w": "altı",
-     "t0": 159.44,
-     "t1": 159.89
+     "t0": 160.38,
+     "t1": 160.83
     },
     {
      "w": "yüz",
-     "t0": 159.89,
-     "t1": 160.16
+     "t0": 160.83,
+     "t1": 161.1
     },
     {
      "w": "amper.",
-     "t0": 160.16,
-     "t1": 160.6
+     "t0": 161.1,
+     "t1": 161.54
     }
    ],
    "sinir_db": {
     "once": -37.3,
     "duraklama": -70.4,
-    "sonra": -16.6
+    "sonra": -16.9
    }
   },
   {
@@ -3245,53 +3250,53 @@
    "shorts": false,
    "syl": 16,
    "no": 44,
-   "start": 161.01,
-   "end": 164.2,
+   "start": 161.95,
+   "end": 165.14,
    "pause_after": 0.27,
    "voiced": 2.61,
    "syl_per_s": 6.13,
    "inner_pauses": [
     [
-     162.79,
-     162.9
+     163.73,
+     163.84
     ]
    ],
    "words": [
     {
      "w": "Direnç",
-     "t0": 161.01,
-     "t1": 161.37
+     "t0": 161.95,
+     "t1": 162.31
     },
     {
      "w": "sıfıra",
-     "t0": 161.37,
-     "t1": 161.94
+     "t0": 162.31,
+     "t1": 162.88
     },
     {
      "w": "yaklaştıkça",
-     "t0": 161.94,
-     "t1": 162.79
+     "t0": 162.88,
+     "t1": 163.73
     },
     {
      "w": "akım",
-     "t0": 162.79,
-     "t1": 163.32
+     "t0": 163.73,
+     "t1": 164.26
     },
     {
      "w": "sınırsız",
-     "t0": 163.32,
-     "t1": 163.81
+     "t0": 164.26,
+     "t1": 164.75
     },
     {
      "w": "büyür.",
-     "t0": 163.81,
-     "t1": 164.2
+     "t0": 164.75,
+     "t1": 165.14
     }
    ],
    "sinir_db": {
     "once": -33.2,
-    "duraklama": -73.9,
-    "sonra": -15.0
+    "duraklama": -73.8,
+    "sonra": -15.1
    }
   },
   {
@@ -3301,67 +3306,67 @@
    "shorts": false,
    "syl": 22,
    "no": 45,
-   "start": 164.47,
-   "end": 168.01,
+   "start": 165.41,
+   "end": 168.95,
    "pause_after": 0.38,
    "voiced": 3.06,
    "syl_per_s": 7.19,
    "inner_pauses": [
     [
-     164.93,
-     165.05
+     165.87,
+     165.99
     ],
     [
-     166.24,
-     166.34
+     167.18,
+     167.28
     ]
    ],
    "words": [
     {
      "w": "Yani",
-     "t0": 164.47,
-     "t1": 164.75
+     "t0": 165.41,
+     "t1": 165.69
     },
     {
      "w": "ideal",
-     "t0": 164.75,
-     "t1": 165.29
+     "t0": 165.69,
+     "t1": 166.23
     },
     {
      "w": "kaynak",
-     "t0": 165.29,
-     "t1": 165.61
+     "t0": 166.23,
+     "t1": 166.55
     },
     {
      "w": "modeli",
-     "t0": 165.61,
-     "t1": 166.11
+     "t0": 166.55,
+     "t1": 167.05
     },
     {
      "w": "kısa",
-     "t0": 166.11,
-     "t1": 166.54
+     "t0": 167.05,
+     "t1": 167.48
     },
     {
      "w": "devrede",
-     "t0": 166.54,
-     "t1": 166.96
+     "t0": 167.48,
+     "t1": 167.9
     },
     {
      "w": "anlamını",
-     "t0": 166.96,
-     "t1": 167.52
+     "t0": 167.9,
+     "t1": 168.46
     },
     {
      "w": "yitirir.",
-     "t0": 167.52,
-     "t1": 168.01
+     "t0": 168.46,
+     "t1": 168.95
     }
    ],
    "sinir_db": {
     "once": -31.4,
     "duraklama": -72.9,
-    "sonra": -19.4
+    "sonra": -19.3
    }
   },
   {
@@ -3371,76 +3376,76 @@
    "shorts": false,
    "syl": 24,
    "no": 46,
-   "start": 168.39,
-   "end": 172.24,
+   "start": 169.33,
+   "end": 173.18,
    "pause_after": 0.24,
    "voiced": 3.28,
    "syl_per_s": 7.32,
    "inner_pauses": [
     [
-     169.3,
-     169.4
+     170.24,
+     170.34
     ],
     [
-     172.24,
-     172.48
+     173.18,
+     173.42
     ]
    ],
    "words": [
     {
      "w": "Gerçek",
-     "t0": 168.39,
-     "t1": 168.69
-    },
-    {
-     "w": "bir",
-     "t0": 168.69,
-     "t1": 168.95
-    },
-    {
-     "w": "kaynakta",
-     "t0": 168.95,
-     "t1": 169.5
-    },
-    {
-     "w": "ne",
-     "t0": 169.5,
+     "t0": 169.33,
      "t1": 169.64
     },
     {
-     "w": "olduğunu",
+     "w": "bir",
      "t0": 169.64,
-     "t1": 170.2
+     "t1": 169.9
+    },
+    {
+     "w": "kaynakta",
+     "t0": 169.9,
+     "t1": 170.45
+    },
+    {
+     "w": "ne",
+     "t0": 170.45,
+     "t1": 170.59
+    },
+    {
+     "w": "olduğunu",
+     "t0": 170.59,
+     "t1": 171.14
     },
     {
      "w": "şimdi",
-     "t0": 170.2,
-     "t1": 170.53
+     "t0": 171.14,
+     "t1": 171.47
     },
     {
      "w": "bir",
-     "t0": 170.53,
-     "t1": 170.67
+     "t0": 171.47,
+     "t1": 171.61
     },
     {
      "w": "veri",
-     "t0": 170.67,
-     "t1": 170.94
+     "t0": 171.61,
+     "t1": 171.88
     },
     {
      "w": "sayfasında",
-     "t0": 170.94,
-     "t1": 171.57
+     "t0": 171.88,
+     "t1": 172.51
     },
     {
      "w": "göreceğiz.",
-     "t0": 171.57,
-     "t1": 172.24
+     "t0": 172.51,
+     "t1": 173.18
     }
    ],
    "sinir_db": {
     "once": -34.4,
-    "duraklama": -59.4,
+    "duraklama": -59.3,
     "sonra": null
    }
   }
