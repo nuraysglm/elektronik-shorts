@@ -1,4 +1,4 @@
-"""Ders 2 Bolum 2 dogrulama (surum 1, 21.11.2026 kredi sprinti): butun sayisal sonuclar (kesirli tam aritmetik),
+"""Ders 2 Bolum 2 dogrulama (surum 2, 21.11.2026 kredi sprinti, 2. denetim sonrasi): butun sayisal sonuclar (kesirli tam aritmetik),
 bagimsiz kontroller (Ohm iki yonden, SI birimleriyle ikinci hesap, sinir kontrolleri) ve seslendirme metni kontrolleri.
 Hiz: 2,6 kelime/sn (Ders 1 olcumu); +125 sn kart, abone, sessizlik, bitis (intro ayrica ~9,5 sn)."""
 from fractions import Fraction as F
@@ -31,6 +31,8 @@ assert -12 / F(2) == -6                                 # V / kOhm = mA
 A = 50; vin = F(20, 1000)
 assert A * vin == 1 and A * 20 == 1000                 # 1000 mV = 1 V
 assert A * 1 == 50                                     # 1 V giris -> model 50 V
+# 2. denetim O2: iki ayri eksen; tepe degerleri eksen yariminin >= %75'i (gorunur), sinira yapismaz
+assert F(3,4) <= F(20,25) < 1 and F(3,4) <= F(1)/F(12,10) < 1
 
 # --- Parca 6: veri sayfasi sayilari
 VS = F(33, 10)
@@ -90,7 +92,10 @@ sure = toplam / 2.6 + 125 + 9.5
 print(f"Toplam seslendirme: {toplam} kelime; tahmini süre ~{sure/60:.1f} dk")
 assert 1800 <= toplam <= 2200, toplam
 assert 13 * 60 <= sure <= 17 * 60, sure
-# Uygulamada <= 610 kelime (paket ~550; mini tasarimin butun ara adimlari icin asim, dogruluk.md)
+# Uygulamada <= 645 kelime (paket ~550; mini tasarimin butun ara adimlari ve 2. denetimin dogruluk duzeltmeleri icin asim, dogruluk.md)
 u = [b for no, b in bloklar if no == "6"][0]
-assert len(u.split()) <= 610, len(u.split())
+assert len(u.split()) <= 645, len(u.split())
+# 2. denetim: "dogruluk" yerine "kazanc hatasi" (toplam dogruluk gibi sunulmaz); giris akimi niteliksiz verilmez
+assert "Yüzde birlik doğruluk" not in u and "bu doğruluk yalnızca" not in u
+assert "yaklaşık sıfır virgül bir mikroamper" in u
 print("TÜM KONTROLLER GEÇTİ")
