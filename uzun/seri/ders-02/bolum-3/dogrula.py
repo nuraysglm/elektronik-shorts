@@ -1,4 +1,4 @@
-"""Ders 2 Bolum 3 dogrulama (surum 2, 21.11.2026 kredi sprinti): butun sayisal sonuclar (kesirli tam aritmetik),
+"""Ders 2 Bolum 3 dogrulama (surum 3, 21.11.2026 kredi sprinti; 2. bagimsiz denetimden sonra): butun sayisal sonuclar (kesirli tam aritmetik),
 bagimsiz kontroller (Ohm iki yonden, KVL ile kopru, oranlar) ve seslendirme metni kontrolleri.
 Hiz: 2,6 kelime/sn (Ders 1 olcumu); +125 sn kart, abone, sessizlik, bitis (intro ayrica ~9,5 sn).
 Birimler: V / kOhm = mA ; kOhm x mA = V ; Ohm x A = V."""
@@ -77,6 +77,11 @@ t = F(400) / F(3704, 10); assert abs(t - F(108, 100)) < F(5, 1000)              
 assert abs(F(108, 100) * 60 - 65) < F(5, 10) and abs(t * 60 - 65) < F(5, 10)        # ~65 dk
 assert abs(F(400) * F(36, 10) / F(3704, 10000) - 3888) < 2                            # kulonla 1440 C / 0,3704 A ~ 3888 s
 i2k = F(1000) / 2; assert i2k == 500
+# 2. denetim eklemeleri (21.11.2026)
+assert 1 - F(1, 10) == F(9, 10) and 1 + F(1, 10) == F(11, 10)          # %10 asagi / yukari -> 0,9 / 1,1 kat
+assert 2 * 150 == 300 and i2k > 300                                     # 150 mAh pil icin 2C = 300 mA < 500 mA
+assert F(375, 100) <= 5 <= 6                                            # MCP73831 besleme 3,75 ... 6 V; 5 V adaptor icinde
+assert 2 < F(27, 10) < 10                                               # 2,7 kOhm, veri sayfasinin iki noktasi (2 ve 10 kOhm) arasinda
 assert abs(i2k / 150 - F(33, 10)) < F(5, 100) and i2k / 150 > 3 and i2k / 150 > 2      # ~3,3C > 2C
 # --- Parca 7: NSI45025A
 assert F(8, 10) * 25 == 20                                  # 1,8 V'ta tipik %80 -> 20 mA
@@ -101,6 +106,7 @@ for n, metin in parcalar:
     assert not re.search(r"(^|[.!?]\s+)İ\b", metin)
     assert not re.search(r"\b(USB|LED|MCP|NSI|TLHR|mAh|datasheet|onsemi|Microchip|Vishay|PROG|REG|mA|mV|Ω)\b", metin), n
     assert "kanca" not in metin.lower(), n
+    assert not re.search(r"\b[A-NP-ZÇĞİÖŞÜ]\b", metin), n            # tek buyuk harf ("O" zamiri haric) (or. "bir C") okunus riski
     assert "her zaman" not in metin.lower() and "asla" not in metin.lower(), n
     assert "sonsuz" not in metin.lower(), n                    # "sinirsiz buyumek zorunda" denir (icerik.md 10)
     assert "dükkânda yoktur" not in metin                      # "ideal olanini bulamazsin"
