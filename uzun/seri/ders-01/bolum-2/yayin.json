@@ -26,12 +26,21 @@
     "Oynatma listesi 'Devre Teorisi I — Türkçe Ders Serisi'ne ekle, sıra 2 (Ders 1 Bölüm 2).",
     "Bitiş ekranı (son 20 sn, 16:43–17:03 arası; orta ve alt boş): sonraki bölüm (yayınlanınca) + oynatma listesi + abone.",
     "Bilgi kartı: 0:58 'Bölüm 1'den' anına Ders 1 - Bölüm 1/3 videosu.",
-    "Bölüm 1 videosunun bitiş ekranına bu videoyu 'sonraki bölüm' olarak ekle."
+    "Bölüm 1 videosunun bitiş ekranına bu videoyu 'sonraki bölüm' olarak ekle.",
+    "Altyazılar: Studio → İçerik → video → Altyazılar → Dil ekle → Türkçe / İngilizce → Dosya yükle → Zamanlamalı → .srt (media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-2.tr.srt ve .en.srt); başlık-açıklama çevirisi: Dil ekle → Başlık ve açıklama (yayin.json 'en')."
   ],
   "zaman_damgasi_kaynagi": "iş emri N (20.11.2026): yeni parça başlangıçları [0, 60.8, 277.43, 389.63, 522.13, 661.43, 797.17, 937.43]; parça 2'de 158,45 sn'de +0,85 sn, parça 6'da 73,03 sn'de +1,0 sn sessizlik; onaylı Blender intro 37,5 sn'de (9,2 sn + 0,1 sn tahta): 37,5 sn'den sonraki her şey birleşik + 9.3 sn; zamanlama-N.json cümle başları",
   "abone_kartlari": [
     "4:42,5",
     "16:33,7"
   ],
-  "kapak_notu": "Kanal sahibi kapak A + başlık A seçti (panel 20.11 14:39, sohbette 22:18). 6-D beyaz zemin. Eski kapak: -kapak-eski.jpg"
+  "kapak_notu": "Kanal sahibi kapak A + başlık A seçti (panel 20.11 14:39, sohbette 22:18). 6-D beyaz zemin. Eski kapak: -kapak-eski.jpg",
+  "en": {
+    "baslik": "Open-Circuit Mistake and Current Direction | Circuit Theory I Lecture 1 (2/3)",
+    "aciklama": "If the current in an open circuit is zero, is the voltage zero too? In the second part of Circuit Theory I (Circuit Analysis 1), we learn the direction of current (the reference arrow), what an open circuit actually guarantees, and the charge passed from a current graph (integral = area) — with original worked examples.\nWe also separate continuous current from pulse current in a datasheet and estimate a coin cell's battery life from its average current.\n\nChapters\n0:00 Intro: is the voltage across an open switch zero?\n0:58 From Part 1: average and instantaneous current\n1:09 In practice: currents in a datasheet\n2:16 Three questions when reading a current rating\n2:30 Mini design: coin cell battery life\n4:46 Value and direction of current: the reference arrow\n5:44 Electrons and the direction of current\n6:38 Open circuit: the most common mistake\n7:57 In practice: a button and a microcontroller input\n8:51 From current to charge: integral and area\n9:51 Constant current and a check against Part 1\n11:11 Example: ramp, constant and reversed current\n12:46 Half the time, a quarter of the charge\n13:26 A circuit that delivers the required current\n15:46 Key takeaways\n16:14 A question for you\n\nKey takeaways\n• Every current has a value and a direction; the direction is given by the reference arrow on the schematic.\n• An open circuit guarantees only i = 0; the voltage across it is set by the rest of the circuit.\n• The charge passed is the area under the current graph (q = ∫ i dt); area below the axis counts as negative.\n• In a datasheet, continuous current and pulse current are separate rows; read each value's conditions (duration, temperature, mounting).\nPrerequisites: Part 1 (i = dq / dt, average current), Ohm's law (v = R × i), the idea of an integral.\n\nPrevious: Lecture 1 - Part 1/3: What is current? Average vs instantaneous current.\nNext: Lecture 1 - Part 3/3: Voltage, short circuit and the ideal source.\nPlaylist: Devre Teorisi I — Türkçe Ders Serisi\n\nSource: B. Razavi, Basic Circuit Theory, Lecture 1 (UCLA). Explanations and all examples are original.\nDatasheet values: Vishay 1N4001–1N4007 (2020), onsemi 2N7002E (2023), Vishay TLHR540x (2024), Panasonic CR2032 (2026).\nMusic: Pawn – The Grey Room / Golden Palms (YouTube Audio Library)"
+  },
+  "altyazi": {
+    "tr": "media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-2.tr.srt",
+    "en": "media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-2.en.srt"
+  }
 }

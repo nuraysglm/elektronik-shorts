@@ -1,0 +1,1489 @@
+1
+00:00:00,040 --> 00:00:03,660
+How many volts are there across
+the two terminals of an open switch?
+
+2
+00:00:03,890 --> 00:00:05,790
+The first answer
+that comes to mind is zero.
+
+3
+00:00:05,870 --> 00:00:08,130
+After all, no current
+flows through the switch.
+
+4
+00:00:08,210 --> 00:00:10,228
+But in the circuit we're about to draw,
+
+5
+00:00:10,308 --> 00:00:13,930
+there are exactly 9 V across
+the terminals of the open switch.
+
+6
+00:00:14,010 --> 00:00:16,370
+The current is zero,
+but the voltage is not.
+
+7
+00:00:16,450 --> 00:00:20,660
+And the most common mistake on this
+topic is exactly confusing these two.
+
+8
+00:00:20,820 --> 00:00:24,210
+By the end of this part, you'll find
+the voltage across an open switch.
+
+9
+00:00:24,290 --> 00:00:26,144
+You'll write current
+with its direction and find
+
+10
+00:00:26,224 --> 00:00:28,180
+the charge that passed
+from a current graph.
+
+11
+00:00:28,260 --> 00:00:30,630
+You'll build a circuit
+that delivers a required current.
+
+12
+00:00:30,710 --> 00:00:34,140
+In a datasheet, you'll tell continuous
+current apart from pulse current,
+
+13
+00:00:34,220 --> 00:00:37,490
+and you'll calculate a battery's
+life from the average current.
+
+14
+00:00:47,150 --> 00:00:51,070
+Hello everyone, welcome
+to the Circuit Theory I series.
+
+15
+00:00:51,150 --> 00:00:55,115
+Today, in the second part of Lecture 1,
+we'll talk about the direction of current,
+
+16
+00:00:55,195 --> 00:00:58,080
+the open circuit,
+and going from current to charge.
+
+17
+00:00:58,450 --> 00:01:00,295
+In Part 1, we defined current as the rate
+
+18
+00:01:00,375 --> 00:01:02,920
+at which charge passes
+through a cross-section.
+
+19
+00:01:03,000 --> 00:01:04,386
+Before we get into the topic,
+
+20
+00:01:04,466 --> 00:01:06,586
+let's see what the average
+and instantaneous
+
+21
+00:01:06,666 --> 00:01:09,510
+current from there correspond
+to in a real design.
+
+22
+00:01:10,150 --> 00:01:12,240
+Open a component's datasheet.
+
+23
+00:01:12,320 --> 00:01:14,349
+On this page from the manufacturer,
+
+24
+00:01:14,429 --> 00:01:17,910
+you'll often see not just
+one row for current, but two.
+
+25
+00:01:17,990 --> 00:01:19,430
+The first is the continuous current:
+
+26
+00:01:19,510 --> 00:01:22,070
+the current the component can
+withstand for a long time.
+
+27
+00:01:22,150 --> 00:01:23,616
+The second is the pulse current:
+
+28
+00:01:23,696 --> 00:01:26,640
+the current it can withstand
+only for a very short time.
+
+29
+00:01:26,720 --> 00:01:29,270
+Let's look at a widely
+used rectifier diode.
+
+30
+00:01:29,350 --> 00:01:32,950
+The datasheet lists an average
+forward current of 1 A.
+
+31
+00:01:33,030 --> 00:01:36,680
+This 1 A is given at an ambient
+temperature of 75 °C.
+
+32
+00:01:36,760 --> 00:01:40,190
+The name of this row explicitly
+includes the word average.
+
+33
+00:01:40,270 --> 00:01:44,578
+Right next to it, the surge
+current is listed as 30 A,
+
+34
+00:01:44,658 --> 00:01:47,700
+but only for a single 8.3 ms pulse.
+
+35
+00:01:47,780 --> 00:01:50,215
+So this diode can
+withstand a brief stress,
+
+36
+00:01:50,295 --> 00:01:52,740
+but it can't carry 30 A continuously.
+
+37
+00:01:52,820 --> 00:01:56,390
+You'll also see two rows
+for an electronic switch and for an LED.
+
+38
+00:01:56,470 --> 00:01:59,920
+But there, the first row isn't called
+average; it's called continuous current.
+
+39
+00:02:00,000 --> 00:02:04,090
+These values are limits that must not
+be exceeded, not operating points.
+
+40
+00:02:04,200 --> 00:02:06,578
+The continuous current
+is mostly limited by heating,
+
+41
+00:02:06,658 --> 00:02:08,770
+and it drops as the temperature rises.
+
+42
+00:02:08,850 --> 00:02:12,515
+For example,
+the switch's continuous current
+
+43
+00:02:12,595 --> 00:02:16,210
+is 260 mA at 25 °C and 190 mA at 85 °C.
+
+44
+00:02:16,290 --> 00:02:19,840
+So when you read a current row,
+ask yourself three questions.
+
+45
+00:02:19,930 --> 00:02:22,210
+Is this value continuous or pulse?
+
+46
+00:02:22,290 --> 00:02:23,910
+For what duration is it given?
+
+47
+00:02:23,990 --> 00:02:26,820
+At what temperature,
+and how is it mounted?
+
+48
+00:02:26,900 --> 00:02:30,630
+If you haven't read a value's conditions,
+you haven't really read the value.
+
+49
+00:02:30,800 --> 00:02:32,570
+Now let's do a small design.
+
+50
+00:02:32,650 --> 00:02:38,650
+A temperature sensor wakes up once
+every second and draws 10 mA for 2 ms.
+
+51
+00:02:38,760 --> 00:02:43,410
+For the remaining 998 ms,
+it sleeps and draws 5 µA.
+
+52
+00:02:43,490 --> 00:02:48,210
+The coin cell powering
+it is labeled 225 mAh.
+
+53
+00:02:48,290 --> 00:02:50,630
+A milliampere-hour
+is actually a unit of charge.
+
+54
+00:02:50,710 --> 00:02:52,810
+1 hour is 3600 seconds.
+
+55
+00:02:52,890 --> 00:02:54,939
+1 mA × 3600 s = 3600 mC,
+
+56
+00:02:55,019 --> 00:03:01,019
+because multiplying milliamperes
+by seconds gives you millicoulombs.
+
+57
+00:03:01,120 --> 00:03:02,900
+That is 3.6 C.
+
+58
+00:03:02,980 --> 00:03:06,210
+So the battery is telling us
+the total charge it can deliver.
+
+59
+00:03:06,290 --> 00:03:08,260
+How much charge is drawn in 1 second?
+
+60
+00:03:08,340 --> 00:03:10,910
+With a constant current,
+charge is current times time.
+
+61
+00:03:10,990 --> 00:03:15,220
+While awake: 10 mA × 2 ms = 20 µC.
+
+62
+00:03:15,300 --> 00:03:17,502
+If you multiply milliamperes
+by milliseconds,
+
+63
+00:03:17,582 --> 00:03:19,360
+you get microcoulombs directly.
+
+64
+00:03:19,440 --> 00:03:23,470
+While asleep: 5 µA × 998 ms.
+
+65
+00:03:23,550 --> 00:03:27,130
+5 × 998 = 4990.
+
+66
+00:03:27,210 --> 00:03:30,680
+Multiplying microamperes
+by milliseconds gives you nanocoulombs.
+
+67
+00:03:30,760 --> 00:03:33,430
+So 4990 nC.
+
+68
+00:03:33,510 --> 00:03:38,540
+Since 1000 nC = 1 µC, this is 4.99 µC.
+
+69
+00:03:38,620 --> 00:03:44,110
+The total is 20 + 4.99 = 24.99 µC.
+
+70
+00:03:44,190 --> 00:03:48,810
+Dividing this by 1 second,
+the average current is about 25 µA.
+
+71
+00:03:49,570 --> 00:03:52,650
+The battery life is the capacity
+divided by the average current.
+
+72
+00:03:52,730 --> 00:03:56,910
+25 µA = 0.025 mA.
+
+73
+00:03:56,990 --> 00:04:00,230
+Dividing milliampere-hours
+by milliamperes leaves hours.
+
+74
+00:04:00,310 --> 00:04:03,980
+Dividing by 0.025 means multiplying by 40.
+
+75
+00:04:04,060 --> 00:04:06,970
+225 × 40 = 9000 hours.
+
+76
+00:04:07,050 --> 00:04:11,910
+Dividing 9000 by 24 gives 375
+days, that is, about a year.
+
+77
+00:04:11,990 --> 00:04:15,640
+The real life may be somewhat shorter
+because of temperature and the pulses,
+
+78
+00:04:15,720 --> 00:04:17,500
+so the designer leaves a margin.
+
+79
+00:04:17,580 --> 00:04:19,870
+Another costly mistake in design is this:
+
+80
+00:04:19,950 --> 00:04:24,800
+seeing that the sensor draws 10 mA and
+calculating the life with this peak value.
+
+81
+00:04:24,880 --> 00:04:28,120
+225 / 10 = 22.5 hours.
+
+82
+00:04:28,200 --> 00:04:29,430
+That's not even a day.
+
+83
+00:04:29,510 --> 00:04:32,460
+9000 / 22.5 = 400.
+
+84
+00:04:32,540 --> 00:04:35,640
+So it's about 400 times shorter
+than the correct result.
+
+85
+00:04:35,720 --> 00:04:38,863
+In short, the average current
+determines the battery life,
+
+86
+00:04:38,943 --> 00:04:42,490
+while the pulse row in the datasheet
+limits the short peaks.
+
+87
+00:04:42,570 --> 00:04:45,620
+You can subscribe to the channel
+to follow the rest of this series.
+
+88
+00:04:46,773 --> 00:04:49,993
+Now let's move on to three
+important points about current.
+
+89
+00:04:50,073 --> 00:04:54,053
+The first point: a single number
+isn't enough to describe a current.
+
+90
+00:04:54,133 --> 00:04:57,113
+Every current has a value
+and also a direction.
+
+91
+00:04:57,193 --> 00:04:59,563
+We show the direction
+on the schematic with an arrow.
+
+92
+00:04:59,643 --> 00:05:01,543
+We call this arrow
+the reference direction.
+
+93
+00:05:01,623 --> 00:05:04,673
+We decide which way to draw the arrow.
+
+94
+00:05:04,753 --> 00:05:06,676
+Our rule is this: positive charge passing
+
+95
+00:05:06,756 --> 00:05:09,323
+in the direction of the arrow
+counts as positive.
+
+96
+00:05:09,403 --> 00:05:12,643
+Positive charge passing against
+the arrow counts as negative.
+
+97
+00:05:12,723 --> 00:05:13,823
+Let's look at an example.
+
+98
+00:05:13,903 --> 00:05:19,243
+In a wire, 3 µC of positive charge passes
+from left to right every millisecond.
+
+99
+00:05:19,323 --> 00:05:22,723
+3 µC / 1 ms = 3 mA.
+
+100
+00:05:22,803 --> 00:05:26,093
+If we draw the arrow to the right,
+the current is +3 mA.
+
+101
+00:05:26,173 --> 00:05:27,902
+If we draw the arrow to the left,
+
+102
+00:05:27,982 --> 00:05:31,433
+the charge goes against the arrow,
+and the current is −3 mA.
+
+103
+00:05:31,513 --> 00:05:32,863
+So which one is correct?
+
+104
+00:05:32,943 --> 00:05:36,363
+Both. Both answers describe
+the same physical situation.
+
+105
+00:05:36,443 --> 00:05:39,383
+The minus sign doesn't mean
+you chose the wrong direction.
+
+106
+00:05:39,463 --> 00:05:42,253
+It just means the charge
+is moving against the arrow.
+
+107
+00:05:42,333 --> 00:05:44,833
+As long as the arrow
+is drawn on the schematic.
+
+108
+00:05:44,913 --> 00:05:46,323
+So what actually happens?
+
+109
+00:05:46,403 --> 00:05:49,339
+In a metal wire,
+what actually moves are electrons,
+
+110
+00:05:49,419 --> 00:05:51,823
+and the electron's charge is negative.
+
+111
+00:05:51,903 --> 00:05:54,504
+Suppose the electrons move to the right
+
+112
+00:05:54,584 --> 00:05:57,943
+and carry −4 µC to the right
+every millisecond.
+
+113
+00:05:58,023 --> 00:05:59,103
+Let's draw the arrow to the right.
+
+114
+00:05:59,183 --> 00:06:03,263
+−4 µC / 1 ms = −4 mA.
+
+115
+00:06:03,343 --> 00:06:06,153
+If we flip the arrow to the left, +4 mA.
+
+116
+00:06:06,233 --> 00:06:11,453
+So electrons moving to the right
+mean a current of 4 mA to the left.
+
+117
+00:06:11,533 --> 00:06:12,816
+The direction of current is defined
+
+118
+00:06:12,896 --> 00:06:14,893
+as the direction in which
+positive charge moves.
+
+119
+00:06:14,973 --> 00:06:17,913
+That's why it's opposite
+to the motion of electrons.
+
+120
+00:06:17,993 --> 00:06:22,383
+The −2 mA we found in the last
+example of Part 1 was exactly this.
+
+121
+00:06:22,463 --> 00:06:27,263
+At 4 seconds, 6 − 2 × 4 = −2 mA.
+
+122
+00:06:27,343 --> 00:06:29,236
+After 3 seconds,
+the charge had started passing
+
+123
+00:06:29,316 --> 00:06:31,653
+through the cross-section
+in the opposite direction.
+
+124
+00:06:31,733 --> 00:06:35,103
+In short, draw an arrow next
+to every current on the schematic.
+
+125
+00:06:35,183 --> 00:06:38,513
+A current value without an arrow
+is incomplete information.
+
+126
+00:06:39,033 --> 00:06:41,053
+The second point is the open circuit.
+
+127
+00:06:41,133 --> 00:06:42,723
+Now let's build this circuit.
+
+128
+00:06:42,803 --> 00:06:46,166
+A 9 V battery, a 3 kΩ
+resistor and a switch
+
+129
+00:06:46,246 --> 00:06:49,383
+are connected to form a single loop.
+
+130
+00:06:49,463 --> 00:06:51,173
+First, let the switch be closed.
+
+131
+00:06:51,383 --> 00:06:54,763
+A closed ideal switch
+is like a piece of wire.
+
+132
+00:06:54,843 --> 00:06:58,433
+The battery's 9 V appears
+directly across the resistor.
+
+133
+00:06:58,513 --> 00:07:01,633
+By Ohm's law, the current
+is voltage divided by resistance.
+
+134
+00:07:01,713 --> 00:07:04,663
+9 V / 3 kΩ = 3 mA.
+
+135
+00:07:04,743 --> 00:07:07,163
+V / kΩ gives mA.
+
+136
+00:07:07,363 --> 00:07:08,843
+Now let's open the switch.
+
+137
+00:07:08,923 --> 00:07:11,143
+An open switch is an open circuit.
+
+138
+00:07:11,223 --> 00:07:14,203
+There's no path for charge
+to pass between its two terminals.
+
+139
+00:07:14,283 --> 00:07:16,203
+If there's no path, there's no current.
+
+140
+00:07:16,293 --> 00:07:17,975
+Since there's only one path in the loop,
+
+141
+00:07:18,055 --> 00:07:20,303
+the current is zero
+everywhere in the loop.
+
+142
+00:07:20,453 --> 00:07:23,623
+So what's the voltage
+across the open switch?
+
+143
+00:07:23,703 --> 00:07:26,343
+This is where the most
+common mistake is made.
+
+144
+00:07:26,423 --> 00:07:28,053
+Saying that since the current is zero
+
+145
+00:07:28,133 --> 00:07:30,603
+the voltage must be zero too,
+and writing 0 V.
+
+146
+00:07:30,693 --> 00:07:33,633
+The correct way is this.
+No current flows through the resistor.
+
+147
+00:07:33,713 --> 00:07:39,683
+By Ohm's law, the resistor's voltage
+is 3 kΩ × 0 mA, that is, 0 V.
+
+148
+00:07:39,763 --> 00:07:42,803
+That means both ends of the resistor
+are at the same voltage.
+
+149
+00:07:42,883 --> 00:07:44,505
+The switch's lower terminal is connected
+
+150
+00:07:44,585 --> 00:07:46,693
+to the battery's negative
+terminal by a wire.
+
+151
+00:07:46,773 --> 00:07:49,617
+Its upper terminal is connected
+to the battery's positive terminal
+
+152
+00:07:49,697 --> 00:07:53,133
+through the resistor, and the resistor
+adds no voltage difference at all.
+
+153
+00:07:53,213 --> 00:07:57,873
+So the battery's full 9 V remains
+across the terminals of the switch.
+
+154
+00:07:57,953 --> 00:08:00,853
+You'll see this on almost
+every electronic board.
+
+155
+00:08:00,933 --> 00:08:06,423
+A microcontroller's input is connected
+to 3.3 V through a 10 kΩ resistor.
+
+156
+00:08:06,503 --> 00:08:08,833
+The button is between the input
+and ground.
+
+157
+00:08:08,913 --> 00:08:11,703
+The input itself draws almost no current.
+
+158
+00:08:11,783 --> 00:08:13,478
+When the button is open,
+it's an open circuit,
+
+159
+00:08:13,558 --> 00:08:15,483
+and no current flows through the resistor.
+
+160
+00:08:15,563 --> 00:08:19,333
+The resistor's voltage is 10 kΩ × 0 = 0 V.
+
+161
+00:08:19,413 --> 00:08:24,973
+So the input is at 3.3 V, and there are
+also 3.3 V across the button's terminals.
+
+162
+00:08:25,053 --> 00:08:31,053
+When you press the button, the current
+becomes 3.3 V / 10 kΩ = 0.33 mA.
+
+163
+00:08:31,323 --> 00:08:35,203
+A closed button is like a wire;
+it connects the input directly to ground.
+
+164
+00:08:35,283 --> 00:08:37,533
+That's why the input drops to 0 V.
+
+165
+00:08:37,643 --> 00:08:43,023
+So an open circuit guarantees us only one
+thing: the current through it is zero.
+
+166
+00:08:43,103 --> 00:08:47,083
+On its own, it says nothing about
+the voltage across its terminals.
+
+167
+00:08:47,163 --> 00:08:50,663
+That voltage comes from the elements
+connected to the open circuit.
+
+168
+00:08:51,503 --> 00:08:54,703
+The third point is the reverse
+of what we did in Part 1.
+
+169
+00:08:54,783 --> 00:08:56,301
+There, we went from charge to current:
+
+170
+00:08:56,381 --> 00:08:58,923
+we took the derivative
+of charge with respect to time.
+
+171
+00:08:59,003 --> 00:09:00,773
+Now we have the current.
+
+172
+00:09:00,853 --> 00:09:03,983
+How do we find how much
+charge passed in a given time?
+
+173
+00:09:04,143 --> 00:09:06,133
+Think of a tiny time interval.
+
+174
+00:09:06,213 --> 00:09:09,193
+dt is the name of this
+very short time interval.
+
+175
+00:09:09,273 --> 00:09:12,513
+In such a short time,
+the current stays almost constant.
+
+176
+00:09:12,593 --> 00:09:16,123
+The charge passing
+in that interval = i × dt.
+
+177
+00:09:16,203 --> 00:09:18,383
+On the graph, this is a thin strip.
+
+178
+00:09:18,463 --> 00:09:19,663
+Its height is i.
+
+179
+00:09:19,743 --> 00:09:22,543
+And its width is that tiny time. dt.
+
+180
+00:09:22,623 --> 00:09:25,842
+If we add up all these strips
+from time zero to time t₁,
+
+181
+00:09:25,922 --> 00:09:28,443
+we find the total charge that passed.
+
+182
+00:09:28,523 --> 00:09:30,323
+The name of this sum is the integral.
+
+183
+00:09:30,403 --> 00:09:35,493
+q = ∫₀^t₁ i dt.
+
+184
+00:09:35,573 --> 00:09:37,463
+Its meaning on the graph is very clear.
+
+185
+00:09:37,543 --> 00:09:40,873
+The charge that passed is the area
+under the current graph.
+
+186
+00:09:40,953 --> 00:09:44,333
+Remember: the charges we found
+as current times time in the battery
+
+187
+00:09:44,413 --> 00:09:47,473
+calculation were actually
+areas of narrow rectangles too.
+
+188
+00:09:47,553 --> 00:09:51,123
+And the battery's milliampere-hours are
+the largest area the battery can deliver.
+
+189
+00:09:51,203 --> 00:09:52,603
+Let's try the simplest case.
+
+190
+00:09:52,683 --> 00:09:56,353
+A constant current of 4 mA
+flows for 3 seconds.
+
+191
+00:09:56,433 --> 00:09:57,823
+The graph is a rectangle.
+
+192
+00:09:57,903 --> 00:10:01,043
+Its height is 4 mA,
+and its width is 3 seconds.
+
+193
+00:10:01,123 --> 00:10:03,243
+The area is height times width.
+
+194
+00:10:03,323 --> 00:10:04,993
+4 × 3 = 12.
+
+195
+00:10:05,073 --> 00:10:07,803
+mA × s gives mC.
+
+196
+00:10:07,883 --> 00:10:10,933
+So 12 mC has passed in 3 seconds.
+
+197
+00:10:11,013 --> 00:10:13,603
+Let's also test this method
+with the example from Part 1.
+
+198
+00:10:13,683 --> 00:10:15,371
+There, the charge was 2t² mC,
+
+199
+00:10:15,451 --> 00:10:19,393
+and by taking its derivative we
+found the current to be 4t mA.
+
+200
+00:10:19,473 --> 00:10:20,823
+Now let's go the other way.
+
+201
+00:10:20,903 --> 00:10:26,723
+The integral of 4t is half
+of 4 times t², that is, 2t².
+
+202
+00:10:26,803 --> 00:10:30,664
+If we integrate from 0 to 3 seconds,
+
+203
+00:10:30,744 --> 00:10:33,323
+2 × 3² = 2 × 9 = 18 mC.
+
+204
+00:10:33,403 --> 00:10:36,653
+The very same 18 mC we found in Part 1.
+
+205
+00:10:36,733 --> 00:10:39,213
+Derivative and integral are
+the inverse of each other.
+
+206
+00:10:39,293 --> 00:10:40,913
+There's also the matter of sign.
+
+207
+00:10:40,993 --> 00:10:44,763
+If the current is negative, the graph's
+curve goes below the horizontal axis.
+
+208
+00:10:44,843 --> 00:10:47,123
+The area below the axis
+counts as negative.
+
+209
+00:10:47,203 --> 00:10:50,453
+Because during that time, the charge
+passes against the reference arrow.
+
+210
+00:10:50,533 --> 00:10:55,463
+For example, if a current
+of −2 mA flows for 2 seconds,
+
+211
+00:10:55,543 --> 00:10:57,183
+2 × (−2) = −4 mC.
+
+212
+00:10:57,263 --> 00:11:00,973
+That means 4 mC of charge
+has passed against the arrow.
+
+213
+00:11:01,053 --> 00:11:04,063
+Also remember the unit shortcut
+we saw in the battery calculation:
+
+214
+00:11:04,143 --> 00:11:06,184
+if you multiply milliamperes
+by milliseconds,
+
+215
+00:11:06,264 --> 00:11:07,793
+you get microcoulombs directly.
+
+216
+00:11:07,873 --> 00:11:10,263
+We'll use it again right now.
+
+217
+00:11:10,783 --> 00:11:13,113
+Now a more interesting current graph.
+
+218
+00:11:13,193 --> 00:11:16,752
+The current starts from zero at time zero
+
+219
+00:11:16,832 --> 00:11:20,143
+and rises linearly to 6 mA in 2 ms.
+
+220
+00:11:20,223 --> 00:11:24,383
+Between 2 and 5 ms,
+it stays constant at 6 mA.
+
+221
+00:11:24,463 --> 00:11:30,193
+At 5 ms, it changes direction
+and is −2 mA until 8 ms.
+
+222
+00:11:30,273 --> 00:11:32,293
+The question: between 0 and 8 ms,
+
+223
+00:11:32,373 --> 00:11:36,223
+how much net charge passed
+in the direction of the arrow?
+
+224
+00:11:36,303 --> 00:11:37,743
+Let's split the area into pieces.
+
+225
+00:11:37,823 --> 00:11:39,243
+The first piece is a triangle.
+
+226
+00:11:39,323 --> 00:11:42,533
+The area of a triangle
+is base × height / 2.
+
+227
+00:11:42,613 --> 00:11:46,063
+The base is 2 ms, and the height is 6 mA.
+
+228
+00:11:46,143 --> 00:11:49,523
+2 × 6 = 12, and half of 12 is 6.
+
+229
+00:11:49,603 --> 00:11:53,263
+So 6 µC has passed in the first 2 ms.
+
+230
+00:11:53,343 --> 00:11:55,063
+The second piece is a rectangle.
+
+231
+00:11:55,143 --> 00:11:58,073
+Its width is 5 − 2 = 3 ms.
+
+232
+00:11:58,153 --> 00:12:00,043
+Its height is 6 mA.
+
+233
+00:12:00,123 --> 00:12:02,703
+3 × 6 = 18 µC.
+
+234
+00:12:02,783 --> 00:12:06,633
+The third piece is a rectangle again,
+but this time below the axis.
+
+235
+00:12:06,713 --> 00:12:09,663
+Its width is 8 − 5 = 3 ms.
+
+236
+00:12:09,743 --> 00:12:11,903
+Its height is −2 mA.
+
+237
+00:12:11,983 --> 00:12:14,903
+3 × (−2) = −6 µC.
+
+238
+00:12:14,983 --> 00:12:17,493
+During this time, the charge
+passes against the arrow.
+
+239
+00:12:17,573 --> 00:12:18,593
+Now let's add them up.
+
+240
+00:12:18,673 --> 00:12:20,643
+6 + 18 = 24.
+
+241
+00:12:20,723 --> 00:12:24,033
+Subtracting 6 from 24 gives 18 µC.
+
+242
+00:12:24,893 --> 00:12:27,682
+Remember Part 1: if you divide
+the net charge by the time,
+
+243
+00:12:27,762 --> 00:12:29,293
+you get the average current.
+
+244
+00:12:29,373 --> 00:12:34,103
+18 µC / 8 ms = 2.25 mA.
+
+245
+00:12:34,183 --> 00:12:37,511
+Look at the graph: the current doesn't
+stay at this value in any interval;
+
+246
+00:12:37,591 --> 00:12:40,513
+it passes through this value
+only for an instant on the ramp.
+
+247
+00:12:40,593 --> 00:12:42,503
+Once again, this is only an average.
+
+248
+00:12:42,583 --> 00:12:44,263
+And this average
+is exactly what was useful
+
+249
+00:12:44,343 --> 00:12:46,093
+to us in the battery life calculation.
+
+250
+00:12:46,173 --> 00:12:47,173
+Let's also look at this.
+
+251
+00:12:47,253 --> 00:12:51,403
+At 1 ms, right in the middle of the ramp,
+how much charge has passed?
+
+252
+00:12:51,483 --> 00:12:55,403
+The current rises by 6 mA in 2 ms.
+
+253
+00:12:55,483 --> 00:12:58,743
+6 / 2, that's 3 mA every millisecond.
+
+254
+00:12:58,823 --> 00:13:01,963
+At that instant,
+the current is 3 × 1 = 3 mA.
+
+255
+00:13:02,043 --> 00:13:06,603
+The area of the small triangle
+is 1 × 3 / 2 = 1.5 µC.
+
+256
+00:13:06,683 --> 00:13:09,803
+Is this half of the 6 µC
+in the first triangle?
+
+257
+00:13:09,883 --> 00:13:14,173
+No. Dividing 1.5 by 6 gives 0.25.
+
+258
+00:13:14,253 --> 00:13:15,393
+So it's a quarter.
+
+259
+00:13:15,473 --> 00:13:16,653
+Why a quarter?
+
+260
+00:13:16,733 --> 00:13:19,813
+Because in the first half of the ramp,
+the current is still small.
+
+261
+00:13:19,893 --> 00:13:23,003
+Most of the charge passes in the second
+half, when the current has grown.
+
+262
+00:13:23,083 --> 00:13:26,023
+Half the time doesn't
+mean half the charge.
+
+263
+00:13:26,607 --> 00:13:28,767
+Finally, let's turn the problem around.
+
+264
+00:13:28,847 --> 00:13:31,487
+This time, we're given a current waveform.
+
+265
+00:13:31,567 --> 00:13:34,757
+And we're asked to build a circuit
+that produces this current.
+
+266
+00:13:34,837 --> 00:13:36,367
+The current we want is like this.
+
+267
+00:13:36,447 --> 00:13:38,217
+Zero until 1 second.
+
+268
+00:13:38,297 --> 00:13:41,247
+2 mA between 1 and 3 seconds.
+
+269
+00:13:41,327 --> 00:13:44,327
+6 mA between 3 and 4 seconds.
+
+270
+00:13:44,407 --> 00:13:46,687
+Zero again after 4 seconds.
+
+271
+00:13:46,767 --> 00:13:48,837
+This current will be drawn from a battery.
+
+272
+00:13:48,917 --> 00:13:53,257
+You have a 12 V battery,
+two resistors and two switches.
+
+273
+00:13:53,337 --> 00:13:56,447
+Pause for a moment and think:
+how would you build this circuit?
+
+274
+00:13:57,937 --> 00:13:58,957
+Here's one solution.
+
+275
+00:13:59,037 --> 00:14:02,447
+We connect two separate branches across
+the two terminals of the battery.
+
+276
+00:14:02,547 --> 00:14:06,667
+The first branch has the first
+switch and a 6 kΩ resistor.
+
+277
+00:14:06,747 --> 00:14:10,777
+The second branch has the second
+switch and a 2 kΩ resistor.
+
+278
+00:14:10,857 --> 00:14:13,727
+The two switches are never
+closed at the same time.
+
+279
+00:14:13,807 --> 00:14:16,077
+So where did we get these
+resistor values from?
+
+280
+00:14:16,157 --> 00:14:18,247
+We used Ohm's law in reverse.
+
+281
+00:14:18,327 --> 00:14:20,117
+Resistance is voltage divided by current.
+
+282
+00:14:20,197 --> 00:14:24,847
+If we want 2 mA, 12 V / 2 mA = 6 kΩ.
+
+283
+00:14:24,927 --> 00:14:29,717
+If we want 6 mA, 12 V / 6 mA = 2 kΩ.
+
+284
+00:14:29,797 --> 00:14:32,217
+V / mA gives kΩ.
+
+285
+00:14:32,297 --> 00:14:33,967
+Now let's follow it step by step.
+
+286
+00:14:34,047 --> 00:14:36,787
+Until 1 second, both switches are open.
+
+287
+00:14:36,867 --> 00:14:39,877
+An open circuit guarantees
+that the current is zero.
+
+288
+00:14:39,957 --> 00:14:41,687
+No current is drawn from the battery.
+
+289
+00:14:41,767 --> 00:14:44,737
+At 1 second, the first switch closes.
+
+290
+00:14:44,817 --> 00:14:48,847
+The battery's 12 V appears
+across the 6 kΩ resistor.
+
+291
+00:14:48,927 --> 00:14:53,927
+By Ohm's law, the current
+is 12 V / 6 kΩ = 2 mA.
+
+292
+00:14:54,007 --> 00:14:56,647
+The second branch is open,
+so no current flows through it.
+
+293
+00:14:56,727 --> 00:14:59,597
+So the current drawn
+from the battery is 2 mA.
+
+294
+00:14:59,677 --> 00:15:01,819
+At 3 seconds, the first switch opens,
+
+295
+00:15:01,899 --> 00:15:04,957
+and at the same moment
+the second switch closes.
+
+296
+00:15:05,037 --> 00:15:08,267
+Now the 12 V is across the 2 kΩ resistor.
+
+297
+00:15:08,347 --> 00:15:11,207
+The current is 12 / 2 = 6 mA.
+
+298
+00:15:11,287 --> 00:15:14,377
+At 4 seconds, the second switch opens too.
+
+299
+00:15:14,457 --> 00:15:15,857
+The current is zero again.
+
+300
+00:15:15,937 --> 00:15:19,076
+But notice: since no current
+flows through either resistor,
+
+301
+00:15:19,156 --> 00:15:22,197
+there are 12 V across each
+of the two open switches.
+
+302
+00:15:22,277 --> 00:15:25,827
+Just like the 9 V circuit
+in the open circuit example.
+
+303
+00:15:25,907 --> 00:15:29,447
+Finally, let's find the total charge
+carried by this current from the area.
+
+304
+00:15:29,527 --> 00:15:32,557
+The first rectangle: 3 − 1 = 2 seconds.
+
+305
+00:15:32,637 --> 00:15:36,427
+2 s × 2 mA = 4 mC.
+
+306
+00:15:36,507 --> 00:15:39,147
+The second rectangle: 4 − 3 = 1 second.
+
+307
+00:15:39,227 --> 00:15:42,647
+1 s × 6 mA = 6 mC.
+
+308
+00:15:42,727 --> 00:15:45,877
+The total is 4 + 6 = 10 mC.
+
+309
+00:15:46,843 --> 00:15:50,633
+Let's sum up. Every current has
+a value and also a direction.
+
+310
+00:15:50,763 --> 00:15:54,343
+An open circuit guarantees
+only that the current is zero.
+
+311
+00:15:54,423 --> 00:15:57,523
+The voltage across its terminals
+is determined by the surrounding circuit.
+
+312
+00:15:57,623 --> 00:16:00,323
+To go from current to charge,
+we take the integral.
+
+313
+00:16:00,403 --> 00:16:03,239
+The charge that passed is the area
+under the current graph,
+
+314
+00:16:03,319 --> 00:16:05,993
+and the area below the axis
+counts as negative.
+
+315
+00:16:06,073 --> 00:16:08,987
+We also came across these two
+quantities in the datasheet:
+
+316
+00:16:09,067 --> 00:16:11,472
+the average current
+determines the battery life,
+
+317
+00:16:11,552 --> 00:16:14,793
+while the pulse current sets
+the limit for brief stress.
+
+318
+00:16:14,973 --> 00:16:16,333
+Let me leave you with a question too.
+
+319
+00:16:16,413 --> 00:16:20,244
+A current of 5 mA flows
+through a wire for 2 seconds,
+
+320
+00:16:20,324 --> 00:16:23,273
+and then −3 mA for the next 1 second.
+
+321
+00:16:23,353 --> 00:16:25,361
+At the end of 3 seconds,
+how much net charge
+
+322
+00:16:25,441 --> 00:16:27,623
+has passed in the direction of the arrow?
+
+323
+00:16:27,703 --> 00:16:29,203
+Write your answer in the comments.
+
+324
+00:16:29,403 --> 00:16:30,647
+If this lecture helped you,
+
+325
+00:16:30,727 --> 00:16:33,623
+please like the video
+and share it with your classmates.
+
+326
+00:16:33,703 --> 00:16:36,543
+If you subscribe to the channel,
+you won't miss Part 3.
+
+327
+00:16:36,623 --> 00:16:39,063
+In Part 3, we'll see what voltage is,
+
+328
+00:16:39,143 --> 00:16:43,323
+what a short circuit guarantees us,
+and the ideal source.
+
