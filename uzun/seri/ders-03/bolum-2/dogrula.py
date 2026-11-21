@@ -40,7 +40,7 @@ assert float(rho_mm) * 10 == 0.17241
 assert yuv(0.17241 / 0.1963, 3) == 0.878                   # ekrandaki yuvarlanmis alanla da ayni
 # SI ile ikinci hesap
 A_SI = math.pi * (0.25e-3) ** 2; assert abs(float(rho_SI) * 10 / A_SI - Rt) < 1e-12
-assert yuv(2 * 0.878, 3) == 1.756 and yuv(2 * Rt, 3) == 1.756          # boy iki kati
+assert yuv(2 * 0.878, 3) == 1.756 and yuv(2 * Rt, 3) == 1.756          # boy iki kati (2. denetimde metinden cikarildi; paket icinde dogru)
 A2 = math.pi * 0.5 ** 2; assert yuv(A2, 4) == 0.7854 and float(F(5, 10)**2) == 0.25
 assert yuv(A2 / A, 6) == 4.0 and yuv(0.7854 / 0.1963, 1) == 4.0        # alan dort kati
 assert yuv(float(rho_mm) * 10 / A2, 4) == 0.2195 and yuv(0.878 / 4, 4) == 0.2195   # cap iki kati: R/4
@@ -165,3 +165,19 @@ for parca in ("altmış milimetre uzunluğunda, bir virgül iki milimetre geniş
               "yetmiş derecede", "binde üç virgül doksan üç", "kaç katıdır"):
     assert parca in p8, parca
 print("TÜM KONTROLLER GEÇTİ")
+
+# --- 2. bagimsiz denetim (21.11.2026) ek kontrolleri ---
+# Sure: D1B2'nin gercek videosu 2194 kelime -> 1023,8 sn (kart, abone, bitis dahil) => ~2,143 kelime/sn toplam oran.
+oran_d1b2 = 2194 / 1023.806
+sure2 = toplam / oran_d1b2 + 9.5
+print(f"2. denetim sure tahmini (D1B2 gercek orani, intro dahil): ~{sure2/60:.2f} dk")
+# Sinir 13-17 dk; tahmin ~17,0 dk (belirsizlik +-0,5): gercek ses olculur, 17 dk asilirsa kanal sahibine sorulur (onay kartinda yazildi).
+assert sure2 / 60 <= 17.1, sure2
+# 1 m^2 = 10^6 mm^2 -> 1 Ohm m = 10^6 Ohm mm^2/m
+assert abs(1.7241e-8 * 1e6 - 0.017241) < 1e-12
+# P7: (rho/A) x L
+assert yuv(yuv(0.017241 / 0.0348, 4) * 0.06 * 1000, 2) == 29.72
+# Yorum sorusu (birlesme noktalari ihmal): 0,673 ve 1,486
+k = (45 / 60) * (1.2 / 0.8) * (1 + 0.00393 * 50) / 2
+assert yuv(k, 3) == 0.673 and yuv(1 / k, 3) == 1.486
+print("2. DENETIM EK KONTROLLERI GECTI")
