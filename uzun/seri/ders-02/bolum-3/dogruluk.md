@@ -1,0 +1,53 @@
+# Doğruluk — Ders 2 - Bölüm 3/3 (sürüm 2, 21.11.2026 kredi sprinti)
+
+Onaylı kaynaklar: Razavi, Basic Circuit Theory, Ders 2 transkripti (kanal sahibinin özel Drive klasörü, `1pvyKsiX_NC_VrmIYrwVhBGWZ9Ol1Fqhd`; bu çalışmada yeniden okundu, depoya kopyalanmadı); datasheet değerleri İçerik Ajanı'nın paketinden (`icerik.md` bölüm 5b, 5c, 5d, 11; paket denetçisi değerleri sayfalardan doğruladı). Hesaplar: `dogrula.py` (TAMAM). Kanal sahibinin kararı: `onaylar/kaynak-2-3` = "düzelt" (evirici kendi kurgumuzla kısa).
+
+| Parça | İddia | Dayanak |
+|---|---|---|
+| 1, 3 | 2,5 kΩ × 4 mA = 10 V; akımın gidecek başka yolu yok | `dogrula.py`; Razavi [40:57–41:30] (akım kaynağı + direnç, v = R × i); icerik.md 6 |
+| 1, 3 | En sık yapılan hata: akım kaynağının uçlarındaki gerilimi sıfır sanmak | icerik.md 6 (gerekçe: Razavi "sezgiye ters" [31:43–31:56], "artı, eksi ya da sıfır olabilir" [38:27–38:51]; sınav hatası öğretim deneyimi, yazılı kaynakla doğrulanmadı — paket notu) |
+| 2 | Ara hikâye: 12 V akü (doğru gerilim), cihaz alternatif gerilim ister; dört anahtarlı köprü; çaprazdaki çift kapalıyken yük +12 V, öbür çapraz −12 V; sırayla → kare dalga; "evirici" | Kavram Razavi [32:38–35:22] (DC → AC, anahtar kombinasyonlarıyla +V / −V). **Kurgu özgün** (kanal sahibi kararı kaynak-2-3): kamp/akü/cihaz, dört etiketli anahtarlı köprü, kare dalga grafiği; Razavi'nin elektrikli otomobili, motoru, "kabloları çaprazlama" anlatımı, saat işareti ve "büyük akım" gerekçesi [35:30–36:19] kullanılmadı. ±12 V: `dogrula.py` |
+| 2 | Aynı taraftaki iki anahtar birlikte kapanırsa akü kısa devre olur; birlikte kapatılmamalı | İdeal anahtar kapalı = kısa devre (Razavi D2 [7:03–7:26]); gerilim kaynağı kısa devre edilmez (Ders 1 - Bölüm 3; icerik.md 9 notu). Akıl yürütme; Razavi'de yok, bizim eklememiz |
+| 2 | Gerçek eviriciler daha karmaşıktır | Genel uyarı (ayrıntı verilmez; icerik.md 9: gerçek EV eviricisi üç fazlı) |
+| 2 | İdeal akım kaynağı: akımı uçlarındaki gerilime bağlı olmayan iki uçlu eleman; gerilim kaynağının ikizi; ne bağlanırsa aynı akımı aynı yönde iter | Razavi [36:41–37:54], [38:02–38:18] |
+| 2 | Sembol: daire içinde ok (akımın yönü), yanında değer; + / − yok | Razavi [37:54–38:10]; icerik.md 4 |
+| 2 | Uçlarındaki gerilim artı, eksi ya da sıfır olabilir; devre belirler | Razavi [38:27–38:51] (transkriptteki "voltage source" dil sürçmesi; icerik.md Kaynakta düzeltme 3) |
+| 3 | İdeal olanı dükkânda bulunmaz; akım kaynağı gibi davranan parçalar satılır | Razavi [38:59–39:17]; düzeltme icerik.md Kaynakta düzeltme 2 ("ideal olanı yoktur") |
+| 3 | Neden çalışıyoruz: gerçek parçalar belli aralıkta böyle davranır; transistör de ileride bu gözle modellenir | Razavi [39:17–40:22] (fikir; cümle sırası denetimde değiştirildi, çeviri riskini azaltmak için) |
+| 3 | Bağımlı akım kaynakları var; bir sonraki derste | icerik.md 9 (yalnızca adıyla); Ders 3 transkripti [4:20–15:30] (denetçi okudu) |
+| 3 | 6 V / 500 Ω = 0,012 A = 12 mA; 500 × 0,004 = 2 V; 6 / 2,5 kΩ = 2,4 mA; 10 V; kısa devre: gerilim kaynağında çelişki, akım kaynağında 0 V | `dogrula.py` (Ohm iki yönden); icerik.md 7-1 (özgün; Razavi'nin v1–R1 doğrusu çizilmez); kısa devre: Razavi [41:54–42:10], Ders 1 - Bölüm 3 |
+| 3 | v–i grafiği (yatay i, düşey v; i okun yönünde, v okun ucu +): akım kaynağı i = 4 mA'de dikey doğru (−5, 0, 10, 40 V); 6 V gerilim kaynağı yatay doğru | Tanımın grafiği; icerik.md 7-3 ve 4 (referans yönü D2B1 kuralıyla). Not: D2B1'deki 1,5 V doğrusu yerine bu bölümün 6 V kaynağı kullanıldı (ölçek: 1,5 V bu eksende 0'a yapışık görünürdü) |
+| 4 | 10 kΩ × 4 mA = 40 V; 1 MΩ × 0,004 A = 4000 V; 100 kat | `dogrula.py`; icerik.md 7-2 |
+| 4 | Açık devre i = 0 ister, akım kaynağı i ≠ 0: çelişki; ideal modelde gerilim sınırsız büyümek zorunda; gerçek kaynak sınırına gelir ("çöker") | Razavi [49:15–50:35]; icerik.md 10 ("sonsuz gerilim üretir" denmez) |
+| 4 | Kural: çalışan akım kaynağının akımının akabileceği bir yol olmalı; açık bırakılmaz | Razavi [50:27–50:53]; icerik.md 10 ("asla açık devreyle değiştirilmez" denmez — süperpozisyon) |
+| 4 | İkilik: gerilim kaynağı açık bırakılabilir / kısa devre edilmez; akım kaynağı kısa devre edilebilir / açık bırakılmaz | icerik.md 4 (ikilik tablosu); Ders 1 - Bölüm 3 |
+| 5 | Adaptör 5 V gerilim kaynağı gibi; pil o an ~3,7 V (örnek, temsilî) | icerik.md 10 (P4 notu: adaptör 5 V gerilim kaynağı gibi), icerik.md 4 ("3,7 V temsilî") |
+| 5 | Farklı gerilimde iki gerilim kaynağı sıfır dirençle bağlanırsa çok büyük akım gerekir; pil zarar görür | Razavi [46:08–47:03] (fikir; Razavi'nin 3 V / 1 V sayıları kullanılmadı) |
+| 5 | Akımı bilinen kaynakla yük itilir; q = i × t; gerilim yavaşça yükselir | Razavi [47:12–48:32]; Ders 1 - Bölüm 2 |
+| 5 | Telefonun şarj devresi: önce sabit akım, tavan gerilimde (ör. 4,2 V) sabit gerilim, akım küçülünce bitiş; akım kaynağı gibi davranan entegre, adaptör değil | MCP73831 DS20001984F s. 3, 4, 13–14 (icerik.md 5b; Kaynakta düzeltme 1 — Razavi'nin "durulur" sadeleştirmesi düzeltildi) |
+| 6 | MCP73831: I_REG = 1000 V / R_PROG; R_PROG 2 … 67 kΩ | DS20001984F s. 15 (bölüm 5.1.2), s. 4 (icerik.md 5b) |
+| 6 | Hızlı şarj için 1C önerisi, mutlak en çok 2C; 400 mAh → 400 / 800 mA; pilin kendi datasheet'i esas (varsayım) | DS20001984F s. 17 (6.1.1.1) (icerik.md 5b, 5d-A1) |
+| 6 | 1000 / 400 = 2,5 kΩ; 2,4 kΩ ≈ 416,7 mA; 2,7 kΩ ≈ 370,4 mA | `dogrula.py`; icerik.md 5d-A2–3 |
+| 6 | ± ~%10 (2–10 kΩ bölgesinde datasheet: 10 kΩ'da 90 / 110 mA, 2 kΩ'da 450 / 550 mA); 333 / 407,4 mA; 7,4 mA; ≈ %1,9; 800 mA'in altında | DS20001984F s. 3 (icerik.md 5d-A4); `dogrula.py`. Not: paket 333,3 yazıyor (yuvarlamasız 370,37 ile); ekranda yuvarlanmış 370,4 ile çarpıldığı için 333,36 → "≈ 333 mA" yazıldı |
+| 6 | Köprü: boş pil, akım hep 370,4 mA olsaydı 400 mAh / 370,4 mA ≈ 1,08 saat ≈ 65 dk; gerçek şarj daha uzun (sabit gerilim aşaması); "en az" denmez (toleransla akım 407,4 mA olabilir) | `dogrula.py` (kulonla 3888 s); icerik.md 5d-A6 (paket denetçisinin Ö6 düzeltmesiyle: "hep 370 mA ile verebilseydik") |
+| 6 | Pahalı hata: 2 kΩ → 500 mA, 150 mAh pil → ≈ 3,3C > 2C; pil ısınır, ömrü kısalır | icerik.md 5c; `dogrula.py` |
+| 6 | İkilik: hızlı şarjda gerilimi pil, akımı entegre belirler | icerik.md 5d-A3 (Razavi'nin gerilim kaynağı + akım kaynağı örneğinin [42:24–44:47] özgün karşılığı; 2 V / 3 A kullanılmadı) |
+| 7 | NSI45025A: iki uçlu, 25 mA; akım parça numarasıyla seçilir; 7,5 V'ta 22,5 … 27,5 mA (25 mA ± %10) garanti; 1,8 V'ta tipik %80 (0,8 × 25 = 20 mA); üst sınırı sürekli çalışmada ısınma koyar | NSI45025A/D Rev. 6 s. 1–3, 5 (icerik.md 5b, Kaynakta düzeltme 5); `dogrula.py` |
+| 7 | 12 V'tan kaç LED: ileride Kirchhoff'un gerilim yasasıyla (ders numarası verilmez; sayı yok) | icerik.md 5d-B; Ders 3 transkriptinde KVL yalnızca 43:25'te "ileride" diye anılıyor (denetçi) |
+| 8 | Yorum sorusu (İçerik Ajanı'nın sorusu, aynen; UZUN.md "Soru bankası"): iki kırmızı LED, 20 mA'de 2 V / 3 V'a kadar; 2,5 V ideal gerilim kaynağı mı, 20 mA ideal akım kaynağı mı? (Cevap videoda yok: akım kaynağı) | icerik.md 8; TLHR5400 Rev. 2.7 s. 2 (V_F tipik 2 V, en çok 3 V, 20 mA) |
+| 8 | Sıradaki: Ders 3 - Bölüm 1, bağımlı akım kaynakları (kuvvetlendirici, direnç gibi davranma) | Ders 3 transkripti [4:20–15:30] (denetçi okudu). **Paketteki "Ders 3: KVL/KCL" ifadesi yanlış çıktı** (İçerik Ajanı'na bilgi). Ders 3 planı gelince bölüm adı karşılaştırılır |
+
+## Notlar
+- Paket ile transkript çelişkisi yok. Paketteki "Kaynakta düzeltme" 1–3 metne uygulandı ("hızlı şarj aşamasında akım kaynağı gibi", "ideal olanı", "voltage source" dil sürçmesi akım kaynağı olarak).
+- Paketin 5d-B sayıları (n = 2 / 3 / 4) videoya girmedi; paket içi güç hesapları (208 mW vb.) girmedi.
+- "Uygulamada" ~570 kelime (paket bütçesi ≤ ~550): köprü (65 dk) ve pahalı hata cümleleri eklendi; bölümün toplamı 1.800 kelime alt sınırına bu sayede ulaştı.
+- 8 parça: 2. tur denetimde "Uygulamada" ~4 dk'yı aştığı için ikiye bölündü (Parça 6 şarj entegresi, Parça 7 regülatör; her parça ≤ ~4 dk, UZUN.md 3). Kapanış Parça 8.
+
+## Denetim
+Bağımsız denetçi (Agent aracıyla başlatılan alt ajan; metni ilk kez gören doktora düzeyi elektronik mühendisi + Türkçe editör rolü), 21.11.2026. `dogrula.py`'yi çalıştırdı (TAMAM), bütün sayıları elle yeniden hesapladı (aritmetik hata yok), Razavi Ders 2 [31:35–50:53] ve Ders 3 transkriptlerini Drive'dan okudu (kaydetmedi).
+- **Kritik (2, düzeltildi):** (K1) Parça 7: Ders 3 - Bölüm 1'in konusu Kirchhoff yasaları değil; Ders 3 [4:20–15:30] bağımlı akım kaynakları (kuvvetlendirici, direnç gibi davranma), sonra direnç ve Ohm yasası → ön tanıtım, "Sıradaki" kartı ve bitiş ekranı "Bağımlı akım kaynakları". (K2) Parça 6: "KVL üçüncü derste" → "ileride Kirchhoff'un gerilim yasasını gördüğümüzde".
+- **Önemli (10, düzeltildi):** (Ö1) ara hikâye ~90 sn idi → ~150 kelimeye (~58 sn) kısaltıldı, "nasıl elde ederiz?" kalıbı atıldı, "kapalı anahtar bir teldir" bilgisinden kuruldu; abone çağrısı hikâyeden sonraya alındı. (Ö2) "yüz kat" hesabı seste ve ekranda (1 000 000 / 10 000 = 100; 4000 / 40 = 100). (Ö3) "En az ~65 dk" → "boş pil, nominal akım; gerçek şarj ~65 dakikadan uzun". (Ö4) 407,4 − 400 = 7,4 ve 0,0185 ≈ 0,019 adımları seste. (Ö5) Parça 3 ilk paragrafı Razavi'nin [38:59–40:22] sırasını izliyordu → yeniden kuruldu. (Ö6) bağımlı akım kaynakları "bir sonraki derste". (Ö7) ekranda "(Parça 3)" kaldırıldı. (Ö8) "bin volt yalnızca formülün sabiti" cümlesi. (Ö9) NSI45025A "yüzde on toleransla 25 mA". (Ö10) ekran: "+ / −", "uç +", "Li-iyon", "dk", "kΩ, mA" kısaltmaları, "≈" etiketleri düzeltildi.
+- **Küçük (uygulandı):** yorum sorusu okunuşu ("ötekininki"); "değişen şey akım / gerilim"; adaptör "diyelim beş volt"; "akabilir / zarar verebilir / ısınabilir"; 2,5 kΩ "en yaygın değerler arasında yok"; "bununla aynı şey"; "dikte eder" → "belirler"; "pile yükü … iteriz"; "pilin şarj devresinde kullanmak"; "ise" tekrarı; "entegrenin üreticisi"; lityum iyon ve lityum polimer; "sabit akım aşaması"; v–i noktaları "örneğin" + eksi gerilim notu; 3,7 V seste; Soru 2 ses/ekran aynı; "Gerilim kaynağının ikizi"; "ideal modelde".
+- **Açık (seslendirmede dikkat):** "Kirchhoff'un" okunuşu (ElevenLabs; gerekirse yalnızca o parça için okunuş kontrolü), "bir C akımı".
+- **2. tur (değişen kısımlar):** kritik/önemli yok; eski bulguların hepsi doğru düzeltilmiş. Küçükler uygulandı: pahalı hata ekranı "ısınabilir", 3,7 V cümlesi okunuşu, "buna çok yakın davranıyor", eksi gerilim cümlesi, Parça 6 ikiye bölündü. Zamanlamada not: ara hikâye ≤ 60 sn tutulur, abone kartından önce biter.
+- Ara hikâyenin Razavi'ye yakınlığı (denetçi): cümle düzeyinde çeviri yok, Razavi'ye özgü ayrıntıların hiçbiri yok; iskelet (DC akü → AC yük, ± gerilim, sırayla) aynı → risk düşük–orta, kanal sahibinin kararına uygun; kısaltılmış sürümle azaldı.
