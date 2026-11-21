@@ -1,9 +1,10 @@
 // Türev Short d1b1-1: "Akım hiç durmadan akarken ortalama sıfır çıkabilir mi?" (Ders 1 - Bölüm 1, parça 1 cümle 0-2, 4 + parça 2 cümle 17-23, 25-27, 29)
 // Uzun videodaki tahta (parca-1.js, parca-2.js C) dikey 1080x1920 düzende yeniden çizildi; yatay kareden kırpma yok.
 import { K, B, R, G, L, S, E, Wt, text, row, path, line, dashed, dashRect, arrow, frame, under, erase, oval, pulse, pad, axes } from './motor.js';
-import { kart, etiket } from './ortak.js';
+import { remapY } from './motor.js';
+import { sonAnim, etiket } from './ortak.js';
 export function build(o) {
-  etiket(); // sabit ders etiketi (0 sn - son); tahta içeriği etiketin altına kaydırıldı (A +30 px, B +60 px, grafik kutusu sıkıştırıldı)
+  etiket(); // sabit iki satırlık yönlendirme etiketi (v3) (0 sn - son); tahta içeriği etiketin altına kaydırıldı (A +30 px, B +60 px, grafik kutusu sıkıştırıldı)
   // ---------------- A: soru (0-15 sn)
   let g = 'a';
   text('Akım akarken', L, 360, 76, K, 0, { g, kart: true });
@@ -44,6 +45,8 @@ export function build(o) {
   dashRect([ax.X(0), ax.Y(13.5), ax.X(1), ax.Y(-13.5)], R, 3, Wt('2.27', 'pencereyi'), 0.6, { g });
   text('Pencere 1 s', ax.X(0.5), ax.Y(13.5) - 16, 40, R, Wt('2.27', 'pencereyi') + 0.7, { g, align: 'c', dur: 0.4 });
   oval(dz.box, R, Wt('2.29', 'ortalama'), 0.6, { g });
-  erase(g, o.kartBas);
-  kart(o, 'k');
+  // v3: iki satırlık etiket için içerik aşağı alındı (A +35 px; B'nin üst bloğu y 350->385 sıkıştırıldı, y >= 870 ve grafik aynı)
+  remapY('a', (y) => y + 35);
+  remapY('b', (y) => (y <= 870 ? 870 - (870 - y) * (485 / 520) : y));
+  sonAnim(o); // tahta silinmez: son kare donar, bulanıklaşır, üstünde Beğen – Paylaş – Abone ol
 }
