@@ -44,16 +44,26 @@ Razavi'nin dersleri **referanstır, çeviri değildir.** Konuları, sırayı ve 
 
 Durum dosyası: `uzun/seri/durum.json` (hangi ders/bölüm, hangi adım, parça durumları, yayın tarihi). Her çalışmada önce `git pull`, sonra durum dosyasını oku, **sıradaki adımı** yap, durum dosyasını ve paneli güncelle. Bir adım bitince süre kalırsa sonrakine geç; bir çalışmada yarım kalan iş kaybolmaz (dosyalar commit edilir). Depo: push yalnızca `claude/uzun-<ders>-<bolum>-<YYYYMMDD>` dalına.
 
-### 1a. Yayın takvimi (kanal sahibinin kararı, 18.11.2026)
+### 1a. Yayın takvimi (kanal sahibinin kararı, 21.11.2026 13:20 — eski 18.11 tablosunun yerine)
 
-| Bölüm | Yayın | Londra saati |
-|---|---|---|
-| Ders 1 - Bölüm 1/3 | **21.11.2026 Cumartesi 11:00 TR** (hızlı mod) | 08:00 |
-| Ders 1 - Bölüm 2/3 | **02.12.2026 Çarşamba 16:00 TR** | 13:00 |
-| Ders 1 - Bölüm 3/3 | **09.12.2026 Çarşamba 16:00 TR** | 13:00 |
-| Sonrası | **14.12.2026 haftasından itibaren haftada 2 bölüm: Pazartesi ve Perşembe 16:00 TR** (ilk: 14.12 Pzt, 17.12 Per) | 13:00 (Mart sonundan itibaren İngiltere yaz saatinde 14:00) |
+**Haftada 4 uzun video: Pazartesi, Çarşamba, Cuma, Cumartesi — 16:00 TR (13:00 Londra; Mart sonundan itibaren İngiltere yaz saatinde 14:00 Londra).** ElevenLabs Pro (aylık 610.000 kredi) yeterli; sınır Claude kullanım kapasitesi — genel müdür ilk iki haftayı izler, yetişmezse kanal sahibine haftada 3'e (Pzt + Çar + Cuma) inmeyi önerir. Seri sırası bozulmaz (kanal sahibi onayladı):
 
-**Haftada 2'ye geçiş şartı (kanal sahibi onayladı):** Bölüm 2 ve 3 kanal sahibinin onayından **büyük düzeltme gerekmeden** (metin onayında en fazla küçük düzeltme, video onayında "düzelt" yok veya yalnızca görsel küçük düzeltme) geçerse. Genel müdür 10.12'de değerlendirir ve kanal sahibine bildirir; şart tutmazsa haftada 1 (Çarşamba 16:00 TR) devam edilir. Durum dosyasında `takvim` alanı bunu gösterir; yayın tarihlerini yalnızca `durum.json`'dan al.
+| Tarih | Bölüm |
+|---|---|
+| 21.11 Cmt (11:00 TR) | Ders 1 - Bölüm 1 — yayında |
+| 25.11 Çar | Ders 1 - Bölüm 2 |
+| 27.11 Cum | Ders 1 - Bölüm 3 |
+| 28.11 Cmt | Ders 2 - Bölüm 1 |
+| 30.11 Pzt | Ders 2 - Bölüm 2 |
+| 02.12 Çar | Ders 2 - Bölüm 3 |
+| 04.12 Cum | Ders 3 - Bölüm 1 |
+| 05.12 Cmt | Ders 3 - Bölüm 2 |
+| 07.12 Pzt ve sonrası | sıradaki bölümler, her yayın gününe bir bölüm (Ders 3 - Bölüm 3, Ders 4 …); 5. uzun videodan sonra ilk "Soru Çözümü" videosu araya girer (genel müdür takvime ekler) |
+
+Yayın tarihlerinin kaynağı `durum.json` `takvim` alanıdır. Uzun video günlerinde Short yok (Shorts: Salı ve Perşembe; AGENT.md 9). **Zamanlama payı:** metin onayı yayından en az 5 gün, video onayı en az 48 saat önce panelde. Bir bölüm yetişmezse o slot boş kalmaz: sıradaki hazır bölüm öne alınmaz (sıra bozulmaz), bunun yerine yayın bir sonraki slota kayar ve genel müdür kanal sahibine bildirir.
+
+### 1a-H. Üretim hattı (genel müdür, 21.11.2026) — birden çok bölüm paralel
+Haftada 4 bölüm için tek sıra yetmez. Bölümler panelde `durum/sprint` belgesinin `isler` alanıyla **iş bazında** sahiplenilir (`<d>-<b>-metin`, `<d>-<b>-denetim2`, `<d>-<b>-ses`, `<d>-<b>-zamanlama`, `<d>-<b>-tahta`, `<d>-<b>-render`, `<d>-<b>-birlestir`, `<d>-<b>-kapak-yayin`, `<d>-<b>-altyazi`). **Düzenli çalışma (09:13/15:13) ve saatlik üretim hattı çalışması işe başlamadan `durum/sprint`'i okur; 120 dk'dan yeni "sürüyor" sahiplenmesi olan işi almaz; aldığı işi `if_version` ile sahiplenir.** `durum.json`'daki 1a-K kilidi yalnızca `durum.json`'u yazarken kısa süreli kullanılır (aynı anda iki oturum `durum.json`'u yazmasın); bölüm dosyaları zaten ayrı klasörlerde. Öncelik her zaman **en yakın yayın tarihli bölümün** sıradaki işi; bir bölüm en fazla 3 slot öne gidebilir.
 
 ### 1a-K. Çalışma kilidi (genel müdür, 19.11.2026)
 Uzun Video Ajanı aynı anda iki oturumla çalışmaz. Çalışmanın başında `uzun/seri/durum.json`'a `"kilit": {"baslangic": "<UTC zaman>", "oturum": "<kısa ad>"}` yaz ve hemen push et; başlangıcı 2 saatten yeni bir kilit varsa **hiçbir şey yapmadan dur** ("başka çalışma sürüyor" de). Çalışma bitince kilidi kaldır (`"kilit": null`) ve push et. Gece çalışmaları (genel müdürün tek seferlik görevleri) ElevenLabs gerektiren adımı yapamazsa (ses indirilemezse) o adımı atla, sonraki adıma geç ve panelde not düş.

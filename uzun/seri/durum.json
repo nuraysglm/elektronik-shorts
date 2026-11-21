@@ -191,27 +191,51 @@
   "sonraki_yayin": "2026-11-25",
   "eksik_hesaplar": "uzun/seri/ders-01/bolum-1/eksik-hesaplar.md; panel onaylar/eksik-hesaplar-1-1 (A/B/C) bekliyor",
   "takvim": {
-    "karar": "kanal sahibi 18.11.2026 21:08",
+    "karar": "kanal sahibi 21.11.2026 13:20: haftada 4 uzun video (Pzt, Çar, Cum, Cmt 13:00 Londra / 16:00 TR); seri sırası korunur",
     "slotlar": [
       {
         "ders": 1,
         "bolum": 1,
-        "yayin": "2026-11-21T08:00:00 Europe/London (11:00 TR)"
+        "yayin": "2026-11-21T08:00:00 Europe/London (11:00 TR)",
+        "durum": "yayında"
       },
       {
         "ders": 1,
         "bolum": 2,
-        "yayin": "2026-11-25T13:00:00 Europe/London (16:00 TR)",
-        "not": "Kanal sahibi 20.11.2026 14:36: 'Bölüm 2 önümüzdeki hafta yayınlansın' (eski: 02.12). Çarşamba Short günü değil, çakışma yok. Planlama 23.11 akşamı genel müdür; gerekenler: uzun-1-2 video onayı, kapak-1-2 seçimi, seçilen intro eklenmiş sürüm."
+        "yayin": "2026-11-25T13:00:00 Europe/London (16:00 TR)"
       },
       {
         "ders": 1,
         "bolum": 3,
-        "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)"
+        "yayin": "2026-11-27T13:00:00 Europe/London (16:00 TR)"
+      },
+      {
+        "ders": 2,
+        "bolum": 1,
+        "yayin": "2026-11-28T13:00:00 Europe/London (16:00 TR)"
+      },
+      {
+        "ders": 2,
+        "bolum": 2,
+        "yayin": "2026-11-30T13:00:00 Europe/London (16:00 TR)"
+      },
+      {
+        "ders": 2,
+        "bolum": 3,
+        "yayin": "2026-12-02T13:00:00 Europe/London (16:00 TR)"
+      },
+      {
+        "ders": 3,
+        "bolum": 1,
+        "yayin": "2026-12-04T13:00:00 Europe/London (16:00 TR)"
+      },
+      {
+        "ders": 3,
+        "bolum": 2,
+        "yayin": "2026-12-05T13:00:00 Europe/London (16:00 TR)"
       }
     ],
-    "sonrasi": "14.12.2026'dan itibaren Pazartesi + Perşembe 13:00 Londra (16:00 TR), şart: Bölüm 2 ve 3 büyük düzeltmesiz geçerse (genel müdür 10.12'de değerlendirir). Şart tutmazsa Çarşamba 13:00 Londra haftada 1.",
-    "degisiklik_20261120": "B2 02.12 -> 25.11 (kanal sahibi). B3 tarihi kanal sahibine soruldu."
+    "sonrasi": "07.12 Pzt ve sonrası: her Pzt/Çar/Cum/Cmt 13:00 Londra bir sonraki bölüm (Ders 3 - Bölüm 3, Ders 4 …). 5 uzun videodan sonra Soru Çözümü videosu genel müdür tarafından araya eklenir."
   },
   "video": "media/uzun/devre-teorisi-1-ders-01-bolum-1.mp4",
   "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-1-kapak.jpg",
