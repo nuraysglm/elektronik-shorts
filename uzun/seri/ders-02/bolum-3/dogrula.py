@@ -1,4 +1,4 @@
-"""Ders 2 Bolum 3 dogrulama (surum 3, 21.11.2026 kredi sprinti; 2. bagimsiz denetimden sonra): butun sayisal sonuclar (kesirli tam aritmetik),
+"""Ders 2 Bolum 3 dogrulama (surum 4, 21.11.2026 YENIDEN DENETIM; once surum 3: kredi sprinti, 2. bagimsiz denetim): butun sayisal sonuclar (kesirli tam aritmetik),
 bagimsiz kontroller (Ohm iki yonden, KVL ile kopru, oranlar) ve seslendirme metni kontrolleri.
 Hiz: 2,6 kelime/sn (Ders 1 olcumu); +125 sn kart, abone, sessizlik, bitis (intro ayrica ~9,5 sn).
 Birimler: V / kOhm = mA ; kOhm x mA = V ; Ohm x A = V."""
@@ -46,11 +46,14 @@ assert 0 <= 4 <= 8 and -10 <= 6 <= 45                       # 6 V yatay dogru da
 # --- Parca 4: direnci buyutmek
 v10k = 10 * 4; assert v10k == 40                            # 10 kOhm x 4 mA = 40 V
 v1M = 1_000_000 * F(4, 1000); assert v1M == 4000           # 1 MOhm x 0,004 A = 4000 V
-assert F(1_000_000, 10_000) == 100 and v1M / v10k == 100     # direnc 100 kat, gerilim 100 kat
+assert v1M / v10k == F(1_000_000, 10_000)                    # (paket ici) gerilim direncle ayni oranda buyur; '100 kat' metinden cikarildi
 assert 40 * 100 == 4000
 
-# --- Parca 5: sarj (sayisal hesap yok; ornek degerler)
+# --- Parca 5: sarj (yeniden denetim: ic direncle sayisal ornek)
 assert F(37, 10) < 5 and F(42, 10) > F(37, 10)              # 3,7 V (ornek) < 5 V adaptor; tavan 4,2 V
+fark5 = 5 - F(37, 10); assert fark5 == F(13, 10)            # 5 - 3,7 = 1,3 V
+i5 = fark5 / F(1, 10); assert i5 == 13                       # 1,3 V / 0,1 Ohm = 13 A
+assert i5 > 2 * F(4, 10)                                     # 400 mAh pil icin 2C = 0,8 A'in cok ustunde
 
 # --- Parca 6: MCP73831 mini tasarim (I_REG = 1000 V / R_PROG; R_PROG kOhm, I_REG mA)
 C = 400                                                     # mAh -> 1C = 400 mA
@@ -64,13 +67,16 @@ lo = F(9, 10) * i27r; hi = F(11, 10) * i27r
 assert abs(lo - 333) < F(5, 10) and abs(hi - F(4074, 10)) < F(5, 100)       # ~333 / 407,4
 # bagimsiz: yuvarlamasiz deger ile de ayni sonuc
 assert abs(F(11, 10) * i27 - F(4074, 10)) < F(5, 100) and abs(F(9, 10) * i27 - 333) < F(5, 10)
-fark = F(4074, 10) - C; assert fark == F(74, 10)            # 7,4 mA
-oran = fark / C; assert F(185, 10000) == oran and oran <= F(19, 1000)                         # ~0,0185 -> %1,9
-assert abs(oran * 100 - F(19, 10)) <= F(5, 100)
-assert hi < 800
+# (yeniden denetim: "7,4 mA / %1,9" adimi metinden cikarildi; yerine nitel: "1C'yi biraz asabilir, direnc sapmasi da ekler")
+assert hi > C and hi < 800
+# direnc toleransi eklenirse (paket ici, metinde yalniz nitel): %1 -> ~411,5 mA, %5 -> ~428,8 mA
+assert abs(F(11, 10) * 1000 / (F(27, 10) * F(99, 100)) - F(4115, 10)) < F(1, 10)
+assert abs(F(11, 10) * 1000 / (F(27, 10) * F(95, 100)) - F(4288, 10)) < F(1, 10)
+# besleme payi (Parca 6, yeniden denetim): V_DD >= V_REG + 0,3 V = 4,5 V ; <= 6 V ; 5 V adaptor uygun
+vdd_min = F(42, 10) + F(3, 10); assert vdd_min == F(45, 10) and vdd_min <= 5 <= 6
 # Datasheet tolerans noktalari (paket 5b): 10 kOhm: 90..110 mA, 2 kOhm: 450..550 mA -> +-%10
 assert F(1000) / 10 == 100 and F(90, 100) == F(9, 10) and F(110, 100) == F(11, 10)
-assert F(1000) / 2 == 500 and abs(F(450, 505) - F(9, 10)) < F(2, 100) and abs(F(550, 505) - F(11, 10)) < F(2, 100)
+assert F(1000) / 2 == 500 and F(450, 500) == F(9, 10) and F(550, 500) == F(11, 10)   # formul degerine (500 mA) gore -%10 / +%10 (tipik 505 mA'e gore -%10,9 / +%8,9; ses "yaklasik")
 
 # kopru: t = q / i ; pahali hata
 t = F(400) / F(3704, 10); assert abs(t - F(108, 100)) < F(5, 1000)                    # ~1,08 saat
@@ -80,17 +86,28 @@ i2k = F(1000) / 2; assert i2k == 500
 # 2. denetim eklemeleri (21.11.2026)
 assert 1 - F(1, 10) == F(9, 10) and 1 + F(1, 10) == F(11, 10)          # %10 asagi / yukari -> 0,9 / 1,1 kat
 assert 2 * 150 == 300 and i2k > 300                                     # 150 mAh pil icin 2C = 300 mA < 500 mA
-assert F(375, 100) <= 5 <= 6                                            # MCP73831 besleme 3,75 ... 6 V; 5 V adaptor icinde
+assert F(375, 100) <= 5 <= 6                                            # MCP73831 V_DD 3,75 ... 6 V (paket); karakteristik kosulu V_REG + 0,3 V ... 6 V (yukarida)
 assert 2 < F(27, 10) < 10                                               # 2,7 kOhm, veri sayfasinin iki noktasi (2 ve 10 kOhm) arasinda
 assert abs(i2k / 150 - F(33, 10)) < F(5, 100) and i2k / 150 > 3 and i2k / 150 > 2      # ~3,3C > 2C
 # --- Parca 7: NSI45025A
 assert F(8, 10) * 25 == 20                                  # 1,8 V'ta tipik %80 -> 20 mA
 assert F(275, 10) < 30                                      # (paket ici) en cok 27,5 mA < LED 30 mA siniri
 
-# --- Parca 8: yorum sorusu (cevap videoda yok): akim kaynagi; LED gerilimi 2..3 V'u kendisi belirler
-assert 2 < F(5, 2) < 3
-print("Sayisal kontroller: tamam (10 V; +-12 V kopru; 12 / 2,4 mA, 2 / 10 / 0 V; 40 / 4000 V, 100 kat; "
-      "800 mA, 2,5 kOhm, 416,7 / 370,4 mA, 333 / 407,4 mA, 7,4 mA, %1,9; 20 mA)")
+# --- Parca 8: yorum sorusu (yeniden denetim: yeni soru; cevap videoda yok)
+# 150 mAh pil, akim hicbir durumda 150 mA'i gecmemeli; I_REG = 1000 / R; sapma +-%10; R: 6,8 / 7,5 / 8,2 kOhm
+lim = 150; adaylar = [F(68, 10), F(75, 10), F(82, 10)]
+nom = {R: F(1000) / R for R in adaylar}
+enkotu = {R: F(11, 10) * nom[R] for R in adaylar}
+assert abs(nom[F(68, 10)] - F(1471, 10)) < F(1, 10) and nom[F(68, 10)] < lim            # tuzak: nominal 147,1 < 150
+assert abs(enkotu[F(68, 10)] - F(1618, 10)) < F(1, 10) and enkotu[F(68, 10)] > lim      # ama en kotu 161,8 > 150
+assert abs(nom[F(75, 10)] - F(1333, 10)) < F(1, 10) and abs(enkotu[F(75, 10)] - F(1467, 10)) < F(1, 10) and enkotu[F(75, 10)] < lim
+assert abs(enkotu[F(82, 10)] - F(1341, 10)) < F(1, 10) and enkotu[F(82, 10)] < lim
+guvenli = [R for R in adaylar if enkotu[R] <= lim]; cevap = min(guvenli)                   # en hizli = en kucuk guvenli R
+assert cevap == F(75, 10) and 2 <= cevap <= 67 and 2 < cevap < 10                           # 7,5 kOhm; tolerans verisinin aralisinda
+# bagimsiz kontrol: 150 mA siniri icin en kucuk R = 1,1 x 1000 / 150 = 7,33 kOhm; 6,8 < 7,33 <= 7,5
+Rmin = F(11, 10) * 1000 / lim; assert F(68, 10) < Rmin <= F(75, 10)
+print("Sayisal kontroller: tamam (10 V; +-12 V kopru; 12 / 2,4 mA, 2 / 10 / 0 V; 40 / 4000 V; "
+      "13 A; 4,5 V; 800 mA, 2,5 kOhm, 416,7 / 370,4 mA, 333 / 407,4 mA; 20 mA; soru: 7,5 kOhm, 146,7 mA)")
 
 # --- Seslendirme metni
 md = pathlib.Path(__file__).with_name("metin.md").read_text()
@@ -107,14 +124,21 @@ for n, metin in parcalar:
     assert not re.search(r"\b(USB|LED|MCP|NSI|TLHR|mAh|datasheet|onsemi|Microchip|Vishay|PROG|REG|mA|mV|Ω)\b", metin), n
     assert "kanca" not in metin.lower(), n
     assert not re.search(r"\b[A-NP-ZÇĞİÖŞÜ]\b", metin), n            # tek buyuk harf ("O" zamiri haric) (or. "bir C") okunus riski
+    assert not re.search(r"\b(ce|be|ve akımı|i iks|v iks)\b", metin.replace(" ve ", " ")), n   # yeniden denetim: harf okunusu ("bir ce") yok
     assert "her zaman" not in metin.lower() and "asla" not in metin.lower(), n
     assert "sonsuz" not in metin.lower(), n                    # "sinirsiz buyumek zorunda" denir (icerik.md 10)
     assert "dükkânda yoktur" not in metin                      # "ideal olanini bulamazsin"
 print("Toplam", toplam, "kelime, konusma ~", round(toplam / 2.6 / 60, 2), "dk; +125 sn ->", round((toplam / 2.6 + 125) / 60, 2), "dk")
 assert 1800 <= toplam <= 2330 and 13 <= (toplam / 2.6 + 125) / 60 <= 17
-# ekranda "kanca" yok
-assert "kanca" not in re.sub(r"## \[PARÇA.*", "", md).lower() or True
+gercek = (toplam / 2.42 + 125 + 9.5) / 60                    # yeniden denetim: D2B1'de olculen gercek hiz 2,42 kelime/sn + intro 9,5 sn
+print("Gercek hizla (2,42 kelime/sn + 125 sn + intro):", round(gercek, 2), "dk")
+assert 13 <= gercek <= 17
+# ekranda "kanca" yok (sahne plani maddeleri)
 for satir in md.splitlines():
     if satir.startswith("- ") and "kanca" in satir.lower():
         raise AssertionError("ekranda kanca: " + satir)
+# vurgu suresi: her cember / cerceve / alt cizgi / ustu cizilir / kutu maddesinde ">= 1,0 sn" notu var mi (yeniden denetim)
+for satir in md.splitlines():
+    if satir.startswith("- ") and re.search(r"çerçeve \"|çember|altını|üstü kırmızıyla çizilir|mavi kutu", satir):
+        assert "1,0 sn" in satir, "vurgu notu eksik: " + satir[:90]
 print("TAMAM")
