@@ -1,0 +1,1264 @@
+1
+00:00:00,030 --> 00:00:02,799
+If you connect the two ends
+of a resistor with a wire,
+
+2
+00:00:02,879 --> 00:00:05,610
+how much current flows
+through that resistor?
+
+3
+00:00:05,790 --> 00:00:07,906
+The first thought that comes
+to mind might be this:
+
+4
+00:00:07,986 --> 00:00:11,410
+in a short circuit the current is zero;
+no current flows through the wire.
+
+5
+00:00:11,490 --> 00:00:15,727
+Yet in the circuit we're about to build,
+exactly 3 mA flows through the wire,
+
+6
+00:00:15,807 --> 00:00:18,940
+while no current at all
+flows through the resistor.
+
+7
+00:00:19,020 --> 00:00:22,050
+In a short circuit, what's zero
+is not the current, but the voltage.
+
+8
+00:00:22,130 --> 00:00:24,282
+Confusing an open circuit
+with a short circuit
+
+9
+00:00:24,362 --> 00:00:26,620
+is the most common mistake on this topic.
+
+10
+00:00:26,700 --> 00:00:27,900
+By the end of this part,
+
+11
+00:00:27,980 --> 00:00:32,010
+you'll calculate voltage from energy
+and write every voltage with its sign.
+
+12
+00:00:32,090 --> 00:00:35,320
+You'll know what a point's
+voltage is measured relative to.
+
+13
+00:00:35,400 --> 00:00:37,720
+You'll find the current in a short circuit
+
+14
+00:00:37,800 --> 00:00:40,640
+and see what an ideal
+voltage source guarantees.
+
+15
+00:00:40,720 --> 00:00:45,990
+And in a datasheet, you'll learn
+where a real source stops being ideal.
+
+16
+00:00:55,640 --> 00:00:59,640
+Hello everyone, welcome
+to the Circuit Theory I series.
+
+17
+00:00:59,720 --> 00:01:03,215
+Today, in the third part of Lecture 1,
+we'll talk about voltage,
+
+18
+00:01:03,295 --> 00:01:06,280
+the short circuit
+and the ideal voltage source.
+
+19
+00:01:06,930 --> 00:01:10,574
+In Part 2, we saw that current
+has a value and a direction,
+
+20
+00:01:10,654 --> 00:01:14,960
+and that an open circuit guarantees
+only that the current is zero.
+
+21
+00:01:15,040 --> 00:01:19,430
+Now we move on to the second fundamental
+quantity of circuit theory: voltage.
+
+22
+00:01:20,233 --> 00:01:23,373
+In physics, this quantity is also
+called potential difference.
+
+23
+00:01:23,453 --> 00:01:27,173
+In circuit theory, we'll call it
+voltage or voltage difference.
+
+24
+00:01:27,253 --> 00:01:28,343
+Its unit is the volt.
+
+25
+00:01:28,483 --> 00:01:30,303
+So what exactly is its definition?
+
+26
+00:01:30,383 --> 00:01:32,443
+Let's pick two points in a large circuit.
+
+27
+00:01:32,523 --> 00:01:34,733
+Let's call one of them a and the other b.
+
+28
+00:01:34,813 --> 00:01:37,964
+We define the voltage
+between a and b like this:
+
+29
+00:01:38,044 --> 00:01:40,931
+the energy we must spend
+to carry a positive
+
+30
+00:01:41,011 --> 00:01:44,303
+charge of one coulomb
+from point b to point a.
+
+31
+00:01:44,383 --> 00:01:48,203
+Pay attention to the order:
+the charge starts at b and goes to a.
+
+32
+00:01:48,283 --> 00:01:50,893
+This order will determine
+the sign of the voltage.
+
+33
+00:01:50,973 --> 00:01:53,383
+We don't have to work
+with a charge of one coulomb.
+
+34
+00:01:53,463 --> 00:01:57,723
+We can carry any positive charge and
+divide the energy spent by that charge.
+
+35
+00:01:57,803 --> 00:02:00,173
+So voltage is energy divided by charge.
+
+36
+00:02:00,253 --> 00:02:03,083
+The unit of energy is the joule,
+and the unit of charge is the coulomb.
+
+37
+00:02:03,163 --> 00:02:05,753
+1 J / 1 C = 1 V.
+
+38
+00:02:05,833 --> 00:02:08,414
+For example,
+if a battery is labeled 1.5 V,
+
+39
+00:02:08,494 --> 00:02:11,558
+carrying a positive charge
+of 1 C from its negative
+
+40
+00:02:11,638 --> 00:02:15,283
+terminal to its positive
+terminal takes 1.5 J of energy.
+
+41
+00:02:15,363 --> 00:02:16,363
+Let's do an example.
+
+42
+00:02:16,443 --> 00:02:22,293
+Carrying a positive charge of 4 µC
+from b to a takes 18 µJ of energy.
+
+43
+00:02:22,373 --> 00:02:25,523
+The voltage between a and b
+is energy divided by charge.
+
+44
+00:02:25,603 --> 00:02:28,193
+18 µJ / 4 µC.
+
+45
+00:02:28,273 --> 00:02:33,153
+The micros cancel, leaving 18 / 4 = 4.5 V.
+
+46
+00:02:33,233 --> 00:02:36,453
+Now let's double the charge: 8 µC.
+
+47
+00:02:36,533 --> 00:02:39,153
+This time, carrying it takes 36 µJ.
+
+48
+00:02:39,233 --> 00:02:42,413
+36 / 8, again 4.5 V.
+
+49
+00:02:42,493 --> 00:02:46,883
+The charge doubled, the energy doubled
+too, and the voltage didn't change.
+
+50
+00:02:46,963 --> 00:02:49,885
+Because voltage depends not
+on the amount of charge we carry,
+
+51
+00:02:49,965 --> 00:02:51,793
+but on the two points themselves.
+
+52
+00:02:51,873 --> 00:02:55,723
+And what if we take the same
+4 µC from a to b this time?
+
+53
+00:02:55,803 --> 00:02:58,643
+Then we don't spend this
+energy; we get it back.
+
+54
+00:02:58,723 --> 00:03:01,663
+The energy spent becomes −18 µJ.
+
+55
+00:03:01,743 --> 00:03:05,153
+−18 / 4 = −4.5 V.
+
+56
+00:03:05,233 --> 00:03:09,533
+So the voltage between b and a is −4.5 V.
+
+57
+00:03:09,643 --> 00:03:12,723
+You can subscribe to the channel
+to follow the rest of this series.
+
+58
+00:03:14,483 --> 00:03:17,463
+There's an easy way
+to picture this definition.
+
+59
+00:03:17,543 --> 00:03:20,593
+You can think of voltage
+as a difference in height.
+
+60
+00:03:20,673 --> 00:03:24,873
+For a positive charge, the plus end is
+a hilltop and the minus end is a valley.
+
+61
+00:03:24,953 --> 00:03:27,953
+Lifting the charge from the valley
+to the hilltop takes energy.
+
+62
+00:03:28,033 --> 00:03:31,363
+And coming down from the hilltop
+to the valley, you get that energy back.
+
+63
+00:03:31,443 --> 00:03:35,303
+This energy per coulomb
+is the voltage between the two points.
+
+64
+00:03:35,383 --> 00:03:39,563
+This is only an analogy, but it's
+very useful for remembering the sign.
+
+65
+00:03:39,693 --> 00:03:42,983
+In Part 2, current had
+a value and a direction.
+
+66
+00:03:43,063 --> 00:03:45,713
+Voltage also has a value and a sign.
+
+67
+00:03:45,793 --> 00:03:50,463
+If we say there are 7 V across a resistor,
+saying that alone isn't enough.
+
+68
+00:03:50,543 --> 00:03:53,753
+We put a plus on one end
+and a minus on the other.
+
+69
+00:03:53,833 --> 00:03:57,923
+This means the plus end is 7 V
+higher than the minus end.
+
+70
+00:03:58,003 --> 00:04:00,193
+What happens if we put
+the signs the other way around?
+
+71
+00:04:00,273 --> 00:04:01,803
+Same resistor, same situation.
+
+72
+00:04:01,883 --> 00:04:04,123
+But this time we put
+the plus on the other end.
+
+73
+00:04:04,203 --> 00:04:07,523
+Then the number we have to write is −7 V.
+
+74
+00:04:07,603 --> 00:04:10,967
+In short, the voltage
+between b and a is the negative
+
+75
+00:04:11,047 --> 00:04:13,283
+of the voltage between a and b.
+
+76
+00:04:13,363 --> 00:04:15,213
+You can also read this
+the other way around.
+
+77
+00:04:15,293 --> 00:04:18,019
+We put a plus on the left
+end of a resistor and a minus
+
+78
+00:04:18,099 --> 00:04:20,823
+on the right end,
+and the calculation gave −3 V.
+
+79
+00:04:20,903 --> 00:04:23,483
+That doesn't mean
+the calculation is wrong.
+
+80
+00:04:23,563 --> 00:04:27,513
+It just tells us the right end
+is 3 V higher than the left end.
+
+81
+00:04:27,593 --> 00:04:30,332
+You don't have to guess the signs
+correctly from the start;
+
+82
+00:04:30,412 --> 00:04:33,383
+the result, together with its
+sign, tells you the truth.
+
+83
+00:04:33,463 --> 00:04:34,543
+Let's go back to our example.
+
+84
+00:04:34,623 --> 00:04:37,683
+There were 4.5 V between a and b.
+
+85
+00:04:37,763 --> 00:04:40,503
+We put the plus on a and the minus on b.
+
+86
+00:04:40,583 --> 00:04:44,183
+So point a is 4.5 V higher than point b.
+
+87
+00:04:44,263 --> 00:04:47,563
+As long as the signs are
+drawn on the schematic.
+
+88
+00:04:47,643 --> 00:04:50,378
+A voltage without signs
+is incomplete information,
+
+89
+00:04:50,458 --> 00:04:52,623
+like a current without an arrow.
+
+90
+00:04:53,053 --> 00:04:55,300
+Now we come to a very important point:
+
+91
+00:04:55,380 --> 00:04:58,463
+voltage is meaningful
+only between two points.
+
+92
+00:04:58,543 --> 00:05:01,528
+If a friend takes a measurement
+and says there are 12 V at this point,
+
+93
+00:05:01,608 --> 00:05:04,123
+the first thing you should
+ask is: relative to what?
+
+94
+00:05:04,203 --> 00:05:08,983
+12 V is the difference
+between that point and some other point.
+
+95
+00:05:09,063 --> 00:05:12,633
+If that other point isn't specified,
+the number you're given is incomplete.
+
+96
+00:05:12,713 --> 00:05:16,463
+In practice, that other point
+is usually the circuit's ground.
+
+97
+00:05:16,543 --> 00:05:20,193
+Ground is a common terminal we choose
+as the reference in the circuit.
+
+98
+00:05:20,273 --> 00:05:22,333
+On a schematic,
+it's shown with this symbol.
+
+99
+00:05:22,413 --> 00:05:24,534
+When we talk about the voltage of a point,
+
+100
+00:05:24,614 --> 00:05:27,463
+we mean the voltage
+between that point and ground.
+
+101
+00:05:27,543 --> 00:05:28,863
+Why do we do this?
+
+102
+00:05:28,943 --> 00:05:31,283
+A circuit can have dozens of points.
+
+103
+00:05:31,363 --> 00:05:34,300
+Instead of stating separately
+what each one is relative to,
+
+104
+00:05:34,380 --> 00:05:37,033
+we give them all relative
+to the same terminal.
+
+105
+00:05:37,113 --> 00:05:39,797
+That way, by subtracting
+the voltages of two points,
+
+106
+00:05:39,877 --> 00:05:42,623
+we immediately find
+the voltage between them.
+
+107
+00:05:42,743 --> 00:05:48,403
+Let's do an example. Relative to ground,
+point a is at 5 V and point b is at 3.3 V.
+
+108
+00:05:48,483 --> 00:05:52,943
+The voltage between a and b is the voltage
+of a minus the voltage of b.
+
+109
+00:05:53,023 --> 00:05:56,353
+5 − 3.3 = 1.7 V.
+
+110
+00:05:56,433 --> 00:06:01,073
+Conversely, the voltage
+between b and a is −1.7 V.
+
+111
+00:06:01,163 --> 00:06:02,783
+Now let's change the reference.
+
+112
+00:06:02,863 --> 00:06:04,703
+Let's move ground to point b.
+
+113
+00:06:04,783 --> 00:06:07,043
+The voltage of b is now 0 V.
+
+114
+00:06:07,123 --> 00:06:11,663
+And the voltage of a is 5 − 3.3 = 1.7 V.
+
+115
+00:06:11,743 --> 00:06:17,143
+And the voltage of the old
+ground is now 0 − 3.3 = −3.3 V.
+
+116
+00:06:17,223 --> 00:06:20,583
+The voltages of the points changed,
+because the reference changed.
+
+117
+00:06:20,663 --> 00:06:22,883
+And the voltage between a and b?
+
+118
+00:06:22,963 --> 00:06:26,763
+1.7 − 0, again 1.7 V.
+
+119
+00:06:26,843 --> 00:06:30,133
+The voltage between two points
+doesn't depend on the reference.
+
+120
+00:06:30,213 --> 00:06:32,893
+Keep this number, 1.7 V, in mind.
+
+121
+00:06:32,973 --> 00:06:34,985
+Soon we'll come across the same number
+
+122
+00:06:35,065 --> 00:06:38,093
+between the input and output
+of a real regulator.
+
+123
+00:06:38,617 --> 00:06:40,107
+Next up: the short circuit.
+
+124
+00:06:40,187 --> 00:06:42,373
+A short circuit means
+connecting two points
+
+125
+00:06:42,453 --> 00:06:45,367
+with a wire whose resistance
+is taken to be zero.
+
+126
+00:06:45,447 --> 00:06:47,717
+A short circuit guarantees
+us only one thing:
+
+127
+00:06:47,797 --> 00:06:50,947
+the voltage between the two
+points it connects is zero.
+
+128
+00:06:51,027 --> 00:06:52,917
+We can see this from Ohm's law.
+
+129
+00:06:52,997 --> 00:06:54,957
+Voltage is resistance times current.
+
+130
+00:06:55,037 --> 00:06:56,387
+The wire's resistance is zero.
+
+131
+00:06:56,467 --> 00:07:01,127
+As long as the current is finite,
+zero times the current is still zero.
+
+132
+00:07:01,207 --> 00:07:06,397
+For example, even if 10 mA flows
+through the wire, 0 Ω × 10 mA = 0 V.
+
+133
+00:07:06,477 --> 00:07:09,387
+Can we say the same
+thing about current? No.
+
+134
+00:07:09,467 --> 00:07:11,490
+The wire only forces the voltage to zero;
+
+135
+00:07:11,570 --> 00:07:15,577
+how much current flows through it
+is decided by the rest of the circuit.
+
+136
+00:07:15,657 --> 00:07:17,427
+Let's put this side by side with Part 2.
+
+137
+00:07:17,507 --> 00:07:19,684
+An open circuit guarantees
+that the current is zero;
+
+138
+00:07:19,764 --> 00:07:22,147
+the rest of the circuit
+determines the voltage.
+
+139
+00:07:22,227 --> 00:07:24,357
+A short circuit guarantees
+that the voltage is zero;
+
+140
+00:07:24,437 --> 00:07:26,797
+the rest of the circuit
+determines the current.
+
+141
+00:07:27,007 --> 00:07:29,787
+Now let's build the circuit
+from the beginning of the lecture.
+
+142
+00:07:29,867 --> 00:07:33,495
+A 6 V voltage source and two
+resistors, 2 kΩ and 1 kΩ,
+
+143
+00:07:33,575 --> 00:07:36,897
+are connected in series
+to form a single loop.
+
+144
+00:07:36,977 --> 00:07:41,303
+The same current flows through two
+resistors in series and their voltages add
+
+145
+00:07:41,383 --> 00:07:45,757
+up, so together they present a resistance
+of 2 + 1 = 3 kΩ to the current.
+
+146
+00:07:45,837 --> 00:07:47,667
+We'll look at this in detail later.
+
+147
+00:07:47,747 --> 00:07:51,797
+Without the wire,
+the current is 6 V / 3 kΩ = 2 mA.
+
+148
+00:07:51,877 --> 00:07:56,197
+Now we connect the two ends
+of the 1 kΩ resistor with a wire.
+
+149
+00:07:56,317 --> 00:07:58,457
+This is where the most
+common mistake is made.
+
+150
+00:07:58,537 --> 00:08:00,358
+Saying the current
+in a short circuit is zero,
+
+151
+00:08:00,438 --> 00:08:02,461
+and assuming that no current
+flows through the wire
+
+152
+00:08:02,541 --> 00:08:05,107
+and that the current still
+flows through both resistors.
+
+153
+00:08:05,187 --> 00:08:10,127
+With this mistake, the current again comes
+out as 2 mA. The correct way is this.
+
+154
+00:08:10,207 --> 00:08:14,457
+The wire forces the voltage
+across the 1 kΩ resistor to zero.
+
+155
+00:08:14,537 --> 00:08:19,607
+By Ohm's law, this resistor's
+current is 0 V / 1 kΩ, that is, zero.
+
+156
+00:08:19,687 --> 00:08:22,307
+The current bypasses the resistor
+and flows through the wire.
+
+157
+00:08:22,387 --> 00:08:26,577
+Now the 2 kΩ resistor sees
+the source's 6 V on its own.
+
+158
+00:08:26,657 --> 00:08:29,957
+The current is 6 V / 2 kΩ = 3 mA.
+
+159
+00:08:30,037 --> 00:08:32,667
+This 3 mA flows through the wire.
+
+160
+00:08:32,747 --> 00:08:36,607
+The shorted resistor now behaves as if
+it weren't in the circuit at all.
+
+161
+00:08:36,687 --> 00:08:39,887
+In a short circuit, what's zero
+is the voltage, not the current.
+
+162
+00:08:39,967 --> 00:08:42,367
+In this example,
+we assumed the source was ideal.
+
+163
+00:08:42,447 --> 00:08:45,286
+An ideal voltage source
+is an element that keeps the voltage
+
+164
+00:08:45,366 --> 00:08:48,787
+across its terminals the same,
+no matter what is connected to it.
+
+165
+00:08:48,867 --> 00:08:52,047
+The current, however, is determined not
+by the source but by the connected load.
+
+166
+00:08:52,127 --> 00:08:53,377
+If a single resistor is connected,
+
+167
+00:08:53,457 --> 00:08:55,917
+the current is the source voltage
+divided by the resistance.
+
+168
+00:08:55,997 --> 00:08:57,357
+This model has a limit.
+
+169
+00:08:57,437 --> 00:09:00,474
+If we short the terminals of an ideal
+source directly with a wire,
+
+170
+00:09:00,554 --> 00:09:02,167
+we run into a contradiction.
+
+171
+00:09:02,247 --> 00:09:05,097
+The source says: there are
+6 V across my terminals.
+
+172
+00:09:05,177 --> 00:09:06,707
+The wire says: 0 V.
+
+173
+00:09:06,787 --> 00:09:10,587
+To see this, let's shrink the resistor
+connected to the source step by step.
+
+174
+00:09:10,667 --> 00:09:13,727
+At 1 Ω, the current is 6 / 1 = 6 A.
+
+175
+00:09:13,807 --> 00:09:18,147
+At 0.1 Ω, 6 / 0.1 = 60 A.
+
+176
+00:09:18,227 --> 00:09:21,537
+At 0.01 Ω, 600 A.
+
+177
+00:09:21,617 --> 00:09:24,997
+As the resistance approaches zero,
+the current grows without limit.
+
+178
+00:09:25,077 --> 00:09:28,917
+So the ideal source model loses
+its meaning in a short circuit.
+
+179
+00:09:28,997 --> 00:09:33,247
+Next, we'll see in a datasheet
+what happens in a real source.
+
+180
+00:09:33,717 --> 00:09:36,507
+Let's look at the voltage
+rows in a datasheet.
+
+181
+00:09:36,587 --> 00:09:39,487
+There, every voltage is given
+between two terminals.
+
+182
+00:09:39,567 --> 00:09:42,014
+In most rows, the name tells
+you those two terminals;
+
+183
+00:09:42,094 --> 00:09:44,787
+if it doesn't, the voltage
+is relative to ground.
+
+184
+00:09:44,947 --> 00:09:49,427
+The datasheet of the electronic switch
+from Part 2 has two voltage limits.
+
+185
+00:09:49,507 --> 00:09:53,227
+The first is 60 V between the two
+terminals the current flows through.
+
+186
+00:09:53,307 --> 00:09:57,705
+The second is between the control
+terminal and the switch's lower terminal:
+
+187
+00:09:57,785 --> 00:10:01,837
+the control terminal can be at most
+20 V above or 20 V below it.
+
+188
+00:10:01,917 --> 00:10:05,051
+If you apply 24 V between the control
+terminal and the lower terminal
+
+189
+00:10:05,131 --> 00:10:08,717
+because the part is rated for 60 V,
+you can damage the control terminal.
+
+190
+00:10:08,797 --> 00:10:11,901
+The diode also has two separate
+rows for the same two terminals:
+
+191
+00:10:11,981 --> 00:10:14,694
+in the forward direction,
+at most 1.1 V drops across it;
+
+192
+00:10:14,774 --> 00:10:17,417
+in the reverse direction,
+it withstands 1000 V.
+
+193
+00:10:17,497 --> 00:10:21,047
+Same two points, opposite sign,
+a completely different value.
+
+194
+00:10:21,127 --> 00:10:24,407
+So when you read a voltage row,
+ask two questions.
+
+195
+00:10:24,487 --> 00:10:26,747
+Between which two
+terminals is this voltage?
+
+196
+00:10:26,827 --> 00:10:29,927
+With which sign, that is,
+which terminal is higher?
+
+197
+00:10:30,007 --> 00:10:35,247
+Then, as in Part 2, check the conditions
+too: at what temperature, at what current?
+
+198
+00:10:35,327 --> 00:10:40,267
+Now let's look at a real voltage
+source: a 3.3 V regulator.
+
+199
+00:10:40,347 --> 00:10:44,187
+A regulator is an integrated circuit
+that keeps its output voltage constant.
+
+200
+00:10:44,267 --> 00:10:47,657
+We feed its input 5 V
+from a phone charger.
+
+201
+00:10:47,767 --> 00:10:48,887
+Is the input enough?
+
+202
+00:10:48,967 --> 00:10:50,142
+In the worst case,
+
+203
+00:10:50,222 --> 00:10:55,037
+this regulator's input must be
+at least 238 mV higher than its output.
+
+204
+00:10:55,117 --> 00:10:59,647
+238 mV, that is, 0.238 V.
+
+205
+00:10:59,727 --> 00:11:05,507
+3.3 + 0.238 = 3.538 V.
+
+206
+00:11:05,587 --> 00:11:07,113
+5 V is greater than that,
+
+207
+00:11:07,193 --> 00:11:11,047
+and it's also below the recommended
+maximum input of 5.5 V.
+
+208
+00:11:11,127 --> 00:11:16,307
+The voltage between input
+and output is 5 − 3.3 = 1.7 V.
+
+209
+00:11:16,387 --> 00:11:18,197
+The very same number as before.
+
+210
+00:11:18,277 --> 00:11:20,387
+Let's connect three loads
+to the output, one at a time.
+
+211
+00:11:20,467 --> 00:11:25,787
+330 Ω: the current
+is 3.3 V / 330 Ω = 10 mA.
+
+212
+00:11:25,867 --> 00:11:30,157
+66 Ω: 3.3 / 66 = 50 mA.
+
+213
+00:11:30,237 --> 00:11:34,077
+33 Ω: 3.3 / 33 = 100 mA.
+
+214
+00:11:34,157 --> 00:11:39,017
+In every case, there are 3.3 V across
+the load; only the current changes.
+
+215
+00:11:39,097 --> 00:11:42,177
+This is exactly how an ideal
+voltage source behaves.
+
+216
+00:11:42,257 --> 00:11:43,397
+How good is the model?
+
+217
+00:11:43,477 --> 00:11:45,011
+According to the datasheet,
+
+218
+00:11:45,091 --> 00:11:48,847
+the output changes by about 60
+mV for every ampere of current.
+
+219
+00:11:48,927 --> 00:11:53,107
+Going from 10 mA to 100 mA,
+the difference is 90 mA.
+
+220
+00:11:53,187 --> 00:11:57,077
+90 mA, that is, 0.090 A.
+
+221
+00:11:57,157 --> 00:12:00,977
+0.060 × 0.090 = 0.0054 V,
+
+222
+00:12:01,057 --> 00:12:03,707
+that is, 5.4 mV.
+
+223
+00:12:03,787 --> 00:12:07,240
+Even over the entire recommended range,
+
+224
+00:12:07,320 --> 00:12:11,227
+the change is 60
+mV/A × about 0.5 A ≈ 30 mV.
+
+225
+00:12:11,307 --> 00:12:14,717
+But this range goes up to 500 mA.
+
+226
+00:12:14,797 --> 00:12:16,553
+In terms of current,
+
+227
+00:12:16,633 --> 00:12:22,607
+the smallest resistance you can
+connect is 3.3 V / 0.5 A = 6.6 Ω.
+
+228
+00:12:22,687 --> 00:12:28,417
+But in this setup, that much current heats
+the regulator enough to shut it down.
+
+229
+00:12:28,497 --> 00:12:31,182
+We'll calculate the heating
+when we cover power;
+
+230
+00:12:31,262 --> 00:12:34,427
+that's why we used at most
+100 mA in our example.
+
+231
+00:12:34,547 --> 00:12:37,547
+And what if we connect
+3.3 Ω to the output?
+
+232
+00:12:37,627 --> 00:12:41,937
+The ideal model says 3.3 / 3.3 = 1 A.
+
+233
+00:12:42,017 --> 00:12:46,447
+But this regulator's current
+limit is at most 865 mA.
+
+234
+00:12:46,527 --> 00:12:50,517
+The regulator limits the current,
+and the output can't stay at 3.3 V.
+
+235
+00:12:50,597 --> 00:12:53,227
+It no longer behaves like an ideal source.
+
+236
+00:12:53,307 --> 00:12:55,817
+What if we short the output with a wire?
+
+237
+00:12:55,897 --> 00:13:00,027
+The voltage across the wire is zero;
+that's what a short circuit guarantees.
+
+238
+00:13:00,107 --> 00:13:01,907
+The current, on the other hand,
+is set by the rest of the circuit.
+
+239
+00:13:01,987 --> 00:13:04,937
+Here, the rest of the circuit means
+the regulator's own current limit.
+
+240
+00:13:05,017 --> 00:13:06,476
+When the output drops too low,
+
+241
+00:13:06,556 --> 00:13:09,506
+the regulator cuts the current
+back even further on its own;
+
+242
+00:13:09,586 --> 00:13:12,797
+in a short circuit, the current
+typically falls to 355 mA.
+
+243
+00:13:12,877 --> 00:13:15,449
+The regulator heats up,
+shuts down when it overheats,
+
+244
+00:13:15,529 --> 00:13:17,747
+and turns back on when it cools down.
+
+245
+00:13:17,827 --> 00:13:20,414
+Another costly mistake in design is this:
+
+246
+00:13:20,494 --> 00:13:23,082
+assuming that a source labeled 3.3 V will
+
+247
+00:13:23,162 --> 00:13:26,527
+deliver 3.3 V no matter
+what you connect to it.
+
+248
+00:13:26,607 --> 00:13:29,849
+A real source keeps its
+ideal behavior only within
+
+249
+00:13:29,929 --> 00:13:33,457
+the current and heating
+limits in its datasheet.
+
+250
+00:13:33,977 --> 00:13:34,977
+Let's sum up.
+
+251
+00:13:35,057 --> 00:13:39,433
+Voltage is the energy needed to carry
+a unit positive charge from one point
+
+252
+00:13:39,513 --> 00:13:43,997
+to another, and it is always written
+between two points, with its sign.
+
+253
+00:13:44,077 --> 00:13:48,427
+A point's voltage is relative
+to a reference, usually ground.
+
+254
+00:13:48,507 --> 00:13:51,056
+An open circuit guarantees
+only that the current is zero,
+
+255
+00:13:51,136 --> 00:13:53,368
+and a short circuit only
+that the voltage is zero;
+
+256
+00:13:53,448 --> 00:13:56,267
+the rest of the circuit
+determines the other quantity.
+
+257
+00:13:56,347 --> 00:13:58,796
+An ideal voltage source
+holds the voltage constant,
+
+258
+00:13:58,876 --> 00:14:00,987
+and the load determines the current.
+
+259
+00:14:01,067 --> 00:14:03,895
+A real source does this
+only within the current
+
+260
+00:14:03,975 --> 00:14:06,557
+and heating limits in its datasheet.
+
+261
+00:14:06,847 --> 00:14:08,237
+Let me leave you with a question too.
+
+262
+00:14:08,317 --> 00:14:13,287
+We connect a 22 Ω resistor
+to the output of a 3.3 V regulator.
+
+263
+00:14:13,367 --> 00:14:16,507
+The regulator's maximum
+output current is 500 mA.
+
+264
+00:14:16,587 --> 00:14:20,357
+What will the voltage across the resistor
+and the current through it be?
+
+265
+00:14:20,437 --> 00:14:21,957
+Write your answer in the comments.
+
+266
+00:14:22,197 --> 00:14:23,463
+If this lecture helped you,
+
+267
+00:14:23,543 --> 00:14:26,497
+please like the video
+and share it with your classmates.
+
+268
+00:14:26,577 --> 00:14:29,397
+If you subscribe to the channel,
+you won't miss Lecture 2.
+
+269
+00:14:29,477 --> 00:14:33,063
+In the first part of Lecture 2,
+we'll look at the ideal wire,
+
+270
+00:14:33,143 --> 00:14:36,677
+the ideal switch, and why
+a real battery isn't ideal.
+

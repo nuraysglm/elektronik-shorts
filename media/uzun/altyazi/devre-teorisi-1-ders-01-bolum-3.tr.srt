@@ -1,0 +1,1130 @@
+1
+00:00:00,030 --> 00:00:02,980
+Bir direncin iki ucunu
+bir telle birbirine bağlarsan,
+
+2
+00:00:03,060 --> 00:00:05,610
+o dirençten ne kadar akım geçer?
+
+3
+00:00:05,790 --> 00:00:11,410
+Akla gelen ilk düşünce şu olabilir: kısa
+devrede akım sıfırdır, telden akım geçmez.
+
+4
+00:00:11,490 --> 00:00:15,923
+Oysa birazdan kuracağımız devrede,
+telin içinden tam 3 mA geçiyor,
+
+5
+00:00:16,003 --> 00:00:18,940
+direncin içinden ise hiç akım geçmiyor.
+
+6
+00:00:19,020 --> 00:00:22,050
+Kısa devrede sıfır olan
+akım değil, gerilimdir.
+
+7
+00:00:22,130 --> 00:00:26,620
+Açık devreyle kısa devreyi karıştırmak,
+bu konudaki en sık yapılan hata.
+
+8
+00:00:26,700 --> 00:00:29,460
+Bu bölümün sonunda gerilimi
+enerjiden hesaplayacak,
+
+9
+00:00:29,540 --> 00:00:32,010
+her gerilimi işaretiyle yazacaksın.
+
+10
+00:00:32,090 --> 00:00:35,320
+Bir noktanın geriliminin neye
+göre ölçüldüğünü bileceksin.
+
+11
+00:00:35,400 --> 00:00:36,850
+Kısa devrede akımı bulacak,
+
+12
+00:00:36,930 --> 00:00:40,640
+ideal bir gerilim kaynağının
+neyi garanti ettiğini göreceksin.
+
+13
+00:00:40,720 --> 00:00:42,870
+Bir veri sayfasında da gerçek bir kaynağın
+
+14
+00:00:42,950 --> 00:00:45,990
+nerede ideal olmaktan
+çıktığını öğreneceksin.
+
+15
+00:00:55,640 --> 00:00:59,640
+Merhaba arkadaşlar,
+Devre Teorisi I serisine hoş geldiniz.
+
+16
+00:00:59,720 --> 00:01:02,428
+Bugün Ders 1'in üçüncü bölümünde gerilimi,
+
+17
+00:01:02,508 --> 00:01:06,280
+kısa devreyi ve ideal gerilim
+kaynağını konuşacağız.
+
+18
+00:01:06,930 --> 00:01:09,950
+İkinci bölümde akımın
+bir değeri ve bir yönü olduğunu,
+
+19
+00:01:10,030 --> 00:01:14,960
+açık devrenin de yalnızca akımın sıfır
+olduğunu garanti ettiğini görmüştük.
+
+20
+00:01:15,040 --> 00:01:19,430
+Şimdi devre teorisinin ikinci temel
+büyüklüğüne geçiyoruz: gerilim.
+
+21
+00:01:20,233 --> 00:01:23,373
+Fizikte bu büyüklüğe
+potansiyel farkı da denir.
+
+22
+00:01:23,453 --> 00:01:27,173
+Biz devre teorisinde gerilim
+ya da gerilim farkı diyeceğiz.
+
+23
+00:01:27,253 --> 00:01:28,343
+Birimi volt.
+
+24
+00:01:28,483 --> 00:01:30,303
+Peki tanımı tam olarak ne?
+
+25
+00:01:30,383 --> 00:01:32,443
+Büyük bir devrede iki nokta seçelim.
+
+26
+00:01:32,523 --> 00:01:34,733
+Birine a, diğerine b diyelim.
+
+27
+00:01:34,813 --> 00:01:37,832
+a ile b arasındaki gerilimi
+şöyle tanımlıyoruz:
+
+28
+00:01:37,912 --> 00:01:40,672
+bir kulonluk pozitif
+bir yükü b noktasından
+
+29
+00:01:40,752 --> 00:01:44,303
+a noktasına taşımak için
+harcamamız gereken enerji.
+
+30
+00:01:44,383 --> 00:01:48,203
+Sıraya dikkat et:
+yük b'den başlıyor, a'ya gidiyor.
+
+31
+00:01:48,283 --> 00:01:50,893
+Bu sıra, gerilimin işaretini belirleyecek.
+
+32
+00:01:50,973 --> 00:01:53,383
+Bir kulonluk yükle
+çalışmak zorunda değiliz.
+
+33
+00:01:53,463 --> 00:01:57,723
+Herhangi bir pozitif yükü taşıyıp,
+harcanan enerjiyi o yüke bölebiliriz.
+
+34
+00:01:57,803 --> 00:02:00,173
+Yani gerilim, enerji bölü yük.
+
+35
+00:02:00,253 --> 00:02:03,083
+Enerjinin birimi jul, yükün birimi kulon.
+
+36
+00:02:03,163 --> 00:02:05,753
+1 J / 1 C = 1 V.
+
+37
+00:02:05,833 --> 00:02:09,019
+Örneğin bir pilin üstünde 1,5 V yazıyorsa,
+
+38
+00:02:09,099 --> 00:02:15,099
+1 C'luk pozitif yükü pilin eksi ucundan
+artı ucuna taşımak 1,5 J enerji ister.
+
+39
+00:02:15,363 --> 00:02:16,363
+Bir örnek yapalım.
+
+40
+00:02:16,443 --> 00:02:22,293
+4 µC'luk pozitif bir yükü b'den
+a'ya taşımak, 18 µJ enerji istiyor.
+
+41
+00:02:22,373 --> 00:02:25,523
+a ile b arasındaki gerilim,
+enerji bölü yük.
+
+42
+00:02:25,603 --> 00:02:28,193
+18 µJ / 4 µC.
+
+43
+00:02:28,273 --> 00:02:33,153
+Mikrolar birbirini götürür,
+kalan 18 / 4 = 4,5 V.
+
+44
+00:02:33,233 --> 00:02:36,453
+Şimdi yükü iki katına çıkaralım: 8 µC.
+
+45
+00:02:36,533 --> 00:02:39,153
+Bu kez taşımak 36 µJ istiyor.
+
+46
+00:02:39,233 --> 00:02:42,413
+36 / 8, yine 4,5 V.
+
+47
+00:02:42,493 --> 00:02:46,883
+Yük iki katına çıktı, enerji de iki
+katına çıktı, gerilim değişmedi.
+
+48
+00:02:46,963 --> 00:02:51,793
+Çünkü gerilim, taşıdığımız yükün miktarına
+değil, iki noktanın kendisine bağlı.
+
+49
+00:02:51,873 --> 00:02:55,723
+Peki aynı 4 µC'u bu kez
+a'dan b'ye götürürsek?
+
+50
+00:02:55,803 --> 00:02:58,643
+O zaman bu enerjiyi
+harcamayız, geri alırız.
+
+51
+00:02:58,723 --> 00:03:01,663
+Harcanan enerji −18 µJ olur.
+
+52
+00:03:01,743 --> 00:03:05,153
+−18 / 4 = −4,5 V.
+
+53
+00:03:05,233 --> 00:03:09,533
+Yani b ile a arasındaki gerilim −4,5 V.
+
+54
+00:03:09,643 --> 00:03:12,723
+Bu serinin devamı için
+kanala abone olabilirsin.
+
+55
+00:03:14,483 --> 00:03:17,463
+Bu tanımı gözünde canlandırmanın
+kolay bir yolu var.
+
+56
+00:03:17,543 --> 00:03:20,593
+Gerilimi bir yükseklik
+farkı gibi düşünebilirsin.
+
+57
+00:03:20,673 --> 00:03:24,873
+Pozitif bir yük için artı uç
+bir tepe, eksi uç bir vadi.
+
+58
+00:03:24,953 --> 00:03:27,953
+Yükü vadiden tepeye çıkarmak enerji ister.
+
+59
+00:03:28,033 --> 00:03:31,363
+Tepeden vadiye inerken ise
+bu enerjiyi geri alırsın.
+
+60
+00:03:31,443 --> 00:03:35,303
+Bir kulon başına bu enerji,
+iki nokta arasındaki gerilimdir.
+
+61
+00:03:35,383 --> 00:03:39,563
+Bu yalnızca bir benzetme,
+ama işareti hatırlamak için çok işe yarar.
+
+62
+00:03:39,693 --> 00:03:42,983
+İkinci bölümde akımın
+bir değeri ve bir yönü vardı.
+
+63
+00:03:43,063 --> 00:03:45,713
+Gerilimin de bir değeri
+ve bir işareti var.
+
+64
+00:03:45,793 --> 00:03:50,463
+Bir direncin uçlarında 7 V var diyorsak,
+bunu tek başına söylemek yetmez.
+
+65
+00:03:50,543 --> 00:03:53,753
+Uçlardan birine artı,
+diğerine eksi koyarız.
+
+66
+00:03:53,833 --> 00:03:57,923
+Bunun anlamı şu: artı uç,
+eksi uçtan 7 V yüksek.
+
+67
+00:03:58,003 --> 00:04:00,193
+İşaretleri ters koyarsak ne olur?
+
+68
+00:04:00,273 --> 00:04:01,803
+Aynı direnç, aynı durum.
+
+69
+00:04:01,883 --> 00:04:04,123
+Ama bu kez artıyı öbür uca koyduk.
+
+70
+00:04:04,203 --> 00:04:07,523
+O zaman yazmamız gereken sayı −7 V olur.
+
+71
+00:04:07,603 --> 00:04:13,283
+Kısacası b ile a arasındaki gerilim,
+a ile b arasındaki gerilimin eksisidir.
+
+72
+00:04:13,363 --> 00:04:15,213
+Bunu tersinden de okuyabilirsin.
+
+73
+00:04:15,293 --> 00:04:20,823
+Bir direncin sol ucuna artı, sağ ucuna
+eksi koyduk ve hesapta −3 V bulduk.
+
+74
+00:04:20,903 --> 00:04:23,483
+Bu, hesabın yanlış olduğu anlamına gelmez.
+
+75
+00:04:23,563 --> 00:04:27,513
+Sadece sağ ucun, sol uçtan
+3 V yüksek olduğunu söyler.
+
+76
+00:04:27,593 --> 00:04:30,363
+İşaretleri baştan doğru
+tahmin etmek zorunda değilsin;
+
+77
+00:04:30,443 --> 00:04:33,383
+sonuç işaretiyle birlikte doğruyu söyler.
+
+78
+00:04:33,463 --> 00:04:34,543
+Örneğimize dönelim.
+
+79
+00:04:34,623 --> 00:04:37,683
+a ile b arasında 4,5 V vardı.
+
+80
+00:04:37,763 --> 00:04:40,503
+Artıyı a'ya, eksiyi b'ye koyarız.
+
+81
+00:04:40,583 --> 00:04:44,183
+Yani a noktası,
+b noktasından 4,5 V yüksek.
+
+82
+00:04:44,263 --> 00:04:47,563
+Yeter ki işaretler şemada çizili olsun.
+
+83
+00:04:47,643 --> 00:04:52,623
+İşaretleri olmayan bir gerilim, oku
+olmayan bir akım gibi eksik bir bilgidir.
+
+84
+00:04:53,053 --> 00:04:58,463
+Gelelim çok önemli bir noktaya: gerilim
+yalnızca iki nokta arasında anlamlıdır.
+
+85
+00:04:58,543 --> 00:05:01,712
+Bir arkadaşın ölçüm yapıp
+şu noktada 12 V var dese,
+
+86
+00:05:01,792 --> 00:05:04,123
+ilk sorman gereken şu: neye göre?
+
+87
+00:05:04,203 --> 00:05:08,983
+12 V, o noktayla başka
+bir nokta arasındaki farktır.
+
+88
+00:05:09,063 --> 00:05:12,633
+O başka nokta belli değilse,
+söylenen sayı eksik kalır.
+
+89
+00:05:12,713 --> 00:05:16,463
+Pratikte o başka nokta çoğu
+zaman devrenin toprağıdır.
+
+90
+00:05:16,543 --> 00:05:20,193
+Toprak, devrede referans
+olarak seçtiğimiz ortak bir uç.
+
+91
+00:05:20,273 --> 00:05:22,333
+Şemada bu sembolle gösterilir.
+
+92
+00:05:22,413 --> 00:05:23,993
+Bir noktanın gerilimi dediğimizde,
+
+93
+00:05:24,073 --> 00:05:27,463
+o noktayla toprak arasındaki
+gerilimi kastederiz.
+
+94
+00:05:27,543 --> 00:05:28,863
+Neden böyle yaparız?
+
+95
+00:05:28,943 --> 00:05:31,283
+Bir devrede onlarca nokta olabilir.
+
+96
+00:05:31,363 --> 00:05:34,603
+Her biri için ayrı ayrı neye
+göre olduğunu söylemek yerine,
+
+97
+00:05:34,683 --> 00:05:37,033
+hepsini aynı uca göre veririz.
+
+98
+00:05:37,113 --> 00:05:39,303
+Böylece iki noktanın
+gerilimini birbirinden
+
+99
+00:05:39,383 --> 00:05:42,623
+çıkararak aralarındaki
+gerilimi hemen buluruz.
+
+100
+00:05:42,743 --> 00:05:48,403
+Bir örnek yapalım. Toprağa göre
+a noktası 5 V, b noktası 3,3 V.
+
+101
+00:05:48,483 --> 00:05:52,943
+a ile b arasındaki gerilim,
+a'nın gerilimi eksi b'nin gerilimi.
+
+102
+00:05:53,023 --> 00:05:56,353
+5 − 3,3 = 1,7 V.
+
+103
+00:05:56,433 --> 00:06:01,073
+Tersinden,
+b ile a arasındaki gerilim −1,7 V.
+
+104
+00:06:01,163 --> 00:06:02,783
+Şimdi referansı değiştirelim.
+
+105
+00:06:02,863 --> 00:06:04,703
+Toprağı b noktasına taşıyalım.
+
+106
+00:06:04,783 --> 00:06:07,043
+b'nin gerilimi artık 0 V.
+
+107
+00:06:07,123 --> 00:06:11,663
+a'nın gerilimi ise 5 − 3,3 = 1,7 V.
+
+108
+00:06:11,743 --> 00:06:17,143
+Eski toprağın gerilimi de
+artık 0 − 3,3 = −3,3 V.
+
+109
+00:06:17,223 --> 00:06:20,583
+Noktaların gerilimleri değişti,
+çünkü referans değişti.
+
+110
+00:06:20,663 --> 00:06:22,883
+Peki a ile b arasındaki gerilim?
+
+111
+00:06:22,963 --> 00:06:26,763
+1,7 − 0, yine 1,7 V.
+
+112
+00:06:26,843 --> 00:06:30,133
+İki nokta arasındaki gerilim,
+referansa bağlı değildir.
+
+113
+00:06:30,213 --> 00:06:32,893
+Bu 1,7 V sayısını aklında tut.
+
+114
+00:06:32,973 --> 00:06:35,433
+Birazdan gerçek
+bir regülatörün giriş ve çıkışı
+
+115
+00:06:35,513 --> 00:06:38,093
+arasında aynı sayıyla karşılaşacağız.
+
+116
+00:06:38,617 --> 00:06:40,107
+Sıra kısa devrede.
+
+117
+00:06:40,187 --> 00:06:42,717
+Kısa devre, iki noktayı
+direnci sıfır kabul
+
+118
+00:06:42,797 --> 00:06:45,367
+edilen bir telle birbirine bağlamak demek.
+
+119
+00:06:45,447 --> 00:06:47,367
+Kısa devre bize tek bir şeyi garanti eder:
+
+120
+00:06:47,447 --> 00:06:50,947
+bağladığı iki nokta
+arasındaki gerilim sıfırdır.
+
+121
+00:06:51,027 --> 00:06:52,917
+Bunu Ohm yasasından görebiliriz.
+
+122
+00:06:52,997 --> 00:06:54,957
+Gerilim, direnç çarpı akım.
+
+123
+00:06:55,037 --> 00:06:56,387
+Telin direnci sıfır.
+
+124
+00:06:56,467 --> 00:07:01,127
+Akım sonlu bir değer olduğu sürece,
+sıfır çarpı akım yine sıfır.
+
+125
+00:07:01,207 --> 00:07:06,397
+Örneğin telden 10 mA geçse
+bile, 0 Ω × 10 mA = 0 V.
+
+126
+00:07:06,477 --> 00:07:09,387
+Akım için aynı şeyi
+söyleyebilir miyiz? Hayır.
+
+127
+00:07:09,467 --> 00:07:10,907
+Tel yalnızca gerilimi sıfırlar;
+
+128
+00:07:10,987 --> 00:07:15,577
+içinden ne kadar akım geçeceğine
+devrenin geri kalanı karar verir.
+
+129
+00:07:15,657 --> 00:07:17,427
+İkinci bölümle yan yana koyalım.
+
+130
+00:07:17,507 --> 00:07:22,147
+Açık devre akımın sıfır olduğunu
+garanti eder, gerilimi çevre belirler.
+
+131
+00:07:22,227 --> 00:07:26,797
+Kısa devre gerilimin sıfır olduğunu
+garanti eder, akımı çevre belirler.
+
+132
+00:07:27,007 --> 00:07:29,787
+Şimdi dersin girişindeki devreyi kuralım.
+
+133
+00:07:29,867 --> 00:07:33,926
+6 V'luk bir gerilim kaynağı,
+2 kΩ'luk ve 1 kΩ'luk iki direnç,
+
+134
+00:07:34,006 --> 00:07:36,897
+seri bağlanıp tek bir halka oluşturuyor.
+
+135
+00:07:36,977 --> 00:07:41,261
+Seri bağlı iki dirençten aynı akım
+geçer ve gerilimleri toplanır;
+
+136
+00:07:41,341 --> 00:07:45,757
+bu yüzden akıma toplam 2 + 1 = 3 kΩ'luk
+bir direnç gösterirler.
+
+137
+00:07:45,837 --> 00:07:47,667
+Bunu ileride ayrıntılı göreceğiz.
+
+138
+00:07:47,747 --> 00:07:51,797
+Tel yokken akım, 6 V / 3 kΩ = 2 mA.
+
+139
+00:07:51,877 --> 00:07:56,197
+Şimdi 1 kΩ'luk direncin iki ucunu
+bir telle birbirine bağlıyoruz.
+
+140
+00:07:56,317 --> 00:07:58,457
+En sık yapılan hata burada yapılıyor.
+
+141
+00:07:58,537 --> 00:08:00,367
+Kısa devrede akım sıfırdır deyip,
+
+142
+00:08:00,447 --> 00:08:05,107
+telden akım geçmediğini ve akımın
+yine iki dirençten geçtiğini sanmak.
+
+143
+00:08:05,187 --> 00:08:08,137
+Bu hatayla akım yine 2 mA bulunur.
+
+144
+00:08:09,247 --> 00:08:14,457
+Doğrusu şu. Tel, 1 kΩ'luk direncin uçları
+arasındaki gerilimi sıfıra indirir.
+
+145
+00:08:14,537 --> 00:08:19,607
+Ohm yasasına göre bu direncin
+akımı, 0 V / 1 kΩ, yani sıfır.
+
+146
+00:08:19,687 --> 00:08:22,307
+Akım dirence uğramaz, telden geçer.
+
+147
+00:08:22,387 --> 00:08:26,577
+Artık 2 kΩ'luk direnç,
+kaynağın 6 V'unu tek başına görüyor.
+
+148
+00:08:26,657 --> 00:08:29,957
+Akım, 6 V / 2 kΩ = 3 mA.
+
+149
+00:08:30,037 --> 00:08:32,667
+Bu 3 mA telin içinden geçiyor.
+
+150
+00:08:32,747 --> 00:08:36,607
+Kısa devre edilen direnç,
+artık devrede hiç yokmuş gibi davranır.
+
+151
+00:08:36,687 --> 00:08:39,887
+Kısa devrede sıfır olan
+gerilimdir, akım değil.
+
+152
+00:08:39,967 --> 00:08:42,367
+Bu örnekte kaynağı ideal kabul ettik.
+
+153
+00:08:42,447 --> 00:08:45,637
+İdeal gerilim kaynağı,
+uçları arasındaki gerilimi,
+
+154
+00:08:45,717 --> 00:08:48,787
+ona ne bağlanırsa bağlansın
+aynı tutan elemandır.
+
+155
+00:08:48,867 --> 00:08:52,047
+Akımı ise kaynak değil,
+bağlanan yük belirler.
+
+156
+00:08:52,127 --> 00:08:55,917
+Tek bir direnç bağlıysa akım,
+kaynak gerilimi bölü direnç.
+
+157
+00:08:55,997 --> 00:08:57,357
+Bu modelin bir sınırı var.
+
+158
+00:08:57,437 --> 00:09:02,167
+İdeal kaynağın uçlarını doğrudan bir telle
+kısa devre edersek bir çelişki çıkar.
+
+159
+00:09:02,247 --> 00:09:05,097
+Kaynak, uçlarım arasında 6 V var der.
+
+160
+00:09:05,177 --> 00:09:06,707
+Tel, 0 V der.
+
+161
+00:09:06,787 --> 00:09:10,587
+Bunu görmek için kaynağa bağladığımız
+direnci adım adım küçültelim.
+
+162
+00:09:10,667 --> 00:09:13,727
+1 Ω'da akım, 6 / 1 = 6 A.
+
+163
+00:09:13,807 --> 00:09:18,147
+0,1 Ω'da, 6 / 0,1 = 60 A.
+
+164
+00:09:18,227 --> 00:09:21,537
+0,01 Ω'da 600 A.
+
+165
+00:09:21,617 --> 00:09:24,997
+Direnç sıfıra yaklaştıkça
+akım sınırsız büyür.
+
+166
+00:09:25,077 --> 00:09:28,917
+Yani ideal kaynak modeli kısa
+devrede anlamını yitirir.
+
+167
+00:09:28,997 --> 00:09:33,247
+Gerçek bir kaynakta ne olduğunu
+şimdi bir veri sayfasında göreceğiz.
+
+168
+00:09:33,717 --> 00:09:36,507
+Bir veri sayfasında gerilim
+satırlarına bakalım.
+
+169
+00:09:36,587 --> 00:09:39,487
+Orada her gerilim iki uç arasında verilir.
+
+170
+00:09:39,567 --> 00:09:44,787
+Çoğu satırda adı o iki ucu söyler;
+söylemiyorsa gerilim toprağa göredir.
+
+171
+00:09:44,947 --> 00:09:49,427
+İkinci bölümdeki elektronik anahtarın
+veri sayfasında iki gerilim sınırı var.
+
+172
+00:09:49,507 --> 00:09:53,227
+Birincisi, akımın geçtiği
+iki uç arasında 60 V.
+
+173
+00:09:53,307 --> 00:09:57,101
+İkincisi, kontrol ucu
+ile anahtarın alt ucu arasında:
+
+174
+00:09:57,181 --> 00:10:01,837
+kontrol ucu en çok 20 V yukarıda
+ya da 20 V aşağıda olabilir.
+
+175
+00:10:01,917 --> 00:10:06,484
+Parça 60 V'luk diye kontrol ucuyla
+alt uç arasına 24 V uygularsan,
+
+176
+00:10:06,564 --> 00:10:08,717
+kontrol ucunu bozabilirsin.
+
+177
+00:10:08,797 --> 00:10:12,561
+Diyotta da aynı iki uç
+arasında iki ayrı satır var:
+
+178
+00:10:12,641 --> 00:10:17,417
+ileri yönde en çok 1,1 V düşer,
+ters yönde 1000 V'a dayanır.
+
+179
+00:10:17,497 --> 00:10:21,047
+Aynı iki nokta, ters işaret,
+bambaşka bir değer.
+
+180
+00:10:21,127 --> 00:10:24,407
+Bu yüzden bir gerilim
+satırını okurken iki soru sor.
+
+181
+00:10:24,487 --> 00:10:26,747
+Bu gerilim hangi iki uç arasında?
+
+182
+00:10:26,827 --> 00:10:29,927
+Hangi işaretle, yani hangi uç daha yüksek?
+
+183
+00:10:30,007 --> 00:10:35,247
+Ardından ikinci bölümdeki gibi koşula da
+bak: hangi sıcaklıkta, hangi akımda?
+
+184
+00:10:35,327 --> 00:10:40,267
+Şimdi gerçek bir gerilim kaynağına
+bakalım: 3,3 V'luk bir regülatör.
+
+185
+00:10:40,347 --> 00:10:44,187
+Regülatör, çıkışındaki gerilimi
+sabit tutan bir entegre devre.
+
+186
+00:10:44,267 --> 00:10:47,657
+Girişine bir telefon şarj
+cihazından 5 V veriyoruz.
+
+187
+00:10:47,767 --> 00:10:48,887
+Giriş yeterli mi?
+
+188
+00:10:48,967 --> 00:10:54,967
+Bu regülatörün girişi, en kötü durumda
+çıkışından en az 238 mV yüksek olmalı.
+
+189
+00:10:55,117 --> 00:10:59,647
+238 mV, yani 0,238 V.
+
+190
+00:10:59,727 --> 00:11:05,507
+3,3 + 0,238 = 3,538 V.
+
+191
+00:11:05,587 --> 00:11:11,047
+5 V bundan büyük, önerilen en büyük
+giriş olan 5,5 V'un da altında.
+
+192
+00:11:11,127 --> 00:11:16,307
+Giriş ile çıkış arasındaki
+gerilim, 5 − 3,3 = 1,7 V.
+
+193
+00:11:16,387 --> 00:11:18,197
+Biraz önceki sayının aynısı.
+
+194
+00:11:18,277 --> 00:11:20,387
+Çıkışa sırayla üç yük bağlayalım.
+
+195
+00:11:20,467 --> 00:11:25,787
+330 Ω: akım, 3,3 V / 330 Ω = 10 mA.
+
+196
+00:11:25,867 --> 00:11:30,157
+66 Ω: 3,3 / 66 = 50 mA.
+
+197
+00:11:30,237 --> 00:11:34,077
+33 Ω: 3,3 / 33 = 100 mA.
+
+198
+00:11:34,157 --> 00:11:39,017
+Her durumda yükün uçlarında 3,3 V var,
+değişen yalnızca akım.
+
+199
+00:11:39,097 --> 00:11:42,177
+İdeal gerilim kaynağı tam
+olarak böyle davranır.
+
+200
+00:11:42,257 --> 00:11:43,397
+Model ne kadar iyi?
+
+201
+00:11:43,477 --> 00:11:48,847
+Veri sayfasına göre çıkış, akımın her
+amperi için yaklaşık 60 mV değişiyor.
+
+202
+00:11:48,927 --> 00:11:53,107
+10 mA'den 100 mA'e çıkınca fark 90 mA.
+
+203
+00:11:53,187 --> 00:11:57,077
+90 mA, yani 0,090 A.
+
+204
+00:11:57,157 --> 00:12:01,387
+0,060 × 0,090 = 0,0054 V,
+
+205
+00:12:01,467 --> 00:12:03,707
+yani 5,4 mV.
+
+206
+00:12:03,787 --> 00:12:07,862
+Önerilen aralığın tamamında bile değişim,
+
+207
+00:12:07,942 --> 00:12:11,227
+60 mV/A × yaklaşık 0,5 A ≈ 30 mV.
+
+208
+00:12:11,307 --> 00:12:14,717
+Ama bu aralık 500 mA'e kadar.
+
+209
+00:12:14,797 --> 00:12:19,839
+Akım açısından bağlanabilecek
+en küçük direnç,
+
+210
+00:12:19,919 --> 00:12:22,607
+3,3 V / 0,5 A = 6,6 Ω.
+
+211
+00:12:22,687 --> 00:12:28,417
+Ama bu kurulumda o kadar akım,
+regülatörü kapanacak kadar ısıtır.
+
+212
+00:12:28,497 --> 00:12:30,954
+Isınmayı güç konusunda hesaplayacağız;
+
+213
+00:12:31,034 --> 00:12:34,427
+örneğimizde bu yüzden
+en çok 100 mA kullandık.
+
+214
+00:12:34,547 --> 00:12:37,547
+Peki çıkışa 3,3 Ω bağlarsak?
+
+215
+00:12:37,627 --> 00:12:41,937
+İdeal model, 3,3 / 3,3 = 1 A der.
+
+216
+00:12:42,017 --> 00:12:46,447
+Ama bu regülatörün akım
+sınırı en çok 865 mA.
+
+217
+00:12:46,527 --> 00:12:50,517
+Regülatör akımı sınırlar,
+çıkış 3,3 V'ta kalamaz.
+
+218
+00:12:50,597 --> 00:12:53,227
+Artık ideal bir kaynak gibi davranmaz.
+
+219
+00:12:53,307 --> 00:12:55,817
+Çıkışı bir telle kısa devre edersek?
+
+220
+00:12:55,897 --> 00:13:00,027
+Telin uçları arasındaki gerilim sıfır;
+kısa devrenin garantisi bu.
+
+221
+00:13:00,107 --> 00:13:01,907
+Akımı ise çevre belirler.
+
+222
+00:13:01,987 --> 00:13:04,937
+Burada çevre,
+regülatörün kendi akım sınırı.
+
+223
+00:13:05,017 --> 00:13:09,282
+Çıkış çok düşünce regülatör akımı
+kendiliğinden daha da kısar;
+
+224
+00:13:09,362 --> 00:13:12,797
+kısa devrede akım tipik
+olarak 355 mA'e iner.
+
+225
+00:13:12,877 --> 00:13:17,747
+Regülatör ısınır, aşırı ısınınca
+kapanır, soğuyunca yeniden açılır.
+
+226
+00:13:17,827 --> 00:13:22,901
+Tasarımda pahalıya patlayan bir hata da
+şu: 3,3 V yazan bir kaynağın,
+
+227
+00:13:22,981 --> 00:13:26,527
+ne bağlarsan bağla
+3,3 V vereceğini sanmak.
+
+228
+00:13:26,607 --> 00:13:29,517
+Gerçek bir kaynak,
+ideal davranışını yalnızca veri
+
+229
+00:13:29,597 --> 00:13:33,457
+sayfasındaki akım ve ısınma
+sınırları içinde korur.
+
+230
+00:13:33,977 --> 00:13:34,977
+Toparlayalım.
+
+231
+00:13:35,057 --> 00:13:38,977
+Gerilim, bir birim pozitif yükü
+bir noktadan diğerine taşımak için
+
+232
+00:13:39,057 --> 00:13:43,997
+gereken enerjidir ve hep iki nokta
+arasında, işaretiyle yazılır.
+
+233
+00:13:44,077 --> 00:13:48,427
+Bir noktanın gerilimi bir referansa,
+çoğu zaman toprağa göredir.
+
+234
+00:13:48,507 --> 00:13:50,167
+Açık devre yalnızca akımın,
+
+235
+00:13:50,247 --> 00:13:53,767
+kısa devre yalnızca gerilimin
+sıfır olduğunu garanti eder;
+
+236
+00:13:53,847 --> 00:13:56,267
+diğer büyüklüğü çevre belirler.
+
+237
+00:13:56,347 --> 00:14:00,987
+İdeal gerilim kaynağı gerilimi
+sabit tutar, akımı yük belirler.
+
+238
+00:14:01,067 --> 00:14:03,697
+Gerçek bir kaynak bunu
+yalnızca veri sayfasındaki
+
+239
+00:14:03,777 --> 00:14:06,557
+akım ve ısınma sınırları içinde yapar.
+
+240
+00:14:06,847 --> 00:14:08,237
+Sana da bir soru bırakayım.
+
+241
+00:14:08,317 --> 00:14:13,287
+3,3 V'luk bir regülatörün çıkışına
+22 Ω'luk bir direnç bağlıyoruz.
+
+242
+00:14:13,367 --> 00:14:16,507
+Regülatörün en büyük çıkış akımı 500 mA.
+
+243
+00:14:16,587 --> 00:14:20,357
+Direncin uçlarındaki gerilim
+ve içinden geçen akım ne olur?
+
+244
+00:14:20,437 --> 00:14:21,957
+Cevabını yorumlara yaz.
+
+245
+00:14:22,197 --> 00:14:26,497
+Bu ders işine yaradıysa videoyu beğenip
+sınıf arkadaşlarınla paylaşır mısın?
+
+246
+00:14:26,577 --> 00:14:29,397
+Kanala abone olursan
+ikinci dersi kaçırmazsın.
+
+247
+00:14:29,477 --> 00:14:31,877
+İkinci dersin ilk bölümünde ideal teli,
+
+248
+00:14:31,957 --> 00:14:36,677
+ideal anahtarı ve gerçek bir pilin
+neden ideal olmadığını göreceğiz.
+

@@ -1,54 +1,64 @@
 {
- "ders": 1,
- "bolum": 3,
- "video": "media/uzun/devre-teorisi-1-ders-01-bolum-3.mp4",
- "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-3-kapak.jpg",
- "kapak_secenekleri": {
-  "A": {
-   "kapak_yazisi": "Kısa devrede akım sıfır mı?",
-   "baslik": "Kısa Devre Hatası: Gerilim Nedir? | Devre Teorisi I Ders 1 (3/3)",
-   "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-a-6d.jpg",
-   "videoda": "0:00 kanca ve 7:49: telden 3 mA, dirençten 0"
+  "ders": 1,
+  "bolum": 3,
+  "video": "media/uzun/devre-teorisi-1-ders-01-bolum-3.mp4",
+  "kapak": "media/uzun/devre-teorisi-1-ders-01-bolum-3-kapak.jpg",
+  "kapak_secenekleri": {
+    "A": {
+      "kapak_yazisi": "Kısa devrede akım sıfır mı?",
+      "baslik": "Kısa Devre Hatası: Gerilim Nedir? | Devre Teorisi I Ders 1 (3/3)",
+      "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-a-6d.jpg",
+      "videoda": "0:00 kanca ve 7:49: telden 3 mA, dirençten 0"
+    },
+    "B": {
+      "kapak_yazisi": "3,3 V yazıyor… neden 3,3 V değil?",
+      "baslik": "İdeal Gerilim Kaynağı ve Sınırı | Devre Teorisi I Ders 1 (3/3)",
+      "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-b-6d.jpg",
+      "videoda": "12:26: 3,3 Ω'da ideal model 1 A der, akım sınırı en çok 865 mA; çıkış 3,3 V'ta kalamaz"
+    },
+    "C": {
+      "kapak_yazisi": "Bu nokta 12 V… neye göre?",
+      "baslik": "Gerilim Neye Göre: Toprak ve Referans | Devre Teorisi I Ders 1 (3/3)",
+      "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-c-6d.jpg",
+      "videoda": "4:46 ve 5:55: referans değişince nokta gerilimleri değişir, v_ab değişmez"
+    }
   },
-  "B": {
-   "kapak_yazisi": "3,3 V yazıyor… neden 3,3 V değil?",
-   "baslik": "İdeal Gerilim Kaynağı ve Sınırı | Devre Teorisi I Ders 1 (3/3)",
-   "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-b-6d.jpg",
-   "videoda": "12:26: 3,3 Ω'da ideal model 1 A der, akım sınırı en çok 865 mA; çıkış 3,3 V'ta kalamaz"
+  "baslik": "Kısa Devre Hatası: Gerilim Nedir? | Devre Teorisi I Ders 1 (3/3)",
+  "aciklama": "Kısa devrede akım sıfır mı? Devre Teorisi I (Devre Analizi 1) dersinin üçüncü bölümünde gerilimi enerjiden tanımlıyor (v = W / q), her gerilimi işaretiyle yazıyor, bir noktanın geriliminin neye (toprağa) göre ölçüldüğünü ve kısa devrenin neyi garanti ettiğini özgün çözümlü örneklerle öğreniyoruz.\nAyrıca ideal gerilim kaynağını ve bir 3,3 V regülatörün veri sayfasında (datasheet) ideal olmaktan nerede çıktığını görüyoruz.\n\nBölümler\n0:00 Giriş: kısa devrede akım sıfır mı?\n1:06 Bölüm 2'den: akımın yönü ve açık devre\n1:20 Gerilim nedir? Enerji bölü yük\n2:15 Örnek: 18 µJ / 4 µC = 4,5 V\n2:52 Ters yönde: gerilimin işareti\n3:14 Tepe ve vadi benzetmesi\n3:39 Gerilimin değeri ve işareti\n4:52 Gerilim neye göre? Toprak ve referans\n6:01 Referans değişince ne değişir?\n6:38 Kısa devre: yalnızca v = 0\n7:26 Dersin girişindeki devre\n7:56 En sık yapılan hata: kısa devrede akım\n8:39 İdeal gerilim kaynağı ve sınırı\n9:33 Uygulamada: veri sayfasındaki gerilimler\n10:35 Mini tasarım: 3,3 V regülatör\n11:42 Model ne kadar iyi?\n12:34 Akım sınırı ve kısa devre\n13:33 Bilmen gerekenler\n14:06 Sana bir soru\n\nBilmen gerekenler\n• Gerilim iki nokta arasında, işaretiyle yazılır: v_ab = W / q (1 V = 1 J / 1 C); v_ba = −v_ab.\n• Bir noktanın gerilimi bir referansa (çoğu zaman toprağa) göredir; iki nokta arasındaki gerilim referansa bağlı değildir.\n• Kısa devre yalnızca v = 0'ı, açık devre yalnızca i = 0'ı garanti eder; diğer büyüklüğü çevre belirler.\n• İdeal gerilim kaynağı gerilimi sabit tutar, akımı yük belirler; gerçek kaynak bunu yalnızca veri sayfasındaki akım ve ısınma sınırları içinde yapar.\nÖnce bilmen gereken: Bölüm 1 (yük, akım), Bölüm 2 (referans oku, açık devre), Ohm yasası (v = R × i), fizikten iş ve enerji.\n\nÖnceki: Ders 1 - Bölüm 2/3: Akımın yönü, açık devre ve akım grafiğinden yük.\nSıradaki: Ders 2 - Bölüm 1/3: İdeal tel, ideal anahtar ve gerçek pil.\nOynatma listesi: Devre Teorisi I — Türkçe Ders Serisi\n\nKaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA). Anlatım ve bütün örnekler özgündür.\nDatasheet değerleri: onsemi 2N7002E (2023), Vishay 1N4001–1N4007 (2020), TI TLV755P (SBVS320D, 2024).\nMüzik: Pawn – The Grey Room / Golden Palms (YouTube Ses Kitaplığı)\n\n#devreteorisi #devreanalizi #elektronik #kısadevre",
+  "etiketler": [
+    "gerilim nedir",
+    "kısa devre",
+    "açık devre ve kısa devre",
+    "ideal gerilim kaynağı",
+    "toprak referans",
+    "gerilimin işareti",
+    "devre analizi 1",
+    "devre teorisi",
+    "doğru akım devre analizi",
+    "devre analizi ders",
+    "datasheet okuma",
+    "regülatör"
+  ],
+  "ilk_yorum": "Kısa bir soru: 3,3 V'luk bir regülatörün çıkışına 22 Ω'luk bir direnç bağlıyoruz; regülatörün en büyük çıkış akımı 500 mA. Direncin uçlarındaki gerilim ve içinden geçen akım ne olur? Cevabını yaz 👇",
+  "kategori": "EDUCATION",
+  "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
+  "oynatma_listesi": "Devre Teorisi I — Türkçe Ders Serisi (sıra 3)",
+  "studio_hatirlatma": [
+    "Oynatma listesi 'Devre Teorisi I — Türkçe Ders Serisi'ne ekle, sıra 3 (Ders 1 Bölüm 3).",
+    "Bitiş ekranı (son 20 sn, 14:37–14:57; orta ve alt boş): sonraki bölüm (yayınlanınca) + oynatma listesi + abone.",
+    "Bilgi kartı: 1:06 'Bölüm 2'den' anına Ders 1 - Bölüm 2/3 videosu.",
+    "Bölüm 2 videosunun bitiş ekranına bu videoyu 'sonraki bölüm' olarak ekle.",
+    "Altyazılar: Studio → İçerik → video → Altyazılar → Dil ekle → Türkçe / İngilizce → Dosya yükle → Zamanlamalı → .srt (media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-3.tr.srt ve .en.srt); başlık-açıklama çevirisi: Dil ekle → Başlık ve açıklama (yayin.json 'en')."
+  ],
+  "zaman_damgasi_kaynagi": "parça süreleri (render, 21.11 iş emri M): p1 70.83, p2 114.30, p3 98.60, p4 105.53, p5 175.10, p6 240.20, p7 83.30; başlangıçlar [0, 70.83, 185.13, 283.73, 389.27, 564.37, 804.57]; parça 1'de 46,0 sn'de 11,4 sn intro kartı + selam; onaylı Blender intro (6-S): 46,0 sn'den sonraki her şey +9.3 sn.",
+  "intro": "Onaylı Blender intro'su (media/uzun/devre-teorisi-1-intro-gercekci-sessiz.mp4 görüntüsü, 276 kare + 3 kare tahta) 6-S akışıyla 0:46'da eklendi (tahta/introlu.py); selam 0:55,6; müzik intro'da tek başına −17,9 LUFS, selamda konuşmanın 20 dB altında; bitiş ekranı −20,1 LUFS.",
+  "altyazi": {
+    "tr": "media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-3.tr.srt",
+    "en": "media/uzun/altyazi/devre-teorisi-1-ders-01-bolum-3.en.srt"
   },
-  "C": {
-   "kapak_yazisi": "Bu nokta 12 V… neye göre?",
-   "baslik": "Gerilim Neye Göre: Toprak ve Referans | Devre Teorisi I Ders 1 (3/3)",
-   "dosya": "media/uzun/kapak-secenek/devre-teorisi-1-ders-01-bolum-3-kapak-c-6d.jpg",
-   "videoda": "4:46 ve 5:55: referans değişince nokta gerilimleri değişir, v_ab değişmez"
-  }
- },
- "baslik": "Kısa Devre Hatası: Gerilim Nedir? | Devre Teorisi I Ders 1 (3/3)",
- "aciklama": "Kısa devrede akım sıfır mı? Devre Teorisi I (Devre Analizi 1) dersinin üçüncü bölümünde gerilimi enerjiden tanımlıyor (v = W / q), her gerilimi işaretiyle yazıyor, bir noktanın geriliminin neye (toprağa) göre ölçüldüğünü ve kısa devrenin neyi garanti ettiğini özgün çözümlü örneklerle öğreniyoruz.\nAyrıca ideal gerilim kaynağını ve bir 3,3 V regülatörün veri sayfasında (datasheet) ideal olmaktan nerede çıktığını görüyoruz.\n\nBölümler\n0:00 Giriş: kısa devrede akım sıfır mı?\n1:00 Bölüm 2'den: akımın yönü ve açık devre\n1:13 Gerilim nedir? Enerji bölü yük\n2:08 Örnek: 18 µJ / 4 µC = 4,5 V\n2:45 Ters yönde: gerilimin işareti\n3:08 Tepe ve vadi benzetmesi\n3:33 Gerilimin değeri ve işareti\n4:46 Gerilim neye göre? Toprak ve referans\n5:55 Referans değişince ne değişir?\n6:32 Kısa devre: yalnızca v = 0\n7:20 Dersin girişindeki devre\n7:49 En sık yapılan hata: kısa devrede akım\n8:31 İdeal gerilim kaynağı ve sınırı\n9:25 Uygulamada: veri sayfasındaki gerilimler\n10:27 Mini tasarım: 3,3 V regülatör\n11:34 Model ne kadar iyi?\n12:26 Akım sınırı ve kısa devre\n13:25 Bilmen gerekenler\n13:58 Sana bir soru\n\nBilmen gerekenler\n• Gerilim iki nokta arasında, işaretiyle yazılır: v_ab = W / q (1 V = 1 J / 1 C); v_ba = −v_ab.\n• Bir noktanın gerilimi bir referansa (çoğu zaman toprağa) göredir; iki nokta arasındaki gerilim referansa bağlı değildir.\n• Kısa devre yalnızca v = 0'ı, açık devre yalnızca i = 0'ı garanti eder; diğer büyüklüğü çevre belirler.\n• İdeal gerilim kaynağı gerilimi sabit tutar, akımı yük belirler; gerçek kaynak bunu yalnızca veri sayfasındaki akım ve ısınma sınırları içinde yapar.\nÖnce bilmen gereken: Bölüm 1 (yük, akım), Bölüm 2 (referans oku, açık devre), Ohm yasası (v = R × i), fizikten iş ve enerji.\n\nÖnceki: Ders 1 - Bölüm 2/3: Akımın yönü, açık devre ve akım grafiğinden yük.\nSıradaki: Ders 2 - Bölüm 1/3: İdeal tel, ideal anahtar ve gerçek pil.\nOynatma listesi: Devre Teorisi I — Türkçe Ders Serisi\n\nKaynak: B. Razavi, Basic Circuit Theory, Ders 1 (UCLA). Anlatım ve bütün örnekler özgündür.\nDatasheet değerleri: onsemi 2N7002E (2023), Vishay 1N4001–1N4007 (2020), TI TLV755P (SBVS320D, 2024).\nMüzik: Pawn – The Grey Room / Golden Palms (YouTube Ses Kitaplığı)\n\n#devreteorisi #devreanalizi #elektronik #kısadevre",
- "etiketler": [
-  "gerilim nedir",
-  "kısa devre",
-  "açık devre ve kısa devre",
-  "ideal gerilim kaynağı",
-  "toprak referans",
-  "gerilimin işareti",
-  "devre analizi 1",
-  "devre teorisi",
-  "doğru akım devre analizi",
-  "devre analizi ders",
-  "datasheet okuma",
-  "regülatör"
- ],
- "ilk_yorum": "Kısa bir soru: 3,3 V'luk bir regülatörün çıkışına 22 Ω'luk bir direnç bağlıyoruz; regülatörün en büyük çıkış akımı 500 mA. Direncin uçlarındaki gerilim ve içinden geçen akım ne olur? Cevabını yaz 👇",
- "kategori": "EDUCATION",
- "yayin": "2026-12-09T13:00:00 Europe/London (16:00 TR)",
- "oynatma_listesi": "Devre Teorisi I — Türkçe Ders Serisi (sıra 3)",
- "studio_hatirlatma": [
-  "Oynatma listesi 'Devre Teorisi I — Türkçe Ders Serisi'ne ekle, sıra 3 (Ders 1 Bölüm 3).",
-  "Bitiş ekranı (son 20 sn, 14:29–14:49; orta ve alt boş): sonraki bölüm (yayınlanınca) + oynatma listesi + abone.",
-  "Bilgi kartı: 1:00 'Bölüm 2'den' anına Ders 1 - Bölüm 2/3 videosu.",
-  "Bölüm 2 videosunun bitiş ekranına bu videoyu 'sonraki bölüm' olarak ekle."
- ],
- "zaman_damgasi_kaynagi": "parça süreleri (render): p1 70.48, p2 114.8, p3 98.6, p4 105.56, p5 173.07, p6 240.2, p7 83.32; başlangıçlar [0, 70.48, 185.28, 283.88, 389.44, 562.51, 802.71]; parça 1'de 46,0 sn'de 11,4 sn intro kartı + selam; iş emri F müzik kuralı: 0:46'dan sonraki her şey +3 sn. QC'de 6:32 (7:00 karesi 'Kısa devre'), 7:20 ('Dersin girişindeki devre'), 10:27 ('Mini tasarım'), 13:25 ('Bilmen gerekenler') karelerle doğrulandı.",
- "intro": "Onaylı kanal intro'su yok (intro-3 bekliyor); 6-S gereği atlandı. Onaylanırsa kancadan sonra eklenip yeniden birleştirilir."
+  "en": {
+    "baslik": "Short-Circuit Mistake: What Is Voltage? | Circuit Theory I Lecture 1 (3/3)",
+    "aciklama": "Is the current zero in a short circuit? In the third part of Circuit Theory I (Circuit Analysis 1), we define voltage from energy (v = W / q), write every voltage with its sign, learn what the voltage of a point is measured against (ground), and what a short circuit actually guarantees — with original worked examples.\nWe also look at the ideal voltage source and where a 3.3 V regulator's datasheet shows it is not ideal.\n\nChapters\n0:00 Intro: is the current zero in a short circuit?\n1:06 From Part 2: current direction and open circuit\n1:20 What is voltage? Energy per charge\n2:15 Example: 18 µJ / 4 µC = 4.5 V\n2:52 The opposite direction: the sign of voltage\n3:14 The hill-and-valley analogy\n3:39 Value and sign of a voltage\n4:52 Voltage relative to what? Ground and reference\n6:01 What changes when the reference changes?\n6:38 Short circuit: only v = 0\n7:26 The circuit from the start of the lecture\n7:56 Most common mistake: current in a short circuit\n8:39 The ideal voltage source and its limit\n9:33 In practice: voltages in the datasheet\n10:35 Mini design: a 3.3 V regulator\n11:42 How good is the model?\n12:34 Current limit and short circuit\n13:33 Key takeaways\n14:06 A question for you\n\nKey takeaways\n• Voltage is between two points and written with its sign: v_ab = W / q (1 V = 1 J / 1 C); v_ba = −v_ab.\n• The voltage of a point is relative to a reference (usually ground); the voltage between two points does not depend on the reference.\n• A short circuit guarantees only v = 0, an open circuit only i = 0; the other quantity is set by the rest of the circuit.\n• An ideal voltage source holds its voltage and the load sets the current; a real source does this only within the current and thermal limits in its datasheet.\n\nPrevious: Lecture 1 - Part 2/3. Next: Lecture 2 - Part 1/3: Ideal wire, ideal switch and a real battery.\nPlaylist: Devre Teorisi I — Türkçe Ders Serisi\n\nSource: B. Razavi, Basic Circuit Theory, Lecture 1 (UCLA). Explanations and all examples are original.\nDatasheet values: onsemi 2N7002E (2023), Vishay 1N4001–1N4007 (2020), TI TLV755P (SBVS320D, 2024).\nMusic: Pawn – The Grey Room / Golden Palms (YouTube Audio Library)"
+  },
+  "qc_20261121": "İş emri M sonrası (21.11): 14:57,2, 1920×1080, 30 fps, −16,0 LUFS, tepe −1,9 dBFS, 33,6 MB; 51 kare gözle; zaman damgaları 6:38, 7:26, 10:35, 13:33 karelerle doğrulandı."
 }
