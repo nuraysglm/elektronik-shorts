@@ -68,13 +68,41 @@ assert F(100, 1000) == F(1, 10) and F(20, 100) == F(2, 10)               # 100 m
 assert abs(F(531, 10) * F(2, 10) - F(106, 10)) <= F(5, 100)               # 53,1 mOhm/m x 0,2 m ~ 10,6 mOhm
 assert abs(F(41, 10) / 1500 - F(27, 10000)) < F(1, 10000)               # 0,0027
 assert F(9, 2) - 0 == F(9, 2)                                            # v_anahtar = 4,5 - v_R
-# --- Parca 7: yorum sorusu (cevap: 900 Ohm -> 10 mA, 20 mV, %0,22: yeter; 9 Ohm -> 1 A, 2 V, %22: yetmez; kural 20 Ohm)
+# --- Parca 7, surum 1 (onayli eski soru; yeni soru onaylanmazsa seslendirilir) (cevap: 900 Ohm -> 10 mA, 20 mV, %0,22: yeter; 9 Ohm -> 1 A, 2 V, %22: yetmez; kural 20 Ohm)
 Ri9 = F(2)
 i900 = F(9) / 900; assert i900 == F(1, 100); assert Ri9 * i900 == F(2, 100)
 i9 = F(9) / 9; assert i9 == 1; assert Ri9 * i9 == 2
 assert abs(F(2, 100) / 9 * 100 - F(22, 100)) < F(1, 100) and abs(F(2) / 9 * 100 - 22) < 1
 assert 10 * Ri9 == 20 and 900 >= 20 and 9 < 20
-print("Sayisal kontroller: tamam (10 mA / 1 A, 100 kat; 3 mA, 4,5 V; 1,5 / 1,35 / 1,2 V; 0,0531 Ohm/m, 10,6 mOhm; 3 + 1 + 0,11 = 4,1 mV, %0,27; 20 kat, 0,3 V, %20; 3 Ohm, 0,15 V, %10; yorum: 20 mV / 2 V)")
+# --- Parca 7, surum 2 (21.11.2026): yeni yorum sorusu (inceleme.md, soru bankasi D2B1-yeni). Cevap videoda soylenmez.
+Rp, Rb, Imax = F(3, 10), F(1, 10), F(50, 1000)        # Ohm, Ohm, A (veri sayfasi ust sinirlari, Parca 5-6 ile ayni)
+# Sart 1: ideal akim V/R <= 50 mA  ->  R >= 30 Ohm
+R1 = V / Imax; assert R1 == 30
+# Sart 2: (Rp + Rb) x V/R <= %1 x V  ->  R >= 100 x (Rp + Rb) = 40 Ohm
+kayip_sinir = V / 100; assert kayip_sinir == F(15, 1000)                 # 15 mV
+i2 = kayip_sinir / (Rp + Rb); assert i2 == F(375, 10000)                 # 37,5 mA
+R2 = V / i2; assert R2 == 40
+Rmin = max(R1, R2); assert Rmin == 40 and R2 > R1                        # kayip sarti belirleyici
+assert V / Rmin <= Imax                                                  # 37,5 mA <= 50 mA: sart 1 de saglanir
+# tuzak: buton kontagini unutmak -> yalnizca pil: R >= 100 x 0,3 = 30 Ohm (buton sartiyla ayni sayi)
+assert 100 * Rp == 30 == R1
+# (b) buton uclarinda gerilim, ideal akimla: 0,1 Ohm x 37,5 mA = 3,75 mV; 1,5 V'un %0,25'i -> sifir volt modeli yeter
+v_b = Rb * (V / Rmin) * 1000; assert v_b == F(375, 100)                  # mV
+assert v_b / 1500 * 100 == F(1, 4)                                       # %0,25
+# (b) ikinci kisim: buton icin v = 0 (kapali anahtarin ideal modeli) -> kayipta yalniz pil: R >= 100 x 0,3 = 30 Ohm
+R_v0 = max(V / Imax, V / (kayip_sinir / Rp)); assert R_v0 == 30
+kayip_30 = (Rp + Rb) * (V / R_v0); assert kayip_30 == F(2, 100)          # 0,4 Ohm x 50 mA = 20 mV
+assert kayip_30 > kayip_sinir and kayip_30 / V * 100 == F(4, 3)           # %1,33 > %1: sart 2 bozulur (tek cevap: saglamaz)
+assert V / R_v0 <= Imax                                                  # sart 1 sinirda (50 mA) saglanir
+# K1: en kotu deger talimati olmadan 0,15 Ohm alan ogrenci 25 Ohm bulurdu -> metinde "en kotu degerleri al"
+assert V / (kayip_sinir / (F(15, 100) + Rb)) == 25
+# bagimsiz kontrol: kesin seri cozum (Ders 3 konusu; yalniz denetim icin). R_yuk = 40 Ohm'da kesin akim/gerilim:
+i_k = V / (Rmin + Rp + Rb); assert abs(i_k * 1000 - F(3713, 100)) < F(1, 100)   # ~37,13 mA
+assert abs(Rb * i_k * 1000 - F(371, 100)) < F(1, 100)                    # ~3,71 mV
+R_kesin = 100 * (Rp + Rb) - (Rp + Rb); assert R_kesin == F(396, 10)       # kesin cozumle en kucuk R_yuk 39,6 Ohm (ideal tahmin 40)
+assert V / (R_kesin + Rp + Rb) == F(375, 10000)                           # 39,6 Ohm'da kesin akim 37,5 mA
+print("Parca 7 surum 2: sart 1 -> 30 Ohm, sart 2 -> 40 Ohm (belirleyici), 37,5 mA, buton 3,75 mV (%0,25); v = 0 modeliyle 30 Ohm -> kayip 20 mV (%1,33) sart 2 bozulur; kesin: 39,6 Ohm (37,5 mA), 40 Ohm'da 37,13 mA / 3,71 mV")
+print("Sayisal kontroller: tamam (10 mA / 1 A, 100 kat; 3 mA, 4,5 V; 1,5 / 1,35 / 1,2 V; 0,0531 Ohm/m, 10,6 mOhm; 3 + 1 + 0,11 = 4,1 mV, %0,27; 20 kat, 0,3 V, %20; 3 Ohm, 0,15 V, %10; eski yorum sorusu: 20 mV / 2 V)")
 
 # --- Seslendirme metni
 md = pathlib.Path(__file__).with_name("metin.md").read_text()
